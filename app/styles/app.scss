@@ -1,0 +1,140 @@
+@font-face {
+	font-family:'Gilroy';
+	font-weight:300;
+	src:url('/static/ttf/gilroy-light.otf');
+}
+
+@font-face {
+	font-family:'Gilroy';
+	font-weight:900;
+	src:url('/static/ttf/gilroy-extrabold.otf');
+}
+
+body {
+
+	font-family:'Gilroy', sans-serif;
+	font-size:24px;
+	font-weight:900;
+	line-height:1.4;
+	color:#fff;
+	background-color:#391086;
+	margin:0;
+
+	@media only screen and (max-width:768px) {
+		font-size:20px;
+	}
+
+}
+
+.background {
+
+	height:909px;
+	width:799px;
+	float:right;
+	position:absolute;
+	right:0;
+	background-repeat:no-repeat;
+	top:0;
+	z-index:-1;
+	pointer-events: none;
+	background-image: url('/static/img/background.png');
+
+	@media only screen and (max-width:1023px) {
+		display:none;
+	}
+
+}
+
+section {
+
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+
+	@media only screen and (min-width: 768px) {
+		height:calc(100vh - 40px);
+	}
+
+	.logo {
+
+		width:300px;
+		height:228px;
+		margin-top:30px;
+		background-repeat:no-repeat;
+		background-image:url('/static/img/logo.svg');
+
+		@media only screen and (max-width:768px) {
+			margin-top:75px;
+		}
+
+	}
+
+	.desc {
+
+		width:50%;
+		max-width:600px;
+		text-align:center;
+		margin:60px auto 60px auto;
+
+		@media only screen and (max-width:1024px) {
+			width:90%;
+		}
+
+	}
+
+	.input {
+
+		width:450px;
+		outline:none;
+		color:#fff;
+		padding:15px;
+		cursor:text;
+		background-color:#391086;
+		border:1px solid #f1b39676;
+		margin:0 auto 15px auto;
+		font-size:18px;
+
+		&::placeholder {
+			color:#fff;
+		}
+
+		@media only screen and (max-width: 600px) {
+			width:270px;
+		}
+
+	}
+
+	button {
+
+		background-color:#391086;
+		border:1px solid #f1b39676;
+		padding:15px;
+		margin-bottom:30px;
+		outline:none;
+		font-size:18px;
+		color:#fff;
+		width:480px;
+		cursor:pointer;
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content:center;
+
+		@media only screen and (max-width: 600px) {
+			width:302px;
+		}
+	}
+
+}
+
+.footer {
+	color:#ae7773;
+	font-size:16px;
+	font-weight:300;
+	text-align:center;
+	height:40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

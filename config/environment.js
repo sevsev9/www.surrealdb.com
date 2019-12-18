@@ -1,51 +1,71 @@
 'use strict';
 
 module.exports = function(environment) {
-  let ENV = {
-    modulePrefix: 'surrealdb',
-    environment,
-    rootURL: '/',
-    locationType: 'auto',
-    EmberENV: {
-      FEATURES: {
-        // Here you can enable experimental features on an ember canary build
-        // e.g. EMBER_MODULE_UNIFICATION: true
-      },
-      EXTEND_PROTOTYPES: {
-        // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      }
-    },
 
-    APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
-    }
-  };
+	var ENV = {
 
-  if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-  }
+		environment,
+		rootURL: '/',
+		locationType: 'auto',
+		modulePrefix: 'surreal',
 
-  if (environment === 'test') {
-    // Testem prefers this...
-    ENV.locationType = 'none';
+		// Surreal configuration details for
+		// connecting to the correct namespace
+		// and database on Surreal.
 
-    // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = false;
-    ENV.APP.LOG_VIEW_LOOKUPS = false;
+		metrics: [
+			{
+				name: 'google-analytics',
+				environments: ['production'],
+				config: {
+					id: '##########'
+				}
+			},
+		],
 
-    ENV.APP.rootElement = '#ember-testing';
-    ENV.APP.autoboot = false;
-  }
+		// Set ember flags / options for the
+		// ember runtime application
+		// environment
 
-  if (environment === 'production') {
-    // here you can enable a production-specific feature
-  }
+		APP: {
+			BINDINGS: false,
+			LOG_RESOLVER: false,
+			LOG_TRANSITIONS: false,
+			LOG_VIEW_LOOKUPS: false,
+			LOG_ACTIVE_GENERATION: false,
+			LOG_TRANSITIONS_INTERNAL: false,
+			RAISE_ON_DEPRECATION: false,
+			LOG_STACKTRACE_ON_DEPRECATION: false,
+		},
 
-  return ENV;
+		// Set experimental ember features
+		// to be used when using ember
+		// canary builds
+
+		EmberENV: {
+			EXTEND_PROTOTYPES: {
+				Date: false,
+			},
+			FEATURES: {
+				EMBER_METAL_TRACKED_PROPERTIES: true,
+			},
+		},
+
+	};
+
+	if (environment === 'test') {
+		ENV.locationType = 'none';
+		ENV.APP.rootElement = '#ember-testing';
+	}
+
+	if (environment === 'development') {
+		// Ignore
+	}
+
+	if (environment === 'production') {
+		// Ignore
+	}
+
+	return ENV;
+
 };
