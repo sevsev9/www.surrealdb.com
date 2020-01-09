@@ -9,9 +9,9 @@ module.exports = function(environment) {
 		locationType: 'auto',
 		modulePrefix: 'surreal',
 
-		// Surreal configuration details for
-		// connecting to the correct namespace
-		// and database on Surreal.
+		// Metric configuration details for
+		// settingup Google analytics in the
+		// production environment.
 
 		metrics: [
 			{
