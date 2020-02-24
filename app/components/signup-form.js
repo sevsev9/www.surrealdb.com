@@ -21,7 +21,7 @@ export default class extends Component {
 			return;
 		}
 
-		await fetch('https://europe-west2-abcum-ltd.cloudfunctions.net/contact-surrealdb-com', {
+		await fetch('https://europe-west2-surreal-io.cloudfunctions.net/contact-surrealdb-com', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
