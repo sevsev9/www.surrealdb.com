@@ -47,6 +47,7 @@ deploy:
 	@echo "Deploy..."
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=31536000, immutable" ./dist/assets s3://www.surrealdb.com/assets/
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=31536000, immutable" ./dist/static s3://www.surrealdb.com/static/
+	aws s3 cp --region eu-west-2 --cache-control "public, max-age=300" ./dist/favicon.ico s3://www.surrealdb.com/
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=300" ./dist/robots.txt s3://www.surrealdb.com/
 	gcloud functions deploy www-surrealdb-com --project surreal-io --region europe-west2 --runtime nodejs10 --entry-point main --trigger-http --memory 1024MB --timeout 5s
 	aws s3 cp --region eu-west-2 --cache-control "no-store" ./dist/index.html s3://www.surrealdb.com/

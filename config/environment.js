@@ -9,8 +9,16 @@ module.exports = function(environment) {
 		locationType: 'auto',
 		modulePrefix: 'surreal',
 
+		fastboot: {
+			hostWhitelist: [
+				'www.surrealdb.com',
+				'surrealdb.com',
+				/^localhost:\d+$/,
+			],
+		},
+
 		// Metric configuration details for
-		// settingup Google analytics in the
+		// using Google analytics in the
 		// production environment.
 
 		metrics: [
@@ -18,14 +26,13 @@ module.exports = function(environment) {
 				name: 'google-analytics',
 				environments: ['production'],
 				config: {
-					id: '##########'
+					id: 'UA-114422509-1',
 				}
 			},
 		],
 
 		// Set ember flags / options for the
-		// ember runtime application
-		// environment
+		// ember runtime environment config
 
 		APP: {
 			BINDINGS: false,
@@ -42,14 +49,7 @@ module.exports = function(environment) {
 		// to be used when using ember
 		// canary builds
 
-		EmberENV: {
-			EXTEND_PROTOTYPES: {
-				Date: false,
-			},
-			FEATURES: {
-				EMBER_METAL_TRACKED_PROPERTIES: true,
-			},
-		},
+		EmberENV: { FEATURES: { }, EXTEND_PROTOTYPES: { Date: false } },
 
 	};
 

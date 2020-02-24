@@ -1,26 +1,19 @@
-<div class="background"></div>
+{{#-in-element (document-head)}}
+	<title>SurrealDB</title>
+	<meta name="description" content="The next generation serverless database.">
+{{/-in-element}}
 
-<section>
+<div>
 
-	<div class="logo"></div>
+	<MainTitle>
+		<h1>
+			<span>SurrealDB</span> is a highly-scalable NewSQL database
+		</h1>
+		<h2>
+			With an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next generation serverless database.
+		</h2>
+	</MainTitle>
 
-	<div class="desc">
-		SurrealDB is a highly-scalable NewSQL database.
-		<br><br>
-		With an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next generation serverless database.<br><br>
-	</div>
+	<SignupForm />
 
-	<form>
-		<Input class="input" @value={{this.email}} placeholder="Email" />
-		<button type="submit" {{action this.submit}}>Submit</button>
-	</form>
-
-	{{#if this.error}}
-		<div class="error">
-			Please complete the form.
-		</div>
-	{{/if}}
-
-</section>
-
-<div class="footer">Copyright © 2019 Abcum Ltd</div>
+</div>

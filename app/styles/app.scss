@@ -1,140 +1,91 @@
-@font-face {
-	font-family:'Gilroy';
-	font-weight:300;
-	src:url('/static/ttf/gilroy-light.otf');
+@import "@ascua/visuals";
+@import "font";
+@import "components/main-title";
+@import "components/signup-form";
+
+html, body {
+	width:100%;
+	height:100%;
 }
 
-@font-face {
-	font-family:'Gilroy';
-	font-weight:900;
-	src:url('/static/ttf/gilroy-extrabold.otf');
+html {
+	touch-action:manipulation;
+	-webkit-tap-highlight-color:transparent;
 }
 
 body {
-
-	font-family:'Gilroy', sans-serif;
-	font-size:24px;
-	font-weight:900;
-	line-height:1.4;
-	color:#fff;
-	background-color:#391086;
 	margin:0;
-
-	@media only screen and (max-width:768px) {
-		font-size:20px;
-	}
-
-}
-
-.background {
-
-	height:909px;
-	width:799px;
-	float:right;
-	position:absolute;
-	right:0;
-	background-repeat:no-repeat;
-	top:0;
-	z-index:-1;
-	pointer-events: none;
-	background-image: url('/static/img/background.png');
-
-	@media only screen and (max-width:1023px) {
-		display:none;
-	}
-
-}
-
-section {
-
 	display:flex;
-	flex-direction:column;
+	overflow:auto;
 	align-items:center;
 	justify-content:center;
+	background:rgb(162,59,176);
+	background:-webkit-linear-gradient(192deg, rgba(162,59,176,1) 0%, rgba(55,19,129,1) 53%);
+	background:-moz-linear-gradient(192deg, rgba(162,59,176,1) 0%, rgba(55,19,129,1) 53%);
+	background:linear-gradient(192deg, rgba(162,59,176,1) 0%, rgba(55,19,129,1) 53%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#a23bb0",endColorstr="#371381",GradientType=1);
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	font-family: 'Inter', serif;
+}
 
-	@media only screen and (min-width: 768px) {
-		height:calc(100vh - 40px);
+div {
+	margin:auto;
+	padding:50px 0 50px 0;
+}
+
+content {
+
+	width:1000px;
+	display:block;
+	margin:0 auto 0 auto;
+
+	@include media(max-width-1300) {
+		width:1000px;
 	}
 
-	.logo {
-
-		width:300px;
-		height:228px;
-		margin-top:30px;
-		background-repeat:no-repeat;
-		background-image:url('/static/img/logo.svg');
-
-		@media only screen and (max-width:768px) {
-			margin-top:75px;
-		}
-
+	@include media(max-width-1172) {
+		width:972px;
 	}
 
-	.desc {
-
-		width:50%;
-		max-width:600px;
-		text-align:center;
-		margin:60px auto 60px auto;
-
-		@media only screen and (max-width:1024px) {
-			width:90%;
-		}
-
+	@include media(max-width-1024) {
+		width:872px;
 	}
 
-	.input {
-
-		width:450px;
-		outline:none;
-		color:#fff;
-		padding:15px;
-		cursor:text;
-		background-color:#391086;
-		border:1px solid #f1b39676;
-		margin:0 auto 15px auto;
-		font-size:18px;
-
-		&::placeholder {
-			color:#fff;
-		}
-
-		@media only screen and (max-width: 600px) {
-			width:270px;
-		}
-
-	}
-
-	button {
-
-		background-color:#391086;
-		border:1px solid #f1b39676;
-		padding:15px;
-		margin-bottom:30px;
-		outline:none;
-		font-size:18px;
-		color:#fff;
-		width:480px;
-		cursor:pointer;
-		display:flex;
-		flex-direction:column;
-		align-items:center;
-		justify-content:center;
-
-		@media only screen and (max-width: 600px) {
-			width:302px;
-		}
+	@include media(max-width-920) {
+		width:90%;
+		max-width:500px;
 	}
 
 }
 
-.footer {
-	color:#ae7773;
-	font-size:16px;
-	font-weight:300;
-	text-align:center;
-	height:40px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+app-modal-cover {
+
+	background-color:rgba(0, 0, 0, 0.7);
+
+	app-modal-front {
+
+		width:500px;
+		height:auto;
+		padding:25px;
+		font-size:18px;
+		line-height:24px;
+		border-radius:10px;
+		margin:15% auto 0 auto;
+		background-color:white;
+		box-shadow:0 5px 20px rgba(0,0,0,0.2);
+
+		a {
+			color:#0a2e28;
+		}
+
+		line {
+			width:100%;
+			display:block;
+			margin:20px 0 20px 0;
+			border-bottom:1px solid #efefef;
+		}
+
+	}
+
 }

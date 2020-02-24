@@ -18,13 +18,18 @@
     "test": "ember test"
   },
   "dependencies": {
-    "@ascua/server": "^0.0.26"
+    "@ascua/server": "^0.0.32"
   },
   "devDependencies": {
-    "@ascua/core": "^0.0.26",
-    "@ascua/fastboot": "^0.0.26",
-    "@ascua/metrics": "^0.0.26",
-    "@ascua/visuals": "^0.0.26",
+    "@ascua/core": "^0.0.32",
+    "@ascua/dom": "^0.0.32",
+    "@ascua/fastboot": "^0.0.32",
+    "@ascua/fetch": "^0.0.32",
+    "@ascua/metrics": "^0.0.32",
+    "@ascua/modal": "^0.0.32",
+    "@ascua/routing": "^0.0.32",
+    "@ascua/scrollup": "^0.0.32",
+    "@ascua/visuals": "^0.0.32",
     "@ember/edition-utils": "^1.2.0",
     "@ember/optional-features": "^1.1.0",
     "@glimmer/component": "^1.0.0",

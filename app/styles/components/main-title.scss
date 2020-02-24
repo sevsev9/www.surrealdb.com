@@ -1,0 +1,93 @@
+main-title {
+
+	margin:0;
+	width:100%;
+	display:block;
+	position:relative;
+
+	logo {
+
+		float:right;
+		width:373px;
+		height:373px;
+		display:block;
+		background-size:auto 373px;
+		background-repeat:no-repeat;
+		background-position:center top;
+		background-image:url("/static/img/logo.png");
+
+		@media (min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+			background-image:url("/static/img/logo@2x.png");
+		}
+
+		@include media(max-width-920) {
+			float:none;
+			width:250px;
+			height:250px;
+			margin:0 auto 30px auto;
+			background-size:auto 250px;
+		}
+
+	}
+
+	content {
+
+		h1 {
+
+			width:500px;
+			color:#ffffff;
+			font-size:55px;
+			line-height:72px;
+			margin-bottom:30px;
+			font-family:'Nexa Text Heavy', serif;
+			span { color:#e300ff; font-size:65px; }
+
+			@include media(max-width-920) {
+				width:100%;
+				font-size:43px;
+				max-width:600px;
+				line-height:50px;
+				text-align:center;
+				margin:0 auto 30px auto;
+				span { font-size:53px; }
+			}
+
+			@include media(max-width-600) {
+				font-size:35px;
+				line-height:45px;
+				span { font-size:45px; }
+			}
+
+			@include media(max-width-320) {
+				font-size:30px;
+				line-height:40px;
+				span { font-size:40px; }
+			}
+
+		}
+
+		h2 {
+
+			width:480px;
+			color:#b98df1;
+			font-size:18px;
+			font-weight:400;
+			line-height:30px;
+			margin-bottom:30px;
+			font-family:'Inter', sans-serif;
+			span { color:#0cffff; }
+
+			@include media(max-width-920) {
+				width:100%;
+				font-size:16px;
+				font-weight:400;
+				line-height:26px;
+				text-align:center;
+				margin:0 auto 30px auto;
+			}
+
+		}
+
+	}
+
+}
