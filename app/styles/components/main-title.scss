@@ -42,6 +42,12 @@ main-title {
 			font-family:'Nexa Text Heavy', serif;
 			span { color:#e300ff; font-size:65px; }
 
+			@include media(max-width-1400) {
+				font-size:43px;
+				line-height:50px;
+				span { font-size:53px; }
+			}
+
 			@include media(max-width-920) {
 				width:100%;
 				font-size:43px;
@@ -73,9 +79,15 @@ main-title {
 			font-size:18px;
 			font-weight:400;
 			line-height:30px;
-			margin-bottom:30px;
+			margin-bottom:60px;
 			font-family:'Inter', sans-serif;
 			span { color:#0cffff; }
+
+			@include media(max-width-1400) {
+				font-size:16px;
+				font-weight:400;
+				line-height:26px;
+			}
 
 			@include media(max-width-920) {
 				width:100%;
