@@ -28,7 +28,7 @@ export default class extends Component {
 			},
 			body: JSON.stringify({
 				email: this.email,
-			})
+			}),
 		});
 
 		this.completed = true;
