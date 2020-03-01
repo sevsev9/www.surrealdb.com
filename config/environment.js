@@ -26,10 +26,31 @@ module.exports = function(environment) {
 				name: 'google-analytics',
 				environments: ['production'],
 				config: {
-					id: 'UA-114422509-1',
+					id: 'UA-159406644-1',
 				}
 			},
 		],
+
+		// Set the configuration options for
+		// the @ascua/fastboot addon, so that a
+		// content-security-policy can be set.
+
+		CSP: {
+			report: false,
+			policy: {
+				'base-uri': ["'self'"],
+				'form-action': ["'none'"],
+				'default-src': ["'none'"],
+				'img-src': ["'self'", 'https://www.google-analytics.com/'],
+				'font-src': ["'self'"],
+				'style-src': ["'self'"],
+				'script-src': ["'self'", 'https://www.google-analytics.com/'],
+				'connect-src': ["'self'", 'https://www.google-analytics.com/', 'https://europe-west2-surreal-io.cloudfunctions.net/contact-surrealdb-com'],
+				'frame-ancestors': ["'self'"],
+				'block-all-mixed-content': null,
+				'upgrade-insecure-requests': null,
+			},
+		},
 
 		// Set ember flags / options for the
 		// ember runtime environment config
