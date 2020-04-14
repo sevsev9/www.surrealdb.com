@@ -59,12 +59,6 @@ main-title {
 			}
 
 			@include media(max-width-600) {
-				font-size:35px;
-				line-height:45px;
-				span { font-size:45px; }
-			}
-
-			@include media(max-width-320) {
 				font-size:30px;
 				line-height:40px;
 				span { font-size:40px; }
@@ -92,6 +86,15 @@ main-title {
 			@include media(max-width-920) {
 				width:100%;
 				font-size:16px;
+				font-weight:400;
+				line-height:26px;
+				text-align:center;
+				margin:0 auto 30px auto;
+			}
+
+			@include media(max-width-920) {
+				width:90%;
+				font-size:14px;
 				font-weight:400;
 				line-height:26px;
 				text-align:center;
