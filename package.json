@@ -18,18 +18,19 @@
     "test": "ember test"
   },
   "dependencies": {
-    "@ascua/server": "^0.0.41"
+    "@ascua/server": "^0.0.56"
   },
   "devDependencies": {
-    "@ascua/core": "^0.0.41",
-    "@ascua/dom": "^0.0.41",
-    "@ascua/fastboot": "^0.0.41",
-    "@ascua/fetch": "^0.0.41",
-    "@ascua/metrics": "^0.0.41",
-    "@ascua/modal": "^0.0.41",
-    "@ascua/routing": "^0.0.41",
-    "@ascua/scrollup": "^0.0.41",
-    "@ascua/visuals": "^0.0.41",
+    "@ascua/core": "^0.0.56",
+    "@ascua/dom": "^0.0.56",
+    "@ascua/fastboot": "^0.0.56",
+    "@ascua/fetch": "^0.0.56",
+    "@ascua/metrics": "^0.0.56",
+    "@ascua/modal": "^0.0.56",
+    "@ascua/routing": "^0.0.56",
+    "@ascua/scrollup": "^0.0.56",
+    "@ascua/tasks": "^0.0.56",
+    "@ascua/visuals": "^0.0.56",
     "@ember/edition-utils": "^1.2.0",
     "@ember/optional-features": "^1.1.0",
     "@glimmer/component": "^1.0.0",

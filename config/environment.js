@@ -45,7 +45,7 @@ module.exports = function(environment) {
 				'font-src': ["'self'"],
 				'style-src': ["'self'"],
 				'script-src': ["'self'", 'https://www.google-analytics.com/'],
-				'connect-src': ["'self'", 'https://www.google-analytics.com/', 'https://europe-west2-surreal-io.cloudfunctions.net/contact-surrealdb-com'],
+				'connect-src': ["'self'", 'https://www.google-analytics.com/', 'https://contact.abcum.com'],
 				'frame-ancestors': ["'self'"],
 				'block-all-mixed-content': null,
 				'upgrade-insecure-requests': null,

@@ -1,41 +1,32 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
+import { drop } from '@ascua/tasks';
 
 export default class extends Component {
 
-	@tracked completed = false;
+	@tracked email;
+	@tracked popup;
 
-	@tracked error = false;
-
-	@tracked email = '';
-
-	@action async submit(event) {
+	@drop * submit(event) {
 
 		event.stopPropagation();
 
 		event.preventDefault();
 
-		if (this.email == '') {
-			this.error = true;
-			return;
-		}
+		if (!this.email) throw "Please provide an email";
 
-		await fetch('https://europe-west2-surreal-io.cloudfunctions.net/contact-surrealdb-com', {
+		yield fetch('https://contact.abcum.com', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				email: this.email,
+				Email: this.email,
 			}),
 		});
 
-		this.completed = true;
-
-		this.error = false;
-
-		this.email = '';
+		this.email = null;
+		this.popup = true;
 
 	}
 
