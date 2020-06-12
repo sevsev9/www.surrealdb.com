@@ -19,13 +19,13 @@ jobs:
     - uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-region: us-east-2
-        aws-access-key-id: ${{ secrets.ACCESS_KEY }}
-        aws-secret-access-key: ${{ secrets.SECRET_KEY }}
+        aws-access-key-id: ${{ secrets.AMAZON_ACCESS_KEY }}
+        aws-secret-access-key: ${{ secrets.AMAZON_SECRET_KEY }}
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
         version: 'latest'
-        project_id: ${{ secrets.PROJECT }}
-        service_account_key: ${{ secrets.SERVICE_KEY }}
+        project_id: ${{ secrets.GOOGLE_PROJECT_ID }}
+        service_account_key: ${{ secrets.GOOGLE_SERVICE_KEY }}
         export_default_credentials: true
     - run: npm ci
     - run: make build
