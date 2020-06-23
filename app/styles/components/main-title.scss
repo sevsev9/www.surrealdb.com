@@ -34,48 +34,64 @@ main-title {
 
 		h1 {
 
-			width:500px;
-			color:#ffffff;
-			font-size:55px;
-			line-height:72px;
-			margin-bottom:30px;
-			font-family:'Nexa Text Heavy', serif;
-			span { color:#e300ff; font-size:65px; }
-
-			@include media(max-width-1400) {
-				font-size:43px;
-				line-height:50px;
-				span { font-size:53px; }
-			}
+			font-size: 62px;
+			background: -webkit-linear-gradient(-45deg, #00DBDE, #FC00FF);
+			background-size: 100%;
+			width:280px;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-align: left;
+			font-weight: 300;
+			letter-spacing: -1.5px;
+			font-family:"CircularStd Medium", sans-serif;
+			span { color:#000000; }
 
 			@include media(max-width-920) {
-				width:100%;
-				font-size:43px;
+				width:80%;
 				max-width:600px;
-				line-height:50px;
 				text-align:center;
-				margin:0 auto 30px auto;
+				margin:0 auto 0px auto;
 				span { font-size:53px; }
-			}
-
-			@include media(max-width-600) {
-				font-size:30px;
-				line-height:40px;
-				span { font-size:40px; }
 			}
 
 		}
 
 		h2 {
 
-			width:480px;
-			color:#b98df1;
-			font-size:18px;
-			font-weight:400;
-			line-height:30px;
-			margin-bottom:60px;
-			font-family:'Inter', sans-serif;
-			span { color:#0cffff; }
+			color:#000000;
+			width:60%;
+			text-align: left;
+			font-size: 56px;
+			font-weight: 300;
+			line-height: 62px;
+			letter-spacing: -1.5px;
+			font-family:"CircularStd Medium", sans-serif;
+
+			@include media(max-width-920) {
+				width:80%;
+				font-size: 42px;
+				max-width:600px;
+				text-align:center;
+				margin:0 auto 30px auto;
+				span { font-size:53px; }
+			}
+
+		}
+
+		h3 {
+
+			color:#828591;
+			width:45%;
+			letter-spacing: -0.15px;
+			text-align: left;
+			font-weight: 300;
+			letter-spacing: 0.1px;
+			font-size:16px;
+			line-height: 26px;
+			margin-bottom:34px;
+			margin-top:20px;
+			font-family:'Inter Regular', sans-serif;
+			span { color:#33cc66; }
 
 			@include media(max-width-1400) {
 				font-size:16px;
@@ -84,7 +100,7 @@ main-title {
 			}
 
 			@include media(max-width-920) {
-				width:100%;
+				width:80%;
 				font-size:16px;
 				font-weight:400;
 				line-height:26px;

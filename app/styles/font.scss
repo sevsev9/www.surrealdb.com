@@ -1,28 +1,39 @@
 @font-face {
-	font-weight:300;
-	font-family:'Inter';
-	src:url('/static/ttf/Inter-Light.ttf');
+	font-family:'CircularStd Black';
+	src:url('/static/ttf/CircularStd-Black.ttf');
 }
 
 @font-face {
-	font-weight:400;
-	font-family:'Inter';
-	src:url('/static/ttf/Inter-Regular.ttf');
+	font-family:'CircularStd Bold';
+	src:url('/static/ttf/CircularStd-Bold.ttf');
 }
 
 @font-face {
-	font-weight:600;
-	font-family:'Inter';
-	src:url('/static/ttf/Inter-Bold.ttf');
+	font-family:'CircularStd Book';
+	src:url('/static/ttf/CircularStd-Book.ttf');
 }
 
 @font-face {
-	font-weight:600;
-	font-family:'Nexa Text Heavy';
-	src:url('/static/ttf/Nexa Text Heavy.otf');
+	font-family:'CircularStd Medium';
+	src:url('/static/ttf/CircularStd-Medium.ttf');
 }
 
 @font-face {
-	font-family:'Nexa Text Book';
-	src:url('/static/ttf/Nexa Text Book.otf');
+	font-family:'Inter Bold';
+	src:url('/static/ttf/inter-bold.ttf');
+}
+
+@font-face {
+	font-family:'Inter Medium';
+	src:url('/static/ttf/inter-medium.ttf');
+}
+
+@font-face {
+	font-family:'Inter Regular';
+	src:url('/static/ttf/inter-regular.ttf');
+}
+
+@font-face {
+	font-family:'Inter Light';
+	src:url('/static/ttf/inter-light.ttf');
 }
