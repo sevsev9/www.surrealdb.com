@@ -48,6 +48,7 @@ main-title {
 
 			@include media(max-width-920) {
 				width:80%;
+				font-size: 52px;
 				max-width:600px;
 				text-align:center;
 				margin:0 auto 0px auto;
@@ -68,8 +69,9 @@ main-title {
 			font-family:"CircularStd Medium", sans-serif;
 
 			@include media(max-width-920) {
-				width:80%;
-				font-size: 42px;
+				width:90%;
+				font-size: 36px;
+				line-height: 42px;
 				max-width:600px;
 				text-align:center;
 				margin:0 auto 30px auto;
