@@ -35,16 +35,14 @@ main-title {
 		h1 {
 
 			font-size: 62px;
-			background: -webkit-linear-gradient(-45deg, #00DBDE, #FC00FF);
+			color:#ffffff;
 			background-size: 100%;
 			width:280px;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
 			text-align: left;
 			font-weight: 300;
 			letter-spacing: -1.5px;
-			font-family:"CircularStd Medium", sans-serif;
-			span { color:#000000; }
+			font-family:'Poppins Medium', sans-serif;
+			span { background: -webkit-linear-gradient(-60deg, #FF3CAC, #8700FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
 			@include media(max-width-920) {
 				width:80%;
@@ -59,14 +57,14 @@ main-title {
 
 		h2 {
 
-			color:#000000;
+			color:#636a75;
 			width:60%;
 			text-align: left;
 			font-size: 56px;
 			font-weight: 300;
 			line-height: 62px;
 			letter-spacing: -1.5px;
-			font-family:"CircularStd Medium", sans-serif;
+			font-family:'Poppins Medium', sans-serif;
 
 			@include media(max-width-920) {
 				width:90%;
@@ -82,7 +80,7 @@ main-title {
 
 		h3 {
 
-			color:#828591;
+			color:#636a75;
 			width:45%;
 			letter-spacing: -0.15px;
 			text-align: left;
@@ -92,7 +90,7 @@ main-title {
 			line-height: 26px;
 			margin-bottom:34px;
 			margin-top:20px;
-			font-family:'Inter Regular', sans-serif;
+			font-family:'Poppins Regular', sans-serif;
 			span { color:#33cc66; }
 
 			@include media(max-width-1400) {

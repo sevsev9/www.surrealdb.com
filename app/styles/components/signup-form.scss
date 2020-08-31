@@ -35,27 +35,27 @@ signup-form {
 			outline:none;
 			cursor:pointer;
 			text-align: left;
-			font-family:'Inter Regular', sans-serif;
+			font-family:'Poppins Regular', sans-serif;
 			font-size:15px;
 			box-shadow:none;
 			border-top-left-radius:10px;
 			border-bottom-left-radius:10px;
-			border: 1px solid #e3e6e7;
+			border: 1px solid #2b313a;
 			background-color: Transparent;
 			padding:0px 30px 0px 30px;
-			color: #828591;
+			color: #FF3CAC;
 
 			&::placeholder {
 				opacity:1;
-				color:#828591;
+				color:#a8a8a8;
 			}
 
 			&:-ms-input-placeholder {
-				color:#828591;
+				color:#a8a8a8;
 			}
 
 			&::-ms-input-placeholder {
-				color:#828591;
+				color:#a8a8a8;
 			}
 
 			svg { float:right; margin-right:-10px; }
@@ -77,7 +77,7 @@ signup-form {
 			outline:none;
 			text-align: center;
 			cursor:pointer;
-			font-family:'Inter Regular', sans-serif;
+			font-family:'Poppins Regular', sans-serif;
 			font-size:15px;
 			box-shadow:none;
 			margin-left:-10px;
@@ -85,7 +85,7 @@ signup-form {
 			border-top-right-radius:10px;
 			border-bottom-right-radius:10px;
 			color:#ffffff;
-			background: -webkit-linear-gradient(-45deg, #00DBDE, #FC00FF);
+			background-color: #2b313a;
 			transition:box-shadow 0.3s ease-in-out;
 
 			@include media(max-width-550) {
