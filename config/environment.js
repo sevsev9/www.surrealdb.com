@@ -26,7 +26,16 @@ module.exports = function(environment) {
 				name: 'google-analytics',
 				environments: ['production'],
 				config: {
+					optimised: true,
 					id: 'UA-159406644-1',
+				}
+			},
+			{
+				name: 'linkedin',
+				environments: ['production'],
+				config: {
+					optimised: true,
+					id: '3271313',
 				}
 			},
 		],
@@ -60,7 +69,7 @@ module.exports = function(environment) {
 				'base-uri': ["'self'"],
 				'form-action': ["'none'"],
 				'default-src': ["'none'"],
-				'img-src': ["'self'", 'https://www.google-analytics.com/'],
+				'img-src': ["'self'", 'https://www.google-analytics.com/', 'https://px.ads.linkedin.com/'],
 				'font-src': ["'self'"],
 				'style-src': ["'self'"],
 				'script-src': ["'self'", 'https://www.google-analytics.com/'],
