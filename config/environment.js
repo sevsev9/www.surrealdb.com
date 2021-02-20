@@ -69,7 +69,7 @@ module.exports = function(environment) {
 				'base-uri': ["'self'"],
 				'form-action': ["'none'"],
 				'default-src': ["'none'"],
-				'img-src': ["'self'", 'https://www.google-analytics.com/', 'https://px.ads.linkedin.com/'],
+				'img-src': ["'self'", 'https://www.google-analytics.com/', 'https://www.linkedin.com/px/', 'https://px.ads.linkedin.com/'],
 				'font-src': ["'self'"],
 				'style-src': ["'self'"],
 				'script-src': ["'self'", 'https://www.google-analytics.com/'],
