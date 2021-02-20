@@ -32,6 +32,25 @@ module.exports = function(environment) {
 		],
 
 		// Set the configuration options for
+		// the @ascua/webapp addon, so that the
+		// favicons are created correctly.
+
+		webapp: {
+			background: '#ffffff',
+			color: '#8a23f1',
+			description: '',
+			display: 'standalone',
+			enabled: true,
+			mask: '#8a23f1',
+			name: 'SurrealDB',
+			orientation: 'portrait',
+			scope: '/',
+			short: 'SurrealDB',
+			start: '/',
+			style: 'default',
+		},
+
+		// Set the configuration options for
 		// the @ascua/fastboot addon, so that a
 		// content-security-policy can be set.
 
@@ -46,6 +65,7 @@ module.exports = function(environment) {
 				'style-src': ["'self'"],
 				'script-src': ["'self'", 'https://www.google-analytics.com/'],
 				'connect-src': ["'self'", 'https://www.google-analytics.com/', 'https://contact.abcum.com'],
+				'manifest-src': ["'self'"],
 				'frame-ancestors': ["'self'"],
 				'block-all-mixed-content': null,
 				'upgrade-insecure-requests': null,
