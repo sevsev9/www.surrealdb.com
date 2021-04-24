@@ -26,38 +26,10 @@ module.exports = function(environment) {
 				name: 'google-analytics',
 				environments: ['production'],
 				config: {
-					optimised: true,
 					id: 'UA-159406644-1',
 				}
 			},
-			{
-				name: 'linkedin',
-				environments: ['production'],
-				config: {
-					optimised: true,
-					id: '3271313',
-				}
-			},
 		],
-
-		// Set the configuration options for
-		// the @ascua/webapp addon, so that the
-		// favicons are created correctly.
-
-		webapp: {
-			background: '#ffffff',
-			color: '#8a23f1',
-			description: '',
-			display: 'standalone',
-			enabled: true,
-			mask: '#8a23f1',
-			name: 'SurrealDB',
-			orientation: 'portrait',
-			scope: '/',
-			short: 'SurrealDB',
-			start: '/',
-			style: 'default',
-		},
 
 		// Set the configuration options for
 		// the @ascua/fastboot addon, so that a
@@ -69,12 +41,11 @@ module.exports = function(environment) {
 				'base-uri': ["'self'"],
 				'form-action': ["'none'"],
 				'default-src': ["'none'"],
-				'img-src': ["'self'", 'https://www.google-analytics.com/', 'https://www.linkedin.com/px/', 'https://px.ads.linkedin.com/'],
+				'img-src': ["'self'", 'https://www.google-analytics.com/'],
 				'font-src': ["'self'"],
 				'style-src': ["'self'"],
 				'script-src': ["'self'", 'https://www.google-analytics.com/'],
 				'connect-src': ["'self'", 'https://www.google-analytics.com/', 'https://contact.abcum.com'],
-				'manifest-src': ["'self'"],
 				'frame-ancestors': ["'self'"],
 				'block-all-mixed-content': null,
 				'upgrade-insecure-requests': null,
