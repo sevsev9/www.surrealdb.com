@@ -32,6 +32,25 @@ module.exports = function(environment) {
 		],
 
 		// Set the configuration options for
+		// the @ascua/webapp addon, so that the
+		// favicons are created correctly.
+
+		webapp: {
+			background: '#181a1f',
+			color: '#aa41fb',
+			description: '',
+			display: 'standalone',
+			enabled: true,
+			mask: '#aa41fb',
+			name: 'SurrealDB',
+			orientation: 'portrait',
+			scope: '/',
+			short: 'SurrealDB',
+			start: '/',
+			style: 'default',
+		},
+
+		// Set the configuration options for
 		// the @ascua/fastboot addon, so that a
 		// content-security-policy can be set.
 
