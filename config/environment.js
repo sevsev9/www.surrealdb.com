@@ -17,6 +17,16 @@ module.exports = function(environment) {
 			],
 		},
 
+		// Set the configuration options for
+		// the @ascua/update addon, so that the
+		// page can update when available.
+
+		update: {
+			enabled: true,
+			autoupdate: true,
+			frequency: 1 * 60 * 1000,
+		},
+
 		// Metric configuration details for
 		// using Google analytics in the
 		// production environment.

@@ -35,6 +35,7 @@
     "@ascua/routing": "^0.0.193",
     "@ascua/scrollup": "^0.0.193",
     "@ascua/tasks": "^0.0.193",
+    "@ascua/update": "^0.0.193",
     "@ascua/visuals": "^0.0.193",
     "@ascua/webapp": "^0.0.193",
     "@ember/edition-utils": "^1.2.0",
