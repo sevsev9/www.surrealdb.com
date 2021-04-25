@@ -23,19 +23,19 @@
     "test:ember": "ember test"
   },
   "dependencies": {
-    "@ascua/server": "^0.0.58"
+    "@ascua/server": "^0.0.193"
   },
   "devDependencies": {
-    "@ascua/core": "^0.0.58",
-    "@ascua/dom": "^0.0.58",
-    "@ascua/fastboot": "^0.0.58",
-    "@ascua/fetch": "^0.0.58",
-    "@ascua/metrics": "^0.0.58",
-    "@ascua/modal": "^0.0.58",
-    "@ascua/routing": "^0.0.58",
-    "@ascua/scrollup": "^0.0.58",
-    "@ascua/tasks": "^0.0.58",
-    "@ascua/visuals": "^0.0.58",
+    "@ascua/core": "^0.0.193",
+    "@ascua/dom": "^0.0.193",
+    "@ascua/fastboot": "^0.0.193",
+    "@ascua/fetch": "^0.0.193",
+    "@ascua/metrics": "^0.0.193",
+    "@ascua/modal": "^0.0.193",
+    "@ascua/routing": "^0.0.193",
+    "@ascua/scrollup": "^0.0.193",
+    "@ascua/tasks": "^0.0.193",
+    "@ascua/visuals": "^0.0.193",
     "@ember/edition-utils": "^1.2.0",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.2.5",
