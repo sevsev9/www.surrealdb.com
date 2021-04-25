@@ -29,6 +29,14 @@ module.exports = function(environment) {
 					id: 'UA-159406644-1',
 				}
 			},
+			{
+				name: 'linkedin',
+				environments: ['production'],
+				config: {
+					optimised: true,
+					id: '3271313',
+				}
+			},
 		],
 
 		// Set the configuration options for
@@ -57,15 +65,49 @@ module.exports = function(environment) {
 		CSP: {
 			report: false,
 			policy: {
-				'base-uri': ["'self'"],
-				'form-action': ["'none'"],
-				'default-src': ["'none'"],
-				'img-src': ["'self'", 'https://www.google-analytics.com/'],
-				'font-src': ["'self'"],
-				'style-src': ["'self'"],
-				'script-src': ["'self'", 'https://www.google-analytics.com/'],
-				'connect-src': ["'self'", 'https://www.google-analytics.com/', 'https://contact.abcum.com'],
-				'frame-ancestors': ["'self'"],
+				'base-uri': [
+					"'self'",
+				],
+				'form-action': [
+					"'none'",
+				],
+				'default-src': [
+					"'none'",
+				],
+				'img-src': [
+					"'self'",
+					// Google
+					'https://www.google-analytics.com/',
+					// Linkedin
+					'https://www.linkedin.com/px/',
+					'https://px.ads.linkedin.com/',
+				],
+				'font-src': [
+					"'self'",
+				],
+				'style-src': [
+					"'self'",
+				],
+				'script-src': [
+					"'self'",
+					// Google
+					'https://www.google-analytics.com/',
+				],
+				'connect-src': [
+					"'self'",
+					'https://contact.abcum.com',
+					// Google
+					'https://www.google-analytics.com/',
+				],
+				'media-src': [
+					"'self'",
+				],
+				'manifest-src': [
+					"'self'",
+				],
+				'frame-ancestors': [
+					"'self'",
+				],
 				'block-all-mixed-content': null,
 				'upgrade-insecure-requests': null,
 			},
