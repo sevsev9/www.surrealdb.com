@@ -1,5 +1,5 @@
-@import "@ascua/visuals";
 @import "font";
+@import "@ascua/visuals";
 @import "components/main-title";
 @import "components/signup-form";
 
@@ -20,13 +20,13 @@ body {
 	align-items:center;
 	justify-content:center;
 	background: rgb(24,26,31);
-	background: -moz-linear-gradient(27deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
-	background: -webkit-linear-gradient(27deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
-	background: linear-gradient(27deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#181a1f",endColorstr="#2b313a",GradientType=1);
-	background-repeat: no-repeat;
 	background-attachment:fixed;
 	font-family: 'Inter', serif;
+	background-repeat: no-repeat;
+	background: linear-gradient(27deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
+	background: -moz-linear-gradient(27deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
+	background: -webkit-linear-gradient(27deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#181a1f",endColorstr="#2b313a",GradientType=1);
 }
 
 div {
@@ -68,22 +68,23 @@ app-modal-cover {
 		width:500px;
 		height:auto;
 		padding:25px;
-		font-size:18px;
+		color:#ffffff;
+		font-size:16px;
 		line-height:24px;
-		border-radius:10px;
+		font-family:'Inter';
 		margin:15% auto 0 auto;
-		background-color:white;
+		background-color:#181a1f;
 		box-shadow:0 5px 20px rgba(0,0,0,0.2);
 
 		a {
-			color:#0a2e28;
+			color:#ffffff;
 		}
 
 		line {
 			width:100%;
 			display:block;
 			margin:20px 0 20px 0;
-			border-bottom:1px solid #efefef;
+			border-bottom:0px solid #efefef;
 		}
 
 	}
