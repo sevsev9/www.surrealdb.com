@@ -59,7 +59,7 @@ features-entry {
 		line-height: 24px;
 		text-indent: 10px;
 		margin: 0 0 20px 0px;
-		letter-spacing: -1.19px;
+		letter-spacing: 0px;
 		font-family: 'Inter Medium', sans-serif;
 		span { color: #ffffff; }
 
@@ -95,7 +95,7 @@ features-entry {
 		margin-right: 10px;
 		text-align: center;
 		display: inline-block;
-		background-color: #FF009E;
+		background-color: #ff3cac;
 		font-family: 'Inter Medium', sans-serif;
 
 		&[page='features'] {
@@ -103,7 +103,7 @@ features-entry {
 		}
 
 		&:hover {
-			color: #FF009E;
+			color: #ff3cac;
 			background-color: #ffffff;
 		}
 

@@ -58,7 +58,7 @@ header {
 				font-family: "Inter Medium";
 
 				&:hover {
-					color: #FF009E;
+					color: #ff3cac;
 				}
 
 				@include media(max-width-1200) {
@@ -89,7 +89,7 @@ header {
 
 				&:hover {
 					color: #ffffff;
-					background-color: #FF009E;
+					background-color: #ff3cac;
 				}
 
 				@include media(max-width-1200) {
@@ -105,7 +105,7 @@ header {
 					padding-right: 0px;
 
 					&:hover {
-						color: #FF009E;
+						color: #ff3cac;
 					}
 
 				}

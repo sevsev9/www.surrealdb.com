@@ -23,14 +23,10 @@ html {
 }
 
 body {
+	background: #181a1f;
 	font-family: 'Inter', serif;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: subpixel-antialiased !important;
-	background: rgb(24,26,31);
-	background: -moz-linear-gradient(129deg, rgba(24,26,31,1) 30%, rgba(43,49,58,1) 100%);
-	background: -webkit-linear-gradient(129deg, rgba(24,26,31,1) 30%, rgba(43,49,58,1) 100%);
-	background: linear-gradient(129deg, rgba(24,26,31,1) 30%, rgba(43,49,58,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#181a1f",endColorstr="#2b313a",GradientType=1);
 }
 
 a, a i, a span {
@@ -53,7 +49,7 @@ app-modal-cover {
 		line-height: 24px;
 		border-radius:0px;
 		margin: 15% auto 0 auto;
-		background-color: #FF009E;
+		background-color: #ff3cac;
 		box-shadow: 0 2px 30px rgba(0,0,0,0.25);
 
 	}

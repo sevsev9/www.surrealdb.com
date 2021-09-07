@@ -91,7 +91,7 @@
 	<g>
 		
 			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="222.3935" y1="-96.1635" x2="643.238" y2="632.7607" gradientTransform="matrix(1 0 0 1 0 230)">
-			<stop  offset="0" style="stop-color:#FF009E"/>
+			<stop  offset="0" style="stop-color:#ff3cac"/>
 			<stop  offset="0.7" style="stop-color:#8700FF"/>
 		</linearGradient>
 		<polygon id="SVGID_2_" class="st0" points="12.1,255.4 432.9,12.3 853.7,255.4 853.7,741.1 432.9,984.2 12.1,741.4 		"/>

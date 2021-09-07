@@ -17,7 +17,7 @@ book-a-demo {
 		width: 50px;
 		margin: 0 auto;
 		display: block;
-		color: #FF009E;
+		color: #ff3cac;
 		margin-top: 30px;
 		text-align: center;
 		border-radius: 0px;
@@ -39,7 +39,7 @@ book-a-demo {
 		padding-bottom: 50px;
 		letter-spacing: -1.19px;
 		font-family: 'Inter Medium', sans-serif;
-		span { color: #FF009E; }
+		span { color: #ff3cac; }
 
 		@include media(max-width-1200) {
 			font-size: 42px;
