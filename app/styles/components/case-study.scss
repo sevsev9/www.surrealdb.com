@@ -2,25 +2,7 @@ case-study {
 
 	display: block;
 	position: relative;
-	margin: 0px auto 0px auto;
-
-	&[page='agencies'] {
-
-		margin-bottom: 100px;
-		background-image: none;
-
-	}
-
-	&[page='customers'] {
-
-		margin-bottom: 100px;
-		background-image: none;
-
-		@include media(max-width-1200) {
-			margin: 0px auto 0px auto;
-		}
-
-	}
+	margin: 0px auto 150px auto;
 
 	@include media(max-width-1024) {
 		margin: 0px auto 0px auto;
@@ -56,7 +38,7 @@ case-study {
 		img {
 
 			height: 433px;
-			border-radius: 10px;
+			border-radius:0px;
 			box-shadow: 0 2px 30px rgba(0,0,0,0.25);
 
 			@include media(max-width-1200) {
@@ -86,7 +68,7 @@ case-study {
 
 		h1 {
 
-			color: #333333;
+			color: #ffffff;
 			font-size: 30px;
 			text-align: left;
 			line-height: 40px;
@@ -109,7 +91,7 @@ case-study {
 
 		h2 {
 
-			color: #a3a4a9;
+			color: #636a75;
 			font-size: 16px;
 			text-align: left;
 			font-weight: 300;

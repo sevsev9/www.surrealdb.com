@@ -5,7 +5,6 @@ main-title {
 	display: block;
 	position: relative;
 	margin-bottom: 50px;
-	background-color: #33cc66;
 
 	&[page='index'] {
 
@@ -17,21 +16,21 @@ main-title {
 			> content {
 				&:before {
 
-					left: 52%;
-					top: 150px;
+					z-index: -5;
+					left: 34%;
+					top:-50px;
 					content: '';
-					width: 1120px;
-					height: 700px;
+					width: 1000px;
+					height: 1000px;
 					display: block;
 					position: absolute;
-					border-radius: 10px;
+					border-radius:0px;
 					background-size: 100%;
 					background-repeat: no-repeat;
-					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
-					background-image: url("/static/img/home/studioheromobile@2x.jpg");
+					background-image: url("/static/img/home/background@2x.png");
 
 					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/home/studioheromobile@2x.jpg");
+						background-image: url("/static/img/home/background@2x.png");
 					}
 
 				}
@@ -42,27 +41,26 @@ main-title {
 		@include media(max-width-1200) {
 
 			height: auto;
-			margin-bottom: 20vw;
+			margin-bottom: 0vw;
 
 			> content {
 				&:after {
 
-					z-index: 1;
+					z-index: -5;
+					left: 34%;
+					top:-50px;
 					content: '';
-					height: auto;
-					bottom: -10vw;
+					width: 1000px;
+					height: 1000px;
 					display: block;
-					padding-top: 62%;
-					margin-top: -10vw;
-					position: relative;
-					border-radius: 10px;
+					position: absolute;
+					border-radius:0px;
 					background-size: 100%;
 					background-repeat: no-repeat;
-					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
-					background-image: url("/static/img/home/studioheromobile@2x.jpg");
+					background-image: url("/static/img/home/background@2x.png");
 
 					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/home/studioheromobile@2x.jpg");
+						background-image: url("/static/img/home/background@2x.png");
 					}
 
 				}
@@ -80,405 +78,57 @@ main-title {
 
 	}
 
-	&[page='agencies'] {
+	&[page='features'] {
+		width:100%;
+		height:750px;
+		display:block;
+		background-size:2560px;
+		background-repeat:no-repeat;
+		background-position:top center;
 
-		height: 770px;
-		margin-bottom: 150px;
-
-		@include media(min-width-1200) {
-
-			> content {
-				&:before {
-
-					left: 50%;
-					top: 120px;
-					content: '';
-					width: 1171px;
-					height: 759px;
-					display: block;
-					position: absolute;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					background-image: url("/static/img/agencies/studiohero@2x.png");
-
-					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/agencies/studiohero@2x.png");
-					}
-
-				}
-			}
-
+		@include media(max-width-1281) {
+			height:auto;
+			margin-bottom: 150px;
 		}
 
-		@include media(max-width-1200) {
-
-			height: auto;
-			margin-bottom: 20vw;
-
-			> content {
-				&:after {
-
-					z-index: 1;
-					content: '';
-					height: auto;
-					bottom: -10vw;
-					display: block;
-					padding-top: 62%;
-					margin-top: -10vw;
-					position: relative;
-					border-radius: 10px;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
-					background-image: url("/static/img/home/studioheromobile@2x.jpg");
-
-					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/home/studioheromobile@2x.jpg");
-					}
-
-				}
-			}
-
-		}
-
-		@include media(max-width-480) {
-			margin-bottom: 80px;
-		}
-
-	}
-
-	&[page='commercial'] {
-
-		height: 770px;
-		margin-bottom: 150px;
-
-		@include media(min-width-1200) {
-
-			> content {
-				&:before {
-
-					left: 52%;
-					top: 120px;
-					content: '';
-					width: 1087px;
-					height: 759px;
-					display: block;
-					position: absolute;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					background-image: url("/static/img/commercial/studiohero@2x.png");
-
-					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/commercial/studiohero@2x.png");
-					}
-
-				}
-			}
-
-		}
-
-		@include media(max-width-1200) {
-
-			height: auto;
-			margin-bottom: 20vw;
-
-			> content {
-				&:after {
-
-					left: 18%;
-					z-index: 1;
-					content: '';
-					height: auto;
-					bottom: -15vw;
-					display: block;
-					padding-top: 70%;
-					margin-top: -10vw;
-					position: relative;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					background-image: url("/static/img/commercial/studiohero@2x.png");
-
-					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/commercial/studiohero@2x.png");
-					}
-
-				}
-			}
-
-		}
-
-		@include media(max-width-480) {
-			margin-bottom: 80px;
-		}
-
-	}
-
-	&[page='memberorganisations'] {
-
-		height: 770px;
-		margin-bottom: 150px;
-
-		@include media(min-width-1200) {
-
-			> content {
-				&:before {
-
-					left: 42%;
-					top: 150px;
-					content: '';
-					width: 1200px;
-					height: 700px;
-					display: block;
-					position: absolute;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					background-image: url("/static/img/memberorganisations/studiohero@2x.png");
-
-					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/memberorganisations/studiohero@2x.png");
-					}
-
-				}
-			}
-
-		}
-
-		@include media(max-width-1200) {
-
-			height: auto;
-			margin-bottom: 20vw;
-
-			> content {
-				&:after {
-
-					z-index: 1;
-					content: '';
-					height: auto;
-					bottom: -15vw;
-					display: block;
-					padding-top: 70%;
-					margin-top: -10vw;
-					position: relative;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					background-image: url("/static/img/memberorganisations/studiohero@2x.png");
-
-					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/memberorganisations/studiohero@2x.png");
-					}
-
-				}
-			}
-
-		}
-
-		@include media(max-width-480) {
-			margin-bottom: 80px;
-		}
-
-	}
-
-	&[page='product'] {
-
-		height: 770px;
-		margin-bottom: 150px;
-
-		@include media(min-width-1200) {
-
-			> content {
-				&:before {
-
-					left: 52%;
-					top: 150px;
-					content: '';
-					width: 1120px;
-					height: 700px;
-					display: block;
-					position: absolute;
-					border-radius: 10px;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
-					background-image: url("/static/img/product/studiohero@2x.jpg");
-
-					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/product/studiohero@2x.jpg");
-					}
-
-				}
-			}
-
-		}
-
-		@include media(max-width-1200) {
-
-			margin-bottom: 30vw;
-			background-image: none;
-
-			> content {
-				&:after {
-
-					z-index: 1;
-					content: '';
-					height: auto;
-					bottom: -10vw;
-					display: block;
-					padding-top: 62%;
-					margin-top: -10vw;
-					position: relative;
-					border-radius: 10px;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
-					background-image: url("/static/img/product/studiohero@2x.jpg");
-
-					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/product/studiohero@2x.jpg");
-					}
-
-				}
-			}
-
-		}
-
-		@include media(max-width-480) {
-			margin-bottom: 80px;
-		}
-
-	}
-
-	&[page='customers'] {
-
-		height: 770px;
-		margin-bottom: 150px;
-
-		@include media(min-width-1200) {
-
-			> content {
-				&:before {
-
-					left: 52%;
-					top: 150px;
-					content: '';
-					width: 1120px;
-					height: 700px;
-					display: block;
-					position: absolute;
-					border-radius: 10px;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
-					background-image: url("/static/img/customers/studiohero@2x.jpg");
-
-					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/customers/studiohero@2x.jpg");
-					}
-
-				}
-			}
-
-		}
-
-		@include media(max-width-1200) {
-
-			height: auto;
-			margin-bottom: 20vw;
-
-			> content {
-				&:after {
-
-					z-index: 1;
-					content: '';
-					height: auto;
-					bottom: -10vw;
-					display: block;
-					padding-top: 62%;
-					margin-top: -10vw;
-					position: relative;
-					border-radius: 10px;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
-					background-image: url("/static/img/customers/studiohero@2x.jpg");
-
-					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/customers/studiohero@2x.jpg");
-					}
-
-				}
-			}
-
-		}
-
-		@include media(max-width-480) {
-			margin-bottom: 80px;
-		}
-
-	}
-
-	&[page='pricing'] {
-
-		margin-bottom: 0px;
-		background-image: none;
-
-		@include media(max-width-1024) {
-			padding-top: 100px;
-		}
-
-	}
-
-	&[page='contact'] {
-
-		height: 650px;
-		display: block;
-		margin-bottom: 0px;
-		background-image: none;
-		background-size: 2560px;
-		min-height: calc(100vh - 450px);
-
-		@include media(max-width-1200) {
-			height: auto;
-			padding-bottom: 150px;
-		}
-
-		> content > contact-us {
-			padding-top: 100px;
-
-			@include media(max-width-1200) {
-				padding-top: 0px;
-			}
-
+		@include media(max-width-641) {
+			height:auto;
+			margin-bottom: 150px;
 		}
 
 	}
 
 	h1 {
 
-		width: 50%;
+		width: 60%;
 		color: #ffffff;
-		font-size: 42px;
+		font-size: 62px;
 		text-align: left;
 		font-weight: 300;
 		line-height: 1.14;
-		padding-top: 160px;
+		padding-top: 250px;
 		padding-bottom: 0px;
-		letter-spacing: -1.5px;
-		font-family: 'Inter Bold', sans-serif;
-		span { color: #71dc94; }
+		letter-spacing: -0.5px;
+		margin-bottom: 34px;
+		font-family: 'Poppins', sans-serif;
+		span { color: #FF009E; }
 
 		@include media(max-width-1200) {
-			width: 90%;
+			width: 500px;
+			font-size: 52px;
 			line-height: 47px;
+			padding-top: 200px;
 			position: relative;
 			br { display: none; }
 		}
 
-		@include media(max-width-480) {
+		@include media(max-width-550) {
 			width: 100%;
-			font-size: 32px;
-			line-height: 47px;
-			padding-top: 100px;
+			font-size: 38px;
+			line-height: 42px;
+			padding-top: 300px;
 			position: relative;
+			margin-bottom: 20px;
 			br { display: none; }
 		}
 
@@ -486,8 +136,8 @@ main-title {
 
 	h2 {
 
-		width: 40%;
-		color: #ffffff;
+		width: 55%;
+		color: #636a75;
 		font-size: 18px;
 		text-align: left;
 		font-weight: 500;
@@ -497,19 +147,19 @@ main-title {
 		letter-spacing: 0.1px;
 		letter-spacing: -0.15px;
 		font-family: 'Inter Medium', sans-serif;
-		span { color: #33cc66; }
+		span { color: #FF009E; }
 
 		@include media(max-width-1200) {
 			top: auto;
-			width: 90%;
+			width: 450px;
 			position: relative;
 			br { display: none; }
 		}
 
-		@include media(max-width-480) {
+		@include media(max-width-550) {
 			width: 100%;
-			font-size: 18px;
-			margin-top: 20px;
+			font-size: 16px;
+			margin-top: 0px;
 			line-height: 26px;
 			margin-bottom: 30px;
 		}

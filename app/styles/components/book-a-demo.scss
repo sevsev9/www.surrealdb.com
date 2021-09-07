@@ -5,33 +5,17 @@ book-a-demo {
 	height: auto;
 	display: block;
 	position: relative;
-	background-color: #333333;
-	border-bottom: 1px solid rgb(255, 255, 255, 0.1);
-
-	&[page='customers'] {
-
-		margin-top: 0px;
-		background-image: none;
-
-		@include media(max-width-1200) {
-			margin: 100px auto 0px auto;
-		}
-
-		@include media(max-width-480) {
-			margin: 50px auto 0px auto;
-		}
-
-	}
+	background-color: #2b313a;
 
 	line {
 
 		width: 50px;
 		margin: 0 auto;
 		display: block;
-		color: #33cc66;
+		color: #FF009E;
 		margin-top: 30px;
 		text-align: center;
-		border-radius: 50px;
+		border-radius: 0px;
 		margin-bottom: 50px;
 		border-top: 5px solid;
 		justify-content: center;
@@ -50,7 +34,7 @@ book-a-demo {
 		padding-bottom: 50px;
 		letter-spacing: -1.19px;
 		font-family: 'Inter Medium', sans-serif;
-		span { color: #33cc66; }
+		span { color: #FF009E; }
 
 		@include media(max-width-1200) {
 			width: 100%;

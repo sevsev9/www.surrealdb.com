@@ -8,13 +8,6 @@ export default class Router extends EmberRouter {
 
 Router.map(function() {
 
-	this.route('product');
-	this.route('customers');
-	this.route('who');
-	this.route('agencies');
-	this.route('commercial');
-	this.route('memberorganisations');
-	this.route('contact');
-	this.route('pricing');
+	this.route('features');
 
 });

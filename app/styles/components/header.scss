@@ -10,13 +10,13 @@ header {
 
 	@include media(max-width-1200) {
 		top: 0px;
-		background: rgba(51, 204, 102, 0.85);
+		background: rgba(24, 26, 31, 0.5);
 
 	}
 
 	content {
 
-		width: 1050px;
+		width: 1100px;
 
 		@include media(max-width-1200) {
 			width: 872px;
@@ -58,7 +58,7 @@ header {
 				font-family: "Inter Medium";
 
 				&:hover {
-					color: #71dc94;
+					color: #FF009E;
 				}
 
 				@include media(max-width-1200) {
@@ -69,7 +69,7 @@ header {
 
 			}
 
-			&:nth-of-type(7) a {
+			&:nth-of-type(3) a {
 
 				width: 100px;
 				padding: 15px;
@@ -78,14 +78,17 @@ header {
 				margin-top: 28px;
 				margin-left: 40px;
 				text-align: center;
-				border-radius: 10px;
-				border: 2px solid #84e8a6;
-				background-color: #84e8a6;
+				border-radius:0px;
+				background: rgb(135,0,255);
+				background: -moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+				background: -webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+				background: linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8700ff",endColorstr="#ff3cac",GradientType=1);
 				transition: box-shadow 0.3s ease-in-out;
 
 				&:hover {
 					color: #ffffff;
-					background-color: #33cc66;
+					background-color: #FF009E;
 				}
 
 				@include media(max-width-1200) {
@@ -97,11 +100,11 @@ header {
 					color: #ffffff;
 					background: none;
 					text-align: right;
-					border-radius: 0px;
+					border-radius:0px;
 					padding-right: 0px;
 
 					&:hover {
-						color: #71dc94;
+						color: #FF009E;
 					}
 
 				}
@@ -112,11 +115,11 @@ header {
 
 		.logo {
 			float: left;
-			width: 172px;
-			height: 40px;
+			width: 120px;
+			height: 20px;
 			display: block;
-			margin-top: 35px;
-			margin-bottom: 35px;
+			margin-top: 45px;
+			margin-bottom: 45px;
 			text-decoration: none;
 			background-repeat: no-repeat;
 			background-repeat: no-repeat;
@@ -127,9 +130,9 @@ header {
 			}
 
 			@include media(max-width-480) {
-				height: 30px;
-				margin-top: 25px;
-				margin-bottom: 25px;
+				height: 20px;
+				margin-top: 30px;
+				margin-bottom: 28px;
 			}
 
 		}

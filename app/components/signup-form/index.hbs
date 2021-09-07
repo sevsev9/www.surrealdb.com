@@ -1,0 +1,24 @@
+{{#if this.popup}}
+	<Ascua::Modal class="custom" @onClose={{fn (mut this.popup) false}}>
+		<strong>Thank you</strong> for registering your interest! We can't wait to show you more about how SurrealDB works. Check your email inbox for communications from us.
+		<br><br>
+		Tobie
+		<br>
+		Founder, SurrealDB
+	</Ascua::Modal>
+{{/if}}
+
+<signup-form>
+	<content>
+		<form {{on "submit" this.submit.run}}>
+			<Input @value={{this.email}} placeholder="Enter your email here..." />
+			<button type="submit" {{on "click" this.submit.run}}>
+				More information
+			</button>
+			<clear></clear>
+		</form>
+		{{#if this.submit.error}}
+			<message>Please enter an email address</message>
+		{{/if}}
+	</content>
+</signup-form>

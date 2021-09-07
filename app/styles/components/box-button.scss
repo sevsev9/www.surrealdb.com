@@ -10,13 +10,16 @@ box-button {
 	box-shadow: none;
 	line-height: 22px;
 	text-align: center;
-	border-radius: 10px;
+	border-radius:0px;
 	margin-bottom: 100px;
 	display: inline-block;
-	background-color: #33cc66;
+	background: -moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+	background: -webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+	background: linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8700ff",endColorstr="#ff3cac",GradientType=1);
 	transition: box-shadow 0.3s ease-in-out;
 
-	@include media(max-width-480) {
+	@include media(max-width-768) {
 		width: 100%;
 		font-size: 14px;
 		margin-bottom: 50px;
@@ -31,87 +34,22 @@ box-button {
 		padding: 20px 30px 15px 30px;
 	}
 
-	&[white] {
-		float: left;
-		margin-bottom: 40px;
-		background-color: #ffffff;
-
-		span {
-			color: #33cc66;
-			font-size: 16px;
-			font-family: 'Inter Medium', sans-serif;
-		}
-
-		@include media(max-width-480) {
-			float: none;
-			width: 100%;
-			display: block;
-			text-align: center;
-			margin-bottom: 50px;
-		}
-
-	}
-
 	&[bookademo] {
 		margin-bottom: 0px;
-	}
-
-	&[testimony] {
-		float: left;
-		margin-bottom: 40px;
-		background-color: #ffffff;
-
-		span {
-			color: #33cc66;
-			font-size: 16px;
-			font-family: 'Inter Medium', sans-serif;
-		}
-
-		@include media(max-width-480) {
-			float: none;
-			width: 100%;
-			display: block;
-			text-align: center;
-			margin-bottom: 0px;
-		}
-
-	}
-
-	&[who] {
-		width: auto;
-		color: white;
-		color: #ffffff;
-		font-size: 15px;
-		margin-top: 20px;
-		box-shadow: none;
-		text-align: center;
-		border-radius: 10px;
-		display: inline-block;
-		border: 2px solid #ffffff;
-		background-color: Transparent;
-
-		&:hover {
-			color: #333333;
-			background-color: #30c160;
-		}
-
-		@include media(max-width-768) {
-			float: none;
-			width: 200px;
-			display: block;
-			text-align: center;
-			margin: 50px auto 50px auto;
-		}
-
 	}
 
 	&[walkthrough] {
 
 		@include media(max-width-1200) {
-			float: none;
+			float: left;
 			width: 200px;
 			display: block;
-			text-align: center;
+			margin: 50px auto 50px auto;
+		}
+
+		@include media(max-width-768) {
+			width: 200px;
+			display: block;
 			margin: 50px auto 50px auto;
 		}
 

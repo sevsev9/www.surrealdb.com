@@ -7,10 +7,11 @@ features-entry {
 	position: relative;
 	text-align: center;
 	border-width: 10px;
-	border-radius: 20px;
-	width: calc(100% / 3);
-	border: solid #ffffff;
-	background-color: #f7f7f7;
+	border-radius: 0px;
+	width: calc(96% / 3);
+	margin-right: 1%;
+
+	background-color: #2b313a;
 
 	@include media(max-width-1200) {
 		height: 350px;
@@ -21,27 +22,6 @@ features-entry {
 		width: 100%;
 		height: auto;
 		margin: 25px auto 25px auto;
-	}
-
-	&[page='memberorganisations'] {
-
-		height: 500px;
-
-		@include media(max-width-1200) {
-			height: 550px;
-		}
-
-		@include media(max-width-1024) {
-			height: 650px;
-		}
-
-		@include media(max-width-768) {
-			float: none;
-			width: 100%;
-			height: auto;
-			margin: 25px auto 25px auto;
-		}
-
 	}
 
 	&:first-of-type {
@@ -73,7 +53,7 @@ features-entry {
 	}
 
 	h1 {
-		color: #333333;
+		color: #ffffff;
 		font-size: 16px;
 		text-align: left;
 		text-align: left;
@@ -82,12 +62,12 @@ features-entry {
 		margin: 0 0 20px 0px;
 		letter-spacing: -1.19px;
 		font-family: 'Inter Medium', sans-serif;
-		span { color: #333333; }
+		span { color: #ffffff; }
 
 	}
 
 	h2 {
-		color: #9d9c9c;
+		color: #636a75;
 		font-size: 15px;
 		font-weight: 300;
 		text-align: left;
@@ -116,15 +96,15 @@ features-entry {
 		margin-right: 10px;
 		text-align: center;
 		display: inline-block;
-		background-color: #33cc66;
+		background-color: #FF009E;
 		font-family: 'Inter Medium', sans-serif;
 
-		&[page='product'] {
+		&[page='features'] {
 			display: none;
 		}
 
 		&:hover {
-			color: #33cc66;
+			color: #FF009E;
 			background-color: #ffffff;
 		}
 

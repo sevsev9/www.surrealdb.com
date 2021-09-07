@@ -1,32 +1,26 @@
 {{#in-element (document-head) insertBefore=null}}
-	<title>BrandSafe | The easiest-to-use Digital Asset Management system</title>
-	<meta name="title" property="og:title" content="The easiest-to-use Digital Asset Management system">
-	<meta name="description" content="Save time and money for your company, and for everyone you work with - by creating an accessible place for all your brand assets, and ensuring that the right users have access to the latest materials - guaranteeing brand integrity.">
-	<meta name="description" property="og:description" content="Save time and money for your company, and for everyone you work with - by creating an accessible place for all your brand assets, and ensuring that the right users have access to the latest materials - guaranteeing brand integrity.">
+	<title>SurrealDB | The next generation serverless cloud database</title>
+	<meta name="title" property="og:title" content="The next generation serverless cloud database">
+	<meta name="description" content="With an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next generation serverless database.">
 	<meta name="image" property="og:image" content="/static/img/preview/main.jpg">
 	<meta property="og:type" content="website">
 {{/in-element}}
 
 <MainTitle>
+	<Logo />
 	<h1>
-		The easiest-to-use
-		Digital Asset Management system<span>.</span>
+		The next generation serverless cloud database
 	</h1>
 	<h2>
-		Save time and money for your company, and for everyone you work with - by creating an accessible place for all your brand assets, and ensuring that the right users have access to the latest materials - guaranteeing your brand integrity.
+		With an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next generation serverless database.
 	</h2>
-	<BoxButton white @link="contact" @text="Book a demo" />
+	<SignupForm />
 </MainTitle>
-
-<content>
-	<Clientlogos></Clientlogos>
-</content>
 
 <Titles>
 	<h1>
-		How can BrandSafe help your company?
+		A highly-scalable NewSQL database
 	</h1>
-	<line></line>
 </Titles>
 
 <content>
@@ -39,12 +33,37 @@
 </content>
 
 <content>
-	<Customers></Customers>
+	<WalkThrough @side="r" @num="1" @img="/static/img/product/feature1@2x.png" @title="DAM" @text="Gather in one place all the elements that your company uses -  for marketing, campaign management, public information, presentations, internal compliance documents, information notices and documents, and branding guidelines. Then enable easy access for identified people or organisations, and define use cases, while maintaining security and accountability." />
+	<clear></clear>
 </content>
 
-<Clients>
-	<Testimony @side="l" @num="1" @img="/static/img/home/clients@2x.jpg" @logo="/static/img/home/aberlogo.svg" @text="Aber Instruments Ltd, a global biotechnology company, was looking to improve the process by which its distributors and partners could access images and files in appropriate formats, and to save staff time in finding, editing and cropping images. The creation of a new website, together with an increase in brand assets, prompted the search for a solution." />
+<content>
+	<FeaturesEntry @img="/static/img/home/tick.svg" @h1="Define users" @h2="Label each item according to the person or people - by setting permissions for different levels of access (for named individuals, or groups)." />
+	<FeaturesEntry @img="/static/img/home/tick.svg" @h1="Define access permissions" @h2="Enable logins for specific users - whether departmental (or all internal) staff; collaborating design, PR or media agencies; distributors, suppliers, or franchisees - either by individual emails or domains." />
+	<FeaturesEntry @img="/static/img/home/tick.svg" @h1="Define use" @h2="Group items according to use or need: by department, location, event, or any other purpose. Then ‘tag’ each item with multiple identifiers, which will aid searches." />
 	<clear></clear>
-</Clients>
+</content>
+
+<content>
+	<WalkThrough @side="l" @num="1" @img="/static/img/product/feature2@2x.png" @title="Document creation" @text="Be creative with documentation - whether for campaigns, infographics, marketing, presentations, compliance information. Your designers can upload templates of branded items which identify sections for personalisation - with the house style adhered to automatically, whatever new text is entered." />
+	<clear></clear>
+</content>
+
+<content>
+	<FeaturesEntry @img="/static/img/home/tick.svg" @h1="No need to re-invent the wheel" @h2="Access specific branded templates and personalise them without resorting to re-designs, or having to start from scratch with brand elements." />
+	<FeaturesEntry @img="/static/img/home/tick.svg" @h1="Track versions" @h2="Is your chosen item current? What was the previous version? Eliminate mistakes and save time." />
+	<FeaturesEntry @img="/static/img/home/tick.svg" @h1="Approvals and sign-off" @h2="Define a process for specific people to approve items, and enable ‘viewing’ or ‘editing’ permissions." />
+	<clear></clear>
+</content>
+
+<content>
+	<CaseStudy @side="r" @num="1" @img="/static/img/customers/aber2@2x.jpg" @title="The solution" @text="Now the self-service system available from SurrealDB allows Aber to store and share all their brand elements in one place, and permits their distributors/partners to acquire the necessary assets in the exact format they need, without having to ask Aber staff repeatedly." />
+	<clear></clear>
+</content>
+
+<content>
+	<CaseStudy @side="l" @num="1" @img="/static/img/customers/aber2@2x.jpg" @title="The solution" @text="Now the self-service system available from SurrealDB allows Aber to store and share all their brand elements in one place, and permits their distributors/partners to acquire the necessary assets in the exact format they need, without having to ask Aber staff repeatedly." />
+	<clear></clear>
+</content>
 
 <BookADemo></BookADemo>

@@ -1,25 +1,17 @@
 @import "fonts";
 @import "@ascua/visuals";
+@import "components/logo";
 @import "components/footer";
 @import "components/header";
 @import "components/titles";
-@import "components/clients";
-@import "components/pricing";
-@import "components/testimony";
-@import "components/customers";
 @import "components/case-study";
 @import "components/box-button";
-@import "components/contact-us";
 @import "components/main-title";
-@import "components/what-we-do";
+@import "components/signup-form";
 @import "components/book-a-demo";
 @import "components/clientlogos";
 @import "components/walk-through";
 @import "components/features-entry";
-@import "components/main-title-who1";
-@import "components/main-title-who2";
-@import "components/main-title-who3";
-@import "components/who-walk-through";
 
 html, body {
 	overflow-x: hidden;
@@ -31,10 +23,14 @@ html {
 }
 
 body {
-	background: #ffffff;
 	font-family: 'Inter', serif;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: subpixel-antialiased !important;
+	background: rgb(24,26,31);
+	background: -moz-linear-gradient(129deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
+	background: -webkit-linear-gradient(129deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
+	background: linear-gradient(129deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#181a1f",endColorstr="#2b313a",GradientType=1);
 }
 
 a, a i, a span {
@@ -55,16 +51,16 @@ app-modal-cover {
 		color: #ffffff;
 		font-size: 18px;
 		line-height: 24px;
-		border-radius: 10px;
+		border-radius:0px;
 		margin: 15% auto 0 auto;
-		background-color: #33cc66;
+		background-color: #FF009E;
 		box-shadow: 0 2px 30px rgba(0,0,0,0.25);
 
 	}
 
 	.btn {
 		padding: 10px 20px;
-		border-radius: 10px;
+		border-radius:0px;
 		display: inline-block;
 		border: 2px solid #ffffff;
 		transition: background .3s;
@@ -78,7 +74,7 @@ app-modal-cover {
 
 content {
 
-	width: 1050px;
+	width: 1100px;
 	display: block;
 	position: relative;
 	margin: 0 auto 0 auto;

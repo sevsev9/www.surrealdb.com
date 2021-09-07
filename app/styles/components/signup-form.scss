@@ -1,0 +1,109 @@
+signup-form {
+
+	display:block;
+	margin-bottom:10px;
+
+	@include media(max-width-550) {
+		margin-top:50px;
+		&[purple] {
+			width:100%;
+		}
+	}
+
+	content {
+
+		margin-left: 0px;
+
+		@include media(max-width-950) {
+			width:auto;
+		}
+
+		input {
+
+			width:250px;
+			height:60px;
+			border:none;
+			outline:none;
+			cursor:pointer;
+			font-size:15px;
+			color: #FF3CAC;
+			box-shadow:none;
+			text-align: left;
+			display: inline-block;
+			border: 1px solid #2b313a;
+			padding:0px 30px 0px 30px;
+			background-color: Transparent;
+			font-family:'Poppins Regular', sans-serif;
+
+			&::placeholder {
+				opacity:1;
+				color:#ffffff;
+			}
+
+			&:-ms-input-placeholder {
+				color:#ffffff;
+			}
+
+			&::-ms-input-placeholder {
+				color:#ffffff;
+			}
+
+			svg { float:right; margin-right:-10px; }
+
+			@include media(max-width-550) {
+				width:100%;
+				text-align: center;
+				margin-bottom: 10px;
+			}
+
+		}
+
+		button {
+
+			height:60px;
+			border:none;
+			outline:none;
+			color:#ffffff;
+			cursor:pointer;
+			font-size:15px;
+			box-shadow:none;
+			margin-left:-10px;
+			text-align: center;
+			display: inline-block;
+			padding:0px 30px 0px 30px;
+			transition:box-shadow 0.3s ease-in-out;
+			font-family:'Poppins Regular', sans-serif;
+			background: -moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+			background: -webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+			background: linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8700ff",endColorstr="#ff3cac",GradientType=1);
+
+			@include media(max-width-550) {
+				width:100%;
+				margin: 0px;
+			}
+
+			&:hover {
+				box-shadow:0 2px 20px rgba(0,0,0,0.3);
+			}
+
+
+		}
+
+		message {
+
+			color:#6e00ff;
+			display:block;
+			margin-top:10px;
+			padding-left: 30px;
+
+			@media only screen and (max-width: 600px) {
+				width:100%;
+				text-align:center;
+			}
+
+		}
+
+	}
+
+}
