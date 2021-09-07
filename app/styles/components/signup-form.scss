@@ -32,7 +32,9 @@ signup-form {
 			display: inline-block;
 			border: 1px solid #2b313a;
 			padding:0px 30px 0px 30px;
+			border-top-left-radius: 6px;
 			background-color: Transparent;
+			border-bottom-left-radius: 6px;
 			font-family:'Poppins Regular', sans-serif;
 
 			&::placeholder {
@@ -71,6 +73,8 @@ signup-form {
 			text-align: center;
 			display: inline-block;
 			padding:0px 30px 0px 30px;
+			border-top-right-radius: 6px;
+			border-bottom-right-radius: 6px;
 			transition:box-shadow 0.3s ease-in-out;
 			font-family:'Poppins Regular', sans-serif;
 			background: -moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);

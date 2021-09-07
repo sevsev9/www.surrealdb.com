@@ -27,9 +27,9 @@ body {
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: subpixel-antialiased !important;
 	background: rgb(24,26,31);
-	background: -moz-linear-gradient(129deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
-	background: -webkit-linear-gradient(129deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
-	background: linear-gradient(129deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
+	background: -moz-linear-gradient(129deg, rgba(24,26,31,1) 30%, rgba(43,49,58,1) 100%);
+	background: -webkit-linear-gradient(129deg, rgba(24,26,31,1) 30%, rgba(43,49,58,1) 100%);
+	background: linear-gradient(129deg, rgba(24,26,31,1) 30%, rgba(43,49,58,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#181a1f",endColorstr="#2b313a",GradientType=1);
 }
 

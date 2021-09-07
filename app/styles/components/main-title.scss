@@ -23,14 +23,14 @@ main-title {
 					width: 1000px;
 					height: 1000px;
 					display: block;
-					position: absolute;
 					border-radius:0px;
+					position: absolute;
 					background-size: 100%;
 					background-repeat: no-repeat;
-					background-image: url("/static/img/home/background@2x.png");
+					background-image: url("/static/img/home/background@2x.png"), radial-gradient(farthest-corner at 450px 40px, #606267 0%, #181a1f 55%);
 
 					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/home/background@2x.png");
+						background-image: url("/static/img/home/background@2x.png"), radial-gradient(farthest-corner at 450px 40px, #606267 0%, #181a1f 55%);
 					}
 
 				}
@@ -53,14 +53,14 @@ main-title {
 					width: 1000px;
 					height: 1000px;
 					display: block;
-					position: absolute;
 					border-radius:0px;
+					position: absolute;
 					background-size: 100%;
 					background-repeat: no-repeat;
-					background-image: url("/static/img/home/background@2x.png");
+					background-image: url("/static/img/home/background@2x.png"), radial-gradient(farthest-corner at 500px 40px, #606267 0%, #181a1f 55%);
 
 					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-						background-image: url("/static/img/home/background@2x.png");
+						background-image: url("/static/img/home/background@2x.png"), radial-gradient(farthest-corner at 500px 40px, #606267 0%, #181a1f 55%);
 					}
 
 				}
