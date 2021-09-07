@@ -1,0 +1,143 @@
+who-walk-through {
+
+	display: block;
+	position: relative;
+	margin: 0px auto 50px auto;
+
+	@include media(max-width-1200) {
+		margin: 0px auto 50px auto;
+	}
+
+	@include media(max-width-768) {
+		margin: 0px auto 0px auto;
+	}
+
+	&[side='l'] {
+		div:nth-of-type(1) { float: left; }
+		div:nth-of-type(2) { float: right; }
+		@include media(max-width-1200) {
+			div:nth-of-type(1) { float: none; width: 100%; text-align: center; height: auto; }
+			div:nth-of-type(2) { float: none; width: 100%; text-align: center; height: auto; }
+		}
+	}
+
+	&[side='r'] {
+		div:nth-of-type(1) { float: right; }
+		div:nth-of-type(2) { float: left; }
+		@include media(max-width-1200) {
+			div:nth-of-type(1) { float: none; width: 100%; text-align: center; height: auto; }
+			div:nth-of-type(2) { float: none; width: 100%; text-align: center; height: auto; }
+		}
+	}
+
+	&:last-of-type {
+
+		@include media(max-width-1200) {
+			margin: 0px auto 50px auto;
+		}
+
+		@include media(max-width-768) {
+			margin: 0px auto 50px auto;
+		}
+
+	}
+
+
+	div:nth-of-type(1) {
+
+		height: 500px;
+
+		@include media(max-width-1025) {
+			width: 230px;
+			height: auto;
+		}
+
+		img {
+
+			height: 380px;
+			border-radius: 10px;
+			box-shadow: 0 2px 30px rgba(0,0,0,0.25);
+
+			@include media(max-width-768) {
+				width: 100%;
+				height: auto;
+				margin-top: 0px;
+			}
+
+		}
+
+	}
+
+	div:nth-of-type(2) {
+
+		width: 36%;
+		height: auto;
+
+		@include media(max-width-1200) {
+			width: 40%;
+		}
+
+		@include media(max-width-1024) {
+			width: 35%;
+		}
+
+		h1 {
+
+			color: #333333;
+			font-size: 30px;
+			text-align: left;
+			font-weight: 300;
+			margin-top: 45px;
+			line-height: 40px;
+			padding-bottom: 0px;
+			letter-spacing: -1.19px;
+			font-family: 'Inter Medium', sans-serif;
+
+			@include media(max-width-1200) {
+				width: 100%;
+				font-size: 38px;
+				margin-top: 45px;
+				line-height: 55px;
+				text-align: center;
+			}
+
+			@include media(max-width-768) {
+				font-size: 26px;
+				padding-top: 0px;
+				line-height: 40px;
+				letter-spacing: -2px;
+			}
+
+		}
+
+		h2 {
+
+			color: #a3a4a9;
+			font-size: 16px;
+			font-weight: 300;
+			text-align: left;
+			line-height: 1.53;
+			padding-top: 40px;
+			padding-bottom: 50px;
+			font-family: 'Inter Regular', sans-serif;
+			span { text-decoration: underline }
+
+			@include media(max-width-1200) {
+				width: 100%;
+				margin: 0 auto;
+				font-size: 15px;
+				line-height: 28px;
+				padding-top: 20px;
+				text-align: center;
+				padding-bottom: 0px;
+			}
+
+			@include media(max-width-768) {
+				padding-bottom: 0px;
+			}
+
+		}
+
+	}
+
+}

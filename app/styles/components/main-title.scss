@@ -1,120 +1,517 @@
 main-title {
 
-	margin:0;
-	width:100%;
-	display:block;
-	position:relative;
+	z-index: 0;
+	width: 100%;
+	display: block;
+	position: relative;
+	margin-bottom: 50px;
+	background-color: #33cc66;
 
-	icon {
+	&[page='index'] {
 
-		float:right;
-		width:373px;
-		height:373px;
-		display:block;
-		background-size:auto 373px;
-		background-repeat:no-repeat;
-		background-position:center top;
-		background-image:url("/static/img/logo.png");
+		height: 770px;
+		margin-bottom: 150px;
 
-		@media (min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-			background-image:url("/static/img/logo@2x.png");
+		@include media(min-width-1200) {
+
+			> content {
+				&:before {
+
+					left: 52%;
+					top: 150px;
+					content: '';
+					width: 1120px;
+					height: 700px;
+					display: block;
+					position: absolute;
+					border-radius: 10px;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
+					background-image: url("/static/img/home/studioheromobile@2x.jpg");
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+						background-image: url("/static/img/home/studioheromobile@2x.jpg");
+					}
+
+				}
+			}
+
 		}
 
-		@include media(max-width-920) {
-			float:none;
-			width:250px;
-			height:250px;
-			margin:0 auto 30px auto;
-			background-size:auto 250px;
+		@include media(max-width-1200) {
+
+			height: auto;
+			margin-bottom: 20vw;
+
+			> content {
+				&:after {
+
+					z-index: 1;
+					content: '';
+					height: auto;
+					bottom: -10vw;
+					display: block;
+					padding-top: 62%;
+					margin-top: -10vw;
+					position: relative;
+					border-radius: 10px;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
+					background-image: url("/static/img/home/studioheromobile@2x.jpg");
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+						background-image: url("/static/img/home/studioheromobile@2x.jpg");
+					}
+
+				}
+			}
+
+		}
+
+		@include media(max-width-768) {
+			margin-bottom: 10vw;
+		}
+
+		@include media(max-width-480) {
+			margin-bottom: 5vw;
 		}
 
 	}
 
-	logo {
+	&[page='agencies'] {
 
-		float:left;
-		width:300px;
-		height:50px;
-		display:block;
-		background-repeat:no-repeat;
-		background-position:center top;
-		background-image:url("/static/img/logo.svg");
+		height: 770px;
+		margin-bottom: 150px;
 
-		@include media(max-width-920) {
-			float:none;
-			width:250px;
-			height:50px;
-			margin:0 auto 30px auto;
+		@include media(min-width-1200) {
+
+			> content {
+				&:before {
+
+					left: 50%;
+					top: 120px;
+					content: '';
+					width: 1171px;
+					height: 759px;
+					display: block;
+					position: absolute;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					background-image: url("/static/img/agencies/studiohero@2x.png");
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+						background-image: url("/static/img/agencies/studiohero@2x.png");
+					}
+
+				}
+			}
+
+		}
+
+		@include media(max-width-1200) {
+
+			height: auto;
+			margin-bottom: 20vw;
+
+			> content {
+				&:after {
+
+					z-index: 1;
+					content: '';
+					height: auto;
+					bottom: -10vw;
+					display: block;
+					padding-top: 62%;
+					margin-top: -10vw;
+					position: relative;
+					border-radius: 10px;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
+					background-image: url("/static/img/home/studioheromobile@2x.jpg");
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+						background-image: url("/static/img/home/studioheromobile@2x.jpg");
+					}
+
+				}
+			}
+
+		}
+
+		@include media(max-width-480) {
+			margin-bottom: 80px;
 		}
 
 	}
 
-	content {
+	&[page='commercial'] {
 
-		h1 {
+		height: 770px;
+		margin-bottom: 150px;
 
-			width:60%;
-			color:#636a75;
-			font-size: 56px;
-			text-align: left;
-			font-weight: 300;
-			padding-top: 70px;
-			line-height: 62px;
-			letter-spacing: -1.5px;
-			font-family:'Poppins Medium', sans-serif;
+		@include media(min-width-1200) {
 
-			@include media(max-width-920) {
-				width:90%;
-				font-size: 36px;
-				max-width:600px;
+			> content {
+				&:before {
+
+					left: 52%;
+					top: 120px;
+					content: '';
+					width: 1087px;
+					height: 759px;
+					display: block;
+					position: absolute;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					background-image: url("/static/img/commercial/studiohero@2x.png");
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+						background-image: url("/static/img/commercial/studiohero@2x.png");
+					}
+
+				}
+			}
+
+		}
+
+		@include media(max-width-1200) {
+
+			height: auto;
+			margin-bottom: 20vw;
+
+			> content {
+				&:after {
+
+					left: 18%;
+					z-index: 1;
+					content: '';
+					height: auto;
+					bottom: -15vw;
+					display: block;
+					padding-top: 70%;
+					margin-top: -10vw;
+					position: relative;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					background-image: url("/static/img/commercial/studiohero@2x.png");
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+						background-image: url("/static/img/commercial/studiohero@2x.png");
+					}
+
+				}
+			}
+
+		}
+
+		@include media(max-width-480) {
+			margin-bottom: 80px;
+		}
+
+	}
+
+	&[page='memberorganisations'] {
+
+		height: 770px;
+		margin-bottom: 150px;
+
+		@include media(min-width-1200) {
+
+			> content {
+				&:before {
+
+					left: 42%;
+					top: 150px;
+					content: '';
+					width: 1200px;
+					height: 700px;
+					display: block;
+					position: absolute;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					background-image: url("/static/img/memberorganisations/studiohero@2x.png");
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+						background-image: url("/static/img/memberorganisations/studiohero@2x.png");
+					}
+
+				}
+			}
+
+		}
+
+		@include media(max-width-1200) {
+
+			height: auto;
+			margin-bottom: 20vw;
+
+			> content {
+				&:after {
+
+					z-index: 1;
+					content: '';
+					height: auto;
+					bottom: -15vw;
+					display: block;
+					padding-top: 70%;
+					margin-top: -10vw;
+					position: relative;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					background-image: url("/static/img/memberorganisations/studiohero@2x.png");
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+						background-image: url("/static/img/memberorganisations/studiohero@2x.png");
+					}
+
+				}
+			}
+
+		}
+
+		@include media(max-width-480) {
+			margin-bottom: 80px;
+		}
+
+	}
+
+	&[page='product'] {
+
+		height: 770px;
+		margin-bottom: 150px;
+
+		@include media(min-width-1200) {
+
+			> content {
+				&:before {
+
+					left: 52%;
+					top: 150px;
+					content: '';
+					width: 1120px;
+					height: 700px;
+					display: block;
+					position: absolute;
+					border-radius: 10px;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
+					background-image: url("/static/img/product/studiohero@2x.jpg");
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+						background-image: url("/static/img/product/studiohero@2x.jpg");
+					}
+
+				}
+			}
+
+		}
+
+		@include media(max-width-1200) {
+
+			margin-bottom: 30vw;
+			background-image: none;
+
+			> content {
+				&:after {
+
+					z-index: 1;
+					content: '';
+					height: auto;
+					bottom: -10vw;
+					display: block;
+					padding-top: 62%;
+					margin-top: -10vw;
+					position: relative;
+					border-radius: 10px;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
+					background-image: url("/static/img/product/studiohero@2x.jpg");
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+						background-image: url("/static/img/product/studiohero@2x.jpg");
+					}
+
+				}
+			}
+
+		}
+
+		@include media(max-width-480) {
+			margin-bottom: 80px;
+		}
+
+	}
+
+	&[page='customers'] {
+
+		height: 770px;
+		margin-bottom: 150px;
+
+		@include media(min-width-1200) {
+
+			> content {
+				&:before {
+
+					left: 52%;
+					top: 150px;
+					content: '';
+					width: 1120px;
+					height: 700px;
+					display: block;
+					position: absolute;
+					border-radius: 10px;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
+					background-image: url("/static/img/customers/studiohero@2x.jpg");
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+						background-image: url("/static/img/customers/studiohero@2x.jpg");
+					}
+
+				}
+			}
+
+		}
+
+		@include media(max-width-1200) {
+
+			height: auto;
+			margin-bottom: 20vw;
+
+			> content {
+				&:after {
+
+					z-index: 1;
+					content: '';
+					height: auto;
+					bottom: -10vw;
+					display: block;
+					padding-top: 62%;
+					margin-top: -10vw;
+					position: relative;
+					border-radius: 10px;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					box-shadow: 0 2px 30px rgba(0,0,0,0.25);
+					background-image: url("/static/img/customers/studiohero@2x.jpg");
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+						background-image: url("/static/img/customers/studiohero@2x.jpg");
+					}
+
+				}
+			}
+
+		}
+
+		@include media(max-width-480) {
+			margin-bottom: 80px;
+		}
+
+	}
+
+	&[page='pricing'] {
+
+		margin-bottom: 0px;
+		background-image: none;
+
+		@include media(max-width-1024) {
+			padding-top: 100px;
+		}
+
+	}
+
+	&[page='contact'] {
+
+		height: 650px;
+		display: block;
+		margin-bottom: 0px;
+		background-image: none;
+		background-size: 2560px;
+		min-height: calc(100vh - 450px);
+
+		@include media(max-width-1200) {
+			height: auto;
+			padding-bottom: 150px;
+		}
+
+		> content > contact-us {
+			padding-top: 100px;
+
+			@include media(max-width-1200) {
 				padding-top: 0px;
-				line-height: 42px;
-				text-align:center;
-				margin:0 auto 30px auto;
-				span { font-size:53px; }
 			}
 
 		}
 
-		h2 {
+	}
 
-			width:45%;
-			color:#636a75;
-			font-size:16px;
-			margin-top:20px;
-			text-align: left;
-			font-weight: 300;
+	h1 {
+
+		width: 50%;
+		color: #ffffff;
+		font-size: 42px;
+		text-align: left;
+		font-weight: 300;
+		line-height: 1.14;
+		padding-top: 160px;
+		padding-bottom: 0px;
+		letter-spacing: -1.5px;
+		font-family: 'Inter Bold', sans-serif;
+		span { color: #71dc94; }
+
+		@include media(max-width-1200) {
+			width: 90%;
+			line-height: 47px;
+			position: relative;
+			br { display: none; }
+		}
+
+		@include media(max-width-480) {
+			width: 100%;
+			font-size: 32px;
+			line-height: 47px;
+			padding-top: 100px;
+			position: relative;
+			br { display: none; }
+		}
+
+	}
+
+	h2 {
+
+		width: 40%;
+		color: #ffffff;
+		font-size: 18px;
+		text-align: left;
+		font-weight: 500;
+		margin-top: 20px;
+		line-height: 1.53;
+		margin-bottom: 34px;
+		letter-spacing: 0.1px;
+		letter-spacing: -0.15px;
+		font-family: 'Inter Medium', sans-serif;
+		span { color: #33cc66; }
+
+		@include media(max-width-1200) {
+			top: auto;
+			width: 90%;
+			position: relative;
+			br { display: none; }
+		}
+
+		@include media(max-width-480) {
+			width: 100%;
+			font-size: 18px;
+			margin-top: 20px;
 			line-height: 26px;
-			margin-bottom:34px;
-			letter-spacing: 0.1px;
-			span { color:#33cc66; }
-			letter-spacing: -0.15px;
-			font-family:'Poppins Regular', sans-serif;
-
-			@include media(max-width-1400) {
-				font-size:16px;
-				font-weight:400;
-				line-height:26px;
-			}
-
-			@include media(max-width-920) {
-				width:80%;
-				font-size:16px;
-				font-weight:400;
-				line-height:26px;
-				text-align:center;
-				margin:0 auto 30px auto;
-			}
-
-			@include media(max-width-920) {
-				width:90%;
-				font-size:14px;
-				font-weight:400;
-				line-height:26px;
-				text-align:center;
-				margin:0 auto 30px auto;
-			}
-
+			margin-bottom: 30px;
 		}
 
 	}

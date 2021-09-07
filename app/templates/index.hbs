@@ -1,21 +1,50 @@
-{{#-in-element (document-head)}}
-	<title>SurrealDB</title>
-	<meta name="description" content="The next generation serverless database.">
+{{#in-element (document-head) insertBefore=null}}
+	<title>BrandSafe | The easiest-to-use Digital Asset Management system</title>
+	<meta name="title" property="og:title" content="The easiest-to-use Digital Asset Management system">
+	<meta name="description" content="Save time and money for your company, and for everyone you work with - by creating an accessible place for all your brand assets, and ensuring that the right users have access to the latest materials - guaranteeing brand integrity.">
+	<meta name="description" property="og:description" content="Save time and money for your company, and for everyone you work with - by creating an accessible place for all your brand assets, and ensuring that the right users have access to the latest materials - guaranteeing brand integrity.">
 	<meta name="image" property="og:image" content="/static/img/preview/main.jpg">
 	<meta property="og:type" content="website">
-{{/-in-element}}
+{{/in-element}}
 
-<div>
+<MainTitle>
+	<h1>
+		The easiest-to-use
+		Digital Asset Management system<span>.</span>
+	</h1>
+	<h2>
+		Save time and money for your company, and for everyone you work with - by creating an accessible place for all your brand assets, and ensuring that the right users have access to the latest materials - guaranteeing your brand integrity.
+	</h2>
+	<BoxButton white @link="contact" @text="Book a demo" />
+</MainTitle>
 
-	<MainTitle>
-		<h1>
-			A highly-scalable NewSQL database
-		</h1>
-		<h2>
-			With an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next generation serverless database.
-		</h2>
-	</MainTitle>
+<content>
+	<Clientlogos></Clientlogos>
+</content>
 
-	<SignupForm />
+<Titles>
+	<h1>
+		How can BrandSafe help your company?
+	</h1>
+	<line></line>
+</Titles>
 
-</div>
+<content>
+	<WalkThrough @side="l" @img="/static/img/home/feature1@2x.png" @title="Saves time (and money)" @text="Reduce time spent hunting for images - while wondering which version, what size, and what type of image file you need -  and relieve pressure on your design department, so that they don’t constantly need to re-invent the wheel." />
+	<WalkThrough @side="r" @img="/static/img/home/feature3@2x.png" @title="Keeps marketing departments, customers, distributors and franchisees happy" @text="Enable employees or third parties to access permitted items - whether images, PDFs, guidelines, presentations, documents - without bothering your staff (and taking up valuable time)." />
+	<WalkThrough @side="l" @img="/static/img/home/feature4@2x.png" @title="Enables secure collaboration, whether remote or in the office " @text="Once access permissions have been established, staff and outside users can safely get on with their tasks, while comments/edits/approvals can be communicated directly on each item (thereby saving time, again)." />
+	<WalkThrough @side="r" @img="/static/img/home/feature2@2x.png" @title="Analyses how your assets are being used " @text="Work out which campaigns have been most successful, which items have been used (from where, and by whom), and use the results for effective forward planning." />
+	<WalkThrough @side="l" @img="/static/img/home/feature5@2x.png" @title="Helps maintain brand integrity" @text="Your image and reputation are important, as is your brand awareness. But if different versions or styles of your message appear, your credibility will be affected. Brand integrity is worth its weight in gold." />
+	<clear></clear>
+</content>
+
+<content>
+	<Customers></Customers>
+</content>
+
+<Clients>
+	<Testimony @side="l" @num="1" @img="/static/img/home/clients@2x.jpg" @logo="/static/img/home/aberlogo.svg" @text="Aber Instruments Ltd, a global biotechnology company, was looking to improve the process by which its distributors and partners could access images and files in appropriate formats, and to save staff time in finding, editing and cropping images. The creation of a new website, together with an increase in brand assets, prompted the search for a solution." />
+	<clear></clear>
+</Clients>
+
+<BookADemo></BookADemo>

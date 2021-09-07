@@ -1,0 +1,125 @@
+customers {
+
+	.grid-container {
+		display: grid;
+		grid-gap: 0px;
+		border-radius: 15px;
+		padding: 0px 0 130px 0;
+		background-color: #ffffff;
+		grid-template-rows: repeat(4, auto);
+		grid-template-columns: repeat(2, 1fr);
+
+		@include media(max-width-961) {
+			grid-template-rows: repeat(4, auto);
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		@include media(max-width-641) {
+			padding: 0px 0 100px 0;
+		}
+
+	}
+
+	.grid-container > div {
+		padding: 20px;
+		font-size: 30px;
+		text-align: center;
+		border-radius: 15px;
+		background-color: #ffffff;
+	}
+
+	h1 {
+		color: #333333;
+		font-size: 30px;
+		text-align: left;
+		font-weight: 300;
+		margin-top: 45px;
+		line-height: 40px;
+		padding-bottom: 0px;
+		letter-spacing: -1.19px;
+		font-family: 'Inter Medium', sans-serif;
+
+		@include media(max-width-1200) {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		@include media(max-width-768) {
+			font-size: 26px;
+			padding-top: 0px;
+			line-height: 40px;
+			letter-spacing: -2px;
+		}
+
+	}
+
+	h2 {
+		color: #333333;
+		font-size: 24px;
+		line-height: 1.1;
+		font-weight: 400;
+		text-align: left;
+		font-weight: 600;
+		font-weight: 600;
+		margin: 20px 0 0px 0px;
+		letter-spacing: -1.19px;
+		font-family: 'Inter Medium', sans-serif;
+
+		@include media(max-width-768) {
+			font-size: 19px;
+		}
+
+	}
+
+	h3 {
+		color: #a3a4a9;
+		font-size: 18px;
+		text-align: left;
+		font-weight: 600;
+		padding-top: 25px;
+		letter-spacing: 0px;
+		letter-spacing: -1.19px;
+		font-family: 'Inter Regular', sans-serif;
+
+		@include media(max-width-1200) {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+	}
+
+	line1 {
+
+		width: 100%;
+		display: block;
+		text-align: left;
+		border-radius: 2px;
+		margin-bottom: 50px;
+		justify-content: center;
+		border-top: 2px solid #33cc66;
+		border-bottom: 2px solid #33cc66;
+
+	}
+
+	line2 {
+
+		width: 100%;
+		display: block;
+		text-align: left;
+		border-radius: 2px;
+		margin-bottom: 50px;
+		justify-content: center;
+		border-top: 2px solid #84e8a6;
+		border-bottom: 2px solid #84e8a6;
+
+	}
+
+	img {
+
+		float: left;
+		height: 28px;
+		margin-top: 25px;
+
+	}
+
+}

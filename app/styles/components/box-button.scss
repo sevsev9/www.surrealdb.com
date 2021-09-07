@@ -1,0 +1,129 @@
+box-button {
+
+	float: left;
+	width: auto;
+	height: 65px;
+	color: white;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	box-shadow: none;
+	line-height: 22px;
+	text-align: center;
+	border-radius: 10px;
+	margin-bottom: 100px;
+	display: inline-block;
+	background-color: #33cc66;
+	transition: box-shadow 0.3s ease-in-out;
+
+	@include media(max-width-480) {
+		width: 100%;
+		font-size: 14px;
+		margin-bottom: 50px;
+	}
+
+	&:hover {
+		box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+	}
+
+	a {
+		display: block;
+		padding: 20px 30px 15px 30px;
+	}
+
+	&[white] {
+		float: left;
+		margin-bottom: 40px;
+		background-color: #ffffff;
+
+		span {
+			color: #33cc66;
+			font-size: 16px;
+			font-family: 'Inter Medium', sans-serif;
+		}
+
+		@include media(max-width-480) {
+			float: none;
+			width: 100%;
+			display: block;
+			text-align: center;
+			margin-bottom: 50px;
+		}
+
+	}
+
+	&[bookademo] {
+		margin-bottom: 0px;
+	}
+
+	&[testimony] {
+		float: left;
+		margin-bottom: 40px;
+		background-color: #ffffff;
+
+		span {
+			color: #33cc66;
+			font-size: 16px;
+			font-family: 'Inter Medium', sans-serif;
+		}
+
+		@include media(max-width-480) {
+			float: none;
+			width: 100%;
+			display: block;
+			text-align: center;
+			margin-bottom: 0px;
+		}
+
+	}
+
+	&[who] {
+		width: auto;
+		color: white;
+		color: #ffffff;
+		font-size: 15px;
+		margin-top: 20px;
+		box-shadow: none;
+		text-align: center;
+		border-radius: 10px;
+		display: inline-block;
+		border: 2px solid #ffffff;
+		background-color: Transparent;
+
+		&:hover {
+			color: #333333;
+			background-color: #30c160;
+		}
+
+		@include media(max-width-768) {
+			float: none;
+			width: 200px;
+			display: block;
+			text-align: center;
+			margin: 50px auto 50px auto;
+		}
+
+	}
+
+	&[walkthrough] {
+
+		@include media(max-width-1200) {
+			float: none;
+			width: 200px;
+			display: block;
+			text-align: center;
+			margin: 50px auto 50px auto;
+		}
+
+	}
+
+	span {
+		color: #ffffff;
+		font-size: 16px;
+		font-family: 'Inter Medium', sans-serif;
+		@include media(max-width-480) {
+			font-size: 14px;
+		}
+	}
+
+}

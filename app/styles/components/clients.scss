@@ -1,0 +1,19 @@
+clients {
+
+	z-index: 1;
+	width: 100%;
+	height: auto;
+	display: block;
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-color: #33cc66;
+
+	&[page='customers'] {
+
+		margin-top: 100px;
+		background-image: none;
+
+	}
+
+}

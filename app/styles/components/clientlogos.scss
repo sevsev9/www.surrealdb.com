@@ -1,0 +1,21 @@
+clientlogos {
+
+	height: 300px;
+	display: block;
+	align-items: center;
+	background-size: 1050px;
+	justify-content: center;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("/static/img/home/clientlogos@2x.png");
+
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		background-image: url("/static/img/home/clientlogos@2x.png");
+	}
+
+	@include media(max-width-1200) {
+		height: 150px;
+		background-size: 100%;
+	}
+
+}

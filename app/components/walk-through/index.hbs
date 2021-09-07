@@ -1,0 +1,15 @@
+<walk-through side={{@side}} num={{@num}} page={{route-name}} ...attributes>
+	<div>
+		<img src={{@img}} alt={{@title}}/>
+	</div>
+	<div>
+		<h1>{{@title}}</h1>
+		<h2>{{@text}}</h2>
+		<box-button walkthrough>
+			<LinkTo @route="contact">
+				<span>Book a demo</span>
+			</LinkTo>
+		</box-button>
+	</div>
+	<clear></clear>
+</walk-through>

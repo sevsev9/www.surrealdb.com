@@ -1,0 +1,41 @@
+{{on (document) "scroll" this.scrolled}}
+
+<header special={{this.special}} {{did-insert this.created}}>
+
+	<content page={{@route-name}}>
+
+		<LinkTo @route="index" class="logo"></LinkTo>
+
+		<input class="menu-btn" type="checkbox" id="menu-btn" />
+
+		<label class="menu-icon" for="menu-btn">
+			<span class="navicon"></span>
+		</label>
+
+		<ul class="menu">
+			<li>
+				<LinkTo @route="index">Home</LinkTo>
+			</li>
+			<li>
+				<LinkTo @route="product">The product</LinkTo>
+			</li>
+			<li>
+				<LinkTo @route="who">Who is it for?</LinkTo>
+			</li>
+			<li>
+				<LinkTo @route="customers">What our clients say</LinkTo>
+			</li>
+			<li>
+				<LinkTo @route="pricing">Pricing</LinkTo>
+			</li>
+			<li>
+				<LinkTo @route="contact">Contact</LinkTo>
+			</li>
+			<li>
+				<a href="https://app.brandsafe.io" rel="noopener noreferrer">Login</a>
+			</li>
+		</ul>
+
+	</content>
+
+</header>

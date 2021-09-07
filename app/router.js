@@ -1,5 +1,5 @@
 import EmberRouter from '@ember/routing/router';
-import config from './config/environment';
+import config from 'surreal/config/environment';
 
 export default class Router extends EmberRouter {
 	location = config.locationType;
@@ -8,8 +8,13 @@ export default class Router extends EmberRouter {
 
 Router.map(function() {
 
-	this.route('faqs');
+	this.route('product');
+	this.route('customers');
+	this.route('who');
+	this.route('agencies');
+	this.route('commercial');
+	this.route('memberorganisations');
 	this.route('contact');
-	this.route('case-study');
+	this.route('pricing');
 
 });

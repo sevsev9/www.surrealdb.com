@@ -1,95 +1,114 @@
-@import "font";
+@import "fonts";
 @import "@ascua/visuals";
+@import "components/footer";
+@import "components/header";
+@import "components/titles";
+@import "components/clients";
+@import "components/pricing";
+@import "components/testimony";
+@import "components/customers";
+@import "components/case-study";
+@import "components/box-button";
+@import "components/contact-us";
 @import "components/main-title";
-@import "components/signup-form";
+@import "components/what-we-do";
+@import "components/book-a-demo";
+@import "components/clientlogos";
+@import "components/walk-through";
+@import "components/features-entry";
+@import "components/main-title-who1";
+@import "components/main-title-who2";
+@import "components/main-title-who3";
+@import "components/who-walk-through";
 
-html {
-	width:100%;
+html, body {
+	overflow-x: hidden;
 }
 
 html {
-	touch-action:manipulation;
-	-webkit-tap-highlight-color:transparent;
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
 }
 
 body {
-	margin:0;
-	display:flex;
-	overflow:auto;
-	min-height:100vh;
-	align-items:center;
-	justify-content:center;
-	background: rgb(24,26,31);
-	background-attachment:fixed;
-	background-repeat: no-repeat;
-	background: linear-gradient(27deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
-	background: -moz-linear-gradient(27deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
-	background: -webkit-linear-gradient(27deg, rgba(24,26,31,1) 0%, rgba(43,49,58,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#181a1f",endColorstr="#2b313a",GradientType=1);
+	background: #ffffff;
+	font-family: 'Inter', serif;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: subpixel-antialiased !important;
 }
 
-div {
-	margin:auto;
-	padding:50px 0 50px 0;
-}
-
-content {
-
-	width:1000px;
-	display:block;
-	margin:0 auto 0 auto;
-
-	@include media(max-width-1300) {
-		width:972px;
-	}
-
-	@include media(max-width-1172) {
-		width:972px;
-	}
-
-	@include media(max-width-1024) {
-		width:872px;
-	}
-
-	@include media(max-width-920) {
-		width:90%;
-		max-width:500px;
-	}
-
+a, a i, a span {
+	color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 app-modal-cover {
 
-	background-color:rgba(0, 0, 0, 0.7);
+	background-color: rgba(255, 255, 255, 0.7);
 
 	app-modal-front {
 
-		width:500px;
-		height:auto;
-		padding:25px;
-		color:#ffffff;
-		font-size:16px;
-		line-height:24px;
-		font-family:'Inter', sans-serif;
-		margin:15% auto 0 auto;
-		background-color:#181a1f;
-		box-shadow:0 5px 20px rgba(0,0,0,0.2);
+		width: 500px;
+		height: auto;
+		padding: 25px;
+		color: #ffffff;
+		font-size: 18px;
+		line-height: 24px;
+		border-radius: 10px;
+		margin: 15% auto 0 auto;
+		background-color: #33cc66;
+		box-shadow: 0 2px 30px rgba(0,0,0,0.25);
 
-		@include media(max-width-481) {
-			width: 90vw;
+	}
+
+	.btn {
+		padding: 10px 20px;
+		border-radius: 10px;
+		display: inline-block;
+		border: 2px solid #ffffff;
+		transition: background .3s;
+
+		&:hover {
+			background: #ffffff;
 		}
+	}
 
-		a {
-			color:#ffffff;
-		}
+}
 
-		line {
-			width:100%;
-			display:block;
-			margin:20px 0 20px 0;
-			border-bottom:0px solid #efefef;
-		}
+content {
 
+	width: 1050px;
+	display: block;
+	position: relative;
+	margin: 0 auto 0 auto;
+
+	@include media(max-width-1200) {
+		width: 872px;
+	}
+
+	@include media(max-width-1024) {
+		width: 85%;
+	}
+
+}
+
+content-pricing {
+
+	width: 1150px;
+	display: block;
+	margin: 0 auto 0 auto;
+
+	@include media(max-width-1200) {
+		width: 972px;
+	}
+
+	@include media(max-width-1024) {
+		width: 872px;
+	}
+
+	@include media(max-width-768) {
+		width: 90%;
 	}
 
 }
