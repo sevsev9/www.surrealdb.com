@@ -35,7 +35,20 @@ box-button {
 	}
 
 	&[bookademo] {
-		margin-bottom: 0px;
+		margin-bottom: 150px;
+		width: 50%;
+
+
+		@include media(max-width-1200) {
+			width: 100%;
+			display: block;
+			margin: 0px auto 100px auto;
+		}
+
+		@include media(max-width-480) {
+			padding-top: 50px;
+		}
+
 	}
 
 	&[walkthrough] {

@@ -5,7 +5,12 @@ book-a-demo {
 	height: auto;
 	display: block;
 	position: relative;
+	background-size: 900px;
 	background-color: #2b313a;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-image: url("/static/img/home/honeycomb.png");
+
 
 	line {
 
@@ -24,7 +29,7 @@ book-a-demo {
 
 	h1 {
 
-		width: 50%;
+		width: 100%;
 		color: #ffffff;
 		font-size: 42px;
 		text-align: left;
@@ -37,15 +42,15 @@ book-a-demo {
 		span { color: #FF009E; }
 
 		@include media(max-width-1200) {
-			width: 100%;
 			font-size: 42px;
 			line-height: 47px;
-			padding-top: 50px;
+			padding-top: 100px;
 		}
 
 		@include media(max-width-480) {
 			font-size: 32px;
 			line-height: 47px;
+			padding-top: 50px;
 		}
 
 	}
