@@ -8,6 +8,17 @@ case-study {
 		margin: 0px auto 0px auto;
 	}
 
+	&[page='features'] {
+
+		margin: 150px auto 0px auto;
+
+		@include media(max-width-768) {
+			height: auto;
+			margin: 50px auto 0px auto;
+		}
+
+	}
+
 	&[side='l'] {
 		div:nth-of-type(1) { float: left; }
 		div:nth-of-type(2) { float: right; }

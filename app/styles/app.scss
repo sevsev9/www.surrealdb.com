@@ -24,9 +24,13 @@ html {
 
 body {
 	background: #181a1f;
+	background-size: 1000px;
 	font-family: 'Inter', serif;
+	background-repeat: no-repeat;
+	background-position: center left -4%;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: subpixel-antialiased !important;
+	background-image: url("/static/img/home/bodybackground@2x.png");
 }
 
 a, a i, a span {
