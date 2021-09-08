@@ -11,28 +11,12 @@ book-a-demo {
 	background-position: top center;
 	background-image: url("/static/img/home/honeycomb.png");
 
-
-	line {
-
-		width: 50px;
-		margin: 0 auto;
-		display: block;
-		color: #ff3cac;
-		margin-top: 30px;
-		text-align: center;
-		border-radius: 0px;
-		margin-bottom: 50px;
-		border-top: 5px solid;
-		justify-content: center;
-
-	}
-
 	h1 {
 
 		width: 100%;
 		color: #ffffff;
 		font-size: 42px;
-		text-align: left;
+		text-align: center;
 		font-weight: 600;
 		line-height: 1.14;
 		padding-top: 100px;
@@ -42,6 +26,7 @@ book-a-demo {
 		span { color: #ff3cac; }
 
 		@include media(max-width-1200) {
+			text-align: left;
 			font-size: 42px;
 			line-height: 47px;
 			padding-top: 100px;

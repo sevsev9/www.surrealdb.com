@@ -78,26 +78,6 @@ main-title {
 
 	}
 
-	&[page='features'] {
-		width:100%;
-		height:750px;
-		display:block;
-		background-size:2560px;
-		background-repeat:no-repeat;
-		background-position:top center;
-
-		@include media(max-width-1281) {
-			height:auto;
-			margin-bottom: 150px;
-		}
-
-		@include media(max-width-641) {
-			height:auto;
-			margin-bottom: 150px;
-		}
-
-	}
-
 	h1 {
 
 		width: 60%;

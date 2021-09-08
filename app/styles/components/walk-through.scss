@@ -17,6 +17,12 @@ walk-through {
 		margin: 150px auto 0px auto;
 		background-image: none;
 
+		@include media(max-width-1281) {
+			height:auto;
+			padding-top: 70px;
+			margin-bottom: 150px;
+		}
+
 	}
 
 	&[side='l'] {
