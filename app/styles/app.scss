@@ -24,13 +24,13 @@ html {
 
 body {
 	background: #181a1f;
-	background-size: 1000px;
+	background-size: 1000px, 1500px;
 	font-family: 'Inter', serif;
 	background-repeat: no-repeat;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: subpixel-antialiased !important;
 	background-position: center left -4%, bottom 20% right -4%;
-	background-image: url("/static/img/home/bodybackground@2x.png"), url("/static/img/home/bodybackground@2x.png");
+	background-image: url("/static/img/home/bodybackground@2x.png"), url("/static/img/home/bodybackground2@2x.png");
 }
 
 a, a i, a span {
