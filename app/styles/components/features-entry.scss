@@ -34,7 +34,14 @@ features-entry {
 	}
 
 	&:last-of-type {
-		margin-bottom: 0px;
+		margin-bottom: 95px;
+
+		&[page='features'] {
+
+			margin-bottom: 0px;
+
+		}
+
 	}
 
 	img {
