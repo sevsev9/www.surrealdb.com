@@ -14,11 +14,11 @@ walk-through {
 
 	&[page='features'] {
 
-		margin: 150px auto 0px auto;
 		background-image: none;
+		margin: 150px auto 0px auto;
 
 		@include media(max-width-1281) {
-			height:auto;
+			height: auto;
 			padding-top: 70px;
 			margin-bottom: 150px;
 		}

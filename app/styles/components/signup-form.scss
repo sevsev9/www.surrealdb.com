@@ -1,12 +1,12 @@
 signup-form {
 
-	display:block;
-	margin-bottom:10px;
+	display: block;
+	margin-bottom: 10px;
 
 	@include media(max-width-550) {
-		margin-top:50px;
+		margin-top: 50px;
 		&[purple] {
-			width:100%;
+			width: 100%;
 		}
 	}
 
@@ -20,40 +20,40 @@ signup-form {
 
 		input {
 
-			width:250px;
-			height:60px;
-			border:none;
-			outline:none;
-			cursor:pointer;
-			font-size:15px;
+			width: 250px;
+			height: 60px;
+			border: none;
+			outline: none;
 			color: #FF3CAC;
-			box-shadow:none;
+			cursor: pointer;
+			font-size: 15px;
+			box-shadow: none;
 			text-align: left;
 			display: inline-block;
 			border: 1px solid #2b313a;
-			padding:0px 30px 0px 30px;
+			padding: 0px 30px 0px 30px;
 			border-top-left-radius: 6px;
 			background-color: Transparent;
 			border-bottom-left-radius: 6px;
 			font-family:'Poppins Regular', sans-serif;
 
 			&::placeholder {
-				opacity:1;
-				color:#ffffff;
+				opacity: 1;
+				color: #ffffff;
 			}
 
 			&:-ms-input-placeholder {
-				color:#ffffff;
+				color: #ffffff;
 			}
 
 			&::-ms-input-placeholder {
-				color:#ffffff;
+				color: #ffffff;
 			}
 
 			svg { float:right; margin-right:-10px; }
 
 			@include media(max-width-550) {
-				width:100%;
+				width: 100%;
 				text-align: center;
 				margin-bottom: 10px;
 			}
@@ -62,17 +62,17 @@ signup-form {
 
 		button {
 
-			height:60px;
-			border:none;
-			outline:none;
-			color:#ffffff;
-			cursor:pointer;
-			font-size:15px;
-			box-shadow:none;
-			margin-left:-10px;
+			height: 60px;
+			border: none;
+			outline: none;
+			color: #ffffff;
+			cursor: pointer;
+			font-size: 15px;
+			box-shadow: none;
+			margin-left: -10px;
 			text-align: center;
 			display: inline-block;
-			padding:0px 30px 0px 30px;
+			padding: 0px 30px 0px 30px;
 			border-top-right-radius: 6px;
 			border-bottom-right-radius: 6px;
 			transition:box-shadow 0.3s ease-in-out;
@@ -83,12 +83,12 @@ signup-form {
 			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8700ff",endColorstr="#ff3cac",GradientType=1);
 
 			@include media(max-width-550) {
-				width:100%;
+				width: 100%;
 				margin: 0px;
 			}
 
 			&:hover {
-				box-shadow:0 2px 20px rgba(0,0,0,0.3);
+				box-shadow: 0 2px 20px rgba(0,0,0,0.3);
 			}
 
 
@@ -96,14 +96,14 @@ signup-form {
 
 		message {
 
-			color:#6e00ff;
-			display:block;
-			margin-top:10px;
+			color: #6e00ff;
+			display: block;
+			margin-top: 10px;
 			padding-left: 30px;
 
 			@media only screen and (max-width: 600px) {
-				width:100%;
-				text-align:center;
+				width: 100%;
+				text-align: center;
 			}
 
 		}

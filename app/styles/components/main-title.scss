@@ -16,14 +16,14 @@ main-title {
 			> content {
 				&:before {
 
-					z-index: -5;
 					left: 34%;
-					top:-50px;
+					top: -50px;
+					z-index: -5;
 					content: '';
 					width: 1000px;
 					height: 1000px;
 					display: block;
-					border-radius:0px;
+					border-radius: 0px;
 					position: absolute;
 					background-size: 100%;
 					background-repeat: no-repeat;
@@ -46,14 +46,14 @@ main-title {
 			> content {
 				&:after {
 
-					z-index: -5;
 					left: 34%;
-					top:-50px;
+					top: -50px;
+					z-index: -5;
 					content: '';
 					width: 1000px;
 					height: 1000px;
 					display: block;
-					border-radius:0px;
+					border-radius: 0px;
 					position: absolute;
 					background-size: 100%;
 					background-repeat: no-repeat;
@@ -88,8 +88,8 @@ main-title {
 		line-height: 1.14;
 		padding-top: 250px;
 		padding-bottom: 0px;
-		letter-spacing: -0.5px;
 		margin-bottom: 34px;
+		letter-spacing: -0.5px;
 		font-family: 'Poppins', sans-serif;
 		span { color: #ff3cac; }
 

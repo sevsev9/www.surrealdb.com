@@ -28,9 +28,9 @@ titles {
 		@include media(max-width-1024) {
 
 			font-size: 30px;
+			text-align: left;
 			line-height: 47px;
 			position: relative;
-			text-align: left;
 			br { display: none; }
 		}
 

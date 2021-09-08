@@ -38,7 +38,6 @@ box-button {
 		width: 50%;
 		margin-left: 25%;
 		margin-right: 25%;
-		float: center;
 
 		@include media(max-width-1200) {
 			width: 100%;
