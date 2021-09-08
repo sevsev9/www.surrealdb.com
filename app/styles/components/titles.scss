@@ -5,11 +5,11 @@ titles {
 	margin: 0px auto 100px auto;
 
 	@include media(max-width-1200) {
-		margin: 100px auto 50px auto;
+		margin: 100px auto 100px auto;
 	}
 
 	@include media(max-width-768) {
-		margin: 0px auto 0px auto;
+		margin: 0px auto 50px auto;
 	}
 
 	h1 {
@@ -25,18 +25,10 @@ titles {
 		font-family: 'Inter Medium', sans-serif;
 		span { color: #ff3cac; }
 
-		@include media(max-width-1024) {
-
-			font-size: 30px;
-			text-align: left;
-			line-height: 47px;
-			position: relative;
-			br { display: none; }
-		}
-
 		@include media(max-width-768) {
 			width: 100%;
 			font-size: 30px;
+			text-align: left;
 			line-height: 40px;
 			position: relative;
 			br { display: none; }

@@ -58,13 +58,13 @@ box-button {
 			float: left;
 			width: 200px;
 			display: block;
-			margin: 50px auto 50px auto;
+			margin: 50px auto 0px auto;
 		}
 
 		@include media(max-width-768) {
 			width: 200px;
 			display: block;
-			margin: 50px auto 50px auto;
+			margin: 50px auto 0px auto;
 		}
 
 	}

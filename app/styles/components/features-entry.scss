@@ -34,13 +34,7 @@ features-entry {
 	}
 
 	&:last-of-type {
-		margin-bottom: 95px;
-
-		@include media(max-width-768) {
-			margin-bottom: 100px;
-
-		}
-
+		margin-bottom: 0px;
 	}
 
 	img {

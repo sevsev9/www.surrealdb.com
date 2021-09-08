@@ -2,28 +2,7 @@ walk-through {
 
 	display: block;
 	position: relative;
-	margin: 0px auto 50px auto;
-
-	@include media(max-width-1200) {
-		margin: 0px auto 50px auto;
-	}
-
-	@include media(max-width-768) {
-		margin: 0px auto 0px auto;
-	}
-
-	&[page='features'] {
-
-		background-image: none;
-		margin: 150px auto 0px auto;
-
-		@include media(max-width-1281) {
-			height: auto;
-			padding-top: 70px;
-			margin-bottom: 150px;
-		}
-
-	}
+	margin: 0px auto 100px auto;
 
 	&[side='l'] {
 		div:nth-of-type(1) { float: left; }
@@ -46,11 +25,22 @@ walk-through {
 	&:last-of-type {
 
 		@include media(max-width-1200) {
-			margin: 0px auto 50px auto;
+			margin: 0px auto 100px auto;
 		}
 
-		@include media(max-width-768) {
-			margin: 0px auto 0px auto;
+	}
+
+	&:first-of-type {
+
+		&[page='features'] {
+
+			margin: 150px auto 100px auto;
+
+			@include media(max-width-768) {
+				height: auto;
+				margin: 120px auto 100px auto;
+			}
+
 		}
 
 	}
@@ -58,16 +48,19 @@ walk-through {
 
 	div:nth-of-type(1) {
 
-		height: 500px;
-
-		@include media(max-width-1025) {
-			width: 230px;
-			height: auto;
-		}
-
 		img {
 
 			height: 433px;
+
+			@include media(max-width-1200) {
+				height: 280px;
+
+			}
+
+			@include media(max-width-880) {
+				height: 260px;
+
+			}
 
 			@include media(max-width-768) {
 				width: 100%;
@@ -95,26 +88,24 @@ walk-through {
 			width: 40%;
 		}
 
-		@include media(max-width-1024) {
-			width: 35%;
-		}
-
 		h1 {
 
 			color: #ffffff;
 			font-size: 30px;
 			text-align: left;
 			font-weight: 300;
-			margin-top: 45px;
-			line-height: 40px;
-			padding-bottom: 0px;
-			letter-spacing: 0px;
+			line-height: normal;
 			font-family: 'Inter Medium', sans-serif;
 
 			@include media(max-width-1200) {
 				font-size: 26px;
-				padding-top: 0px;
 				line-height: 32px;
+			}
+
+			@include media(max-width-768) {
+				width: 100%;
+				height: auto;
+				margin-top: 40px;
 			}
 
 		}

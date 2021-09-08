@@ -11,6 +11,22 @@ book-a-demo {
 	background-position: top center;
 	background-image: url("/static/img/home/honeycomb.png");
 
+	@include media(max-width-1024) {
+		height: auto;
+		margin: 100px auto 0px auto;
+	}
+
+	&[page='features'] {
+
+		margin: 150px auto 0px auto;
+
+		@include media(max-width-768) {
+			height: auto;
+			margin: 100px auto 0px auto;
+		}
+
+	}
+
 	h1 {
 
 		width: 100%;
