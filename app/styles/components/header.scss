@@ -77,7 +77,6 @@ header {
 				font-size: 15px;
 				margin-top: 28px;
 				margin-left: 40px;
-				border-radius: 0px;
 				text-align: center;
 				border-radius: 6px;
 				background: rgb(135,0,255);
@@ -86,11 +85,6 @@ header {
 				background: linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8700ff",endColorstr="#ff3cac",GradientType=1);
 				transition: box-shadow 0.3s ease-in-out;
-
-				&:hover {
-					color: #ffffff;
-					background-color: #ff3cac;
-				}
 
 				@include media(max-width-1200) {
 					margin: 0;
