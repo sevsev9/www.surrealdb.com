@@ -11,7 +11,6 @@ box-button {
 	line-height: 22px;
 	border-radius: 6px;
 	text-align: center;
-	margin-bottom: 100px;
 	display: inline-block;
 	background: -moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
 	background: -webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
@@ -59,13 +58,9 @@ box-button {
 			width: 200px;
 			display: block;
 			margin: 50px auto 0px auto;
+
 		}
 
-		@include media(max-width-768) {
-			width: 200px;
-			display: block;
-			margin: 50px auto 0px auto;
-		}
 
 	}
 
