@@ -41,30 +41,21 @@ features {
 
 		h1 {
 
-			color:#ffffff;
-			font-size:36px;
-			line-height:1.2;
-			font-weight:600;
+			color: #ffffff;
+			font-size: 30px;
 			text-align: center;
-			letter-spacing: -1px;
-			span { color:#00ceff; }
+			font-weight: 300;
+			line-height: normal;
+			font-family: 'Inter Medium', sans-serif;
 
-			@include media(max-width-961) {
-				font-size:30px;
-				line-height:47px;
-				position:relative;
-				text-align: center;
-				br { display:none; }
-				letter-spacing: -1px;
+			@include media(max-width-1200) {
+				font-size: 26px;
+				line-height: 32px;
 			}
 
-			@include media(max-width-641) {
-				width:90%;
-				font-size:26px;
-				margin:0 5% 0 5%;
-				line-height:40px;
-				position:relative;
-				br { display:none; }
+			@include media(max-width-768) {
+				width: 100%;
+				height: auto;
 			}
 
 		}
@@ -72,32 +63,30 @@ features {
 		h2 {
 
 			width:50%;
-			color:#a2a7b3;
+			color:#636a75;
 			margin: 0 auto;
-			font-size:22px;
+			font-size:18px;
 			text-align: center;
-			font-weight:400;
+			font-weight:500;
 			line-height:1.53;
-			padding-top: 20px;
+			padding-top: 30px;
 			letter-spacing: 0px;
 			padding-bottom: 50px;
+			font-family: 'Inter Medium', sans-serif;
 			span { text-decoration: underline }
 
 			@include media(max-width-961) {
 				width: 90%;
 				height: auto;
-				padding-top:0;
 				font-size:18px;
-				margin: auto 5%;
+				margin: 0 auto;
 				line-height:1.53;
 				text-align: center;
 			}
 
 			@include media(max-width-641) {
 				width: 90%;
-				padding-top:0;
 				font-size:16px;
-				margin: auto 5%;
 				line-height:28px;
 			}
 
