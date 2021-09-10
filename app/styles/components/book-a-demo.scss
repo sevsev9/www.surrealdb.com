@@ -13,7 +13,7 @@ book-a-demo {
 
 	@include media(max-width-1024) {
 		height: auto;
-		margin: 100px auto 0px auto;
+		margin: 0px auto 0px auto;
 	}
 
 	&[page='features'] {

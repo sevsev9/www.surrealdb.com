@@ -1,54 +1,35 @@
 features-entry {
 
-	float: left;
-	height: 300px;
-	padding: 40px;
-	display: block;
-	margin-right: 1%;
-	position: relative;
-	text-align: center;
-	border-width: 10px;
-	border-radius: 0px;
-	width: calc(96% / 3);
-	background-color: #2b313a;
+	.grid-container {
+		padding: 0px;
+		display: grid;
+		grid-gap: 20px 20px;
+		margin-bottom: 100px;
+		background-color: #181a1f;
+		grid-template-columns: auto auto auto;
 
-	@include media(max-width-1200) {
-		height: 350px;
-	}
-
-	@include media(max-width-768) {
-		float: none;
-		width: 100%;
-		height: auto;
-		margin: 25px auto 25px auto;
-	}
-
-	&:first-of-type {
-		margin-top: 0px;
-
-		@include media(max-width-768) {
-			margin-top: 0px;
-
-		}
-
-	}
-
-	&:last-of-type {
-		margin-bottom: 95px;
-
-		&[page='features'] {
-
+		@include media(max-width-780) {
+			grid-gap: 50px;
 			margin-bottom: 0px;
-
+			grid-template-rows: repeat(4, auto);
+			grid-template-columns: repeat(1, 1fr);
 		}
 
 	}
 
-	img {
+	.grid-container > div {
+		padding: 40px;
+		text-align: center;
+		background-color: #2b313a;
 
-		float: left;
-		height: 18px;
-		margin-top: 6px;
+
+		img {
+
+			float: left;
+			height: 18px;
+			margin-top: 6px;
+
+		}
 
 	}
 
@@ -58,7 +39,7 @@ features-entry {
 		text-align: left;
 		text-align: left;
 		line-height: 24px;
-		text-indent: 10px;
+		text-indent: 8px;
 		letter-spacing: 0px;
 		margin: 0 0 20px 0px;
 		font-family: 'Inter Medium', sans-serif;
