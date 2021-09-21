@@ -13,27 +13,34 @@ header {
 		flex-direction:row;
 		justify-content:space-between;
 
-		.logo {
+		div {
 
-			float:left;
-			width:120px;
-			height:20px;
-			display:block;
-			margin-top:45px;
-			margin-bottom:45px;
-			text-decoration:none;
-			background-repeat:no-repeat;
-			background-repeat:no-repeat;
-			background-image:url("/static/img/logowhite.svg");
-
-			&[special] {
-				background-image:url("/static/img/logo.svg");
-			}
+			height:80px;
+			display:flex;
+			margin:30px 0;
+			align-items:center;
+			justify-content:center;
 
 			@include media(max-width-480) {
+				margin:10px 0;
+			}
+
+			.icon {
+				width:40px;
+				height:45px;
+				display:block;
+				margin:0 20px 0 0;
+				background-size:100% auto;
+				background-repeat:no-repeat;
+				background-image:url("/static/img/icon.png");
+			}
+
+			.logo {
+				width:120px;
 				height:20px;
-				margin-top:30px;
-				margin-bottom:28px;
+				display:block;
+				background-repeat:no-repeat;
+				background-image:url("/static/img/logo.svg");
 			}
 
 		}
