@@ -12,7 +12,7 @@ logo {
 		margin:175px 0 0 0;
 	}
 
-	@include media(max-width-768) {
+	@include media(max-width-1000) {
 		display:none;
 	}
 
