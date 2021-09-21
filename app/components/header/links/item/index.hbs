@@ -1,7 +1,5 @@
-<li>
-	{{#if (begs-with @link "https://")}}
-		<a href={{@link}} rel="noopener noreferrer" ...attributes>{{@text}}</a>
-	{{else}}
-		<LinkTo @route={{@link}} selected={{eq @link (route-name)}} ...attributes>{{@text}}</LinkTo>
-	{{/if}}
-</li>
+{{#if (begs-with @link "https://")}}
+	<a href={{@link}} rel="noopener noreferrer" ...attributes>{{@text}}</a>
+{{else}}
+	<LinkTo @route={{@link}} selected={{eq @link (route-name)}} ...attributes>{{@text}}</LinkTo>
+{{/if}}

@@ -38,12 +38,36 @@ header {
 
 		}
 
-		ul {
+		> sidebar-menu {
+
+			display:none;
+			color:#ffffff;
+			font-size:22px;
+			cursor:pointer;
+			margin-left:30px;
+			align-items:center;
+			flex-direction:row;
+			justify-content:center;
+
+			* {
+				cursor:pointer;
+			}
+
+			@include media(max-width-768) {
+				display:flex;
+			}
+
+			@include media(max-width-375) {
+				margin-left:20px;
+			}
+
+		}
+
+		> nav {
 
 			margin:0;
 			padding:0;
 			display:flex;
-			list-style:none;
 			align-items:center;
 			flex-direction:row;
 			justify-content:center;
@@ -52,27 +76,23 @@ header {
 				display:none;
 			}
 
-			li {
+			a {
 
-				a {
+				color:#ffffff;
+				display:block;
+				font-size:15px;
+				margin:0 0 0 30px;
+				padding:0 0 5px 0;
+				transition:color 0.5s, border 0.5s;
+				border-bottom:3px solid transparent;
 
-					color:#ffffff;
-					display:block;
-					font-size:15px;
-					margin:0 0 0 30px;
-					padding:0 0 5px 0;
-					transition:color 0.5s, border 0.5s;
-					border-bottom:3px solid transparent;
+				&:not([button])[selected] {
+					border-bottom:2px solid #ffffff;
+				}
 
-					&:not([button])[selected] {
-						border-bottom:2px solid #ffffff;
-					}
-
-					&:not([button]):hover {
-						color:#ff3cac;
-						border-bottom:2px solid #ff3cac;
-					}
-
+				&:not([button]):hover {
+					color:#ff3cac;
+					border-bottom:2px solid #ff3cac;
 				}
 
 			}
