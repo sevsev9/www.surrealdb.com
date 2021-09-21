@@ -1,22 +1,75 @@
+@keyframes fade {
+	0% {
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+@keyframes zoom {
+	0% {
+		opacity:0;
+		transform:scale(0.95) translateY(-50px);
+	}
+	100% {
+		opacity:1;
+		transform:scale(1.00) translateY(0);
+	}
+}
+
 app-modal-cover {
 
 	background-color:rgba(0, 0, 0, 0.7);
 
+	-webkit-backdrop-filter:blur(5px);
+	-moz-backdrop-filter:blur(5px);
+	-ms-backdrop-filter:blur(5px);
+	backdrop-filter:blur(5px);
+	background:rgba(0, 0, 0, 0.3);
+	background:radial-gradient(
+		ellipse at 50% 20%,
+		rgba(0, 0, 0, 0.5),
+		rgba(0, 0, 0, 0.7),
+	);
+
 	app-modal-front {
 
-		width:500px;
+		width:700px;
 		height:auto;
-		padding:25px;
+		padding:50px;
 		color:#ffffff;
-		font-size:16px;
-		line-height:24px;
-		font-family:'Inter', sans-serif;
-		margin:15% auto 0 auto;
+		font-size:20px;
+		line-height:1.7;
+		margin:25vh auto 0 auto;
 		background-color:#181a1f;
+		animation:zoom ease 0.3s;
+		-webkit-animation:zoom ease 0.3s;
+		-moz-animation:zoom ease 0.3s;
+		-ms-animation:zoom ease 0.3s;
+		-o-animation:zoom ease 0.3s;
 		box-shadow:0 5px 20px rgba(0,0,0,0.2);
 
 		@include media(max-width-481) {
-			width: 90vw;
+			width:90vw;
+			padding:30px;
+		}
+
+		close {
+			top:20px;
+			right:30px;
+			opacity:0;
+			z-index:100;
+			display:block;
+			position:fixed;
+			cursor:pointer;
+			font-size:28px;
+			color:#ffffff !important;
+			animation:fade ease 0.3s 0.5s forwards;
+			-webkit-animation:fade ease 0.3s 0.5s forwards;
+			-moz-animation:fade ease 0.3s 0.5s forwards;
+			-ms-animation:fade ease 0.3s 0.5s forwards;
+			-o-animation:fade ease 0.3s 0.5s forwards;
 		}
 
 		a {
@@ -27,7 +80,57 @@ app-modal-cover {
 			width:100%;
 			display:block;
 			margin:20px 0 20px 0;
-			border-bottom:0px solid #efefef;
+			border-bottom:1px solid #2a2c30;
+		}
+
+		text {
+			display:block;
+			font-size:14px;
+			margin:15px 0 0 5px;
+			color:rgba(255,60,172,1);
+		}
+
+		form {
+
+			width:100%;
+			display:flex;
+			align-items:center;
+			justify-content:center;
+
+			@include media(max-width-750) {
+				flex-direction:column;
+			}
+
+			input {
+
+				width:100%;
+				height:45px;
+				color:#ffffff;
+				padding:0 30px;
+				font-size:16px;
+				margin:0 30px 0 0;
+				background-color:#13151b;
+
+				@include media(max-width-750) {
+					width:100%;
+					margin:0 0 20px 0;
+				}
+
+			}
+
+			button {
+
+				height:45px;
+				flex-shrink:0;
+				font-size:16px;
+
+				@include media(max-width-750) {
+					margin:0;
+					width:100%;
+				}
+
+			}
+
 		}
 
 	}

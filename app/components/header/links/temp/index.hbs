@@ -1,0 +1,30 @@
+<a {{on "click" (fn (mut this.show) true)}} button>{{@text}}</a>
+
+{{#if this.show}}
+
+	<Ascua::Modal @onClose={{fn (mut this.show) false}}>
+
+		<Modal::Close @close={{fn (mut this.show) false}} />
+
+		{{#if this.done}}
+			Thank you for registering your interest! We can't wait to show you more about how <strong>SurrealDB</strong> works. Check your email inbox for communications from us.
+			<br><br>
+			Tobie
+			<br>
+			Founder, SurrealDB
+		{{else}}
+			<strong>SurrealDB</strong> is currently operating in a private beta, and will be launching soon. To add yourself to the waiting list, register your interest using the form below.
+			<line></line>
+			<form {{on "submit" this.submit.run}}>
+				<Input @value={{this.email}} placeholder="Enter your email here..." />
+				<button type="submit" {{on "click" this.submit.run}}>
+					Add me to the waitlist!
+				</button>
+			</form>
+			{{#if this.submit.error}}
+				<text>Please enter an email address</text>
+			{{/if}}
+		{{/if}}
+	</Ascua::Modal>
+
+{{/if}}
