@@ -60,7 +60,7 @@ header {
 				cursor:pointer;
 			}
 
-			@include media(max-width-768) {
+			@include media(max-width-1000) {
 				display:flex;
 			}
 
