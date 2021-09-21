@@ -1,5 +1,8 @@
 footer {
 
+	margin-top:150px;
+	background:#111216;
+
 	content {
 
 		@include media(max-width-1200) {
@@ -51,6 +54,15 @@ footer {
 						padding-left: 0;
 						padding-top: 30px;
 					}
+				}
+
+				.logo {
+					width:120px;
+					height:20px;
+					display:block;
+					margin-bottom: 30px;
+					background-repeat:no-repeat;
+					background-image:url("/static/img/logo.svg");
 				}
 
 				> div {

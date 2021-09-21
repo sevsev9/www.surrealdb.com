@@ -1,17 +1,19 @@
 code {
 	color:white;
 	padding:2px 5px;
-	border-radius:6px;
+	border-radius:0px;
 	display:inline-block;
 	background-color:#3f4650;
 }
 
 code[class*="language-"] {
+	border-radius:0px;
 	white-space:pre-wrap;
 	background-color:#2b313a;
 }
 
 pre[class*="language-"] {
+	border-radius:0px;
 	white-space:pre-wrap;
 	background-color:#2b313a;
 }
