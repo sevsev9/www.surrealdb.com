@@ -93,6 +93,10 @@ header {
 				transition:color 0.5s, border 0.5s;
 				border-bottom:3px solid transparent;
 
+				&[button] {
+					height:40px;
+				}
+
 				&:not([button])[selected] {
 					border-bottom:2px solid #ffffff;
 				}
