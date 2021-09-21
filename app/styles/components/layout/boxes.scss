@@ -54,6 +54,13 @@ layout-boxes {
 			grid-template-columns:repeat(2, 1fr);
 		}
 
+		@include media(max-width-750) {
+			grid-gap:30px;
+			margin-bottom:30px;
+			grid-template-rows:repeat(1, auto);
+			grid-template-columns:repeat(1, 1fr);
+		}
+
 		layout-boxes-item {
 			text-align:center;
 			padding:20px 40px;
