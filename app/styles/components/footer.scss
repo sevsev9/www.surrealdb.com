@@ -83,20 +83,15 @@ footer {
 
 				}
 
-				a, a i, a span {
-					color: #ffffff;
-					cursor: pointer;
-					text-decoration: none;
-				}
-
 				p {
 					color: #636a75;
 					font-size: 14px;
 				}
 
 				a {
-					color: #636a75;
-					font-size: 14px;
+
+					color:#636a75;
+					font-size:14px;
 
 					&:hover {
 						color: #ff3cac;
@@ -105,8 +100,17 @@ footer {
 				}
 
 				i {
-					color: #636a75;
-					font-size: 14px;
+
+					color:#636a75;
+					cursor:pointer;
+					font-size:22px;
+					margin:0 5px 0 0;
+					transition:color 0.3s;
+
+					&:hover {
+						color:#ffffff;
+					}
+
 				}
 
 			}
