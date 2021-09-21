@@ -1,36 +1,24 @@
 logo {
 
-	z-index: 0;
-	display: block;
-	position: absolute;
-	pointer-events: none;
+	right:0;
+	width:350px;
+	height:100%;
+	display:block;
+	position:absolute;
+	margin:250px 0 0 0;
+	pointer-events:none;
 
-	img {
-
-		width: auto;
-		height: 908px;
-
+	@include media(max-width-1200) {
+		margin:175px 0 0 0;
 	}
 
-	&[page='index'] {
+	@include media(max-width-768) {
+		display:none;
+	}
 
-		img {
-
-			height: 100%;
-			width: 389px;
-			margin: 220px 50px 0px 700px;
-			@include media(max-width-1199) {
-				margin: 150px 0px 0px 500px;
-
-			}
-
-			@include media(max-width-550) {
-				width: 150px;
-				margin: 120px 0px 0px 0px;
-			}
-
-		}
-
+	img {
+		width:100%;
+		height:auto;
 	}
 
 }

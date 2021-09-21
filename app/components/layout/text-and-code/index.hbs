@@ -1,0 +1,16 @@
+<layout-text-and-code ...attributes>
+	<content>
+		<div>
+			{{#if @title}}<h4>{{@title}}</h4>{{/if}}
+			{{#if @text}}<p>{{@text}}</p>{{/if}}
+			{{yield (hash
+				link=(component "link")
+			)}}
+		</div>
+		<div>
+			{{yield (hash
+				code=(component "code")
+			)}}
+		</div>
+	</content>
+</layout-text-and-code>

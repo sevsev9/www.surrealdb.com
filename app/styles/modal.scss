@@ -1,0 +1,35 @@
+app-modal-cover {
+
+	background-color:rgba(0, 0, 0, 0.7);
+
+	app-modal-front {
+
+		width:500px;
+		height:auto;
+		padding:25px;
+		color:#ffffff;
+		font-size:16px;
+		line-height:24px;
+		font-family:'Inter', sans-serif;
+		margin:15% auto 0 auto;
+		background-color:#181a1f;
+		box-shadow:0 5px 20px rgba(0,0,0,0.2);
+
+		@include media(max-width-481) {
+			width: 90vw;
+		}
+
+		a {
+			color:#ffffff;
+		}
+
+		line {
+			width:100%;
+			display:block;
+			margin:20px 0 20px 0;
+			border-bottom:0px solid #efefef;
+		}
+
+	}
+
+}

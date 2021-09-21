@@ -6,125 +6,73 @@
 	<meta property="og:type" content="website">
 {{/in-element}}
 
-<MainTitle>
-	<Logo />
-	<h1>
-		The next generation serverless cloud database
-	</h1>
-	<h2>
-		With an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next generation serverless database.
-	</h2>
-	<SignupForm />
-</MainTitle>
+<Layout::Hero
+	@title="The next generation serverless cloud database for modern applications"
+	@text="With an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next generation serverless database."
+/>
 
-<Titles>
-	<h1>
-		A highly-scalable NewSQL database
-	</h1>
-</Titles>
+<Layout::Text @title="A highly-scalable NewSQL database" />
 
-<content>
-	<WalkThrough @side="l" @img="/static/img/home/clients@2x.jpg" @title="Saves time (and money)" @text="Reduce time spent hunting for images - while wondering which version, what size, and what type of image file you need -  and relieve pressure on your design department, so that they don’t constantly need to re-invent the wheel." />
-	<WalkThrough @side="r" @img="/static/img/home/clients@2x.jpg" @title="Keeps marketing departments, customers, distributors and franchisees happy" @text="Enable employees or third parties to access permitted items - whether images, PDFs, guidelines, presentations, documents - without bothering your staff (and taking up valuable time)." />
-	<WalkThrough @side="l" @img="/static/img/home/clients@2x.jpg" @title="Enables secure collaboration, whether remote or in the office " @text="Once access permissions have been established, staff and outside users can safely get on with their tasks, while comments/edits/approvals can be communicated directly on each item (thereby saving time, again)." />
-	<WalkThrough @side="r" @img="/static/img/home/clients@2x.jpg" @title="Analyses how your assets are being used " @text="Work out which campaigns have been most successful, which items have been used (from where, and by whom), and use the results for effective forward planning." />
-	<WalkThrough @side="l" @img="/static/img/home/clients@2x.jpg" @title="Helps maintain brand integrity" @text="Your image and reputation are important, as is your brand awareness. But if different versions or styles of your message appear, your credibility will be affected. Brand integrity is worth its weight in gold." />
-	<clear></clear>
-</content>
+<Layout::Gap />
 
-<content>
-	<WalkThrough @side="r" @num="1" @img="/static/img/home/clients@2x.jpg" @title="DAM" @text="Gather in one place all the elements that your company uses -  for marketing, campaign management, public information, presentations, internal compliance documents, information notices and documents, and branding guidelines. Then enable easy access for identified people or organisations, and define use cases, while maintaining security and accountability." />
-	<clear></clear>
-</content>
+<Layout::TextAndCode text-l @title="Simplified data modelling" @text="Reduce time spent hunting for images - while wondering which version, what size, and what type of image file you need -  and relieve pressure on your design department, so that they don’t constantly need to re-invent the wheel." as |block|>
+	<block.link @route="showcase.modelling">
+		The best features of SurrealQL <i class="fal fa-arrow-right"></i>
+	</block.link>
+	<block.code @name="index-modelling.sql">
+		SELECT * FROM person WHERE id = person:1
+	</block.code>
+</Layout::TextAndCode>
 
-<content>
-	<features-entry page={{route-name}} >
-		<div class="grid-container">
-			<div class="item1">
-				<img src="/static/img/home/tick.svg" alt="tick">
-				<h1>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit
-				</h1>
-				<h2>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</h2>
-			</div>
-			<<div class="item2">
-				<img src="/static/img/home/tick.svg" alt="tick">
-				<h1>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit
-				</h1>
-				<h2>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</h2>
-			</div>
-			<div class="item3">
-				<img src="/static/img/home/tick.svg" alt="tick">
-				<h1>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit
-				</h1>
-				<h2>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</h2>
-			</div>
-		</div>
-	</features-entry>
-</content>
+<Layout::Gap />
 
-<content>
-	<WalkThrough @side="l" @num="1" @img="/static/img/home/clients@2x.jpg" @title="Document creation" @text="Be creative with documentation - whether for campaigns, infographics, marketing, presentations, compliance information. Your designers can upload templates of branded items which identify sections for personalisation - with the house style adhered to automatically, whatever new text is entered." />
-	<clear></clear>
-</content>
+<Layout::TextAndCode text-r @title="Elegant data modeling" @text="Reduce time spent hunting for images - while wondering which version, what size, and what type of image file you need -  and relieve pressure on your design department, so that they don’t constantly need to re-invent the wheel." as |block|>
+<block.link @route="showcase.surrealql">
+		The best features of SurrealQL <i class="fal fa-arrow-right"></i>
+	</block.link>
+	<block.code @name="index-surrealql.sql">
+		SELECT * FROM person WHERE id = person:1
+	</block.code>
+</Layout::TextAndCode>
 
-<content>
-	<features-entry page={{route-name}} >
-		<div class="grid-container">
-			<div class="item1">
-				<img src="/static/img/home/tick.svg" alt="tick">
-				<h1>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit
-				</h1>
-				<h2>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</h2>
-			</div>
-			<<div class="item2">
-				<img src="/static/img/home/tick.svg" alt="tick">
-				<h1>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit
-				</h1>
-				<h2>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</h2>
-			</div>
-			<div class="item3">
-				<img src="/static/img/home/tick.svg" alt="tick">
-				<h1>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit
-				</h1>
-				<h2>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</h2>
-			</div>
-		</div>
-	</features-entry>
-</content>
+<Layout::Gap />
 
-<content>
-	<CaseStudy @side="r" @num="1" @img="/static/img/home/clients@2x.jpg" @title="The solution" @text="Now the self-service system available from SurrealDB allows Aber to store and share all their brand elements in one place, and permits their distributors/partners to acquire the necessary assets in the exact format they need, without having to ask Aber staff repeatedly." />
-	<clear></clear>
-	<CaseStudy @side="l" @num="1" @img="/static/img/home/clients@2x.jpg" @title="The solution" @text="Now the self-service system available from SurrealDB allows Aber to store and share all their brand elements in one place, and permits their distributors/partners to acquire the necessary assets in the exact format they need, without having to ask Aber staff repeatedly." />
-	<clear></clear>
-</content>
+<Layout::TextAndCode text-l @title="Elegant data modeling" @text="Reduce time spent hunting for images - while wondering which version, what size, and what type of image file you need -  and relieve pressure on your design department, so that they don’t constantly need to re-invent the wheel." as |block|>
+	<block.link @route="showcase.analytics">
+		The best features of SurrealQL <i class="fal fa-arrow-right"></i>
+	</block.link>
+	<block.code @name="index-analytics.sql">
+		SELECT * FROM person WHERE id = person:1
+	</block.code>
+</Layout::TextAndCode>
 
-<Features>
-	<h1>
-		Key features
-	</h1>
-	<h2>
-		Hire Insight enables you to achieve the following with your recruitment business:
-	</h2>
-	<KeyFeatures></KeyFeatures />
-</Features>
+<Layout::Gap />
 
-<BookADemo></BookADemo>
+<Layout::TextAndCode text-r @title="Elegant data modeling" @text="Reduce time spent hunting for images - while wondering which version, what size, and what type of image file you need -  and relieve pressure on your design department, so that they don’t constantly need to re-invent the wheel." as |block|>
+	<block.link @route="showcase.permissions">
+		The best features of SurrealQL <i class="fal fa-arrow-right"></i>
+	</block.link>
+	<block.code @name="index-permissions.sql">
+		SELECT * FROM person WHERE id = person:1
+	</block.code>
+</Layout::TextAndCode>
+
+<Layout::Gap />
+
+<Layout::Boxes large>
+	<Layout::Boxes::Item @title="Lorem ipsum dolor sit amet, consectetur adipisicing elit" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
+	<Layout::Boxes::Item @title="Lorem ipsum dolor sit amet, consectetur adipisicing elit" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
+	<Layout::Boxes::Item @title="Lorem ipsum dolor sit amet, consectetur adipisicing elit" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
+</Layout::Boxes>
+
+<Layout::Boxes small>
+	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
+	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
+	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
+	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
+	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
+	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
+	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
+	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
+	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
+</Layout::Boxes>

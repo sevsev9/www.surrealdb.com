@@ -1,0 +1,60 @@
+layout-hero {
+
+	width:100%;
+	display:block;
+	margin:-100px 0 150px 0;
+
+	@include media(max-width-768) {
+		margin-bottom:10vh;
+	}
+
+	h1 {
+
+		width:60%;
+		padding:250px 0 35px 0;
+
+		@include media(max-width-1200) {
+			width:60%;
+			font-size:52px;
+			padding-top:175px;
+		}
+
+		@include media(max-width-1000) {
+			width:100%;
+			font-size:52px;
+			padding-top:150px;
+		}
+
+		@include media(max-width-550) {
+			width:100%;
+			font-size:38px;
+			padding-top:150px;
+		}
+
+	}
+
+	h2 {
+
+		width:55%;
+		color:#636a75;
+		font-size:18px;
+		text-align:left;
+		margin-top:20px;
+		margin-bottom:35px;
+
+		@include media(max-width-1200) {
+			width:450px;
+			position:relative;
+		}
+
+		@include media(max-width-550) {
+			width:100%;
+			font-size:16px;
+			margin-top:0px;
+			line-height:26px;
+			margin-bottom:30px;
+		}
+
+	}
+
+}

@@ -55,7 +55,7 @@ module.exports = function(environment) {
 
 		webapp: {
 			background: '#181a1f',
-			color: '#aa41fb',
+			color: '#181a1f',
 			description: '',
 			display: 'standalone',
 			enabled: true,

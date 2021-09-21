@@ -1,0 +1,55 @@
+button, a[button] {
+
+	height:55px;
+	border:none;
+	outline:none;
+	display:inline-flex;
+	color:#ffffff;
+	cursor:pointer;
+	padding:0 30px;
+	box-shadow:none;
+	border-radius:6px;
+	align-items:center;
+	justify-content:center;
+	background:rgb(135,0,255);
+	background:-moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+	background:-webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+	background:linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+	transition:box-shadow 0.3s ease-in-out;
+
+	@include media(max-width-768) {
+		width:100%;
+		font-size: 14px;
+		margin-bottom: 50px;
+	}
+
+	&:hover {
+		box-shadow:0 0 20px rgba(0,0,0,0.3);
+	}
+
+	i {
+		padding-left:30px;
+	}
+
+	&[bordered] {
+
+		padding:3px;
+
+		div {
+			width:100%;
+			height:100%;
+			display:flex;
+			padding:0 30px;
+			border-radius:6px;
+			background:#181a1f;
+			align-items:center;
+			justify-content:center;
+		}
+
+		&:hover {
+			box-shadow:0 0 20px rgba(255,60,172,0.5);
+		}
+
+	}
+
+}
