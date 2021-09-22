@@ -50,9 +50,28 @@ app-modal-cover {
 		-o-animation:zoom ease 0.3s;
 		box-shadow:0 5px 20px rgba(0,0,0,0.2);
 
-		@include media(max-width-481) {
+		@include media(max-width-1000) {
+			width:80vw;
+			padding:50px;
+		}
+
+		@include media(max-width-750) {
 			width:90vw;
 			padding:30px;
+		}
+
+		@include media(max-width-400) {
+			width:100vw;
+			height:100vh;
+			margin:0 auto 0 auto;
+			padding:100px 50px 50px 50px;
+		}
+
+		@include media(max-width-350) {
+			width:100vw;
+			height:100vh;
+			margin:0 auto 0 auto;
+			padding:75px 30px 30px 30px;
 		}
 
 		close {
