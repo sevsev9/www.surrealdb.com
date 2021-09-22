@@ -10,11 +10,11 @@ layout-hero {
 
 	h1 {
 
-		width:57%;
+		width:60%;
 		padding:220px 0 35px 0;
 
 		@include media(max-width-1200) {
-			width:57%;
+			width:55%;
 			font-size:52px;
 			padding-top:175px;
 		}
