@@ -2,10 +2,20 @@ header {
 
 	z-index:10;
 	width:100%;
-	height:100px;
 	display:block;
 	position:relative;
 	background-color:transparent;
+
+	@include media(max-width-1000) {
+		top:0;
+		position:-webkit-sticky;
+		position:sticky;
+		background: rgba(24, 26, 31, 0.5);
+		-webkit-backdrop-filter:blur(10px);
+		-moz-backdrop-filter:blur(10px);
+		-ms-backdrop-filter:blur(10px);
+		backdrop-filter:blur(10px);
+	}
 
 	content {
 
@@ -13,16 +23,16 @@ header {
 		flex-direction:row;
 		justify-content:space-between;
 
-		div {
+		> div {
 
-			height:80px;
+			height:30px;
 			display:flex;
 			margin:30px 0;
 			align-items:center;
 			justify-content:center;
 
 			@include media(max-width-480) {
-				margin:10px 0;
+				height:50px; margin:10px;
 			}
 
 			.icon {
@@ -43,6 +53,10 @@ header {
 				background-image:url("/static/img/logo.svg");
 			}
 
+		}
+
+		> space {
+			margin-left:auto;
 		}
 
 		> sidebar-menu {
@@ -79,10 +93,6 @@ header {
 			flex-direction:row;
 			justify-content:center;
 
-			@include media(max-width-1000) {
-				display:none;
-			}
-
 			a {
 
 				color:#ffffff;
@@ -94,16 +104,30 @@ header {
 				border-bottom:3px solid transparent;
 
 				&[button] {
+
 					height:40px;
+
+					@include media(max-width-750) {
+						display:none;
+					}
+
 				}
 
-				&:not([button])[selected] {
-					border-bottom:2px solid #ffffff;
-				}
+				&:not([button]) {
 
-				&:not([button]):hover {
-					color:#ff3cac;
-					border-bottom:2px solid #ff3cac;
+					@include media(max-width-1000) {
+						display:none;
+					}
+
+					&[selected] {
+						border-bottom:2px solid #ffffff;
+					}
+
+					&:hover {
+						color:#ff3cac;
+						border-bottom:2px solid #ff3cac;
+					}
+
 				}
 
 			}
