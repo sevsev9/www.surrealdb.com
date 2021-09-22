@@ -5,7 +5,7 @@ logo {
 	height:100%;
 	display:block;
 	position:absolute;
-	margin:250px 0 0 0;
+	margin:250px 50px 0 0;
 	pointer-events:none;
 
 	@include media(max-width-1200) {
