@@ -7,13 +7,13 @@ code {
 }
 
 code[class*="language-"] {
+	white-space:pre;
 	border-radius:0px;
-	white-space:pre-wrap;
 	background-color:#2b313a;
 }
 
 pre[class*="language-"] {
+	white-space:pre;
 	border-radius:0px;
-	white-space:pre-wrap;
 	background-color:#2b313a;
 }
