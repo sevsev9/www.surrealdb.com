@@ -35,6 +35,6 @@
 
 <Layout::TextAndCode text-t @title="Run using Docker" @text="Docker can be used to manage and run SurrealDB database instances without the need to install any command-line tools. The SurrealDB docker container contains the full command-line tools for importing and exporting data from a running server, or for running a server itself." as |block|>
 	<block.code @name="install-docker.bash">
-		docker run --rm --name surreal surreal/surreal:latest
+		docker run --rm -p 8000:8000 surreal/surreal:latest start
 	</block.code>
 </Layout::TextAndCode>
