@@ -37,51 +37,23 @@ content {
 
 body {
 
-	@include media(min-width-1200) {
+	&:after {
 
-		&:after {
+		top:0;
+		left:35%;
+		width:65%;
+		z-index:-1;
+		content:'';
+		height:1000px;
+		display:block;
+		position:absolute;
+		background-repeat:no-repeat;
+		background-position:top left;
+		background-size:1000px 1000px;
+		background-image:url("/static/img/home/background@2x.png"), radial-gradient(farthest-corner at 450px 40px, #343b45 0%, #181a1f 55%);
 
-			top:0;
-			left:34%;
-			z-index:-1;
-			content:'';
-			width:1000px;
-			height:1000px;
-			display:block;
-			position:absolute;
-			background-size:100%;
-			background-repeat:no-repeat;
-			background-position:center right;
+		@media (-webkit-min-device-pixel-ratio:2), (min-resolution:192dpi) {
 			background-image:url("/static/img/home/background@2x.png"), radial-gradient(farthest-corner at 450px 40px, #343b45 0%, #181a1f 55%);
-
-			@media (-webkit-min-device-pixel-ratio:2), (min-resolution:192dpi) {
-				background-image:url("/static/img/home/background@2x.png"), radial-gradient(farthest-corner at 450px 40px, #343b45 0%, #181a1f 55%);
-			}
-
-		}
-
-	}
-
-	@include media(max-width-1200) {
-
-		&:after {
-
-			top:0;
-			left:34%;
-			z-index:-1;
-			content:'';
-			width:1000px;
-			height:1000px;
-			display:block;
-			position:absolute;
-			background-size:100%;
-			background-repeat:no-repeat;
-			background-image:url("/static/img/home/background@2x.png"), radial-gradient(farthest-corner at 450px 40px, #343b45 0%, #181a1f 55%);
-
-			@media (-webkit-min-device-pixel-ratio:2), (min-resolution:192dpi) {
-				background-image:url("/static/img/home/background@2x.png"), radial-gradient(farthest-corner at 450px 40px, #343b45 0%, #181a1f 55%);
-			}
-
 		}
 
 	}
