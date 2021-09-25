@@ -19,6 +19,14 @@ module.exports = function(environment) {
 
 		// Set the configuration options for
 		// the @ascua/update addon, so that the
+
+		surreal: {
+			ns: 'demo',
+			db: 'demo',
+		},
+
+		// Set the configuration options for
+		// the @ascua/update addon, so that the
 		// page can update when available.
 
 		update: {

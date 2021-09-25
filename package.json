@@ -36,6 +36,7 @@
     "@ascua/modal": "^0.0.215",
     "@ascua/routing": "^0.0.215",
     "@ascua/scrollup": "^0.0.215",
+    "@ascua/surreal": "^0.0.215",
     "@ascua/tasks": "^0.0.215",
     "@ascua/update": "^0.0.215",
     "@ascua/visuals": "^0.0.215",

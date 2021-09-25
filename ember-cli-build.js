@@ -5,7 +5,7 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function (defaults) {
 
 	let app = new EmberApp(defaults, {
-		snippetPaths: ['app'],
+		snippetPaths: ['app/snippets'],
 		snippetRegexes: {
 			begin: /<block.code\s@name="(\S+)"[^>]*>/,
 			end: /<\/block.code>/,
@@ -14,7 +14,7 @@ module.exports = function (defaults) {
 		'ember-prism': {
 			'theme': 'okaidia',
 			'components': [
-				'sql', 'bash', 'javascript', 'json',
+				'bash', 'javascript', 'json',
 			],
 		}
 	});
