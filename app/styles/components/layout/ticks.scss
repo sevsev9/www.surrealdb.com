@@ -5,8 +5,7 @@ layout-ticks {
 	content {
 
 		display:grid;
-		padding:0 3% 0 7%;
-		grid-gap:20px 20px;
+		grid-gap:20px 50px;
 		margin-bottom:20px;
 		grid-template-columns:repeat(3, 1fr);
 
@@ -23,7 +22,7 @@ layout-ticks {
 			display:flex;
 			text-align:left;
 			align-items:top;
-			padding:5px 10px;
+			padding:5px 0px;
 			justify-content:flex-start;
 
 			img {
