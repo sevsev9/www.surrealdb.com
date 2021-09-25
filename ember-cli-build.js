@@ -14,7 +14,7 @@ module.exports = function (defaults) {
 		'ember-prism': {
 			'theme': 'okaidia',
 			'components': [
-				'sql', 'bash', 'javascript', 'json',
+				'bash', 'javascript', 'json',
 			],
 		}
 	});
