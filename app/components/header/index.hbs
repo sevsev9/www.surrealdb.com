@@ -13,6 +13,30 @@
 			<Header::Links::Item @link="index" @text="Home" />
 			<Header::Links::Item @link="features" @text="Features" />
 			<Header::Links::Item @link="install" @text="Install" />
+			<Header::Links::Drop @text="Learn">
+				<main>
+					<Header::Links::Drop::Item @link="docs" @text="Documentation" @desc="An in-depth look at every aspect of SurrealDB: installation, setup, data types, querying, connectivity, and advanced functionality.">
+						<i class="fal fa-question-circle"></i>
+					</Header::Links::Drop::Item>
+					<Header::Links::Drop::Item @link="roadmap" @text="Roadmap" @desc="See what we have planned for SurrealDB, and see the features and functionality which has already been implemented.">
+						<i class="fal fa-clipboard-list-check"></i>
+					</Header::Links::Drop::Item>
+				</main>
+				<subs>
+					<Header::Links::Drop::Item @link="https://github.com/surrealdb" @text="Github">
+						<i class="fab fa-github"></i>
+					</Header::Links::Drop::Item>
+					<Header::Links::Drop::Item @link="https://www.linkedin.com/company/surrealdb/" @text="LinkedIn">
+						<i class="fab fa-linkedin"></i>
+					</Header::Links::Drop::Item>
+					<Header::Links::Drop::Item @link="https://twitter.com/surrealdb" @text="Twitter">
+						<i class="fab fa-twitter"></i>
+					</Header::Links::Drop::Item>
+					<Header::Links::Drop::Item @link="https://www.youtube.com/channel/UCjf2teVEuYVvvVC-gFZNq6w" @text="YouTube">
+						<i class="fab fa-youtube"></i>
+					</Header::Links::Drop::Item>
+				</subs>
+			</Header::Links::Drop>
 			<Header::Links::Temp @text="Get started" />
 		</Header::Links>
 

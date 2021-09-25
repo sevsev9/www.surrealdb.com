@@ -10,9 +10,9 @@ Router.map(function() {
 
 	this.route('features');
 	this.route('install');
-	this.route('learn');
+	this.route('roadmap');
 	this.route('blog');
-	this.route('community');
+	this.route('docs');
 
 	this.route('showcase', function() {
 		this.route('modelling');
