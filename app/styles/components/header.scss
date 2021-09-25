@@ -145,15 +145,25 @@ header {
 				transition:color 0.5s, border 0.5s;
 				border-bottom:3px solid transparent;
 
-				&:hover {
+				@include media(max-width-1000) {
+					display:none;
+				}
+
+				&:hover, &:active {
 
 					color:#ff3cac;
 					border-bottom:3px solid #ff3cac;
 
 					popup {
+
 						top:25px;
 						opacity:1;
 						pointer-events:auto;
+
+						* {
+							pointer-events:auto;
+						}
+
 					}
 
 				}
@@ -169,6 +179,14 @@ header {
 					left:calc(50% - 300px);
 					transition:top 0.3s, opacity 0.3s;
 
+					@include media(max-width-1150) {
+						left:calc(50% - 400px);
+					}
+
+					* {
+						pointer-events:none;
+					}
+
 					> menu {
 
 						width:100%;
@@ -180,6 +198,7 @@ header {
 						box-shadow:0 5px 30px rgba(0,0,0,0.7);
 
 						> arrow {
+
 							width:0;
 							height:0;
 							top:-35px;
@@ -187,6 +206,10 @@ header {
 							left:calc(50% - 20px);
 							border:20px solid transparent;
 							border-bottom:20px solid #25282f;
+							@include media(max-width-1150) {
+								left:calc(50% + 80px);
+							}
+
 						}
 
 						> main {
