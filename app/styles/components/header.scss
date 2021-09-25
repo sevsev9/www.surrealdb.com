@@ -62,13 +62,13 @@ header {
 		> sidebar-menu {
 
 			display:none;
-			color:#ffffff;
 			font-size:22px;
 			cursor:pointer;
 			margin-left:30px;
 			align-items:center;
 			flex-direction:row;
 			justify-content:center;
+			color:var(--text-color);
 
 			* {
 				cursor:pointer;
@@ -121,12 +121,12 @@ header {
 					}
 
 					&[selected] {
-						border-bottom:3px solid #ff3cac;
+						border-bottom:3px solid var(--hover-color);
 					}
 
 					&:hover {
-						color:#ff3cac;
-						border-bottom:3px solid #ff3cac;
+						color:var(--hover-color);
+						border-bottom:3px solid var(--hover-color);
 					}
 
 				}
@@ -151,8 +151,8 @@ header {
 
 				&:hover, &:active {
 
-					color:#ff3cac;
-					border-bottom:3px solid #ff3cac;
+					color:var(--hover-color);
+					border-bottom:3px solid var(--hover-color);
 
 					popup {
 
@@ -194,7 +194,7 @@ header {
 						display:block;
 						margin:20px 0 0 0;
 						position:relative;
-						background-color:#25282f;
+						background-color:var(--popup-color);
 						box-shadow:0 5px 30px rgba(0,0,0,0.7);
 
 						> arrow {
@@ -205,7 +205,8 @@ header {
 							position:absolute;
 							left:calc(50% - 20px);
 							border:20px solid transparent;
-							border-bottom:20px solid #25282f;
+							border-bottom:20px solid var(--popup-color);
+
 							@include media(max-width-1150) {
 								left:calc(50% + 80px);
 							}
@@ -256,7 +257,7 @@ header {
 									background-color:rgba(0,0,0,0.3);
 
 									icon, span {
-										color:#ff3cac;
+										color:var(--hover-color);
 									}
 
 								}
@@ -297,7 +298,7 @@ header {
 									background-color:rgba(0,0,0,0.3);
 
 									icon, span {
-										color:#ff3cac;
+										color:var(--hover-color);
 									}
 
 								}

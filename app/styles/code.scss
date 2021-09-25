@@ -16,7 +16,7 @@ pre[class*="language-"] {
 	word-break:normal;
 	border-radius:0px;
 	word-spacing:normal;
-	background-color:#2b313a;
+	background-color:var(--boxes-color);
 	font-family:var(--system-font-mono);
 }
 

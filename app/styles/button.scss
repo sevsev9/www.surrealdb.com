@@ -3,7 +3,6 @@ button, a[button] {
 	height:55px;
 	border:none;
 	outline:none;
-	color:#ffffff;
 	cursor:pointer;
 	padding:0 30px;
 	box-shadow:none;
@@ -11,6 +10,7 @@ button, a[button] {
 	align-items:center;
 	display:inline-flex;
 	justify-content:center;
+	color:var(--text-color);
 	background:rgb(135,0,255);
 	transition:box-shadow 0.3s ease-in-out;
 	background:-moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
@@ -35,9 +35,9 @@ button, a[button] {
 			display:flex;
 			padding:0 30px;
 			border-radius:0px;
-			background:#181a1f;
 			align-items:center;
 			justify-content:center;
+			background-color:var(--back-color);
 		}
 
 	}

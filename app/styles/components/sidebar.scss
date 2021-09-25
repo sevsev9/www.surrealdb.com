@@ -55,8 +55,8 @@ sidebar {
 				transition:color 0.5s, border 0.5s;
 
 				&:not([button]):hover {
-					color:#ff3cac;
-					border-bottom:2px solid #ff3cac;
+					color:var(--hover-color);
+					border-bottom:2px solid var(--hover-color);
 				}
 
 				&[button] {

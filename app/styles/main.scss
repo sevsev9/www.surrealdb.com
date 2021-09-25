@@ -7,10 +7,10 @@ body {
 	width:100vw;
 	color:#ffffff;
 	overflow-x:hidden;
-	background:#181a1f;
 	font-family:'Inter';
 	background-repeat:no-repeat;
 	background-size:1000px, 1000px;
+	background-color:var(--back-color);
 	text-rendering:optimizeLegibility !important;
 	-webkit-font-smoothing:subpixel-antialiased !important;
 	background-position:center left -4%, bottom 21% right -10%;

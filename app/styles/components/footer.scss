@@ -68,19 +68,14 @@ footer {
 				}
 
 				h4 {
-					color: #ffffff;
-					font-size: 20px;
-					margin-bottom: 30px;
-
-					@include media(max-width-480) {
-						font-size: 19px;
-					}
-
+					font-size:20px;
+					margin-bottom:30px;
+					color:var(--text-color);
 				}
 
 				p {
-					color: #636a75;
-					font-size: 14px;
+					font-size:14px;
+					color:var(--faint-color);
 				}
 
 				a {
@@ -89,7 +84,7 @@ footer {
 					font-size:14px;
 
 					&:hover {
-						color: #ff3cac;
+						color:var(--hover-color);
 					}
 
 				}
@@ -103,7 +98,7 @@ footer {
 					transition:color 0.3s;
 
 					&:hover {
-						color:#ff3cac;
+						color:var(--hover-color);
 					}
 
 				}

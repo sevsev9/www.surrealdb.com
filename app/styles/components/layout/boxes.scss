@@ -15,7 +15,7 @@ layout-boxes {
 			display:block;
 			text-align:left;
 			border-radius:0px;
-			background-color:#2b313a;
+			background-color:var(--boxes-color);
 
 			img {
 				float:left;

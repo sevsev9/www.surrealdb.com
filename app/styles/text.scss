@@ -1,43 +1,43 @@
 h1 {
-	color:#ffffff;
 	font-size:62px;
 	font-weight:500;
 	line-height:1.15;
 	font-family:'Poppins';
+	color:var(--text-color);
 }
 
 h2 {
-	color:#ffffff;
 	font-size:34px;
 	font-weight:500;
 	line-height:1.5;
 	font-family:'Inter';
+	color:var(--text-color);
 }
 
 h3 {
-	color:#ffffff;
 	font-size:30px;
 	font-weight:500;
 	line-height:1.2;
 	font-family:'Inter';
+	color:var(--text-color);
 }
 
 h4 {
-	color:#ffffff;
 	font-size:30px;
 	font-weight:500;
 	line-height:1.2;
 	font-family:'Inter';
+	color:var(--text-color);
 }
 
 p {
 
-	color:#636a75;
 	font-size:18px;
 	font-weight:400;
 	line-height:1.5;
 	font-family:'Inter';
 	padding-bottom:30px;
+	color:var(--faint-color);
 
 	h2 + &, h3 + &, h4 + & {
 		padding-top:30px;
