@@ -124,6 +124,10 @@ app-modal-cover {
 				margin:0 30px 0 0;
 				background-color:#13151b;
 
+				@include placeholder {
+					color:var(--faint-color);
+				}
+
 				@include media(max-width-750) {
 					width:100%;
 					margin:0 0 20px 0;
