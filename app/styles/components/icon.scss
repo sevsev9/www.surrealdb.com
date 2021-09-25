@@ -1,0 +1,24 @@
+icon {
+
+	right:0;
+	width:289px;
+	height:100%;
+	display:block;
+	position:absolute;
+	margin:0px -14px 0px 0;
+	pointer-events:none;
+
+	@include media(max-width-1200) {
+		margin:0px -16px 0 0;
+	}
+
+	@include media(max-width-1000) {
+		display:none;
+	}
+
+	img {
+		width:100%;
+		height:auto;
+	}
+
+}
