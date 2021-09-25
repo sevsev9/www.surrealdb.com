@@ -44,12 +44,22 @@ sidebar {
 
 			margin:20px 30px 40px 30px;
 
+			p {
+
+				width:100%;
+				display:block;
+				font-size:16px;
+				margin-top:30px;
+				padding-bottom:10px;
+
+			}
+
 			a {
 
 				width:100%;
 				display:block;
 				font-size:18px;
-				padding:15px 0 15px 0;
+				padding:20px 0 20px 0;
 				color:var(--text-color);
 				border-bottom:2px solid #343b45;
 				transition:color 0.5s, border 0.5s;
