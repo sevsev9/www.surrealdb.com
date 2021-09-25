@@ -2,7 +2,7 @@ code {
 	color:white;
 	padding:2px 5px;
 	display:inline-block;
-	background-color:#3f4650;
+	background-color:#5F677B;
 }
 
 code[class*="language-"],
@@ -30,13 +30,13 @@ pre[class*="language-"] {
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow:none;
-	background:#6b6b6b;
+	background:#5F677B;
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow:none;
-	background:#6b6b6b;
+	background:#5F677B;
 }
 
 code.language-sql .token.operator {
