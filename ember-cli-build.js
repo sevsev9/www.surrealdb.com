@@ -5,7 +5,7 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function (defaults) {
 
 	let app = new EmberApp(defaults, {
-		snippetPaths: ['app'],
+		snippetPaths: ['app/snippets'],
 		snippetRegexes: {
 			begin: /<block.code\s@name="(\S+)"[^>]*>/,
 			end: /<\/block.code>/,
