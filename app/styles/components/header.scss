@@ -259,7 +259,7 @@ header {
 								&:hover {
 
 									border-bottom:0;
-									background-color:rgba(0,0,0,0.3);
+									background-color:var(--back-color);
 
 									icon, span {
 										color:var(--hover-color);
