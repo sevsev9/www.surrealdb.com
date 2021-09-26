@@ -12,7 +12,6 @@ module.exports = function (defaults) {
 		},
 		includeFileExtensionInSnippetNames: false,
 		'ember-prism': {
-			'theme': 'okaidia',
 			'components': [
 				'bash', 'javascript', 'json',
 			],
