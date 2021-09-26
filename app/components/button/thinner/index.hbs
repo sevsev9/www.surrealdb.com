@@ -1,3 +1,21 @@
-<LinkTo @route={{@route}} button bordered thinner ...attributes>
-	<div>{{yield}}</div>
-</LinkTo>
+{{#if (begs-with @link "https://")}}
+	<a href={{@link}} rel="noopener noreferrer" target="_blank" button bordered thinner ...attributes>
+		<div>
+			{{#if (has-block)}}
+				{{yield}}
+			{{else}}
+				{{@text}}
+			{{/if}}
+		</div>
+	</a>
+{{else}}
+	<LinkTo @route={{@link}} button bordered thinner ...attributes>
+		<div>
+			{{#if (has-block)}}
+				{{yield}}
+			{{else}}
+				{{@text}}
+			{{/if}}
+		</div>
+	</LinkTo>
+{{/if}}
