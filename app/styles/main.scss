@@ -5,10 +5,10 @@ html {
 
 body {
 	width:100vw;
-	color:#ffffff;
 	font-size:15px;
 	overflow-x:hidden;
 	font-family:'Inter';
+	color:var(--text-color);
 	background-size:250px, 250px;
 	background-color:var(--back-color);
 	text-rendering:optimizeLegibility !important;

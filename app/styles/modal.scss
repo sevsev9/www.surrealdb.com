@@ -38,17 +38,17 @@ app-modal-cover {
 		width:700px;
 		height:auto;
 		padding:50px;
-		color:#ffffff;
 		font-size:20px;
 		line-height:1.7;
 		position:relative;
+		color:var(--text-color);
 		margin:25vh auto 0 auto;
-		background-color:#181a1f;
 		animation:zoom ease 0.3s;
 		-webkit-animation:zoom ease 0.3s;
 		-moz-animation:zoom ease 0.3s;
 		-ms-animation:zoom ease 0.3s;
 		-o-animation:zoom ease 0.3s;
+		background-color:var(--back-color);
 		box-shadow:0 5px 20px rgba(0,0,0,0.2);
 
 		@include media(max-width-1000) {
@@ -78,29 +78,24 @@ app-modal-cover {
 		close {
 			top:10px;
 			right:25px;
-			color:#ffffff;
 			display:block;
 			cursor:pointer;
 			font-size:28px;
 			position:absolute;
-		}
-
-		a {
-			color:#ffffff;
+			color:var(--text-color);
 		}
 
 		line {
 			width:100%;
 			display:block;
 			margin:20px 0 20px 0;
-			border-bottom:1px solid #2a2c30;
+			border-bottom:1px solid var(--border-color);
 		}
 
 		text {
 			display:block;
 			font-size:14px;
 			margin:15px 0 0 5px;
-			color:rgba(255,60,172,1);
 		}
 
 		form {
@@ -118,11 +113,11 @@ app-modal-cover {
 
 				width:100%;
 				height:45px;
-				color:#ffffff;
 				padding:0 30px;
 				font-size:16px;
 				margin:0 30px 0 0;
-				background-color:#13151b;
+				color:var(--text-color);
+				background-color:var(--input-color);
 
 				@include placeholder {
 					color:var(--faint-color);

@@ -79,8 +79,8 @@ footer {
 
 				a {
 
-					color:#5F677B;
 					font-size:14px;
+					color:var(--faint-color);
 
 					&:hover {
 						color:var(--hover-color);
@@ -90,11 +90,11 @@ footer {
 
 				i {
 
-					color:#5F677B;
 					cursor:pointer;
 					font-size:22px;
 					margin:0 5px 0 0;
 					transition:color 0.3s;
+					color:var(--faint-color);
 
 					&:hover {
 						color:var(--hover-color);
@@ -115,8 +115,8 @@ footer {
 			justify-content:space-between;
 
 			p {
-				color:#5F677B;
 				font-size:12px;
+				color:var(--faint-color);
 			}
 
 		}

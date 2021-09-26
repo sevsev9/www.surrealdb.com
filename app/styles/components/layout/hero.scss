@@ -36,11 +36,11 @@ layout-hero {
 	h2 {
 
 		width:55%;
-		color:#5F677B;
 		font-size:18px;
 		text-align:left;
 		margin-top:20px;
 		margin-bottom:35px;
+		color:var(--faint-color);
 
 		@include media(max-width-1200) {
 			width:55%;

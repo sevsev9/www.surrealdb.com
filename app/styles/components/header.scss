@@ -100,12 +100,12 @@ header {
 
 			> a {
 
-				color:#ffffff;
 				display:block;
 				font-size:15px;
 				cursor:pointer;
 				margin:0 0 0 30px;
 				padding:8px 0 9px 0;
+				color:var(--text-color);
 				transition:color 0.5s, border 0.5s;
 				border-bottom:3px solid transparent;
 
@@ -140,13 +140,13 @@ header {
 
 			> div {
 
-				color:#ffffff;
 				display:block;
 				font-size:15px;
 				cursor:pointer;
+				position:relative;
 				margin:0 0 0 30px;
 				padding:8px 0 9px 0;
-				position:relative;
+				color:var(--text-color);
 				transition:color 0.5s, border 0.5s;
 				border-bottom:3px solid transparent;
 
@@ -277,7 +277,7 @@ header {
 							display:grid;
 							padding:20px;
 							grid-gap:20px;
-							background-color:#181a1f;
+							background-color:var(--back-color);
 							grid-template-columns:repeat(4, 1fr);
 
 							> a {
