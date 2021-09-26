@@ -1,8 +1,8 @@
 code {
 	color:white;
+	font-size:15px;
 	padding:2px 5px;
-	display:inline-block;
-	background-color:#5F677B;
+	background-color:var(--boxes-color);
 }
 
 code[class*="language-"],
@@ -30,13 +30,13 @@ pre[class*="language-"] {
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow:none;
-	background:#5F677B;
+	background:var(--faint-color);
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow:none;
-	background:#5F677B;
+	background:var(--faint-color);
 }
 
 code.language-sql .token.operator {
