@@ -2,7 +2,11 @@ layout-hero {
 
 	width:100%;
 	display:block;
-	margin:-100px 0 150px 0;
+	margin:-120px 0 150px 0;
+	background-repeat:no-repeat;
+	background-position:250px 0px;
+	background-size:1500px 1500px;
+	background-image:url("/static/img/home/honeycomb.png");
 
 	@include media(max-width-768) {
 		margin-bottom:10vh;
