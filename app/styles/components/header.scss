@@ -6,7 +6,7 @@ header {
 	position:relative;
 	background-color:transparent;
 
-	@include media(max-width-1000) {
+	@include media(max-width-1024) {
 		top:0;
 		position:-webkit-sticky;
 		position:sticky;
@@ -24,7 +24,7 @@ header {
 		flex-direction:row;
 		justify-content:space-between;
 
-		@include media(max-width-1000) {
+		@include media(max-width-1024) {
 			padding-top:0px;
 		}
 
@@ -79,7 +79,7 @@ header {
 				cursor:pointer;
 			}
 
-			@include media(max-width-1000) {
+			@include media(max-width-1024) {
 				display:flex;
 			}
 
@@ -112,6 +112,8 @@ header {
 				&[button] {
 
 					height:40px;
+					display:flex;
+					white-space:nowrap;
 
 					@include media(max-width-750) {
 						display:none;
@@ -121,7 +123,7 @@ header {
 
 				&:not([button]) {
 
-					@include media(max-width-1000) {
+					@include media(max-width-1024) {
 						display:none;
 					}
 
@@ -150,7 +152,7 @@ header {
 				transition:color 0.5s, border 0.5s;
 				border-bottom:3px solid transparent;
 
-				@include media(max-width-1000) {
+				@include media(max-width-1024) {
 					display:none;
 				}
 

@@ -4,7 +4,7 @@ button, a[button] {
 	border:none;
 	outline:none;
 	cursor:pointer;
-	padding:0 30px;
+	padding:0 20px;
 	box-shadow:none;
 	border-radius:0px;
 	align-items:center;
@@ -21,11 +21,32 @@ button, a[button] {
 		box-shadow:0 0 30px rgba(255,60,172,0.5);
 	}
 
-	i {
+	span + i {
 		padding-left:30px;
 	}
 
-	&[bordered] {
+	i + span {
+		padding-left:10px;
+	}
+
+	&[bordered][thinner] {
+
+		padding:1px;
+
+		div {
+			width:100%;
+			height:100%;
+			display:flex;
+			padding:0 20px;
+			border-radius:0px;
+			align-items:center;
+			justify-content:center;
+			background-color:var(--popup-color);
+		}
+
+	}
+
+	&[bordered][thicker] {
 
 		padding:3px;
 
@@ -33,7 +54,7 @@ button, a[button] {
 			width:100%;
 			height:100%;
 			display:flex;
-			padding:0 30px;
+			padding:0 20px;
 			border-radius:0px;
 			align-items:center;
 			justify-content:center;
