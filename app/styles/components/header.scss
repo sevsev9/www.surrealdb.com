@@ -150,8 +150,8 @@ header {
 				transition:color 0.5s, border 0.5s;
 				border-bottom:3px solid transparent;
 
-				@include media(max-width-750) {
-					padding:7px 0 5px 0;
+				@include media(max-width-1000) {
+					display:none;
 				}
 
 				&:hover, &:active {
