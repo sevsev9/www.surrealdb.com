@@ -46,14 +46,15 @@ code.language-sql .token.operator {
 code.language-sql {
 	.token.comment { color:#636a75; }
 	.token.punctuation { color:#ffffff; }
-	.token.variable { color:#00dbff; }
-	.token.operator { color:white; }
+	.token.variable { color:#ffde00; }
+	.token.operator { color:#ff3dac; }
 	.token.keyword { color:#ff3dac; }
-	.token.casts { color:#999999; }
+	.token.cast { color:#999999; }
 	.token.string { color:#00ff6e; }
 	.token.number { color:#00dbff; }
-	.token.boolean { color:#9d2fff; } // #8700ff;
-	.token.nothing { color:#9d2fff; } // #8700ff;
-	.token.function { color:#00dbff; }
-	.token.connector { color:#a2a2a2; }
+	.token.boolean { color:#9d2fff; }
+	.token.nothing { color:#9d2fff; }
+	.token.function { color:#ff9b67; }
+	.token.connector { color:#e100ff; }
+	.token.record { color:#0084ff; }
 }
