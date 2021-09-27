@@ -2,24 +2,29 @@ layout-text {
 
 	width:100%;
 	display:block;
+	text-align:center;
 	margin:0 auto 0 auto;
 
-	h2 {
+	&[text-l] {
+		text-align:left;
+	}
 
+	&[text-r] {
+		text-align:right;
+	}
+
+	@include media(max-width-750) {
+		text-align:left;
+	}
+
+	h2 {
 		width:100%;
 		margin:0 auto;
-		text-align:center;
-
-		@include media(max-width-750) {
-			text-align:left;
-		}
-
 	}
 
 	p {
 		margin:0 auto;
 		max-width:800px;
-		text-align:center;
 	}
 
 }

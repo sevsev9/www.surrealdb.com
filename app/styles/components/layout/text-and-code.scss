@@ -3,9 +3,15 @@ layout-text-and-code {
 	display:block;
 
 	content {
+
 		display:flex;
 		position:relative;
 		margin:0px auto 50px auto;
+
+		p {
+			padding-bottom:30px;
+		}
+
 	}
 
 	&[text-l] content {
