@@ -4,9 +4,13 @@ layout-hero {
 	display:block;
 	margin:-120px 0 150px 0;
 	background-repeat:no-repeat;
-	background-position:250px 0px;
-	background-size:1500px 1500px;
+	background-position:600px 0px;
+	background-size:1254px 662px;
 	background-image:url("/static/img/home/honeycomb.png");
+
+	@include media(max-width-1000) {
+		background-image:none;
+	}
 
 	@include media(max-width-768) {
 		margin-bottom:10vh;
