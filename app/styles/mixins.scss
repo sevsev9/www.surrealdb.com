@@ -1,0 +1,19 @@
+@mixin faded {
+
+	&:not([button]) {
+
+		transition:color 0.3s;
+	    background:-moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+	    background:-webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+	    background:linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
+	    background-clip:text;
+	    -webkit-background-clip:text;
+
+	    &:hover {
+	  	  color:var(--hover-color);
+	  	  color:rgba(0,0,0,0);
+	    }
+
+	}
+
+}

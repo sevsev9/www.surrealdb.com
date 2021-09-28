@@ -24,4 +24,8 @@ a {
 		color:transparent;
 	}
 
+	&[faded] {
+		@include faded;
+	}
+
 }
