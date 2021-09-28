@@ -8,8 +8,8 @@
 </style>
 <g>
 	
-		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="6.2314" y1="3204.4583" x2="18.7104" y2="3182.844" gradientTransform="matrix(1 0 0 -1 0 3208.062)">
-		<stop  offset="0" style="stop-color:#FF00AE"/>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="6.2198" y1="-2436.4531" x2="18.6979" y2="-2414.8403" gradientTransform="matrix(1 0 0 1 0 2440.062)">
+		<stop  offset="0" style="stop-color:#FF009E"/>
 		<stop  offset="0.7" style="stop-color:#9600FF"/>
 	</linearGradient>
 	<polygon class="st0" points="0,7.2 12.5,0 24.9,7.2 24.9,21.6 12.5,28.8 0,21.6 	"/>
