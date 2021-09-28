@@ -67,7 +67,7 @@ module.exports = function(environment) {
 			description: '',
 			display: 'standalone',
 			enabled: true,
-			mask: '#ff3cac',
+			mask: '#ff009e',
 			name: 'SurrealDB',
 			orientation: 'portrait',
 			scope: '/',
