@@ -46,7 +46,7 @@
 		</Button::Thicker>
 	</block>
 	<block>
-		<Code min-h-300 @name="index/blank.sql" />
+		<Code min-h-300 @name="index/modelling.sql" />
 	</block>
 </Layout::Blocks>
 
@@ -54,12 +54,12 @@
 
 <Layout::Blocks main-r as |block|>
 	<block>
-		<Code min-h-300 @name="index/blank.sql" />
+		<Code min-h-300 @name="index/surrealql.sql" />
 	</block>
 	<block>
 		<h4>Powerful querying abilities</h4>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
-		<Button::Thicker @link="showcase.modelling">
+		<Button::Thicker @link="showcase.surrealql">
 			<span>The best features of SurrealQL</span> <i class="fas fa-arrow-right"></i>
 		</Button::Thicker>
 	</block>
@@ -71,12 +71,12 @@
 	<block>
 		<h4>Simplified data analytics</h4>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
-		<Button::Thicker @link="showcase.modelling">
+		<Button::Thicker @link="showcase.analytics">
 			<span>See the many ways to analyse data</span> <i class="fas fa-arrow-right"></i>
 		</Button::Thicker>
 	</block>
 	<block>
-		<Code min-h-300 @name="index/blank.sql" />
+		<Code min-h-300 @name="index/analytics.sql" />
 	</block>
 </Layout::Blocks>
 
@@ -84,14 +84,29 @@
 
 <Layout::Blocks main-r as |block|>
 	<block>
-		<Code min-h-300 @name="index/modelling.sql" />
+		<Code min-h-300 @name="index/permissions.sql" />
 	</block>
 	<block>
-		<h4>Faster app development cycles</h4>
+		<h4>Faster app development times</h4>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
-		<Button::Thicker @link="showcase.modelling">
-			<span>Speed up your product releases</span> <i class="fas fa-arrow-right"></i>
+		<Button::Thicker @link="showcase.permissions">
+			<span>Speed up your app development</span> <i class="fas fa-arrow-right"></i>
 		</Button::Thicker>
+	</block>
+</Layout::Blocks>
+
+<Layout::Gap />
+
+<Layout::Blocks main-l as |block|>
+	<block>
+		<h4>Superpowered database functionality</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		{{!-- <Button::Thicker @link="showcase.collaborate">
+			<span>Take your software to the next level</span> <i class="fas fa-arrow-right"></i>
+		</Button::Thicker> --}}
+	</block>
+	<block>
+		<Code min-h-300 @name="index/collaborate.sql" />
 	</block>
 </Layout::Blocks>
 
