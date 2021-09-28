@@ -1,4 +1,4 @@
--- Selec all users and fetch the users' friends' names
+-- Select all users and fetch the users' friends' names
 SELECT *, friends.*.name.full AS friends FROM user;
 
 -- Set a variable to be used in subsequent statements

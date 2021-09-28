@@ -1,4 +1,12 @@
-<a {{on "click" (fn (mut this.show) true)}} button>{{@text}}</a>
+<a {{on "click" (fn (mut this.show) true)}} button ...attributes>
+	<div>
+		{{#if (has-block)}}
+			{{yield}}
+		{{else}}
+			{{@text}}
+		{{/if}}
+	</div>
+</a>
 
 {{#if this.show}}
 
