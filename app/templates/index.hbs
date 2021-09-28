@@ -18,6 +18,7 @@
 <Layout::Ticks>
 	<Layout::Ticks::Item @text="Document & graph database" />
 	<Layout::Ticks::Item @text="JOIN-less deep fetching" />
+	<Layout::Ticks::Item @text="Distributed ACID transactions" />
 	<Layout::Ticks::Item @text="Built with Rust" />
 	<Layout::Ticks::Item @text="Structured and un-structured data" />
 	<Layout::Ticks::Item @text="SQL-style querying" />
@@ -36,72 +37,136 @@
 
 <Layout::Gap />
 
-<Layout::TextAndCode text-l @title="Simplified data modelling" @text="Reduce time spent hunting for images - while wondering which version, what size, and what type of image file you need -  and relieve pressure on your design department, so that they don’t constantly need to re-invent the wheel." as |block|>
-	<block.link @route="showcase.modelling">
-		The best features of SurrealQL <i class="fas fa-arrow-right"></i>
+<Layout::TextAndCode text-l @title="Improved data modelling" @text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit." as |block|>
+	<block.link @link="showcase.modelling">
+		<span>See how SurrealDB sets your data free</span> <i class="fas fa-arrow-right"></i>
 	</block.link>
-	<block.code @name="index-modelling.sql">
-		SELECT * FROM person WHERE id = person:1
-	</block.code>
+	<block.code @name="index/blank.sql" />
 </Layout::TextAndCode>
 
 <Layout::Gap />
 
-<Layout::Gap />
-
-<Layout::TextAndCode text-r @title="Elegant data modeling" @text="Reduce time spent hunting for images - while wondering which version, what size, and what type of image file you need -  and relieve pressure on your design department, so that they don’t constantly need to re-invent the wheel." as |block|>
-<block.link @route="showcase.surrealql">
-		The best features of SurrealQL <i class="fas fa-arrow-right"></i>
+<Layout::TextAndCode text-r @title="Powerful querying abilities" @text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit." as |block|>
+	<block.link @link="showcase.surrealql">
+		<span>The best features of SurrealQL</span> <i class="fas fa-arrow-right"></i>
 	</block.link>
-	<block.code @name="index-surrealql.sql">
-		SELECT * FROM person WHERE id = person:1
-	</block.code>
+	<block.code @name="index/blank.sql" />
 </Layout::TextAndCode>
 
 <Layout::Gap />
 
-<Layout::Gap />
-
-<Layout::TextAndCode text-l @title="Elegant data modeling" @text="Reduce time spent hunting for images - while wondering which version, what size, and what type of image file you need -  and relieve pressure on your design department, so that they don’t constantly need to re-invent the wheel." as |block|>
-	<block.link @route="showcase.analytics">
-		The best features of SurrealQL <i class="fas fa-arrow-right"></i>
+<Layout::TextAndCode text-l @title="Simplified data analytics" @text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit." as |block|>
+	<block.link @link="showcase.analytics">
+		<span>See the many ways to analyse data</span> <i class="fas fa-arrow-right"></i>
 	</block.link>
-	<block.code @name="index-analytics.sql">
-		SELECT * FROM person WHERE id = person:1
-	</block.code>
+	<block.code @name="index/blank.sql" />
 </Layout::TextAndCode>
 
 <Layout::Gap />
 
-<Layout::Gap />
-
-<Layout::TextAndCode text-r @title="Elegant data modeling" @text="Reduce time spent hunting for images - while wondering which version, what size, and what type of image file you need -  and relieve pressure on your design department, so that they don’t constantly need to re-invent the wheel." as |block|>
-	<block.link @route="showcase.permissions">
-		The best features of SurrealQL <i class="fas fa-arrow-right"></i>
+<Layout::TextAndCode text-r @title="Faster app development cycles" @text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit." as |block|>
+	<block.link @link="showcase.permissions">
+		<span>Speed up your product releases</span> <i class="fas fa-arrow-right"></i>
 	</block.link>
-	<block.code @name="index-permissions.sql">
-		SELECT * FROM person WHERE id = person:1
-	</block.code>
+	<block.code @name="index/blank.sql" />
 </Layout::TextAndCode>
 
 <Layout::Gap />
 
+<Layout::Text @title="Database libraries and clients" @text="SurrealDB builds and maintains first-party database clients for a number of popular languages including Javascript, Typescript, Node.js, Deno, Rust, and Golang. All clients connect to SurrealDB using a binary protocol over a WebSocket connection for low-latency and efficient parsing, leading to blazingly fast queries." />
+
 <Layout::Gap />
 
-<Layout::Boxes large>
-	<Layout::Boxes::Item @title="Lorem ipsum dolor sit amet, consectetur adipisicing elit" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor sit amet, consectetur adipisicing elit" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor sit amet, consectetur adipisicing elit" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-</Layout::Boxes>
+<Layout::CodeAndCode as |block|>
+	<block.l.title>
+		<i class="fab fa-js"></i> Javascript
+	</block.l.title>
+	<block.l.code @name="index/library/javascript.bash" />
+	<block.l.text>
+		<Link @link="https://github.com/surrealdb">Github</Link>
+		&bull;
+		<Link @link="docs">Documentation</Link>
+	</block.l.text>
+	{{!--  --}}
+	<block.r.title>
+		<i class="fab fa-golang"></i> Golang
+	</block.r.title>
+	<block.r.code @name="index/library/golang.bash" />
+	<block.r.text>
+		<Link @link="https://github.com/surrealdb">Github</Link>
+		&bull;
+		<Link @link="docs">Documentation</Link>
+	</block.r.text>
+</Layout::CodeAndCode>
 
-<Layout::Boxes small>
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-</Layout::Boxes>
+<Layout::CodeAndCode as |block|>
+	<block.l.title>
+		<i class="fab fa-python"></i> Python
+	</block.l.title>
+	<block.l.code @name="index/library/python.bash" />
+	<block.l.text>
+		<Link @link="https://github.com/surrealdb">Github</Link>
+		&bull;
+		<Link @link="docs">Documentation</Link>
+	</block.l.text>
+	{{!--  --}}
+	<block.r.title>
+		<i class="fab fa-rust"></i> Rust
+	</block.r.title>
+	<block.r.code @name="index/library/rust.bash" />
+	<block.r.text>
+		<Link @link="https://github.com/surrealdb">Github</Link>
+		&bull;
+		<Link @link="docs">Documentation</Link>
+	</block.r.text>
+</Layout::CodeAndCode>
+
+<Layout::CodeAndCode as |block|>
+	<block.l.title>
+		<i class="fab fa-node-js"></i> Node.js
+	</block.l.title>
+	<block.l.code @name="index/library/javascript.bash" />
+	<block.l.text>
+		<Link @link="https://github.com/surrealdb">Github</Link>
+		&bull;
+		<Link @link="docs">Documentation</Link>
+	</block.l.text>
+	{{!--  --}}
+	<block.r.title @text="Deno" />
+	<block.r.code @name="index/library/deno.bash" />
+	<block.r.text>
+		<Link @link="https://github.com/surrealdb">Github</Link>
+		&bull;
+		<Link @link="docs">Documentation</Link>
+	</block.r.text>
+</Layout::CodeAndCode>
+
+<Layout::Gap />
+
+<Layout::Text @title="Javascript framework connectors" @text="In addition to the client libraries for the popular languages, SurrealDB maintains database client connectors for some of the popular Javascript frameworks, including Angular.js, and Ember.js. These connectors support real-time data asubscriptions and notifications using a binary protocol over a WebSocket connection, enabling advanced application functionality and awesome performance." />
+
+<Layout::Gap />
+
+<Layout::CodeAndCode as |block|>
+	<block.l.title>
+		<i class="fab fa-ember"></i> Ember.js
+	</block.l.title>
+	<block.l.code @name="index/library/ember.bash" />
+	<block.l.text>
+		<Link @link="https://github.com/surrealdb">Github</Link>
+		&bull;
+		<Link @link="docs">Documentation</Link>
+	</block.l.text>
+	{{!--  --}}
+	<block.r.title>
+		<i class="fab fa-angular"></i> Angular.js
+	</block.r.title>
+	<block.r.code @name="index/library/angular.bash" />
+	<block.r.text>
+		<Link @link="https://github.com/surrealdb">Github</Link>
+		&bull;
+		<Link @link="docs">Documentation</Link>
+	</block.r.text>
+</Layout::CodeAndCode>
+
+<Layout::Gap />
