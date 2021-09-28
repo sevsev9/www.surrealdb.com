@@ -9,7 +9,7 @@ SELECT *,
 	-- Select all users who like this user
 	<-like<-user AS friends,
 	-- Select all products which friends have purchased
-	<-like<-user->purchased->product AS recommended
+	<-like<-user->purchase->product AS recommended
 	-- Only look at the single user selected above
 	FROM $tobie
 ;
