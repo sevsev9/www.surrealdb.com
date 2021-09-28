@@ -7,8 +7,8 @@ module.exports = function (defaults) {
 	let app = new EmberApp(defaults, {
 		snippetPaths: ['app/snippets'],
 		snippetRegexes: {
-			begin: /<block.code\s@name="(\S+)"[^>]*>/,
-			end: /<\/block.code>/,
+			begin: /<Code\s@name="(\S+)"[^>]*>/,
+			end: /<\/Code>/,
 		},
 		includeFileExtensionInSnippetNames: false,
 		'ember-prism': {

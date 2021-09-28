@@ -5,6 +5,15 @@ code {
 	background-color:var(--boxes-color);
 }
 
+pre > code {
+	display:block;
+}
+
+pre[class*="language-"] {
+	padding:20px;
+	box-shadow:0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
 	color:white;
