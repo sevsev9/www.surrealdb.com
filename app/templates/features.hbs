@@ -8,33 +8,29 @@
 
 <Layout::Gap />
 
-<Layout::Text @title="A highly-scalable NewSQL database" @text="Fauna is a flexible, developer-friendly, transactional database delivered as a secure and scalable cloud API with native GraphQL. Never again worry about database provisioning, scaling, sharding, replication, or correctness." />
+<Layout::Text @title="A highly-scalable NewSQL database" @text="SurrealDB is a flexible, developer-friendly, transactional database delivered as a secure and scalable cloud API with native GraphQL. Never again worry about database provisioning, scaling, sharding, replication, or correctness." />
 
 <Layout::Gap />
 
 <Layout::Boxes large>
-	<Layout::Boxes::Item @title="Flexible data modelling" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="Distributed ACID transactions" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="Composite indexing on-the-fly" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="Real-time streaming" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="Custom business logic" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="Web-native secure access" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="Built-in temporality" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="Multi-tenant databases" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="Setup-free GraphQL" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="Global low-latency" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="Hands-free elasticity" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-	<Layout::Boxes::Item @title="No database operations" @text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
+	<Layout::Boxes::Item @title="Single-node or distributed" @text="SurrealDB can be run in on a single-node (both in-memory or using durable on-disk storage), or in a highly-available distributed cluster. It consumes very few resources making it perfect for embedding within other stacks or applications." />
+	<Layout::Boxes::Item @title="Flexible data modelling" @text="Using an advanced query language, SurrealDB lets you store and access data using relational, document, graph, and embedded methodologies. The innovative data model enables you to model and access links between data records in an efficient way without complicated JOINs." />
+	<Layout::Boxes::Item @title="Distributed ACID transactions" @text="Have peace-of-mind when working with your data, by using strictly serializable multi-table and multi-record transactions, with no limit on the number of keys or documents, or the transaction duration." />
+	<Layout::Boxes::Item @title="Built with Rust" @text="SurrealDB is designed from the ground up to be stable and scalable, with a focus on performance and functionality. When running, SurrealDB uses minimal machine resources, with highly-efficient memory access and caching." />
+	<Layout::Boxes::Item @title="Structured and unstructured data" @text="SurrealDB doesn't force you into using pre-specified columns or fields. You can specify that a table is schemaless allowing any data keys to be stored, or instead, schemafull mode ensures that only certain fields and data types can be stored." />
+	<Layout::Boxes::Item @title="Query using SQL" @text="The primary method of querying SurrealDB is using SurrealQL, a similar but modified version of traditional SQL. SurrealQL enables linked documents to be traversed and queried efficiently, while still using an imperative language which remains understandable by data scientists." />
+	<Layout::Boxes::Item @title="GraphQL, REST, or WebSockets" @text="When connecting directly from an end-user device, you can choose to query the data using SurrealQL, GraphQL, or using a traditional REST API. In addition, WebSockets enable high-performance bi-directional realtime syncing of any updated data." />
+	<Layout::Boxes::Item @title="Multi-column indexing on-the-fly" @text="Indexes can be easily added and removed as your application evolves. Indexes allow for strongly consistent reads and writes, enabling highly-performant reads, whilst multi-column unique indexes ensure custom data guarantees." />
+	<Layout::Boxes::Item @title="Full-text indexing with no effort" @text="In SurrealDB, records can be indexed automatically using distributed full-text-indexes, allowing for performant Lucene-based querying over all record data fields, including boolean searches, fuzzy searches, wildcard searches, range searches, and weighted resuts." />
+	<Layout::Boxes::Item @title="Incrementally computed views" @text="In addition to traditional indexes, SurrealDB allows data to be selected, grouped, and ordered into pre-computed views. These views enable efficient data access for specific incrementally aggregated analytics queries." />
+	<Layout::Boxes::Item @title="Real-time data syncing" @text="When connecting with SurrealDB, all connections are made using WebSockets, allowing for bi-directional data syncing. Dependent on data access permissions, client-based document subscriptions are triggered in real-time whenever changes are made to the data." />
+	<Layout::Boxes::Item @title="In-built access and permissions" @text="SurrealDB is designed as a web database, with clients connecting directly to it from browsers, mobile devices, and desktop apps. Configure your access rules easily using SQL statements, ensuring only the correct users have access to their respective data." />
+	<Layout::Boxes::Item @title="Web-native secure access" @text="With support for SSL/TLS, Single-Sign-On, external 3rd party authentication, JWT token based authentication, and custom business authentication logic - SurrealDB offers strong security, with the flexibility of custom authentication methods that suit your app or business." />
+	<Layout::Boxes::Item @title="Versioned temporal data" @text="Temporal queries enable easy auditing of whole datasets. See how your data, and the graph, evolved over time, and what changes were made by whom - by specifying a certain timestamp when running a query." />
+	<Layout::Boxes::Item @title="Multi-tenant databases" @text="With support for namespaces and databases, SurrealDB enables you to separate your data out however you wish, simplifying the development of SaaS applications." />
+	<Layout::Boxes::Item @title="Global low-latency" @text="Choose where you want your data to reside, and serve customers anywhere - with consistent data, replicated in real-time across multiple regions, allowing you to keep application loading speeds super-fast." />
+	<Layout::Boxes::Item @title="Hands-free elasticity" @text="When using SurrealDB in the cloud, transparent behind-the-scenes scaling ensures that your apps never run out of capacity or storage, while you pay only for the data storage that you use." />
+	<Layout::Boxes::Item @title="Hassle free operation" @text="SurrealDB is built from the ground-up to run as a cloud-first database. Configurable with just a single command, either as a binary, or from within a Docker instance, SurrealDB is easy to start, easy to scale, and easy to maintain. All the hard work is done for you." />
 </Layout::Boxes>
 
-<Layout::Boxes small>
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-	<Layout::Boxes::Item @title="Lorem ipsum dolor" />
-</Layout::Boxes>
+<Layout::Gap />
