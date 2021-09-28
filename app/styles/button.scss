@@ -12,7 +12,7 @@ button, a[button] {
 	justify-content:center;
 	color:var(--text-color);
 	background:rgb(135,0,255);
-	transition:box-shadow 0.3s ease-in-out;
+	transition:box-shadow 0.3s;
 	background:-moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
 	background:-webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
 	background:linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,60,172,1) 70%);
@@ -31,7 +31,7 @@ button, a[button] {
 
 	&[bordered][thinner] {
 
-		padding:1px;
+		padding:2px;
 
 		div {
 			width:100%;
