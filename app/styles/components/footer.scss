@@ -82,28 +82,16 @@ footer {
 				}
 
 				a {
-
 					font-size:14px;
 					color:var(--faint-color);
-
-					&:hover {
-						color:var(--hover-color);
-					}
-
 				}
 
 				i {
-
 					cursor:pointer;
 					font-size:22px;
 					margin:0 5px 0 0;
 					transition:color 0.3s;
 					color:var(--faint-color);
-
-					&:hover {
-						color:var(--hover-color);
-					}
-
 				}
 
 			}
