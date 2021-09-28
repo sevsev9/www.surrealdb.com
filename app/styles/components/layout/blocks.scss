@@ -26,14 +26,14 @@ layout-blocks {
 
 	}
 
-	&[main-c] content div:only-child {
+	&[main-f] content {
+		grid-template-columns:100%;
+	}
+
+	&[main-c] content {
 		max-width:800px;
 		text-align:center;
-		margin:0 auto 0 auto;
-		grid-column:1 / span 2;
-		@include media(max-width-1000) {
-			grid-column:1;
-		}
+		grid-template-columns:100%;
 		@include media(max-width-750) {
 			text-align:left;
 		}
