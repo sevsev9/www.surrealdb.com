@@ -1,0 +1,22 @@
+<layout-code-and-code ...attributes>
+	<content>
+		<div>
+			{{yield (hash
+				l=(hash
+					title=(component "layout/text/h4")
+					text=(component "layout/text/p")
+					code=(component "code")
+				)
+			)}}
+		</div>
+		<div>
+			{{yield (hash
+				r=(hash
+					title=(component "layout/text/h4")
+					text=(component "layout/text/p")
+					code=(component "code")
+				)
+			)}}
+		</div>
+	</content>
+</layout-code-and-code>
