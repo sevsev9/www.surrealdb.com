@@ -1,1 +1,1 @@
-cargo install surreal.rs
+cargo install surrealdb
