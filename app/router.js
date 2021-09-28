@@ -18,6 +18,7 @@ Router.map(function() {
 		this.route('modelling');
 		this.route('surrealql');
 		this.route('analytics');
+		this.route('collaborate');
 		this.route('permissions');
 	});
 
