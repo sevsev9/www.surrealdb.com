@@ -1,9 +1,9 @@
 sidebar {
 
 	top:0;
-	right:0;
 	bottom:0;
 	width:400px;
+	right:-400px;
 	z-index:1000;
 	display:flex;
 	overflow:auto;
@@ -14,11 +14,12 @@ sidebar {
 	flex-direction:column;
 	align-items:flex-start;
 	overscroll-behavior:contain;
-	transform:translate3d(100%, 0, 0);
+	transform:translate3d(0, 0, 0);
 	background-color:var(--sidebar-color);
 
 	@include media(max-width-600) {
 		width:80%;
+		right:-80%;
 	}
 
 	> div:nth-of-type(1) {
@@ -129,13 +130,13 @@ body[sidebar] {
 
 	&[sidebar='over'] {
 		sidebar {
-			transform:translate3d(0, 0, 0);
+			transform:translate3d(-100%, 0, 0);
 		}
 	}
 	&[sidebar='full'] {
 		sidebar {
 			width:100%;
-			transform:translate3d(0, 0, 0);
+			transform:translate3d(-100%, 0, 0);
 		}
 	}
 }
