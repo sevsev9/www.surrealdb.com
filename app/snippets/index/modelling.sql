@@ -1,6 +1,6 @@
 -- Create a 'user' record
 CREATE user SET
-	age = 34,
+	age = <int> 34,
 	enabled = true,
 	-- Store the current time
 	created_at = time::now(),
