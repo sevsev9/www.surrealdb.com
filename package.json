@@ -36,7 +36,6 @@
     "@ascua/modal": "^0.0.215",
     "@ascua/routing": "^0.0.215",
     "@ascua/scrollup": "^0.0.215",
-    "@ascua/surreal": "^0.0.215",
     "@ascua/tasks": "^0.0.215",
     "@ascua/update": "^0.0.215",
     "@ascua/visuals": "^0.0.215",
@@ -69,7 +68,6 @@
     "ember-resolver": "^8.0.2",
     "ember-source": "~3.28.0",
     "ember-template-lint": "^3.6.0",
-    "ember-welcome-page": "^4.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-ember": "^10.5.4",
@@ -81,7 +79,7 @@
     "prettier": "^2.3.2",
     "qunit": "^2.16.0",
     "qunit-dom": "^1.6.0",
-    "sass": "^1.23.7"
+    "sass": "^1.42.1"
   },
   "engines": {
     "node": "12.* || 14.* || >= 16"
