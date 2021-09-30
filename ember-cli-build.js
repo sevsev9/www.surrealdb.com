@@ -5,18 +5,18 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function (defaults) {
 
 	let app = new EmberApp(defaults, {
+		prism: {
+			theme: 'okaidia',
+			languages: [
+				'bash', 'javascript', 'json',
+			],
+		},
 		snippetPaths: ['app/snippets'],
 		snippetRegexes: {
 			begin: /<Code\s@name="(\S+)"[^>]*>/,
 			end: /<\/Code>/,
 		},
 		includeFileExtensionInSnippetNames: false,
-		'ember-prism': {
-			theme: 'okaidia',
-			components: [
-				'bash', 'javascript', 'json',
-			],
-		}
 	});
 
 	// Use `app.import` to add additional libraries to the generated

@@ -1,28 +1,16 @@
-code {
-	color:white;
+// ----------------------------------------
+// Code inline
+// ----------------------------------------
+
+code, :not(pre) > code[class*="language-"] {
 	font-size:15px;
 	padding:2px 5px;
 	background-color:var(--boxes-color);
 }
 
-codes {
-
-	display:grid;
-	grid-template-columns:1fr 1fr;
-	box-shadow:0 5px 20px rgba(0, 0, 0, 0.3);
-
-	pre[class*="language-"] {
-
-		box-shadow:none;
-		border-left:1px solid var(--input-color);
-
-		& + pre[class*="language-"] {
-			margin:0;
-		}
-
-	}
-
-}
+// ----------------------------------------
+// Code blocks
+// ----------------------------------------
 
 pre > code {
 	display:block;
@@ -56,17 +44,38 @@ pre[class*="language-"] {
 	tab-size:4;
 }
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+pre[class*="language-"]::selection,
+code[class*="language-"]::selection {
 	text-shadow:none;
 	background:var(--faint-color);
 }
 
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	text-shadow:none;
-	background:var(--faint-color);
+// ----------------------------------------
+// Two-up code blocks
+// ----------------------------------------
+
+codes {
+
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	box-shadow:0 5px 20px rgba(0, 0, 0, 0.3);
+
+	pre[class*="language-"] {
+
+		box-shadow:none;
+		border-left:1px solid var(--input-color);
+
+		& + pre[class*="language-"] {
+			margin:0;
+		}
+
+	}
+
 }
+
+// ----------------------------------------
+// Code highlighting
+// ----------------------------------------
 
 code.language-sql .token.operator {
 	background:none;
