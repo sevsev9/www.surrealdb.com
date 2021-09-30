@@ -140,8 +140,10 @@
 
 <Layout::Blocks as |block|>
 	<block>
-		<h4>
-			<i class="fab fa-js"></i> Javascript
+		<h4 flex row middle>
+			<i class="fab fa-js font-30 m-r-10"></i>
+			Javascript
+			<l faint green>Done</l>
 		</h4>
 		<Code @name="index/library/javascript.bash" />
 		<n>
@@ -152,8 +154,10 @@
 	</block>
 	{{!--  --}}
 	<block>
-		<h4>
-			<i class="fab fa-golang"></i> Golang
+		<h4 flex row middle>
+			<i class="fab fa-golang font-30 m-r-10"></i>
+			Golang
+			<l faint green>Done</l>
 		</h4>
 		<Code @name="index/library/golang.bash" />
 		<n>
@@ -166,8 +170,10 @@
 
 <Layout::Blocks as |block|>
 	<block>
-		<h4>
-			<i class="fab fa-python"></i> Python
+		<h4 flex row middle>
+			<i class="fab fa-python font-30 m-r-10"></i>
+			Python
+			<l faint orange>Coming soon</l>
 		</h4>
 		<Code @name="index/library/python.bash" />
 		<n>
@@ -178,8 +184,10 @@
 	</block>
 	{{!--  --}}
 	<block>
-		<h4>
-			<i class="fab fa-rust"></i> Rust
+		<h4 flex row middle>
+			<i class="fab fa-rust font-30 m-r-10"></i>
+			Rust
+			<l faint orange>Coming soon</l>
 		</h4>
 		<Code @name="index/library/rust.bash" />
 		<n>
@@ -192,8 +200,10 @@
 
 <Layout::Blocks as |block|>
 	<block>
-		<h4>
-			<i class="fab fa-node-js"></i> Node.js
+		<h4 flex row middle>
+			<i class="fab fa-node-js font-30 m-r-10"></i>
+			Node.js
+			<l faint green>Done</l>
 		</h4>
 		<Code @name="index/library/javascript.bash" />
 		<n>
@@ -204,7 +214,10 @@
 	</block>
 	{{!--  --}}
 	<block>
-		<h4>Deno</h4>
+		<h4 flex row middle>
+			Deno
+			<l faint orange>Coming soon</l>
+		</h4>
 		<Code @name="index/library/deno.bash" />
 		<n>
 			<Link @link="https://github.com/surrealdb/surreal.deno" faded>Github</Link>
@@ -222,8 +235,10 @@
 
 <Layout::Blocks as |block|>
 	<block>
-		<h4>
-			<i class="fab fa-ember"></i> Ember.js
+		<h4 flex row middle>
+			<i class="fab fa-ember font-30 m-r-10"></i>
+			Ember.js
+			<l faint green>Done</l>
 		</h4>
 		<Code @name="index/library/ember.bash" />
 		<n>
@@ -234,12 +249,44 @@
 	</block>
 	{{!--  --}}
 	<block>
-		<h4>
-			<i class="fab fa-angular"></i> Angular.js
+		<h4 flex row middle>
+			<i class="fab fa-angular font-30 m-r-10"></i>
+			Angular.js
+			<l faint orange>Coming soon</l>
 		</h4>
 		<Code @name="index/library/angular.bash" />
 		<n>
 			<Link @link="https://github.com/surrealdb/angular-surreal" faded>Github</Link>
+			&bull;
+			<Link @link="docs" faded>Documentation</Link>
+		</n>
+	</block>
+</Layout::Blocks>
+
+<Layout::Blocks as |block|>
+	<block>
+		<h4 flex row middle>
+			<i class="fab fa-react font-30 m-r-10"></i>
+			React.js
+			<l faint green>Done</l>
+		</h4>
+		<Code @name="index/library/react.bash" />
+		<n>
+			<Link @link="https://github.com/surrealdb/surreal.js" faded>Github</Link>
+			&bull;
+			<Link @link="docs" faded>Documentation</Link>
+		</n>
+	</block>
+	{{!--  --}}
+	<block>
+		<h4 flex row middle>
+			<i class="fab fa-vuejs font-30 m-r-10"></i>
+			Vue.js
+			<l faint green>Done</l>
+		</h4>
+		<Code @name="index/library/vue.bash" />
+		<n>
+			<Link @link="https://github.com/surrealdb/surreal.js" faded>Github</Link>
 			&bull;
 			<Link @link="docs" faded>Documentation</Link>
 		</n>

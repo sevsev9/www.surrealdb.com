@@ -62,6 +62,43 @@ n {
 
 }
 
+l {
+
+	margin:0 10px;
+	padding:3px 8px;
+	font-size:0.6em;
+	display:inline-block;
+	text-transform:uppercase;
+	color:var(--faint-color);
+	border:1px solid var(--faint-color);
+	font-family:var(--system-font-mono);
+
+	&[faint] {
+		opacity:0.6;
+	}
+
+	&[blue] {
+		color:#0084ff;
+		border:1px solid #0084ff;
+	}
+
+	&[green] {
+		color:#00ff6e;
+		border:1px solid #00ff6e;
+	}
+
+	&[orange] {
+		color:#ff9b67;
+		border:1px solid #ff9b67;
+	}
+
+	&[purple] {
+		color:#9d2fff;
+		border:1px solid #9d2fff;
+	}
+
+}
+
 pre, h1, h2, h3, h4, h5, p {
 	&:not(:last-child) {
 		padding-bottom:30px;
