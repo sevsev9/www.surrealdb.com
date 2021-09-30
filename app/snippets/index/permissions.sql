@@ -2,8 +2,10 @@
 DEFINE TABLE post SCHEMALESS
 	PERMISSIONS
 		FOR select
-			-- Only published posts can be selected
+			-- Published posts can be selected
 			WHERE published = true
+			-- A user can select all their own posts
+			OR user = $auth.id
 		FOR create, update
 			-- A user can create or update their own posts
 			WHERE user = $auth.id
