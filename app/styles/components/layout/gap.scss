@@ -1,11 +1,25 @@
 gap {
 
-	width:100%;
-	height:100px;
-	display:block;
+	&[small] {
+		width:100%;
+		height:100px;
+		display:block;
 
-	@include media(max-width-768) {
+		@include media(max-width-768) {
 		height:50px;
+		}
+
+	}
+
+	&[large] {
+		width:100%;
+		height:150px;
+		display:block;
+
+		@include media(max-width-768) {
+		height:50px;
+		}
+
 	}
 
 }
