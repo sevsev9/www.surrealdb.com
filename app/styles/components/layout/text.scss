@@ -5,28 +5,36 @@ layout-text {
 	text-align:center;
 	margin:0 auto 0 auto;
 
-	&[text-l] {
-		text-align:left;
-	}
-
-	&[text-r] {
-		text-align:right;
-	}
-
 	@include media(max-width-750) {
 		text-align:left;
 	}
 
-	h2 {
-		width:100%;
+	h2, p {
+		max-width:800px;
 		margin-left:auto;
 		margin-right:auto;
 	}
 
-	p {
-		max-width:800px;
-		margin-left:auto;
-		margin-right:auto;
+	&[text-l] {
+
+		text-align:left;
+
+		h1, h2, h3, h4, h5, p {
+			max-width:80%;
+			margin-left:0;
+		}
+
+	}
+
+	&[text-r] {
+
+		text-align:right;
+
+		h1, h2, h3, h4, h5, p {
+			max-width:80%;
+			margin-right:0;
+		}
+
 	}
 
 }

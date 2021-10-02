@@ -16,9 +16,17 @@ layout-hero {
 		margin-bottom:10vh;
 	}
 
+	a {
+		height:50px;
+		font-size:18px;
+		padding:15px 40px;
+		margin:0 25px 25px 0;
+	}
+
 	h1 {
 
 		width:60%;
+		font-family:'Poppins';
 		padding:220px 0 35px 0;
 
 		@include media(max-width-1200) {

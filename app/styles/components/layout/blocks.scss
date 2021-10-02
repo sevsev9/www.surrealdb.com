@@ -8,10 +8,10 @@ layout-blocks {
 		grid-gap:50px;
 		position:relative;
 		margin:0px auto 50px auto;
-		grid-template-columns:50% 50%;
+		grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
 
 		@include media(max-width-1000) {
-			grid-template-columns:100%;
+			grid-template-columns:minmax(0, 1fr);
 		}
 
 		div {
@@ -26,30 +26,92 @@ layout-blocks {
 
 	}
 
-	&[main-f] content {
-		grid-template-columns:100%;
+	&[cols-2-1] content {
+		grid-template-columns:minmax(0, 2fr) minmax(0, 1fr);
+		@include media(max-width-1000) {
+			grid-template-columns:minmax(0, 1fr);
+		}
+	}
+
+	&[cols-1-2] content {
+		grid-template-columns:minmax(0, 1fr) minmax(0, 2fr);
+		@include media(max-width-1000) {
+			grid-template-columns:minmax(0, 1fr);
+		}
+	}
+
+	&[cols-3] content {
+		grid-template-columns:minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+		@include media(max-width-1000) {
+			grid-template-columns:minmax(0, 1fr);
+		}
+	}
+
+	&[cols-2] content {
+		grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+		@include media(max-width-1000) {
+			grid-template-columns:minmax(0, 1fr);
+		}
+	}
+
+	&[cols-1] content {
+		grid-template-columns:minmax(0, 1fr);
 	}
 
 	&[main-c] content {
 		max-width:800px;
 		text-align:center;
-		grid-template-columns:100%;
+		grid-template-columns:minmax(0, 1fr);
 		@include media(max-width-750) {
 			text-align:left;
 		}
 	}
 
-	&[main-l] content div:first-of-type {
+	&[cols-3][main-t] content {
 		@include media(max-width-1000) {
-			grid-row:1;
-			grid-column:1;
+			div:nth-of-type(4) {
+				grid-row:2;
+				grid-column:1;
+			}
+			div:nth-of-type(5) {
+				grid-row:4;
+				grid-column:1;
+			}
+			div:nth-of-type(6) {
+				grid-row:6;
+				grid-column:1;
+			}
 		}
 	}
 
-	&[main-r] content div:last-of-type {
+	&[cols-2][main-t] content {
 		@include media(max-width-1000) {
-			grid-row:1;
-			grid-column:1;
+			div:nth-of-type(3) {
+				grid-row:2;
+				grid-column:1;
+			}
+			div:nth-of-type(4) {
+				grid-row:4;
+				grid-column:1;
+			}
+		}
+	}
+
+	&[main-l] content {
+		div:first-of-type {
+			@include media(max-width-1000) {
+				grid-row:1;
+				grid-column:1;
+			}
+		}
+	}
+
+	&[main-r] content {
+		div:last-of-type {
+			@include media(max-width-1000) {
+				grid-row:1;
+				grid-column:1;
+			}
 		}
 	}
 
