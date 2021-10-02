@@ -9,6 +9,7 @@ CREATE user SET
 DEFINE TABLE users_by_gender
 	AS
 		SELECT
+			gender,
 			count() AS total,
 			math::mean(age) AS average_age
 		FROM user
