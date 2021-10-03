@@ -3,7 +3,7 @@ footer {
 	background-repeat:no-repeat;
 	background-size:742px 429px;
 	background-position:880px 50px;
-	background-color:rgba(0,0,0,0.3);
+	border-top:1px solid var(--border-color);
 
 	content {
 
@@ -78,7 +78,7 @@ footer {
 				p {
 					font-size:14px;
 					margin-bottom:30px;
-					color:var(--faint-color);
+					color:var(--text-color);
 				}
 
 				a {
@@ -105,9 +105,11 @@ footer {
 			flex-direction:row;
 			padding:0 0 100px 0;
 			justify-content:space-between;
+			border-top:1px solid var(--border-color);
 
 			p {
 				font-size:12px;
+				margin-top:30px;
 				color:var(--faint-color);
 			}
 
