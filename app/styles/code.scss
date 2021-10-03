@@ -31,7 +31,7 @@ pre[class*="language-"] {
 	text-shadow:none;
 	white-space:pre;
 	word-break:normal;
-	border-radius:0px;
+	border-radius:12px;
 	word-spacing:normal;
 	background-color:var(--boxes-color);
 	font-family:var(--system-font-mono);
@@ -82,7 +82,7 @@ code.language-sql .token.operator {
 }
 
 code.language-sql {
-	.token.comment { color:#6a7389; }
+	.token.comment { color:#737e98; }
 	.token.punctuation { color:#ffffff; }
 	.token.variable { color:#ffde00; }
 	.token.operator { color:#ff009e; }

@@ -106,12 +106,14 @@ header {
 					height:40px;
 					display:flex;
 					white-space:nowrap;
+					border-radius:50px;
 
 					@include media(max-width-750) {
 						display:none;
 					}
 
 					&[thinner] {
+						border-radius:12px;
 						background-color:var(--popup-color);
 					}
 
@@ -195,6 +197,7 @@ header {
 						display:block;
 						margin:20px 0 0 0;
 						position:relative;
+						border-radius:12px;
 						background-color:var(--popup-color);
 						box-shadow:0 0 30px rgba(0,0,0,0.7);
 
@@ -256,6 +259,7 @@ header {
 								&:hover {
 
 									border-bottom:0;
+									border-radius:12px;
 									background-color:var(--back-color);
 
 									icon, span {
@@ -274,6 +278,8 @@ header {
 							display:grid;
 							padding:20px;
 							grid-gap:20px;
+							border-bottom-left-radius:12px;
+							border-bottom-right-radius:12px;
 							background-color:var(--back-color);
 							grid-template-columns:repeat(4, 1fr);
 
@@ -298,6 +304,7 @@ header {
 								&:hover {
 
 									border-bottom:0;
+									border-radius:12px;
 									background-color:rgba(0,0,0,0.3);
 
 									icon, span {

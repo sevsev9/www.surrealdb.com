@@ -5,7 +5,7 @@ button, a[button] {
 	cursor:pointer;
 	box-shadow:none;
 	padding:10px 20px;
-	border-radius:0px;
+	border-radius:12px;
 	align-items:center;
 	display:inline-flex;
 	justify-content:center;
@@ -37,7 +37,7 @@ button, a[button] {
 			height:100%;
 			display:flex;
 			padding:12px 20px;
-			border-radius:0px;
+			border-radius:12px;
 			align-items:center;
 			justify-content:center;
 			background-color:var(--back-color);
@@ -54,7 +54,7 @@ button, a[button] {
 			height:100%;
 			display:flex;
 			padding:12px 20px;
-			border-radius:0px;
+			border-radius:12px;
 			align-items:center;
 			justify-content:center;
 			background-color:var(--back-color);
