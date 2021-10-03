@@ -8,12 +8,19 @@ module.exports = function (defaults) {
 		prism: {
 			theme: 'okaidia',
 			languages: [
-				'bash', 'javascript', 'json',
+				'bash',
+				'javascript',
+				'json',
+				'go',
+				'python',
+				'rust',
+				'swift',
+				'typescript',
 			],
 		},
 		snippetPaths: ['app/snippets'],
 		snippetRegexes: {
-			begin: /<Code\s@name="(\S+)"[^>]*>/,
+			begin: /<Code[\w\d\s\-]+@name="(\S+)"[^>]*>/,
 			end: /<\/Code>/,
 		},
 		includeFileExtensionInSnippetNames: false,
