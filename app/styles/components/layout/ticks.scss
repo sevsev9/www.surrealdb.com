@@ -7,6 +7,9 @@ layout-ticks {
 		display:grid;
 		grid-gap:20px 50px;
 		margin-bottom:20px;
+		border-radius:16px;
+		padding:60px;
+		background-color:var(--boxes-color);
 		grid-template-columns:repeat(3, 1fr);
 
 		@include media(max-width-1150) {
