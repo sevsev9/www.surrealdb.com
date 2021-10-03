@@ -1,0 +1,21 @@
+user@localhost % surreal
+
+SurrealDB command-line interface and server
+
+Usage:
+  surreal [command]
+
+Available Commands:
+  export      Export an existing database into a SQL script
+  help        Help about any command
+  import      Import a SQL script into an existing database
+  start       Start the database and http server
+  version     Output version information
+
+Flags:
+  -h, --help                help for surreal
+      --log-format string   Specify log output format (text, json) (default "text")
+      --log-level string    Specify log verbosity (default "error")
+      --log-output string   Specify log output destination (default "stderr")
+
+Use "surreal [command] --help" for more information about a command.

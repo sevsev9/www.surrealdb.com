@@ -1,0 +1,12 @@
+## Execute a SurrealQL query
+localhost % curl -X POST https://api.surrealdb.com/sql
+## Interact with a table
+localhost % curl -X GET https://api.surrealdb.com/key/user
+localhost % curl -X POST https://api.surrealdb.com/key/user
+localhost % curl -X DELETE https://api.surrealdb.com/key/user
+## Interact with a record
+localhost % curl -X GET https://api.surrealdb.com/key/user/tobie
+localhost % curl -X PUT https://api.surrealdb.com/key/user/tobie
+localhost % curl -X POST https://api.surrealdb.com/key/user/tobie
+localhost % curl -X PATCH https://api.surrealdb.com/key/user/tobie
+localhost % curl -X DELETE https://api.surrealdb.com/key/user/tobie

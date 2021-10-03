@@ -6,13 +6,874 @@
 	<meta property="og:type" content="website">
 {{/in-element}}
 
-<Layout::Gap small/>
+<Layout::Gap small />
 
-<Layout::Text>
-	<h2>Roadmap</h2>
+<Layout::Text text-l>
+	<h1>Roadmap</h1>
+	<h4><l blue>Version 0.1.27</l></h4>
 	<p>We have some amazing things planned for SurrealDB and we can't wait to show you. We'll be releasing our product roadmap soon, so check back here in a few days. In the meantime, if you are interested in using SurrealDB and want to get started sooner, click the button below to add yourself to the waiting list.</p>
-	<br><br>
-	<Waitlist @text="Join the waiting list" />
+	<p>
+		<a {{on "click" (scroll-into-view "#architecture" smooth=true)}}>Architecture</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#platform" smooth=true)}}>Platform</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#datamodel" smooth=true)}}>Data model</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#surrealql" smooth=true)}}>SurrealQL</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#functions" smooth=true)}}>Functions</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#permissions" smooth=true)}}>Permissions</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#connectivity" smooth=true)}}>Connectivity</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#tooling" smooth=true)}}>Tooling</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#libraries" smooth=true)}}>Libraries</a>
+	</p>
 </Layout::Text>
 
-<Layout::Gap large/>
+<Layout::Gap small />
+
+<section id="architecture">
+
+	<Layout::Text text-l>
+		<h2>Architecture</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
+	</Layout::Text>
+
+	<Layout::Gap small />
+
+	<Layout::Blocks cols-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				Single-node (in-memory)
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Single-node (on-disk)
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Distributed (3-node)
+				<l orange>Post 1.0</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Distributed (distributed kv-store)
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+	</Layout::Blocks>
+
+</section>
+
+<section id="platform">
+
+	<Layout::Text text-l>
+		<h2>Platform</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
+	</Layout::Text>
+
+	<Layout::Gap small />
+
+	<Layout::Blocks cols-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				Multi-tenancy data separation
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Schemafull or schemaless
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Multi-table, multi-row transactions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Versioned temporal tables
+				<l purple>Planed for 1.x</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-3 as |block|>
+		<block>
+			<h4 flex row middle>
+				Table fields
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Table events
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Table indexes
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				Table constraints
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<Code min-h-100 @name="roadmap/platform/constraints.sql" />
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				Full text indexing and filtering
+				<l purple>Planed for 1.x</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<Code min-h-100 @name="roadmap/platform/fulltext.sql" />
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-1 as |block|>
+		<block>
+			<h4 flex row middle>
+				Pre-defined aggregate computed views
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<Code @name="roadmap/platform/views.sql" />
+		</block>
+	</Layout::Blocks>
+
+</section>
+
+<section id="datamodel">
+
+	<Layout::Text text-l>
+		<h2>Data model</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
+	</Layout::Text>
+
+	<Layout::Gap small />
+
+	<Layout::Blocks cols-3 as |block|>
+		<block>
+			<h4 flex row middle>
+				Basic types
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Empty values
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Arrays
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Objects
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Durations
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Datetimes
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-1-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				Geometries
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<Code @name="roadmap/data/geometries.sql" />
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				Futures
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Casting
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<Code min-h-100 @name="roadmap/data/futures.sql" />
+		</block>
+		<block>
+			<Code min-h-100 @name="roadmap/data/casting.sql" />
+		</block>
+	</Layout::Blocks>
+
+</section>
+
+<section id="surrealql">
+
+	<Layout::Text text-l>
+		<h2>SurrealQL</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
+	</Layout::Text>
+
+	<Layout::Gap small />
+
+	<Layout::Blocks cols-1-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				SELECT, CREATE, UPDATE, DELETE statements
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<Code @name="roadmap/surrealql/statements.sql" />
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				RELATE statements
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+
+		<block>
+			<h4 flex row middle>
+				INSERT statements
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<Code @name="roadmap/surrealql/relate.sql" />
+		</block>
+		<block>
+			<Code @name="roadmap/surrealql/insert.sql" />
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-3 as |block|>
+		<block>
+			<h4 flex row middle>
+				Parameters
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Subqueries
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Nested field queries
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-1-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				Maths operators
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<h4 flex row middle>
+				Geospatial operators
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<h4 flex row middle>
+				Set operators
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<Code @name="roadmap/surrealql/operators.sql" />
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-1 as |block|>
+		<block>
+			<h4 flex row middle>
+				Expressions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<Code @name="roadmap/surrealql/expressions.sql" />
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				IDE language support
+				<l orange>Post 1.0</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Language Server Protocol
+				<l orange>Post 1.0</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-1-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				Learning fields
+				<l orange>Future</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
+		</block>
+		<block>
+			<Code @name="roadmap/surrealql/learning.sql" />
+		</block>
+	</Layout::Blocks>
+
+</section>
+
+<section id="functions">
+
+	<Layout::Text text-l>
+		<h2>Functions</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
+	</Layout::Text>
+
+	<Layout::Gap small />
+
+	<Layout::Blocks cols-3 as |block|>
+		<block>
+			<h4 flex row middle>
+				Array functions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Http functions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Math functions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				String functions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Parsing functions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Rand functions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-2 main-t as |block|>
+		<block>
+			<h4 flex row middle>
+				Geo functions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Time functions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<Code @name="roadmap/functions/geo.sql" />
+		</block>
+		<block>
+			<Code @name="roadmap/functions/time.sql" />
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-2 main-t as |block|>
+		<block>
+			<h4 flex row middle>
+				Count functions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Validation functions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+		</block>
+		<block>
+			<Code @name="roadmap/functions/count.sql" />
+		</block>
+		<block>
+			<Code @name="roadmap/functions/check.sql" />
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-1 as |block|>
+		<block>
+			<h4 flex row middle>
+				Javascript functions
+				<l orange>Post 1.0</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<Code min-h-200 @name="roadmap/functions/javascript.sql" />
+		</block>
+	</Layout::Blocks>
+
+</section>
+
+<section id="permissions">
+
+	<Layout::Text text-l>
+		<h2>Permissions</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
+	</Layout::Text>
+
+	<Layout::Gap small />
+
+	<Layout::Blocks cols-3 as |block|>
+		<block>
+			<h4 flex row middle>
+				Root access
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Namespace access
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Database access
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				Scope access
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				3rd party authencation
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-1 as |block|>
+		<block>
+			<Code @name="roadmap/permissions/scope.sql" />
+		</block>
+		<block>
+			<Code @name="roadmap/permissions/scope.js" />
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-1-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				Table permissions
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<Code @name="roadmap/permissions/table.sql" />
+		</block>
+	</Layout::Blocks>
+
+</section>
+
+<section id="connectivity">
+
+	<Layout::Text text-l>
+		<h2>Connectivity</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
+	</Layout::Text>
+
+	<Layout::Gap small />
+
+	<Layout::Blocks cols-1-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				REST API
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<Code min-h-200 @name="roadmap/connectivity/api.shell" />
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Line />
+
+	<Layout::Blocks cols-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				SurralQL over WebSocket
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				JSON-RPC over WebSocket
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Line />
+
+	<Layout::Blocks cols-3 as |block|>
+		<block>
+			<h4 flex row middle>
+				GraphQL querying
+				<l orange>Post 1.x</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				GraphQL mutations
+				<l orange>Post 1.x</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				GraphQL subscriptions
+				<l orange>Post 1.x</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+	</Layout::Blocks>
+
+</section>
+
+<section id="tooling">
+
+	<Layout::Text text-l>
+		<h2>Tooling</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
+	</Layout::Text>
+
+	<Layout::Gap small />
+
+	<Layout::Blocks cols-1 as |block|>
+		<block>
+			<h4 flex row middle>
+				Command line tool
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<Code min-h-200 @name="roadmap/tooling/cli.shell" />
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-3 as |block|>
+		<block>
+			<h4 flex row middle>
+				SQL import
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				SQL export
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Data backup
+				<l orange>Post 1.0</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Line />
+
+	<Layout::Blocks cols-1 as |block|>
+		<block>
+			<h4 flex row middle>
+				User interface
+				<l purple>Planned for 1.x</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-3 as |block|>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-chrome font-30 m-r-10"></i>
+				Web app
+				<l purple>Planned for 1.x</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-apple font-30 m-r-10"></i>
+				macOS app
+				<l purple>Planned for 1.x</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-windows font-30 m-r-10"></i>
+				Windows app
+				<l purple>Planned for 1.x</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+		</block>
+	</Layout::Blocks>
+
+</section>
+
+<section id="libraries">
+
+	<Layout::Text text-l>
+		<h2>Libraries</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
+	</Layout::Text>
+
+	<Layout::Gap small />
+
+	<Layout::Blocks cols-3 as |block|>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-js font-30 m-r-10"></i>
+				Javascript
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-golang font-30 m-r-10"></i>
+				Golang
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-python font-30 m-r-10"></i>
+				Python
+				<l orange>Post 1.0</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-rust font-30 m-r-10"></i>
+				Rust
+				<l orange>Post 1.0</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-node-js font-30 m-r-10"></i>
+				Node.js
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Deno
+				<l purple>Planned for 1.x</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-php font-30 m-r-10"></i>
+				PHP
+				<l orange>Post 1.0</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-swift font-30 m-r-10"></i>
+				Swift
+				<l orange>Post 1.0</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Line />
+
+	<Layout::Blocks cols-3 as |block|>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-ember font-30 m-r-10"></i>
+				Ember.js
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-angular font-30 m-r-10"></i>
+				Angular.js
+				<l purple>Planned for 1.x</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-react font-30 m-r-10"></i>
+				React.js
+				<l green>Done</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-vuejs font-30 m-r-10"></i>
+				Vue.js
+				<l orange>Post 1.0</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				Apollo GraphQL
+				<l orange>Post 1.0</l>
+			</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</block>
+	</Layout::Blocks>
+
+</section>

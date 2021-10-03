@@ -20,6 +20,16 @@ body {
 	background-image:url("/static/img/home/bodybackground@2x.jpg");
 }
 
+section {
+
+	padding:100px 0;
+
+	&:nth-child(even) {
+		background-color:rgba(0,0,0,0.1);
+	}
+
+}
+
 content {
 
 	width:80%;
