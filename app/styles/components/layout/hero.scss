@@ -1,8 +1,10 @@
 layout-hero {
 
+	top:-120px;
 	width:100%;
 	display:block;
-	margin:-120px 0 150px 0;
+	position:relative;
+	padding:120px 0 150px 0;
 	background-repeat:no-repeat;
 	background-position:600px 0px;
 	background-size:1254px 662px;
@@ -13,66 +15,95 @@ layout-hero {
 	}
 
 	@include media(max-width-768) {
-		margin-bottom:10vh;
+		padding-bottom:50px;
 	}
 
-	a {
-		height:50px;
-		font-size:18px;
-		padding:15px 40px;
-		margin:0 25px 25px 0;
-	}
+	content {
 
-	h1 {
-
-		width:60%;
-		font-family:'Poppins';
-		padding:220px 0 35px 0;
+		margin-top:100px;
 
 		@include media(max-width-1200) {
-			width:55%;
-			font-size:52px;
-			padding-top:175px;
+			margin-top:50px;
 		}
 
 		@include media(max-width-1000) {
-			width:100%;
-			font-size:52px;
-			padding-top:150px;
+			margin-top:100px;
 		}
 
 		@include media(max-width-550) {
-			width:100%;
-			font-size:38px;
-			padding-top:150px;
+			margin-top:50px;
 		}
 
-	}
-
-	h2 {
-
-		width:55%;
-		font-size:18px;
-		text-align:left;
-		margin-top:20px;
-		margin-bottom:35px;
-		color:var(--faint-color);
-
-		@include media(max-width-1200) {
-			width:55%;
-			position:relative;
+		a {
+			height:50px;
+			font-size:18px;
+			padding:15px 40px;
+			margin:0 25px 25px 0;
 		}
 
-		@include media(max-width-1000) {
-			width:100%;
-		}
+		h1 {
 
-		@include media(max-width-550) {
-			width:100%;
-			font-size:16px;
-			margin-top:0px;
-			line-height:26px;
+			width:70%;
 			margin-bottom:30px;
+			font-family:'Poppins';
+
+			@include media(max-width-1200) {
+				font-size:52px;
+			}
+
+			@include media(max-width-1000) {
+				width:100%;
+				font-size:46px;
+			}
+
+			@include media(max-width-550) {
+				width:100%;
+				font-size:38px;
+			}
+		}
+
+		h2 {
+
+			width:60%;
+			font-size:30px;
+
+			@include media(max-width-1200) {
+				font-size:26px;
+			}
+
+			@include media(max-width-1000) {
+				width:100%;
+				font-size:28px;
+			}
+
+			@include media(max-width-550) {
+				width:100%;
+				font-size:26px;
+			}
+
+		}
+
+		p {
+
+			width:55%;
+			font-size:18px;
+			text-align:left;
+			margin-bottom:30px;
+			color:var(--faint-color);
+
+			@include media(max-width-1000) {
+				width:100%;
+			}
+
+			@include media(max-width-550) {
+				width:100%;
+				font-size:16px;
+			}
+
+		}
+
+		e {
+			padding-right:10px;
 		}
 
 	}
