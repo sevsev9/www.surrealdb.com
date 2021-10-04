@@ -1,6 +1,6 @@
 -- Add a new 'user' record with some basic attributes
 CREATE user SET
-	age = 36,
+	age = 34,
 	gender = 'm',
 	name = 'Tobie Morgan Hitchcock'
 ;

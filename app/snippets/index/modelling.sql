@@ -9,6 +9,6 @@ CREATE user SET
 	name.last = "Morgan Hitchcock",
 	-- Add a field which is computed from other fields
 	name.full = <string> string::join(' ', name.first, name.last),
-	-- Add a field whose velues point to other remote records
+	-- Add an array whose values point to other remote records
 	friends = [user:gna732gnajan74hj, user:gna732gnajan74hj],
 ;
