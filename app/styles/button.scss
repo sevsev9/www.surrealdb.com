@@ -1,7 +1,9 @@
 button, a[button] {
 
+	height:auto;
 	border:none;
 	outline:none;
+	line-height:1;
 	cursor:pointer;
 	box-shadow:none;
 	padding:10px 20px;
@@ -26,6 +28,10 @@ button, a[button] {
 
 	i + span {
 		padding-left:10px;
+	}
+
+	p > & {
+		margin:0 30px 30px 0;
 	}
 
 	&[bordered][thinner] {

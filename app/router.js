@@ -14,6 +14,11 @@ Router.map(function() {
 	this.route('blog');
 	this.route('docs');
 
+	this.route('usecase', function() {
+		this.route('jamstack');
+		this.route('serverless');
+	});
+
 	this.route('showcase', function() {
 		this.route('modelling');
 		this.route('surrealql');
