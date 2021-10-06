@@ -112,3 +112,10 @@ code.language-shell {
 	.token.prompt { color:#636a75; }
 	.token.command { color:#ff009e; }
 }
+
+code.language-javascript {
+	.token.string { color:#00ff6e; }
+	.token.function { color:#ff9b67; }
+	.token.constant { color:#ff009e; }
+	.token.keyword { color:#ff009e; }
+}

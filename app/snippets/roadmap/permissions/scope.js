@@ -1,5 +1,5 @@
 // Signin and retrieve a JSON Web Token
-let jwt = fetch('https://api.surrealdb.com/signin', {
+let jwt = fetch('https://api.surrealdb.com/signup', {
 	method: 'POST',
 	headers: {
 		'Content-Type': 'application/json',

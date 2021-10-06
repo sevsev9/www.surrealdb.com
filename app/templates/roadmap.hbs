@@ -6,12 +6,12 @@
 	<meta property="og:type" content="website">
 {{/in-element}}
 
-<Layout::Gap small />
+<Layout::Gap mini />
 
 <Layout::Text text-l>
 	<h1>Roadmap</h1>
 	<h4><l blue>Version 0.1.28</l></h4>
-	<p>We have some amazing things planned for SurrealDB and we can't wait to show you. We'll be releasing our product roadmap soon, so check back here in a few days. In the meantime, if you are interested in using SurrealDB and want to get started sooner, click the button below to add yourself to the waiting list.</p>
+	<p>We have some amazing things planned for SurrealDB and we can't wait to show you. If you are interested in using SurrealDB and want to get started sooner, click the button above to add yourself to the waiting list.</p>
 	<p>
 		<a {{on "click" (scroll-into-view "#architecture" smooth=true)}}>Architecture</a>
 		&bull;
@@ -33,16 +33,15 @@
 	</p>
 </Layout::Text>
 
-<Layout::Gap small />
+<Layout::Gap mini />
 
 <section id="architecture">
 
 	<Layout::Text text-l>
 		<h2>Architecture</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
 	</Layout::Text>
 
-	<Layout::Gap small />
+	<Layout::Gap mini />
 
 	<Layout::Blocks cols-2 as |block|>
 		<block>
@@ -50,28 +49,28 @@
 				Single-node (in-memory)
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>SurrealDB can be configured to run in a single-node memory only runtime, enabling high-performance querying and data analysis. This is suitable for data which fits inside the memory of a single machine.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Single-node (on-disk)
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>When data sizes are greater than the available memory on a single machine, on-disk storage using <a href="https://rocksdb.org" rel="noopener noreferrer" target="_blank">RocksDB</a> can be used to enable larger data storage capabilities. Recently access data resides in memory with caching.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Distributed (3-node)
 				<l pink>Post 1.0</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>For highly-available setups, SurrealDB can be run in a cluster using the <a href="https://raft.github.io" rel="noopener noreferrer" target="_blank">RAFT</a> consensus algorithm. The storage of the entire database must be less than the maximum possible storage of a single machine in the cluster.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Distributed (distributed kv-store)
-				<l green>Done</l>
+				<l yellow>Partially done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>For highly-available and highly-scalable setups, SurrealDB can be run on top of a <a href="https://tikv.org" rel="noopener noreferrer" target="_blank">TiKV</a> cluster, with the ability to horizontally scale to <code>100+</code> terabytes of data.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -81,10 +80,9 @@
 
 	<Layout::Text text-l>
 		<h2>Platform</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
 	</Layout::Text>
 
-	<Layout::Gap small />
+	<Layout::Gap mini />
 
 	<Layout::Blocks cols-2 as |block|>
 		<block>
@@ -92,28 +90,28 @@
 				Multi-tenancy data separation
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Split data into namespaces and databases. There is no limit to the number of databases under each namespace, with the ability to switch between databases within queries and transactions.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Schemafull or schemaless
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Store unstructured nested data with any arbritrary columns, or limit data stored to only specific columns or fields. Get started quickly without having to define every column, and move to schemafull when your data model is defined.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Multi-table, multi-row transactions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>As a fully ACID compliant database, SurrealDB allows you to run transactions across multiple-rows, and across multiple different tables. There is no limit to the length of time a transaction can run.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Versioned temporal tables
 				<l purple>Planed for 1.x</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Versioned temporal tables enable the option to 'go back in time' when querying your data. See how data looked before changes were made, or restore to a particular point-in-time. Each table can be individually configured as a versioned table.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -123,21 +121,27 @@
 				Table fields
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>When a table is defined as schemafull, only data allowed by defined fields will be stored. Table fields can be nested, and can be limited to a certain data type. <code>VALUE</code> clauses can be used to ensure a default value is always specified if no data is entered.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Table events
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Table events can be triggered after any change or modification to the data in a record. Each trigger is able to see the <code>$before</code> and <code>$after</code> value of the record, enabling advanced custom logic with each trigger.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Table indexes
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Table indexes improve data querying performance, and also allow for <code>UNIQUE</code> values in a table. Table indexes can be specified for a column, multiple columns, and have support for all nested fields including arrays and objects.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-1 as |block|>
+		<block>
+			<Code min-h-100 @name="roadmap/platform/define.sql" />
 		</block>
 	</Layout::Blocks>
 
@@ -147,7 +151,7 @@
 				Table constraints
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Each defined table field supports an <code>ASSERT</code> clause which acts as a constraint on the data. This clause enables advanced SurrealQL statements which can ensure that the <code>$value</code> entered is within certain parameters. Each clause is also able to see the <code>$before</code> and <code>$after</code> value of the record, enabling advanced custom logic with each trigger.</p>
 		</block>
 		<block>
 			<Code min-h-100 @name="roadmap/platform/constraints.sql" />
@@ -160,7 +164,7 @@
 				Full text indexing and filtering
 				<l purple>Planed for 1.x</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>The ability to define full-text indexes, with functionality to search through the full-text index on a table. Using a Apache Lucene query syntax, searches support field queries, wildcard searches, fuzzy searches, proximity searches, relevance matching, boolean operators, subquery grouping, and field grouping.</p>
 		</block>
 		<block>
 			<Code min-h-100 @name="roadmap/platform/fulltext.sql" />
@@ -173,7 +177,7 @@
 				Pre-defined aggregate computed views
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Aggregate views let you pre-compute analytics queries as data is written to SurrealDB. Similarly to an index, a table view lets you select, aggregate, group, and order data, with support for moving averages, time-based windowing, and attribute-based counting. Pre-defined aggregate views are efficient and performant, with only a single record modification being made for every write.</p>
 		</block>
 		<block>
 			<Code @name="roadmap/platform/views.sql" />
@@ -186,10 +190,9 @@
 
 	<Layout::Text text-l>
 		<h2>Data model</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
 	</Layout::Text>
 
-	<Layout::Gap small />
+	<Layout::Gap mini />
 
 	<Layout::Blocks cols-3 as |block|>
 		<block>
@@ -197,42 +200,42 @@
 				Basic types
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Support for booleans, strings, and numerics is built in by default. Numeric values default to <code>decimal</code> based numbers, but can be stored as <code>int</code> or <code>float</code> values for 64 bit integer or 64 bit floating point precision.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Empty values
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Values can be <code>NONE</code>, or <code>NULL</code>. A field which is <code>NONE</code> does not have any data stored, while <code>NULL</code> values are values which are entered but empty. The <code>EMPTY</code> query operator can be used to match both types.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Arrays
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>SurrealDB has native support for arrays, with no limit to the depth of nesting within arrays. Arrays can contains any other data value.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Objects
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Embedded object types are an integral feature of SurrealDB, with no limit to the depth of nesting for objects.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Durations
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Any duration from nanoseconds to weeks can be stored and used for calculations. Durations can be added to datetimes, and to other durations.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Datetimes
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Suppport for dates and datetimes in ISO-8601 format are supported. All dates are converted and stored in the UTC timezone.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -242,7 +245,7 @@
 				Geometries
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>SurrealDB makes working with GeoJSON easy, with support for <code>Point</code>, <code>Line</code>, <code>Polygon</code>, <code>MultiPoint</code>, <code>MultiLine</code>, <code>MultiPolygon</code>, and <code>Collection</code> values. SurrealQL automatically detects GeoJSON objects converting them into a single data type.</p>
 		</block>
 		<block>
 			<Code @name="roadmap/data/geometries.sql" />
@@ -255,14 +258,14 @@
 				Futures
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Values which should be computed only when outputting data, can be stored as futures. These values are stored in SurrealDB as SurrealQL code, and are calculated only when output as part of a <code>SELECT</code> clause.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Casting
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>In SurrealDB, all data values are strongly typed. Values can be cast and converted to other types using specific casting operators. These include <code>bool</code>, <code>int</code>, <code>float</code>, <code>string</code>, <code>number</code>, <code>decimal</code>, <code>datetime</code>, and <code>duration</code> casts.</p>
 		</block>
 		<block>
 			<Code min-h-100 @name="roadmap/data/futures.sql" />
@@ -278,10 +281,9 @@
 
 	<Layout::Text text-l>
 		<h2>SurrealQL</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
 	</Layout::Text>
 
-	<Layout::Gap small />
+	<Layout::Gap mini />
 
 	<Layout::Blocks cols-1-2 as |block|>
 		<block>
@@ -289,7 +291,7 @@
 				SELECT, CREATE, UPDATE, DELETE statements
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Manipulation and querying of data in SurrealQL is done using the <code>SELECT</code>, <code>CREATE</code>, <code>UPDATE</code>, and <code>DELETE</code> methods. These enable selecting or modifying individual records, or whole tables. Each statement supports multiple different tables or record types at once.</p>
 		</block>
 		<block>
 			<Code @name="roadmap/surrealql/statements.sql" />
@@ -302,7 +304,7 @@
 				RELATE statements
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>The <code>RELATE</code> statement adds graph edges between records in SurrealDB. It follows the convention of <code>vertex -> edge -> vertex</code> or <code>noun -> verb -> noun</code>, enabling the addition of metadata to the edge record.</p>
 		</block>
 
 		<block>
@@ -310,7 +312,7 @@
 				INSERT statements
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>The <code>INSERT</code> statement resembles the traditional SQL statement, enabling users to get started quickly. It supports the creation of records using traditional the <code>VALUES</code> clause, or by specifying the record data as an object.</p>
 		</block>
 		<block>
 			<Code @name="roadmap/surrealql/relate.sql" />
@@ -326,21 +328,21 @@
 				Parameters
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Parameters can be used to store values or result sets, and can be used as stored parameters in client code.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Subqueries
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Recursive subqueries are useful for advanced querying or modification of values, whilst simplifying the overall query.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Nested field queries
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>In SurrealQL any nested array or object value can be access and manipulated using traditional dot <code>.</code> notation.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -350,17 +352,17 @@
 				Maths operators
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Maths operators can be used to perform complex mathematical calculations directly in SurrealQL.</p>
 			<h4 flex row middle>
 				Geospatial operators
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Geospatial operators enable geospatial containment and intersection operators on geospatial types.</p>
 			<h4 flex row middle>
 				Set operators
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Advanced set operators can be used to detect whether one-or-multiple values are included within sets. Fuzzy matching and regex matching can also be used for advanced filtering.</p>
 		</block>
 		<block>
 			<Code @name="roadmap/surrealql/operators.sql" />
@@ -373,7 +375,7 @@
 				Expressions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>SurrealQL supports fetching data using dot <code>.</code> notation and graph <code>-></code> semantics. SurrealQL enables records to link to other records and traverses all embedded links or graph connections as desired. When traversing and fetching remote records SurrealQL enables advanced filtering using traditional <code>WHERE</code> clauses.</p>
 		</block>
 		<block>
 			<Code @name="roadmap/surrealql/expressions.sql" />
@@ -386,14 +388,14 @@
 				IDE language support
 				<l pink>Post 1.0</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>SurrealDB aims to include official language highlighting packages for Atom, Sublime Text, Visual Studio Code, and Vim.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Language Server Protocol
 				<l pink>Post 1.0</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>SurrealDB will support the Language Server Protocol which will help with code and query completion, and error highlighting for SurrealQL.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -403,7 +405,7 @@
 				Learning fields
 				<l pink>Future</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
+			<p>Learning fields being machine-learning based decision making directly into SurrealDB. When a value is not entered directly, then the field can autometically calculate the value based on machine learning of other specified columns or fields.</p>
 		</block>
 		<block>
 			<Code @name="roadmap/surrealql/learning.sql" />
@@ -416,10 +418,9 @@
 
 	<Layout::Text text-l>
 		<h2>Functions</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
 	</Layout::Text>
 
-	<Layout::Gap small />
+	<Layout::Gap mini />
 
 	<Layout::Blocks cols-3 as |block|>
 		<block>
@@ -427,42 +428,42 @@
 				Array functions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Functions for manipulation, joining, and diffing of arrays are built in to SurrealDB as standard.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Http functions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>HTTP functions can be used for remote trigger events and webhook functionality.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Math functions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Math functions can be used for complex statistical analysis of numbers and sets of numbers.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				String functions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Functions for string manipulation enable modification and processing of strings.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Parsing functions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Parsing functions can be used for parsing amnd extracting individual parts from urls, emails, and domains.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Rand functions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Random generation functions can be used to generate random values, numbers, strings, uuids, and datetimes.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -472,14 +473,14 @@
 				Geo functions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Geospatial functions can be used for converting between geohash values, and for calculating the distance, bearing, and area size of geospatial values.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Time functions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Time functions can be used to manipulate dates and times - with support for rounding, and extracting specific parts of datetimes.</p>
 		</block>
 		<block>
 			<Code @name="roadmap/functions/geo.sql" />
@@ -495,14 +496,14 @@
 				Count functions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>SurrealDB supports general count functionality for counting total values, or for agregate grouping. It's also possible to count expressions which result in a truthy value.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Validation functions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida. In viverra diam quis vestibulum lacinia. Nulla purus sem, consectetur ac leo quis, suscipit aliquet velit.</p>
+			<p>Validation functions can be used to determine that field values match a certain pattern including hexadecimal, alphanumeric, ascii, numeric, or email addresses.</p>
 		</block>
 		<block>
 			<Code @name="roadmap/functions/count.sql" />
@@ -518,7 +519,7 @@
 				Javascript functions
 				<l pink>Post 1.0</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Javascript functions can be used for more complex functions and triggers. Each Javascript function iteration runs with its own context isolation - with the current record data passed in as the execution context or <code>this</code> value.</p>
 		</block>
 		<block>
 			<Code min-h-200 @name="roadmap/functions/javascript.sql" />
@@ -531,10 +532,9 @@
 
 	<Layout::Text text-l>
 		<h2>Permissions</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
 	</Layout::Text>
 
-	<Layout::Gap small />
+	<Layout::Gap mini />
 
 	<Layout::Blocks cols-3 as |block|>
 		<block>
@@ -542,21 +542,21 @@
 				Root access
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Root access enables full data access for all data in SurrealDB. Root access can be limited to specific <code>IPv4</code> or <code>IPv6</code> IP addresses.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Namespace access
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Namespace access enables full data access for all databases under a specific namespace. This access level is controlled using custom defined usernames and passwords.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Database access
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Database access enables full data access to a specific database under a specific namespace. This access level is controlled using custom defined usernames and passwords.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -566,14 +566,14 @@
 				Scope access
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Scope access is the powerful functionality which enables SurrealDB to oeprate as a web database. Flexibile authentication and access rules enable fine-grained access to tables and fields with the highest security, whilst ensuring that performance is affected as little as possible.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
-				3rd party authencation
+				3rd party authentication
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>If authentication with a 3rd party 0Auth provider is desired, specific tokens can be used for authentication with SurrealDB. <code>ES256</code>, <code>ES384</code>, <code>ES512</code>, <code>HS256</code>, <code>HS384</code>, <code>HS512</code>, <code>PS256</code>, <code>PS384</code>, <code>PS512</code>, <code>RS256</code>, <code>RS384</code>, and <code>RS512</code> algorithms are supported.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -592,7 +592,7 @@
 				Table permissions
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Fine-grained table permissions can be used to prevent users from accessing data which they shouldn't see. Independent permissions for selecting, creating, updating, and deleting data are supported, ensuring fine-grained control over all data in SurrealDB.</p>
 		</block>
 		<block>
 			<Code @name="roadmap/permissions/table.sql" />
@@ -605,10 +605,9 @@
 
 	<Layout::Text text-l>
 		<h2>Connectivity</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
 	</Layout::Text>
 
-	<Layout::Gap small />
+	<Layout::Gap mini />
 
 	<Layout::Blocks cols-1-2 as |block|>
 		<block>
@@ -616,7 +615,7 @@
 				REST API
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>All tables and data can be queried using a traditional Key-Value REST API. In addition, SurrealQL statements can be submitted to the REST API for custom query logic.</p>
 		</block>
 		<block>
 			<Code min-h-200 @name="roadmap/connectivity/api.shell" />
@@ -628,17 +627,17 @@
 	<Layout::Blocks cols-2 as |block|>
 		<block>
 			<h4 flex row middle>
-				SurralQL over WebSocket
+				SurrealQL over WebSocket
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>SurrealQL querying and data modifications is supported over WebSockets for bi-directional communication, and real-time updates.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				JSON-RPC over WebSocket
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Querying and data modification is available using JSON-RPC over WebSockets, enabling easier implementation of 3rd party libraries.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -650,21 +649,21 @@
 				GraphQL querying
 				<l pink>Post 1.x</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Support for querying all data using GraphQL, with embedded and remote record fetching.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				GraphQL mutations
 				<l pink>Post 1.x</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Support for modifying and updating any data using GraphQL, depending on permissions.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				GraphQL subscriptions
 				<l pink>Post 1.x</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Support for subscribing to real-time data modification events, depending on permissions.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -674,18 +673,17 @@
 
 	<Layout::Text text-l>
 		<h2>Tooling</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
 	</Layout::Text>
 
-	<Layout::Gap small />
+	<Layout::Gap mini />
 
 	<Layout::Blocks cols-1 as |block|>
 		<block>
 			<h4 flex row middle>
-				Command line tool
+				Command-line tool
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>The command-line tool can be used to export data as SurrealQL, import data as SurrealQL, and start a SurrealDB instance or cluster.</p>
 		</block>
 		<block>
 			<Code min-h-200 @name="roadmap/tooling/cli.shell" />
@@ -695,24 +693,39 @@
 	<Layout::Blocks cols-3 as |block|>
 		<block>
 			<h4 flex row middle>
-				SQL import
-				<l green>Done</l>
-			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
-		</block>
-		<block>
-			<h4 flex row middle>
 				SQL export
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Export all data as SurrealQL from a SurrealDB database for backup purposes. This includes authentication scopes, tables, fields, events, indexes, and data.</p>
+		</block>
+		<block>
+			<h4 flex row middle>
+				SQL import
+				<l green>Done</l>
+			</h4>
+			<p>Import SurrealQL into a SurrealDB database in order to restore from a backup. This includes authentication scopes, tables, fields, events, indexes, and data.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Data backup
 				<l pink>Post 1.0</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>Export all data from SurrealDB as raw binary data. This will also support incremental binary backups for efficient backing up of SurrealDB clusters.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Line />
+
+	<Layout::Blocks cols-2 as |block|>
+		<block>
+			<h4 flex row middle>
+				Docker container
+				<l green>Done</l>
+			</h4>
+			<p>In addition to binary releases, SurrealDB is packaged as a Docker container for easy setup and configuration. All configuration is done with the command-line options. The Docker container can be used to start a SurrealDB instance or cluster, or to import and export data.</p>
+		</block>
+		<block>
+			<Code min-h-100 @name="roadmap/tooling/docker.shell" />
 		</block>
 	</Layout::Blocks>
 
@@ -724,7 +737,7 @@
 				User interface
 				<l purple>Planned for 1.x</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>An easy-to-use interface with support for table-based views, SurrealQL querying, embedded object editing, and graph visualisation. The interface will be embedded within every SurrealDB executable.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -735,7 +748,7 @@
 				Web app
 				<l purple>Planned for 1.x</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>The interface available as a web app. This can be used for connecting to SurrealDB Cloud or a local / enterprise cluster.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
@@ -743,7 +756,7 @@
 				macOS app
 				<l purple>Planned for 1.x</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>The interface available as an Electron application for macOS. This can be used for connecting to SurrealDB Cloud or a local / enterprise cluster.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
@@ -751,7 +764,7 @@
 				Windows app
 				<l purple>Planned for 1.x</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales nisi eget leo consequat gravida.</p>
+			<p>The interface available as an Electron application for Windows. This can be used for connecting to SurrealDB Cloud or a local / enterprise cluster.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -761,10 +774,9 @@
 
 	<Layout::Text text-l>
 		<h2>Libraries</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat sem, faucibus eget neque vel, commodo suscipit odio. Duis sit amet commodo lacus. Nulla nec sem ut arcu commodo scelerisque. Mauris semper viverra auctor. Phasellus suscipit nisi vel odio tincidunt, ut placerat tellus consequat.</p>
 	</Layout::Text>
 
-	<Layout::Gap small />
+	<Layout::Gap mini />
 
 	<Layout::Blocks cols-3 as |block|>
 		<block>
@@ -773,7 +785,7 @@
 				Javascript
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A real-time, fast SDK library for Javascript with bi-directional communication, and support for <code>async</code> / <code>await</code> programming styles.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
@@ -781,7 +793,7 @@
 				Golang
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A real-time, fast SDK library for Golang with bi-directional communication over WebSockets.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
@@ -789,7 +801,7 @@
 				Python
 				<l pink>Post 1.0</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A real-time, fast SDK library for Python with bi-directional communication over WebSockets.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
@@ -797,7 +809,7 @@
 				Rust
 				<l pink>Post 1.0</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A real-time, fast SDK library for Rust with bi-directional communication over WebSockets.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
@@ -805,14 +817,14 @@
 				Node.js
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A real-time, fast SDK library for Node.js with bi-directional communication, and support for <code>async</code> / <code>await</code> programming styles.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Deno
 				<l purple>Planned for 1.x</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A real-time, fast SDK library for Deno with bi-directional communication, and support for <code>async</code> / <code>await</code> programming styles.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
@@ -820,7 +832,7 @@
 				PHP
 				<l pink>Post 1.0</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A SDK library for PHP, with suport for data modification and querying.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
@@ -828,7 +840,7 @@
 				Swift
 				<l pink>Post 1.0</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A real-time, fast SDK library for Swift with bi-directional communication.</p>
 		</block>
 	</Layout::Blocks>
 
@@ -841,7 +853,7 @@
 				Ember.js
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A real-time, live-updating library for Ember.js, with authentication, model definition, embedded types, and remote fetching.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
@@ -849,7 +861,7 @@
 				Angular.js
 				<l purple>Planned for 1.x</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A real-time, live-updating library for Angular.js, with authentication, model definition, embedded types, and remote fetching.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
@@ -857,7 +869,7 @@
 				React.js
 				<l green>Done</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A real-time, live-updating library for React.js, with authentication, model definition, embedded types, and remote fetching.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
@@ -865,14 +877,14 @@
 				Vue.js
 				<l pink>Post 1.0</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A real-time, live-updating library for Vue.js, with authentication, model definition, embedded types, and remote fetching.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Apollo GraphQL
 				<l pink>Post 1.0</l>
 			</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<p>A real-time, live-updating library for Apollo GraphQL.</p>
 		</block>
 	</Layout::Blocks>
 

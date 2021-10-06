@@ -4,7 +4,7 @@ CREATE film SET
 		{ rating: 8, user: user:bsilfhu88j04rgs0ga70 },
 	],
 	featured: fn::js -> function() {
-		return ratings.filter(r => {
+		return this.ratings.filter(r => {
 			return r >= 7;
 		}).map(r => {
 			return r * 10;
