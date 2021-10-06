@@ -39,6 +39,7 @@
     "@ascua/routing": "^0.0.220",
     "@ascua/scrollup": "^0.0.220",
     "@ascua/tasks": "^0.0.220",
+    "@ascua/tooltip": "^0.0.220",
     "@ascua/update": "^0.0.220",
     "@ascua/viewport": "^0.0.220",
     "@ascua/visuals": "^0.0.220",
