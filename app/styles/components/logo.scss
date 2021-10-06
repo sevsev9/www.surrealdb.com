@@ -12,6 +12,10 @@ surreal-logo {
 		width:400px;
 	}
 
+	@include media(max-width-1350) {
+		width:300px;
+	}
+
 	@include media(max-width-1200) {
 		width:300px;
 	}
