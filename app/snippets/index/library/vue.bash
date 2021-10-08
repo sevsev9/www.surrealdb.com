@@ -1,1 +1,1 @@
-npm install surreal.js
+npm install surrealdb
