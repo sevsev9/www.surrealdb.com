@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="SurrealDB" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 135.8 156.9" style="enable-background:new 0 0 135.8 156.9;" xml:space="preserve">
+	 viewBox="0 0 840 979.9" style="enable-background:new 0 0 840 979.9;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:url(#SVGID_1_);}
-	.st1{fill:url(#SVGID_00000027595756808290715420000012241630556620234414_);}
 </style>
-<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="40.0659" y1="30.209" x2="95.7332" y2="126.6276">
-	<stop  offset="0" style="stop-color:#ff009e"/>
-	<stop  offset="0.7" style="stop-color:#8700FF"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="203.3477" y1="498.6972" x2="636.6956" y2="1249.2778" gradientTransform="matrix(1 0 0 1 0 -384)">
+	<stop  offset="0" style="stop-color:#FF00A0"/>
+	<stop  offset="0.7" style="stop-color:#9600FF"/>
 </linearGradient>
-<path class="st0" d="M107.1,111.2l-39.1,22.6L20,106.1V88l47.9,27.7l7.8-4.5L12.2,74.5v36.1l55.7,32.1l55.7-32.1v-10.2L28.8,45.6
-	l39.1-22.6l47.9,27.7v18.1L67.9,41.2l-7.8,4.5l63.5,36.7V46.3L67.9,14.1L12.2,46.3v10.2L107.1,111.2z M21.5,49.4l92.8,53.6v4.6
-	L21.5,54V49.4z"/>
-<linearGradient id="SVGID_00000088124142509329847630000015962249896535032205_" gradientUnits="userSpaceOnUse" x1="33.9283" y1="19.5769" x2="101.8713" y2="137.2577">
-	<stop  offset="0" style="stop-color:#ff009e"/>
-	<stop  offset="0.7" style="stop-color:#8700FF"/>
-</linearGradient>
-<path style="fill:url(#SVGID_00000088124142509329847630000015962249896535032205_);" d="M67.9,0L0,39.2v78.5l67.9,39.2l67.9-39.2
-	V39.2L67.9,0z M127.6,89.1L52.3,45.6l15.7-9l44,25.4v-9l-44-25.4L36.7,45.7l90.9,52.6v14.7l-59.6,34.5L8.3,112.9V67.7l75.3,43.5
-	l-15.7,9l-44-25.4v9l43.9,25.4l31.3-18.1L8.3,58.6V43.9L67.9,9.5l59.6,34.4V89.1z"/>
+<path class="st0" d="M746.6,593.1L280,335.2l140-77.4L653.3,387v-51.8L420,206.3c-34.7,19.2-202.4,111.9-233.3,128.9
+	c28.7,15.9,330.1,182.4,513.3,283.6v51.6c-24.9,13.8-280,154.7-280,154.7C350.2,786.6,209.7,709,140,670.4V515.7l280,154.7l0,0
+	l46.7-25.8L93.3,438.4v257.9L420,876.7c32.2-17.8,302.8-167.3,326.6-180.5l0,0V593.1L746.6,593.1z M420,0L0,232.1v515.7l420,232.1
+	l420-232V232.1L420,0z M793.2,722L793.2,722L420,928.3L46.7,722V257.9l0,0L420,51.6l373.3,206.3L793.2,722L793.2,722z M93.3,283.6
+	v103.2l466.6,257.9l-140,77.4L186.6,592.9v51.8l233.3,128.9c34.7-19.2,202.4-111.9,233.3-128.9C624.5,628.8,323.2,462.3,140,361
+	v-51.6c24.9-13.8,280-154.7,280-154.7c69.7,38.6,210.2,116.2,280,154.7v154.7L420,309.4l0,0l-46.7,25.8l373.3,206.3V283.6L420,103.1
+	C387.7,121,117.2,270.5,93.3,283.6z"/>
 </svg>
