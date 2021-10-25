@@ -47,6 +47,25 @@ layout-hero {
 			margin-bottom:30px;
 			font-family:'Poppins';
 
+			span {
+				font-weight: 300;
+			}
+
+			.colour {
+				font-weight:500;
+				text-underline-offset:8px;
+				text-decoration-thickness:4px;
+				text-decoration-color:#ff009e;
+				text-decoration-line:underline;
+				-webkit-text-decoration-color:#ff009e;
+				-webkit-text-decoration-line:underline;
+
+				@include media(max-width-550) {
+					text-decoration-thickness:3px;
+				}
+
+			}
+
 			@include media(max-width-1200) {
 				font-size:52px;
 			}
