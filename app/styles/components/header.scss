@@ -37,7 +37,8 @@ header {
 			justify-content:center;
 
 			@include media(max-width-480) {
-				height:50px; margin:10px;
+				height:50px;
+				margin:10px 10px 10px 0;
 			}
 
 			.logo {
