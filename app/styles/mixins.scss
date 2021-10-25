@@ -3,9 +3,7 @@
 	&:not([button]) {
 
 		transition:color 0.3s;
-	    background:-moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 70%);
-	    background:-webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 70%);
-	    background:linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 70%);
+	    background:rgba(255,0,158,1);
 	    background-clip:text;
 	    -webkit-background-clip:text;
 

@@ -14,9 +14,9 @@ button, a[button] {
 	color:var(--text-color);
 	background:rgb(135,0,255);
 	transition:box-shadow 0.3s;
-	background:-moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 70%);
-	background:-webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 70%);
-	background:linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 70%);
+	background:-moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
+	background:-webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
+	background:linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
 
 	&:hover {
 		box-shadow:0 0 30px rgba(255,0,158,0.5);
