@@ -14,6 +14,8 @@ Router.map(function() {
 	this.route('blog');
 	this.route('docs');
 
+	this.route('discord');
+
 	this.route('usecase', function() {
 		this.route('jamstack');
 		this.route('serverless');
