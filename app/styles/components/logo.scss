@@ -9,15 +9,11 @@ surreal-logo {
 	pointer-events:none;
 
 	@include media(max-width-1400) {
-		width:400px;
+		width:360px;
 	}
 
-	@include media(max-width-1350) {
-		width:300px;
-	}
-
-	@include media(max-width-1200) {
-		width:300px;
+	@include media(max-width-1250) {
+		width:320px;
 	}
 
 	@include media(max-width-1000) {
