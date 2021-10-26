@@ -52,13 +52,22 @@ layout-hero {
 			}
 
 			.colour {
-				font-weight:500;
+				font-weight:800;
 				text-underline-offset:8px;
 				text-decoration-thickness:4px;
 				text-decoration-color:#ff009e;
 				text-decoration-line:underline;
 				-webkit-text-decoration-color:#ff009e;
 				-webkit-text-decoration-line:underline;
+
+				@include media(max-width-550) {
+					text-decoration-thickness:3px;
+				}
+
+			}
+
+			.italic {
+				font-style:italic;
 
 				@include media(max-width-550) {
 					text-decoration-thickness:3px;
@@ -105,7 +114,7 @@ layout-hero {
 		p {
 
 			width:55%;
-			font-size:18px;
+			font-size:19px;
 			text-align:left;
 			margin-bottom:30px;
 			color:var(--faint-color);
