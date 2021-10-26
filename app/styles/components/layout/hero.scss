@@ -44,7 +44,8 @@ layout-hero {
 		h1 {
 
 			width:70%;
-			margin-bottom:30px;
+			text-align:left;
+			margin:0 0 30px 0;
 			font-family:'Poppins';
 
 			span {
@@ -52,7 +53,7 @@ layout-hero {
 			}
 
 			.colour {
-				font-weight:800;
+				font-weight:700;
 				text-underline-offset:8px;
 				text-decoration-thickness:4px;
 				text-decoration-color:#ff009e;
@@ -87,6 +88,7 @@ layout-hero {
 			@include media(max-width-550) {
 				width:100%;
 				font-size:38px;
+				margin-bottom:0px;
 			}
 		}
 
