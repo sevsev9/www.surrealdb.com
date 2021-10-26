@@ -92,11 +92,11 @@ header {
 			> a {
 
 				display:block;
-				font-size:15px;
+				font-size:14px;
 				cursor:pointer;
 				margin:0 0 0 30px;
 				padding:8px 0 9px 0;
-				color:var(--text-color);
+				color:var(--faint-color);
 				transition:color 0.5s, border 0.5s;
 				border-bottom:3px solid transparent;
 
@@ -127,6 +127,7 @@ header {
 					}
 
 					&[selected] {
+						color:var(--text-color);
 						border-bottom:3px solid var(--hover-color);
 					}
 
@@ -146,7 +147,7 @@ header {
 				position:relative;
 				margin:0 0 0 30px;
 				padding:8px 0 9px 0;
-				color:var(--text-color);
+				color:var(--faint-color);
 				transition:color 0.5s, border 0.5s;
 				border-bottom:3px solid transparent;
 
