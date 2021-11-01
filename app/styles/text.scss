@@ -6,12 +6,16 @@ h1 {
 	font-family:'Poppins';
 	color:var(--text-color);
 
+	img { height:37px; }
+
 	@include media(max-width-1000) {
 		font-size:46px;
+		img { height:36px; }
 	}
 
 	@include media(max-width-550) {
 		font-size:38px;
+		img { height:28px; }
 	}
 
 }
