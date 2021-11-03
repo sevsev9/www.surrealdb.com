@@ -47,14 +47,14 @@
 		<block>
 			<h4 flex row middle>
 				Single-node (in-memory)
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>SurrealDB can be configured to run in a single-node memory-only runtime, enabling high-performance querying and data analysis. This is suitable for data which fits inside the memory of a single machine.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Single-node (on-disk)
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>When data sizes are greater than the available memory on a single machine, on-disk storage using <a href="https://rocksdb.org" rel="noopener noreferrer" target="_blank">RocksDB</a> can be used to enable larger data storage capabilities. Recently accessed data resides in memory with caching.</p>
 		</block>
@@ -68,7 +68,7 @@
 		<block>
 			<h4 flex row middle>
 				Distributed (distributed kv-store)
-				<l yellow>Partially done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>For highly-available and highly-scalable setups, SurrealDB can be run on top of a <a href="https://tikv.org" rel="noopener noreferrer" target="_blank">TiKV</a> cluster, with the ability to horizontally scale to <code>100+</code> terabytes of data.</p>
 		</block>
@@ -88,21 +88,21 @@
 		<block>
 			<h4 flex row middle>
 				Multi-tenancy data separation
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Split data into namespaces and databases. There is no limit to the number of databases under each namespace, with the ability to switch between databases inside queries and transactions.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Schemafull or schemaless
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Store unstructured nested data with any arbritrary columns, or limit data stored to only specific columns or fields. Get started quickly without having to define every column, and move to schemafull when your data model is defined.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Multi-table, multi-row transactions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>As a fully ACID compliant database, SurrealDB allows you to run transactions across multiple-rows, and across multiple different tables. There is no limit to the length of time a transaction can run.</p>
 		</block>
@@ -119,21 +119,21 @@
 		<block>
 			<h4 flex row middle>
 				Table fields
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>When a table is defined as schemafull, only data allowed by defined fields will be stored. Table fields can be nested, and can be limited to a certain data type. <code>VALUE</code> clauses can be used to ensure a default value is always specified if no data is entered.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Table events
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Table events can be triggered after any change or modification to the data in a record. Each trigger is able to see the <code>$before</code> and <code>$after</code> value of the record, enabling advanced custom logic with each trigger.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Table indexes
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Table indexes improve data querying performance, and also allow for <code>UNIQUE</code> values in a table. Table indexes can be specified for a column, multiple columns, and have support for all nested fields including arrays and objects.</p>
 		</block>
@@ -149,7 +149,7 @@
 		<block>
 			<h4 flex row middle>
 				Table constraints
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Each defined table field supports an <code>ASSERT</code> clause which acts as a constraint on the data. This clause enables advanced SurrealQL statements which can ensure that the <code>$value</code> entered is within certain parameters. Each clause is also able to see the <code>$before</code> and <code>$after</code> value of the record, enabling advanced custom logic with each trigger.</p>
 		</block>
@@ -175,7 +175,7 @@
 		<block>
 			<h4 flex row middle>
 				Pre-defined aggregate computed views
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Aggregate views let you pre-compute analytics queries as data is written to SurrealDB. Similarly to an index, a table view lets you select, aggregate, group, and order data, with support for moving averages, time-based windowing, and attribute-based counting. Pre-defined aggregate views are efficient and performant, with only a single record modification being made for every write.</p>
 		</block>
@@ -198,42 +198,42 @@
 		<block>
 			<h4 flex row middle>
 				Basic types
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Support for booleans, strings, and numerics is built in by default. Numeric values default to <code>decimal</code> based numbers, but can be stored as <code>int</code> or <code>float</code> values for 64 bit integer or 64 bit floating point precision.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Empty values
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Values can be <code>NONE</code>, or <code>NULL</code>. A field which is <code>NONE</code> does not have any data stored, while <code>NULL</code> values are values which are entered but empty. The <code>EMPTY</code> query operator can be used to match both types.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Arrays
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>SurrealDB has native support for arrays, with no limit to the depth of nesting within arrays. Arrays can contain any other data value.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Objects
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Embedded object types are an integral feature of SurrealDB, with no limit to the depth of nesting for objects.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Durations
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Any duration from nanoseconds to weeks can be stored and used for calculations. Durations can be added to datetimes, and to other durations.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Datetimes
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Suppport for dates and datetimes in ISO-8601 format are supported. All dates are converted and stored in the UTC timezone.</p>
 		</block>
@@ -243,7 +243,7 @@
 		<block>
 			<h4 flex row middle>
 				Geometries
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>SurrealDB makes working with GeoJSON easy, with support for <code>Point</code>, <code>Line</code>, <code>Polygon</code>, <code>MultiPoint</code>, <code>MultiLine</code>, <code>MultiPolygon</code>, and <code>Collection</code> values. SurrealQL automatically detects GeoJSON objects converting them into a single data type.</p>
 		</block>
@@ -256,14 +256,14 @@
 		<block>
 			<h4 flex row middle>
 				Futures
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Values which should be computed only when outputting data, can be stored as futures. These values are stored in SurrealDB as SurrealQL code, and are calculated only when output as part of a <code>SELECT</code> clause.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Casting
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>In SurrealDB, all data values are strongly typed. Values can be cast and converted to other types using specific casting operators. These include <code>bool</code>, <code>int</code>, <code>float</code>, <code>string</code>, <code>number</code>, <code>decimal</code>, <code>datetime</code>, and <code>duration</code> casts.</p>
 		</block>
@@ -289,7 +289,7 @@
 		<block>
 			<h4 flex row middle>
 				SELECT, CREATE, UPDATE, DELETE statements
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Manipulation and querying of data in SurrealQL is done using the <code>SELECT</code>, <code>CREATE</code>, <code>UPDATE</code>, and <code>DELETE</code> methods. These enable selecting or modifying individual records, or whole tables. Each statement supports multiple different tables or record types at once.</p>
 		</block>
@@ -302,7 +302,7 @@
 		<block>
 			<h4 flex row middle>
 				RELATE statements
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>The <code>RELATE</code> statement adds graph edges between records in SurrealDB. It follows the convention of <code>vertex -> edge -> vertex</code> or <code>noun -> verb -> noun</code>, enabling the addition of metadata to the edge record.</p>
 		</block>
@@ -310,7 +310,7 @@
 		<block>
 			<h4 flex row middle>
 				INSERT statements
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>The <code>INSERT</code> statement resembles the traditional SQL statement, enabling users to get started quickly. It supports the creation of records using a <code>VALUES</code> clause, or by specifying the record data as an object.</p>
 		</block>
@@ -326,21 +326,21 @@
 		<block>
 			<h4 flex row middle>
 				Parameters
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Parameters can be used to store values or result sets, and can be used as stored parameters in client code.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Subqueries
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Recursive subqueries are useful for advanced querying or modification of values, whilst simplifying the overall query.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Nested field queries
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>In SurrealQL any nested array or object value can be accessed and manipulated using traditional dot notation <code>.</code>, or array notation <code>[]</code>.</p>
 		</block>
@@ -350,17 +350,17 @@
 		<block>
 			<h4 flex row middle>
 				Maths operators
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Maths operators can be used to perform complex mathematical calculations directly in SurrealQL.</p>
 			<h4 flex row middle>
 				Geospatial operators
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Geospatial operators enable geospatial containment and intersection operators on geospatial types.</p>
 			<h4 flex row middle>
 				Set operators
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Advanced set operators can be used to detect whether one or multiple values are included within an array. Fuzzy matching and regex matching can also be used for advanced filtering.</p>
 		</block>
@@ -373,7 +373,7 @@
 		<block>
 			<h4 flex row middle>
 				Expressions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>SurrealQL supports fetching data using dot notation <code>.</code>, array notation <code>[]</code>, and graph semantics <code>-></code>. SurrealQL enables records to link to other records and traverses all embedded links or graph connections as desired. When traversing and fetching remote records SurrealQL enables advanced filtering using traditional <code>WHERE</code> clauses.</p>
 		</block>
@@ -426,42 +426,42 @@
 		<block>
 			<h4 flex row middle>
 				Array functions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Functions for manipulation, joining, and diffing of arrays are built in to SurrealDB as standard.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Http functions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>HTTP functions can be used for remote trigger events and webhook functionality.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Math functions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Math functions can be used for complex statistical analysis of numbers and sets of numbers.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				String functions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Functions for string manipulation enable modification and processing of strings.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Parsing functions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Parsing functions can be used for parsing and extracting individual parts or urls, emails, and domains.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Rand functions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Random generation functions can be used to generate random values, numbers, strings, UUIDs, and datetimes.</p>
 		</block>
@@ -471,14 +471,14 @@
 		<block>
 			<h4 flex row middle>
 				Geo functions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Geospatial functions can be used for converting between geohash values, and for calculating the distance, bearing, and area of GeoJSON data types.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Time functions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Time functions can be used to manipulate dates and times - with support for rounding, and extracting specific parts of datetimes.</p>
 		</block>
@@ -494,14 +494,14 @@
 		<block>
 			<h4 flex row middle>
 				Count functions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>SurrealDB supports general count functionality for counting total values, or for aggregate grouping. It's also possible to count only those expressions which result in a truthy value.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Validation functions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Validation functions can be used to determine that field values match a certain pattern including hexadecimal, alphanumeric, ascii, numeric, or email addresses.</p>
 		</block>
@@ -540,21 +540,21 @@
 		<block>
 			<h4 flex row middle>
 				Root access
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Root access enables full data access for all data in SurrealDB. Root access can be limited to specific <code>IPv4</code> or <code>IPv6</code> IP addresses.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Namespace access
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Namespace access enables full data access for all databases under a specific namespace. This access level is controlled using custom defined usernames and passwords.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				Database access
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Database access enables full data access to a specific database under a specific namespace. This access level is controlled using custom defined usernames and passwords.</p>
 		</block>
@@ -564,14 +564,14 @@
 		<block>
 			<h4 flex row middle>
 				Scope access
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Scope access is the powerful functionality which enables SurrealDB to oeprate as a web database. Flexibile authentication and access rules enable fine-grained access to tables and fields with the highest security, whilst ensuring that performance is affected as little as possible.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				3rd party authentication
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>If authentication with a 3rd party 0Auth provider is desired, specific tokens can be used for authentication with SurrealDB. <code>ES256</code>, <code>ES384</code>, <code>ES512</code>, <code>HS256</code>, <code>HS384</code>, <code>HS512</code>, <code>PS256</code>, <code>PS384</code>, <code>PS512</code>, <code>RS256</code>, <code>RS384</code>, and <code>RS512</code> algorithms are supported.</p>
 		</block>
@@ -590,7 +590,7 @@
 		<block>
 			<h4 flex row middle>
 				Table permissions
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Fine-grained table permissions can be used to prevent users from accessing data which they shouldn't see. Independent permissions for selecting, creating, updating, and deleting data are supported, ensuring fine-grained control over all data in SurrealDB.</p>
 		</block>
@@ -613,7 +613,7 @@
 		<block>
 			<h4 flex row middle>
 				REST API
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>All tables and data can be queried using a traditional Key-Value REST API. In addition, SurrealQL statements can be submitted to the REST API for custom query logic.</p>
 		</block>
@@ -628,14 +628,14 @@
 		<block>
 			<h4 flex row middle>
 				SurrealQL over WebSocket
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>SurrealQL querying and data modification is supported over WebSockets for bi-directional communication, and real-time updates.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				JSON-RPC over WebSocket
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Querying and data modification is available using JSON-RPC over WebSockets, enabling easier implementation of 3rd party libraries.</p>
 		</block>
@@ -681,7 +681,7 @@
 		<block>
 			<h4 flex row middle>
 				Command-line tool
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>The command-line tool can be used to export data as SurrealQL, import data as SurrealQL, and start a SurrealDB instance or cluster.</p>
 		</block>
@@ -694,14 +694,14 @@
 		<block>
 			<h4 flex row middle>
 				SQL export
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Export all data as SurrealQL from a SurrealDB database for backup purposes. This includes authentication scopes, tables, fields, events, indexes, and data.</p>
 		</block>
 		<block>
 			<h4 flex row middle>
 				SQL import
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>Import SurrealQL into a SurrealDB database in order to restore from a backup. This includes authentication scopes, tables, fields, events, indexes, and data.</p>
 		</block>
@@ -720,7 +720,7 @@
 		<block>
 			<h4 flex row middle>
 				Docker container
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>In addition to binary releases, SurrealDB is packaged as a Docker container for easy setup and configuration. All configuration is done with the command-line options. The Docker container can be used to start a SurrealDB instance or cluster, or to import and export data.</p>
 		</block>
@@ -783,7 +783,7 @@
 			<h4 flex row middle>
 				<i class="fab fa-js font-30 m-r-10"></i>
 				Javascript
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>A real-time, fast SDK library for Javascript with bi-directional communication, and support for <code>async</code> / <code>await</code> programming styles.</p>
 		</block>
@@ -791,7 +791,7 @@
 			<h4 flex row middle>
 				<i class="fab fa-golang font-30 m-r-10"></i>
 				Golang
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>A real-time, fast SDK library for Golang with bi-directional communication over WebSockets.</p>
 		</block>
@@ -815,7 +815,7 @@
 			<h4 flex row middle>
 				<i class="fab fa-node-js font-30 m-r-10"></i>
 				Node.js
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>A real-time, fast SDK library for Node.js with bi-directional communication, and support for <code>async</code> / <code>await</code> programming styles.</p>
 		</block>
@@ -851,7 +851,7 @@
 			<h4 flex row middle>
 				<i class="fab fa-ember font-30 m-r-10"></i>
 				Ember.js
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>A real-time, live-updating library for Ember.js, with authentication, model definition, embedded types, and remote fetching.</p>
 		</block>
@@ -867,7 +867,7 @@
 			<h4 flex row middle>
 				<i class="fab fa-react font-30 m-r-10"></i>
 				React.js
-				<l green>Done</l>
+				<l green>Completed</l>
 			</h4>
 			<p>A real-time, live-updating library for React.js, with authentication, model definition, embedded types, and remote fetching.</p>
 		</block>
