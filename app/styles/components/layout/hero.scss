@@ -50,17 +50,12 @@ layout-hero {
 
 			span[underline] {
 
-				font-weight:700;
-				text-underline-offset:8px;
-				text-decoration-thickness:4px;
-				text-decoration-color:#ff009e;
-				text-decoration-line:underline;
-				-webkit-text-decoration-color:#ff009e;
-				-webkit-text-decoration-line:underline;
-
-				@include media(max-width-550) {
-					text-decoration-thickness:3px;
-				}
+				background:-moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
+				background:-webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
+				background:linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
+				-webkit-background-clip: text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
 
 			}
 
