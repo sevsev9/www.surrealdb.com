@@ -5,7 +5,7 @@ h1 {
 	line-height:1;
 	color:var(--text-color);
 
-	img { height:37px; }
+	img { height:45px; }
 
 	@include media(max-width-1000) {
 		font-size:46px;
