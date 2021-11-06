@@ -2,14 +2,14 @@
 
 	&:not([button]) {
 
-		transition:color 0.3s;
 	    background:#ffffff;
 	    background-clip:text;
+		transition:color 0.3s;
 	    -webkit-background-clip:text;
 
 	    &:hover {
-			color:var(--hover-color);
 			color:rgba(0,0,0,0);
+			color:var(--hover-color);
 	    }
 
 	}
