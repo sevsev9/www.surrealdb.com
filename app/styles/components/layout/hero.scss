@@ -23,11 +23,7 @@ layout-hero {
 
 		margin-top:100px;
 
-		@include media(max-width-1000) {
-			margin-top:50px;
-		}
-
-		@include media(max-width-550) {
+		@include media(max-width-600) {
 			margin-top:50px;
 		}
 
@@ -59,18 +55,23 @@ layout-hero {
 
 			}
 
-			@include media(max-width-1200) {
-				font-size:52px;
-				img { height:38px; }
+			@include media(max-width-1449) {
+				font-size:46px;
+				img { height:34px; }
 			}
 
-			@include media(max-width-1000) {
+			@include media(max-width-1250) {
+				font-size:38px;
+				img { height:28px; }
+			}
+
+			@include media(max-width-1024) {
 				width:100%;
 				font-size:46px;
-				img { height:36px; }
+				img { height:34px; }
 			}
 
-			@include media(max-width-550) {
+			@include media(max-width-600) {
 				width:100%;
 				font-size:38px;
 				margin-bottom:0px;
@@ -84,16 +85,16 @@ layout-hero {
 			width:60%;
 			font-size:30px;
 
-			@include media(max-width-1200) {
+			@include media(max-width-1250) {
 				font-size:26px;
 			}
 
-			@include media(max-width-1000) {
+			@include media(max-width-1024) {
 				width:100%;
 				font-size:28px;
 			}
 
-			@include media(max-width-550) {
+			@include media(max-width-600) {
 				width:100%;
 				font-size:26px;
 			}
@@ -102,13 +103,21 @@ layout-hero {
 
 		p {
 
-			width:55%;
+			width:60%;
 			font-size:19px;
 			text-align:left;
 			margin-bottom:30px;
 			color:var(--faint-color);
 
-			@include media(max-width-1000) {
+			@include media(max-width-1450) {
+				width:55%;
+			}
+
+			@include media(max-width-1250) {
+				width:50%;
+			}
+
+			@include media(max-width-1024) {
 				width:100%;
 			}
 
