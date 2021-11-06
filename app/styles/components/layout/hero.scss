@@ -6,8 +6,8 @@ layout-hero {
 	position:relative;
 	padding:120px 0 50px 0;
 	background-repeat:no-repeat;
-	background-position:600px 0px;
 	background-size:1254px 662px;
+	background-position:600px 0px;
 	background-image:url("/static/img/home/honeycomb.png");
 
 	@include media(max-width-1000) {
@@ -21,9 +21,9 @@ layout-hero {
 
 	content {
 
-		margin-top:100px;
+		margin-top:98px;
 
-		@include media(max-width-600) {
+		@include media(max-width-750) {
 			margin-top:50px;
 		}
 
