@@ -10,7 +10,7 @@ surreal-icon {
 		margin:0 -16px 0 0;
 	}
 
-	@include media(max-width-1000) {
+	@include media(max-width-768) {
 		display:none;
 	}
 
