@@ -1,0 +1,77 @@
+{{#in-element (document-head) insertBefore=null}}
+	<title>SurrealDB | About Us | The next generation serverless cloud database</title>
+	<meta name="title" property="og:title" content="The next generation serverless cloud database">
+	<meta name="description" content="SurrealDB is the next generation database for modern applications, with an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next generation serverless database.">
+	<meta name="image" property="og:image" content="/static/img/preview/roadmap.jpg">
+	<meta property="og:type" content="website">
+{{/in-element}}
+
+<Layout::Hero>
+	<h1>
+		<img src="/static/img/text.svg" alt="SurrealDB" />
+		<br>
+		[S<span class="italic">uh</span>-ree-<span class="italic">uh</span>l];
+		<br>
+		unreal, fantastic
+	</h1>
+	<p>SurrealDB is a powerful open-source database, built for the cloud, and designed to improve the development process of traditional and modern applications. SurrealDB’s premise is that developers should be able to build secure, modern, collaborative applications without needing to build complicated backend APIs and database layers, and without being forced into using a single data model or cloud platform.</p>
+</Layout::Hero>
+
+<section id="team">
+
+	<Layout::Text text-l>
+		<h2>Team</h2>
+	</Layout::Text>
+
+	<Layout::Gap mini />
+
+	<Layout::Blocks cols-1 as |block|>
+		<block>
+			<p>We have led and delivered large-scale software and design projects in multiple startups and high-growth environments.</p>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Blocks cols-2 as |block|>
+		<block>
+			<img src="/static/img/tobie.png" width="100px" height="115px" alt="tobie" />
+			<br><br>
+			<h4 flex row middle>
+				Tobie Morgan Hitchcock
+			</h4>
+			<p>15 years’ experience in the software and cloud-computing industries with a focus on distributed databases, and highly-available architectures.</p>
+			<a href="https://www.linkedin.com/in/tobiemorganhitchcock/" rel="noopener noreferrer" target="_blank">
+				<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
+					Connect with Tobie on LinkedIn
+				</Ascua::Tooltip>
+				<i class="fab fa-linkedin font-20 m-r-10"></i>
+			</a>
+			<a href="https://twitter.com/tobiemh" rel="noopener noreferrer" target="_blank">
+				<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
+					Follow Tobie on Twitter
+				</Ascua::Tooltip>
+				<i class="fab fa-twitter font-20 m-r-10"></i>
+			</a>
+		</block>
+		<block>
+			<img src="/static/img/jaime.png" width="100px" height="115px" alt="jaime" />
+			<br><br>
+			<h4 flex row middle>
+				Jaime Morgan Hitchcock
+			</h4>
+			<p>An experienced tech entrepreneur, focused on developing the technology for early-stage tech startups. Board Director at British Para Table Tennis.</p>
+			<a href="https://www.linkedin.com/in/jaimemorganhitchcock/" rel="noopener noreferrer" target="_blank">
+				<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
+					Connect with Jaime on LinkedIn
+				</Ascua::Tooltip>
+				<i class="fab fa-linkedin font-20 m-r-10"></i>
+			</a>
+			<a href="https://twitter.com/jaimemhitchcock" rel="noopener noreferrer" target="_blank">
+				<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
+					Follow Jaime on Twitter
+				</Ascua::Tooltip>
+				<i class="fab fa-twitter font-20 m-r-10"></i>
+			</a>
+		</block>
+	</Layout::Blocks>
+
+</section>

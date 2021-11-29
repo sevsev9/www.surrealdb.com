@@ -6,7 +6,7 @@ header {
 	position:relative;
 	background-color:transparent;
 
-	@include media(max-width-1024) {
+	@include media(max-width-1301) {
 		top:0;
 		position:-webkit-sticky;
 		position:sticky;
@@ -24,7 +24,7 @@ header {
 		flex-direction:row;
 		justify-content:space-between;
 
-		@include media(max-width-1024) {
+		@include media(max-width-1301) {
 			padding-top:0px;
 		}
 
@@ -70,7 +70,7 @@ header {
 				cursor:pointer;
 			}
 
-			@include media(max-width-1024) {
+			@include media(max-width-1301) {
 				display:flex;
 			}
 
@@ -122,7 +122,7 @@ header {
 
 				&:not([button]) {
 
-					@include media(max-width-1024) {
+					@include media(max-width-1301) {
 						display:none;
 					}
 
@@ -153,7 +153,7 @@ header {
 
 				@include faded;
 
-				@include media(max-width-1024) {
+				@include media(max-width-1301) {
 					display:none;
 				}
 

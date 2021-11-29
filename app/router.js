@@ -11,6 +11,8 @@ Router.map(function() {
 	this.route('features');
 	this.route('install');
 	this.route('roadmap');
+	this.route('hiring');
+	this.route('about');
 	this.route('blog');
 	this.route('docs');
 
