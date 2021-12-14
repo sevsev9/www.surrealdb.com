@@ -45,285 +45,307 @@
 
 <Layout::Gap large />
 
-<Layout::Text>
- 	<h2>A highly-scalable NewSQL database</h2>
-	<p>SurrealDB is a flexible, developer-friendly, fully ACID transactional, realtime document-graph web database for serverless applications. Never again worry about database provisioning, scaling, sharding, replication, or correctness.</p>
-</Layout::Text>
+<section id="highlyscalable">
 
-<Layout::Gap large />
+	<Layout::Text>
+	 	<h2>A highly-scalable NewSQL database</h2>
+		<p>SurrealDB is a flexible, developer-friendly, fully ACID transactional, realtime document-graph web database for serverless applications. Never again worry about database provisioning, scaling, sharding, replication, or correctness.</p>
+	</Layout::Text>
 
-<Layout::Ticks>
-	<Layout::Ticks::Item @text="Document & graph database" />
-	<Layout::Ticks::Item @text="JOIN-less deep fetching" />
-	<Layout::Ticks::Item @text="Distributed ACID transactions" />
-	<Layout::Ticks::Item @text="Built with Rust" />
-	<Layout::Ticks::Item @text="Structured and un-structured data" />
-	<Layout::Ticks::Item @text="SQL-style querying" />
-	<Layout::Ticks::Item @text="GraphQL and REST API" />
-	<Layout::Ticks::Item @text="Support for multi-tenant apps" />
-	<Layout::Ticks::Item @text="Multi-row, multi-table transactions" />
-	<Layout::Ticks::Item @text="Online and offline data sync" />
-	<Layout::Ticks::Item @text="In-built access and permissions" />
-	<Layout::Ticks::Item @text="Multi-column and full-text indexes" />
-	<Layout::Ticks::Item @text="Incrementally computed views" />
-	<Layout::Ticks::Item @text="Distributed and highly-scalable" />
-	<Layout::Ticks::Item @text="No complex back-end servers and APIs" />
-</Layout::Ticks>
+	<Layout::Gap small />
 
-<Layout::Gap large />
+	<Layout::Ticks>
+		<Layout::Ticks::Item @text="Document & graph database" />
+		<Layout::Ticks::Item @text="JOIN-less deep fetching" />
+		<Layout::Ticks::Item @text="Distributed ACID transactions" />
+		<Layout::Ticks::Item @text="Built with Rust" />
+		<Layout::Ticks::Item @text="Structured and un-structured data" />
+		<Layout::Ticks::Item @text="SQL-style querying" />
+		<Layout::Ticks::Item @text="GraphQL and REST API" />
+		<Layout::Ticks::Item @text="Support for multi-tenant apps" />
+		<Layout::Ticks::Item @text="Multi-row, multi-table transactions" />
+		<Layout::Ticks::Item @text="Online and offline data sync" />
+		<Layout::Ticks::Item @text="In-built access and permissions" />
+		<Layout::Ticks::Item @text="Multi-column and full-text indexes" />
+		<Layout::Ticks::Item @text="Incrementally computed views" />
+		<Layout::Ticks::Item @text="Distributed and highly-scalable" />
+		<Layout::Ticks::Item @text="No complex back-end servers and APIs" />
+	</Layout::Ticks>
 
-<Layout::Blocks main-l as |block|>
-	<block>
-		<h3>Improved data modelling</h3>
-		<p>SurrealDB doesn't force you into setting up your data model in any one way. Instead you can choose between simple documents, documents with embedded fields, or related graph connections between records. Use schemafull or schemaless tables giving you the flexibility to store whatever you need.</p>
-		<p>Once stored in SurrealDB, all data is strongly typed, with the ability to convert between different types seamlessly - and numbers can be stored and computed with 64 bit precision or as arbritrary length decimals.</p>
-		<Waitlist bordered thicker>
-			<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
-		</Waitlist>
-		{{!-- <Button::Thicker @link="showcase.modelling">
-			<span>View data modelling with SurrealDB</span> <i class="fas fa-arrow-right"></i>
-		</Button::Thicker> --}}
-	</block>
-	<block>
-		<Code min-h-300 @name="index/modelling.sql" />
-	</block>
-</Layout::Blocks>
+</section>
 
-<Layout::Gap large />
+<section id="improveddatamodelling">
 
-<Layout::Blocks main-r as |block|>
-	<block>
-		<Code min-h-300 @name="index/surrealql.sql" />
-	</block>
-	<block>
-		<h3>Powerful querying abilities</h3>
-		<p>The primary method of querying SurrealDB is using SurrealQL, a similar but modified version of traditional SQL. SurrealQL enables linked documents to be traversed and queried efficiently, while still using an imperative language which remains understandable by data scientists.</p>
-		<p>With an innovative, but simple-to-understand, SQL language developers or data scientists can use a myriad of different techniques to store, query, and analyse the data in SurrealDB.</p>
-		<Waitlist bordered thicker>
-			<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
-		</Waitlist>
-		{{!-- <Button::Thicker @link="showcase.surrealql">
-			<span>The best features of SurrealQL</span> <i class="fas fa-arrow-right"></i>
-		</Button::Thicker> --}}
-	</block>
-</Layout::Blocks>
+	<Layout::Blocks main-l as |block|>
+		<block>
+			<h3>Improved data modelling</h3>
+			<p>SurrealDB doesn't force you into setting up your data model in any one way. Instead you can choose between simple documents, documents with embedded fields, or related graph connections between records. Use schemafull or schemaless tables giving you the flexibility to store whatever you need.</p>
+			<p>Once stored in SurrealDB, all data is strongly typed, with the ability to convert between different types seamlessly - and numbers can be stored and computed with 64 bit precision or as arbritrary length decimals.</p>
+			<Waitlist bordered thicker>
+				<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
+			</Waitlist>
+			{{!-- <Button::Thicker @link="showcase.modelling">
+				<span>View data modelling with SurrealDB</span> <i class="fas fa-arrow-right"></i>
+			</Button::Thicker> --}}
+		</block>
+		<block>
+			<Code min-h-300 @name="index/modelling.sql" />
+		</block>
+	</Layout::Blocks>
 
-<Layout::Gap large />
+	<Layout::Gap small />
 
-<Layout::Blocks main-l as |block|>
-	<block>
-		<h3>Simplified data analytics</h3>
-		<p>SurrealDB is designed to be quick to setup, and even quicker to implement. Multi-column indexes can be easily added and removed as your application evolves, allowing for strongly consistent reads and writes, and highly-performant reads.</p>
-		<p>Pre-computed table views allow superfast and highly-efficient aggregated data for queries which are known upfront - with simple view definition as easy as writing an SQL statement.</p>
-		<Waitlist bordered thicker>
-			<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
-		</Waitlist>
-		{{!-- <Button::Thicker @link="showcase.analytics">
-			<span>See the many ways to analyse data</span> <i class="fas fa-arrow-right"></i>
-		</Button::Thicker> --}}
-	</block>
-	<block>
-		<Code min-h-300 @name="index/analytics.sql" />
-	</block>
-</Layout::Blocks>
+	<Layout::Blocks main-r as |block|>
+		<block>
+			<Code min-h-300 @name="index/surrealql.sql" />
+		</block>
+		<block>
+			<h3>Powerful querying abilities</h3>
+			<p>The primary method of querying SurrealDB is using SurrealQL, a similar but modified version of traditional SQL. SurrealQL enables linked documents to be traversed and queried efficiently, while still using an imperative language which remains understandable by data scientists.</p>
+			<p>With an innovative, but simple-to-understand, SQL language developers or data scientists can use a myriad of different techniques to store, query, and analyse the data in SurrealDB.</p>
+			<Waitlist bordered thicker>
+				<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
+			</Waitlist>
+			{{!-- <Button::Thicker @link="showcase.surrealql">
+				<span>The best features of SurrealQL</span> <i class="fas fa-arrow-right"></i>
+			</Button::Thicker> --}}
+		</block>
+	</Layout::Blocks>
 
-<Layout::Gap large />
+	<Layout::Gap small />
 
-<Layout::Blocks main-r as |block|>
-	<block>
-		<Code min-h-300 @name="index/permissions.sql" />
-	</block>
-	<block>
-		<h3>Faster app development times</h3>
-		<p>WIth permissions in-built from the ground up, SurrealDB is the perfect web-database for serverless applications. Easily specify permissions with easy-to-write SQL statements, ensuring that only the correct users can access the specified data that they have permission to select or modify.</p>
-		<p>With support for SSL/TLS, Single-Sign-On, external 3rd party authentication, JWT token based authentication, and custom business authentication logic - SurrealDB offers strong security, with the flexibility of custom authentication methods that suit your app or business.</p>
-		<Waitlist bordered thicker>
-			<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
-		</Waitlist>
-		{{!-- <Button::Thicker @link="showcase.permissions">
-			<span>Speed up your app development</span> <i class="fas fa-arrow-right"></i>
-		</Button::Thicker> --}}
-	</block>
-</Layout::Blocks>
+	<Layout::Blocks main-l as |block|>
+		<block>
+			<h3>Simplified data analytics</h3>
+			<p>SurrealDB is designed to be quick to setup, and even quicker to implement. Multi-column indexes can be easily added and removed as your application evolves, allowing for strongly consistent reads and writes, and highly-performant reads.</p>
+			<p>Pre-computed table views allow superfast and highly-efficient aggregated data for queries which are known upfront - with simple view definition as easy as writing an SQL statement.</p>
+			<Waitlist bordered thicker>
+				<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
+			</Waitlist>
+			{{!-- <Button::Thicker @link="showcase.analytics">
+				<span>See the many ways to analyse data</span> <i class="fas fa-arrow-right"></i>
+			</Button::Thicker> --}}
+		</block>
+		<block>
+			<Code min-h-300 @name="index/analytics.sql" />
+		</block>
+	</Layout::Blocks>
 
-<Layout::Gap large />
+	<Layout::Gap small />
 
-<Layout::Blocks main-l as |block|>
-	<block>
-		<h3>Superpowered database functionality</h3>
-		<p>When connecting with SurrealDB, all connections are made using WebSockets, allowing for bi-directional data syncing. Dependent on data access permissions, client-based document subscriptions are triggered in real-time whenever changes are made to the data.</p>
-		<p>Data subscriptions can be specified for whole tables, filtered result sets, or individual records - enabling a multitude of different use-cases in all types of applications.</p>
-		<Waitlist bordered thicker>
-			<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
-		</Waitlist>
-		{{!-- <Button::Thicker @link="showcase.collaborate">
-			<span>Take your software to the next level</span> <i class="fas fa-arrow-right"></i>
-		</Button::Thicker> --}}
-	</block>
-	<block>
-		<Code min-h-300 @name="index/collaborate.sql" />
-	</block>
-</Layout::Blocks>
+	<Layout::Blocks main-r as |block|>
+		<block>
+			<Code min-h-300 @name="index/permissions.sql" />
+		</block>
+		<block>
+			<h3>Faster app development times</h3>
+			<p>WIth permissions in-built from the ground up, SurrealDB is the perfect web-database for serverless applications. Easily specify permissions with easy-to-write SQL statements, ensuring that only the correct users can access the specified data that they have permission to select or modify.</p>
+			<p>With support for SSL/TLS, Single-Sign-On, external 3rd party authentication, JWT token based authentication, and custom business authentication logic - SurrealDB offers strong security, with the flexibility of custom authentication methods that suit your app or business.</p>
+			<Waitlist bordered thicker>
+				<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
+			</Waitlist>
+			{{!-- <Button::Thicker @link="showcase.permissions">
+				<span>Speed up your app development</span> <i class="fas fa-arrow-right"></i>
+			</Button::Thicker> --}}
+		</block>
+	</Layout::Blocks>
 
-<Layout::Gap large />
+	<Layout::Gap small />
 
-<Layout::Text @title="Database libraries and clients" @text="SurrealDB builds and maintains first-party database clients for a number of popular languages including Javascript, Typescript, Node.js, Deno, Rust, and Golang. All clients connect to SurrealDB using a binary protocol over a WebSocket connection for low-latency and efficient parsing, leading to blazingly fast queries." />
+	<Layout::Blocks main-l as |block|>
+		<block>
+			<h3>Superpowered database functionality</h3>
+			<p>When connecting with SurrealDB, all connections are made using WebSockets, allowing for bi-directional data syncing. Dependent on data access permissions, client-based document subscriptions are triggered in real-time whenever changes are made to the data.</p>
+			<p>Data subscriptions can be specified for whole tables, filtered result sets, or individual records - enabling a multitude of different use-cases in all types of applications.</p>
+			<Waitlist bordered thicker>
+				<span>Get started with SurrealDB</span> <i class="fas fa-arrow-right"></i>
+			</Waitlist>
+			{{!-- <Button::Thicker @link="showcase.collaborate">
+				<span>Take your software to the next level</span> <i class="fas fa-arrow-right"></i>
+			</Button::Thicker> --}}
+		</block>
+		<block>
+			<Code min-h-300 @name="index/collaborate.sql" />
+		</block>
+	</Layout::Blocks>
 
-<Layout::Gap large />
+</section>
 
-<Layout::Blocks as |block|>
-	<block>
-		<h4 flex row middle>
-			<i class="fab fa-js font-30 m-r-10"></i>
-			Javascript
-			<l green>Complete</l>
-		</h4>
-		<Code @name="index/library/javascript.bash" />
-		<n>
-			<Link @link="https://github.com/surrealdb/surreal.js" faded>Github</Link>
-			&bull;
-			<Link @link="docs" faded>Documentation</Link>
-		</n>
-	</block>
-	{{!--  --}}
-	<block>
-		<h4 flex row middle>
-			<i class="fab fa-golang font-30 m-r-10"></i>
-			Golang
-			<l green>Complete</l>
-		</h4>
-		<Code @name="index/library/golang.bash" />
-		<n>
-			<Link @link="https://github.com/surrealdb/surreal.go" faded>Github</Link>
-			&bull;
-			<Link @link="docs" faded>Documentation</Link>
-		</n>
-	</block>
-</Layout::Blocks>
+<section id="databaselibraries">
 
-<Layout::Blocks as |block|>
-	<block>
-		<h4 flex row middle>
-			<i class="fab fa-python font-30 m-r-10"></i>
-			Python
-			<l pink>Coming soon</l>
-		</h4>
-		<Code @name="index/library/python.bash" />
-		<n>
-			<Link @link="https://github.com/surrealdb/surreal.py" faded>Github</Link>
-			&bull;
-			<Link @link="docs" faded>Documentation</Link>
-		</n>
-	</block>
-	{{!--  --}}
-	<block>
-		<h4 flex row middle>
-			<i class="fab fa-rust font-30 m-r-10"></i>
-			Rust
-			<l pink>Coming soon</l>
-		</h4>
-		<Code @name="index/library/rust.bash" />
-		<n>
-			<Link @link="https://github.com/surrealdb/surreal.rs" faded>Github</Link>
-			&bull;
-			<Link @link="docs" faded>Documentation</Link>
-		</n>
-	</block>
-</Layout::Blocks>
+	<Layout::Text @title="Database libraries and clients" @text="SurrealDB builds and maintains first-party database clients for a number of popular languages including Javascript, Typescript, Node.js, Deno, Rust, and Golang. All clients connect to SurrealDB using a binary protocol over a WebSocket connection for low-latency and efficient parsing, leading to blazingly fast queries." />
 
-<Layout::Blocks as |block|>
-	<block>
-		<h4 flex row middle>
-			<i class="fab fa-node-js font-30 m-r-10"></i>
-			Node.js
-			<l green>Complete</l>
-		</h4>
-		<Code @name="index/library/javascript.bash" />
-		<n>
-			<Link @link="https://github.com/surrealdb/surreal.js" faded>Github</Link>
-			&bull;
-			<Link @link="docs" faded>Documentation</Link>
-		</n>
-	</block>
-	{{!--  --}}
-	<block>
-		<h4 flex row middle>
-			Deno
-			<l pink>Coming soon</l>
-		</h4>
-		<Code @name="index/library/deno.bash" />
-		<n>
-			<Link @link="https://github.com/surrealdb/surreal.deno" faded>Github</Link>
-			&bull;
-			<Link @link="docs" faded>Documentation</Link>
-		</n>
-	</block>
-</Layout::Blocks>
+	<Layout::Gap small />
 
-<Layout::Gap large />
+	<Layout::Blocks as |block|>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-js font-30 m-r-10"></i>
+				Javascript
+				<l green>Complete</l>
+			</h4>
+			<Code @name="index/library/javascript.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/surreal.js" faded>Github</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+		{{!--  --}}
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-golang font-30 m-r-10"></i>
+				Golang
+				<l green>Complete</l>
+			</h4>
+			<Code @name="index/library/golang.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/surreal.go" faded>Github</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+		{{!--  --}}
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-python font-30 m-r-10"></i>
+				Python
+				<l pink>Coming soon</l>
+			</h4>
+			<Code @name="index/library/python.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/surreal.py" faded>Github</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+		{{!--  --}}
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-rust font-30 m-r-10"></i>
+				Rust
+				<l pink>Coming soon</l>
+			</h4>
+			<Code @name="index/library/rust.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/surreal.rs" faded>Github</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+		{{!--  --}}
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-node-js font-30 m-r-10"></i>
+				Node.js
+				<l green>Complete</l>
+			</h4>
+			<Code @name="index/library/javascript.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/surreal.js" faded>Github</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+		{{!--  --}}
+		<block>
+			<h4 flex row middle>
+				Deno
+				<l pink>Coming soon</l>
+			</h4>
+			<Code @name="index/library/deno.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/surreal.deno" faded>Github</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+	</Layout::Blocks>
 
-<Layout::Text @title="Javascript framework connectors" @text="In addition to the client libraries for the popular languages, SurrealDB maintains database client connectors for some of the popular Javascript frameworks, including Angular.js, and Ember.js. These connectors support real-time data asubscriptions and notifications using a binary protocol over a WebSocket connection, enabling advanced application functionality and awesome performance." />
+</section>
 
-<Layout::Gap large />
+<section id="javascriptconnectors">
 
-<Layout::Blocks as |block|>
-	<block>
-		<h4 flex row middle>
-			<i class="fab fa-ember font-30 m-r-10"></i>
-			Ember.js
-			<l green>Complete</l>
-		</h4>
-		<Code @name="index/library/ember.bash" />
-		<n>
-			<Link @link="https://github.com/surrealdb/ember-surreal" faded>Github</Link>
-			&bull;
-			<Link @link="docs" faded>Documentation</Link>
-		</n>
-	</block>
-	{{!--  --}}
-	<block>
-		<h4 flex row middle>
-			<i class="fab fa-angular font-30 m-r-10"></i>
-			Angular.js
-			<l pink>Coming soon</l>
-		</h4>
-		<Code @name="index/library/angular.bash" />
-		<n>
-			<Link @link="https://github.com/surrealdb/angular-surreal" faded>Github</Link>
-			&bull;
-			<Link @link="docs" faded>Documentation</Link>
-		</n>
-	</block>
-</Layout::Blocks>
+	<Layout::Text @title="Javascript framework connectors" @text="In addition to the client libraries for the popular languages, SurrealDB maintains database client connectors for some of the popular Javascript frameworks, including Angular.js, and Ember.js. These connectors support real-time data asubscriptions and notifications using a binary protocol over a WebSocket connection, enabling advanced application functionality and awesome performance." />
 
-<Layout::Blocks as |block|>
-	<block>
-		<h4 flex row middle>
-			<i class="fab fa-react font-30 m-r-10"></i>
-			React.js
-			<l green>Complete</l>
-		</h4>
-		<Code @name="index/library/react.bash" />
-		<n>
-			<Link @link="https://github.com/surrealdb/surreal.js" faded>Github</Link>
-			&bull;
-			<Link @link="docs" faded>Documentation</Link>
-		</n>
-	</block>
-	{{!--  --}}
-	<block>
-		<h4 flex row middle>
-			<i class="fab fa-vuejs font-30 m-r-10"></i>
-			Vue.js
-			<l green>Complete</l>
-		</h4>
-		<Code @name="index/library/vue.bash" />
-		<n>
-			<Link @link="https://github.com/surrealdb/surreal.js" faded>Github</Link>
-			&bull;
-			<Link @link="docs" faded>Documentation</Link>
-		</n>
-	</block>
-</Layout::Blocks>
+	<Layout::Gap small />
 
-<Layout::Gap large />
+	<Layout::Blocks as |block|>
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-ember font-30 m-r-10"></i>
+				Ember.js
+				<l green>Complete</l>
+			</h4>
+			<Code @name="index/library/ember.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/ember-surreal" faded>Github</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+		{{!--  --}}
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-angular font-30 m-r-10"></i>
+				Angular.js
+				<l pink>Coming soon</l>
+			</h4>
+			<Code @name="index/library/angular.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/angular-surreal" faded>Github</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+		{{!--  --}}
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-react font-30 m-r-10"></i>
+				React.js
+				<l green>Complete</l>
+			</h4>
+			<Code @name="index/library/react.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/surreal.js" faded>Github</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+		{{!--  --}}
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-vuejs font-30 m-r-10"></i>
+				Vue.js
+				<l green>Complete</l>
+			</h4>
+			<Code @name="index/library/vue.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/surreal.js" faded>Github</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+	</Layout::Blocks>
+
+</section>
+
+<section id="findusongithub">
+
+	<Layout::Text>
+	 	<h2>We are building SurrealDB for everyone</h2>
+		<p>SurrealDB is being built in the open. We would love for you to be involved.</p>
+		<Button::Thinner @link="https://github.com/surrealdb/surrealdb">
+			<i class="fab fa-github"></i> <span>Find us on Github</span>
+		</Button::Thinner>
+	</Layout::Text>
+
+	<Layout::Gap mini />
+
+	<Layout::Image as |block|>
+		<a href="https://github.com/surrealdb/surrealdb">
+        	<img src="/static/img/home/github.png" />
+      	</a>
+	</Layout::Image>
+
+</section>

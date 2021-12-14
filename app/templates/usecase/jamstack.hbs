@@ -61,9 +61,7 @@
 			<Link @link="docs" faded>Documentation</Link>
 		</n>
 	</block>
-</Layout::Blocks>
-
-<Layout::Blocks as |block|>
+	{{!--  --}}
 	<block>
 		<h4 flex row middle>
 			<i class="fab fa-react font-30 m-r-10"></i>
@@ -93,4 +91,24 @@
 	</block>
 </Layout::Blocks>
 
-<Layout::Gap large />
+<Layout::Gap small />
+
+<section id="findusongithub">
+
+	<Layout::Text>
+	 	<h2>We are building SurrealDB for everyone</h2>
+		<p>SurrealDB is being built in the open. We would love for you to be involved.</p>
+		<Button::Thinner @link="https://github.com/surrealdb/surrealdb">
+			<i class="fab fa-github"></i> <span>Find us on Github</span>
+		</Button::Thinner>
+	</Layout::Text>
+
+	<Layout::Gap mini />
+
+	<Layout::Image as |block|>
+		<a href="https://github.com/surrealdb/surrealdb">
+        	<img src="/static/img/home/github.png" />
+      	</a>
+	</Layout::Image>
+
+</section>

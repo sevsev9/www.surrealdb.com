@@ -7,11 +7,12 @@ layout-blocks {
 		display:grid;
 		grid-gap:50px;
 		position:relative;
-		margin:0px auto 50px auto;
+		margin:0px auto 0px auto;
 		grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
 
 		@include media(max-width-1000) {
 			grid-template-columns:minmax(0, 1fr);
+			margin:0px auto 0px auto;
 		}
 
 		div {
