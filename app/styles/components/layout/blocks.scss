@@ -25,12 +25,6 @@ layout-blocks {
 
 		}
 
-		img {
-
-			padding-bottom:10px;
-
-		}
-
 	}
 
 	&[cols-2-1] content {
@@ -50,6 +44,16 @@ layout-blocks {
 	&[cols-3] content {
 		grid-template-columns:minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
 		@include media(max-width-1000) {
+			grid-template-columns:minmax(0, 1fr);
+		}
+	}
+
+	&[cols-3-2] content {
+		grid-template-columns:minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+		@include media(max-width-1000) {
+			grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+		}
+		@include media(max-width-550) {
 			grid-template-columns:minmax(0, 1fr);
 		}
 	}

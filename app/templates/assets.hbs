@@ -1,0 +1,169 @@
+{{#in-element (document-head) insertBefore=null}}
+	<title>SurrealDB | About Us | The next generation serverless cloud database</title>
+	<meta name="title" property="og:title" content="The next generation serverless cloud database">
+	<meta name="description" content="SurrealDB is the next generation database for modern applications, with an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next generation serverless database.">
+	<meta name="image" property="og:image" content="/static/img/preview/about.jpg">
+	<meta property="og:type" content="website">
+{{/in-element}}
+
+<Layout::Gap small />
+
+<Layout::Text text-l>
+	<h1><img src="/static/img/text.svg" alt="SurrealDB" /> assets</h1>
+	<p>For media inquires and more information, email us at <a href="mailto:info@surrealdb.com">info@surrealdb.com</a>.</p>
+	<p>
+		<a {{on "click" (scroll-into-view "#colours" smooth=true)}}>Colours</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#logosandicons" smooth=true)}}>Logos and icons</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#poweredby" smooth=true)}}>Powered by badges</a>
+	</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<section>
+
+	<Layout::Text text-l id="colours">
+		<h2>Colours</h2>
+	</Layout::Text>
+
+	<Layout::Gap mini />
+
+	<Layout::Blocks cols-3-2 as |block|>
+		<block>
+			<img src="/static/img/assets/colours/ff00a0.svg" width="100%" height="100px" />
+			<h4 flex row middle>
+				#ff00a0
+			</h4>
+		</block>
+		<block>
+			<img src="/static/img/assets/colours/9600ff.svg" width="100%" height="100px" />
+			<h4 flex row middle>
+				#9600ff
+			</h4>
+		</block>
+		<block>
+			<img src="/static/img/assets/colours/ffffff.svg" width="100%" height="100px" />
+			<h4 flex row middle>
+				#ffffff
+			</h4>
+		</block>
+		<block>
+			<img src="/static/img/assets/colours/171a21.svg" width="100%" height="100px" />
+			<h4 flex row middle>
+				#171a21
+			</h4>
+		</block>
+		<block>
+			<img src="/static/img/assets/colours/222632.svg" width="100%" height="100px" />
+			<h4 flex row middle>
+				#222632
+			</h4>
+		</block>
+		<block>
+			<img src="/static/img/assets/colours/aeb8ca.svg" width="100%" height="100px" />
+			<h4 flex row middle>
+				#aeb8ca
+			</h4>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Gap small />
+
+	<Layout::Text text-l id="logosandicons">
+		<h2>Logos and icons</h2>
+	</Layout::Text>
+
+	<Layout::Gap mini />
+
+	<Layout::Blocks cols-3-2 as |block|>
+		<block>
+			<grid p-30 flex row center middle>
+				<img max-h-60 src="/static/img/assets/logo/light.svg" />
+			</grid>
+			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/logo/white.svg" download="surrealdb-logo-light">
+				<div>
+					<span>Download SVG</span>
+				</div>
+			</a>
+			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/logo/white.png" download="surrealdb-logo-light">
+				<div>
+					<span>Download PNG</span>
+				</div>
+			</a>
+		</block>
+		<block>
+			<grid p-30 flex row center middle>
+				<img max-h-60 src="/static/img/assets/logo/dark.svg" />
+			</grid>
+			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/logo/colour.svg" download="surrealdb-logo-dark">
+				<div>
+					<span>Download SVG</span>
+				</div>
+			</a>
+			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/logo/colour.png" download="surrealdb-logo-dark">
+				<div>
+					<span>Download PNG</span>
+				</div>
+			</a>
+		</block>
+		<block>
+			<grid p-30 flex row center middle>
+				<img max-h-60 src="/static/img/assets/icon/icon.svg" />
+			</grid>
+			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/icon/colour.svg" download="surrealdb-icon">
+				<div>
+					<span>Download SVG</span>
+				</div>
+			</a>
+			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/icon/colour.png" download="surrealdb-icon">
+				<div>
+					<span>Download PNG</span>
+				</div>
+			</a>
+		</block>
+	</Layout::Blocks>
+
+	<Layout::Gap small />
+
+	<Layout::Text text-l id="poweredby">
+		<h2>Powered by badges</h2>
+	</Layout::Text>
+
+	<Layout::Gap mini />
+
+	<Layout::Blocks cols-3-2 as |block|>
+		<block>
+			<grid p-30 flex row center middle>
+				<img max-h-60 src="/static/img/assets/attr/light.svg" />
+			</grid>
+			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/attr/white.svg" download="poweredby-surrealdb-light">
+				<div>
+					<span>Download SVG</span>
+				</div>
+			</a>
+			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/attr/white.png" download="poweredby-surrealdb-light">
+				<div>
+					<span>Download PNG</span>
+				</div>
+			</a>
+		</block>
+		<block>
+			<grid p-30 flex row center middle>
+				<img max-h-60 src="/static/img/assets/attr/dark.svg" />
+			</grid>
+			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/attr/colour.svg" download="poweredby-surrealdb-dark">
+				<div>
+					<span>Download SVG</span>
+				</div>
+			</a>
+			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/attr/colour.png" download="poweredby-surrealdb-dark">
+				<div>
+					<span>Download PNG</span>
+				</div>
+			</a>
+		</block>
+	</Layout::Blocks>
+
+</section>

@@ -1,0 +1,51 @@
+grid, [grid] {
+
+	background:
+		-webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 0),
+		-webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 0),
+		#222632
+	;
+	background:
+		-moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 0),
+		-moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 0),
+		#222632
+	;
+	background:
+		linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 0),
+		linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1) 0),
+		#222632
+	;
+
+	border-radius:12px;
+	background-repeat: repeat, repeat;
+	background-position: 0px 0, 5px 5px;
+
+	-webkit-background-origin: padding-box, padding-box;
+	background-origin: padding-box, padding-box;
+
+	-webkit-background-clip: border-box, border-box;
+	background-clip: border-box, border-box;
+
+	-webkit-background-size: 10px 10px, 10px 10px;
+	background-size: 10px 10px, 10px 10px;
+
+	-webkit-transform-origin: 0 0 0;
+	transform-origin: 0 0 0;
+
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
+
+	-webkit-box-shadow:none;
+	box-shadow:none;
+
+	display:flex;
+	text-shadow:none;
+	align-items:center;
+
+	img {
+		max-width:100%;
+	}
+
+}
