@@ -27,28 +27,7 @@ layout-blocks {
 
 	}
 
-	&[cols-2-1] content {
-		grid-template-columns:minmax(0, 2fr) minmax(0, 1fr);
-		@include media(max-width-1000) {
-			grid-template-columns:minmax(0, 1fr);
-		}
-	}
-
-	&[cols-1-2] content {
-		grid-template-columns:minmax(0, 1fr) minmax(0, 2fr);
-		@include media(max-width-1000) {
-			grid-template-columns:minmax(0, 1fr);
-		}
-	}
-
-	&[cols-3] content {
-		grid-template-columns:minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-		@include media(max-width-1000) {
-			grid-template-columns:minmax(0, 1fr);
-		}
-	}
-
-	&[cols-3-2] content {
+	&[cols-3-to-2-to-1] content {
 		grid-template-columns:minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
 		@include media(max-width-1000) {
 			grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
@@ -58,7 +37,35 @@ layout-blocks {
 		}
 	}
 
-	&[cols-2] content {
+	&[cols-3-to-2] content {
+		grid-template-columns:minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+		@include media(max-width-1000) {
+			grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+		}
+	}
+
+	&[cols-2-1-to-1] content {
+		grid-template-columns:minmax(0, 2fr) minmax(0, 1fr);
+		@include media(max-width-1000) {
+			grid-template-columns:minmax(0, 1fr);
+		}
+	}
+
+	&[cols-1-2-to-1] content {
+		grid-template-columns:minmax(0, 1fr) minmax(0, 2fr);
+		@include media(max-width-1000) {
+			grid-template-columns:minmax(0, 1fr);
+		}
+	}
+
+	&[cols-3-to-1] content {
+		grid-template-columns:minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+		@include media(max-width-1000) {
+			grid-template-columns:minmax(0, 1fr);
+		}
+	}
+
+	&[cols-2-to-1] content {
 		grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
 		@include media(max-width-1000) {
 			grid-template-columns:minmax(0, 1fr);

@@ -30,42 +30,30 @@
 
 	<Layout::Gap mini />
 
-	<Layout::Blocks cols-3-2 as |block|>
+	<Layout::Blocks cols-3-to-2 as |block|>
 		<block>
-			<img src="/static/img/assets/colours/ff00a0.svg" width="100%" height="100px" />
-			<h4 flex row middle>
-				#ff00a0
-			</h4>
+			<div curved bg-ff00a0 w-100 h-60px m-b-20></div>
+			<h4 flex row middle>#ff00a0</h4>
 		</block>
 		<block>
-			<img src="/static/img/assets/colours/9600ff.svg" width="100%" height="100px" />
-			<h4 flex row middle>
-				#9600ff
-			</h4>
+			<div curved bg-9600ff w-100 h-60px m-b-20></div>
+			<h4 flex row middle>#9600ff</h4>
 		</block>
 		<block>
-			<img src="/static/img/assets/colours/ffffff.svg" width="100%" height="100px" />
-			<h4 flex row middle>
-				#ffffff
-			</h4>
+			<div curved bg-ffffff w-100 h-60px m-b-20></div>
+			<h4 flex row middle>#ffffff</h4>
 		</block>
 		<block>
-			<img src="/static/img/assets/colours/171a21.svg" width="100%" height="100px" />
-			<h4 flex row middle>
-				#171a21
-			</h4>
+			<div curved bg-171a21 w-100 h-60px m-b-20></div>
+			<h4 flex row middle>#171a21</h4>
 		</block>
 		<block>
-			<img src="/static/img/assets/colours/222632.svg" width="100%" height="100px" />
-			<h4 flex row middle>
-				#222632
-			</h4>
+			<div curved bg-222632 w-100 h-60px m-b-20></div>
+			<h4 flex row middle>#222632</h4>
 		</block>
 		<block>
-			<img src="/static/img/assets/colours/aeb8ca.svg" width="100%" height="100px" />
-			<h4 flex row middle>
-				#aeb8ca
-			</h4>
+			<div curved bg-aeb8ca w-100 h-60px m-b-20></div>
+			<h4 flex row middle>#aeb8ca</h4>
 		</block>
 	</Layout::Blocks>
 
@@ -77,50 +65,38 @@
 
 	<Layout::Gap mini />
 
-	<Layout::Blocks cols-3-2 as |block|>
+	<Layout::Blocks cols-3-to-2-to-1 as |block|>
 		<block>
 			<grid p-30 flex row center middle>
 				<img max-h-60 src="/static/img/assets/logo/light.svg" />
 			</grid>
-			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/logo/light.svg" download="surrealdb-logo-light">
-				<div>
-					<span>Download SVG</span>
-				</div>
+			<a m-t-10 m-r-10 href="/static/img/assets/logo/light.svg" download="surrealdb-logo-light">
+				<i class="fal fa-cloud-download"></i> SVG
 			</a>
-			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/logo/light.png" download="surrealdb-logo-light">
-				<div>
-					<span>Download PNG</span>
-				</div>
+			<a m-t-10 m-r-10 href="/static/img/assets/logo/light.png" download="surrealdb-logo-light">
+				<i class="fal fa-cloud-download"></i> PNG
 			</a>
 		</block>
 		<block>
 			<grid p-30 flex row center middle>
 				<img max-h-60 src="/static/img/assets/logo/dark.svg" />
 			</grid>
-			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/logo/dark.svg" download="surrealdb-logo-dark">
-				<div>
-					<span>Download SVG</span>
-				</div>
+			<a m-t-10 m-r-10 href="/static/img/assets/logo/dark.svg" download="surrealdb-logo-dark">
+				<i class="fal fa-cloud-download"></i> SVG
 			</a>
-			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/logo/dark.png" download="surrealdb-logo-dark">
-				<div>
-					<span>Download PNG</span>
-				</div>
+			<a m-t-10 m-r-10 href="/static/img/assets/logo/dark.png" download="surrealdb-logo-dark">
+				<i class="fal fa-cloud-download"></i> PNG
 			</a>
 		</block>
 		<block>
 			<grid p-30 flex row center middle>
 				<img max-h-60 src="/static/img/assets/icon/icon.svg" />
 			</grid>
-			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/icon/icon.svg" download="surrealdb-icon">
-				<div>
-					<span>Download SVG</span>
-				</div>
+			<a m-t-10 m-r-10 href="/static/img/assets/icon/icon.svg" download="surrealdb-icon">
+				<i class="fal fa-cloud-download"></i> SVG
 			</a>
-			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/icon/icon.png" download="surrealdb-icon">
-				<div>
-					<span>Download PNG</span>
-				</div>
+			<a m-t-10 m-r-10 href="/static/img/assets/icon/icon.png" download="surrealdb-icon">
+				<i class="fal fa-cloud-download"></i> PNG
 			</a>
 		</block>
 	</Layout::Blocks>
@@ -128,40 +104,32 @@
 	<Layout::Gap small />
 
 	<Layout::Text text-l id="poweredby">
-		<h2>Powered by badges</h2>
+		<h2>'Powered by' badges</h2>
 	</Layout::Text>
 
 	<Layout::Gap mini />
 
-	<Layout::Blocks cols-3-2 as |block|>
+	<Layout::Blocks cols-3-to-2-to-1 as |block|>
 		<block>
 			<grid p-30 flex row center middle>
 				<img max-h-60 src="/static/img/assets/attr/light.svg" />
 			</grid>
-			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/attr/light.svg" download="poweredby-surrealdb-light">
-				<div>
-					<span>Download SVG</span>
-				</div>
+			<a m-t-10 m-r-10 href="/static/img/assets/attr/light.svg" download="poweredby-surrealdb-light">
+				<i class="fal fa-cloud-download"></i> SVG
 			</a>
-			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/attr/light.png" download="poweredby-surrealdb-light">
-				<div>
-					<span>Download PNG</span>
-				</div>
+			<a m-t-10 m-r-10 href="/static/img/assets/attr/light.png" download="poweredby-surrealdb-light">
+				<i class="fal fa-cloud-download"></i> PNG
 			</a>
 		</block>
 		<block>
 			<grid p-30 flex row center middle>
 				<img max-h-60 src="/static/img/assets/attr/dark.svg" />
 			</grid>
-			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/attr/dark.svg" download="poweredby-surrealdb-dark">
-				<div>
-					<span>Download SVG</span>
-				</div>
+			<a m-t-10 m-r-10 href="/static/img/assets/attr/dark.svg" download="poweredby-surrealdb-dark">
+				<i class="fal fa-cloud-download"></i> SVG
 			</a>
-			<a m-t-10 m-r-10 button bordered square href="/static/img/assets/attr/dark.png" download="poweredby-surrealdb-dark">
-				<div>
-					<span>Download PNG</span>
-				</div>
+			<a m-t-10 m-r-10 href="/static/img/assets/attr/dark.png" download="poweredby-surrealdb-dark">
+				<i class="fal fa-cloud-download"></i> PNG
 			</a>
 		</block>
 	</Layout::Blocks>
