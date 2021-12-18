@@ -17,14 +17,20 @@
 		<a {{on "click" (scroll-into-view "#logosandicons" smooth=true)}}>Logos and icons</a>
 		&bull;
 		<a {{on "click" (scroll-into-view "#poweredby" smooth=true)}}>'Powered by' badges</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#builton" smooth=true)}}>'Built on' badges</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#press" smooth=true)}}>Press imagery</a>
+		&bull;
+		<a {{on "click" (scroll-into-view "#animation" smooth=true)}}>Animated logos</a>
 	</p>
 </Layout::Text>
 
 <Layout::Gap mini />
 
-<section>
+<section id="colours">
 
-	<Layout::Text text-l id="colours">
+	<Layout::Text text-l>
 		<h2>Colours</h2>
 	</Layout::Text>
 
@@ -57,9 +63,11 @@
 		</block>
 	</Layout::Blocks>
 
-	<Layout::Gap small />
+</section>
 
-	<Layout::Text text-l id="logosandicons">
+<section id="logosandicons">
+
+	<Layout::Text text-l>
 		<h2>Logos and icons</h2>
 	</Layout::Text>
 
@@ -101,9 +109,11 @@
 		</block>
 	</Layout::Blocks>
 
-	<Layout::Gap small />
+</section>
 
-	<Layout::Text text-l id="poweredby">
+<section id="poweredby">
+
+	<Layout::Text text-l>
 		<h2>'Powered by' badges</h2>
 	</Layout::Text>
 
@@ -112,24 +122,139 @@
 	<Layout::Blocks cols-3-to-2-to-1 as |block|>
 		<block>
 			<grid p-30 flex row center middle>
-				<img max-h-60 src="/static/img/assets/attr/light.svg" />
+				<img max-h-60 src="/static/img/assets/poweredby/light.svg" />
 			</grid>
-			<a m-t-10 m-r-10 href="/static/img/assets/attr/light.svg" download="poweredby-surrealdb-light">
+			<a m-t-10 m-r-10 href="/static/img/assets/poweredby/light.svg" download="poweredby-surrealdb-light">
 				<i class="fal fa-cloud-download"></i> SVG
 			</a>
-			<a m-t-10 m-r-10 href="/static/img/assets/attr/light.png" download="poweredby-surrealdb-light">
+			<a m-t-10 m-r-10 href="/static/img/assets/poweredby/light.png" download="poweredby-surrealdb-light">
 				<i class="fal fa-cloud-download"></i> PNG
 			</a>
 		</block>
 		<block>
 			<grid p-30 flex row center middle>
-				<img max-h-60 src="/static/img/assets/attr/dark.svg" />
+				<img max-h-60 src="/static/img/assets/poweredby/dark.svg" />
 			</grid>
-			<a m-t-10 m-r-10 href="/static/img/assets/attr/dark.svg" download="poweredby-surrealdb-dark">
+			<a m-t-10 m-r-10 href="/static/img/assets/poweredby/dark.svg" download="poweredby-surrealdb-dark">
 				<i class="fal fa-cloud-download"></i> SVG
 			</a>
-			<a m-t-10 m-r-10 href="/static/img/assets/attr/dark.png" download="poweredby-surrealdb-dark">
+			<a m-t-10 m-r-10 href="/static/img/assets/poweredby/dark.png" download="poweredby-surrealdb-dark">
 				<i class="fal fa-cloud-download"></i> PNG
+			</a>
+		</block>
+	</Layout::Blocks>
+
+</section>
+
+<section id="builton">
+
+	<Layout::Text text-l>
+		<h2>'Built on' badges</h2>
+	</Layout::Text>
+
+	<Layout::Gap mini />
+
+	<Layout::Blocks cols-3-to-2-to-1 as |block|>
+		<block>
+			<grid p-30 flex row center middle>
+				<img max-h-60 src="/static/img/assets/builton/light.svg" />
+			</grid>
+			<a m-t-10 m-r-10 href="/static/img/assets/builton/light.svg" download="builton-surrealdb-light">
+				<i class="fal fa-cloud-download"></i> SVG
+			</a>
+			<a m-t-10 m-r-10 href="/static/img/assets/builton/light.png" download="builton-surrealdb-light">
+				<i class="fal fa-cloud-download"></i> PNG
+			</a>
+		</block>
+		<block>
+			<grid p-30 flex row center middle>
+				<img max-h-60 src="/static/img/assets/builton/dark.svg" />
+			</grid>
+			<a m-t-10 m-r-10 href="/static/img/assets/builton/dark.svg" download="builton-surrealdb-dark">
+				<i class="fal fa-cloud-download"></i> SVG
+			</a>
+			<a m-t-10 m-r-10 href="/static/img/assets/builton/dark.png" download="builton-surrealdb-dark">
+				<i class="fal fa-cloud-download"></i> PNG
+			</a>
+		</block>
+	</Layout::Blocks>
+
+</section>
+
+<section id="press">
+
+	<Layout::Text text-l>
+		<h2>Press imagery</h2>
+	</Layout::Text>
+
+	<Layout::Gap mini />
+
+	<Layout::Blocks cols-3-to-2-to-1 as |block|>
+		<block>
+			<grid p-30 flex row center middle>
+				<img max-h-150 src="/static/img/assets/press/tagline.png" />
+			</grid>
+			<a m-t-10 m-r-10 href="https://surrealdb.s3.amazonaws.com/surrealdb-image-tagline.png" download="surrealdb-image-tagline">
+				<i class="fal fa-cloud-download"></i> PNG
+			</a>
+		</block>
+		<block>
+			<grid p-30 flex row center middle>
+				<img max-h-150 src="/static/img/assets/press/website.png" />
+			</grid>
+			<a m-t-10 m-r-10 href="https://surrealdb.s3.amazonaws.com/surrealdb-image-website.png" download="surrealdb-image-website">
+				<i class="fal fa-cloud-download"></i> PNG
+			</a>
+		</block>
+		<block>
+			<grid p-30 flex row center middle>
+				<img max-h-150 src="/static/img/assets/press/github.png" />
+			</grid>
+			<a m-t-10 m-r-10 href="https://surrealdb.s3.amazonaws.com/surrealdb-image-github.png" download="surrealdb-image-github">
+				<i class="fal fa-cloud-download"></i> PNG
+			</a>
+		</block>
+		<block>
+			<grid p-30 flex row center middle>
+				<img max-h-150 src="/static/img/assets/press/icon-3d.png" />
+			</grid>
+			<a m-t-10 m-r-10 href="https://surrealdb.s3.amazonaws.com/surrealdb-image-icon-3d.png" download="surrealdb-image-icon-3d">
+				<i class="fal fa-cloud-download"></i> PNG
+			</a>
+		</block>
+	</Layout::Blocks>
+
+</section>
+
+<section id="animation">
+
+	<Layout::Text text-l>
+		<h2>Animated logos</h2>
+	</Layout::Text>
+
+	<Layout::Gap mini />
+
+	<Layout::Blocks cols-3-to-2-to-1 as |block|>
+		<block>
+			<p>Animated logo with sound</p>
+			<grid p-30 flex row center middle>
+				<video height="200" controls poster="/static/img/assets/animation/soundbite.png">
+					<source src="https://surrealdb.s3.amazonaws.com/surrealdb-logo-soundbite.mp4" type="video/mp4" />
+				</video>
+			</grid>
+			<a m-t-10 m-r-10 href="https://surrealdb.s3.amazonaws.com/surrealdb-logo-soundbite.mp4" download="surrealdb-logo-soundbite">
+				<i class="fal fa-cloud-download"></i> MP4 (H.264)
+			</a>
+		</block>
+		<block>
+			<p>Animated logo without sound</p>
+			<grid p-30 flex row center middle>
+				<video height="200" controls poster="/static/img/assets/animation/animation.png">
+					<source src="https://surrealdb.s3.amazonaws.com/surrealdb-logo-animation.mov" type="video/mov" />
+				</video>
+			</grid>
+			<a m-t-10 m-r-10 href="https://surrealdb.s3.amazonaws.com/surrealdb-logo-animation.mov" download="surrealdb-logo-animation">
+				<i class="fal fa-cloud-download"></i> MOV (Apple ProRes)
 			</a>
 		</block>
 	</Layout::Blocks>
