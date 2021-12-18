@@ -10,6 +10,14 @@ a {
 		color:var(--hover-color);
 	}
 
+	span + i {
+		padding-left:30px;
+	}
+
+	i + span {
+		padding-left:10px;
+	}
+
 	i {
 		transition:color 0.3s;
 		background:-moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
