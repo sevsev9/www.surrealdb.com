@@ -11,6 +11,7 @@ Router.map(function() {
 	this.route('features');
 	this.route('install');
 	this.route('roadmap');
+	this.route('license');
 	this.route('hiring');
 	this.route('media');
 	this.route('about');
@@ -18,6 +19,13 @@ Router.map(function() {
 	this.route('docs');
 
 	this.route('discord');
+
+	this.route('legal', function() {
+		this.route('terms');
+		this.route('privacy');
+		this.route('cookies');
+		this.route('security');
+	});
 
 	this.route('usecase', function() {
 		this.route('jamstack');

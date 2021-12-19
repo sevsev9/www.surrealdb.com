@@ -1,0 +1,28 @@
+layout-table {
+
+	width:100%;
+	display:block;
+	text-align:keft;
+	margin:0 auto 0 auto;
+
+	table {
+		width:100%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	table > thead {
+		font-weight:bold;
+	}
+
+	table > thead > tr > td {
+		padding:15px;
+		border-bottom:1px solid var(--border-color);
+	}
+
+	table > tr > td {
+		padding:15px;
+		border-bottom:1px solid var(--border-color);
+	}
+
+}
