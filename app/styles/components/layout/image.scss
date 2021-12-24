@@ -2,11 +2,26 @@ layout-image {
 
 	display:block;
 
-	content {
+	div {
 
-		display:grid;
-		position:relative;
-		margin:0px auto 0px auto;
+		background:none;
+
+		img {
+
+			width:100%;
+			display:block;
+			overflow:visible;
+
+			@include media(max-width-750) {
+				width:150%;
+				margin-left:-25%;
+			}
+
+		}
+
+	}
+
+	&[github] {
 
 		div {
 
@@ -21,12 +36,10 @@ layout-image {
 			}
 
 			img {
-
 				width:110%;
-				display: block;
+				display:block;
 				overflow:visible;
-				margin-left: -5%;
-
+				margin-left:-5%;
 			}
 
 		}
