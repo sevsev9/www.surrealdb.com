@@ -6,7 +6,7 @@ layout-boxes {
 
 		display:grid;
 		grid-gap:20px 20px;
-		grid-template-columns:repeat(3, 1fr);
+		grid-template-columns:repeat(6, 1fr);
 
 		layout-boxes-item {
 
@@ -14,7 +14,12 @@ layout-boxes {
 			display:block;
 			text-align:left;
 			border-radius:12px;
+			grid-column:auto / span 2;
 			background-color:var(--boxes-color);
+
+			@include media(max-width-1024) {
+				padding:30px;
+			}
 
 			img {
 				float:left;
@@ -24,6 +29,7 @@ layout-boxes {
 			}
 
 			h3 {
+				font-size:18px;
 				font-weight:600;
 				line-height:1.5;
 			}
@@ -36,62 +42,70 @@ layout-boxes {
 
 	}
 
-	&[small] content {
+	&[cols-3-to-2-to-1] content layout-boxes-item {
 
-		@include media(max-width-1150) {
-			grid-template-columns:repeat(3, 1fr);
+		grid-column:auto / span 2;
+
+		&[full] {
+			grid-column:auto / span 6;
 		}
 
-		@include media(max-width-1024) {
-			grid-template-columns:repeat(2, 1fr);
+		&[half] {
+			grid-column:auto / span 3;
+		}
+
+		@include media(max-width-1250) {
+
+			grid-column:auto / span 3;
+
+			&[full] {
+				grid-column:auto / span 6;
+			}
+
+			&[half] {
+				grid-column:auto / span 3;
+			}
+
 		}
 
 		@include media(max-width-750) {
-			grid-template-columns:repeat(1, 1fr);
-		}
 
-		layout-boxes-item {
+			grid-column:auto / span 6;
 
-			display:flex;
-			align-items:top;
-			padding:15px 25px;
-			justify-content:flex-start;
-			h3 { font-size:16px; }
-
-			@include media(max-width-1024) {
-				padding:10px 15px;
-				h3 { font-size:16px; }
+			&[full] {
+				grid-column:auto / span 6;
 			}
 
-			@include media(max-width-750) {
-				padding:10px 15px;
-				h3 { font-size:16px; }
+			&[half] {
+				grid-column:auto / span 6;
 			}
 
 		}
 
 	}
 
-	&[large] content {
+	&[cols-3-to-1] content layout-boxes-item {
 
-		@include media(max-width-1150) {
-			grid-template-columns:repeat(1, 1fr);
+		grid-column:auto / span 2;
+
+		&[full] {
+			grid-column:auto / span 6;
 		}
 
-		layout-boxes-item {
+		&[half] {
+			grid-column:auto / span 3;
+		}
 
-			text-align:left;
-			padding:40px 40px;
-			h3 { font-size:18px; }
+		@include media(max-width-1150) {
 
-			@include media(max-width-1024) {
-				padding:30px 30px;
-				h3 { font-size:16px; }
+			grid-column:auto / span 6;
+
+			&[full] {
+				grid-column:auto / span 6;
 			}
 
-			@include media(max-width-750) {
-				padding:30px 30px;
-				h3 { font-size:16px; }
+			&[half] {
+				grid-column:auto / span 6;
 			}
 
 		}
