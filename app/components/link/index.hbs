@@ -1,4 +1,4 @@
-{{#if (begs-with @link "https://")}}
+{{#if (or (begs-with @link "https://") (begs-with @link "http://") (begs-with @link "/"))}}
 	<a href={{@link}} rel="noopener noreferrer" target="_blank" ...attributes>
 		{{#if (has-block)}}
 			{{yield}}
