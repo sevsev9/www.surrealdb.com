@@ -279,34 +279,41 @@ header {
 							margin:0;
 							display:grid;
 							padding:20px;
-							grid-gap:20px;
+							grid-gap:12px 10px;
 							border-bottom-left-radius:12px;
 							border-bottom-right-radius:12px;
 							background-color:var(--back-color);
-							grid-template-columns:repeat(4, 1fr);
+							grid-template-columns:100px 1fr 1fr 170px;
 
 							> a {
 
 								border:0;
 								margin:0;
-								display:flex;
 								padding:15px;
+								display:flex;
+								flex-wrap:nowrap;
+								border-radius:12px;
 								flex-direction:column;
+								justify-content:center;
 								transition:background 0.3s;
 
 								icon {
+									width:20px;
 									font-size:18px;
+									display:inline-block;
+									display:inline-flex;
+									align-items:center;
+									justify-content:center;
 								}
 
 								span {
 									font-size:15px;
 									margin-left:5px;
+									white-space:nowrap;
 								}
 
 								&:hover {
 
-									border-bottom:0;
-									border-radius:12px;
 									background-color:rgba(0,0,0,0.3);
 
 									icon, span {
