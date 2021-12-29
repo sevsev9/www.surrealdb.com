@@ -93,6 +93,9 @@ module.exports = function(environment) {
 				'default-src': [
 					"'none'",
 				],
+				'worker-src': [
+					"'self'"
+				],
 				'img-src': [
 					"'self'",
 					// Google
@@ -114,6 +117,9 @@ module.exports = function(environment) {
 				],
 				'connect-src': [
 					"'self'",
+					// Surreal
+					'wss://surreal.io/rpc',
+					// Abcum
 					'https://contact.abcum.com',
 					// Google
 					'https://www.google-analytics.com/',
@@ -155,17 +161,20 @@ module.exports = function(environment) {
 	};
 
 	if (environment === 'test') {
+		ENV.APP.autoboot = false;
 		ENV.locationType = 'none';
 		ENV.APP.rootElement = '#ember-testing';
 	}
 
 	if (environment === 'development') {
-		// Ignore
+		ENV.surreal.uri = 'https://surreal.io';
 	}
 
 	if (environment === 'production') {
-		// Ignore
+		ENV.surreal.uri = 'https://surreal.io';
 	}
+
+	if (process.env.SURREAL) ENV.surreal.uri = process.env.SURREAL;
 
 	return ENV;
 
