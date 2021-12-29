@@ -10,32 +10,82 @@ layout-boxes {
 
 		layout-boxes-item {
 
-			padding:40px;
 			display:block;
+			overflow:hidden;
 			text-align:left;
 			border-radius:12px;
 			grid-column:auto / span 2;
 			background-color:var(--boxes-color);
 
-			@include media(max-width-1024) {
-				padding:30px;
+			> img {
+				display:block;
+				max-width:100%;
 			}
 
-			img {
-				float:left;
-				height:18px;
-				margin-top:3px;
-				margin-right:10px;
+			> div {
+
+				padding:40px;
+
+				@include media(max-width-1024) {
+					padding:30px;
+				}
+
+				> h3 {
+					display:flex;
+					font-size:26px;
+					font-weight:600;
+					line-height:1.5;
+					&:not(:last-child) {
+						padding-bottom:15px;
+					}
+				}
+
+				> h4 {
+					display:flex;
+					font-size:20px;
+					font-weight:600;
+					line-height:1.5;
+					&:not(:last-child) {
+						padding-bottom:15px;
+					}
+				}
+
+				> p:last-child {
+					font-size:16px;
+				}
+
+				> p:first-child {
+					font-size:12px;
+					padding-bottom:0;
+					margin-bottom:5px;
+					display:inline-block;
+					color:var(--faint-color);
+				}
+
 			}
 
-			h3 {
-				font-size:18px;
-				font-weight:600;
-				line-height:1.5;
+			&[tick] div h3 {
+				&:before {
+					content:'';
+					width:20px;
+					height:20px;
+					display:block;
+					margin:9px 10px 0 0;
+					background-repeat:no-repeat;
+					background-image:url('/static/img/home/tick.svg');
+				}
 			}
 
-			p {
-				font-size:16px;
+			&[tick] div h4 {
+				&:before {
+					content:'';
+					width:18px;
+					height:18px;
+					display:block;
+					margin:5px 10px 0 0;
+					background-repeat:no-repeat;
+					background-image:url('/static/img/home/tick.svg');
+				}
 			}
 
 		}
@@ -52,6 +102,30 @@ layout-boxes {
 
 		&[half] {
 			grid-column:auto / span 3;
+		}
+
+		@include media(min-width-1050) {
+
+			&[full][side] {
+
+				img {
+					width:67.7%;
+					float:left;
+					min-height:100%;
+					object-fit:cover;
+					&:only-child {
+						width:100%;
+					}
+				}
+
+				div {
+					margin:0;
+					width:32.3%;
+					float:right;
+				}
+
+			}
+
 		}
 
 		@include media(max-width-1250) {

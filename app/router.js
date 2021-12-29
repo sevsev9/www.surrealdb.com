@@ -9,7 +9,6 @@ export default class Router extends EmberRouter {
 Router.map(function() {
 
 	this.route('about');
-	this.route('blog');
 	this.route('discord');
 	this.route('docs');
 	this.route('features');
@@ -18,6 +17,12 @@ Router.map(function() {
 	this.route('media');
 	this.route('roadmap');
 	this.route('store');
+
+	this.route('blog', function() {
+		this.route('post', {
+			path: '/:post_id'
+		});
+	});
 
 	this.route('legal', function() {
 		this.route('terms');

@@ -1,0 +1,45 @@
+{{#in-element (document-head) insertBefore=null}}
+	<title>SurrealDB | Blog | The ultimate serverless cloud database</title>
+	<meta name="title" property="og:title" content="SurrealDB | Blog">
+	<meta name="description" content="SurrealDB is the ultimate database for tomorrow's serverless, jamstack, single-page, and traditional applications.">
+	<meta name="image" property="og:image" content="/static/img/preview/blog.jpg">
+	<meta property="og:type" content="website">
+{{/in-element}}
+
+<Layout::Gap small />
+
+{{#if this.posts.length}}
+
+	<Layout::Boxes cols-3-to-2-to-1>
+		{{#each (sort-by "time" this.model) as |post i|}}
+			{{#if (eq 0 i)}}
+				<Layout::Boxes::Item full side @image={{post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
+			{{else if (eq 1 i)}}
+				<Layout::Boxes::Item mini @image={{post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
+			{{else if (eq 2 i)}}
+				<Layout::Boxes::Item mini @image={{post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
+			{{else if (eq 3 i)}}
+				<Layout::Boxes::Item mini @image={{post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
+			{{else}}
+				<Layout::Boxes::Item half @image={{post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
+			{{/if}}
+		{{/each}}
+	</Layout::Boxes>
+
+{{else}}
+
+	<Layout::Text>
+		<h1><img src="/static/img/text.svg" alt="SurrealDB" /> blog</h1>
+		<p>There aren't any posts here yet.</p>
+		<Waitlist bordered thicker>Keep me updated</Waitlist>
+	</Layout::Text>
+
+	<Layout::Gap mini />
+
+	<Layout::Image as |block|>
+		<img src="/static/img/blog/main.png" />
+	</Layout::Image>
+
+{{/if}}
+
+<Layout::Gap small />

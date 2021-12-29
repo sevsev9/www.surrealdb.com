@@ -17,6 +17,15 @@ module.exports = function(environment) {
 			],
 		},
 
+		// Surreal configuration details for
+		// connecting to the correct namespace
+		// and database on SurrealDB.
+
+		surreal: {
+			ns: 'surreal',
+			db: 'surreal',
+		},
+
 		// Set the configuration options for
 		// the @ascua/update addon, so that the
 		// page can update when available.

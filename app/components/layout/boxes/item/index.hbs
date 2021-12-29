@@ -1,6 +1,14 @@
-<layout-boxes-item ...attributes>
-	<img src="/static/img/home/tick.svg" alt>
-	{{#if @title}}<h3>{{@title}}</h3>{{/if}}
-	{{#if @text}}<p>{{@text}}</p>{{/if}}
-	{{yield}}
+<layout-boxes-item tick={{@tick}} ...attributes>
+
+	{{#if @image}}<img src={{@image}}>{{/if}}
+
+	{{#if (or @stamp @title @label @text)}}
+		<div>
+			{{#if @stamp}}<p>{{@stamp}}</p>{{/if}}
+			{{#if @title}}<h3>{{@title}}</h3>{{/if}}
+			{{#if @label}}<h4>{{@label}}</h4>{{/if}}
+			{{#if @text}}<p>{{@text}}</p>{{/if}}
+		</div>
+	{{/if}}
+
 </layout-boxes-item>
