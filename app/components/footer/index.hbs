@@ -5,48 +5,48 @@
 				<LinkTo @route="index" class="logo"></LinkTo>
 				<p>With an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next generation serverless database.</p>
 				<p>
-					<a href="https://github.com/surrealdb/surrealdb" rel="noopener noreferrer" target="_blank">
+					<Link @link={{url "github"}}>
 						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
 							Follow us on GitHub
 						</Ascua::Tooltip>
 						<i class="fab fa-github"></i>
-					</a>
-					<a href="https://twitter.com/surrealdb" rel="noopener noreferrer" target="_blank">
+					</Link>
+					<Link @link={{url "twitter"}}>
 						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
 							Follow SurrealDB on Twitter
 						</Ascua::Tooltip>
 						<i class="fab fa-twitter"></i>
-					</a>
-					<a href="https://www.linkedin.com/company/surrealdb/" rel="noopener noreferrer" target="_blank">
+					</Link>
+					<Link @link={{url "linkedin"}}>
 						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
 							Connect with us on LinkedIn
 						</Ascua::Tooltip>
 						<i class="fab fa-linkedin"></i>
-					</a>
-					<a href="https://www.youtube.com/channel/UCjf2teVEuYVvvVC-gFZNq6w" rel="noopener noreferrer" target="_blank">
+					</Link>
+					<Link @link={{url "youtube"}}>
 						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
 							Visit our Youtube channel
 						</Ascua::Tooltip>
 						<i class="fab fa-youtube"></i>
-					</a>
-					<a href="https://discord.gg/QtZMj8PAcF" rel="noopener noreferrer" target="_blank">
+					</Link>
+					<Link @link={{url "discord"}}>
 						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
 							Join our Discord community
 						</Ascua::Tooltip>
 						<i class="fab fa-discord"></i>
-					</a>
-					<a href="https://dev.to/surrealdb" rel="noopener noreferrer" target="_blank">
+					</Link>
+					<Link @link={{url "dev"}}>
 						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
 							Join our DEV community
 						</Ascua::Tooltip>
 						<i class="fab fa-dev"></i>
-					</a>
-					<a href="https://stackoverflow.com/questions/tagged/surrealdb" rel="noopener noreferrer" target="_blank">
+					</Link>
+					<Link @link={{url "stackoverflow"}}>
 						<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
 							Ask questions on Stack Overflow
 						</Ascua::Tooltip>
 						<i class="fab fa-stack-overflow"></i>
-					</a>
+					</Link>
 				</p>
 				<Icon />
 			</div>
@@ -64,25 +64,25 @@
 			</Footer::Links>
 			<Footer::Links>
 				<Footer::Links::Name @text="Community" />
-				<Footer::Links::Item @link="https://github.com/surrealdb/surrealdb">
+				<Footer::Links::Item @link={{url "github"}}>
 					<i class="fab fa-github"></i> <span>GitHub</span>
 				</Footer::Links::Item>
-				<Footer::Links::Item @link="https://twitter.com/surrealdb">
+				<Footer::Links::Item @link={{url "twitter"}}>
 					<i class="fab fa-twitter"></i> <span>Twitter</span>
 				</Footer::Links::Item>
-				<Footer::Links::Item @link="https://www.linkedin.com/company/surrealdb/">
+				<Footer::Links::Item @link={{url "linkedin"}}>
 					<i class="fab fa-linkedin"></i> <span>LinkedIn</span>
 				</Footer::Links::Item>
-				<Footer::Links::Item @link="https://www.youtube.com/channel/UCjf2teVEuYVvvVC-gFZNq6w">
+				<Footer::Links::Item @link={{url "youtube"}}>
 					<i class="fab fa-youtube"></i> <span>YouTube</span>
 				</Footer::Links::Item>
-				<Footer::Links::Item @link="https://discord.gg/QtZMj8PAcF">
+				<Footer::Links::Item @link={{url "discord"}}>
 					<i class="fab fa-discord"></i> <span>Discord</span>
 				</Footer::Links::Item>
-				<Footer::Links::Item @link="https://dev.to/surrealdb">
+				<Footer::Links::Item @link={{url "dev"}}>
 					<i class="fab fa-dev"></i> <span>Dev</span>
 				</Footer::Links::Item>
-				<Footer::Links::Item @link="https://stackoverflow.com/questions/tagged/surrealdb">
+				<Footer::Links::Item @link={{url "stackoverflow"}}>
 					<i class="fab fa-stack-overflow"></i> <span>Stack Overflow</span>
 				</Footer::Links::Item>
 			</Footer::Links>
