@@ -1,16 +1,16 @@
 {{#if (begs-with @link "https://")}}
 	<a href={{@link}} rel="noopener noreferrer" target="_blank" ...attributes>
 		<div>
-			<icon>{{yield}}</icon>
-			<span>{{@text}}</span>
+			{{#if (has-block)}}<icon>{{yield}}</icon>{{/if}}
+			{{#if @text}}<span>{{@text}}</span>{{/if}}
 		</div>
 		{{#if @desc}}<p>{{@desc}}</p>{{/if}}
 	</a>
 {{else}}
 	<LinkTo @route={{@link}} selected={{eq @link (route-name)}} ...attributes>
 		<div>
-			<icon>{{yield}}</icon>
-			<span>{{@text}}</span>
+			{{#if (has-block)}}<icon>{{yield}}</icon>{{/if}}
+			{{#if @text}}<span>{{@text}}</span>{{/if}}
 		</div>
 		{{#if @desc}}<p>{{@desc}}</p>{{/if}}
 	</LinkTo>

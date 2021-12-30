@@ -7,7 +7,7 @@
 		{{/if}}
 	</a>
 {{else}}
-	<LinkTo @route={{@link}} selected={{eq @link (route-name)}} ...attributes>
+	<LinkTo @route={{@link}} selected={{begs-with (route-name) @link}} ...attributes>
 		{{#if (has-block)}}
 			{{yield}}
 		{{else}}

@@ -157,6 +157,12 @@ header {
 					display:none;
 				}
 
+				span[selected] {
+					padding:8px 0 9px 0;
+					color:var(--text-color);
+					border-bottom:3px solid var(--hover-color);
+				}
+
 				&:hover {
 
 					popup {
@@ -233,22 +239,26 @@ header {
 								margin:0;
 								display:flex;
 								padding:15px;
+								border-radius:12px;
 								flex-direction:column;
 								transition:background 0.3s;
 
 								div {
 									display:flex;
 									align-items:center;
-									padding-bottom:15px;
+									padding-bottom:5px;
 									justify-content:flex-start;
 								}
 
 								icon {
-									font-size:20px;
+									font-size:15px;
 								}
 
 								span {
 									font-size:15px;
+								}
+
+								icon + span {
 									margin-left:10px;
 								}
 
@@ -260,12 +270,21 @@ header {
 
 								&:hover {
 
-									border-bottom:0;
-									border-radius:12px;
 									background-color:var(--back-color);
 
 									icon, span {
 										color:var(--text-color);
+									}
+
+								}
+
+								&[selected] {
+
+									background-color:var(--back-color);
+
+									icon i {
+										@include graded;
+										color:transparent;
 									}
 
 								}
