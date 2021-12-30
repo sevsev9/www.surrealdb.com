@@ -71,6 +71,16 @@ h5 {
 	-webkit-font-smoothing: antialiased;
 }
 
+li {
+	font-size:18px;
+	font-weight:400;
+	line-height:1.7;
+	color:var(--faint-color);
+	font-family:var(--system-font-app);
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
 p {
 	font-size:18px;
 	font-weight:400;
@@ -79,6 +89,14 @@ p {
 	font-family:var(--system-font-app);
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
+}
+
+blockquote {
+
+	padding:20px;
+	border-radius:0 12px 12px 0;
+	background-color:var(--boxes-color);
+	border-left:3px solid var(--hover-color);
 }
 
 n {
@@ -158,13 +176,19 @@ l {
 
 h1, h2, h3, h4, h5 {
 	&:not(:last-child) {
-		padding-bottom:20px;
+		margin-bottom:20px;
 	}
 }
 
-pre, p {
+blockquote, ul, ol {
 	&:not(:last-child) {
-		padding-bottom:30px;
+		margin-bottom:30px;
+	}
+}
+
+table, pre, p {
+	&:not(:last-child) {
+		margin-bottom:30px;
 	}
 }
 

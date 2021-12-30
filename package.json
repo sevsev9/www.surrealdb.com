@@ -26,8 +26,10 @@
     "@ascua/server": "^0.0.224"
   },
   "devDependencies": {
+    "@ascua/arrays": "^0.0.224",
     "@ascua/core": "^0.0.224",
     "@ascua/day.js": "^0.0.224",
+    "@ascua/decorators": "^0.0.224",
     "@ascua/dom": "^0.0.224",
     "@ascua/fastboot": "^0.0.224",
     "@ascua/fetch": "^0.0.224",

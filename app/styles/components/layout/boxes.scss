@@ -8,21 +8,52 @@ layout-boxes {
 		grid-gap:20px 20px;
 		grid-template-columns:repeat(6, 1fr);
 
-		layout-boxes-item {
+		> a {
 
+			display:flex;
+			overflow:hidden;
+			grid-column:auto / span 2;
+			transition:box-shadow 0.3s;
+
+			&:hover {
+
+				box-shadow:0 5px 20px rgba(0, 0, 0, 0.3);
+
+				img {
+					transform:scale(1.05);
+				}
+
+			}
+
+		}
+
+		> a > layout-boxes-item, > layout-boxes-item {
+
+			z-index:1;
+			width:100%;
 			display:block;
 			overflow:hidden;
 			text-align:left;
+			position:relative;
 			border-radius:12px;
 			grid-column:auto / span 2;
 			background-color:var(--boxes-color);
 
-			> img {
+			pic {
+
 				display:block;
 				max-width:100%;
+				overflow:hidden;
+
+				img {
+					display:block;
+					max-width:100%;
+					transition:transform 0.3s;
+				}
+
 			}
 
-			> div {
+			div {
 
 				padding:40px;
 
@@ -64,6 +95,13 @@ layout-boxes {
 
 			}
 
+			&[centered] {
+				display:flex;
+				align-items:center;
+				justify-content:center;
+				* { color:var(--faint-color); }
+			}
+
 			&[tick] div h3 {
 				&:before {
 					content:'';
@@ -92,7 +130,8 @@ layout-boxes {
 
 	}
 
-	&[cols-3-to-2-to-1] content layout-boxes-item {
+	&[cols-3-to-2-to-1] content > a,
+	&[cols-3-to-2-to-1] content > layout-boxes-item {
 
 		grid-column:auto / span 2;
 
@@ -108,14 +147,16 @@ layout-boxes {
 
 			&[full][side] {
 
-				img {
-					width:67.7%;
+				pic {
+
 					float:left;
+					width:67.7%;
 					min-height:100%;
-					object-fit:cover;
+
 					&:only-child {
 						width:100%;
 					}
+
 				}
 
 				div {
@@ -158,7 +199,8 @@ layout-boxes {
 
 	}
 
-	&[cols-3-to-1] content layout-boxes-item {
+	&[cols-3-to-1] content > a,
+	&[cols-3-to-1] content > layout-boxes-item {
 
 		grid-column:auto / span 2;
 
@@ -171,6 +213,35 @@ layout-boxes {
 		}
 
 		@include media(max-width-1150) {
+
+			grid-column:auto / span 6;
+
+			&[full] {
+				grid-column:auto / span 6;
+			}
+
+			&[half] {
+				grid-column:auto / span 6;
+			}
+
+		}
+
+	}
+
+	&[cols-2-to-1] content > a,
+	&[cols-2-to-1] content > layout-boxes-item {
+
+		grid-column:auto / span 3;
+
+		&[full] {
+			grid-column:auto / span 6;
+		}
+
+		&[half] {
+			grid-column:auto / span 3;
+		}
+
+		@include media(max-width-1000) {
 
 			grid-column:auto / span 6;
 

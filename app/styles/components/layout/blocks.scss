@@ -21,6 +21,32 @@ layout-blocks {
 
 			pre {
 				width:100%;
+				border-radius:12px;
+			}
+
+			pic > img {
+				width:100%;
+				border-radius:12px;
+			}
+
+			table {
+				width:100%;
+				margin-left:auto;
+				margin-right:auto;
+			}
+
+			table > thead {
+				font-weight:bold;
+			}
+
+			table > thead > tr > th {
+				padding:15px;
+				border-bottom:1px solid var(--border-color);
+			}
+
+			table > tbody > tr > td {
+				padding:15px;
+				border-bottom:1px solid var(--border-color);
 			}
 
 		}
@@ -131,6 +157,11 @@ layout-blocks {
 				grid-column:1;
 			}
 		}
+	}
+
+	&[blog] content {
+		text-align:left;
+		grid-template-columns:minmax(0, 1fr);
 	}
 
 }

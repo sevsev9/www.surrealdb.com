@@ -16,13 +16,27 @@ pre > code {
 	display:block;
 }
 
+pre,
 pre[class*="language-"] {
+	margin:0;
+	color:white;
 	padding:20px;
+	overflow:auto;
+	font-size:15px;
+	text-align:left;
+	white-space:pre;
+	line-height:1.75;
+	text-shadow:none;
+	word-break:normal;
+	border-radius:12px;
+	word-spacing:normal;
+	background-color:var(--boxes-color);
+	font-family:var(--system-font-mono);
 	box-shadow:0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
+pre[class*="language-"],
+code[class*="language-"] {
 	margin:0;
 	color:white;
 	font-size:15px;

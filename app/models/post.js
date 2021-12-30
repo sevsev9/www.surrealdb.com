@@ -13,6 +13,8 @@ export default class Post extends Model {
 
 	@string title;
 
+	@string label;
+
 	@string text;
 
 	@string html;
