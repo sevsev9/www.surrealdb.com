@@ -23,7 +23,8 @@
     "test:ember": "ember test"
   },
   "dependencies": {
-    "@ascua/server": "^0.0.224"
+    "@ascua/server": "^0.0.224",
+    "ws": "^7.4.6"
   },
   "devDependencies": {
     "@ascua/arrays": "^0.0.224",
