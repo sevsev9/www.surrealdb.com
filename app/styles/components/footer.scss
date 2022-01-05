@@ -27,6 +27,17 @@ footer {
 
 			}
 
+			a {
+				color:var(--faint-color);
+			}
+
+			p {
+				font-size:14px;
+				font-weight:bold;
+				color:var(--text-color);
+				text-transform:uppercase;
+			}
+
 			> nav {
 
 				display:flex;
