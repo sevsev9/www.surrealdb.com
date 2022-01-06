@@ -15,8 +15,8 @@ Router.map(function() {
 	this.route('install');
 	this.route('license');
 	this.route('media');
-	this.route('roadmap');
 	this.route('store');
+	this.route('why');
 
 	this.route('blog', function() {
 		this.route('post', {

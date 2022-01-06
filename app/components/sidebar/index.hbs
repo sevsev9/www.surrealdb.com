@@ -13,11 +13,15 @@
 			<div>
 
 				<Header::Links::Item @link="index" @text="Home" />
-				<Header::Links::Item @link="features" @text="Features" />
 				<Header::Links::Item @link="install" @text="Install" />
 
+				<p>Product</p>
+				<Header::Links::Item @link="why" @text="Why SurrealDB?" />
+				<Header::Links::Item @link="features" @text="Features" />
+				<Header::Links::Item @link="usecase.jamstack" @text="Jamstack apps" />
+				<Header::Links::Item @link="usecase.serverless" @text="Serverless apps" />
+
 				<p>Learn</p>
-				<Header::Links::Item @link="roadmap" @text="Roadmap" />
 				<Header::Links::Item @link="docs" @text="Documentation" />
 				<Header::Links::Item @link={{url "github"}} @text="GitHub" />
 				<Header::Links::Item @link={{url "linkedin"}} @text="LinkedIn" />

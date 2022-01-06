@@ -243,6 +243,10 @@ header {
 								flex-direction:column;
 								transition:background 0.3s;
 
+								&:only-child {
+									grid-column:span 2;
+								}
+
 								div {
 									display:flex;
 									align-items:center;
