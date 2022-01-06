@@ -41,10 +41,11 @@ layout-hero {
 
 		h1 {
 
-			width:60%;
+			width:65%;
 			text-align:left;
 			line-height:1.1;
 			margin:0 0 10px 0;
+			font-family: 'Poppins';
 
 			img {
 				height:45px;
@@ -89,10 +90,10 @@ layout-hero {
 		h2 {
 
 			width:60%;
-			font-size:30px;
+			font-size:27px;
 
 			@include media(max-width-1250) {
-				font-size:26px;
+				font-size:24px;
 			}
 
 			@include media(max-width-1024) {
