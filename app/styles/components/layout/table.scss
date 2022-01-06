@@ -16,13 +16,25 @@ layout-table {
 	}
 
 	table > thead > tr > th {
+
 		padding:15px;
 		border-bottom:1px solid var(--border-color);
+
+		&:not([align]) {
+			text-align:left;
+		}
+
 	}
 
 	table > tbody > tr > td {
+
 		padding:15px;
 		border-bottom:1px solid var(--border-color);
+
+		&:not([align]) {
+			text-align:left;
+		}
+
 	}
 
 }
