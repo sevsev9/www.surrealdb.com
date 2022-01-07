@@ -21,8 +21,11 @@ body {
 
 section {
 
+	body > &:nth-child(odd) {
+		background-color:rgba(0,0,0,0);
+	}
 
-	&:nth-child(even) {
+	body > &:nth-child(even) {
 		background-color:rgba(0,0,0,0.2);
 	}
 
@@ -61,8 +64,8 @@ body {
 		top:0;
 		left:35%;
 		width:65%;
-		z-index:-1;
 		content:'';
+		z-index:-100;
 		height:1000px;
 		display:block;
 		position:absolute;
