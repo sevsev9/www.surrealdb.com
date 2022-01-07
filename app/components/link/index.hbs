@@ -1,4 +1,4 @@
-{{#if (or (begs-with @link "https://") (begs-with @link "http://") (begs-with @link "/"))}}
+{{~#if (or (begs-with @link "https://") (begs-with @link "http://") (begs-with @link "/"))~}}
 	<a href={{@link}} rel="noopener noreferrer" target="_blank" ...attributes>
 		{{#if (has-block)}}
 			{{yield}}
@@ -6,7 +6,7 @@
 			{{@text}}
 		{{/if}}
 	</a>
-{{else}}
+{{~else~}}
 	<LinkTo @route={{@link}} ...attributes>
 		{{#if (has-block)}}
 			{{yield}}
@@ -14,4 +14,4 @@
 			{{@text}}
 		{{/if}}
 	</LinkTo>
-{{/if}}
+{{~/if~}}
