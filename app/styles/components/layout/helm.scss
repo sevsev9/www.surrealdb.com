@@ -38,14 +38,28 @@ layout-helm {
 			position:relative;
 
 			&:before {
+
 				top:0;
 				bottom:0;
-				left:-50vw;
 				content:'';
-				width:250vw;
+				width:100vw;
 				z-index:-10;
 				position:absolute;
 				pointer-events:none;
+				left:calc(-225px - 10vw);
+
+				@include media(min-width-1587) {
+					left:calc( -225px - ( (100vw - 1270px) / 2) );
+				}
+
+				@include media(max-width-1200) {
+					left:calc( -225px - ( (100vw - 930px) / 2) );
+				}
+
+				@include media(max-width-1024) {
+					left:calc( 0vw - (100vw - 85vw) / 2 );
+				}
+
 			}
 
 		}
