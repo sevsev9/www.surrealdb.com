@@ -1,0 +1,13 @@
+i {
+
+	transition:color 0.3s;
+
+	a & {
+		@include graded;
+	}
+
+	a:hover & {
+		color:transparent;
+	}
+
+}

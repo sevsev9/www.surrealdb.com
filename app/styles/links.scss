@@ -18,15 +18,6 @@ a {
 		padding-left:10px;
 	}
 
-	i {
-		@include graded;
-	}
-
-	&:hover i {
-		color:var(--hover-color);
-		color:transparent;
-	}
-
 	&[faded] {
 		@include faded;
 	}
