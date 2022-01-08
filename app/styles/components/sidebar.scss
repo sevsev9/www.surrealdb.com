@@ -34,10 +34,18 @@ sidebar {
 		justify-content:flex-end;
 
 		i {
+
 			font-size:24px;
 			cursor:pointer;
+			transition:color 0.5s;
+			color:var(--text-color);
 			background:var(--sidebar-color);
 			box-shadow:0 0 30px 30px var(--sidebar-color);
+
+			&:hover {
+				color:var(--hover-color);
+			}
+
 		}
 
 	}
