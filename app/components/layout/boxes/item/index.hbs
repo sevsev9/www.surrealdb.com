@@ -4,12 +4,13 @@
 		<pic><img src={{@image}}></pic>
 	{{/if}}
 
-	{{#if (or @stamp @title @label @text)}}
+	{{#if (or @stamp @title @label @text (has-block))}}
 		<div>
 			{{#if @stamp}}<p>{{@stamp}}</p>{{/if}}
 			{{#if @title}}<h3>{{@title}}</h3>{{/if}}
 			{{#if @label}}<h4>{{@label}}</h4>{{/if}}
 			{{#if @text}}<p>{{@text}}</p>{{/if}}
+			{{yield}}
 		</div>
 	{{/if}}
 
