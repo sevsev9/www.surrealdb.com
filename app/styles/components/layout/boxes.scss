@@ -62,7 +62,6 @@ layout-boxes {
 				}
 
 				> h3 {
-					display:flex;
 					font-size:26px;
 					font-weight:600;
 					line-height:1.5;
@@ -72,7 +71,6 @@ layout-boxes {
 				}
 
 				> h4 {
-					display:flex;
 					font-size:20px;
 					font-weight:600;
 					line-height:1.5;
@@ -104,6 +102,7 @@ layout-boxes {
 
 			&[tick] div h3 {
 				&:before {
+					float:left;
 					content:'';
 					width:20px;
 					height:20px;
@@ -116,6 +115,7 @@ layout-boxes {
 
 			&[tick] div h4 {
 				&:before {
+					float:left;
 					content:'';
 					width:18px;
 					height:18px;
