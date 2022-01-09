@@ -47,6 +47,7 @@ h2 {
 }
 
 h3 {
+
 	font-size:30px;
 	font-weight:500;
 	line-height:1.2;
@@ -55,6 +56,9 @@ h3 {
 	color:var(--text-color);
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
+
+	img { height:23px; }
+
 }
 
 h4 {
