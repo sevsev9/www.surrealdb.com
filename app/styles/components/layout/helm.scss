@@ -5,7 +5,7 @@ layout-helm {
 	&[l-c] {
 
 		grid-template-columns:
-			[sidebar-l] minmax(0, 230px)
+			[sidebar-l] 230px
 			[content] auto
 		;
 
