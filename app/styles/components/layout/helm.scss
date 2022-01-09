@@ -5,13 +5,30 @@ layout-helm {
 	&[l-c] {
 
 		grid-template-columns:
-			[sidebar-l] minmax(0, 225px)
+			[sidebar-l] minmax(0, 230px)
 			[content] auto
 		;
 
 		@include media(max-width-1024) {
 			justify-content:center;
-			grid-template-columns:[content] auto;
+			grid-template-columns:[content] 100%;
+		}
+
+		menu {
+			width:200px;
+		}
+
+		main section:before {
+			left:calc(-230px - 10vw);
+			@include media(min-width-1587) {
+				left:calc( -230px - ( (100vw - 1270px) / 2) );
+			}
+			@include media(max-width-1200) {
+				left:calc( -230px - ( (100vw - 930px) / 2) );
+			}
+			@include media(max-width-1024) {
+				left:calc( 0vw - (100vw - 85vw) / 2 );
+			}
 		}
 
 	}
@@ -19,14 +36,31 @@ layout-helm {
 	&[l-c-r] {
 
 		grid-template-columns:
-			[sidebar-l] minmax(0, 225px)
+			[sidebar-l] minmax(0, 230px)
 			[content] minmax(auto, 800px)
-			[sidebar-r] minmax(auto, 225px)
+			[sidebar-r] minmax(auto, 230px)
 		;
 
 		@include media(max-width-1024) {
 			justify-content:center;
 			grid-template-columns:[content] minmax(auto, 800px);
+		}
+
+		menu {
+			width:200px;
+		}
+
+		main section:before {
+			left:calc(-230px - 10vw);
+			@include media(min-width-1587) {
+				left:calc( -230px - ( (100vw - 1270px) / 2) );
+			}
+			@include media(max-width-1200) {
+				left:calc( -230px - ( (100vw - 930px) / 2) );
+			}
+			@include media(max-width-1024) {
+				left:calc( 0vw - (100vw - 85vw) / 2 );
+			}
 		}
 
 	}
@@ -38,7 +72,6 @@ layout-helm {
 			position:relative;
 
 			&:before {
-
 				top:0;
 				bottom:0;
 				content:'';
@@ -46,20 +79,6 @@ layout-helm {
 				z-index:-10;
 				position:absolute;
 				pointer-events:none;
-				left:calc(-225px - 10vw);
-
-				@include media(min-width-1587) {
-					left:calc( -225px - ( (100vw - 1270px) / 2) );
-				}
-
-				@include media(max-width-1200) {
-					left:calc( -225px - ( (100vw - 930px) / 2) );
-				}
-
-				@include media(max-width-1024) {
-					left:calc( 0vw - (100vw - 85vw) / 2 );
-				}
-
 			}
 
 		}
@@ -76,41 +95,47 @@ layout-helm {
 
 	menu {
 
-		top:150px;
-		width:200px;
-		height:100vh;
+		top:50px;
 		display:flex;
-		position:sticky;
-		padding-top:15px;
-		max-height:650px;
 		position:-webkit-sticky;
+		position:sticky;
+		height:min-content;
 		grid-column:sidebar-l;
 		flex-direction:column;
 		align-items:flex-start;
 		justify-content:flex-start;
+		padding:15px 0 100px 0;
+
+		@include media(max-width-1301) {
+			top:100px;
+		}
 
 		@include media(max-width-1024) {
 			display:none;
 		}
 
-		div {
-
-			padding-bottom:30px;
-
-		}
-
-		nav {
+		> div {
 
 			padding-bottom:30px;
 
 			a {
+				font-size:18px;
+			}
+
+		}
+
+		> nav {
+
+			padding-bottom:30px;
+
+			> a {
 
 				display:block;
-				font-size:14px;
+				font-size:16px;
 				cursor:pointer;
 				position:relative;
 				transition:color 0.5s;
-				padding:8px 0 9px 30px;
+				padding:11px 0 11px 30px;
 				color:var(--faint-color);
 
 				&:hover {
@@ -147,26 +172,105 @@ layout-helm {
 
 				}
 
+				// WHen hovering on a hexagon
+
 				&:hover svg:nth-child(3) {
 					fill:var(--hover-color);
 				}
 
-				&:first-child svg:nth-child(1) {
+				// The first hexagon point
+
+				&:first-of-type svg:nth-child(1) {
 					top:50%;
 					height:50%;
 				}
 
-				&:last-child svg:nth-child(1) {
+				// The last hexagon point
+
+				&:last-of-type svg:nth-child(1) {
 					bottom:50%;
 					height:50%;
 				}
+
+				// If there is only one hexagon point
 
 				&:first-child:last-child svg:nth-child(1) {
 					height:0;
 				}
 
+				// The last selected hexagon point if no sub menu
+
+				&:last-of-type[selected]:not(:last-child) svg:nth-child(1) {
+					height:100%;
+				}
+
+				&[selected] {
+
+					span {
+						color:var(--hover-color);
+					}
+
+					svg:nth-child(3) {
+						fill:var(--hover-color);
+					}
+
+					& + subs {
+						display:block;
+					}
+
+				}
+
 			}
 
+			> subs {
+
+				display:none;
+
+				> a {
+
+					display:block;
+					font-size:13px;
+					cursor:pointer;
+					position:relative;
+					transition:color 0.5s;
+					padding:5px 0 5px 45px;
+					color:var(--faint-color);
+
+					&[selected] span {
+						color:var(--hover-color);
+					}
+
+					&:last-child {
+						padding-bottom:15px;
+					}
+
+					&:before {
+						left:30px;
+						content:'-';
+						display:block;
+						position:absolute;
+					}
+
+					svg {
+
+						top:0px;
+						left:0px;
+						width:16px;
+						height:100%;
+						stroke-width:1;
+						position:absolute;
+						fill:var(--back-color);
+						stroke:var(--faint-color);
+
+						&:nth-child(2), &:nth-child(3) {
+							display:none;
+						}
+
+					}
+
+				}
+
+			}
 		}
 
 	}
