@@ -12,7 +12,11 @@ export default class extends Controller {
 		return marked.lexer(this.html).filter(section => {
 			return section.type === 'heading' && section.depth === 2;
 		}).map(heading => {
-			return { text: heading.text, link: '#' + slug(heading.text) };
+			return {
+				text: heading.text,
+				id: slug(heading.text),
+				link: '#' + slug(heading.text),
+			};
 		});
 	}
 

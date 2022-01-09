@@ -18,9 +18,9 @@
 			</Link>
 		</div>
 		<nav>
-			<Layout::Helm::Menu::Item @text={{@model.title}} {{on "click" (scroll-to top=0 smooth=true)}} />
+			<Layout::Helm::Menu::Item @text={{@model.title}} {{on "click" (scroll-to top=0 smooth=true)}} selected={{is-waypoint "main"}} />
 			{{#each this.headings as |heading|}}
-				<Layout::Helm::Menu::Item @text={{heading.text}} {{on "click" (scroll-into-view heading.link smooth=true)}} />
+				<Layout::Helm::Menu::Item @text={{heading.text}} {{on "click" (scroll-into-view heading.link smooth=true)}} selected={{is-waypoint heading.id}} />
 			{{/each}}
 		</nav>
 		<div>
@@ -33,6 +33,8 @@
 
 	<Layout::Helm::Main>
 
+		<Layout::Switch {{waypoint "main"}} />
+
 		<Layout::Blocks cols-1 full>
 			<Layout::Blocks::Image @image={{this.model.image}} />
 			<Layout::Blocks::Block>
@@ -44,7 +46,7 @@
 				<h1>{{this.model.title}}</h1>
 				<h4>{{this.model.label}}</h4>
 				<p>{{date-format this.model.time "LL"}}</p>
-				{{markdown this.model.html}}
+				<Markdown @html={{this.model.html}} />
 			</Layout::Blocks::Block>
 		</Layout::Blocks>
 

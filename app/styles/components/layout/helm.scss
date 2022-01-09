@@ -36,9 +36,9 @@ layout-helm {
 	&[l-c-r] {
 
 		grid-template-columns:
-			[sidebar-l] minmax(0, 230px)
+			[sidebar-l] 230px
 			[content] minmax(auto, 800px)
-			[sidebar-r] minmax(auto, 230px)
+			[sidebar-r] auto
 		;
 
 		@include media(max-width-1024) {

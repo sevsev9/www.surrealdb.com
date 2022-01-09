@@ -6,7 +6,7 @@ export default class extends Helper {
 	@inject waypoints;
 
 	compute([name]) {
-		return this.waypoints.points.includes(name);
+		return this.waypoints.last === name;
 	}
 
 }

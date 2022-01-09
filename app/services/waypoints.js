@@ -3,14 +3,14 @@ import { tracked } from '@glimmer/tracking';
 
 export default class extends Service {
 
-	@tracked points = [];
+	@tracked last = null;
 
 	add(name) {
-		this.points.pushObject(name);
+		this.last = name;
 	}
 
 	del(name) {
-		this.points.removeObject(name);
+		// Ignore
 	}
 
 }

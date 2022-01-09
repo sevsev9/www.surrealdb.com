@@ -49,7 +49,7 @@ export default setModifierManager(
 					element,
 					() => { this.waypoints.add(this.name); },
 					() => { this.waypoints.del(this.name); },
-					{ threshold: 0.15 },
+					{ threshold: 0, rootMargin: '0px 0px -75% 0px' },
 				);
 			}
 		}
