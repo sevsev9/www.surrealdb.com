@@ -6,6 +6,14 @@
 			{{@text}}
 		{{/if}}
 	</a>
+{{~else if (begs-with @link "#")~}}
+	<a {{on "click" (scroll-into-view @link smooth=true)}} ...attributes>
+		{{#if (has-block)}}
+			{{yield}}
+		{{else}}
+			{{@text}}
+		{{/if}}
+	</a>
 {{~else~}}
 	<LinkTo @route={{@link}} ...attributes>
 		{{#if (has-block)}}

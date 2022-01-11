@@ -20,7 +20,7 @@
 		<nav>
 			<Layout::Helm::Menu::Item @text={{@model.title}} {{on "click" (scroll-to top=0 smooth=true)}} selected={{is-waypoint "main"}} />
 			{{#each this.headings as |heading|}}
-				<Layout::Helm::Menu::Item @text={{heading.text}} {{on "click" (scroll-into-view heading.link smooth=true)}} selected={{is-waypoint heading.id}} />
+				<Layout::Helm::Menu::Item @text={{heading.text}} @link={{heading.link}} selected={{is-waypoint heading.id}} />
 			{{/each}}
 		</nav>
 		<div>

@@ -15,23 +15,23 @@
 		On this page you can find information regarding many of the features which are built into SurrealDB, alongside features coming in a future release.
 	</p>
 	<p>
-		<a {{on "click" (scroll-into-view "#architecture" smooth=true)}}>Architecture</a>
+		<Link @link="#architecture">Architecture</Link>
 		&bull;
-		<a {{on "click" (scroll-into-view "#platform" smooth=true)}}>Platform</a>
+		<Link @link="#platform">Platform</Link>
 		&bull;
-		<a {{on "click" (scroll-into-view "#datamodel" smooth=true)}}>Data model</a>
+		<Link @link="#datamodel">Data model</Link>
 		&bull;
-		<a {{on "click" (scroll-into-view "#surrealql" smooth=true)}}>SurrealQL</a>
+		<Link @link="#surrealql">SurrealQL</Link>
 		&bull;
-		<a {{on "click" (scroll-into-view "#functions" smooth=true)}}>Functions</a>
+		<Link @link="#functions">Functions</Link>
 		&bull;
-		<a {{on "click" (scroll-into-view "#permissions" smooth=true)}}>Permissions</a>
+		<Link @link="#permissions">Permissions</Link>
 		&bull;
-		<a {{on "click" (scroll-into-view "#connectivity" smooth=true)}}>Connectivity</a>
+		<Link @link="#connectivity">Connectivity</Link>
 		&bull;
-		<a {{on "click" (scroll-into-view "#tooling" smooth=true)}}>Tooling</a>
+		<Link @link="#tooling">Tooling</Link>
 		&bull;
-		<a {{on "click" (scroll-into-view "#libraries" smooth=true)}}>Libraries</a>
+		<Link @link="#libraries">Libraries</Link>
 	</p>
 </Layout::Text>
 
@@ -47,15 +47,15 @@
 			</a>
 		</div>
 		<nav>
-			<Layout::Helm::Menu::Item @text="Architecture" {{on "click" (scroll-into-view "#architecture" smooth=true)}} selected={{is-waypoint "architecture"}} />
-			<Layout::Helm::Menu::Item @text="Platform" {{on "click" (scroll-into-view "#platform" smooth=true)}} selected={{is-waypoint "platform"}} />
-			<Layout::Helm::Menu::Item @text="Data model" {{on "click" (scroll-into-view "#datamodel" smooth=true)}} selected={{is-waypoint "datamodel"}} />
-			<Layout::Helm::Menu::Item @text="SurrealQL" {{on "click" (scroll-into-view "#surrealql" smooth=true)}} selected={{is-waypoint "surrealql"}} />
-			<Layout::Helm::Menu::Item @text="Functions" {{on "click" (scroll-into-view "#functions" smooth=true)}} selected={{is-waypoint "functions"}} />
-			<Layout::Helm::Menu::Item @text="Permissions" {{on "click" (scroll-into-view "#permissions" smooth=true)}} selected={{is-waypoint "permissions"}} />
-			<Layout::Helm::Menu::Item @text="Connectivity" {{on "click" (scroll-into-view "#connectivity" smooth=true)}} selected={{is-waypoint "connectivity"}} />
-			<Layout::Helm::Menu::Item @text="Tooling" {{on "click" (scroll-into-view "#tooling" smooth=true)}} selected={{is-waypoint "tooling"}} />
-			<Layout::Helm::Menu::Item @text="Libraries" {{on "click" (scroll-into-view "#libraries" smooth=true)}} selected={{is-waypoint "libraries"}} />
+			<Layout::Helm::Menu::Item @text="Architecture" @link="#architecture" selected={{is-waypoint "architecture"}} />
+			<Layout::Helm::Menu::Item @text="Platform" @link="#platform" selected={{is-waypoint "platform"}} />
+			<Layout::Helm::Menu::Item @text="Data model" @link="#datamodel" selected={{is-waypoint "datamodel"}} />
+			<Layout::Helm::Menu::Item @text="SurrealQL" @link="#surrealql" selected={{is-waypoint "surrealql"}} />
+			<Layout::Helm::Menu::Item @text="Functions" @link="#functions" selected={{is-waypoint "functions"}} />
+			<Layout::Helm::Menu::Item @text="Permissions" @link="#permissions" selected={{is-waypoint "permissions"}} />
+			<Layout::Helm::Menu::Item @text="Connectivity" @link="#connectivity" selected={{is-waypoint "connectivity"}} />
+			<Layout::Helm::Menu::Item @text="Tooling" @link="#tooling" selected={{is-waypoint "tooling"}} />
+			<Layout::Helm::Menu::Item @text="Libraries" @link="#libraries" selected={{is-waypoint "libraries"}} />
 		</nav>
 	</Layout::Helm::Menu>
 
