@@ -2,6 +2,42 @@ layout-helm {
 
 	display:grid;
 
+	&[blog] {
+
+		grid-template-columns:
+			[sidebar-l] 230px
+			[content] auto
+		;
+
+		@include media(max-width-1024) {
+			justify-content:center;
+			grid-template-columns:[content] minmax(auto, 800px);
+		}
+
+		menu {
+			width:200px;
+		}
+
+		main {
+			margin:0 auto;
+			max-width:800px;
+		}
+
+		main section:before {
+			left:calc(-230px - 10vw);
+			@include media(min-width-1587) {
+				left:calc( -230px - ( (100vw - 1270px) / 2) );
+			}
+			@include media(max-width-1200) {
+				left:calc( -230px - ( (100vw - 930px) / 2) );
+			}
+			@include media(max-width-1024) {
+				left:calc( 0vw - (100vw - 85vw) / 2 );
+			}
+		}
+
+	}
+
 	&[l-c] {
 
 		grid-template-columns:
