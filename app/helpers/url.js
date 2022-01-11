@@ -20,6 +20,8 @@ export function url([type]) {
 		return 'https://www.reddit.com/r/surrealdb/';
 	case 'license':
 		return 'https://github.com/surrealdb/license';
+	case 'docker':
+		return 'https://hub.docker.com/repository/docker/surrealdb/surrealdb';
 	}
 }
 
