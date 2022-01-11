@@ -1,0 +1,34 @@
+{{#in-element (document-head) insertBefore=null}}
+	<title>SurrealDB | Open Source | The ultimate serverless cloud database</title>
+	<meta name="title" property="og:title" content="SurrealDB | Open Source">
+	<meta name="description" content="SurrealDB is the ultimate database for tomorrow's serverless, jamstack, single-page, and traditional applications.">
+	<meta name="image" property="og:image" content="/static/img/preview/about.jpg">
+	<meta property="og:type" content="website">
+{{/in-element}}
+
+<Layout::Gap small />
+
+<Layout::Text text-l>
+	<h1>Open source</h1>
+	<p>SurrealDB is an open source company, supporting existing open source tools and communities wherever possible. Source code and core components for SurrealDB are variously licensed under a number of different licenses. A copy of each license can be found in each repository on GitHub.</p>
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l>
+	<h2>Our open source projects</h2>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Boxes cols-3-to-2-to-1>
+	{{#each this.projects as |project|}}
+		<Link @link={{project.link}} mini>
+			<Layout::Boxes::Item @image={{project.image}} @stamp={{project.lang}} @title={{project.name}} @text={{project.text}} hover />
+		</Link>
+	{{/each}}
+</Layout::Boxes>
+
+<Layout::Gap small />
+
+<Layout::Github />

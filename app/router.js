@@ -15,6 +15,7 @@ Router.map(function() {
 	this.route('install');
 	this.route('license');
 	this.route('media');
+	this.route('opensource');
 	this.route('store');
 	this.route('why');
 
