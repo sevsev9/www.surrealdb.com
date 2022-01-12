@@ -5,6 +5,7 @@ export default class extends Controller {
 
 	@cache get projects() {
 		return [
+			{ name: 'SurrealDB', link: 'https://github.com/surrealdb/surrealdb', lang: 'Rust / Business Source License 1.1', text: 'A scalable, distributed, collaborative, document-graph database, for the realtime web', image: '/static/img/opensource/surrealdb.png' },
 			{ name: 'EchoDB', link: 'https://github.com/surrealdb/echodb', lang: 'Rust / Apache-2.0', text: 'An embedded, in-memory, immutable, copy-on-write database engine with serializable, isolated transactions', image: '/static/img/opensource/echodb.png' },
 			{ name: 'YokuDB', link: 'https://github.com/surrealdb/yokudb', lang: 'Rust / Apache-2.0', text: 'A versioned, embedded, persistent, memory-mapped, ACID-compliant key-value database engine', image: '/static/img/opensource/yokudb.png' },
 			{ name: 'RixxDB', link: 'https://github.com/surrealdb/rixxdb', lang: 'Golang / Apache-2.0', text: 'A versioned, embedded, strongly-consistent, ACID-compliant key-value database engine', image: '/static/img/opensource/rixxdb.png' },
