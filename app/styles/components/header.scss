@@ -156,6 +156,7 @@ header {
 				}
 
 				span[selected] {
+					padding:9px 0 9px 0;
 					color:var(--text-color);
 					border-bottom:3px solid var(--hover-color);
 				}
