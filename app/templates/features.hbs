@@ -87,7 +87,7 @@
 				<block>
 					<h4 flex row middle>
 						Distributed (3-node)
-						<l pink>Post 1.0</l>
+						<l purple>Planned for 1.x</l>
 					</h4>
 					<p>For highly-available setups, SurrealDB can be run in a cluster using the <a href="https://raft.github.io" rel="noopener noreferrer" target="_blank">RAFT</a> consensus algorithm. The storage of the entire database must be less than the maximum possible storage of a single machine in the cluster.</p>
 				</block>
@@ -139,7 +139,7 @@
 				<block>
 					<h4 flex row middle>
 						Versioned temporal tables
-						<l purple>Planned for 1.x</l>
+						<l pink>Future</l>
 					</h4>
 					<p>Versioned temporal tables enable the option to 'go back in time' when querying your data. See how data looked before changes were made, or restore to a particular point-in-time. Each table can be individually configured as a versioned table.</p>
 				</block>
@@ -200,7 +200,7 @@
 				<block>
 					<h4 flex row middle>
 						Full text indexing and filtering
-						<l purple>Planned for 1.x</l>
+						<l pink>Future</l>
 					</h4>
 					<p>The ability to define full-text indexes, with functionality to search through the full-text index on a table. Using a Apache Lucene query syntax, searches support field queries, wildcard searches, fuzzy searches, proximity searches, relevance matching, boolean operators, subquery grouping, and field grouping.</p>
 				</block>
@@ -448,14 +448,14 @@
 				<block>
 					<h4 flex row middle>
 						IDE language support
-						<l pink>Post 1.0</l>
+						<l pink>Future</l>
 					</h4>
 					<p>SurrealDB aims to include official language highlighting packages for Atom, Sublime Text, Visual Studio Code, and Vim.</p>
 				</block>
 				<block>
 					<h4 flex row middle>
 						Language Server Protocol
-						<l pink>Post 1.0</l>
+						<l pink>Future</l>
 					</h4>
 					<p>SurrealDB will support the Language Server Protocol which will help with code and query completion, and error highlighting for SurrealQL.</p>
 				</block>
@@ -591,7 +591,7 @@
 				<block>
 					<h4 flex row middle>
 						Javascript functions
-						<l pink>Post 1.0</l>
+						<l purple>Planned for 1.x</l>
 					</h4>
 					<p>Javascript functions can be used for more complex functions and triggers. Each Javascript function iteration runs with its own context isolation - with the current record data passed in as the execution context or <code>this</code> value.</p>
 				</block>
@@ -735,21 +735,21 @@
 				<block>
 					<h4 flex row middle>
 						GraphQL querying
-						<l pink>Post 1.x</l>
+						<l pink>Future</l>
 					</h4>
 					<p>Support for querying all data using GraphQL, with embedded and remote record fetching.</p>
 				</block>
 				<block>
 					<h4 flex row middle>
 						GraphQL mutations
-						<l pink>Post 1.x</l>
+						<l pink>Future</l>
 					</h4>
 					<p>Support for modifying and updating any data using GraphQL, depending on permissions.</p>
 				</block>
 				<block>
 					<h4 flex row middle>
 						GraphQL subscriptions
-						<l pink>Post 1.x</l>
+						<l pink>Future</l>
 					</h4>
 					<p>Support for subscribing to real-time data modification events, depending on permissions.</p>
 				</block>
@@ -802,7 +802,7 @@
 				<block>
 					<h4 flex row middle>
 						Data backup
-						<l pink>Post 1.0</l>
+						<l pink>Future</l>
 					</h4>
 					<p>Export all data from SurrealDB as raw binary data. This will also support incremental binary backups for efficient backing up of SurrealDB clusters.</p>
 				</block>
@@ -899,7 +899,7 @@
 					<h4 flex row middle>
 						<i class="fab fa-python font-30 m-r-10"></i>
 						Python
-						<l pink>Post 1.0</l>
+						<l purple>Planned for 1.x</l>
 					</h4>
 					<p>A real-time, fast SDK library for Python with bi-directional communication over WebSockets.</p>
 				</block>
@@ -907,7 +907,7 @@
 					<h4 flex row middle>
 						<i class="fab fa-rust font-30 m-r-10"></i>
 						Rust
-						<l pink>Post 1.0</l>
+						<l purple>Planned for 1.x</l>
 					</h4>
 					<p>A real-time, fast SDK library for Rust with bi-directional communication over WebSockets.</p>
 				</block>
@@ -928,9 +928,17 @@
 				</block>
 				<block>
 					<h4 flex row middle>
+						<i class="fas fa-square-c font-30 m-r-10"></i>
+						C
+						<l purple>Planned for 1.x</l>
+					</h4>
+					<p>A SDK library for PHP, with suport for data modification and querying.</p>
+				</block>
+				<block>
+					<h4 flex row middle>
 						<i class="fab fa-php font-30 m-r-10"></i>
 						PHP
-						<l pink>Post 1.0</l>
+						<l pink>Future</l>
 					</h4>
 					<p>A SDK library for PHP, with suport for data modification and querying.</p>
 				</block>
@@ -938,9 +946,17 @@
 					<h4 flex row middle>
 						<i class="fab fa-swift font-30 m-r-10"></i>
 						Swift
-						<l pink>Post 1.0</l>
+						<l pink>Future</l>
 					</h4>
 					<p>A real-time, fast SDK library for Swift with bi-directional communication.</p>
+				</block>
+				<block>
+					<h4 flex row middle>
+						<i class="fab fa-java font-30 m-r-10"></i>
+						Java
+						<l pink>Future</l>
+					</h4>
+					<p>A real-time, fast SDK library for Java with bi-directional communication.</p>
 				</block>
 			</Layout::Blocks>
 
@@ -975,14 +991,14 @@
 					<h4 flex row middle>
 						<i class="fab fa-vuejs font-30 m-r-10"></i>
 						Vue.js
-						<l pink>Post 1.0</l>
+						<l pink>Future</l>
 					</h4>
 					<p>A real-time, live-updating library for Vue.js, with authentication, model definition, embedded types, and remote fetching.</p>
 				</block>
 				<block>
 					<h4 flex row middle>
 						Apollo GraphQL
-						<l pink>Post 1.0</l>
+						<l pink>Future</l>
 					</h4>
 					<p>A real-time, live-updating library for Apollo GraphQL.</p>
 				</block>
