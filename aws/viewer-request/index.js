@@ -1,24 +1,23 @@
-exports.main = async (event) => {
+function handler(event) {
 
-	const request = event.Records[0].cf.request;
+    var request = event.request;
+    var headers = request.headers;
+    var host = request.headers.host.value;
 
-	if (request.headers.host[0].value !== 'surrealdb.com') {
+    if (host !== 'surrealdb.com') {
 
-		const path = request.querystring ? `${request.uri}?${request.querystring}` : request.uri;
-
-		return {
-			status: '301',
+        return {
+			statusCode: 301,
 			statusDescription: 'Moved Permanently',
 			headers: {
-				location: [{
-					key: 'Location',
-					value: `https://surrealdb.com${path}`
-				}]
-			},
+			    location: {
+			        value: `https://surrealdb.com${request.uri}`
+			    }
+            },
 		};
 
-	}
+    }
 
-	return request;
+    return request;
 
-};
+}
