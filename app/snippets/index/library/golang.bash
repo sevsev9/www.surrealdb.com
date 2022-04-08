@@ -1,1 +1,1 @@
-go get github.com/surrealdb/surreal.go
+go get github.com/surrealdb/surrealdb.go
