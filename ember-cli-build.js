@@ -9,6 +9,7 @@ module.exports = function (defaults) {
 			theme: 'okaidia',
 			languages: [
 				'bash',
+				'c',
 				'javascript',
 				'json',
 				'go',
