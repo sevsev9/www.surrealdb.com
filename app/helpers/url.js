@@ -11,7 +11,7 @@ export function url([type]) {
 	case 'youtube':
 		return 'https://www.youtube.com/channel/UCjf2teVEuYVvvVC-gFZNq6w';
 	case 'discord':
-		return 'https://discord.gg/QtZMj8PAcF';
+		return 'https://discord.gg/f9qZ7FCHAa';
 	case 'dev':
 		return 'https://dev.to/surrealdb';
 	case 'stackoverflow':
