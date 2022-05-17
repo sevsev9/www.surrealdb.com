@@ -1,6 +1,6 @@
 <layout-hero ...attributes>
 	<content>
-		<Logo />
+		{{#if @logo}}<Logo />{{/if}}
 		{{#if @title}}<h1>{{@title}}</h1>{{/if}}
 		{{#if @text}}<h2>{{@text}}</h2>{{/if}}
 		{{yield}}

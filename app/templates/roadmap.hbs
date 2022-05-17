@@ -1,0 +1,44 @@
+{{#in-element (document-head) insertBefore=null}}
+	<title>SurrealDB | Product roadmap | The ultimate serverless cloud database</title>
+	<meta name="title" property="og:title" content="SurrealDB | Product roadmap">
+	<meta name="description" content="SurrealDB is the ultimate database for tomorrow's serverless, jamstack, single-page, and traditional applications.">
+	<meta name="image" property="og:image" content="/static/img/preview/roadmap.jpg">
+	<meta property="og:type" content="website">
+{{/in-element}}
+
+<Layout::Hero roadmap>
+	<h1><img src="/static/img/text.svg" alt="SurrealDB" /> roadmap</h1>
+	<p>
+		SurrealDB has been built from the ground up to be the ultimate database for developers who want to build tomorrow's applications.
+		On this page you can keep track of what we have planned for SurrealDB, and see the features and functionality which has already been implemented.
+		If you have an idea for SurrealDB, then we would love to hear from you.
+	</p>
+	<p>
+		<Link @link={{url "github"}}>Follow us on Github</Link>
+		&bull;
+		<Link @link={{url "discord"}}>Join our Discord community</Link>
+	</p>
+</Layout::Hero>
+
+<section>
+
+	<Layout::Gap small />
+
+	<Layout::Blocks main-c as |block|>
+		<h2>Product roadmap</h2>
+	</Layout::Blocks>
+
+	<Layout::Gap mini />
+
+	<Layout::Timeline>
+		{{#each this.model as |item|}}
+			<Layout::Timeline::Item @item={{item}} />
+			<clear></clear>
+		{{/each}}
+	</Layout::Timeline>
+
+	<Layout::Gap small />
+
+</section>
+
+<Layout::Github />

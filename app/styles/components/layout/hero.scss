@@ -10,8 +10,23 @@ layout-hero {
 	background-position:600px 0px;
 	background-image:url("/static/img/home/honeycomb.png");
 
-	@include media(max-width-1000) {
-		background-image:none;
+	&[roadmap] {
+
+		top:-120px;
+		width:100%;
+		display:block;
+		position:relative;
+		padding:120px 0 50px;
+		margin-bottom:-120px;
+		background-size:auto 100%;
+		background-repeat:no-repeat;
+		background-position:calc(50% + 750px) 50%;
+		background-image:url("/static/img/roadmap/main.png");
+
+		@include media(max-width-1024) {
+			background-image:none;
+		}
+
 	}
 
 	@include media(max-width-768) {
@@ -21,13 +36,13 @@ layout-hero {
 
 	content {
 
-		margin-top:97px;
+		margin-top:100px;
 
 		@include media(max-width-750) {
-			margin-top:48px;
+			margin-top:50px;
 		}
 
-		a {
+		a[button] {
 
 			font-size:18px;
 			padding:15px 40px;

@@ -1,0 +1,35 @@
+<layout-timeline-item planned={{gt @item.time (now)}} ...attributes>
+
+	<div>
+
+		<hex>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="2.4,4.7 2.4,11.3 8,14.5 13.6,11.3 13.6,4.7 8,1.5 "/></svg>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="5,6.2 5,9.8 8,11.5 11,9.8 11,6.2 8,4.5 "/></svg>
+		</hex>
+
+		<arr></arr>
+
+		{{#if @item.time}}
+			<h3>
+				{{#if (gt @item.time (now))}}
+					Planned {{date-format @item.time "MMMM YYYY"}}
+				{{else}}
+					{{date-format @item.time "MMMM YYYY"}}
+				{{/if}}
+			</h3>
+		{{/if}}
+
+		<h4>{{@item.name}}</h4>
+
+		<p>{{@item.text}}</p>
+
+		<p>
+			{{#each @item.tags as |tag|}}
+				<span>{{tag}}</span>
+				<sep>•</sep>
+			{{/each}}
+		</p>
+
+	</div>
+
+</layout-timeline-item>
