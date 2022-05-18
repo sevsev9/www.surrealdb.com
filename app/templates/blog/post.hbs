@@ -1,9 +1,8 @@
 {{#in-element (document-head) insertBefore=null}}
 	<title>SurrealDB | Blog | {{this.model.title}}</title>
-	<meta name="title" property="og:title" content="SurrealDB | Blog | {{this.model.title}}">
+	<meta name="title" property="og:title" content="SurrealDB | {{this.model.title}}">
 	<meta name="description" content="{{this.model.text}}">
-	<meta name="image" property="og:image" content="/static/img/preview/main.jpg">
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="article">
 {{/in-element}}
 
 <Layout::Gap small />

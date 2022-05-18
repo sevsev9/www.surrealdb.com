@@ -1,3 +1,16 @@
+{{#in-element (document-head) insertBefore=null}}
+	{{!-- Open Graph meta tags --}}
+	<meta property="og:site_name" content="SurrealDB">
+	<meta property="og:url" content="https://surrealdb.com{{route-url}}">
+	<meta property="og:image" content="https://surrealdb.com/static/img/preview/main.jpg">
+	{{!-- Social Network meta tags --}}
+	<meta name="twitter:site" content="@surrealdb">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="twitter:domain" content="surrealdb.com">
+	<meta property="twitter:url" content="https://surrealdb.com{{route-url}}">
+	<meta name="twitter:image" content="https://surrealdb.com/static/img/preview/main.jpg">
+{{/in-element}}
+
 <header>
 
 	<content>
