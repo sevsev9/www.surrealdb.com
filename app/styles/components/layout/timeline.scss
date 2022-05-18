@@ -9,6 +9,26 @@ layout-timeline {
 		display:table;
 	}
 
+	img {
+
+		float:none;
+		width:auto;
+		height:250px;
+		margin:0 auto;
+  		display:block;
+
+		@include media(max-width-1000) {
+			float:left;
+			height:150px;
+			margin-left:-120px;
+		}
+
+		@include media(max-width-750) {
+			margin-bottom:-50px;
+		}
+
+	}
+
 	layout-timeline-item {
 
 		width:50%;
