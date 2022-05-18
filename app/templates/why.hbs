@@ -5,14 +5,12 @@
 	<meta property="og:type" content="article">
 {{/in-element}}
 
-<Layout::Gap small />
-
-<Layout::Text text-c>
-	<h1>A highly-scalable NewSQL database</h1>
-	<p>SurrealDB is a flexible, developer-friendly, fully ACID transactional, realtime document-graph web database for serverless applications. Never again worry about database provisioning, scaling, sharding, replication, or correctness.</p>
-</Layout::Text>
-
-<Layout::Gap small />
+<Layout::Head why>
+	<Layout::Text text-m>
+		<h1>A highly-scalable NewSQL database</h1>
+		<p>SurrealDB is a flexible, developer-friendly, fully ACID transactional, realtime document-graph web database for serverless applications. Never again worry about database provisioning, scaling, sharding, replication, or correctness.</p>
+	</Layout::Text>
+</Layout::Head>
 
 <Layout::Boxes cols-3-to-2-to-1>
 	<Layout::Boxes::Item @tick={{true}} @label="Single-node or distributed" @text="SurrealDB can be run in on a single-node (both in-memory or using durable on-disk storage), or in a highly-available distributed cluster. It consumes very few resources making it perfect for embedding within other stacks or applications." />

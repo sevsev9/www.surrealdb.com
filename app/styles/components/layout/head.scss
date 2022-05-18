@@ -1,0 +1,52 @@
+layout-head {
+
+	top:-120px;
+	width:100%;
+	display:block;
+	position:relative;
+	margin-bottom:-120px;
+	padding:120px 0 100px 0;
+	background-repeat:no-repeat;
+	background-position:50% 40%;
+	background-image:url("/static/img/home/honeycomb.png");
+
+	&[why] {
+
+		background-size:1270px 767px;
+		background-image:url("/static/img/why/why.png");
+
+		@include media(max-width-1024) {
+			background-image:none;
+		}
+
+	}
+
+	@include media(max-width-768) {
+		top:0px;
+		margin-bottom:0px;
+		padding:0px 0 50px 0;
+	}
+
+	content {
+
+		margin-top:100px;
+
+		@include media(max-width-750) {
+			margin-top:50px;
+		}
+
+		a[button] {
+
+			font-size:18px;
+			padding:15px 40px;
+			margin:0 25px 25px 0;
+
+			@include media(max-width-550) {
+				margin:0 0px 15px 0;
+			}
+
+		}
+
+	}
+
+}
