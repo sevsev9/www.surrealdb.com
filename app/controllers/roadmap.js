@@ -12,11 +12,10 @@ export default class extends Controller {
 			{
 				time: new Date('2022-07-01'),
 				name: 'SurrealDB 1.0-beta.2',
-				text: 'The second development release of SurrealDB will add support for highly-performant on-disk storage, and foreign table aggregate computed views. In addition javascript functions can be used for more complex functions and triggers.',
+				text: 'The second development release of SurrealDB will add support for foreign table aggregate computed views, and foreign links between tables with support for cascading updates and delete restrictions. In addition highly-performant on-disk storage can be used, offering ACID transaction guarantees with multiple concurrent writers and readers, and efficient in-memory data storage.',
 				tags: [
 					'Single-node on-disk storage',
 					'Pre-defined aggregate computed views',
-					'Javascript functions',
 					'Record link definitions and constraints',
 					'Node.js + Python + Deno client libraries',
 				]
@@ -24,7 +23,7 @@ export default class extends Controller {
 			{
 				time: new Date('2022-06-01'),
 				name: 'SurrealDB 1.0-beta.1',
-				text: 'The first development version of SurrealDB will support a large amount of functionality, with the ability to run in-memory or in a highly-available, highly-scalable distributed environment. A highly-performant query language will enable use of many different data types.',
+				text: 'The first development version of SurrealDB will support a large amount of functionality, with the ability to run in-memory or in a highly-available, highly-scalable distributed environment. A highly-performant query language will enable use of many different data types, and javascript functions can be used for more complex functions and triggers.',
 				tags: [
 					'In-memory storage',
 					'Distributed highly-available storage',
@@ -35,6 +34,7 @@ export default class extends Controller {
 					'Table field definitions and constraints',
 					'Fully-defined type system with datetimes, decimals, durations, and geometry types',
 					'Graph and nested field expressions',
+					'Embedded avascript functions',
 					'Permissions, authentication and user scopes',
 					'Support for 3rd party authentication',
 					'REST API and WebSocket API',
