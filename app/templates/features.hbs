@@ -79,14 +79,14 @@
 				<block>
 					<h4 flex row middle>
 						Single-node (on-disk)
-						<l green>Completed</l>
+						<l purple>Planned for 1.X</l>
 					</h4>
 					<p>When data sizes are greater than the available memory on a single machine, on-disk storage can be used to enable larger data storage capabilities. Recently accessed data resides in memory with caching.</p>
 				</block>
 				<block>
 					<h4 flex row middle>
-						Distributed (3-node)
-						<l purple>Planned for 1.x</l>
+						Distributed (multi-node)
+						<l pink>Future</l>
 					</h4>
 					<p>For highly-available setups, SurrealDB can be run in a cluster using the <a href="https://raft.github.io" rel="noopener noreferrer" target="_blank">RAFT</a> consensus algorithm. The storage of the entire database must be less than the maximum possible storage of a single machine in the cluster.</p>
 				</block>
@@ -213,8 +213,8 @@
 			<Layout::Blocks cols-1 as |block|>
 				<block>
 					<h4 flex row middle>
-						Pre-defined aggregate computed views
-						<l green>Completed</l>
+						Pre-defined aggregate analytics views
+						<l purple>Planned for 1.X</l>
 					</h4>
 					<p>Aggregate views let you pre-compute analytics queries as data is written to SurrealDB. Similarly to an index, a table view lets you select, aggregate, group, and order data, with support for moving averages, time-based windowing, and attribute-based counting. Pre-defined aggregate views are efficient and performant, with only a single record modification being made for every write.</p>
 				</block>
@@ -363,7 +363,7 @@
 				<block>
 					<h4 flex row middle>
 						INSERT statements
-						<l green>Completed</l>
+						<l purple>Planned for 1.X</l>
 					</h4>
 					<p>The <code>INSERT</code> statement resembles the traditional SQL statement, enabling users to get started quickly. It supports the creation of records using a <code>VALUES</code> clause, or by specifying the record data as an object.</p>
 				</block>
@@ -589,8 +589,8 @@
 			<Layout::Blocks cols-1 as |block|>
 				<block>
 					<h4 flex row middle>
-						Javascript functions
-						<l purple>Planned for 1.x</l>
+						Embedded JavaScript functions
+						<l green>Completed</l>
 					</h4>
 					<p>Javascript functions can be used for more complex functions and triggers. Each Javascript function iteration runs with its own context isolation - with the current record data passed in as the execution context or <code>this</code> value.</p>
 				</block>
@@ -828,7 +828,7 @@
 				<block>
 					<h4 flex row middle>
 						User interface
-						<l purple>Planned for 1.x</l>
+						<l purple>Planned for 1.X</l>
 					</h4>
 					<p>An easy-to-use interface with support for table-based views, SurrealQL querying, embedded object editing, and graph visualisation. The interface will be embedded within every SurrealDB executable.</p>
 				</block>
@@ -841,7 +841,7 @@
 					<h4 flex row middle>
 						<i class="fab fa-chrome font-30 m-r-10"></i>
 						Web app
-						<l purple>Planned for 1.x</l>
+						<l purple>Planned for 1.X</l>
 					</h4>
 					<p>The interface will be available as a web app. This can be used for connecting to SurrealDB Cloud or a local / enterprise cluster.</p>
 				</block>
@@ -849,7 +849,7 @@
 					<h4 flex row middle>
 						<i class="fab fa-apple font-30 m-r-10"></i>
 						macOS app
-						<l purple>Planned for 1.x</l>
+						<l purple>Planned for 1.X</l>
 					</h4>
 					<p>The interface will be available as an Electron application for macOS. This can be used for connecting to SurrealDB Cloud or a local / enterprise cluster.</p>
 				</block>
@@ -857,7 +857,7 @@
 					<h4 flex row middle>
 						<i class="fab fa-windows font-30 m-r-10"></i>
 						Windows app
-						<l purple>Planned for 1.x</l>
+						<l purple>Planned for 1.X</l>
 					</h4>
 					<p>The interface will be available as an Electron application for Windows. This can be used for connecting to SurrealDB Cloud or a local / enterprise cluster.</p>
 				</block>
@@ -922,14 +922,14 @@
 					<h4 flex row middle>
 						<i class="fab fa-python font-30 m-r-10"></i>
 						Python
-						<l purple>Planned for 1.x</l>
+						<l purple>Planned for 1.X</l>
 					</h4>
 					<p>A real-time, fast SDK library for Python with bi-directional communication over WebSockets.</p>
 				</block>
 				<block>
 					<h4 flex row middle>
 						Deno
-						<l purple>Planned for 1.x</l>
+						<l purple>Planned for 1.X</l>
 					</h4>
 					<p>A real-time, fast SDK library for Deno with bi-directional communication, and support for <code>async</code> / <code>await</code> programming styles.</p>
 				</block>
@@ -937,7 +937,7 @@
 					<h4 flex row middle>
 						<i class="fas fa-square-c font-30 m-r-10"></i>
 						C
-						<l purple>Planned for 1.x</l>
+						<l pink>Future</l>
 					</h4>
 					<p>A SDK library for PHP, with suport for data modification and querying.</p>
 				</block>
@@ -982,7 +982,7 @@
 					<h4 flex row middle>
 						<i class="fab fa-angular font-30 m-r-10"></i>
 						Angular.js
-						<l purple>Planned for 1.x</l>
+						<l pink>Future</l>
 					</h4>
 					<p>A real-time, live-updating library for Angular.js, with authentication, model definition, embedded types, and remote fetching.</p>
 				</block>
