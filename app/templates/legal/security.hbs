@@ -75,7 +75,7 @@
 
 <Layout::Text text-f text-l>
 	<h3>Data in transit</h3>
-	<p>All data is encrypted when it is being transmitted between client devices and SurrealDB Cloud. SSL/TLS certificates shield data using <strong>2048 bit</strong> keys and <strong>256 byte</strong> signatures and in certain cases <strong>4096 bit</strong> keys and <strong>256 byte</strong> signatures. All data transmitted from Content Delivery Network (CDN) servers are protected using <strong>2048 bit</strong> keys and <strong>256 byte</strong> signatures. All connections to Content Delivery Network (CDN) servers and the database layer are secured using <em>TLSv1.3</em>. All TLS/SSL keys for client-to-server communication are changed on an annual basis.</p>
+	<p>All data is encrypted when it is being transmitted between client devices and SurrealDB Cloud. SSL/TLS certificates shield data using <strong>256 byte</strong> signatures, and either <strong>2048 bit</strong> or <strong>4096 bit</strong> keys. All connections to Content Delivery Network (CDN) servers and the database layer are secured using <em>TLSv1.3</em>. All TLS/SSL keys for client-to-server communication are changed on an annual basis.</p>
 	<p>Communications between servers in a database cluster are secured using <em>TLSv1.3</em>.</p>
 </Layout::Text>
 
