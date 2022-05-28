@@ -1,7 +1,7 @@
 <layout-boxes-item tick={{@tick}} ...attributes>
 
 	{{#if @image}}
-		<pic><img src={{@image}}></pic>
+		<pic><img src={{@image}} alt={{@title}}></pic>
 	{{/if}}
 
 	{{#if (or @stamp @title @label @text (has-block))}}
