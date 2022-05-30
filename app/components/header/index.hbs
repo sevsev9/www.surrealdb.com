@@ -38,11 +38,11 @@
 
 			<Header::Links::Drop @text="Learn" @selected={{or (begs-with (route-name) "docs") (eq (route-name) "roadmap")}}>
 				<main>
-					<Header::Links::Drop::Item @link="roadmap" @text="Roadmap" @desc="See what we have planned for SurrealDB, and see the features and functionality which has already been implemented.">
-						<i class="fal fa-road"></i>
-					</Header::Links::Drop::Item>
 					<Header::Links::Drop::Item @link="docs" @text="Documentation" @desc="An in-depth look at every aspect of SurrealDB: installation, setup, data types, querying, connectivity, and advanced functionality.">
 						<i class="fal fa-book"></i>
+					</Header::Links::Drop::Item>
+					<Header::Links::Drop::Item @link="roadmap" @text="Roadmap" @desc="See what we have planned for SurrealDB, and see the features and functionality which has already been implemented.">
+						<i class="fal fa-road"></i>
 					</Header::Links::Drop::Item>
 				</main>
 				<subs>
