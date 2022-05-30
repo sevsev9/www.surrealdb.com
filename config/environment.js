@@ -56,6 +56,14 @@ module.exports = function(environment) {
 					id: '3271313',
 				}
 			},
+			{
+				name: 'mixpanel',
+				environments: ['production'],
+				config: {
+					optimised: true,
+					id: 'be71b7f059b28f495cd2e087a59653a2',
+				}
+			}
 		],
 
 		// Set the configuration options for
