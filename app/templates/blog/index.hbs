@@ -16,7 +16,7 @@
 	<Layout::Gap small />
 
 	<Layout::Boxes cols-3-to-2-to-1>
-		{{#each (sort-by "time:desc" this.model locale=true numeric=true) as |post i|}}
+		{{#each this.posts as |post i|}}
 			{{#if (eq 0 i)}}
 				<LinkTo @route="blog.post" @model={{post.id}} full side>
 					<Layout::Boxes::Item @image={{post.image}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />

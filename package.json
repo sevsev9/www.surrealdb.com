@@ -42,6 +42,7 @@
     "@ascua/prism.js": "^0.0.233",
     "@ascua/routing": "^0.0.233",
     "@ascua/scrollup": "^0.0.233",
+    "@ascua/storage": "^0.0.233",
     "@ascua/surreal": "^0.0.233",
     "@ascua/tasks": "^0.0.233",
     "@ascua/tooltip": "^0.0.233",

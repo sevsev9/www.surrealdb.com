@@ -9,14 +9,4 @@ export default class extends Route {
 		return this.store.select('post', params.post_id);
 	}
 
-	setupController(controller, model) {
-
-		super.setupController(...arguments);
-
-		controller.posts = this.modelFor('blog.index').sort( (a, b) => {
-			return a.time < b.time;
-		});
-
-	}
-
 }

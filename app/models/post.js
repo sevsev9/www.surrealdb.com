@@ -1,5 +1,6 @@
 import Model from '@ascua/surreal/model';
 import { array } from '@ascua/surreal/field';
+import { boolean } from '@ascua/surreal/field';
 import { datetime } from '@ascua/surreal/field';
 import { string } from '@ascua/surreal/field';
 
@@ -9,18 +10,20 @@ export default class Post extends Model {
 	// Persistent properties
 	// ------------------------------
 
-	@string image;
+	@string html;
 
-	@string title;
+	@string image;
 
 	@string label;
 
-	@string text;
+	@array('string') tags;
 
-	@string html;
+	@string text;
 
 	@datetime time;
 
-	@array('string') tags;
+	@string title;
+
+	@boolean visible;
 
 }
