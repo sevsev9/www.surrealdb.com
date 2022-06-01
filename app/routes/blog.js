@@ -1,12 +1,13 @@
 import Route from '@ember/routing/route';
 import { inject } from '@ember/service';
+import { action } from '@ember/object';
 
 export default class extends Route {
 
-	@inject surreal;
+	@inject router;
 
-	model() {
-		return this.surreal.select('post');
+	@action error(error, transition) {
+		return this.router.transitionTo('blog');
 	}
 
 }
