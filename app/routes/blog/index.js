@@ -3,10 +3,10 @@ import { inject } from '@ember/service';
 
 export default class extends Route {
 
-	@inject surreal;
+	@inject store;
 
 	model() {
-		return this.modelFor('blog');
+		return this.store.select('post');
 	}
 
 }
