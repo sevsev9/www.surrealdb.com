@@ -1,64 +1,64 @@
-{{#each @tokens as |item|}}
-	{{#if (eq item.type 'text')}}
-		{{item.text}}
-	{{else if (eq item.type 'link')}}
+{{~#each @tokens as |item|~}}
+	{{~#if (eq item.type 'text')~}}
+		{{{item.text}}}
+	{{~else if (eq item.type 'link')~}}
 		<Link @link={{item.href}} title={{item.title}}>
 			<Markdown::Tokens @tokens={{item.tokens}} />
 		</Link>
-	{{else if (eq item.type 'heading')}}
-		{{#if (eq item.depth 1)}}
+	{{~else if (eq item.type 'heading')~}}
+		{{~#if (eq item.depth 1)~}}
 			<h1><Markdown::Tokens @tokens={{item.tokens}} /></h1>
-		{{else if (eq item.depth 2)}}
+		{{~else if (eq item.depth 2)~}}
 			<h2 {{waypoint item.link}}><Markdown::Tokens @tokens={{item.tokens}} /></h2>
-		{{else if (eq item.depth 3)}}
+		{{~else if (eq item.depth 3)~}}
 			<h3><Markdown::Tokens @tokens={{item.tokens}} /></h3>
-		{{else if (eq item.depth 4)}}
+		{{~else if (eq item.depth 4)~}}
 			<h4><Markdown::Tokens @tokens={{item.tokens}} /></h4>
-		{{else if (eq item.depth 5)}}
+		{{~else if (eq item.depth 5)~}}
 			<h5><Markdown::Tokens @tokens={{item.tokens}} /></h5>
-		{{else if (eq item.depth 6)}}
+		{{~else if (eq item.depth 6)~}}
 			<h6><Markdown::Tokens @tokens={{item.tokens}} /></h6>
-		{{/if}}
-	{{else if (eq item.type 'paragraph')}}
+		{{~/if~}}
+	{{~else if (eq item.type 'paragraph')~}}
 		<p><Markdown::Tokens @tokens={{item.tokens}} /></p>
-	{{else if (eq item.type 'blockquote')}}
+	{{~else if (eq item.type 'blockquote')~}}
 		<blockquote><Markdown::Tokens @tokens={{item.tokens}} /></blockquote>
-	{{else if (eq item.type 'strong')}}
+	{{~else if (eq item.type 'strong')~}}
 		<strong><Markdown::Tokens @tokens={{item.tokens}} /></strong>
-	{{else if (eq item.type 'em')}}
+	{{~else if (eq item.type 'em')~}}
 		<em><Markdown::Tokens @tokens={{item.tokens}} /></em>
-	{{else if (eq item.type 'image')}}
+	{{~else if (eq item.type 'image')~}}
 		<pic><img src={{item.href}} title={{item.title}} alt={{item.text}} /></pic>
-	{{else if (eq item.type 'code')}}
+	{{~else if (eq item.type 'code')~}}
 		<Ascua::Prism::Block @code={{item.text}} @language={{or item.lang 'txt'}} />
-	{{else if (eq item.type 'codespan')}}
+	{{~else if (eq item.type 'codespan')~}}
 		<code>{{item.text}}</code>
-	{{else if (eq item.type 'list')}}
-		{{#if item.ordered}}
+	{{~else if (eq item.type 'list')~}}
+		{{~#if item.ordered~}}
 			<ol start={{item.start}}><Markdown::Tokens @tokens={{item.items}} /></ol>
-		{{else}}
+		{{~else~}}
 			<ul><Markdown::Tokens @tokens={{item.items}} /></ul>
-		{{/if}}
-	{{else if (eq item.type 'list_item')}}
+		{{~/if~}}
+	{{~else if (eq item.type 'list_item')~}}
 		<li><Markdown::Tokens @tokens={{item.tokens}} /></li>
-	{{else if (eq item.type 'table')}}
+	{{~else if (eq item.type 'table')~}}
 		<table>
 			<thead>
 				<th>
-					{{#each item.header as |h i|}}
+					{{~#each item.header as |h i|~}}
 						<td align={{get item.align i}}><Markdown::Tokens @tokens={{h.tokens}} /></td>
-					{{/each}}
+					{{~/each~}}
 				</th>
 			</thead>
 			<tbody>
-				{{#each item.rows as |r|}}
+				{{~#each item.rows as |r|~}}
 					<tr>
-						{{#each r as |c i|}}
+						{{~#each r as |c i|~}}
 							<td align={{get item.align i}}><Markdown::Tokens @tokens={{c.tokens}} /></td>
-						{{/each}}
+						{{~/each~}}
 					</tr>
-				{{/each}}
+				{{~/each~}}
 			</tbody>
 		</table>
-	{{/if}}
-{{/each}}
+	{{~/if~}}
+{{~/each~}}
