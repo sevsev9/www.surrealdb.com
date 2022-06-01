@@ -46,4 +46,8 @@ Router.map(function() {
 		this.route('permissions');
 	});
 
+	this.route('404', {
+		path: '*:'
+	});
+
 });
