@@ -1,9 +1,8 @@
-{{#in-element (document-head) insertBefore=null}}
+<Meta::Tags @image={{blog-image this.model.image}}>
 	<title>SurrealDB | Blog | {{this.model.title}}</title>
 	<meta name="title" property="og:title" content="SurrealDB | {{this.model.title}}">
 	<meta name="description" content="{{this.model.text}}">
-	<meta property="og:type" content="article">
-{{/in-element}}
+</Meta::Tags>
 
 <Layout::Gap small />
 

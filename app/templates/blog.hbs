@@ -1,11 +1,10 @@
 {{#if (is-route "blog.index")}}
 
-	{{#in-element (document-head) insertBefore=null}}
+	<Meta::Tags @type="blog">
 		<title>SurrealDB | Blog | The ultimate serverless cloud database</title>
 		<meta name="title" property="og:title" content="SurrealDB | Blog">
 		<meta name="description" content="To stay up-to-date with new blog articles, future product releases, and documentation updates, subscribe to our email newsletter below.">
-		<meta property="og:type" content="blog">
-	{{/in-element}}
+	</Meta::Tags>
 
 	<Layout::Gap small />
 
