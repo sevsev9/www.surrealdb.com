@@ -28,7 +28,7 @@
 	{{~else if (eq item.type 'em')~}}
 		<em><Markdown::Tokens @tokens={{item.tokens}} /></em>
 	{{~else if (eq item.type 'image')~}}
-		<pic><img src={{item.href}} title={{item.title}} alt={{item.text}} /></pic>
+		<pic><img src={{blog-image item.href}} title={{item.title}} alt={{item.text}} /></pic>
 	{{~else if (eq item.type 'code')~}}
 		<Ascua::Prism::Block @code={{item.text}} @language={{or item.lang 'txt'}} />
 	{{~else if (eq item.type 'codespan')~}}
