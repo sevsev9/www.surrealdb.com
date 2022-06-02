@@ -35,7 +35,9 @@
 		<Layout::Switch {{waypoint "main"}} />
 
 		<Layout::Blocks cols-1 full>
+
 			<Layout::Blocks::Image @image={{blog-image this.model.image}} />
+
 			<Layout::Blocks::Block>
 				<p hide mobile tablet>
 					<Link @link="blog.index" faint>
@@ -47,6 +49,37 @@
 				<h4>{{this.model.label}}</h4>
 				<Markdown @html={{this.model.html}} />
 			</Layout::Blocks::Block>
+
+			<Layout::Blocks::Block>
+				<Ascua::Social::Linkedin @url={{@model.url}}>
+					<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
+						Share on LinkedIn
+					</Ascua::Tooltip>
+					<i large class="fab fa-linkedin"></i>
+				</Ascua::Social::Linkedin>
+				&nbsp;
+				<Ascua::Social::Twitter @url={{@model.url}} @text={{@model.title}} @via="surrealdb" @tags="surrealdb">
+					<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
+						Share on Twitter
+					</Ascua::Tooltip>
+					<i large class="fab fa-twitter"></i>
+				</Ascua::Social::Twitter>
+				&nbsp;
+				<Ascua::Social::Whatsapp @url={{@model.url}} @text={{@model.title}}>
+					<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
+						Share on WhatsApp
+					</Ascua::Tooltip>
+					<i large class="fab fa-whatsapp"></i>
+				</Ascua::Social::Whatsapp>
+				&nbsp;
+				<Ascua::Social::Email @subject={{@model.title}} @body={{@model.url}}>
+					<Ascua::Tooltip @side="n" @show="hover" @hide="hover">
+						Share by email
+					</Ascua::Tooltip>
+					<i large class="fas fa-envelope"></i>
+				</Ascua::Social::Email>
+			</Layout::Blocks::Block>
+
 		</Layout::Blocks>
 
 	</Layout::Helm::Main>

@@ -3,6 +3,7 @@ import { array } from '@ascua/surreal/field';
 import { boolean } from '@ascua/surreal/field';
 import { datetime } from '@ascua/surreal/field';
 import { string } from '@ascua/surreal/field';
+import { cache } from '@ascua/decorators';
 
 export default class Post extends Model {
 
@@ -25,5 +26,13 @@ export default class Post extends Model {
 	@string title;
 
 	@boolean visible;
+
+	// ------------------------------
+	// Computed properties
+	// ------------------------------
+
+	@cache get url() {
+		return `https://surrealdb.com/blog/${this.meta.id}`;
+	}
 
 }
