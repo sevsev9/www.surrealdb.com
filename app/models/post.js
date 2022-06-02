@@ -17,6 +17,8 @@ export default class Post extends Model {
 
 	@string label;
 
+	@string slug;
+
 	@array('string') tags;
 
 	@string text;
@@ -32,7 +34,7 @@ export default class Post extends Model {
 	// ------------------------------
 
 	@cache get url() {
-		return `https://surrealdb.com/blog/${this.meta.id}`;
+		return `https://surrealdb.com/blog/${this.slug}`;
 	}
 
 }

@@ -21,9 +21,7 @@ Router.map(function() {
 	this.route('why');
 
 	this.route('blog', function() {
-		this.route('post', {
-			path: '/:post_id'
-		});
+		this.route('post', { path: '/:post_slug' });
 	});
 
 	this.route('legal', function() {
