@@ -6,6 +6,12 @@ export default class extends Route {
 
 	@inject router;
 
+	@inject store;
+
+	model() {
+		return this.store.select('post');
+	}
+
 	@action error(error, transition) {
 		return this.router.transitionTo('blog');
 	}

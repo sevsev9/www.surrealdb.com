@@ -9,7 +9,7 @@ const slug = function(text) {
 
 export default class extends Controller {
 
-	@inject('blog.index') blog;
+	@inject blog;
 
 	@cache get headings() {
 		return marked.lexer(this.html).filter(section => {
