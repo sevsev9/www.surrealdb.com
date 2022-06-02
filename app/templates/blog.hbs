@@ -20,7 +20,7 @@
 			{{#each this.posts as |post i|}}
 				{{#if (eq 0 i)}}
 					<LinkTo @route="blog.post" @model={{post.slug}} full side>
-						<Layout::Boxes::Item @image={{blog-image post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
+						<Layout::Boxes::Item @image={{blog-image post.image "main"}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
 					</LinkTo>
 				{{else if (eq 1 i)}}
 					<LinkTo @route="blog.post" @model={{post.slug}} mini>
