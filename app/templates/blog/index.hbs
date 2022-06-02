@@ -19,23 +19,23 @@
 		{{#each this.posts as |post i|}}
 			{{#if (eq 0 i)}}
 				<LinkTo @route="blog.post" @model={{post.id}} full side>
-					<Layout::Boxes::Item @image={{post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
+					<Layout::Boxes::Item @image={{blog-image post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
 				</LinkTo>
 			{{else if (eq 1 i)}}
 				<LinkTo @route="blog.post" @model={{post.id}} mini>
-					<Layout::Boxes::Item @image={{post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
+					<Layout::Boxes::Item @image={{blog-image post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
 				</LinkTo>
 			{{else if (eq 2 i)}}
 				<LinkTo @route="blog.post" @model={{post.id}} mini>
-					<Layout::Boxes::Item @image={{post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
+					<Layout::Boxes::Item @image={{blog-image post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
 				</LinkTo>
 			{{else if (eq 3 i)}}
 				<LinkTo @route="blog.post" @model={{post.id}} mini>
-					<Layout::Boxes::Item @image={{post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
+					<Layout::Boxes::Item @image={{blog-image post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
 				</LinkTo>
 			{{else}}
 				<LinkTo @route="blog.post" @model={{post.id}} half>
-					<Layout::Boxes::Item @image={{post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
+					<Layout::Boxes::Item @image={{blog-image post.image}} @stamp={{date-format post.time "LL"}} @title={{post.title}} @label={{post.label}} @text={{post.text}} />
 				</LinkTo>
 			{{/if}}
 		{{/each}}

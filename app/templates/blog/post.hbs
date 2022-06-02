@@ -35,7 +35,7 @@
 		<Layout::Switch {{waypoint "main"}} />
 
 		<Layout::Blocks cols-1 full>
-			<Layout::Blocks::Image @image={{this.model.image}} />
+			<Layout::Blocks::Image @image={{blog-image this.model.image}} />
 			<Layout::Blocks::Block>
 				<p hide mobile tablet>
 					<Link @link="blog.index" faint>
@@ -70,14 +70,14 @@
 	<Layout::Boxes cols-2-to-1>
 		{{#if this.prev}}
 			<LinkTo @route="blog.post" @model={{this.prev.id}}>
-				<Layout::Boxes::Item @image={{this.prev.image}} @stamp={{date-format this.prev.time "LL"}} @title={{this.prev.title}} @label={{this.prev.label}} @text={{this.prev.text}} />
+				<Layout::Boxes::Item @image={{blog-image this.prev.image}} @stamp={{date-format this.prev.time "LL"}} @title={{this.prev.title}} @label={{this.prev.label}} @text={{this.prev.text}} />
 			</LinkTo>
 		{{else}}
 			<Layout::Boxes::Item @label="No older posts" centered />
 		{{/if}}
 		{{#if this.next}}
 			<LinkTo @route="blog.post" @model={{this.next.id}}>
-				<Layout::Boxes::Item @image={{this.next.image}} @stamp={{date-format this.next.time "LL"}} @title={{this.next.title}} @label={{this.next.label}} @text={{this.next.text}} />
+				<Layout::Boxes::Item @image={{blog-image this.next.image}} @stamp={{date-format this.next.time "LL"}} @title={{this.next.title}} @label={{this.next.label}} @text={{this.next.text}} />
 			</LinkTo>
 		{{else}}
 			<Layout::Boxes::Item @label="No newer posts" centered />
