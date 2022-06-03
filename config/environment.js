@@ -138,6 +138,8 @@ module.exports = function(environment) {
 				],
 				'media-src': [
 					"'self'",
+					// Media
+					'https://surrealdb.s3.amazonaws.com/',
 				],
 				'manifest-src': [
 					"'self'",
