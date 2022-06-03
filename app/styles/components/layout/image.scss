@@ -7,16 +7,9 @@ layout-image {
 		background:none;
 
 		img {
-
 			width:100%;
 			display:block;
 			overflow:visible;
-
-			@include media(max-width-750) {
-				width:150%;
-				margin-left:-25%;
-			}
-
 		}
 
 	}
