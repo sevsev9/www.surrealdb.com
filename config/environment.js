@@ -122,6 +122,8 @@ module.exports = function(environment) {
 					"'self'",
 					// Google
 					'https://www.google-analytics.com/',
+					// Mixpanel
+					'https://cdn.mxpnl.com/',
 				],
 				'connect-src': [
 					"'self'",
@@ -131,6 +133,8 @@ module.exports = function(environment) {
 					'https://contact.abcum.com',
 					// Google
 					'https://www.google-analytics.com/',
+					// Mixpanel
+					'https://api.mixpanel.com',
 				],
 				'media-src': [
 					"'self'",
