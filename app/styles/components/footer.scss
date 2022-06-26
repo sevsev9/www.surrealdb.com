@@ -118,11 +118,18 @@ footer {
 				}
 
 				i {
+
 					cursor:pointer;
-					font-size:22px;
-					margin:0 5px 0 0;
+					font-size:26px;
+					margin:0 10px 0 0;
 					transition:color 0.3s;
 					color:var(--faint-color);
+
+					@include media(max-width-400) {
+						font-size:22px;
+						margin:0 5px 0 0;
+					}
+
 				}
 
 				p {
