@@ -4,6 +4,8 @@ export function url([type]) {
 	switch (type) {
 	case 'github':
 		return 'https://github.com/surrealdb/surrealdb';
+	case 'issues':
+		return 'https://github.com/surrealdb/surrealdb/issues';
 	case 'twitter':
 		return 'https://twitter.com/surrealdb';
 	case 'linkedin':

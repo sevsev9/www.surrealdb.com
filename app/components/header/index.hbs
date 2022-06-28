@@ -14,6 +14,8 @@
 
 			<Header::Links::Item @link="install" @text="Install" />
 
+			<Header::Links::Item @link="community" @text="Community" />
+
 			<Header::Links::Drop @text="Product" @selected={{or (eq (route-name) "why") (eq (route-name) "features") (begs-with (route-name) "usecase")}}>
 				<main>
 					<Header::Links::Drop::Item @link="why" @text="Why SurrealDB?" @desc="Understand why SurrealDB is the ultimate cloud database." />
