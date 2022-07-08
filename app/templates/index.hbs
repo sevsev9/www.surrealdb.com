@@ -8,12 +8,13 @@
 	<h1><img src="/static/img/text.svg" alt="SurrealDB" /> is the <span underline>ultimate</span> cloud <span underline>database</span> for tomorrow's applications</h1>
 	<h2><e>Develop easier.</e><e>Build faster.</e><e>Scale quicker.</e></h2>
 	<p>With an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next generation serverless database.</p>
-	<Button::Thicker @link="features">
-		<span>View all features</span> <i class="fas fa-clipboard-list-check"></i>
+	<Button::Thicker @link="install">
+		<i class="fas fa-download"></i> <span>Install</span>
 	</Button::Thicker>
-	<Signup bordered thicker>
-		<span>Keep me updated</span> <i class="fas fa-arrow-right"></i>
-	</Signup>
+	<Button::Thicker @link="docs">
+		<i class="fas fa-book-sparkles"></i> <span>Documentation</span>
+	</Button::Thicker>
+	<Signup @text="Join cloud waitlist" />
 </Layout::Hero>
 
 <Layout::Text>
