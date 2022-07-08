@@ -21,6 +21,11 @@ Router.map(function() {
 	this.route('store');
 	this.route('why');
 
+	this.route('who', function() {
+		this.route('tobie');
+		this.route('jaime');
+	});
+
 	this.route('blog', function() {
 		this.route('post', { path: '/:post_slug' });
 	});
