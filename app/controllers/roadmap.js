@@ -11,7 +11,7 @@ export default class extends Controller {
 			},
 			{
 				time: new Date('2022-08-01'),
-				name: 'SurrealDB 1.0-beta.3',
+				name: 'SurrealDB 1.0-beta.2',
 				text: 'The third beta release of SurrealDB will add support for foreign links between tables with cascading updates and delete restrictions. In addition highly-performant on-disk storage, will offer ACID transaction guarantees with multiple concurrent writers and readers, and efficient in-memory data storage.',
 				tags: [
 					'Single-node on-disk storage with support for multiple concurrent writers and readers',
@@ -19,16 +19,7 @@ export default class extends Controller {
 				]
 			},
 			{
-				time: new Date('2022-07-01'),
-				name: 'SurrealDB 1.0-beta.2',
-				text: 'The second beta release of SurrealDB will add foreign table aggregate computed views. Additional client libraries for Node.js, Python, and Deno will offer realtime updates within the SDKs.',
-				tags: [
-					'Pre-defined aggregate computed views',
-					'Node.js + Python + Deno client libraries',
-				]
-			},
-			{
-				time: new Date('2022-06-01'),
+				time: new Date('2022-07-11'),
 				name: 'SurrealDB 1.0-beta.1',
 				text: 'The first beta version of SurrealDB will support a large amount of functionality, with the ability to run in-memory or in a highly-available, highly-scalable distributed environment. A highly-performant query language will enable use of many different data types, and javascript functions can be used for more complex functions and triggers.',
 				tags: [
@@ -41,14 +32,14 @@ export default class extends Controller {
 					'Table field definitions and constraints',
 					'Fully-defined type system with datetimes, decimals, durations, and geometry types',
 					'Graph and nested field expressions',
-					'Embedded avascript functions',
+					'Embedded JavaScript functions',
+					'Pre-defined aggregate computed views',
 					'Permissions, authentication and user scopes',
 					'Support for 3rd party authentication',
 					'REST API and WebSocket API',
 					'Data import and export',
 					'Command-line tool',
 					'Support for amd64, arm64 on Linux and Darwin',
-					'WebAssembly + Javascript + Golang + Rust client libraries',
 				]
 			},
 			{
