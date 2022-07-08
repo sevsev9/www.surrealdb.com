@@ -16,19 +16,16 @@
 
 			<Header::Links::Item @link="community" @text="Community" />
 
-			<Header::Links::Drop @text="Product" @selected={{or (eq (route-name) "why") (eq (route-name) "features") (begs-with (route-name) "usecase")}}>
+			<Header::Links::Drop @text="Product" @selected={{or (includes (route-name) (array "why" "features" "releases" "roadmap")) (begs-with (route-name) "usecase")}}>
 				<main>
-					<Header::Links::Drop::Item @link="why" @text="Why SurrealDB?" @desc="Understand why SurrealDB is the ultimate cloud database." />
-					<Header::Links::Drop::Item @link="features" @text="Features" @desc="Get a detailed overview of all of SurrealDB's technical features." />
-					<Header::Links::Drop::Item @link="usecase.jamstack" @text="Jamstack apps" @desc="See why SurrealDB is perfect for Jamstack, with SurrealQL." />
-					<Header::Links::Drop::Item @link="usecase.serverless" @text="Serverless apps" @desc="See how SurrealDB is the perfect database for serverless apps." />
-				</main>
-			</Header::Links::Drop>
-
-			<Header::Links::Drop @text="Learn" @selected={{or (begs-with (route-name) "docs") (eq (route-name) "roadmap")}}>
-				<main>
-					<Header::Links::Drop::Item @link="docs" @text="Documentation" @desc="An in-depth look at every aspect of SurrealDB: installation, setup, data types, querying, connectivity, and advanced functionality.">
-						<i class="fal fa-book"></i>
+					<Header::Links::Drop::Item @link="why" @text="Why SurrealDB?" @desc="Understand why SurrealDB is the ultimate cloud database.">
+						<i class="fal fa-circle-question"></i>
+					</Header::Links::Drop::Item>
+					<Header::Links::Drop::Item @link="features" @text="Features" @desc="Get a detailed overview of all of SurrealDB's technical features.">
+						<i class="fal fa-list-check"></i>
+					</Header::Links::Drop::Item>
+					<Header::Links::Drop::Item @link="releases" @text="Releases" @desc="Keep track of the notable updates and improvements for every SurrealDB product release in chronological order.">
+						<i class="fal fa-rocket-launch"></i>
 					</Header::Links::Drop::Item>
 					<Header::Links::Drop::Item @link="roadmap" @text="Roadmap" @desc="See what we have planned for SurrealDB, and see the features and functionality which has already been implemented.">
 						<i class="fal fa-road"></i>
