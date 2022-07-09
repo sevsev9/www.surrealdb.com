@@ -207,25 +207,12 @@
 	<Layout::Gap small />
 
 	<Layout::Blocks as |block|>
-		<block>
-			<h4 flex row middle>
-				<i class="fab fa-js-square font-30 m-r-10"></i>
-				WebAssembly
-				<l yellow>Beta</l>
-			</h4>
-			<Code @name="index/library/webassembly.bash" />
-			<n>
-				<Link @link="https://github.com/surrealdb/surrealdb.wasm" faded>GitHub</Link>
-				&bull;
-				<Link @link="docs" faded>Documentation</Link>
-			</n>
-		</block>
 		{{!--  --}}
 		<block>
 			<h4 flex row middle>
 				<i class="fab fa-js-square font-30 m-r-10"></i>
 				Javascript
-				<l yellow>Beta</l>
+				<l green>Available</l>
 			</h4>
 			<Code @name="index/library/javascript.bash" />
 			<n>
@@ -239,11 +226,66 @@
 			<h4 flex row middle>
 				<i class="fab fa-golang font-30 m-r-10"></i>
 				Golang
-				<l yellow>Beta</l>
+				<l green>Available</l>
 			</h4>
 			<Code @name="index/library/golang.bash" />
 			<n>
 				<Link @link="https://github.com/surrealdb/surrealdb.go" faded>GitHub</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+		{{!--  --}}
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-rust font-30 m-r-10"></i>
+				Rust
+				<l green>Available</l>
+			</h4>
+			<Code @name="index/library/rust.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/surrealdb" faded>GitHub</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+		{{!--  --}}
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-js-square font-30 m-r-10"></i>
+				WebAssembly
+				<l pink>Coming soon</l>
+			</h4>
+			<Code @name="index/library/webassembly.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/surrealdb.wasm" faded>GitHub</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+		{{!--  --}}
+		<block>
+			<h4 flex row middle>
+				Deno
+				<l green>Available</l>
+			</h4>
+			<Code @name="index/library/deno.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/surrealdb.deno" faded>GitHub</Link>
+				&bull;
+				<Link @link="docs" faded>Documentation</Link>
+			</n>
+		</block>
+		{{!--  --}}
+		<block>
+			<h4 flex row middle>
+				<i class="fab fa-node-js font-30 m-r-10"></i>
+				Node.js
+				<l pink>Coming soon</l>
+			</h4>
+			<Code @name="index/library/node.bash" />
+			<n>
+				<Link @link="https://github.com/surrealdb/surrealdb.node" faded>GitHub</Link>
 				&bull;
 				<Link @link="docs" faded>Documentation</Link>
 			</n>
@@ -258,47 +300,6 @@
 			<Code @name="index/library/python.bash" />
 			<n>
 				<Link @link="https://github.com/surrealdb/surrealdb.py" faded>GitHub</Link>
-				&bull;
-				<Link @link="docs" faded>Documentation</Link>
-			</n>
-		</block>
-		{{!--  --}}
-		<block>
-			<h4 flex row middle>
-				<i class="fab fa-rust font-30 m-r-10"></i>
-				Rust
-				<l yellow>Beta</l>
-			</h4>
-			<Code @name="index/library/rust.bash" />
-			<n>
-				<Link @link="https://github.com/surrealdb/surrealdb" faded>GitHub</Link>
-				&bull;
-				<Link @link="docs" faded>Documentation</Link>
-			</n>
-		</block>
-		{{!--  --}}
-		<block>
-			<h4 flex row middle>
-				<i class="fab fa-node-js font-30 m-r-10"></i>
-				Node.js
-				<l yellow>Beta</l>
-			</h4>
-			<Code @name="index/library/node.bash" />
-			<n>
-				<Link @link="https://github.com/surrealdb/surrealdb.node" faded>GitHub</Link>
-				&bull;
-				<Link @link="docs" faded>Documentation</Link>
-			</n>
-		</block>
-		{{!--  --}}
-		<block>
-			<h4 flex row middle>
-				Deno
-				<l pink>Coming soon</l>
-			</h4>
-			<Code @name="index/library/deno.bash" />
-			<n>
-				<Link @link="https://github.com/surrealdb/surrealdb.deno" faded>GitHub</Link>
 				&bull;
 				<Link @link="docs" faded>Documentation</Link>
 			</n>
@@ -335,7 +336,7 @@
 			<h4 flex row middle>
 				<i class="fab fa-ember font-30 m-r-10"></i>
 				Ember.js
-				<l green>Complete</l>
+				<l green>Available</l>
 			</h4>
 			<Code @name="index/library/ember.bash" />
 			<n>
@@ -363,7 +364,7 @@
 			<h4 flex row middle>
 				<i class="fab fa-react font-30 m-r-10"></i>
 				React.js
-				<l green>Complete</l>
+				<l green>Available</l>
 			</h4>
 			<Code @name="index/library/react.bash" />
 			<n>
