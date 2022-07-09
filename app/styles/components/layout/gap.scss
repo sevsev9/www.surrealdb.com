@@ -8,6 +8,12 @@ gap {
 		height:50px;
 	}
 
+	&[tiny] {
+		width:100%;
+		height:30px;
+		display:block;
+	}
+
 	&[mini] {
 		width:100%;
 		height:50px;

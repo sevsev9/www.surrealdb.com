@@ -3,30 +3,30 @@
 		{{{item.text}}}
 	{{~else if (eq item.type 'link')~}}
 		<Link @link={{item.href}} title={{item.title}}>
-			<Markdown::Tokens @tokens={{item.tokens}} />
+			<Markup::Tokens @tokens={{item.tokens}} />
 		</Link>
 	{{~else if (eq item.type 'heading')~}}
 		{{~#if (eq item.depth 1)~}}
-			<h1><Markdown::Tokens @tokens={{item.tokens}} /></h1>
+			<h1><Markup::Tokens @tokens={{item.tokens}} /></h1>
 		{{~else if (eq item.depth 2)~}}
-			<h2 {{waypoint item.link}}><Markdown::Tokens @tokens={{item.tokens}} /></h2>
+			<h2 {{waypoint item.link}}><Markup::Tokens @tokens={{item.tokens}} /></h2>
 		{{~else if (eq item.depth 3)~}}
-			<h3><Markdown::Tokens @tokens={{item.tokens}} /></h3>
+			<h3><Markup::Tokens @tokens={{item.tokens}} /></h3>
 		{{~else if (eq item.depth 4)~}}
-			<h4><Markdown::Tokens @tokens={{item.tokens}} /></h4>
+			<h4><Markup::Tokens @tokens={{item.tokens}} /></h4>
 		{{~else if (eq item.depth 5)~}}
-			<h5><Markdown::Tokens @tokens={{item.tokens}} /></h5>
+			<h5><Markup::Tokens @tokens={{item.tokens}} /></h5>
 		{{~else if (eq item.depth 6)~}}
-			<h6><Markdown::Tokens @tokens={{item.tokens}} /></h6>
+			<h6><Markup::Tokens @tokens={{item.tokens}} /></h6>
 		{{~/if~}}
 	{{~else if (eq item.type 'paragraph')~}}
-		<p><Markdown::Tokens @tokens={{item.tokens}} /></p>
+		<p><Markup::Tokens @tokens={{item.tokens}} /></p>
 	{{~else if (eq item.type 'blockquote')~}}
-		<blockquote><Markdown::Tokens @tokens={{item.tokens}} /></blockquote>
+		<blockquote><Markup::Tokens @tokens={{item.tokens}} /></blockquote>
 	{{~else if (eq item.type 'strong')~}}
-		<strong><Markdown::Tokens @tokens={{item.tokens}} /></strong>
+		<strong><Markup::Tokens @tokens={{item.tokens}} /></strong>
 	{{~else if (eq item.type 'em')~}}
-		<em><Markdown::Tokens @tokens={{item.tokens}} /></em>
+		<em><Markup::Tokens @tokens={{item.tokens}} /></em>
 	{{~else if (eq item.type 'image')~}}
 		<pic><img src={{blog-image item.href}} title={{item.title}} alt={{item.text}} /></pic>
 	{{~else if (eq item.type 'code')~}}
@@ -35,18 +35,18 @@
 		<code>{{item.text}}</code>
 	{{~else if (eq item.type 'list')~}}
 		{{~#if item.ordered~}}
-			<ol start={{item.start}}><Markdown::Tokens @tokens={{item.items}} /></ol>
+			<ol start={{item.start}}><Markup::Tokens @tokens={{item.items}} /></ol>
 		{{~else~}}
-			<ul><Markdown::Tokens @tokens={{item.items}} /></ul>
+			<ul><Markup::Tokens @tokens={{item.items}} /></ul>
 		{{~/if~}}
 	{{~else if (eq item.type 'list_item')~}}
-		<li><Markdown::Tokens @tokens={{item.tokens}} /></li>
+		<li><Markup::Tokens @tokens={{item.tokens}} /></li>
 	{{~else if (eq item.type 'table')~}}
 		<table>
 			<thead>
 				<th>
 					{{~#each item.header as |h i|~}}
-						<td align={{get item.align i}}><Markdown::Tokens @tokens={{h.tokens}} /></td>
+						<td align={{get item.align i}}><Markup::Tokens @tokens={{h.tokens}} /></td>
 					{{~/each~}}
 				</th>
 			</thead>
@@ -54,7 +54,7 @@
 				{{~#each item.rows as |r|~}}
 					<tr>
 						{{~#each r as |c i|~}}
-							<td align={{get item.align i}}><Markdown::Tokens @tokens={{c.tokens}} /></td>
+							<td align={{get item.align i}}><Markup::Tokens @tokens={{c.tokens}} /></td>
 						{{~/each~}}
 					</tr>
 				{{~/each~}}

@@ -1,0 +1,72 @@
+<Layout::Blocks cols-2-to-1 as |block|>
+	<block>
+		<h4 flex row middle>
+			Futures
+		</h4>
+		<p>Values which should be computed only when outputting data, can be stored as futures. These values are stored in SurrealDB as SurrealQL code, and are calculated only when output as part of a <code>SELECT</code> clause.</p>
+	</block>
+	<block>
+		<h4 flex row middle>
+			Casting
+		</h4>
+		<p>In SurrealDB, all data values are strongly typed. Values can be cast and converted to other types using specific casting operators. These include <code>bool</code>, <code>int</code>, <code>float</code>, <code>string</code>, <code>number</code>, <code>decimal</code>, <code>datetime</code>, and <code>duration</code> casts.</p>
+	</block>
+	<block>
+		<Code min-h-100 @name="roadmap/data/futures.sql" />
+	</block>
+	<block>
+		<Code min-h-100 @name="roadmap/data/casting.sql" />
+	</block>
+</Layout::Blocks>
+
+<Layout::Gap mini />
+
+<Layout::Blocks cols-2-to-1 as |block|>
+	<block>
+		<h4 flex row middle>
+			RELATE statements
+		</h4>
+		<p>The <code>RELATE</code> statement adds graph edges between records in SurrealDB. It follows the convention of <code>vertex -> edge -> vertex</code> or <code>noun -> verb -> noun</code>, enabling the addition of metadata to the edge record.</p>
+	</block>
+
+	<block>
+		<h4 flex row middle>
+			INSERT statements
+		</h4>
+		<p>The <code>INSERT</code> statement resembles the traditional SQL statement, enabling users to get started quickly. It supports the creation of records using a <code>VALUES</code> clause, or by specifying the record data as an object.</p>
+	</block>
+	<block>
+		<Code @name="roadmap/surrealql/relate.sql" />
+	</block>
+	<block>
+		<Code @name="roadmap/surrealql/insert.sql" />
+	</block>
+</Layout::Blocks>
+
+<Layout::Gap mini />
+
+<Layout::Blocks cols-1 as |block|>
+	<block>
+		<h4 flex row middle>
+			Expressions
+		</h4>
+		<p>SurrealQL supports fetching data using dot notation <code>.</code>, array notation <code>[]</code>, and graph semantics <code>-></code>. SurrealQL enables records to link to other records and traverses all embedded links or graph connections as desired. When traversing and fetching remote records SurrealQL enables advanced filtering using traditional <code>WHERE</code> clauses.</p>
+	</block>
+	<block>
+		<Code @name="roadmap/surrealql/expressions.sql" />
+	</block>
+</Layout::Blocks>
+
+<Layout::Gap mini />
+
+<Layout::Blocks cols-1 as |block|>
+	<block>
+		<h4 flex row middle>
+			Embedded JavaScript functions
+		</h4>
+		<p>Javascript functions can be used for more complex functions and triggers. Each Javascript function iteration runs with its own context isolation - with the current record data passed in as the execution context or <code>this</code> value.</p>
+	</block>
+	<block>
+		<Code min-h-200 @name="roadmap/functions/javascript.sql" />
+	</block>
+</Layout::Blocks>
