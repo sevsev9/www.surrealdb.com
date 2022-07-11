@@ -12,7 +12,7 @@ export default class extends Controller {
 			{
 				time: new Date('2022-08-01'),
 				name: 'SurrealDB 1.0-beta.2',
-				text: 'The third beta release of SurrealDB will add support for foreign links between tables with cascading updates and delete restrictions. In addition highly-performant on-disk storage, will offer ACID transaction guarantees with multiple concurrent writers and readers, and efficient in-memory data storage.',
+				text: 'The second beta release of SurrealDB will add support for foreign links between tables with cascading updates and delete restrictions. In addition highly-performant on-disk storage, will offer ACID transaction guarantees with multiple concurrent writers and readers, and efficient in-memory data storage.',
 				tags: [
 					'Single-node on-disk storage with support for multiple concurrent writers and readers',
 					'Record link definitions and constraints',
