@@ -37,7 +37,7 @@ export default class extends Controller {
 				]
 			},
 			{
-				time: new Date('2022-07-11'),
+				time: new Date('2022-07-18'),
 				name: 'Release v1.0.0-beta.1',
 				path: 'section/releases/v1-0-0-beta-1',
 				link: 'v1.0.0-beta.1',
