@@ -30,8 +30,7 @@ export default class extends Controller {
 						name: 'Performance improvements',
 						text: [
 							{ category: 'performance', text: 'Zero-copy datastore key serialization and deserialization' },
-							{ category: 'performance', text: 'Limit the number of items retrieved concurrently in breadth-first record fetching' },
-							{ category: 'performance', text: 'Implement database index selection for improved performance when performing full-table scans' },
+							{ category: 'performance', text: 'Database index selection for improved performance when performing full-table scans' },
 						]
 					},
 				]
