@@ -5,10 +5,17 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5" />
 
-		<script defer src="{{rootURL}}assets/vendor.js"></script>
-		<script defer src="{{rootURL}}assets/surreal.js"></script>
+		<link rel="preload" as="font" href="{{rootURL}}static/font/awesome/fa-solid-900.woff2" type="font/woff2" crossorigin>
+		<link rel="preload" as="font" href="{{rootURL}}static/font/awesome/fa-light-300.woff2" type="font/woff2" crossorigin>
+		<link rel="preload" as="font" href="{{rootURL}}static/font/awesome/fa-brands-400.woff2" type="font/woff2" crossorigin>
+
+		<link rel="preload" as="font" href="{{rootURL}}static/fonts/Poppins-Medium.woff2" type="font/woff2" crossorigin>
+		<link rel="preload" as="font" href="{{rootURL}}static/fonts/Poppins-SemiBold.woff2" type="font/woff2" crossorigin>
 
 		<script defer data-domain="surrealdb.com" src="/js/script.js"></script>
+
+		<script defer src="{{rootURL}}assets/vendor.js"></script>
+		<script defer src="{{rootURL}}assets/surreal.js"></script>
 
 		{{content-for "head"}}
 
