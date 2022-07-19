@@ -6,6 +6,10 @@ export function url([type]) {
 		return 'https://github.com/surrealdb/surrealdb';
 	case 'issues':
 		return 'https://github.com/surrealdb/surrealdb/issues';
+	case 'releases':
+		return 'https://github.com/surrealdb/surrealdb/releases';
+	case 'discussions':
+		return 'https://github.com/surrealdb/surrealdb/discussions';
 	case 'twitter':
 		return 'https://twitter.com/surrealdb';
 	case 'linkedin':
