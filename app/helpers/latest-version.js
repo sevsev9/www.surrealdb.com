@@ -5,8 +5,15 @@ export default class extends Helper {
 
 	@inject version;
 
-	compute() {
-		return this.version.latest;
+	compute(args, opts) {
+		switch (true) {
+		case opts.hash:
+			return this.version.hash;
+		case opts.slug:
+			return this.version.slug;
+		default:
+			return this.version.latest;
+		}
 	}
 
 }

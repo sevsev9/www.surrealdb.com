@@ -1,9 +1,18 @@
 import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
+import { cache } from '@ascua/decorators';
 
 export default class Version extends Service {
 
 	@tracked latest;
+
+	@cache get hash() {
+		return `#${this.slug}`;
+	}
+
+	@cache get slug() {
+		return this.latest?.replace(/[.]/g, '-');
+	}
 
 	constructor() {
 
