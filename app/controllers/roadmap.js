@@ -10,20 +10,12 @@ export default class extends Controller {
 				name: 'SurrealDB 1.0',
 			},
 			{
-				time: new Date('2022-08-01'),
-				name: 'SurrealDB 1.0-beta.2',
-				text: 'The second beta release of SurrealDB will add support for foreign links between tables with cascading updates and delete restrictions. In addition highly-performant on-disk storage, will offer ACID transaction guarantees with multiple concurrent writers and readers, and efficient in-memory data storage.',
-				tags: [
-					'Single-node on-disk storage with support for multiple concurrent writers and readers',
-					'Record link definitions and constraints',
-				]
-			},
-			{
 				time: new Date('2022-07-11'),
-				name: 'SurrealDB 1.0-beta.1',
-				text: 'The first beta version of SurrealDB will support a large amount of functionality, with the ability to run in-memory or in a highly-available, highly-scalable distributed environment. A highly-performant query language will enable use of many different data types, and javascript functions can be used for more complex functions and triggers.',
+				name: 'SurrealDB 1.0-beta',
+				text: 'The beta version of SurrealDB will support a large amount of functionality, with the ability to run in-memory, on a single node, or in a highly-available, highly-scalable distributed environment. A highly-performant query language will enable use of many different data types, and javascript functions can be used for more complex functions and triggers.',
 				tags: [
 					'In-memory storage',
+					'Single-node on-disk storage with support for multiple concurrent writers and readers',
 					'Distributed highly-available storage',
 					'SurrealQL advanced query language',
 					'Schemafull or schemaless',
