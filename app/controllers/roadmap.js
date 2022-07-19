@@ -10,6 +10,10 @@ export default class extends Controller {
 				name: 'SurrealDB 1.0',
 			},
 			{
+				time: new Date('2022-07-20'),
+				text: 'SurrealDB LinkedIn community is live.',
+			},
+			{
 				time: new Date('2022-07-11'),
 				name: 'SurrealDB 1.0-beta',
 				text: 'The beta version of SurrealDB will support a large amount of functionality, with the ability to run in-memory, on a single node, or in a highly-available, highly-scalable distributed environment. A highly-performant query language will enable use of many different data types, and javascript functions can be used for more complex functions and triggers.',
