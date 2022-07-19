@@ -13,16 +13,17 @@ export default class extends Controller {
 					{
 						name: 'Database functionality',
 						text: [
+							'GraphQL queries, modifications, and subscriptions',
 							'Live queries for realtime, distributed notifications of data updates',
 							'SurrealDB -> WASM build for running SurrealDB within a browser with persistant storage',
-							'Definition of custom User Defined Functions using WASM modules',
 							'Highly-performant, ACID compliant, persistant, on-disk storage, with multiple concurrent writers',
 						]
 					},
 					{
 						name: 'Scripting functionality',
 						text: [
-							{ category: 'scripting', text: 'Add <code>fetch</code> module for asynchronous HTTP WebHook functionality' },
+							{ category: 'scripting', text: 'Add <code>fetch</code> module for asynchronous HTTP requests' },
+							{ category: 'scripting', text: 'Add <code>surrealdb</code> module for querying + modifying the database' },
 							{ category: 'scripting', text: 'Add ability to define or import custom ES6 modules for user-defined functionality' },
 						]
 					},
