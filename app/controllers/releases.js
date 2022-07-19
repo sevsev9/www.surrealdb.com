@@ -37,6 +37,19 @@ export default class extends Controller {
 				]
 			},
 			{
+				time: new Date('2022-07-20'),
+				name: 'Release v1.0.0-beta.2',
+				path: 'section/releases/v1-0-0-beta-2',
+				link: 'v1.0.0-beta.2',
+				hash: 'v1-0-0-beta-2',
+				text: [
+					'Improve command-line logging output',
+					'Enable new <code>--log</code> argument for specifying server log level',
+					'Hide default randomly-generated server password',
+					'Ensure correct version is displayed when running <code>surreal version</code> command',
+				]
+			},
+			{
 				time: new Date('2022-07-18'),
 				name: 'Release v1.0.0-beta.1',
 				path: 'section/releases/v1-0-0-beta-1',
