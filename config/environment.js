@@ -129,6 +129,8 @@ module.exports = function(environment) {
 					"'self'",
 					// Surreal
 					'wss://surreal.io/rpc',
+					// Version
+					'https://version.surrealdb.com',
 					// Abcum
 					'https://contact.abcum.com',
 					// Google
