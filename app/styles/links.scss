@@ -18,6 +18,10 @@ a {
 		padding-left:10px;
 	}
 
+	& l {
+		cursor:pointer;
+	}
+
 	&[faded] {
 		@include faded;
 	}

@@ -1,0 +1,14 @@
+[
+  {
+    "time": "967.458µs",
+    "status": "OK",
+    "result": [
+      {
+        "login": {},
+        "scope": {},
+        "table": {},
+        "token": {}
+      }
+    ]
+  }
+]

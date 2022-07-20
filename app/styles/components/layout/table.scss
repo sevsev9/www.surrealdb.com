@@ -63,4 +63,21 @@ layout-table {
 
 	}
 
+	layout-group & {
+
+		table {
+			margin-bottom:30px;
+			border:2px solid var(--border-color);
+		}
+
+		table > thead > tr > th {
+			border-left:2px solid var(--border-color);
+		}
+
+		table > tbody > tr > td {
+			border-left:2px solid var(--border-color);
+		}
+
+	}
+
 }

@@ -6,10 +6,87 @@
 
 <Layout::Gap small />
 
-<Layout::Text>
-	<h1><img src="/static/img/text.svg" alt="SurrealDB" /> documentation</h1>
-	<p>We are finishing off the documentation for SurrealDB, and will be releasing these resources soon. Join the SurrealDB newsletter below and stay updated on new releases, and updates.</p>
-	<Signup bordered thicker>Join the SurrealDB newsletter</Signup>
-</Layout::Text>
+<Layout::Helm docs>
 
-<Layout::Gap large />
+	<Layout::Helm::Menu>
+		<div>
+			<a {{on "click" (scroll-to top=0 smooth=true)}}>
+				<i class="fas fa-arrow-up"></i>
+				<span>Back to top</span>
+			</a>
+		</div>
+		<nav>
+			<Layout::Helm::Menu::Item @link="docs" @text="Overview" selected={{begs-with (route-name) "docs.index"}} />
+			<Layout::Helm::Menu::Item @link="docs.start" @text="Getting started" selected={{begs-with (route-name) "docs.start"}} />
+			<subs>
+				<Layout::Helm::Menu::Item @link="docs.start.index" @text="Quick start" selected={{begs-with (route-name) "docs.start.index"}} />
+				<Layout::Helm::Menu::Item @link="docs.start.installation" @text="Installation" selected={{begs-with (route-name) "docs.start.installation"}} />
+				<Layout::Helm::Menu::Item @link="docs.start.starting-surrealdb" @text="Starting SurrealDB" selected={{begs-with (route-name) "docs.start.starting-surrealdb"}} />
+				{{!-- <Layout::Helm::Menu::Item @link="docs.start.querying-surrealdb" @text="Querying SurrealDB" selected={{begs-with (route-name) "docs.start.querying-surrealdb"}} /> --}}
+				{{!-- <Layout::Helm::Menu::Item @link="docs.start.securing-surrealdb" @text="Securing your data" selected={{begs-with (route-name) "docs.start.securing-surrealdb"}} /> --}}
+			</subs>
+			<Layout::Helm::Menu::Item @link="docs.datamodel" @text="Data model" selected={{begs-with (route-name) "docs.datamodel"}} />
+			<subs>
+				<Layout::Helm::Menu::Item @link="docs.datamodel.index" @text="Overview" selected={{begs-with (route-name) "docs.datamodel.index"}} />
+				<Layout::Helm::Menu::Item @link="docs.datamodel.simple" @text="Simple types" selected={{begs-with (route-name) "docs.datamodel.simple"}} />
+				<Layout::Helm::Menu::Item @link="docs.datamodel.datetimes" @text="Datetimes" selected={{begs-with (route-name) "docs.datamodel.datetimes"}} />
+				<Layout::Helm::Menu::Item @link="docs.datamodel.geometries" @text="Geometries" selected={{begs-with (route-name) "docs.datamodel.geometries"}} />
+				<Layout::Helm::Menu::Item @link="docs.datamodel.records" @text="Record links" selected={{begs-with (route-name) "docs.datamodel.records"}} />
+				<Layout::Helm::Menu::Item @link="docs.datamodel.futures" @text="Futures" selected={{begs-with (route-name) "docs.datamodel.futures"}} />
+				<Layout::Helm::Menu::Item @link="docs.datamodel.casting" @text="Casting" selected={{begs-with (route-name) "docs.datamodel.casting"}} />
+			</subs>
+			<Layout::Helm::Menu::Item @link="docs.surrealql" @text="SurrealQL" selected={{begs-with (route-name) "docs.surrealql"}} />
+			<subs>
+				<Layout::Helm::Menu::Item @link="docs.surrealql.index" @text="Overview" selected={{begs-with (route-name) "docs.surrealql.index"}} />
+				<Layout::Helm::Menu::Item @link="docs.surrealql.statements" @text="Statements" selected={{begs-with (route-name) "docs.surrealql.statements"}} />
+				<Layout::Helm::Menu::Item @link="docs.surrealql.operators" @text="Operators" selected={{begs-with (route-name) "docs.surrealql.operators"}} />
+				<Layout::Helm::Menu::Item @link="docs.surrealql.parameters" @text="Parameters" selected={{begs-with (route-name) "docs.surrealql.parameters"}} />
+				{{!-- <Layout::Helm::Menu::Item @link="docs.surrealql.expressions" @text="Expressions" selected={{begs-with (route-name) "docs.surrealql.expressions"}} /> --}}
+				<Layout::Helm::Menu::Item @link="docs.surrealql.transactions" @text="Transactions" selected={{begs-with (route-name) "docs.surrealql.transactions"}} />
+			</subs>
+			<Layout::Helm::Menu::Item @link="docs.functions" @text="Functions" selected={{begs-with (route-name) "docs.functions"}} />
+			<subs>
+				<Layout::Helm::Menu::Item @link="docs.functions.index" @text="Overview" selected={{begs-with (route-name) "docs.functions.index"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.array" @text="Array functions" selected={{begs-with (route-name) "docs.functions.array"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.count" @text="Count functions" selected={{begs-with (route-name) "docs.functions.count"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.crypto" @text="Crypto functions" selected={{begs-with (route-name) "docs.functions.crypto"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.geo" @text="Geo functions" selected={{begs-with (route-name) "docs.functions.geo"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.http" @text="HTTP functions" selected={{begs-with (route-name) "docs.functions.http"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.validation" @text="Validation functions" selected={{begs-with (route-name) "docs.functions.validation"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.math" @text="Math functions" selected={{begs-with (route-name) "docs.functions.math"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.parse" @text="Parse functions" selected={{begs-with (route-name) "docs.functions.parse"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.rand" @text="Rand functions" selected={{begs-with (route-name) "docs.functions.rand"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.string" @text="String functions" selected={{begs-with (route-name) "docs.functions.string"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.time" @text="Time functions" selected={{begs-with (route-name) "docs.functions.time"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.type" @text="Type functions" selected={{begs-with (route-name) "docs.functions.type"}} />
+				<Layout::Helm::Menu::Item @link="docs.functions.script" @text="Scripting functions" selected={{begs-with (route-name) "docs.functions.script"}} />
+			</subs>
+			<Layout::Helm::Menu::Item @link="docs.integration" @text="Integration" selected={{begs-with (route-name) "docs.integration"}} />
+			<subs>
+				<Layout::Helm::Menu::Item @link="docs.integration" @text="Overview" selected={{begs-with (route-name) "docs.integration.index"}} />
+				<Layout::Helm::Menu::Item @link="docs.integration.libraries" @text="Client libraries" selected={{begs-with (route-name) "docs.integration.libraries"}} />
+				<Layout::Helm::Menu::Item @link="docs.integration.http" @text="HTTP & Rest" selected={{begs-with (route-name) "docs.integration.http"}} />
+				<Layout::Helm::Menu::Item @link="docs.integration.websockets" @text="Websockets" selected={{begs-with (route-name) "docs.integration.websockets"}} />
+			</subs>
+			{{!-- <Layout::Helm::Menu::Item @link="docs.guides" @text="Guides" selected={{begs-with (route-name) "docs.guides"}} />
+			<subs>
+				<Layout::Helm::Menu::Item @link="docs.guides" @text="Overview" selected={{begs-with (route-name) "docs.guides.index"}} />
+				<Layout::Helm::Menu::Item @link="docs.guides.schemafull-or-schemaless" @text="Schemafull or schemaless" selected={{begs-with (route-name) "docs.guides.schemafull-or-schemaless"}} />
+				<Layout::Helm::Menu::Item @link="docs.guides.relations-and-graph" @text="Relations and the graph" selected={{begs-with (route-name) "docs.guides.relations-and-graph"}} />
+				<Layout::Helm::Menu::Item @link="docs.guides.realtime-subscriptions" @text="Realtime subscriptions" selected={{begs-with (route-name) "docs.guides.realtime-subscriptions"}} />
+				<Layout::Helm::Menu::Item @link="docs.guides.geospatial-functionality" @text="Geospatial functionality" selected={{begs-with (route-name) "docs.guides.geospatial-functionality"}} />
+				<Layout::Helm::Menu::Item @link="docs.guides.data-triggers" @text="Setting up data triggers" selected={{begs-with (route-name) "docs.guides.data-triggers"}} />
+				<Layout::Helm::Menu::Item @link="docs.guides.computed-views" @text="Using computed views" selected={{begs-with (route-name) "docs.guides.computed-views"}} />
+				<Layout::Helm::Menu::Item @link="docs.guides.authenticating-users" @text="Authenticating users" selected={{begs-with (route-name) "docs.guides.authenticating-users"}} />
+				<Layout::Helm::Menu::Item @link="docs.guides.deploying-surrealdb" @text="Deploying SurrealDB" selected={{begs-with (route-name) "docs.guides.deploying-surrealdb"}} />
+			</subs> --}}
+		</nav>
+	</Layout::Helm::Menu>
+
+	<Layout::Helm::Main>
+
+		{{outlet}}
+
+	</Layout::Helm::Main>
+
+</Layout::Helm>

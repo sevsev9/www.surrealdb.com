@@ -1,0 +1,107 @@
+<Layout::Text text-l text-f>
+
+	<h2>Starting <img inline src="/static/img/text.svg" alt="SurrealDB" /></h2>
+
+	<p>Once you have installed SurrealDB, the <Ascua::Prism::Inline @language="bash" @code="surreal" /> command-line tool is a single executable which can be used to backup, interact with, and run SurrealDB server instances. In this article we will start a SurrealDB server so that we can store and query data.</p>
+
+	<p>Run the following command in your terminal. It will display the options for starting a SurrealDB server instance.</p>
+
+	<Code @name="docs-start-starting-step1.shell">
+		user@localhost % surreal start -h
+	</Code>
+
+	<Code @name="docs/start/starting/step1.txt" />
+
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l text-f>
+
+	<h3>Starting a single-node in-memory database</h3>
+
+	<p>For the purposes of getting started with SurrealDB quickly, we will start an in-memory database which does not persist data on shutdown. This database is great for development and testing.</p>
+
+	<Code @name="docs-start-starting-step2.shell">
+		user@localhost % surreal start memory
+	</Code>
+
+	<p>The default logging level for the database server is <code>info</code>, resulting in any informational logs to be output to the standard output. To control the logging verbosity, specify the <Ascua::Prism::Inline @language="bash" @code="--log" /> argument. The following command starts the database with <code>trace</code> level logging, resulting in most logs being output to the standard output.</p>
+
+	<Code @name="docs-start-starting-step3.shell">
+		user@localhost % surreal start --log trace memory
+	</Code>
+
+	<p>In order to keep SurrealDB secure, the database generates a random master password every time it is started. To set a top-level authentication login, use the <Ascua::Prism::Inline @language="bash" @code="--user" /> and <Ascua::Prism::Inline @language="bash" @code="--pass" /> command-line arguments. The following command starts the database with a top-level user named <code>root</code> with a password also set to <code>root</code>.</p>
+
+	<Code @name="docs-start-starting-step4.shell">
+		user@localhost % surreal start --log trace --user root --pass root memory
+	</Code>
+
+	<p>After running the above command, you should see the SurrealDB server startup successfully.</p>
+
+	<Code @name="docs-start-starting-step5.shell">
+		user@localhost % surreal start --log trace --user root --pass root memory
+		[2022-01-10T16:29:59Z] INFO surrealdb::kvs Starting kvs store in memory
+		[2022-01-10T16:29:59Z] INFO surrealdb::kvs Started kvs store in memory
+		[2022-01-10T16:30:03Z] INFO surrealdb::net Starting web server on 0.0.0.0:8000
+		[2022-01-10T16:30:03Z] INFO surrealdb::net Started web server on 0.0.0.0:8000
+	</Code>
+
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l text-f>
+
+	<h3>Starting a multi-node distributed database</h3>
+
+	<p>For highly-available and highly-scalable setups, SurrealDB can be run on top of a <a href="https://tikv.org" rel="noopener noreferrer" target="_blank">TiKV</a> cluster, with the ability to horizontally scale to <code>100+</code> terabytes of data. In this example, we will start a local TiKV cluster with a single node, for development and testing purposes only.</p>
+
+	<p>To install TiKV on your development machine, run the following command. This will install the <Ascua::Prism::Inline @language="bash" @code="tiup" /> command-line tool, which enables deploying and managing TiKV clusters of any size.</p>
+
+	<Code @name="docs-start-starting-step6.shell">
+		user@localhost % curl -sSf https://tiup-mirrors.pingcap.com/install.sh | sh
+	</Code>
+
+	<p>Once installed we shall start up a simple single-node development cluster.</p>
+
+	<Code @name="docs-start-starting-step7.shell">
+		user@localhost % tiup playground --mode tikv-slim
+		tiup is checking updates for component playground ...
+		Starting component `playground`: /Users/tobie/.tiup/components/playground/v1.10.2/tiup-playground --mode tikv-slim
+		Using the version v6.1.0 for version constraint "".
+
+		If you'd like to use a TiDB version other than v6.1.0, cancel and retry with the following arguments:
+			Specify version manually:   tiup playground version
+			Specify version range:      tiup playground ^5
+			The nightly version:        tiup playground nightly
+
+		Playground Bootstrapping...
+		Start pd instance:v6.1.0
+		Start tikv instance:v6.1.0
+		PD client endpoints: [127.0.0.1:2379]
+		To view the Prometheus: http://127.0.0.1:9090
+		To view the Grafana: http://127.0.0.1:3000
+	</Code>
+
+	<p>Once TiKV is up and running, we can start a SurrealDB server instance, specifying the TiKV cluster endpoint as the backing data store.</p>
+
+	<Code @name="docs-start-starting-step8.shell">
+		user@localhost % surreal start --log trace --user root --pass root tikv://127.0.0.1:2379
+		[2022-07-20 00:08:46] INFO  surrealdb::kvs Connecting to kvs store at tikv://127.0.0.1:2379
+		[2022-07-20 00:08:46] INFO  surrealdb::kvs Connected to kvs store at tikv://127.0.0.1:2379
+		[2022-07-20 00:08:46] INFO  surrealdb::net Starting web server on 0.0.0.0:8000
+		[2022-07-20 00:08:46] INFO  surrealdb::net Started web server on 0.0.0.0:8000
+	</Code>
+
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l text-f>
+	<h3>Next steps</h3>
+	<p>Congratulations, you’ve now successfully started SurrealDB! You are now ready to start inserting data and performing queries against SurrealDB. Take a look at the next chapter to get started with querying SurrealDB.</p>
+</Layout::Text>
+
+<Layout::Gap large />

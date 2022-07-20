@@ -21,7 +21,7 @@
 			<br>
 			Founder, SurrealDB
 		{{else}}
-			<img src="/static/img/text.svg" alt="SurrealDB" /> is currently operating in a private beta, and will be launching soon. Join the SurrealDB newsletter and stay updated on new releases, features, and documentation.
+			<img inline src="/static/img/text.svg" alt="SurrealDB" /> is currently operating in a private beta, and will be launching soon. Join the SurrealDB newsletter and stay updated on new releases, features, and documentation.
 			<line></line>
 			<form {{on "submit" this.submit.run}}>
 				<Input @value={{this.email}} placeholder="Enter your email here..." />

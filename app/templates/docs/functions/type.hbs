@@ -1,0 +1,423 @@
+<Layout::Text text-l text-f>
+	<h5><i class="fas fa-arrow-left"></i> &nbsp; <Link @link="docs.functions.index">Back to overview</Link></h5>
+	<h2>Type functions</h2>
+	<p>These functions can be used for generating and coercing data to specific data types. These functions are useful when accepting input values in client libraries, and ensuring that they are the desired type within SQL statements.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Table filled>
+	<table>
+		<thead>
+			<tr>
+				<th w-40>Function</th>
+				<th w-60>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<a href="#bool">
+						<code>type::bool()</code>
+					</a>
+				</td>
+				<td>Converts a value into a boolean</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#datetime">
+						<code>type::datetime()</code>
+					</a>
+				</td>
+				<td>Converts a value into a datetime</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#decimal">
+						<code>type::decimal()</code>
+					</a>
+				</td>
+				<td>Converts a value into a decimal</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#duration">
+						<code>type::duration()</code>
+					</a>
+				</td>
+				<td>Converts a value into a duration</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#float">
+						<code>type::float()</code>
+					</a>
+				</td>
+				<td>Converts a value into a floating point number</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#int">
+						<code>type::int()</code>
+					</a>
+				</td>
+				<td>Converts a value into an integer</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#number">
+						<code>type::number()</code>
+					</a>
+				</td>
+				<td>Converts a value into a number</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#point">
+						<code>type::point()</code>
+					</a>
+				</td>
+				<td>Converts a value into a geometry point</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#regex">
+						<code>type::regex()</code>
+					</a>
+				</td>
+				<td>Converts a value into a regular expression</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#string">
+						<code>type::string()</code>
+					</a>
+				</td>
+				<td>Converts a value into a string</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#table">
+						<code>type::table()</code>
+					</a>
+				</td>
+				<td>Converts a value into a table</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#thing">
+						<code>type::thing()</code>
+					</a>
+				</td>
+				<td>Converts a value into a record pointer</td>
+			</tr>
+		</tbody>
+	</table>
+</Layout::Table>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "bool"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>type::bool</h3>
+		<p>The <code>type::bool</code> function converts a value into a bool, if the value is truthy.</p>
+		<Code @name="docs-functions-type-bool.sql" text="API Definition">
+			type::bool(value) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-type-bool-input.sql">
+				SELECT * FROM type::bool(12345);
+			</Code>
+			<Code @name="docs-functions-type-bool-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>This is the equivalent of using <Link @link="docs.datamodel.casting"><code>&lt;bool&gt;</code></Link> to cast a value to a boolean.</p>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "datetime"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>type::datetime</h3>
+		<p>The <code>type::datetime</code> function converts a value into a datetime.</p>
+		<Code @name="docs-functions-type-datetime.sql" text="API Definition">
+			type::datetime(value) -> datetime
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-type-datetime-input.sql">
+				SELECT * FROM type::datetime("2022-04-27T18:12:27+00:00");
+			</Code>
+			<Code @name="docs-functions-type-datetime-result.txt">
+				"2022-04-27T18:12:27Z"
+			</Code>
+		</codes>
+		<p>This is the equivalent of using <Link @link="docs.datamodel.casting"><code>&lt;datetime&gt;</code></Link> to cast a value to a datetime.</p>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "decimal"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>type::decimal</h3>
+		<p>The <code>type::decimal</code> function converts a value into a decimal.</p>
+		<Code @name="docs-functions-type-decimal.sql" text="API Definition">
+			type::decimal(value) -> decimal
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-type-decimal-input.sql">
+				SELECT * FROM type::decimal("12345");
+			</Code>
+			<Code @name="docs-functions-type-decimal-result.txt">
+				"12345"
+			</Code>
+		</codes>
+		<p>This is the equivalent of using <Link @link="docs.datamodel.casting"><code>&lt;decimal&gt;</code></Link> to cast a value to a decimal.</p>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "duration"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>type::duration</h3>
+		<p>The <code>type::duration</code> function converts a value into a duration.</p>
+		<Code @name="docs-functions-type-duration.sql" text="API Definition">
+			type::duration(value) -> duration
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-type-duration-input.sql">
+				SELECT * FROM type::duration("4h");
+			</Code>
+			<Code @name="docs-functions-type-duration-result.txt">
+				"4h"
+			</Code>
+		</codes>
+		<p>This is the equivalent of using <Link @link="docs.datamodel.casting"><code>&lt;duration&gt;</code></Link> to cast a value to a duration.</p>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "float"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>type::float</h3>
+		<p>The <code>type::float</code> function converts a value into a float.</p>
+		<Code @name="docs-functions-type-float.sql" text="API Definition">
+			type::float(value) -> float
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-type-float-input.sql">
+				SELECT * FROM type::float("12345");
+			</Code>
+			<Code @name="docs-functions-type-float-result.txt">
+				12345.0
+			</Code>
+		</codes>
+		<p>This is the equivalent of using <Link @link="docs.datamodel.casting"><code>&lt;float&gt;</code></Link> to cast a value to a float.</p>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "int"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>type::int</h3>
+		<p>The <code>type::int</code> function converts a value into an integer.</p>
+		<Code @name="docs-functions-type-int.sql" text="API Definition">
+			type::int(value) -> int
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-type-int-input.sql">
+				SELECT * FROM type::int("12345");
+			</Code>
+			<Code @name="docs-functions-type-int-result.txt">
+				12345
+			</Code>
+		</codes>
+		<p>This is the equivalent of using <Link @link="docs.datamodel.casting"><code>&lt;int&gt;</code></Link> to cast a value to a int.</p>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "number"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>type::number</h3>
+		<p>The <code>type::number</code> function converts a value into a number.</p>
+		<Code @name="docs-functions-type-number.sql" text="API Definition">
+			type::number(value) -> number
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-type-number-input.sql">
+				SELECT * FROM type::number("12345");
+			</Code>
+			<Code @name="docs-functions-type-number-result.txt">
+				"12345"
+			</Code>
+		</codes>
+		<p>This is the equivalent of using <Link @link="docs.datamodel.casting"><code>&lt;number&gt;</code></Link> to cast a value to a number.</p>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "point"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>type::point</h3>
+		<p>The <code>type::point</code> function converts a value into a geometry point.</p>
+		<Code @name="docs-functions-type-point-1.sql" text="API Definition">
+			type::point(value) -> point
+		</Code>
+		<p>This function also accepts two arguments (longitude and latitude values).</p>
+		<Code @name="docs-functions-type-point-2.sql" text="API Definition">
+			type::point(number, number) -> point
+		</Code>
+		<p>The following examples show this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-type-point-input-2.sql">
+				SELECT * FROM type::point(51.509865, -0.118092);
+			</Code>
+			<Code @name="docs-functions-type-point-result-2.txt">
+				{
+					"type": "Point",
+					"coordinates": [
+						-0.10231019499999999,
+						51.49576478
+					]
+				}
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-functions-type-point-input-1.sql">
+				SELECT * FROM type::point([51.509865, -0.118092]);
+			</Code>
+			<Code @name="docs-functions-type-point-result-1.txt">
+				{
+					"type": "Point",
+					"coordinates": [
+						-0.10231019499999999,
+						51.49576478
+					]
+				}
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "regex"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>type::regex</h3>
+		<p>The <code>type::regex</code> function converts a value into a regex.</p>
+		<Code @name="docs-functions-array-regex.sql" text="API Definition">
+			type::regex(value) -> regex
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-type-regex-input.sql">
+				SELECT * FROM type::regex("/[A-Z]{3}/");
+			</Code>
+			<Code @name="docs-functions-type-regex-result.txt">
+				FIXME
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "string"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>type::string</h3>
+		<p>The <code>type::string</code> function converts a value into a string.</p>
+		<Code @name="docs-functions-array-string.sql" text="API Definition">
+			type::string(value) -> string
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-type-string-input.sql">
+				SELECT * FROM type::string(12345);
+			</Code>
+			<Code @name="docs-functions-type-string-result.txt">
+				"12345"
+			</Code>
+		</codes>
+		<p>This is the equivalent of using <Link @link="docs.datamodel.casting"><code>&lt;string&gt;</code></Link> to cast a value to a string.</p>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "table"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>type::table</h3>
+		<p>The <code>type::table</code> function converts a value into a table definition.</p>
+		<Code @name="docs-functions-array-table.sql" text="API Definition">
+			type::table(value) -> table
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-type-table-input.sql">
+				LET $table = "person";
+				SELECT * FROM type::table($table);
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "thing"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>type::thing</h3>
+		<p>The <code>type::thing</code> function converts a value into a record pointer definition.</p>
+		<Code @name="docs-functions-array-thing.sql" text="API Definition">
+			type::thing(value, value) -> thing
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-type-thing-input.sql">
+				LET $tb = "person";
+				LET $id = "tobie";
+				SELECT * FROM type::thing($tb, $id);
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap large />

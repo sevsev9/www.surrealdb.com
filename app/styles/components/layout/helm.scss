@@ -2,6 +2,37 @@ layout-helm {
 
 	display:grid;
 
+	&[docs] {
+
+		grid-template-columns:
+			[sidebar-l] 250px
+			[content] auto
+		;
+
+		@include media(max-width-1024) {
+			justify-content:center;
+			grid-template-columns:[content] 100%;
+		}
+
+		menu {
+			width:225px;
+		}
+
+		main section:before {
+			left:calc(-250px - 10vw);
+			@include media(min-width-1587) {
+				left:calc( -250px - ( (100vw - 1270px) / 2) );
+			}
+			@include media(max-width-1200) {
+				left:calc( -250px - ( (100vw - 930px) / 2) );
+			}
+			@include media(max-width-1024) {
+				left:calc( 0vw - (100vw - 85vw) / 2 );
+			}
+		}
+
+	}
+
 	&[blog] {
 
 		grid-template-columns:
@@ -133,17 +164,20 @@ layout-helm {
 
 		top:50px;
 		display:flex;
+		overflow:auto;
 		position:-webkit-sticky;
 		position:sticky;
 		height:min-content;
+		margin:15px 0 100px 0;
 		grid-column:sidebar-l;
 		flex-direction:column;
 		align-items:flex-start;
 		justify-content:flex-start;
-		padding:15px 0 100px 0;
+		max-height:calc(100vh - 50px);
 
 		@include media(max-width-1301) {
 			top:100px;
+			max-height:calc(100vh - 100px);
 		}
 
 		@include media(max-width-1024) {

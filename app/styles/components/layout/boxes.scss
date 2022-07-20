@@ -104,6 +104,14 @@ layout-boxes {
 				}
 			}
 
+			&[faded] {
+				opacity:0.3;
+			}
+
+			&[mini] div {
+				padding:20px 40px;
+			}
+
 			&[tick] div h3 {
 				&:before {
 					float:left;

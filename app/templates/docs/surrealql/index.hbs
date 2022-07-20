@@ -1,0 +1,41 @@
+<Layout::Text text-l text-f>
+    <h2><img inline src="/static/img/surrealql-text.svg" alt="SurrealQL" /></h2>
+    <p>EdgeDB comes with a rigorously defined type system consisting of scalar types, collection types (like arrays and tuples), and object types. There is also a library of built-in functions and operators for working with each datatype.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Boxes cols-3-to-2-to-1>
+	<LinkTo @route="docs.surrealql.statements">
+		<Layout::Boxes::Item mini hover>
+			<h4>Statements</h4>
+			<p>Datetimes and durations can be used to store and manipulate dates and times</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.operators">
+		<Layout::Boxes::Item mini hover>
+			<h4>Operators</h4>
+			<p>Understand the basic concepts of data types in SurrealDB</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.parameters">
+		<Layout::Boxes::Item mini hover>
+			<h4>Parameters</h4>
+			<p>Boolean values, strings, numbers, UUIDs, arrays, objects, and durations</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	{{!-- <LinkTo @route="docs.surrealql.expressions">
+		<Layout::Boxes::Item mini hover>
+			<h4>Expressions</h4>
+			<p>Datetimes and durations can be used to store and manipulate dates and times</p>
+		</Layout::Boxes::Item>
+	</LinkTo> --}}
+	<LinkTo @route="docs.surrealql.transactions">
+		<Layout::Boxes::Item mini hover>
+			<h4>Transactions</h4>
+			<p>Geolocation points and GeoJSON values can be used to store geometry data</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+</Layout::Boxes>
+
+<Layout::Gap large />

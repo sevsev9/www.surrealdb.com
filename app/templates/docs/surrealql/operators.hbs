@@ -1,0 +1,1168 @@
+<Layout::Text text-l text-f>
+	<h5><i class="fas fa-arrow-left"></i> &nbsp; <Link @link="docs.surrealql.index">Back to overview</Link></h5>
+	<h2>Operators</h2>
+	<p>SurrealDB offers a large number of operators for value comparison.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Table filled>
+	<table>
+		<thead>
+			<tr>
+				<th>Operator</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<a href="#equal">
+						<code>=</code>
+					</a>
+				</td>
+				<td>Check whether two values are equal</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#notequal">
+						<code>!=</code>
+					</a>
+				</td>
+				<td>Check whether two values are not equal</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#exact">
+						<code>==</code>
+					</a>
+				</td>
+				<td>Check whether two values are exactly equal</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#anyequal">
+						<code>?=</code>
+					</a>
+				</td>
+				<td>Check whether any value in a set is equal to a value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#allequal">
+						<code>*=</code>
+					</a>
+				</td>
+				<td>Check whether all values in a set are equal to a value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#match">
+						<code>~</code>
+					</a>
+				</td>
+				<td>Compare two values for equality using fuzzy matching</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#notmatch">
+						<code>!~</code>
+					</a>
+				</td>
+				<td>Compare two values for inequality using fuzzy matching</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#anymatch">
+						<code>?~</code>
+					</a>
+				</td>
+				<td>Check whether any value in a set is equal to a value using fuzzy matching</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#allmatch">
+						<code>*~</code>
+					</a>
+				</td>
+				<td>Check whether all values in a set are equal to a value using fuzzy matching</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#lessthan">
+						<code>&lt;</code>
+					</a>
+				</td>
+				<td>Check whether a value is less than another value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#lessthanorequal">
+						<code>&lt;=</code>
+					</a>
+				</td>
+				<td>Check whether a value is less than or equal to another value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#greaterthan">
+						<code>&gt;</code>
+					</a>
+				</td>
+				<td>Check whether a value is greater than another value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#greaterthanorequal">
+						<code>&gt;=</code>
+					</a>
+				</td>
+				<td>Check whether a value is greater than or equal to another value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#add">
+						<code>+</code>
+					</a>
+				</td>
+				<td>Add two values together</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#sub">
+						<code>-</code>
+					</a>
+				</td>
+				<td>Subtract a value from another value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#mul">
+						<code>*</code>
+					</a>
+				</td>
+				<td>Multiply two values together</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#div">
+						<code>/</code>
+					</a>
+				</td>
+				<td>Divide a value by another value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#amp">
+						<code>&amp;&amp;</code>
+					</a>
+				</td>
+				<td>Checks whether two values are truthy</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#line">
+						<code>||</code>
+					</a>
+				</td>
+				<td>Checks whether either of two values is truthy</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#and">
+						<code>AND</code>
+					</a>
+				</td>
+				<td>Checks whether two values are truthy</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#or">
+						<code>OR</code>
+					</a>
+				</td>
+				<td>Checks whether either of two values is truthy</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is">
+						<code>IS</code>
+					</a>
+				</td>
+				<td>Check whether two values are equal</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-not">
+						<code>IS NOT</code>
+					</a>
+				</td>
+				<td>Check whether two values are not equal</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#contains">
+						<code>CONTAINS</code>
+					</a>
+					or
+					<a href="#contains">
+						<code>∋</code>
+					</a>
+				</td>
+				<td>Checks whether a value contains another value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#contains-not">
+						<code>CONTAINSNOT</code>
+					</a>
+					or
+					<a href="#contains-not">
+						<code>∌</code>
+					</a>
+				</td>
+				<td>Checks whether a value does not contain another value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#contains-all">
+						<code>CONTAINSALL</code>
+					</a>
+					or
+					<a href="#contains-all">
+						<code>⊇</code>
+					</a>
+				</td>
+				<td>Checks whether a value contains all other values</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#contains-any">
+						<code>CONTAINSANY</code>
+					</a>
+					or
+					<a href="#contains-any">
+						<code>⊃</code>
+					</a>
+				</td>
+				<td>Checks whether a value contains any other value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#contains-none">
+						<code>CONTAINSNONE</code>
+					</a>
+					or
+					<a href="#contains-none">
+						<code>⊅</code>
+					</a>
+				</td>
+				<td>Checks whether a value contains none of the following values</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#inside">
+						<code>INSIDE</code>
+					</a>
+					or
+					<a href="#inside">
+						<code>∈</code>
+					</a>
+				</td>
+				<td>Checks whether a value is contained within another value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#not-inside">
+						<code>NOTINSIDE</code>
+					</a>
+					or
+					<a href="#not-inside">
+						<code>∉</code>
+					</a>
+				</td>
+				<td>Checks whether a value is not contained within another value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#all-inside">
+						<code>ALLINSIDE</code>
+					</a>
+					or
+					<a href="#all-inside">
+						<code>⊆</code>
+					</a>
+				</td>
+				<td>Checks whether all values are contained within other values</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#any-inside">
+						<code>ANYINSIDE</code>
+					</a>
+					or
+					<a href="#any-inside">
+						<code>⊂</code>
+					</a>
+				</td>
+				<td>Checks whether any value is contained within other values</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#none-inside">
+						<code>NONEINSIDE</code>
+					</a>
+					or
+					<a href="#none-inside">
+						<code>⊄</code>
+					</a>
+				</td>
+				<td>Checks whether no value is contained within other values</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#outside">
+						<code>OUTSIDE</code>
+					</a>
+				</td>
+				<td>Checks whether a geometry type is outside of another geometry type</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#intersects">
+						<code>INTERSECTS</code>
+					</a>
+				</td>
+				<td>Checks whether a geometry type intersects another geometry type</td>
+			</tr>
+		</tbody>
+	</table>
+</Layout::Table>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "equal"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>=</code></h3>
+		<p>Check whether two values are equal.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-equal-input-1.sql">
+				SELECT * FROM true = "true";
+			</Code>
+			<Code @name="docs-surrealql-operators-equal-result-1.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-equal-input-2.sql">
+				SELECT * FROM 10 = "10";
+			</Code>
+			<Code @name="docs-surrealql-operators-equal-result-2.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-equal-input-3.sql">
+				SELECT * FROM 10 = 10.00;
+			</Code>
+			<Code @name="docs-surrealql-operators-equal-result-3.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-equal-input-4.sql">
+				SELECT * FROM 10 = "10.3";
+			</Code>
+			<Code @name="docs-surrealql-operators-equal-result-4.txt">
+				false
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-equal-input-5.sql">
+				SELECT * FROM [1, 2, 3] = [1, 2, 3];
+			</Code>
+			<Code @name="docs-surrealql-operators-equal-result-5.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-equal-input-6.sql">
+				SELECT * FROM [1, 2, 3] = [1, 2, 3, 4];
+			</Code>
+			<Code @name="docs-surrealql-operators-equal-result-6.txt">
+				false
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-equal-input-7.sql">
+				SELECT * FROM { this: "object" } = { this: "object" };
+			</Code>
+			<Code @name="docs-surrealql-operators-equal-result-7.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-equal-input-8.sql">
+				SELECT * FROM { this: "object" } = { another: "object" };
+			</Code>
+			<Code @name="docs-surrealql-operators-equal-result-8.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "notequal"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>!=</code></h3>
+		<p>Check whether two values are not equal.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-notequal-input-1.sql">
+				SELECT * FROM 10 != "15";
+			</Code>
+			<Code @name="docs-surrealql-operators-notequal-result-1.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-notequal-input-2.sql">
+				SELECT * FROM 10 != "test";
+			</Code>
+			<Code @name="docs-surrealql-operators-notequal-result-2.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-notequal-input-3.sql">
+				SELECT * FROM [1, 2, 3] != [3, 4, 5];
+			</Code>
+			<Code @name="docs-surrealql-operators-notequal-result-3.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "exact"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>==</code></h3>
+		<p>Check whether two values are exact. This operator also checks that each value has the same type.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-exact-input-1.sql">
+				SELECT * FROM 10 == 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-exact-result-1.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-exact-input-2.sql">
+				SELECT * FROM 10 == "10";
+			</Code>
+			<Code @name="docs-surrealql-operators-exact-result-2.txt">
+				false
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-exact-input-3.sql">
+				SELECT * FROM true == "true";
+			</Code>
+			<Code @name="docs-surrealql-operators-exact-result-3.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "anyequal"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>?=</code></h3>
+		<p>Check whether any value in an array equals another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-anyequal-input.sql">
+				SELECT * FROM [10, 15, 20] ?= 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-anyequal-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "allequal"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>*=</code></h3>
+		<p>Check whether all values in an array equals another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-allequal-input.sql">
+				SELECT * FROM [10, 10, 10] *= 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-allequal-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "lessthan"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>&lt;</code></h3>
+		<p>Check whether a value is less than another value.</p>
+		<codes vertical>
+			<Code @name="docs/surrealql/operators/lessthan.sql" />
+			<Code @name="docs-surrealql-operators-lessthan-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "lessthanorequal"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>&lt;=</code></h3>
+		<p>Check whether a value is less than or equal to another value.</p>
+		<codes vertical>
+			<Code @name="docs/surrealql/operators/lessthanorequal.sql" />
+			<Code @name="docs-surrealql-operators-lessthanorequal-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "greaterthan"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>&gt;</code></h3>
+		<p>Check whether a value is less than another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-greaterthan-input.sql">
+				SELECT * FROM 15 > 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-greaterthan-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "greaterthanorequal"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>&gt;=</code></h3>
+		<p>Check whether a value is less than or equal to another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-greaterthanorequal-input.sql">
+				SELECT * FROM 15 >= 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-greaterthanorequal-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "add"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>+</code></h3>
+		<p>Adds a value to another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-add-input-1.sql">
+				SELECT * FROM 10 + 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-add-result-1.txt">
+				20
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-add-input-2.sql">
+				SELECT * FROM "test" + " " + "this";
+			</Code>
+			<Code @name="docs-surrealql-operators-add-result-2.txt">
+				"test this"
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-add-input-3.sql">
+				SELECT * FROM 13h + 30m;
+			</Code>
+			<Code @name="docs-surrealql-operators-add-result-3.txt">
+				"13h30m"
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-add-input-4.sql">
+				SELECT * FROM "2021-11-01" + 1w;
+			</Code>
+			<Code @name="docs-surrealql-operators-add-result-4.txt">
+				"2021-11-08T00:00:00Z"
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "sub"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>-</code></h3>
+		<p>Subtracts a value from another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-sub-input-1.sql">
+				SELECT * FROM 20 - 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-sub-result-1.txt">
+				10
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-sub-input-2.sql">
+				SELECT * FROM 2m - 1m;
+			</Code>
+			<Code @name="docs-surrealql-operators-sub-result-2.txt">
+				"60s"
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-sub-input-3.sql">
+				SELECT * FROM "2021-11-01" - 1w;
+			</Code>
+			<Code @name="docs-surrealql-operators-sub-result-3.txt">
+				"2021-10-25T00:00:00Z"
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "mul"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>*</code></h3>
+		<p>Multiplies a value by another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-mul-input.sql">
+				SELECT * FROM 20 * 2;
+			</Code>
+			<Code @name="docs-surrealql-operators-mul-result.txt">
+				40
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "div"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>/</code></h3>
+		<p>Divides a value with another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-div-input-1.sql">
+				SELECT * FROM 20 / 2;
+			</Code>
+			<Code @name="docs-surrealql-operators-div-result-1.txt">
+				10
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "amp"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>&&</code></h3>
+		<p>Checks whether two values are truthy.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-amp-input.sql">
+				SELECT * FROM 10 && 20 && 30;
+			</Code>
+			<Code @name="docs-surrealql-operators-amp-result.txt">
+				10
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "line"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>||</code></h3>
+		<p>Checks whether either of two values are truthy.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-line-input.sql">
+				SELECT * FROM 0 || false || 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-line-result.txt">
+				10
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "and"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>AND</code></h3>
+		<p>Checks whether two values are truthy.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-and-input.sql">
+				SELECT * FROM 10 AND 20 AND 30;
+			</Code>
+			<Code @name="docs-surrealql-operators-and-result.txt">
+				10
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "or"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>OR</code></h3>
+		<p>Checks whether either of two values are truthy.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-or-input.sql">
+				SELECT * FROM 0 OR false OR 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-or-result.txt">
+				10
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>IS</code></h3>
+		<p>Check whether two values are equal.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-is-input.sql">
+				SELECT * FROM 10 IS "10";
+			</Code>
+			<Code @name="docs-surrealql-operators-is-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "isnot"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>IS NOT</code></h3>
+		<p>Check whether two values are not equal.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-isnot-input.sql">
+				SELECT * FROM 10 IS NOT "15";
+			</Code>
+			<Code @name="docs-surrealql-operators-isnot-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "contains"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>CONTAINS</code> or <code>∋</code></h3>
+		<p>Check whether a value contains another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-contains-input-1.sql">
+				SELECT * FROM [10, 20, 30] CONTAINS 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-contains-result-1.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-contains-input-2.sql">
+				SELECT * FROM "this is some text" CONTAINS "text";
+			</Code>
+			<Code @name="docs-surrealql-operators-contains-result-2.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-contains-input-3.sql">
+				SELECT * FROM {
+					type: "Polygon",
+					coordinates: [[
+						[-0.38314819, 51.37692386], [0.1785278, 51.37692386],
+						[0.1785278, 51.61460570], [-0.38314819, 51.61460570],
+						[-0.38314819, 51.37692386]
+					]]
+				} CONTAINS (-0.118092, 51.509865);
+			</Code>
+			<Code @name="docs-surrealql-operators-contains-result-3.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "contains-not"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>CONTAINSNOT</code> or <code>∌</code></h3>
+		<p>Check whether a value does not contain another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-containsnot-input-1.sql">
+				SELECT * FROM [10, 20, 30] CONTAINSNOT 15;
+			</Code>
+			<Code @name="docs-surrealql-operators-containsnot-result-1.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-containsnot-input-2.sql">
+				SELECT * FROM "this is some text" CONTAINSNOT "other";
+			</Code>
+			<Code @name="docs-surrealql-operators-containsnot-result-2.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-containsnot-input-3.sql">
+				SELECT * FROM {
+					type: "Polygon",
+					coordinates: [[
+						[-0.38314819, 51.37692386], [0.1785278, 51.37692386],
+						[0.1785278, 51.61460570], [-0.38314819, 51.61460570],
+						[-0.38314819, 51.37692386]
+					]]
+				} CONTAINSNOT (-0.518092, 53.509865);
+			</Code>
+			<Code @name="docs-surrealql-operators-containsnot-result-3.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "contains-all"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>CONTAINSALL</code> or <code>⊇</code></h3>
+		<p>Check whether a value contains all of multiple values.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-containsall-input.sql">
+				SELECT * FROM [10, 20, 30] CONTAINSALL [10, 20, 10];
+			</Code>
+			<Code @name="docs-surrealql-operators-containsall-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "contains-any"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>CONTAINSANY</code> or <code>⊃</code></h3>
+		<p>Check whether a value contains any of multiple values.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-containsany-input.sql">
+				SELECT * FROM [10, 20, 30] CONTAINSANY [10, 15, 25];
+			</Code>
+			<Code @name="docs-surrealql-operators-containsany-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "contains-none"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>CONTAINSNONE</code> or <code>⊅</code></h3>
+		<p>Check whether a value does not contain any of multiple values.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-containsnone-input.sql">
+				SELECT * FROM [10, 20, 30] CONTAINSNONE [15, 25, 35];
+			</Code>
+			<Code @name="docs-surrealql-operators-containsnone-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "inside"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>INSIDE</code> or <code>∈</code></h3>
+		<p>Check whether a value is contained within another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-inside-input-1.sql">
+				SELECT * FROM 10 INSIDE [10, 20, 30];
+			</Code>
+			<Code @name="docs-surrealql-operators-inside-result-1.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-inside-input-2.sql">
+				SELECT * FROM "text" INSIDE "this is some text";
+			</Code>
+			<Code @name="docs-surrealql-operators-inside-result-2.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-inside-input-3.sql">
+				SELECT * FROM (-0.118092, 51.509865) INSIDE {
+					type: "Polygon",
+					coordinates: [[
+						[-0.38314819, 51.37692386], [0.1785278, 51.37692386],
+						[0.1785278, 51.61460570], [-0.38314819, 51.61460570],
+						[-0.38314819, 51.37692386]
+					]]
+				};
+			</Code>
+			<Code @name="docs-surrealql-operators-inside-result-3.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "not-inside"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>NOTINSIDE</code> or <code>∉</code></h3>
+		<p>Check whether a value is not contained within another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-notinside-input-1.sql">
+				SELECT * FROM 15 NOTINSIDE [10, 20, 30];
+			</Code>
+			<Code @name="docs-surrealql-operators-notinside-result-1.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-notinside-input-2.sql">
+				SELECT * FROM "other" NOTINSIDE "this is some text";
+			</Code>
+			<Code @name="docs-surrealql-operators-notinside-result-2.txt">
+				true
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-notinside-input-3.sql">
+				SELECT * FROM (-0.518092, 53.509865) NOTINSIDE {
+					type: "Polygon",
+					coordinates: [[
+						[-0.38314819, 51.37692386], [0.1785278, 51.37692386],
+						[0.1785278, 51.61460570], [-0.38314819, 51.61460570],
+						[-0.38314819, 51.37692386]
+					]]
+				};
+			</Code>
+			<Code @name="docs-surrealql-operators-notinside-result-3.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "all-inside"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>ALLINSIDE</code> or <code>⊆</code></h3>
+		<p>Check whether all of multiple values are contained within another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-allinside-input.sql">
+				SELECT * FROM [10, 20, 10] ALLINSIDE [10, 20, 30];
+			</Code>
+			<Code @name="docs-surrealql-operators-allinside-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "any-inside"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>ANYINSIDE</code> or <code>⊂</code></h3>
+		<p>Check whether any of multiple values are contained within another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-anyinside-input.sql">
+				SELECT * FROM [10, 15, 25] ANYINSIDE [10, 20, 30];
+			</Code>
+			<Code @name="docs-surrealql-operators-anyinside-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "none-inside"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>NONEINSIDE</code> or <code>⊄</code></h3>
+		<p>Check whether none of multiple values are contained within another value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-noneinside-input.sql">
+				SELECT * FROM [15, 25, 35] NONEINSIDE [10, 20, 30];
+			</Code>
+			<Code @name="docs-surrealql-operators-noneinside-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "outside"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>OUTSIDE</code></h3>
+		<p>Check whether a geometry value is outside another geometry value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-outside-input.sql">
+				SELECT * FROM (-0.518092, 53.509865) OUTSIDE {
+					type: "Polygon",
+					coordinates: [[
+						[-0.38314819, 51.37692386], [0.1785278, 51.37692386],
+						[0.1785278, 51.61460570], [-0.38314819, 51.61460570],
+						[-0.38314819, 51.37692386]
+					]]
+				};
+			</Code>
+			<Code @name="docs-surrealql-operators-outside-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "intersects"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>INTERSECTS</code></h3>
+		<p>Check whether a geometry value intersects annother geometry value.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-intersects-input.sql">
+				SELECT * FROM {
+					type: "Polygon",
+					coordinates: [[
+						[-0.38314819, 51.37692386], [0.1785278, 51.37692386],
+						[0.1785278, 51.61460570], [-0.38314819, 51.61460570],
+						[-0.38314819, 51.37692386]
+					]]
+				} INTERSECTS {
+					type: "Polygon",
+					coordinates: [[
+						[-0.11123657, 51.53160074], [-0.16925811, 51.51921169],
+						[-0.11466979, 51.48223813], [-0.07381439, 51.51322956],
+						[-0.11123657, 51.53160074]
+					]]
+				};
+			</Code>
+			<Code @name="docs-surrealql-operators-intersects-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />

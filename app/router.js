@@ -11,7 +11,6 @@ Router.map(function() {
 	this.route('about');
 	this.route('community');
 	this.route('discord');
-	this.route('docs');
 	this.route('features');
 	this.route('install');
 	this.route('license');
@@ -49,6 +48,82 @@ Router.map(function() {
 		this.route('analytics');
 		this.route('collaborate');
 		this.route('permissions');
+	});
+
+	this.route('docs', function() {
+		this.route('start', function() {
+			this.route('quickstart');
+			this.route('installation');
+			this.route('terminology');
+			this.route('starting-surrealdb');
+			this.route('querying-surrealdb');
+			this.route('securing-surrealdb');
+		});
+		this.route('datamodel', function() {
+			this.route('simple');
+			this.route('datetimes');
+			this.route('geometries');
+			this.route('records');
+			this.route('futures');
+			this.route('casting');
+		});
+		this.route('surrealql', function() {
+			this.route('statements');
+			this.route('operators');
+			this.route('parameters');
+			this.route('expressions');
+			this.route('transactions');
+		});
+		this.route('functions', function() {
+			this.route('array');
+			this.route('count');
+			this.route('crypto');
+			this.route('geo');
+			this.route('http');
+			this.route('validation');
+			this.route('math');
+			this.route('parse');
+			this.route('rand');
+			this.route('string');
+			this.route('time');
+			this.route('type');
+			this.route('script');
+		});
+		this.route('integration', function() {
+			this.route('overview');
+			this.route('http');
+			this.route('websockets');
+			this.route('libraries', function() {
+				this.route('angularjs');
+				this.route('apollo');
+				this.route('c');
+				this.route('deno');
+				this.route('emberjs');
+				this.route('golang');
+				this.route('java');
+				this.route('javascript');
+				this.route('nodejs');
+				this.route('php');
+				this.route('python');
+				this.route('r');
+				this.route('reactjs');
+				this.route('ruby');
+				this.route('rust');
+				this.route('swift');
+				this.route('vuejs');
+				this.route('webassembly');
+			});
+		});
+		this.route('guides', function() {
+			this.route('schemafull-or-schemaless');
+			this.route('relations-and-graph');
+			this.route('realtime-subscriptions');
+			this.route('geospatial-functionality');
+			this.route('data-triggers');
+			this.route('computed-views');
+			this.route('authenticating-users');
+			this.route('deploying-surrealdb');
+		});
 	});
 
 	this.route('404', {

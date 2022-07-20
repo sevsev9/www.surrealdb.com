@@ -1,11 +1,17 @@
 [curved] { border-radius:12px; }
 
+[fg-ffffff] { color:#ffffff; }
 [fg-ff00a0] { color:#ff00a0; }
 [fg-9600ff] { color:#9600ff; }
-[fg-ffffff] { color:#ffffff; }
 [fg-171a21] { color:#171a21; }
 [fg-222632] { color:#222632; }
 [fg-aeb8ca] { color:#aeb8ca; }
+
+[fg-text] { color:var(--text-color); }
+[fg-back] { color:var(--back-color); }
+[fg-dark] { color:var(--dark-color); }
+[fg-faint] { color:var(--faint-color); }
+[fg-hover] { color:var(--hover-color); }
 
 [bg-ff00a0] { background-color:#ff00a0; }
 [bg-9600ff] { background-color:#9600ff; }

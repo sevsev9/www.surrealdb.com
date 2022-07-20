@@ -11,7 +11,7 @@
 	{{#if this.posts.length}}
 
 		<Layout::Text>
-			<h1><img src="/static/img/text.svg" alt="SurrealDB" /> blog</h1>
+			<h1><img inline src="/static/img/text.svg" alt="SurrealDB" /> blog</h1>
 		</Layout::Text>
 
 		<Layout::Gap small />
@@ -54,7 +54,7 @@
 	{{else}}
 
 		<Layout::Text>
-			<h1><img src="/static/img/text.svg" alt="SurrealDB" /> blog</h1>
+			<h1><img inline src="/static/img/text.svg" alt="SurrealDB" /> blog</h1>
 			<p>There aren't any posts here yet. To stay up-to-date with new blog articles, future product releases, and documentation updates, subscribe to our email newsletter below, follow us on <Link @link={{url "twitter"}}>Twitter</Link>, or follow us on <Link @link={{url "dev"}}>Dev</Link>.</p>
 			<Signup bordered thicker>Join the SurrealDB newsletter</Signup>
 		</Layout::Text>

@@ -1,0 +1,342 @@
+<Layout::Text text-l text-f>
+	<h5><i class="fas fa-arrow-left"></i> &nbsp; <Link @link="docs.functions.index">Back to overview</Link></h5>
+    <h2>Parse functions</h2>
+	<p>These functions can be used when parsing email addresses and URL web addresses.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Table filled>
+	<table>
+		<thead>
+			<tr>
+				<th w-40>Function</th>
+				<th w-60>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<a href="#parse-email-domain">
+						<code>parse::email::domain()</code>
+					</a>
+				</td>
+				<td>Parses and returns an email domain from an email address</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#parse-email-user">
+						<code>parse::email::user()</code>
+					</a>
+				</td>
+				<td>Parses and returns an email username from an email address</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#parse-url-domain">
+						<code>parse::url::domain()</code>
+					</a>
+				</td>
+				<td>Parses and returns the domain from a URL</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#parse-url-fragment">
+						<code>parse::url::fragment()</code>
+					</a>
+				</td>
+				<td>Parses and returns the fragment from a URL</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#parse-url-host">
+						<code>parse::url::host()</code>
+					</a>
+				</td>
+				<td>Parses and returns the hostname from a URL</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#parse-url-path">
+						<code>parse::url::path()</code>
+					</a>
+				</td>
+				<td>Parses and returns the path from a URL</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#parse-url-port">
+						<code>parse::url::port()</code>
+					</a>
+				</td>
+				<td>Parses and returns the port number from a URL</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#parse-url-query">
+						<code>parse::url::query()</code>
+					</a>
+				</td>
+				<td>Parses and returns the query string from a URL</td>
+			</tr>
+		</tbody>
+	</table>
+</Layout::Table>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "parse-email-domain"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>parse::email::domain</h3>
+		<p>The <code>parse::email::domain</code> function parses and returns and email domain from a valid email address.</p>
+		<Code @name="docs-functions-parse-email-domain.sql" text="API Definition">
+			parse::email::domain(string) -> value
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-parse-email-domain-input.sql">
+				SELECT * FROM parse::email::domain("info@surrealdb.com");
+			</Code>
+			<Code @name="docs-functions-parse-email-domain-result.txt">
+				"surrealdb.com"
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-functions-parse-email-domain-error-input.sql">
+				SELECT * FROM parse::email::domain(12345);
+			</Code>
+			<Code @name="docs-functions-parse-email-domain-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "parse-email-user"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>parse::email::user</h3>
+		<p>The <code>parse::email::user</code> function parses and returns and email username from a valid email address.</p>
+		<Code @name="docs-functions-parse-email-user.sql" text="API Definition">
+			parse::email::user(string) -> value
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-parse-email-user-input.sql">
+				SELECT * FROM parse::email::user("info@surrealdb.com");
+			</Code>
+			<Code @name="docs-functions-parse-email-user-result.txt">
+				"info"
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-functions-parse-email-user-error-input.sql">
+				SELECT * FROM parse::email::user(12345);
+			</Code>
+			<Code @name="docs-functions-parse-email-user-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "parse-url-domain"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>parse::url::domain</h3>
+		<p>The <code>parse::url::domain</code> function parses and returns the domain from a valid URL.</p>
+		<Code @name="docs-functions-parse-url-domain.sql" text="API Definition">
+			parse::url::domain(string) -> value
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-parse-url-domain-input.sql">
+				SELECT * FROM parse::url::domain("https://surrealdb.com:80/features?some=option#fragment");
+			</Code>
+			<Code @name="docs-functions-parse-url-domain-result.txt">
+				"surrealdb.com"
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-functions-parse-url-domain-error-input.sql">
+				SELECT * FROM parse::url::domain(12345);
+			</Code>
+			<Code @name="docs-functions-parse-url-domain-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "parse-url-fragment"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>parse::url::fragment</h3>
+		<p>The <code>parse::url::fragment</code> function parses and returns the fragment from a valid URL.</p>
+		<Code @name="docs-functions-parse-url-fragment.sql" text="API Definition">
+			parse::url::fragment(string) -> value
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-parse-url-fragment-input.sql">
+				SELECT * FROM parse::url::fragment("https://surrealdb.com:80/features?some=option#fragment");
+			</Code>
+			<Code @name="docs-functions-parse-url-fragment-result.txt">
+				"fragment"
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-functions-parse-url-fragment-error-input.sql">
+				SELECT * FROM parse::url::fragment(12345);
+			</Code>
+			<Code @name="docs-functions-parse-url-fragment-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "parse-url-host"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>parse::url::host</h3>
+		<p>The <code>parse::url::host</code> function parses and returns the hostname from a valid URL.</p>
+		<Code @name="docs-functions-parse-url-host.sql" text="API Definition">
+			parse::url::host(string) -> value
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-parse-url-host-input.sql">
+				SELECT * FROM parse::url::host("https://surrealdb.com:80/features?some=option#fragment");
+			</Code>
+			<Code @name="docs-functions-parse-url-host-result.txt">
+				"surrealdb.com"
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-functions-parse-url-host-error-input.sql">
+				SELECT * FROM parse::url::host(12345);
+			</Code>
+			<Code @name="docs-functions-parse-url-host-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "parse-url-path"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>parse::url::path</h3>
+		<p>The <code>parse::url::path</code> function parses and returns the path from a valid URL.</p>
+		<Code @name="docs-functions-parse-url-path.sql" text="API Definition">
+			parse::url::path(string) -> value
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-parse-url-path-input.sql">
+				SELECT * FROM parse::url::path("https://surrealdb.com:80/features?some=option#fragment");
+			</Code>
+			<Code @name="docs-functions-parse-url-path-result.txt">
+				"/features"
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-functions-parse-url-path-error-input.sql">
+				SELECT * FROM parse::url::path(12345);
+			</Code>
+			<Code @name="docs-functions-parse-url-path-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "parse-url-port"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>parse::url::port</h3>
+		<p>The <code>parse::url::port</code> function parses and returns the port from a valid URL.</p>
+		<Code @name="docs-functions-parse-url-port.sql" text="API Definition">
+			parse::url::port(string) -> value
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-parse-url-port-input.sql">
+				SELECT * FROM parse::url::port("https://surrealdb.com:80/features?some=option#fragment");
+			</Code>
+			<Code @name="docs-functions-parse-url-port-result.txt">
+				80
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-functions-parse-url-port-error-input.sql">
+				SELECT * FROM parse::url::port(12345);
+			</Code>
+			<Code @name="docs-functions-parse-url-port-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "parse-url-query"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>parse::url::query</h3>
+		<p>The <code>parse::url::query</code> function parses and returns the query from a valid URL.</p>
+		<Code @name="docs-functions-parse-url-query.sql" text="API Definition">
+			parse::url::query(string) -> value
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-functions-parse-url-query-input.sql">
+				SELECT * FROM parse::url::query("https://surrealdb.com:80/features?some=option#fragment");
+			</Code>
+			<Code @name="docs-functions-parse-url-query-result.txt">
+				"some=option"
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-functions-parse-url-query-error-input.sql">
+				SELECT * FROM parse::url::query(12345);
+			</Code>
+			<Code @name="docs-functions-parse-url-query-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap large />

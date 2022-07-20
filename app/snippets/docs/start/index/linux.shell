@@ -1,0 +1,5 @@
+user@localhost % surreal start --log debug memory
+[2022-01-10T16:29:59Z] INFO surrealdb::kvs Starting kvs store in memory
+[2022-01-10T16:29:59Z] INFO surrealdb::kvs Started kvs store in memory
+[2022-01-10T16:30:03Z] INFO surrealdb::net Starting web server on 0.0.0.0:8000
+[2022-01-10T16:30:03Z] INFO surrealdb::net Started web server on 0.0.0.0:8000

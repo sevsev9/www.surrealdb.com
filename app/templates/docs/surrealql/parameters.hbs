@@ -1,0 +1,39 @@
+<Layout::Text text-l text-f>
+    <h5><i class="fas fa-arrow-left"></i> &nbsp; <Link @link="docs.surrealql.index">Back to overview</Link></h5>
+    <h2>Parameters</h2>
+	<p>Parameters can be used like variables to store a value which can then be used in a subsequent query. A parameter can store any value, including the result of a query. Parameters can be defined within the SQL, or can be passed in using the client libraries as request variables.</p>
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l text-f>
+	<h3>Defining parameters within SurrealQL</h3>
+	<p>To define a parameter in SurrealQL, use the <Link @link="docs.surrealql.statements"><Ascua::Prism::Inline @language="sql" @code="LET" /></Link> statement. The name of the parameter should begin with a <code>$</code> character.</p>
+	<Code @name="docs-surrealql-parameters-simple.sql">
+		-- Define the parameter
+		LET $name = "tobie";
+		-- Use the parameter
+		CREATE person SET name = $name;
+	</Code>
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l text-f>
+	<h3>Defining parameters within client libraries</h3>
+	<p>SurrealDB's client libraries allow parameters to be passed in as JSON values, which are then converted to SurrealDB data types when the query is run. The following example show a variable being used within a SurrealQL query from the JavaScript library.</p>
+	<Code @name="docs-surrealql-parameters-javascript.js" text="JavaScript library">
+		let people = await surreal.query("SELECT * FROM article WHERE status IN $status", {
+			status: ["live", "draft"],
+		});
+	</Code>
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l text-f>
+	<h3>Next steps</h3>
+	<p>You've now learnt how to use parameters and variables within SurrealQL statements, and from the client libraries. Take a look at the next chapter to get an understanding of the different types of statements that can be run on SurrealDB.</p>
+</Layout::Text>
+
+<Layout::Gap large />

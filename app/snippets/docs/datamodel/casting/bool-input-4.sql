@@ -1,0 +1,1 @@
+SELECT * FROM <bool> 0.00000;
