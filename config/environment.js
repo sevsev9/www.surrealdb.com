@@ -110,7 +110,7 @@ module.exports = function(environment) {
 					'https://www.google-analytics.com/',
 					// Linkedin
 					'https://www.linkedin.com/px/',
-					'https://px.ads.linkedin.com/',
+					'https://*.ads.linkedin.com/',
 				],
 				'font-src': [
 					"'self'",
