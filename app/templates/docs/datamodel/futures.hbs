@@ -9,9 +9,7 @@
 <Layout::Text text-l text-f>
 	<h3>Simple futures</h3>
 	<p>Any value or expression can be used inside a future. This value will be dynamically computed on every access to the record.</p>
-	<Code @name="docs-datamodel-futures-simple.sql">
-		CREATE person SET accessed_date = fn::future -> { time::now() };
-	</Code>
+	<Code @name="docs/datamodel/futures/simple.sql" />
 </Layout::Text>
 
 <Layout::Gap small />
@@ -19,20 +17,9 @@
 <Layout::Text text-l text-f>
 	<h3>Futures depending on other fields</h3>
 	<p>Futures can be used to calculate values which dynamically change based on other fields. This value will be dynamically computed, on every access to the record, and will use the other field when it is accessed.</p>
-	<Code @name="docs-datamodel-futures-dependent-1.sql">
-		CREATE person SET
-			birthday = "2007-06-22",
-			can_drive = fn::future -> { time::now() > birthday + 18y }
-		;
-	</Code>
+	<Code @name="docs/datamodel/futures/dependent-1.sql" />
 	<p>Futures can also dynamically access remote records, perform subqueries, or make use of graph traversal.</p>
-	<Code @name="docs-datamodel-futures-dependent-2.sql">
-		CREATE person SET
-			name: 'Jason',
-			friends = [person:tobie, person:jaime],
-			adult_friends = fn::future -> { friends[WHERE age > 18].name }
-		;
-	</Code>
+	<Code @name="docs/datamodel/futures/dependent-2.sql" />
 </Layout::Text>
 
 <Layout::Gap small />
