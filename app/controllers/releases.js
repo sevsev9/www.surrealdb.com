@@ -37,6 +37,21 @@ export default class extends Controller {
 				]
 			},
 			{
+				time: new Date('2022-07-24'),
+				name: 'Release v1.0.0-beta.3',
+				path: 'section/releases/v1-0-0-beta-3',
+				link: 'v1.0.0-beta.3',
+				hash: 'v1-0-0-beta-3',
+				text: [
+					'Enable years as a unit in durations (<code>1y</code>)',
+					'Log root authentication configuration status on server startup',
+					'Ensure CORS headers are set on all HTTP responses even when request fails with an error',
+					'Improve syntax for defining futures: <code>fn::future -></code> changed to <code>&lt;future&gt;</code>',
+					'Improve syntax for defining embedded functions: <code>fn::script -> () =></code> changed to <code>function()</code>',
+					'Ensure root authentication is completely disabled when <code>-p</code> or <code>--pass</code> cli arguments are not specified',
+				]
+			},
+			{
 				time: new Date('2022-07-20'),
 				name: 'Release v1.0.0-beta.2',
 				path: 'section/releases/v1-0-0-beta-2',
