@@ -37,6 +37,19 @@ export default class extends Controller {
 				]
 			},
 			{
+				time: new Date('2022-07-28'),
+				name: 'Release v1.0.0-beta.4',
+				path: 'section/releases/v1-0-0-beta-4',
+				link: 'v1.0.0-beta.4',
+				hash: 'v1-0-0-beta-4',
+				text: [
+					'Add new strict mode to SurrealDB server',
+					'Ensure default table permissions are set to <code>NONE</code> not <code>FULL</code>',
+					'Fix bug when defining <code>NS</code> and <code>DB</code> without first selecting a <code>NS</code> or <code>DB</code>',
+					'Fix bug with <code>VALUE</code> and <code>ASSERT</code> clauses in <code>DEFINE FIELD</code> statements when fields are not present in query',
+				]
+			},
+			{
 				time: new Date('2022-07-24'),
 				name: 'Release v1.0.0-beta.3',
 				path: 'section/releases/v1-0-0-beta-3',
