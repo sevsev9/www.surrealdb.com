@@ -1,30 +1,27 @@
 user@localhost % surreal
 
  .d8888b.                                             888 8888888b.  888888b.
-d88P  Y88b                                            888 888  "Y88b 888  "88b
+d88P  Y88b                                            888 888  'Y88b 888  '88b
 Y88b.                                                 888 888    888 888  .88P
- "Y888b.   888  888 888d888 888d888  .d88b.   8888b.  888 888    888 8888888K.
-    "Y88b. 888  888 888P"   888P"   d8P  Y8b     "88b 888 888    888 888  "Y88b
-	  "888 888  888 888     888     88888888 .d888888 888 888    888 888    888
+ 'Y888b.   888  888 888d888 888d888  .d88b.   8888b.  888 888    888 8888888K.
+    'Y88b. 888  888 888P'   888P'   d8P  Y8b     '88b 888 888    888 888  'Y88b
+      '888 888  888 888     888     88888888 .d888888 888 888    888 888    888
 Y88b  d88P Y88b 888 888     888     Y8b.     888  888 888 888  .d88P 888   d88P
- "Y8888P"   "Y88888 888     888      "Y8888  "Y888888 888 8888888P"  8888888P"
+ 'Y8888P'   'Y88888 888     888      'Y8888  'Y888888 888 8888888P'  8888888P'
+
 
 SurrealDB command-line interface and server
 
-Usage:
-  surreal [command]
+USAGE:
+    surreal [SUBCOMMAND]
 
-Available Commands:
-  export      Export an existing database into a SQL script
-  help        Help about any command
-  import      Import a SQL script into an existing database
-  start       Start the database and http server
-  version     Output version information
+OPTIONS:
+    -h, --help    Print help information
 
-Flags:
-  -h, --help                help for surreal
-      --log-format string   Specify log output format (text, json) (default "text")
-      --log-level string    Specify log verbosity (default "error")
-      --log-output string   Specify log output destination (default "stderr")
-
-Use "surreal [command] --help" for more information about a command.
+SUBCOMMANDS:
+    start      Start the database server
+    backup     Backup data to or from an existing database
+    import     Import a SQL script into an existing database
+    export     Export an existing database into a SQL script
+    version    Output the command-line tool version information
+    help       Print this message or the help of the given subcommand(s)
