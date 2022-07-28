@@ -112,30 +112,12 @@ layout-boxes {
 				padding:20px 40px;
 			}
 
-			&[tick] div h3 {
-				&:before {
-					float:left;
-					content:'';
-					width:20px;
-					height:20px;
-					display:block;
-					margin:9px 10px 0 0;
-					background-repeat:no-repeat;
-					background-image:url('/static/img/home/tick.svg');
-				}
+			&[tick] div h3 img {
+				margin:0 10px 0 0;
 			}
 
-			&[tick] div h4 {
-				&:before {
-					float:left;
-					content:'';
-					width:18px;
-					height:18px;
-					display:block;
-					margin:5px 10px 0 0;
-					background-repeat:no-repeat;
-					background-image:url('/static/img/home/tick.svg');
-				}
+			&[tick] div h4 img {
+				margin:0 10px 0 0;
 			}
 
 		}
