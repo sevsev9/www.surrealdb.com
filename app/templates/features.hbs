@@ -176,7 +176,7 @@
 
 			<Layout::Blocks cols-1 as |block|>
 				<block>
-					<Code min-h-100 @name="roadmap/platform/define.sql" />
+					<Code min-h-100 @name="features/platform/define.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -191,7 +191,7 @@
 					<p>Each defined table field supports an <code>ASSERT</code> clause which acts as a constraint on the data. This clause enables advanced SurrealQL statements which can ensure that the <code>$value</code> entered is within certain parameters. Each clause is also able to see the <code>$before</code> and <code>$after</code> value of the record, enabling advanced custom logic with each trigger.</p>
 				</block>
 				<block>
-					<Code min-h-100 @name="roadmap/platform/constraints.sql" />
+					<Code min-h-100 @name="features/platform/constraints.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -206,7 +206,7 @@
 					<p>The ability to define full-text indexes, with functionality to search through the full-text index on a table. Using a Apache Lucene query syntax, searches support field queries, wildcard searches, fuzzy searches, proximity searches, relevance matching, boolean operators, subquery grouping, and field grouping.</p>
 				</block>
 				<block>
-					<Code min-h-100 @name="roadmap/platform/fulltext.sql" />
+					<Code min-h-100 @name="features/platform/fulltext.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -221,7 +221,7 @@
 					<p>Aggregate views let you pre-compute analytics queries as data is written to SurrealDB. Similarly to an index, a table view lets you select, aggregate, group, and order data, with support for moving averages, time-based windowing, and attribute-based counting. Pre-defined aggregate views are efficient and performant, with only a single record modification being made for every write.</p>
 				</block>
 				<block>
-					<Code @name="roadmap/platform/views.sql" />
+					<Code @name="features/platform/views.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -295,7 +295,7 @@
 					<p>SurrealDB makes working with GeoJSON easy, with support for <code>Point</code>, <code>Line</code>, <code>Polygon</code>, <code>MultiPoint</code>, <code>MultiLine</code>, <code>MultiPolygon</code>, and <code>Collection</code> values. SurrealQL automatically detects GeoJSON objects converting them into a single data type.</p>
 				</block>
 				<block>
-					<Code @name="roadmap/data/geometries.sql" />
+					<Code @name="features/data/geometries.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -317,10 +317,10 @@
 					<p>In SurrealDB, all data values are strongly typed. Values can be cast and converted to other types using specific casting operators. These include <code>bool</code>, <code>int</code>, <code>float</code>, <code>string</code>, <code>number</code>, <code>decimal</code>, <code>datetime</code>, and <code>duration</code> casts.</p>
 				</block>
 				<block>
-					<Code min-h-100 @name="roadmap/data/futures.sql" />
+					<Code min-h-100 @name="features/data/futures.sql" />
 				</block>
 				<block>
-					<Code min-h-100 @name="roadmap/data/casting.sql" />
+					<Code min-h-100 @name="features/data/casting.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -347,7 +347,7 @@
 					<p>Manipulation and querying of data in SurrealQL is done using the <code>SELECT</code>, <code>CREATE</code>, <code>UPDATE</code>, and <code>DELETE</code> methods. These enable selecting or modifying individual records, or whole tables. Each statement supports multiple different tables or record types at once.</p>
 				</block>
 				<block>
-					<Code @name="roadmap/surrealql/statements.sql" />
+					<Code @name="features/surrealql/statements.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -370,10 +370,10 @@
 					<p>The <code>INSERT</code> statement resembles the traditional SQL statement, enabling users to get started quickly. It supports the creation of records using a <code>VALUES</code> clause, or by specifying the record data as an object.</p>
 				</block>
 				<block>
-					<Code @name="roadmap/surrealql/relate.sql" />
+					<Code @name="features/surrealql/relate.sql" />
 				</block>
 				<block>
-					<Code @name="roadmap/surrealql/insert.sql" />
+					<Code @name="features/surrealql/insert.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -424,7 +424,7 @@
 					<p>Advanced set operators can be used to detect whether one or multiple values are included within an array. Fuzzy matching and regex matching can also be used for advanced filtering.</p>
 				</block>
 				<block>
-					<Code @name="roadmap/surrealql/operators.sql" />
+					<Code @name="features/surrealql/operators.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -439,7 +439,7 @@
 					<p>SurrealQL supports fetching data using dot notation <code>.</code>, array notation <code>[]</code>, and graph semantics <code>-></code>. SurrealQL enables records to link to other records and traverses all embedded links or graph connections as desired. When traversing and fetching remote records SurrealQL enables advanced filtering using traditional <code>WHERE</code> clauses.</p>
 				</block>
 				<block>
-					<Code @name="roadmap/surrealql/expressions.sql" />
+					<Code @name="features/surrealql/expressions.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -473,7 +473,7 @@
 					<p>Learning fields bring machine-learning based decision-making directly into SurrealDB. When a value is not entered directly, then the field can be automatically calculated based on the machine learning analysis of other specified columns or fields.</p>
 				</block>
 				<block>
-					<Code @name="roadmap/surrealql/learning.sql" />
+					<Code @name="features/surrealql/learning.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -554,10 +554,10 @@
 					<p>Time functions can be used to manipulate dates and times - with support for rounding, and extracting specific parts of datetimes.</p>
 				</block>
 				<block>
-					<Code @name="roadmap/functions/geo.sql" />
+					<Code @name="features/functions/geo.sql" />
 				</block>
 				<block>
-					<Code @name="roadmap/functions/time.sql" />
+					<Code @name="features/functions/time.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -579,10 +579,10 @@
 					<p>Validation functions can be used to determine that field values match a certain pattern including hexadecimal, alphanumeric, ascii, numeric, or email addresses.</p>
 				</block>
 				<block>
-					<Code @name="roadmap/functions/count.sql" />
+					<Code @name="features/functions/count.sql" />
 				</block>
 				<block>
-					<Code @name="roadmap/functions/check.sql" />
+					<Code @name="features/functions/check.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -597,7 +597,7 @@
 					<p>Javascript functions can be used for more complex functions and triggers. Each Javascript function iteration runs with its own context isolation - with the current record data passed in as the execution context or <code>this</code> value.</p>
 				</block>
 				<block>
-					<Code min-h-200 @name="roadmap/functions/javascript.sql" />
+					<Code min-h-200 @name="features/functions/javascript.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -662,10 +662,10 @@
 
 			<Layout::Blocks cols-1 as |block|>
 				<block>
-					<Code @name="roadmap/permissions/scope.sql" />
+					<Code @name="features/permissions/scope.sql" />
 				</block>
 				<block>
-					<Code @name="roadmap/permissions/scope.js" />
+					<Code @name="features/permissions/scope.js" />
 				</block>
 			</Layout::Blocks>
 
@@ -680,7 +680,7 @@
 					<p>Fine-grained table permissions can be used to prevent users from accessing data which they shouldn't see. Independent permissions for selecting, creating, updating, and deleting data are supported, ensuring fine-grained control over all data in SurrealDB.</p>
 				</block>
 				<block>
-					<Code @name="roadmap/permissions/table.sql" />
+					<Code @name="features/permissions/table.sql" />
 				</block>
 			</Layout::Blocks>
 
@@ -707,7 +707,7 @@
 					<p>All tables and data can be queried using a traditional Key-Value REST API. In addition, SurrealQL statements can be submitted to the REST API for custom query logic.</p>
 				</block>
 				<block>
-					<Code min-h-200 @name="roadmap/connectivity/api.shell" />
+					<Code min-h-200 @name="features/connectivity/api.shell" />
 				</block>
 			</Layout::Blocks>
 
@@ -779,7 +779,7 @@
 					<p>The command-line tool can be used to export data as SurrealQL, import data as SurrealQL, and start a SurrealDB instance or cluster.</p>
 				</block>
 				<block>
-					<Code min-h-200 @name="roadmap/tooling/cli.shell" />
+					<Code min-h-200 @name="features/tooling/cli.shell" />
 				</block>
 			</Layout::Blocks>
 
@@ -820,7 +820,7 @@
 					<p>In addition to binary releases, SurrealDB is packaged as a Docker container for easy setup and configuration. All configuration is done with the command-line options. The Docker container can be used to start a SurrealDB instance or cluster, or to import and export data.</p>
 				</block>
 				<block>
-					<Code min-h-100 @name="roadmap/tooling/docker.shell" />
+					<Code min-h-100 @name="features/tooling/docker.shell" />
 				</block>
 			</Layout::Blocks>
 

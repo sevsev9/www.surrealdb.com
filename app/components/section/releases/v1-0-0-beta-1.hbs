@@ -12,10 +12,10 @@
 		<p>In SurrealDB, all data values are strongly typed. Values can be cast and converted to other types using specific casting operators. These include <code>bool</code>, <code>int</code>, <code>float</code>, <code>string</code>, <code>number</code>, <code>decimal</code>, <code>datetime</code>, and <code>duration</code> casts.</p>
 	</block>
 	<block>
-		<Code min-h-100 @name="roadmap/data/futures.sql" />
+		<Code min-h-100 @name="features/data/futures.sql" />
 	</block>
 	<block>
-		<Code min-h-100 @name="roadmap/data/casting.sql" />
+		<Code min-h-100 @name="features/data/casting.sql" />
 	</block>
 </Layout::Blocks>
 
@@ -36,10 +36,10 @@
 		<p>The <code>INSERT</code> statement resembles the traditional SQL statement, enabling users to get started quickly. It supports the creation of records using a <code>VALUES</code> clause, or by specifying the record data as an object.</p>
 	</block>
 	<block>
-		<Code @name="roadmap/surrealql/relate.sql" />
+		<Code @name="features/surrealql/relate.sql" />
 	</block>
 	<block>
-		<Code @name="roadmap/surrealql/insert.sql" />
+		<Code @name="features/surrealql/insert.sql" />
 	</block>
 </Layout::Blocks>
 
@@ -53,7 +53,7 @@
 		<p>SurrealQL supports fetching data using dot notation <code>.</code>, array notation <code>[]</code>, and graph semantics <code>-></code>. SurrealQL enables records to link to other records and traverses all embedded links or graph connections as desired. When traversing and fetching remote records SurrealQL enables advanced filtering using traditional <code>WHERE</code> clauses.</p>
 	</block>
 	<block>
-		<Code @name="roadmap/surrealql/expressions.sql" />
+		<Code @name="features/surrealql/expressions.sql" />
 	</block>
 </Layout::Blocks>
 
@@ -67,6 +67,6 @@
 		<p>Javascript functions can be used for more complex functions and triggers. Each Javascript function iteration runs with its own context isolation - with the current record data passed in as the execution context or <code>this</code> value.</p>
 	</block>
 	<block>
-		<Code min-h-200 @name="roadmap/functions/javascript.sql" />
+		<Code min-h-200 @name="features/functions/javascript.sql" />
 	</block>
 </Layout::Blocks>
