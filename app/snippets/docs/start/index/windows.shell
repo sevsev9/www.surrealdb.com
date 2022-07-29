@@ -1,5 +1,7 @@
 PS C:\> surreal.exe start --log debug memory
-[2022-01-10T16:29:59Z] INFO surrealdb::kvs Starting kvs store in memory
-[2022-01-10T16:29:59Z] INFO surrealdb::kvs Started kvs store in memory
-[2022-01-10T16:30:03Z] INFO surrealdb::net Starting web server on 0.0.0.0:8000
-[2022-01-10T16:30:03Z] INFO surrealdb::net Started web server on 0.0.0.0:8000
+[2022-07-28 15:50:34] INFO  surrealdb::iam Root authentication is disabled
+[2022-07-28 15:50:34] INFO  surrealdb::dbs Database strict mode is disabled
+[2022-07-28 15:50:34] INFO  surrealdb::kvs Starting kvs store in memory
+[2022-07-28 15:50:34] INFO  surrealdb::kvs Started kvs store in memory
+[2022-07-28 15:50:34] INFO  surrealdb::net Starting web server on 0.0.0.0:8000
+[2022-07-28 15:50:34] INFO  surrealdb::net Started web server on 0.0.0.0:8000
