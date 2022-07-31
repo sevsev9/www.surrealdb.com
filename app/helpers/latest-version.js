@@ -7,6 +7,8 @@ export default class extends Helper {
 
 	compute(args, opts) {
 		switch (true) {
+		case opts.name:
+			return this.version.name;
 		case opts.hash:
 			return this.version.hash;
 		case opts.slug:

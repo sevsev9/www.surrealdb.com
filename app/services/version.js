@@ -14,6 +14,10 @@ export default class Version extends Service {
 		return this.latest?.replace(/[.]/g, '-');
 	}
 
+	@cache get name() {
+		return this.latest?.replace(/^v/g, '');
+	}
+
 	constructor() {
 
 		super(...arguments);
@@ -37,7 +41,7 @@ export default class Version extends Service {
 
 			let txt = await res.text();
 
-			this.latest = txt;
+			this.latest = txt.trim();
 
 		} catch(e) {
 
