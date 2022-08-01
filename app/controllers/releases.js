@@ -37,6 +37,19 @@ export default class extends Controller {
 				]
 			},
 			{
+				time: new Date('2022-08-01'),
+				name: 'Release v1.0.0-beta.5',
+				path: 'section/releases/v1-0-0-beta-5',
+				link: 'v1.0.0-beta.5',
+				hash: 'v1-0-0-beta-5',
+				text: [
+					'Temporarily disable HTTP response compression',
+					'Improve <code>surreal import</code> and <code>surreal export</code> cli commands',
+					'Fix bug where <code>GROUP BY</code> fields with an alias <code>AS</code> name were not output correctly',
+					'Fix SQL syntax parsing bug when specifying <code>DEFINE INDEX</code> statements with <code>UNIQUE</code constraints',
+				]
+			},
+			{
 				time: new Date('2022-07-28'),
 				name: 'Release v1.0.0-beta.4',
 				path: 'section/releases/v1-0-0-beta-4',
