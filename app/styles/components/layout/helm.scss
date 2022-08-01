@@ -18,6 +18,12 @@ layout-helm {
 			width:225px;
 		}
 
+		main {
+			width:100%;
+			margin:0 auto;
+			overflow:hidden;
+		}
+
 		main section:before {
 			left:calc(-250px - 10vw);
 			@include media(min-width-1587) {
@@ -50,7 +56,9 @@ layout-helm {
 		}
 
 		main {
+			width:100%;
 			margin:0 auto;
+			overflow:hidden;
 			max-width:800px;
 		}
 
@@ -242,7 +250,7 @@ layout-helm {
 
 				}
 
-				// WHen hovering on a hexagon
+				// When hovering on a hexagon
 
 				&:hover svg:nth-child(3) {
 					fill:var(--hover-color);
@@ -292,7 +300,7 @@ layout-helm {
 
 			}
 
-			> subs {
+			subs {
 
 				display:none;
 
@@ -302,13 +310,9 @@ layout-helm {
 					font-size:13px;
 					cursor:pointer;
 					position:relative;
+					padding:5px 0 5px 0;
 					transition:color 0.5s;
-					padding:5px 0 5px 45px;
 					color:var(--faint-color);
-
-					&[selected] span {
-						color:var(--hover-color);
-					}
 
 					&:last-child {
 						padding-bottom:15px;
@@ -338,29 +342,36 @@ layout-helm {
 
 					}
 
+					&[selected] {
+
+						span {
+							color:var(--hover-color);
+						}
+
+						& + subs {
+							display:block;
+						}
+
+					}
+
+
+
+				}
+
+				> a {
+					padding-left:45px;
+					&:before { left:30px; }
+				}
+
+				> subs > a {
+					padding-left:60px;
+					&:before { left:45px; }
 				}
 
 			}
+
 		}
 
 	}
 
 }
-
-
-/*layout-blog {
-
-	display:grid;
-	grid-template-columns:[left-sidebar] minmax(0, 235px) [content] minmax(auto, 800px);
-
-	@include media(max-width-1024) {
-		justify-content:center;
-		grid-template-columns:[content] minmax(auto, 800px);
-	}
-
-	layout-blocks {
-		margin:0 auto;
-		grid-column:content;
-	}
-
-}*/
