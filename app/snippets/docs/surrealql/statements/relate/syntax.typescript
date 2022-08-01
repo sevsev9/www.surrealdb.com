@@ -1,0 +1,8 @@
+RELATE @from -> @table -> @with
+	[ CONTENT @value
+	  | SET @field = @value ...
+	]
+	[ RETURN [ NONE | BEFORE | AFTER | DIFF | @projections ... ]
+	[ TIMEOUT @duration ]
+	[ PARALLEL ]
+;

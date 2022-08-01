@@ -1,0 +1,11 @@
+REMOVE [
+	NAMESPACE @name
+	| DATABASE @name
+	| LOGIN @name ON [ NAMESPACE | DATABASE ]
+	| TOKEN @name ON [ NAMESPACE | DATABASE ]
+	| SCOPE @name
+	| TABLE @name
+	| EVENT @name ON [ TABLE ] @table
+	| FIELD @name ON [ TABLE ] @table
+	| INDEX @name ON [ TABLE ] @table
+]

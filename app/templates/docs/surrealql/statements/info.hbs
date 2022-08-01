@@ -1,0 +1,80 @@
+<Layout::Text text-l text-f>
+    <h5><i class="fas fa-arrow-left"></i> &nbsp; <Link @link="docs.surrealql.statements.index">Back to overview</Link></h5>
+    <h2><code>INFO</code> statement</h2>
+	<p>The INFO statement.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Statement syntax</h3>
+	<Code @name="docs-surrealql-statements-info-syntax.typescript" text="SQL Syntax">
+		INFO FOR [
+			KV
+			| NS | NAMESPACE
+			| DB | DATABASE
+			| SCOPE @scope
+			| TABLE @table
+		];
+	</Code>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+
+	<h3>Example usage</h3>
+	<p>The <code>INFO</code> command outputs information about the setup of the SurrealDB system. There are a number of different <code>INFO</code> commands for retrieving the configuration at the different levels of the database.</p>
+
+	<Layout::Gap mini />
+
+	<h4>System information</h4>
+	<p>The top-level <code>KV</code> command returns information regarding the namespaces which exists within the SurrealDB system.</p>
+	<blockquote yellow text="Info">You must be authenticated as a top-level root user to execute this command.</blockquote>
+	<Code @name="docs-surrealql-statements-info-kv.sql">
+		INFO FOR KV;
+	</Code>
+
+	<Layout::Gap mini />
+
+	<h4>Namespace information</h4>
+	<p>The <code>NS</code> or <code>NAMESPACE</code> command returns information regarding the logins, tokens, and databases under a specific Namespace.</p>
+	<blockquote yellow text="Info">You must be authenticated as a top-level root user, or a namespace user to execute this command.</blockquote>
+	<blockquote yellow text="Info">You must have a <code>NAMESPACE</code> selected before running this command.</blockquote>
+	<Code @name="docs-surrealql-statements-info-ns.sql">
+		INFO FOR NS;
+	</Code>
+
+	<Layout::Gap mini />
+
+	<h4>Database information</h4>
+	<p>The <code>DB</code> or <code>DATABASE</code> command returns information regarding the logins, tokens, and scopes, and tables under a specific Database.</p>
+	<blockquote yellow text="Info">You must be authenticated as a top-level root user, a namespace user, or a database user to execute this command.</blockquote>
+	<blockquote yellow text="Info">You must have a <code>NAMESPACE</code> and a <code>DATABASE</code> selected before running this command.</blockquote>
+	<Code @name="docs-surrealql-statements-info-db.sql">
+		INFO FOR DB;
+	</Code>
+
+	<Layout::Gap mini />
+
+	<h4>Scope information</h4>
+	<p>The <code>SCOPE</code> command returns information regarding the tokens configured under a specific Scope.</p>
+	<blockquote yellow text="Info">You must be authenticated as a top-level root user, a namespace user, or a database user to execute this command.</blockquote>
+	<blockquote yellow text="Info">You must have a <code>NAMESPACE</code> and a <code>DATABASE</code> selected before running this command.</blockquote>
+	<Code @name="docs-surrealql-statements-info-sc.sql">
+		INFO FOR SCOPE user;
+	</Code>
+
+	<Layout::Gap mini />
+
+	<h4>Table information</h4>
+	<p>The <code>TABLE</code> command returns information regarding the events, fields, indexes, and foreign table configurations on a specific Table.</p>
+	<blockquote yellow text="Info">You must be authenticated as a top-level root user, a namespace user, or a database user to execute this command.</blockquote>
+	<blockquote yellow text="Info">You must have a <code>NAMESPACE</code> and a <code>DATABASE</code> selected before running this command.</blockquote>
+	<Code @name="docs-surrealql-statements-info-tb.sql">
+		INFO FOR TABLE user;
+	</Code>
+
+</Layout::Text>
+
+<Layout::Gap large />

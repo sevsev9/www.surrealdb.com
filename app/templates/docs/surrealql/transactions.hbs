@@ -4,70 +4,34 @@
 	<p>Each statement within SurrealDB is run within its own transaction. If a set of changes need to be made together, then groups of statements can be run together as a single transaction, either succeeding as a whole, or failing without leaving any residual data modifications.</p>
 </Layout::Text>
 
-<Layout::Gap small />
+<Layout::Gap mini />
 
 <Layout::Text text-l text-f>
 	<h3>Starting a transaction</h3>
 	<p>The <code>BEGIN TRANSACTION</code> statement can be used to run a group of statements together, either succeeding as a whole, or failing. If all of the statements within a transaction succeed, and the transaction is successful, then all of the data modifications made during the transaction are committed and become a permanent part of the database. If a transaction encounters errors and must be cancelled or rolled back, then any data modification made within the transaction is rolledback, and will not be visible within the database.</p>
-	<Code @name="docs-surrealql-transactions-begin-syntax.typescript" text="SQL Syntax">
-		BEGIN [ TRANSACTION ];
-	</Code>
-	<p>The following query shows example usage of this statement:</p>
-	<Code @name="docs-surrealql-transactions-begin-example.sql">
-		BEGIN TRANSACTION;
-		-- Setup accounts
-		CREATE account:one SET balance = 135,605.16;
-		CREATE account:two SET balance = 91,031.31;
-		-- Move money
-		UPDATE account:one SET balance += 300.00;
-		UPDATE account:two SET balance -= 300.00;
-		-- Finalise
-		COMMIT TRANSACTION;
-	</Code>
+	<Code @name="docs/surrealql/statements/begin/syntax.typescript" text="SQL Syntax" />
+	<p>The following query shows example usage of this statement.</p>
+	<Code @name="docs/surrealql/statements/begin/main.sql" />
 </Layout::Text>
 
-<Layout::Gap small />
+<Layout::Gap mini />
 
 <Layout::Text text-l text-f>
 	<h3>Cancelling a transaction</h3>
 	<p>The <code>CANCEL TRANSACTION</code> statement can be used to cancel a set of statements within a transaction, reverting or rolling back any data modification made within the transaction as a whole.</p>
-	<Code @name="docs-surrealql-transactions-cancel-syntax.typescript" text="SQL Syntax">
-		CANCEL [ TRANSACTION ];
-	</Code>
-	<p>The following query shows example usage of this statement:</p>
-	<Code @name="docs-surrealql-transactions-cancel-example.sql">
-		BEGIN TRANSACTION;
-		-- Setup accounts
-		CREATE account:one SET balance = 135,605.16;
-		CREATE account:two SET balance = 91,031.31;
-		-- Move money
-		UPDATE account:one SET balance += 300.00;
-		UPDATE account:two SET balance -= 300.00;
-		-- Rollback all changes
-		CANCEL TRANSACTION;
-	</Code>
+	<Code @name="docs/surrealql/statements/cancel/syntax.typescript" text="SQL Syntax" />
+	<p>The following query shows example usage of this statement.</p>
+	<Code @name="docs/surrealql/statements/cancel/main.sql" />
 </Layout::Text>
 
-<Layout::Gap small />
+<Layout::Gap mini />
 
 <Layout::Text text-l text-f>
 	<h3>Committing a transaction</h3>
 	<p>The <code>COMMIT TRANSACTION</code> statement can be used to commit a set of statements within a transaction, ensuring that all data modifications become a permanent part of the database.</p>
-	<Code @name="docs-surrealql-transactions-commit-syntax.typescript" text="SQL Syntax">
-		COMMIT [ TRANSACTION ];
-	</Code>
-	<p>The following query shows example usage of this statement:</p>
-	<Code @name="docs-surrealql-transactions-commit-example.sql">
-		BEGIN TRANSACTION;
-		-- Setup accounts
-		CREATE account:one SET balance = 135,605.16;
-		CREATE account:two SET balance = 91,031.31;
-		-- Move money
-		UPDATE account:one SET balance += 300.00;
-		UPDATE account:two SET balance -= 300.00;
-		-- Finalise all changes
-		COMMIT TRANSACTION;
-	</Code>
+	<Code @name="docs/surrealql/statements/commit/syntax.typescript" text="SQL Syntax" />
+	<p>The following query shows example usage of this statement.</p>
+	<Code @name="docs/surrealql/statements/commit/main.sql" />
 </Layout::Text>
 
 <Layout::Gap large />

@@ -126,6 +126,11 @@ p {
 
 	img[inline] { height:14px; }
 
+	&[small] {
+		font-size:12px;
+		margin-bottom:0;
+	}
+
 }
 
 blockquote {
@@ -208,6 +213,10 @@ l {
 	-webkit-font-smoothing:antialiased;
 	font-family:var(--system-font-mono);
 	border:1px solid var(--faint-color);
+
+	&[r] {
+		float:right;
+	}
 
 	[flex] & {
 		margin:0 10px;

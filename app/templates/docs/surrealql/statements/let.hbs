@@ -1,0 +1,24 @@
+<Layout::Text text-l text-f>
+    <h5><i class="fas fa-arrow-left"></i> &nbsp; <Link @link="docs.surrealql.statements.index">Back to overview</Link></h5>
+    <h2><code>LET</code> statement</h2>
+	<p>The LET statement sets and stores a value which can then be used in a subsequent query. A parameter can store any value, including the result of a query.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Statement syntax</h3>
+	<Code @name="docs/surrealql/statements/let/syntax.typescript" text="SQL Syntax" />
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Example usage</h3>
+	<p>The following query shows example usage of this statement.</p>
+	<Code @name="docs/surrealql/statements/let/simple.sql" />
+	<p>The following query shows the <code>LET</code> statement being used to store the result of a subquery.</p>
+	<Code @name="docs/surrealql/statements/let/advanced.sql" />
+</Layout::Text>
+
+<Layout::Gap large />

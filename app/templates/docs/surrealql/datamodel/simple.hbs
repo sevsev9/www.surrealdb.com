@@ -1,0 +1,146 @@
+<Layout::Text text-l text-f>
+	<h5><i class="fas fa-arrow-left"></i> &nbsp; <Link @link="docs.surrealql.datamodel.index">Back to overview</Link></h5>
+    <h2>Simple types</h2>
+	<p>SurrealDB has a large number of simple built-in types. With an advanced type system, SurrealDB enables advanced storage, simplified comparison, complex data structures, and mathematical operations directly within the database.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Null values</h3>
+	<p>Values can be specifically set to <code>NULL</code> in SurrealDB to denote a field which is set, but which does not have a value.</p>
+	<Code @name="docs-datamodel-simple-null.sql">
+		CREATE person SET children = null;
+	</Code>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Booleans</h3>
+	<p>Boolean values can be used to mark whether a field is <code>true</code> or <code>false</code>.</p>
+	<Code @name="docs-datamodel-simple-booleans.sql">
+		CREATE person SET newsletter = false, interested = true;
+	</Code>
+	<p>Boolean values can be written in anycase.</p>
+	<Code @name="docs-datamodel-simple-booleans-anycase.sql">
+		CREATE person SET newsletter = FALSE, interested = True;
+	</Code>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Strings</h3>
+	<p>Strings can be used to store text values. All text fields can include unicode values, emojis, and tabular and multine breaks.</p>
+	<Code @name="docs-datamodel-simple-strings-single.sql">
+		CREATE person SET text = 'Lorem ipsum dolor sit amet';
+	</Code>
+	<p>Strings can be created using single quotation marks, or double quotation marks.</p>
+	<Code @name="docs-datamodel-simple-strings-double.sql">
+		CREATE person SET text = "Lorem ipsum dolor sit amet";
+	</Code>
+	<p>Any string in SurrealDB can include unicode text.</p>
+	<Code @name="docs-datamodel-simple-strings-unicode.sql">
+		CREATE person SET text = "I ❤️ SurrealDB";
+	</Code>
+	<p>Strings can also include line breaks.</p>
+	<Code @name="docs-datamodel-simple-strings-multiline.sql">
+		CREATE person SET text = "This
+		is
+		over
+		multiple
+		lines";
+	</Code>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Numbers</h3>
+	<p>In SurrealDB numbers can be one of three types. Simple integers, floating point numbers, or complex decimal numbers with infinite precision.</p>
+	<p>If a number value is specified without any decimal point value and is within the range <code>-9223372036854775808</code> to <code>9223372036854775807</code> then the value will be treated as an integer.</p>
+	<Code @name="docs-datamodel-simple-number-simple.sql">
+		CREATE event SET year = 2022;
+	</Code>
+	<p> If a number value is specified with a decimal point, or is outside of the maximum range specified above, then the number will automatically be treated as an infinite length decimal value. This ensures that there is no loss of precision when performing mathematical calculations within SurrealDB.</p>
+	<Code @name="docs-datamodel-simple-number-decimal.sql">
+		CREATE event SET temperature = 41.5;
+	</Code>
+	<p>To use a specific type when specifying numeric values, you can <Link @link="docs.surrealql.datamodel.casting">cast</Link> the value to the desired type.</p>
+	<Code @name="docs/datamodel/simple/number-cast.sql" />
+	<p>The benefits of floating point numeric values is speed and storage size, but there is a limit to the numeric precision.</p>
+	<codes vertical>
+		<Code @name="docs/datamodel/simple/number-float.sql" />
+		<Code @name="docs-datamodel-simple-number-float-result.txt">
+			13.571938471938473
+		</Code>
+	</codes>
+	<p>In addition, when using floating point number specifically, mathematical operations can result in a loss of precision (as is normal with other databases).</p>
+	<codes vertical>
+		<Code @name="docs/datamodel/simple/number-maths-float.sql" />
+		<Code @name="docs-datamodel-simple-number-maths-float-result.txt">
+			1.0000000000000002
+		</Code>
+	</codes>
+	<p>However, as numbers are treated as decimal values by default, then no precision is lost when performing mathematical calculations inside the database.</p>
+	<codes vertical>
+		<Code @name="docs/datamodel/simple/number-maths-decimal.sql" />
+		<Code @name="docs-datamodel-simple-number-maths-decimal-result.txt">
+			1.0
+		</Code>
+	</codes>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>UUIDs</h3>
+	<p>SurrealDB will automatically detect and parse valid UUIDs within strings, and store them efficiently within the database. This ensures that the amount of storage used to store a UUID on disk and in memory, is as little as possible.</p>
+	<Code @name="docs-datamodel-simple-uuid.sql">
+		CREATE person SET identifier = "fb2cd733-eec4-4354-b070-3aba18c2a67a";
+	</Code>
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l text-f>
+	<h3>Objects</h3>
+	<p>SurrealDB records can store objects, with no limit to the depth of any nested objects or values within. This means that objects and arrays can be stored within each other in order to model complex data scenarios. Objects can store any value stored within them, and can store different value types within the same object.</p>
+	<Code @name="docs-datamodel-simple-object.sql">
+		CREATE person SET metadata = {
+			interest_level: 83.67,
+			information: {
+				age: 23,
+				gender: 'm',
+			},
+			marketing: true,
+			activities: [
+				"clicked link",
+				"contac form",
+				"read email",
+				"viewed website",
+				"viewed website",
+				"viewed website",
+				"read email",
+			]
+		};
+	</Code>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Arrays</h3>
+	<p>SurrealDB records can store arrays of values, with no limit to the depth of the arrays. This means that objects and arrays can be stored within each other in order to model complex data scenarios. Arrays can store any value stored within them, and can store different value types within the same array.</p>
+	<Code @name="docs-datamodel-simple-array.sql">
+		CREATE person SET results = [
+			{ score: 76, date: "2017-06-18T08:00:00Z", name = "Algorithmics" },
+			{ score: 83, date: "2018-03-21T08:00:00Z", name = "Concurrent Programming" },
+			{ score: 69, date: "2018-09-17T08:00:00Z", name = "Advanced Computer Science 101" },
+			{ score: 73, date: "2019-04-20T08:00:00Z", name = "Distributed Databases" },
+		];
+	</Code>
+</Layout::Text>
+
+<Layout::Gap large />

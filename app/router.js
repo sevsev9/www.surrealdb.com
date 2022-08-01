@@ -52,6 +52,7 @@ Router.map(function() {
 	});
 
 	this.route('docs', function() {
+
 		this.route('start', function() {
 			this.route('quickstart');
 			this.route('installation');
@@ -60,40 +61,65 @@ Router.map(function() {
 			this.route('querying-surrealdb');
 			this.route('securing-surrealdb');
 		});
-		this.route('datamodel', function() {
-			this.route('simple');
-			this.route('datetimes');
-			this.route('geometries');
-			this.route('records');
-			this.route('futures');
-			this.route('casting');
-		});
+
 		this.route('surrealql', function() {
-			this.route('statements');
+
+			this.route('datamodel', function() {
+				this.route('simple');
+				this.route('datetimes');
+				this.route('geometries');
+				this.route('records');
+				this.route('futures');
+				this.route('casting');
+			});
+
+			this.route('statements', function() {
+				this.route('use');
+				this.route('let');
+				this.route('begin');
+				this.route('cancel');
+				this.route('commit');
+				this.route('ifelse');
+				this.route('select');
+				this.route('insert');
+				this.route('create');
+				this.route('update');
+				this.route('relate');
+				this.route('delete');
+				this.route('define');
+				this.route('remove');
+				this.route('info');
+			});
+
 			this.route('operators');
 			this.route('parameters');
 			this.route('expressions');
 			this.route('transactions');
+
+			this.route('functions', function() {
+				this.route('array');
+				this.route('count');
+				this.route('crypto');
+				this.route('geo');
+				this.route('http');
+				this.route('validation');
+				this.route('math');
+				this.route('parse');
+				this.route('rand');
+				this.route('string');
+				this.route('time');
+				this.route('type');
+				this.route('script');
+			});
+
 		});
-		this.route('functions', function() {
-			this.route('array');
-			this.route('count');
-			this.route('crypto');
-			this.route('geo');
-			this.route('http');
-			this.route('validation');
-			this.route('math');
-			this.route('parse');
-			this.route('rand');
-			this.route('string');
-			this.route('time');
-			this.route('type');
-			this.route('script');
-		});
+
 		this.route('integration', function() {
+
 			this.route('overview');
 			this.route('http');
 			this.route('websockets');
+
 			this.route('libraries', function() {
 				this.route('angularjs');
 				this.route('apollo');
@@ -114,7 +140,17 @@ Router.map(function() {
 				this.route('vuejs');
 				this.route('webassembly');
 			});
+
 		});
+
+		this.route('cli', function() {
+			this.route('start');
+			this.route('import');
+			this.route('export');
+			this.route('version');
+			this.route('help');
+		});
+
 		this.route('guides', function() {
 			this.route('schemafull-or-schemaless');
 			this.route('relations-and-graph');
@@ -124,7 +160,9 @@ Router.map(function() {
 			this.route('computed-views');
 			this.route('authenticating-users');
 			this.route('deploying-surrealdb');
+			this.route('strict-mode');
 		});
+
 	});
 
 	this.route('404', {

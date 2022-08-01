@@ -4,20 +4,15 @@
 	<p>Parameters can be used like variables to store a value which can then be used in a subsequent query. A parameter can store any value, including the result of a query. Parameters can be defined within the SQL, or can be passed in using the client libraries as request variables.</p>
 </Layout::Text>
 
-<Layout::Gap small />
+<Layout::Gap mini />
 
 <Layout::Text text-l text-f>
 	<h3>Defining parameters within SurrealQL</h3>
-	<p>To define a parameter in SurrealQL, use the <Link @link="docs.surrealql.statements"><Ascua::Prism::Inline @language="sql" @code="LET" /></Link> statement. The name of the parameter should begin with a <code>$</code> character.</p>
-	<Code @name="docs-surrealql-parameters-simple.sql">
-		-- Define the parameter
-		LET $name = "tobie";
-		-- Use the parameter
-		CREATE person SET name = $name;
-	</Code>
+	<p>To define a parameter in SurrealQL, use the <Link @link="docs.surrealql.statements.let"><Ascua::Prism::Inline @language="sql" @code="LET" /></Link> statement. The name of the parameter should begin with a <code>$</code> character.</p>
+	<Code @name="docs/surrealql/statements/let/simple.sql" />
 </Layout::Text>
 
-<Layout::Gap small />
+<Layout::Gap mini />
 
 <Layout::Text text-l text-f>
 	<h3>Defining parameters within client libraries</h3>
@@ -29,7 +24,7 @@
 	</Code>
 </Layout::Text>
 
-<Layout::Gap small />
+<Layout::Gap mini />
 
 <Layout::Text text-l text-f>
 	<h3>Next steps</h3>

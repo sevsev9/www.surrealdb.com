@@ -1,0 +1,18 @@
+SELECT @projections
+	FROM @targets
+	[ WHERE @condition ]
+	[ SPLIT [ AT ] @field ... ]
+	[ GROUP [ BY ] @field ... ]
+	[ ORDER [ BY ]
+		@field [
+			RAND()
+			| COLLATE
+			| NUMERIC
+		] [ ASC | DESC ] ...
+	] ]
+	[ LIMIT [ BY ] @limit ]
+	[ START [ AT ] @start ]
+	[ FETCH @field ... ]
+	[ TIMEOUT @duration ]
+	[ PARALLEL ]
+;

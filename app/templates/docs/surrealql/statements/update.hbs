@@ -1,0 +1,43 @@
+<Layout::Text text-l text-f>
+    <h5><i class="fas fa-arrow-left"></i> &nbsp; <Link @link="docs.surrealql.statements.index">Back to overview</Link></h5>
+    <h2><code>UPDATE</code> statement</h2>
+	<p>The UPDATE statement can be used to update or modify records in the database.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Statement syntax</h3>
+	<Code @name="docs/surrealql/statements/update/syntax.typescript" text="SQL Syntax" />
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+
+	<h3>Example usage</h3>
+
+	<p>The following query shows example usage of this statement.</p>
+	<Code @name="docs/surrealql/statements/update/simple.sql" />
+
+	<p>When specifying fields to update using the <code>SET</code> clause, it is possible to increment and decrement numeric values, and add or remove values from arrays. To increment a numeric value, or to add an item to an array, use the <code>+=</code> operator. To decrement a numeric value, or to remove an value from an array, use the <code>-=</code> operator.</p>
+	<Code @name="docs/surrealql/statements/update/inc-and-dec.sql" />
+
+	<p>The update statement supports conditional matching of records using a <code>WHERE</code> clause. If the expression in the <code>WHERE</code> clause evaluates to true, then the respective record will be updated.</p>
+	<Code @name="docs/surrealql/statements/update/where.sql" />
+
+	<p>Instead of specifying record data using the <code>SET</code> clause, it is also possible to use the <code>CONTENT</code> keyword to specify the record data using a SurrealQL object.</p>
+	<Code @name="docs/surrealql/statements/update/content.sql" />
+
+	<p>Instead of specifying the full record data using the <code>SET</code> clause or the <code>CONTENT</code> keyword, it is also possible to merge-update only specific fields by using the <code>MERGE</code> keyword and specifying only the fields which are to be updated.</p>
+	<Code @name="docs/surrealql/statements/update/merge.sql" />
+
+	<p>By default, the update statement returns the record value once the changes have been made. To change the return value of each record, specify a <code>RETURN</code> clause, specifying either <code>NONE</code>, <code>BEFORE</code>, <code>AFTER</code>, <code>DIFF</code>, or a comma-separated list of specific fields to return.</p>
+	<Code @name="docs/surrealql/statements/update/return.sql" />
+
+	<p>When processing a large result set with many interconnected records, it is possible to use the <code>TIMEOUT</code> keywords to specify a timeout duration for the statement. If the statement continues beyond this duration, then the transaction will fail, no records will be updated in the database, and the statement will return an error.</p>
+	<Code @name="docs/surrealql/statements/update/timeout.sql" />
+
+</Layout::Text>
+
+<Layout::Gap large />

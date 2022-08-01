@@ -1,0 +1,25 @@
+<Layout::Text text-l text-f>
+    <h5><i class="fas fa-arrow-left"></i> &nbsp; <Link @link="docs.surrealql.statements.index">Back to overview</Link></h5>
+    <h2><code>CANCEL</code> statement</h2>
+	<p>Each statement within SurrealDB is run within its own transaction. If a set of changes need to be made together, then groups of statements can be run together as a single transaction, either succeeding as a whole, or failing without leaving any residual data modifications.</p>
+	<p>The <code>CANCEL TRANSACTION</code> statement can be used to cancel a set of statements within a transaction, reverting or rolling back any data modification made within the transaction as a whole.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Statement syntax</h3>
+	<Code @name="docs-surrealql-statements-cancel-syntax.typescript" text="SQL Syntax">
+		CANCEL [ TRANSACTION ];
+	</Code>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Example usage</h3>
+	<p>The following query shows example usage of this statement.</p>
+	<Code @name="docs/surrealql/statements/cancel/main.sql" />
+</Layout::Text>
+
+<Layout::Gap large />

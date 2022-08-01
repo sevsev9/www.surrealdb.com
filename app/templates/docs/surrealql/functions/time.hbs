@@ -1,0 +1,613 @@
+<Layout::Text text-l text-f>
+	<h5><i class="fas fa-arrow-left"></i> &nbsp; <Link @link="docs.surrealql.functions.index">Back to overview</Link></h5>
+    <h2>Time functions</h2>
+	<p>These functions can be used when working with and manipulating datetime values.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Table filled>
+	<table>
+		<thead>
+			<tr>
+				<th w-40>Function</th>
+				<th w-60>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<a href="#day">
+						<code>time::day()</code>
+					</a>
+				</td>
+				<td>Extracts the day as a number from a datetime</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#floor">
+						<code>time::floor()</code>
+					</a>
+				</td>
+				<td>Rounds a datetime down by a specific duration</td>
+			</tr>
+            <tr>
+				<td>
+					<a href="#group">
+						<code>time::group()</code>
+					</a>
+				</td>
+				<td>Groups a datetime by a particular time interval</td>
+			</tr>
+            <tr>
+				<td>
+					<a href="#hour">
+						<code>time::hour()</code>
+					</a>
+				</td>
+				<td>Extracts the hour as a number from a datetime</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#mins">
+						<code>time::mins()</code>
+					</a>
+				</td>
+				<td>Extracts the minutes as a number from a datetime</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#month">
+						<code>time::month()</code>
+					</a>
+				</td>
+				<td>Extracts the month as a number from a datetime</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#nano">
+						<code>time::nano()</code>
+					</a>
+				</td>
+				<td>Returns the number of nanoseconds since the UNIX epoch</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#now">
+						<code>time::now()</code>
+					</a>
+				</td>
+				<td>Returns the current datetime</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#round">
+						<code>time::round()</code>
+					</a>
+				</td>
+				<td>Rounds a datetime up by a specific duration</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#secs">
+						<code>time::secs()</code>
+					</a>
+				</td>
+				<td>Extracts the secs as a number from a datetime</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#unix">
+						<code>time::unix()</code>
+					</a>
+				</td>
+				<td>Returns the number of seconds since the UNIX epoch</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#wday">
+						<code>time::wday()</code>
+					</a>
+				</td>
+				<td>Extracts the week day as a number from a datetime</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#week">
+						<code>time::week()</code>
+					</a>
+				</td>
+				<td>Extracts the week as a number from a datetime</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#yday">
+						<code>time::yday()</code>
+					</a>
+				</td>
+				<td>Extracts the yday as a number from a datetime</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#year">
+						<code>time::year()</code>
+					</a>
+				</td>
+				<td>Extracts the year as a number from a datetime</td>
+			</tr>
+		</tbody>
+	</table>
+</Layout::Table>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "day"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::day</h3>
+		<p>The <code>time::day</code> function extracts the day as a number from a datetime.</p>
+		<Code @name="docs-surrealql-functions-time-day.sql" text="API Definition">
+			time::day(datetime) -> number
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-day-input.sql">
+				SELECT * FROM time::day("2021-11-01T08:30:17+00:00");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-day-result.txt">
+				1
+			</Code>
+		</codes>
+		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-day-error-input.sql">
+				SELECT * FROM time::day(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-day-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "floor"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::floor</h3>
+		<p>The <code>time::floor</code> function rounds a datetime down by a specific duration.</p>
+		<Code @name="docs-surrealql-functions-time-floor.sql" text="API Definition">
+			time::floor(datetime, duration) -> datetime
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-floor-input.sql">
+				SELECT * FROM time::floor("2021-11-01T08:30:17+00:00", 1w);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-floor-result.txt">
+				"2021-10-28T00:00:00Z"
+			</Code>
+		</codes>
+		<p>If the first argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-floor-error-input.sql">
+				SELECT * FROM time::floor(12345, 1w);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-floor-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "group"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::group</h3>
+		<p>The <code>time::group</code> function reduces and rounds a datetime down to a particular time interval. The second argument must be a string, and can be one of the following values: <code>year</code>, <code>month</code>, <code>day</code>, <code>hour</code>, <code>minute</code>, <code>second</code>.</p>
+		<Code @name="docs-surrealql-functions-time-group.sql" text="API Definition">
+			time::group(datetime, string) -> datetime
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-group-input.sql">
+				SELECT * FROM time::group("2021-11-01T08:30:17+00:00", "year");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-group-result.txt">
+				"2021-01-01T00:00:00Z"
+			</Code>
+		</codes>
+		<p>If the first argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-group-error-input.sql">
+				SELECT * FROM time::group(12345, "week");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-group-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "hour"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::hour</h3>
+		<p>The <code>time::hour</code> function extracts the hour as a number from a datetime.</p>
+		<Code @name="docs-surrealql-functions-time-hour.sql" text="API Definition">
+			time::hour(datetime) -> number
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-hour-input.sql">
+				SELECT * FROM time::hour("2021-11-01T08:30:17+00:00");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-hour-result.txt">
+				8
+			</Code>
+		</codes>
+		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-hour-error-input.sql">
+				SELECT * FROM time::hour(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-hour-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "mins"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::mins</h3>
+		<p>The <code>time::mins</code> function extracts the minutes as a number from a datetime.</p>
+		<Code @name="docs-surrealql-functions-time-mins.sql" text="API Definition">
+			time::mins(datetime) -> number
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-mins-input.sql">
+				SELECT * FROM time::mins("2021-11-01T08:30:17+00:00");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-mins-result.txt">
+				30
+			</Code>
+		</codes>
+		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-mins-error-input.sql">
+				SELECT * FROM time::mins(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-mins-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "month"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::month</h3>
+		<p>The <code>time::month</code> function extracts the month as a number from a datetime.</p>
+		<Code @name="docs-surrealql-functions-time-month.sql" text="API Definition">
+			time::month(datetime) -> number
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-month-input.sql">
+				SELECT * FROM time::month("2021-11-01T08:30:17+00:00");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-month-result.txt">
+				11
+			</Code>
+		</codes>
+		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-month-error-input.sql">
+				SELECT * FROM time::month(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-month-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "nano"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::nano</h3>
+		<p>The <code>time::nano</code> function returns a datetime as an integer representing the number of nanoseconds since the UNIX epoch.</p>
+		<Code @name="docs-surrealql-functions-time-nano.sql" text="API Definition">
+			time::nano(datetime) -> number
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-nano-input.sql">
+				SELECT * FROM time::nano("2021-11-01T08:30:17+00:00");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-nano-result.txt">
+				1635755417000000000
+			</Code>
+		</codes>
+		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-nano-error-input.sql">
+				SELECT * FROM time::nano(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-nano-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "now"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::now</h3>
+		<p>The <code>time::now</code> function returns the current datetime as an ISO8601 timestamp.</p>
+		<Code @name="docs-surrealql-functions-time-now.sql" text="API Definition">
+			time::now() -> datetime
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-now-input.sql">
+				SELECT * FROM time::now();
+			</Code>
+			<Code @name="docs-surrealql-functions-time-now-result.txt">
+				"2022-04-27T19:27:09.232928Z"
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "round"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::round</h3>
+		<p>The <code>time::round</code> function rounds a datetime up by a specific duration.</p>
+		<Code @name="docs-surrealql-functions-time-round.sql" text="API Definition">
+			time::round(datetime, duration) -> datetime
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-round-input.sql">
+				SELECT * FROM time::round("2021-11-01T08:30:17+00:00", 1w);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-round-result.txt">
+				"2021-11-04T00:00:00Z"
+			</Code>
+		</codes>
+		<p>If the first argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-round-error-input.sql">
+				SELECT * FROM time::round(12345, 1w);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-round-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "secs"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::secs</h3>
+		<p>The <code>time::secs</code> function extracts the secs as a number from a datetime.</p>
+		<Code @name="docs-surrealql-functions-time-secs.sql" text="API Definition">
+			time::secs(datetime) -> number
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-secs-input.sql">
+				SELECT * FROM time::secs("2021-11-01T08:30:17+00:00");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-secs-result.txt">
+				17
+			</Code>
+		</codes>
+		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-secs-error-input.sql">
+				SELECT * FROM time::secs(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-secs-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "unix"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::unix</h3>
+		<p>The <code>time::unix</code> function returns a datetime as an integer representing the number of seconds since the UNIX epoch.</p>
+		<Code @name="docs-surrealql-functions-time-unix.sql" text="API Definition">
+			time::unix(datetime) -> number
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-unix-input.sql">
+				SELECT * FROM time::unix("2021-11-01T08:30:17+00:00");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-unix-result.txt">
+				1635755417
+			</Code>
+		</codes>
+		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-unix-error-input.sql">
+				SELECT * FROM time::unix(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-unix-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "wday"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::wday</h3>
+		<p>The <code>time::wday</code> function extracts the week day as a number from a datetime.</p>
+		<Code @name="docs-surrealql-functions-time-wday.sql" text="API Definition">
+			time::wday(datetime) -> number
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-wday-input.sql">
+				SELECT * FROM time::wday("2021-11-01T08:30:17+00:00");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-wday-result.txt">
+				1
+			</Code>
+		</codes>
+		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-wday-error-input.sql">
+				SELECT * FROM time::wday(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-wday-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "week"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::week</h3>
+		<p>The <code>time::week</code> function extracts the week as a number from a datetime.</p>
+		<Code @name="docs-surrealql-functions-time-week.sql" text="API Definition">
+			time::week(datetime) -> number
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-week-input.sql">
+				SELECT * FROM time::week("2021-11-01T08:30:17+00:00");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-week-result.txt">
+				44
+			</Code>
+		</codes>
+		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-week-error-input.sql">
+				SELECT * FROM time::week(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-week-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "yday"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::yday</h3>
+		<p>The <code>time::yday</code> function extracts the yday as a number from a datetime.</p>
+		<Code @name="docs-surrealql-functions-time-yday.sql" text="API Definition">
+			time::yday(datetime) -> number
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-yday-input.sql">
+				SELECT * FROM time::yday("2021-11-01T08:30:17+00:00");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-yday-result.txt">
+				305
+			</Code>
+		</codes>
+		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-yday-error-input.sql">
+				SELECT * FROM time::yday(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-yday-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "year"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>time::year</h3>
+		<p>The <code>time::year</code> function extracts the year as a number from a datetime.</p>
+		<Code @name="docs-surrealql-functions-time-year.sql" text="API Definition">
+			time::year(datetime) -> number
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-time-year-input.sql">
+				SELECT * FROM time::year("2021-11-01T08:30:17+00:00");
+			</Code>
+			<Code @name="docs-surrealql-functions-time-year-result.txt">
+				2021
+			</Code>
+		</codes>
+		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-time-year-error-input.sql">
+				SELECT * FROM time::year(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-time-year-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap large />

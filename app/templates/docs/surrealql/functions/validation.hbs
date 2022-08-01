@@ -1,0 +1,462 @@
+<Layout::Text text-l text-f>
+	<h5><i class="fas fa-arrow-left"></i> &nbsp; <Link @link="docs.surrealql.functions.index">Back to overview</Link></h5>
+    <h2>Validation functions</h2>
+	<p>These functions can be used when checking and validating the format of fields and values.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Table filled>
+	<table>
+		<thead>
+			<tr>
+				<th w-40>Function</th>
+				<th w-60>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<a href="#alphanum">
+						<code>is::alphanum()</code>
+					</a>
+				</td>
+				<td>Checks whether a value has only alphanumeric characters</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#alpha">
+						<code>is::alpha()</code>
+					</a>
+				</td>
+				<td>Checks whether a value has only alpha characters</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#ascii">
+						<code>is::ascii()</code>
+					</a>
+				</td>
+				<td>Checks whether a value has only ascii characters</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#domain">
+						<code>is::domain()</code>
+					</a>
+				</td>
+				<td>Checks whether a value is a domain</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#email">
+						<code>is::email()</code>
+					</a>
+				</td>
+				<td>Checks whether a value is an email</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#hexadecimal">
+						<code>is::hexadecimal()</code>
+					</a>
+				</td>
+				<td>Checks whether a value is hexadecimal</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#latitude">
+						<code>is::latitude()</code>
+					</a>
+				</td>
+				<td>Checks whether a value is a latitude value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#longitude">
+						<code>is::longitude()</code>
+					</a>
+				</td>
+				<td>Checks whether a value is a longitude value</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#numeric">
+						<code>is::numeric()</code>
+					</a>
+				</td>
+				<td>Checks whether a value has only numeric characters</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#semver">
+						<code>is::semver()</code>
+					</a>
+				</td>
+				<td>Checks whether a value matches a semver version</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#uuid">
+						<code>is::uuid()</code>
+					</a>
+				</td>
+				<td>Checks whether a value is a UUID</td>
+			</tr>
+		</tbody>
+	</table>
+</Layout::Table>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "alphanum"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>is::alphanum</h3>
+		<p>The <code>is::alphanum</code> function checks whether a value has only alphanumeric characters.</p>
+		<Code @name="docs-surrealql-functions-is-alphanum.sql" text="API Definition">
+			is::alphanum(string) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-alphanum-input.sql">
+				SELECT * FROM is::alphanum("ABC123");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-alphanum-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-is-alphanum-error-input.sql">
+				SELECT * FROM is::alphanum(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-alphanum-error-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "alpha"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>is::alpha</h3>
+		<p>The <code>is::alpha</code> function checks whether a value has only alpha characters.</p>
+		<Code @name="docs-surrealql-functions-is-alpha.sql" text="API Definition">
+			is::alpha(string) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-alpha-input.sql">
+				SELECT * FROM is::alpha("ABC123");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-alpha-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-is-alpha-error-input.sql">
+				SELECT * FROM is::alpha(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-alpha-error-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "ascii"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>is::ascii</h3>
+		<p>The <code>is::ascii</code> function checks whether a value has only ascii characters.</p>
+		<Code @name="docs-surrealql-functions-is-ascii.sql" text="API Definition">
+			is::ascii(string) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-ascii-input.sql">
+				SELECT * FROM is::ascii("ABC123");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-ascii-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-is-ascii-error-input.sql">
+				SELECT * FROM is::ascii(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-ascii-error-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "domain"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>is::domain</h3>
+		<p>The <code>is::domain</code> function checks whether a value is a domain.</p>
+		<Code @name="docs-surrealql-functions-is-domain.sql" text="API Definition">
+			is::domain(string) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-domain-input.sql">
+				SELECT * FROM is::domain("surrealdb.com");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-domain-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-is-domain-error-input.sql">
+				SELECT * FROM is::domain(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-domain-error-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "email"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>is::email</h3>
+		<p>The <code>is::email</code> function checks whether a value is an email.</p>
+		<Code @name="docs-surrealql-functions-is-email.sql" text="API Definition">
+			is::email(string) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-email-input.sql">
+				SELECT * FROM is::email("info@surrealdb.com");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-email-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-is-email-error-input.sql">
+				SELECT * FROM is::email(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-email-error-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "hexadecimal"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>is::hexadecimal</h3>
+		<p>The <code>is::hexadecimal</code> function checks whether a value is hexadecimal.</p>
+		<Code @name="docs-surrealql-functions-is-hexadecimal.sql" text="API Definition">
+			is::hexadecimal(string) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-hexadecimal-input.sql">
+				SELECT * FROM is::hexadecimal("ff009e");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-hexadecimal-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-is-hexadecimal-error-input.sql">
+				SELECT * FROM is::hexadecimal(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-hexadecimal-error-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "latitude"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>is::latitude</h3>
+		<p>The <code>is::latitude</code> function checks whether a value is a latitude value.</p>
+		<Code @name="docs-surrealql-functions-is-latitude.sql" text="API Definition">
+			is::latitude(string) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-latitude-input.sql">
+				SELECT * FROM is::latitude("-0.118092");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-latitude-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-is-latitude-error-input.sql">
+				SELECT * FROM is::latitude(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-latitude-error-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "longitude"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>is::longitude</h3>
+		<p>The <code>is::longitude</code> function checks whether a value is a longitude value.</p>
+		<Code @name="docs-surrealql-functions-is-longitude.sql" text="API Definition">
+			is::longitude(string) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-longitude-input.sql">
+				SELECT * FROM is::longitude("51.509865");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-longitude-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-is-longitude-error-input.sql">
+				SELECT * FROM is::longitude(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-longitude-error-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "numeric"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>is::numeric</h3>
+		<p>The <code>is::numeric</code> function checks whether a value has only numeric characters.</p>
+		<Code @name="docs-surrealql-functions-is-numeric.sql" text="API Definition">
+			is::numeric(string) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-numeric-input.sql">
+				SELECT * FROM is::numeric("1484091748");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-numeric-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-is-numeric-error-input.sql">
+				SELECT * FROM is::numeric(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-numeric-error-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "semver"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>is::semver</h3>
+		<p>The <code>is::semver</code> function checks whether a value matches a semver version.</p>
+		<Code @name="docs-surrealql-functions-is-semver.sql" text="API Definition">
+			is::semver(string) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-semver-input.sql">
+				SELECT * FROM is::semver("1.0.0");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-semver-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-is-semver-error-input.sql">
+				SELECT * FROM is::semver(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-semver-error-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "uuid"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>is::uuid</h3>
+		<p>The <code>is::uuid</code> function checks whether a value is a UUID.</p>
+		<Code @name="docs-surrealql-functions-is-uuid.sql" text="API Definition">
+			is::uuid(string) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-uuid-input.sql">
+				SELECT * FROM is::uuid("ad55cae8-cf02-47ee-92a7-e137fb644a84");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-uuid-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-is-uuid-error-input.sql">
+				SELECT * FROM is::uuid(12345);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-uuid-error-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap large />

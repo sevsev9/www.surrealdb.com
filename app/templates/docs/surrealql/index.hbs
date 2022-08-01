@@ -1,39 +1,80 @@
 <Layout::Text text-l text-f>
     <h2><img inline src="/static/img/surrealql-text.svg" alt="SurrealQL" /></h2>
-    <p>EdgeDB comes with a rigorously defined type system consisting of scalar types, collection types (like arrays and tuples), and object types. There is also a library of built-in functions and operators for working with each datatype.</p>
+    <p>SurrealQL is a powerful database query language which closely resembles traditional SQL, but with incorporates slight differences and improvements. Although it has similar syntax and similar statement types, there are a number of differences between traditional SQL and SurrealQL. For an overview of the different statement types which can be run in SurrealDB, and for the complete syntax definitions, along with example queries for all of the different statement types, take a look at the <Link @link="docs.surrealql.statements">statements</Link> page.</p>
 </Layout::Text>
 
 <Layout::Gap mini />
 
+<Layout::Text text-l text-f>
+	<h3>Record IDs</h3>
+	<p>In SurrealDB, document record IDs store both the table name, and the record ID.</p>
+	<Code @name="docs/surrealql/overview/record-id.sql" />
+	<p>This allows for records to be retrieved without any table scans or index scans, solely by the id.</p>
+	<Code @name="docs/surrealql/overview/record-select.sql" />
+	<p>In addition, SurrealDB record IDs allow for direct record retrieval from within interconnected record queries.</p>
+	<Code @name="docs/surrealql/overview/record-remote.sql" />
+	<p>Record IDs can be both text-based or numeric.</p>
+	<Code @name="docs/surrealql/overview/record-numeric.sql" />
+	<p>Record IDs can contain complex characters, surrounded by the <code>`</code> character.</p>
+	<Code @name="docs/surrealql/overview/record-backtick.sql" />
+	<p>Alternatively complex characters within record IDs can be surrounded by the <code>⟨</code> and <code>⟩</code> characters.</p>
+	<Code @name="docs/surrealql/overview/record-complex.sql" />
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>No JOINs</h3>
+	<p>Due to the power and flexibility which can be achieved with record IDs in SurrealDB, the need to use JOINs is removed. Instead, queries can perform complex multi-table, and multi-depth fetches, depending on the record IDs stored within each record. There is no limit to the level of fetches, and the number of different tables used within a single query. This results in a huge performance boost and eliminates the N+1 query problem, when fetching interconnected records from many different tables.</p>
+	<Code @name="docs/surrealql/overview/joins.sql" />
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Comments</h3>
+	<p>In SurrealQL, comments can be written in a number of different ways.</p>
+	<Code @name="docs/surrealql/overview/comments.sql" />
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<h3>Categories</h3>
 <Layout::Boxes cols-3-to-2-to-1>
 	<LinkTo @route="docs.surrealql.statements">
 		<Layout::Boxes::Item mini hover>
 			<h4>Statements</h4>
-			<p>Datetimes and durations can be used to store and manipulate dates and times</p>
+			<p>Detailed instructions and examples on all of the different SurrealQL statements</p>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.surrealql.operators">
 		<Layout::Boxes::Item mini hover>
 			<h4>Operators</h4>
-			<p>Understand the basic concepts of data types in SurrealDB</p>
+			<p>Numerous in-built operators can be used for simple and advanced value comparison</p>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.surrealql.parameters">
 		<Layout::Boxes::Item mini hover>
 			<h4>Parameters</h4>
-			<p>Boolean values, strings, numbers, UUIDs, arrays, objects, and durations</p>
+			<p>Parameters can be used like variables to store a other values and query results</p>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	{{!-- <LinkTo @route="docs.surrealql.expressions">
 		<Layout::Boxes::Item mini hover>
 			<h4>Expressions</h4>
-			<p>Datetimes and durations can be used to store and manipulate dates and times</p>
+			<p>Discover the true power of SurrealDB by using the powerful expression query syntax</p>
 		</Layout::Boxes::Item>
 	</LinkTo> --}}
 	<LinkTo @route="docs.surrealql.transactions">
 		<Layout::Boxes::Item mini hover>
 			<h4>Transactions</h4>
-			<p>Geolocation points and GeoJSON values can be used to store geometry data</p>
+			<p>Use transactions to group statements together which either succeed or fail as a whole</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.functions">
+		<Layout::Boxes::Item mini hover>
+			<h4>Functions</h4>
+			<p>In-built functions for checking, manipulating, and working with different types of data</p>
 		</Layout::Boxes::Item>
 	</LinkTo>
 </Layout::Boxes>

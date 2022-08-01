@@ -1,0 +1,1 @@
+USE [ NS @ns ] [ DB @db ];

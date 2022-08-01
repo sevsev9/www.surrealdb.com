@@ -1,0 +1,11 @@
+UPDATE @targets
+	[ CONTENT @value
+	  | MERGE @value
+	  | PATCH @value
+	  | SET @field = @value ...
+	]
+	[ WHERE @condition ]
+	[ RETURN [ NONE | BEFORE | AFTER | DIFF | @projections ... ]
+	[ TIMEOUT @duration ]
+	[ PARALLEL ]
+;
