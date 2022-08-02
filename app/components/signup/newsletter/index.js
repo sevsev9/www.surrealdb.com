@@ -24,6 +24,7 @@ export default class extends Component {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
+				Event: 'Registered for SurrealDB marketing',
 				Email: this.email,
 			}),
 		});

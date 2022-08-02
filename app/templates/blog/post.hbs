@@ -22,10 +22,10 @@
 			{{/each}}
 		</nav>
 		<div>
-			<Signup bordered thicker>
+			<Signup::Newsletter bordered thicker>
 				<i class="fal fa-envelope"></i>
 				<span>Subscribe</span>
-			</Signup>
+			</Signup::Newsletter>
 		</div>
 	</Layout::Helm::Menu>
 
@@ -120,7 +120,7 @@
 
 	<Layout::Text>
 		<p>To stay up-to-date with new blog articles, future product releases, and documentation updates, subscribe to our email newsletter below, follow us on <Link @link={{url "twitter"}}>Twitter</Link>, or follow us on <Link @link={{url "dev"}}>Dev</Link>.</p>
-		<Signup bordered thicker>Join the SurrealDB newsletter</Signup>
+		<Signup::Newsletter bordered thicker />
 	</Layout::Text>
 
 	<Layout::Gap small />

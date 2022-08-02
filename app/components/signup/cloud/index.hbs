@@ -2,8 +2,10 @@
 	<div>
 		{{#if (has-block)}}
 			{{yield}}
-		{{else}}
+		{{else if @text}}
 			{{@text}}
+		{{else}}
+			Join cloud waitlist
 		{{/if}}
 	</div>
 </a>
@@ -15,18 +17,18 @@
 		<Modal::Close @close={{fn (mut this.show) false}} />
 
 		{{#if this.done}}
-			Thank you for registering your interest! We can't wait to show you more about how <strong>SurrealDB</strong> works. Check your email inbox for communications from us.
+			Thank you for registering your interest for <img inline src="/static/img/text.svg" alt="SurrealDB" /> Cloud! Check your email inbox for communications from us, and make sure to whitelist <code>surrealdb.com</code> in your email inbox.
 			<br><br>
 			Tobie
 			<br>
 			Founder, SurrealDB
 		{{else}}
-			<img inline src="/static/img/text.svg" alt="SurrealDB" /> is currently operating in a private beta, and will be launching soon. Join the SurrealDB newsletter and stay updated on new releases, features, and documentation.
+			The you for your interest in <img inline src="/static/img/text.svg" alt="SurrealDB" /> Cloud. We are building a fully-managed global <img inline src="/static/img/text.svg" alt="SurrealDB" /> database platform to make building applications even easier. Enter your email below for more information.
 			<line></line>
 			<form {{on "submit" this.submit.run}}>
 				<Input @value={{this.email}} placeholder="Enter your email here..." />
 				<button type="submit" {{on "click" this.submit.run}}>
-					Keep me updated
+					Join cloud waitlist
 				</button>
 			</form>
 			{{#if this.submit.error}}
