@@ -69,7 +69,7 @@ export default class extends Controller {
 			},
 			{
 				time: new Date('2015-06-01'),
-				text: 'After years of building cloud-based Software-as-a-Service systems, with realtime APIs, complicated security permissions, and multiple separate database backends, Tobie questions whether there is an platform for build and scaling applications quicker, while still allowing for the storage and querying of data in a structured yet flexible manner.',
+				text: 'After years of building cloud-based Software-as-a-Service systems, with realtime APIs, complicated security permissions, and multiple separate database backends, Tobie questions whether there is a platform for building and scaling applications quicker, while still allowing for the storage and querying of data in a structured yet flexible manner.',
 			},
 		];
 	}
