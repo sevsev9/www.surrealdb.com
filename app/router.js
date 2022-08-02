@@ -64,6 +64,11 @@ Router.map(function() {
 
 		this.route('surrealql', function() {
 
+			this.route('operators');
+			this.route('parameters');
+			this.route('expressions');
+			this.route('transactions');
+
 			this.route('datamodel', function() {
 				this.route('simple');
 				this.route('datetimes');
@@ -90,11 +95,6 @@ Router.map(function() {
 				this.route('remove');
 				this.route('info');
 			});
-
-			this.route('operators');
-			this.route('parameters');
-			this.route('expressions');
-			this.route('transactions');
 
 			this.route('functions', function() {
 				this.route('array');
