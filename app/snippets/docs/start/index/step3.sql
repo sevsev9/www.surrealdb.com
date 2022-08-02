@@ -1,4 +1,4 @@
 CREATE account SET
-	name = "ACME Inc",
+	name = 'ACME Inc',
 	created_at = time::now()
 ;
