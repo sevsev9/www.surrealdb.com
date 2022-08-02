@@ -1,5 +1,5 @@
-DATA="INFO FOR DB;"
-curl --request POST \
+DATA="SELECT * FROM article;"
+curl -k -L -s --compressed POST \
 	--header "Content-Type: application/json" \
 	--header "NS: test" \
 	--header "DB: test" \
