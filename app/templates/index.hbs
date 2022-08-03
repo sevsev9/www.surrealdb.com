@@ -47,12 +47,12 @@
 <Layout::Blocks main-l as |block|>
 	<block>
 		<pic>
-			<img src="/static/img/illustrations/schema-direct-to-client.png" />
+			<img src="/static/img/illustrations/database-api-security.png" />
 		</pic>
 	</block>
 	<block flex col middle>
-		<h3>Simple schema definition for frontend and backend development</h3>
-		<p>With SurrealDB, specify your database and API schema in one place, and define column rules and constraints just once. Once a schema is defined, database access is automatically granted to the relevant users. No more custom API code, and no more GraphQL integration. Simple, flexible, and ready for production in minutes not months.</p>
+		<h3>Database, realtime API layer, and security permissions all-in-one</h3>
+		<p>SurrealDB combines the database layer, the querying layer, and the API and authentication layer into one platform. Advanced table-based and row-based customisable access permissions allow for granular data access patterns for different types of users. There's no need for custom backend code and security rules with complicated database development.</p>
 	</block>
 </Layout::Blocks>
 
@@ -60,12 +60,40 @@
 
 <Layout::Blocks main-r as |block|>
 	<block flex col middle>
-		<h3>Database, realtime API layer, and security permissions all-in-one</h3>
-		<p>SurrealDB combines the database layer, the querying layer, and the API and authentication layer into one platform. Advanced table-based and row-based customisable access permissions allow for granular data access patterns for different types of users. There's no need for custom backend code and security rules with complicated database development.</p>
+		<h3>Tables, documents, and graph. Store and model your data in any way</h3>
+		<p>As a multi-model database, SurrealDB enables developers to use multiple techniques to store and model data, without having to choose a method in advance. With the use of tables, SurrealDB has simmilarities with relational databases, but with the added functionality and flexibility of advanced nested fields and arrays. Inter-document record links allow for simple to understand and highly-performant related queries without the use of JOINs, eliminating the N+1 query problem.</p>
 	</block>
 	<block>
 		<pic>
-			<img src="/static/img/illustrations/database-api-security.png" />
+			<img src="/static/img/illustrations/multimodel-database.png" />
+		</pic>
+	</block>
+</Layout::Blocks>
+
+<Layout::Gap small />
+
+<Layout::Blocks main-l as |block|>
+	<block>
+		<pic>
+			<img src="/static/img/illustrations/graph-database.png" />
+		</pic>
+	</block>
+	<block flex col middle>
+		<h3>Advanced inter-document relations and analysis. No JOINs. No pain.</h3>
+		<p>With full graph database functionality SurrealDB enables more advanced querying and analysis. Records (or veritices) can be connected to one another with edges, each with its own record properties and metadata. Simple extensions to traditional SQL queries allow for multi-table, multi-depth document retrieval, efficiently in the database, without the use of complicated JOINs and without bringing the data down to the client.</p>
+	</block>
+</Layout::Blocks>
+
+<Layout::Gap small />
+
+<Layout::Blocks main-r as |block|>
+	<block flex col middle>
+		<h3>Simple schema definition for frontend and backend development</h3>
+		<p>With SurrealDB, specify your database and API schema in one place, and define column rules and constraints just once. Once a schema is defined, database access is automatically granted to the relevant users. No more custom API code, and no more GraphQL integration. Simple, flexible, and ready for production in minutes not months.</p>
+	</block>
+	<block>
+		<pic>
+			<img src="/static/img/illustrations/schema-direct-to-client.png" />
 		</pic>
 	</block>
 </Layout::Blocks>
@@ -88,12 +116,12 @@
 
 <Layout::Blocks main-r as |block|>
 	<block flex col middle>
-		<h3>Realtime live queries and data changes direct to application</h3>
-		<p>SurrealDB keeps every client device in-sync with data modifications pushed in realtime to the clients, applications, end-user devices, and server-side libraries. Live SQL queries allow for advanced filtering of the changes to which a client subscribes, and efficient data formats, including DIFFing and PATCHing enable highly-performant web-based data syncing.</p>
+		<h3>Query the database with the tools you want. Your data, your choice.</h3>
+		<p>SurrealDB is designed to be flexible to use, with support for SurrealQL, GraphQL (coming soon), CRUD support over REST, and JSON-RPC querying and modification over WebSockets. With direct-to-client connection with in-built permissions, SurrealDB speeds up the development process, and fits in seamlessly into any tech stack.</p>
 	</block>
 	<block>
 		<pic>
-			<img src="/static/img/illustrations/realtime-live-queries.png" />
+			<img src="/static/img/illustrations/multiple-integrations.png" />
 		</pic>
 	</block>
 </Layout::Blocks>
@@ -103,12 +131,12 @@
 <Layout::Blocks main-l as |block|>
 	<block>
 		<pic>
-			<img src="/static/img/illustrations/cloud-or-embedded.png" />
+			<img src="/static/img/illustrations/realtime-live-queries.png" />
 		</pic>
 	</block>
 	<block flex col middle>
-		<h3>Designed to be embedded or to run distributed in the cloud</h3>
-		<p>Built entirely in Rust as a single library, SurrealDB is designed to be used as both an embedded database library with advanced querying functionality, and as a database server which can operate in a distributed cluster. With low memory usage and cpu requirements, the system requirements have been specifically thought through for running in all types of environment.</p>
+		<h3>Realtime live queries and data changes direct to application</h3>
+		<p>SurrealDB keeps every client device in-sync with data modifications pushed in realtime to the clients, applications, end-user devices, and server-side libraries. Live SQL queries allow for advanced filtering of the changes to which a client subscribes, and efficient data formats, including DIFFing and PATCHing enable highly-performant web-based data syncing.</p>
 	</block>
 </Layout::Blocks>
 
@@ -142,14 +170,14 @@
 
 <Layout::Gap small />
 
-<Layout::Blocks main-l as |block|>
+<Layout::Blocks main-r as |block|>
 	<block flex col middle>
-		<h3>Query the database with the tools you want. Your data, your choice.</h3>
-		<p>SurrealDB is designed to be flexible to use, with support for SurrealQL, GraphQL (coming soon), CRUD support over REST, and JSON-RPC querying and modification over WebSockets. With direct-to-client connection with in-built permissions, SurrealDB speeds up the development process, and fits in seamlessly into any tech stack.</p>
+		<h3>Designed to be embedded or to run distributed in the cloud</h3>
+		<p>Built entirely in Rust as a single library, SurrealDB is designed to be used as both an embedded database library with advanced querying functionality, and as a database server which can operate in a distributed cluster. With low memory usage and cpu requirements, SurrealDB has been specifically designed to run in all types of environment.</p>
 	</block>
 	<block>
 		<pic>
-			<img src="/static/img/illustrations/multiple-integrations.png" />
+			<img src="/static/img/illustrations/cloud-or-embedded.png" />
 		</pic>
 	</block>
 </Layout::Blocks>
