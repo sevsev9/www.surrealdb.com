@@ -45,7 +45,7 @@
 <Layout::Text text-f text-l>
 	<h3>Network security</h3>
 	<p>The system is designed with scalability and redundancy in mind. Web load balancers and database servers are distributed globally across geographically dispersed data centres, in different operating regions. Database servers are synced across three geographically dispersed data centres, with multi data centre replication.</p>
-	<p>A single anycast IP address routes all global requests to the desired data centre region, providing cross-region load balancing, and automatic multi-region failover which gently re-routes traffic if backends become unhealthy. Data enters the hosting network through 80+ distinct global load balancing locations, maximizing the distance traveled on the internal network.</p>
+	<p>A single anycast IP address routes all global requests to the desired data centre region, providing cross-region load balancing, and automatic multi-region failover which gently re-routes traffic if backends become unhealthy. Data enters the hosting network through 80+ distinct global load balancing locations, maximising the distance traveled on the internal network.</p>
 	<p>Each database server has its own firewall configuration based on its role within the SurrealDB Cloud platform, and only the necessary ports are opened on each server. All outbound connections pass through the stateless access control rules, whilst inbound connections from the internet must pass through a secure highly-available loadbalancer layer, and the stateless access control firewall rules, before then being routed to each server.</p>
 </Layout::Text>
 
@@ -53,7 +53,7 @@
 
 <Layout::Text text-f text-l>
 	<h3>Software security</h3>
-	<p>We take the security of the SurrealDB code very seriously. The database is built using the <Link @link="https://www.rust-lang.org">Rust language</Link> - a static multiparadigm, memory-efficient, low-level programming language, focused on speed, security, and performance. The intention is to build SurrealDB with as few moving parts as possible, thereby keeping the attack vector as low as possible.</p>
+	<p>We take the security of the SurrealDB code very seriously. The database is built using the <Link @link="https://www.rust-lang.org">Rust language</Link> - a static multi-paradigm, memory-efficient, low-level programming language, focused on speed, security, and performance. The intention is to build SurrealDB with as few moving parts as possible, thereby keeping the attack vector as low as possible.</p>
 </Layout::Text>
 
 <Layout::Gap mini />

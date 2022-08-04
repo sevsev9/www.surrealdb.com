@@ -144,8 +144,8 @@ export default class extends Controller {
 				hash: 'v0-1-0',
 				text: [
 					'Multi-tenancy data separation, with namespaces and databases',
-					'Schemafull or schemaless tables with limitless arbritrary document fields',
-					'Multi-table, multi-row, serializable ACID transactions',
+					'Schemafull or schemaless tables with limitless  document fields',
+					'Multi-table, multi-row, serialisable ACID transactions',
 					'Table fields, table change events, table indexes, and data constraints',
 					'Advanced data model including empty values, strings, numbers, objects, arrays, durations, and datetimes',
 				]
