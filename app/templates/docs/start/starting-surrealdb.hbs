@@ -70,9 +70,9 @@
 	<p>Once installed we shall start up a simple single-node development cluster.</p>
 
 	<Code @name="docs-start-starting-step7.shell">
-		user@localhost % tiup playground --mode tikv-slim
+		user@localhost % tiup playground --tag surrealdb --mode tikv-slim --pd 1 --kv 1
 		tiup is checking updates for component playground ...
-		Starting component `playground`: /Users/tobie/.tiup/components/playground/v1.10.2/tiup-playground --mode tikv-slim
+		Starting component `playground`: /Users/tobie/.tiup/components/playground/v1.10.2/tiup-playground --tag surrealdb --mode tikv-slim --pd 1 --kv 1
 		Using the version v6.1.0 for version constraint "".
 
 		If you'd like to use a TiDB version other than v6.1.0, cancel and retry with the following arguments:
