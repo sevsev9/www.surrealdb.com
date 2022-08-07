@@ -148,6 +148,7 @@ Router.map(function() {
 			this.route('import');
 			this.route('export');
 			this.route('version');
+			this.route('sql');
 			this.route('help');
 		});
 

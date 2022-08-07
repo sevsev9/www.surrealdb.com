@@ -1,0 +1,14 @@
+Start an SQL REPL in your terminal with pipe support
+
+USAGE:
+    surreal sql [OPTIONS] --ns <ns> --db <db>
+
+OPTIONS:
+    -c, --conn <conn>    Remote database server url to connect to [default:
+                         https://cloud.surrealdb.com]
+        --db <db>        The database to export the data from
+    -h, --help           Print help information
+        --ns <ns>        The namespace to export the data from
+    -p, --pass <pass>    Database authentication password to use when connecting [default: root]
+        --pretty         Whether database responses should be pretty printed
+    -u, --user <user>    Database authentication username to use when connecting [default: root]
