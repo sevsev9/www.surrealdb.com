@@ -65,6 +65,30 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#sort">
+						<code>array::sort()</code>
+					</a>
+				</td>
+				<td>Sorts the values in an array in ascending or descending order</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#sort-asc">
+						<code>array::sort::asc()</code>
+					</a>
+				</td>
+				<td>Sorts the values in an array in ascending order</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#sort-desc">
+						<code>array::sort::desc()</code>
+					</a>
+				</td>
+				<td>Sorts the values in an array in descending order</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#union">
 						<code>array::union()</code>
 					</a>
@@ -261,6 +285,134 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-len-error-result.txt">
 				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "sort"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::sort</h3>
+		<p>The <code>array::sort</code> function calculates the length of an array, returning a number. This function includes all items when counting the number of items in the array. If you want to only count truthy values, then use the <Link @link="docs.surrealql.functions.count"><code>count()</code></Link> function.</p>
+		<Code @name="docs-surrealql-functions-array-sort-1.sql" text="API Definition">
+			array::sort(array) -> array
+		</Code>
+		<p>The function also accepts a second <Link @link="docs.surrealql.datamodel.simple">boolean</Link> parameter which determines the sorting direction. The second parameter can be <Ascua::Prism::Inline @language="sql" @code="true" /> for ascending order, or <Ascua::Prism::Inline @language="sql" @code="false" /> for descending order.</p>
+		<Code @name="docs-surrealql-functions-array-sort-2.sql" text="API Definition">
+			count(array, bool) -> array
+		</Code>
+		<p>The function also accepts a second <Link @link="docs.surrealql.datamodel.simple">string</Link> parameter which determines the sorting direction. The second parameter can be <Ascua::Prism::Inline @language="sql" @code="'asc'" /> for ascending order, or <Ascua::Prism::Inline @language="sql" @code="'desc'" /> for descending order.</p>
+		<Code @name="docs-surrealql-functions-array-sort-3.sql" text="API Definition">
+			count(array, string) -> array
+		</Code>
+		<p>The following examples show this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-sort-input-1.sql">
+				SELECT * FROM array::sort([1,2,1,null,"something",3,3,4,0]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-sort-result-1.txt">
+				[null,0,1,1,2,3,3,4,"something"]
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-sort-input-2.sql">
+				SELECT * FROM array::sort([1,2,1,null,"something",3,3,4,0], false);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-sort-result-2.txt">
+				["something",4,3,3,2,1,1,9,null]
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-sort-input-3.sql">
+				SELECT * FROM array::sort([1,2,1,null,"something",3,3,4,0], "asc");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-sort-result-3.txt">
+				[null,0,1,1,2,3,3,4,"something"]
+			</Code>
+		</codes>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-sort-input-4.sql">
+				SELECT * FROM array::sort([1,2,1,null,"something",3,3,4,0], "desc");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-sort-result-4.txt">
+				["something",4,3,3,2,1,1,9,null]
+			</Code>
+		</codes>
+		<p>If the first argument does not evaluate to an array, then the value will be returned without modification:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-sort-error-input.sql">
+				SELECT * FROM array::sort("some text");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-sort-error-result.txt">
+				"some text"
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "sort-asc"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::sort::asc</h3>
+		<p>The <code>array::sort::asc</code> function is a shorthand convenience function for the <code>array::sort</code> function, to sort values in an array in ascending order.</p>
+		<Code @name="docs-surrealql-functions-array-sort-asc.sql" text="API Definition">
+			array::sort::asc(array) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-sort-asc-input.sql">
+				SELECT * FROM array::sort::asc([1,2,1,null,"something",3,3,4,0]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-sort-asc-result.txt">
+				[null,0,1,1,2,3,3,4,"something"]
+			</Code>
+		</codes>
+		<p>If the argument does not evaluate to an array, then the value will be returned without modification:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-sort-asc-error-input.sql">
+				SELECT * FROM array::sort::asc("some text");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-sort-asc-error-result.txt">
+				"some text"
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "sort-desc"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::sort::desc</h3>
+		<p>The <code>array::sort::desc</code> function is a shorthand convenience function for the <code>array::sort</code> function, to sort values in an array in descending order.</p>
+		<Code @name="docs-surrealql-functions-array-sort-desc.sql" text="API Definition">
+			array::sort::desc(array) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-sort-desc-input.sql">
+				SELECT * FROM array::sort::desc([1,2,1,null,"something",3,3,4,0]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-sort-desc-result.txt">
+				["something",4,3,3,2,1,1,9,null]
+			</Code>
+		</codes>
+		<p>If the argument does not evaluate to an array, then the value will be returned without modification:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-sort-desc-error-input.sql">
+				SELECT * FROM array::sort::desc("some text");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-sort-desc-error-result.txt">
+				"some text"
 			</Code>
 		</codes>
 	</Layout::Text>
