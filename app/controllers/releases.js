@@ -37,6 +37,25 @@ export default class extends Controller {
 				]
 			},
 			{
+				time: new Date('2022-08-13'),
+				name: 'Release v1.0.0-beta.6',
+				path: 'section/releases/v1-0-0-beta-6',
+				link: 'v1.0.0-beta.6',
+				hash: 'v1-0-0-beta-6',
+				text: [
+					'Add command-line SurrealQL REPL for quick querying of a database',
+					'Log username at server startup when root authentication is enabled',
+					'Enable SurrealDB server to be configured using environment variables',
+					'Implement config definition key and value caching within a transaction',
+					'Add <code>array::sort</code> functions for sorting of arrays and array fields',
+					'Ensure an error is returned when selecting from a non-existent table in strict mode',
+					'Allow polymorphic remote record constraints in <code>DEFINE FIELD</code> statements',
+					'Fix bug with SQL export, where <code>DEFINE INDEX</code> statements were not exported',
+					'Fix bug where multi-yield path expressions with multiple alias outputs were returning nested arrays',
+					'Fix bug where aliased field was not output when fetching a multi-yield expressions with a final alias yield',
+				]
+			},
+			{
 				time: new Date('2022-08-01'),
 				name: 'Release v1.0.0-beta.5',
 				path: 'section/releases/v1-0-0-beta-5',
