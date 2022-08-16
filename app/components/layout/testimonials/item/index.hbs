@@ -1,0 +1,26 @@
+<layout-testimonials-item ...attributes>
+
+	<div>
+
+		<div>
+			<img src="/static/img/developers/{{@img}}.png" />
+		</div>
+
+		<div>
+
+			<div>
+				{{#if @name}}<name>{{@name}}</name>{{/if}}
+				{{#if @user}}<user>{{@user}}</user>{{/if}}
+				{{#if (and @user @date)}}<bull>&bull;</bull>{{/if}}
+				{{#if @date}}<date>{{date-format @date "MMM DD"}}</date>{{/if}}
+			</div>
+
+			<div>
+				<text>{{@text}}</text>
+			</div>
+
+		</div>
+
+	</div>
+
+</layout-testimonials-item>

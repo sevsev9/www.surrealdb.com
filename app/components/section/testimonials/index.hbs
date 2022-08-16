@@ -1,0 +1,5 @@
+<Layout::Testimonials>
+	{{#each (take this.count this.testimonials) as |testimonial|}}
+		<Layout::Testimonials::Item @img={{testimonial.img}} @name={{testimonial.name}} @user={{testimonial.user}} @date={{testimonial.date}} @text={{testimonial.text}} hover />
+	{{/each}}
+</Layout::Testimonials>
