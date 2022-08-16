@@ -5,96 +5,178 @@ layout-testimonials {
 	content {
 
 		display:block;
-		column-count:3;
-		column-gap:30px;
 		position:relative;
 		margin:0px auto 0px auto;
 
-		@include media(max-width-1000) {
-			column-count:2;
-		}
+		> app-masonry {
 
-		@include media(max-width-700) {
-			column-count:1;
-		}
-
-		layout-testimonials-item {
-
-			z-index:1;
-			width:100%;
 			display:block;
-			overflow:hidden;
-			text-align:left;
+			overflow:visible;
 			position:relative;
-			margin:0 0 30px 0;
-			border-radius:12px;
-			background-color:var(--boxes-color);
 
-			> div {
+			> app-masonry-view {
 
-				padding:20px;
-				display:flex;
+				display:block;
+				overflow:visible;
 				position:relative;
-				flex-direction:row;
 
-				> div:nth-of-type(1) {
+				> app-masonry-area {
 
-					width:48px;
-					flex-shrink:0;
+					display:block;
+					overflow:visible;
 
-					img {
-						width:32px;
-					}
+					> app-masonry-item {
 
-				}
+						display:block;
+						overflow:visible;
+						width:calc( (100% / 3) - 20px );
 
-				> div:nth-of-type(2) {
-
-					> div:nth-of-type(1) {
-
-						display:flex;
-						line-height:1;
-
-						name {
-							display:block;
-							font-size:15px;
-							font-weight:bold;
-							padding-right:5px;
-							color:var(--text-color);
+						@include media(max-width-1300) {
+							width:calc( (100% / 2) - 20px );
 						}
 
-						user {
-							display:block;
-							font-size:15px;
-							font-weight:bold;
-							padding-right:5px;
-							color:var(--faint-color);
+						@include media(max-width-850) {
+							width:100%;
 						}
 
-						bull {
-							display:block;
-							font-size:15px;
-							padding-right:5px;
-							color:var(--faint-color);
+						> a {
+
+							width:100%;
+							display:flex;
+							overflow:visible;
+
+							> layout-testimonials-item {
+
+								transform:translateZ(0);
+								transition:box-shadow 0.3s;
+
+								&:hover {
+
+									box-shadow:0 5px 20px rgba(0, 0, 0, 0.3);
+
+									img {
+										transform:scale(1.05);
+									}
+
+								}
+
+							}
+
 						}
 
-						date {
+						> a > layout-testimonials-item, > layout-testimonials-item {
+
+							z-index:1;
+							width:100%;
 							display:block;
-							font-size:15px;
-							padding-right:5px;
-							color:var(--faint-color);
-						}
+							overflow:hidden;
+							text-align:left;
+							position:relative;
+							margin:0 0 30px 0;
+							border-radius:12px;
+							background-color:var(--boxes-color);
 
-					}
+							> div {
 
-					> div:nth-of-type(2) {
+								padding:20px;
+								display:flex;
+								position:relative;
+								flex-direction:row;
 
-						display:flex;
-						padding-top:8px;
+								> div:nth-of-type(1) {
 
-						text {
-							font-size:14px;
-							line-height:1.5;
+									width:48px;
+									flex-shrink:0;
+
+									img {
+										width:32px;
+										object-fit:cover;
+										transition:transform 0.3s;
+									}
+
+								}
+
+								> div:nth-of-type(2) {
+
+									> div:nth-of-type(1) {
+
+										display:flex;
+										line-height:1;
+
+										name {
+											display:block;
+											font-size:14px;
+											font-weight:bold;
+											padding-right:5px;
+											transition:color 0.3s;
+											color:var(--text-color);
+										}
+
+										user {
+											display:block;
+											font-size:14px;
+											font-weight:bold;
+											padding-right:5px;
+											transition:color 0.3s;
+											color:var(--faint-color);
+										}
+
+										bull {
+											display:block;
+											font-size:14px;
+											padding-right:5px;
+											transition:color 0.3s;
+											color:var(--faint-color);
+										}
+
+										date {
+											display:block;
+											font-size:14px;
+											padding-right:5px;
+											transition:color 0.3s;
+											color:var(--faint-color);
+										}
+
+									}
+
+									> div:nth-of-type(2) {
+
+										display:flex;
+										padding-top:8px;
+
+										text {
+											font-size:14px;
+											line-height:1.5;
+											transition:color 0.3s;
+											color:var(--text-color);
+										}
+
+									}
+
+								}
+
+							}
+
+							&:hover {
+
+								div {
+
+									> div:nth-of-type(2) {
+
+										> div:nth-of-type(1) {
+
+											name:first-child, user:first-child {
+												color:var(--hover-color);
+											}
+
+										}
+
+									}
+
+								}
+
+							}
+
 						}
 
 					}

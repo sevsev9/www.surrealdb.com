@@ -11,7 +11,7 @@
 			<div>
 				{{#if @name}}<name>{{@name}}</name>{{/if}}
 				{{#if @user}}<user>{{@user}}</user>{{/if}}
-				{{#if (and @user @date)}}<bull>&bull;</bull>{{/if}}
+				<bull>&bull;</bull>
 				{{#if @date}}<date>{{date-format @date "MMM DD"}}</date>{{/if}}
 			</div>
 

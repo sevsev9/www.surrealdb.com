@@ -37,6 +37,7 @@
     "@ascua/label": "^0.0.233",
     "@ascua/logic": "^0.0.233",
     "@ascua/marked.js": "^0.0.233",
+    "@ascua/masonry": "^0.0.233",
     "@ascua/metrics": "^0.0.233",
     "@ascua/modal": "^0.0.233",
     "@ascua/prism.js": "^0.0.233",

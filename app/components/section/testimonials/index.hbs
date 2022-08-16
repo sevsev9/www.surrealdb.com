@@ -1,5 +1,11 @@
 <Layout::Testimonials>
-	{{#each (take this.count this.testimonials) as |testimonial|}}
-		<Layout::Testimonials::Item @img={{testimonial.img}} @name={{testimonial.name}} @user={{testimonial.user}} @date={{testimonial.date}} @text={{testimonial.text}} hover />
-	{{/each}}
+	<Ascua::Masonry @model={{take this.count this.testimonials}} @gutter={{30}} @percentPosition={{true}} @columnWidth="app-masonry-item" as |testimonial|>
+		{{#if testimonial.link}}
+			<Link @link={{testimonial.link}}>
+				<Layout::Testimonials::Item @img={{testimonial.img}} @name={{testimonial.name}} @user={{testimonial.user}} @date={{testimonial.date}} @text={{testimonial.text}} hover />
+			</Link>
+		{{else}}
+			<Layout::Testimonials::Item @img={{testimonial.img}} @name={{testimonial.name}} @user={{testimonial.user}} @date={{testimonial.date}} @text={{testimonial.text}} hover />
+		{{/if}}
+	</Ascua::Masonry>
 </Layout::Testimonials>
