@@ -1,7 +1,15 @@
-<Sidebar />
+{{#if (includes (route-name) (array "snippet"))}}
 
-<Header />
+	{{outlet}}
 
-{{outlet}}
+{{else}}
 
-<Footer />
+	<Sidebar />
+
+	<Header />
+
+	{{outlet}}
+
+	<Footer />
+
+{{/if}}

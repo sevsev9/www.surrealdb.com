@@ -1,0 +1,1 @@
+-- Paste some code into app/snippets/snippet.sql --

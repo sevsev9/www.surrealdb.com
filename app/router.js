@@ -19,6 +19,7 @@ Router.map(function() {
 	this.route('press');
 	this.route('releases');
 	this.route('roadmap');
+	this.route('snippet');
 	this.route('store');
 	this.route('why');
 

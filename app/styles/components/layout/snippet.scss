@@ -1,0 +1,21 @@
+layout-snippet {
+
+	height:100vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	background-color:var(--back-color);
+	border-top:1px solid var(--border-color);
+
+	background: rgb(255,0,160);
+	background: -moz-linear-gradient(140deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
+	background: -webkit-linear-gradient(140deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
+	background: linear-gradient(140deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
+
+	content {
+
+		width:auto;
+
+	}
+
+}
