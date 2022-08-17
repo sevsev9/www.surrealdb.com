@@ -17,6 +17,14 @@ export default class extends Component {
 				link: 'https://discord.com/channels/902568124350599239/902568124350599242/958055360059547739',
 			},
 			{
+				img: '/static/img/developers/mumoshu.png',
+				date: new Date('2022-08-17'),
+				name: 'Yusuke Kuoka',
+				user: 'mumoshu',
+				text: "I love it. It's much better than sending primary DB record updates to another streaming system that aggregates data in realtime and query it from the app with another query language",
+				link: 'https://discord.com/channels/902568124350599239/1009081534130692186/1009391475349520494',
+			},
+			{
 				img: '/static/img/developers/juanmanuelverges.png',
 				date: new Date('2022-06-25'),
 				name: 'Juan Manuel Verges',
@@ -71,6 +79,14 @@ export default class extends Component {
 				user: 'ansarizafar',
 				text: "I have been searching for a SurrealDB like database for ages.",
 				link: 'https://discord.com/channels/902568124350599239/902568124350599242/958072367484112996',
+			},
+			{
+				img: '/static/img/developers/olepeterson.png',
+				date: new Date('2022-08-16'),
+				name: 'Ole Peterson',
+				user: 'peteole',
+				text: "I was looking for something exactly like this for a long time! I have a feeling there was much too little going on in the database market for the last years and a rewrite from scratch that fixes the historical issues of sql seems like the right thing we need!",
+				link: 'https://dev.to/peteole/comment/212l2',
 			},
 			{
 				img: '/static/img/developers/makeshiftindie.png',
@@ -145,20 +161,20 @@ export default class extends Component {
 				link: 'https://www.indiehackers.com/post/just-launched-a-new-scalable-cloud-graph-database-any-feedback-users-testers-appreciated-bddb237166?commentId=-N8jfieKRHG5J0qH0NpG',
 			},
 			{
-				img: '/static/img/developers/peterbloodsworth.png',
-				date: new Date('2022-07-21'),
-				name: 'Peter Bloodsworth',
-				user: '',
-				text: "Really pleased to see all of your hard work on the dissertation translate into an exciting product. Just shows what can be achieved - hearty congratulations and best wishes for the future growth of your business.",
-				link: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:6955917039001608192?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A6955917039001608192%2C6962767300886151168%29',
-			},
-			{
 				img: '/static/img/developers/zafaransari.png',
 				date: new Date('2022-02-22'),
 				name: 'Zafar Ansari',
 				user: 'ansarizafar',
 				text: "The SurrealDB management interface is simple and beautiful. I just can't wait to play with it.",
 				link: 'https://discord.com/channels/902568124350599239/902568124350599242/982935417571639376',
+			},
+			{
+				img: '/static/img/developers/peterbloodsworth.png',
+				date: new Date('2022-07-21'),
+				name: 'Peter Bloodsworth',
+				user: '',
+				text: "Really pleased to see all of your hard work on the dissertation translate into an exciting product. Just shows what can be achieved - hearty congratulations and best wishes for the future growth of your business.",
+				link: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:6955917039001608192?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A6955917039001608192%2C6962767300886151168%29',
 			},
 		];
 	}
