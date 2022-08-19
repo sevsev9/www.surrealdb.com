@@ -1,4 +1,5 @@
 :root {
+
 	--text-color:#ffffff;		// Colour of primary text
 	--back-color:#171a21;		// Background page colour
 	--dark-color:#363c4e;		// Colour of dark text in boxes
@@ -12,4 +13,37 @@
 	--darker-color:#1c1f28;		// Colour of content boxes inside content boxes
 	--border-color:#333949;		// Colour of border separation lines
 	--sidebar-color:#222632;	// Colour of mobile sidebar menu
+
+	@media (prefers-color-scheme: light) {
+		--text-color:#ffffff;		// Colour of primary text
+		--back-color:#171a21;		// Background page colour
+		--dark-color:#363c4e;		// Colour of dark text in boxes
+		--faint-color:#aeb8ca;		// Colour of faint text
+		--hover-color:#ff009e;		// Colour of links when hovering
+		--popup-color:#222632;		// Colour of popup modal window
+		--coder-color:#222632;		// Colour of code box elements
+		--boxes-color:#222632;		// Colour of content box elements
+		--input-color:#222632;		// Colour input form elements
+		--split-color:#141416;		// Colour of border lines in split code boxes
+		--darker-color:#1c1f28;		// Colour of content boxes inside content boxes
+		--border-color:#333949;		// Colour of border separation lines
+		--sidebar-color:#222632;	// Colour of mobile sidebar menu
+	}
+
+	@media (prefers-color-scheme: dark) {
+		--text-color:#ffffff;		// Colour of primary text
+		--back-color:#171a21;		// Background page colour
+		--dark-color:#363c4e;		// Colour of dark text in boxes
+		--faint-color:#aeb8ca;		// Colour of faint text
+		--hover-color:#ff009e;		// Colour of links when hovering
+		--popup-color:#222632;		// Colour of popup modal window
+		--coder-color:#222632;		// Colour of code box elements
+		--boxes-color:#222632;		// Colour of content box elements
+		--input-color:#222632;		// Colour input form elements
+		--split-color:#141416;		// Colour of border lines in split code boxes
+		--darker-color:#1c1f28;		// Colour of content boxes inside content boxes
+		--border-color:#333949;		// Colour of border separation lines
+		--sidebar-color:#222632;	// Colour of mobile sidebar menu
+	}
+
 }

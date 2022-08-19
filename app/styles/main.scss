@@ -27,6 +27,12 @@ section {
 
 	body > &:nth-child(even) {
 		background-color:rgba(0,0,0,0.2);
+		@media (prefers-color-scheme: dark) {
+			background-color:rgba(0,0,0,0.2);
+		}
+		@media (prefers-color-scheme: light) {
+			background-color:rgba(100,100,100,0.05);
+		}
 	}
 
 	@include media(max-width-750) {
