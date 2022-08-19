@@ -24,7 +24,7 @@ code, :not(pre) > code[class*="language-"] {
 	font-size:inherit;
 	border-radius:5px;
 	font-family:var(--system-font-mono);
-	background-color:var(--boxes-color);
+	background-color:var(--coder-color);
 
 	a:hover & {
 		cursor:pointer;
@@ -61,7 +61,7 @@ pre[class*="language-"] {
 	word-break:normal;
 	border-radius:12px;
 	word-spacing:normal;
-	background-color:var(--boxes-color);
+	background-color:var(--coder-color);
 	font-family:var(--system-font-mono);
 	box-shadow:0 5px 20px rgba(0, 0, 0, 0.3);
 }
@@ -78,7 +78,7 @@ code[class*="language-"] {
 	word-break:normal;
 	border-radius:12px;
 	word-spacing:normal;
-	background-color:var(--boxes-color);
+	background-color:var(--coder-color);
 	font-family:var(--system-font-mono);
 }
 
