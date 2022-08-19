@@ -6,7 +6,7 @@ layout-helm {
 
 		grid-template-columns:
 			[sidebar-l] 250px
-			[content] auto
+			[content] calc(100% - 250px)
 		;
 
 		@include media(max-width-1024) {
@@ -21,7 +21,6 @@ layout-helm {
 		main {
 			width:100%;
 			margin:0 auto;
-			overflow:hidden;
 		}
 
 		main section:before {
