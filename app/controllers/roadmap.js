@@ -10,6 +10,10 @@ export default class extends Controller {
 				name: 'SurrealDB 1.0',
 			},
 			{
+				time: new Date('2022-08-20'),
+				text: 'SurrealDB launched on Reddit',
+			},
+			{
 				time: new Date('2022-07-20'),
 				text: 'SurrealDB LinkedIn community is live.',
 			},
