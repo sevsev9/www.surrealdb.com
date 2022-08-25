@@ -8,8 +8,6 @@ async function main() {
 
 		// Signin as a namespace, database, or root user
 		await db.signin({
-			NS: 'test',
-			DB: 'test',
 			user: 'root',
 			pass: 'root',
 		});
