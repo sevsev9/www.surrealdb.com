@@ -16,7 +16,6 @@ export default class extends Controller {
 							'GraphQL queries, modifications, and subscriptions',
 							'Live queries for realtime, distributed notifications of data updates',
 							'SurrealDB -> WASM build for running SurrealDB within a browser with persistant storage',
-							'Highly-performant, ACID compliant, persistant, on-disk storage, with multiple concurrent writers',
 						]
 					},
 					{
@@ -34,6 +33,23 @@ export default class extends Controller {
 							{ category: 'performance', text: 'Database index selection for improved performance when performing full-table scans' },
 						]
 					},
+				]
+			},
+			{
+				time: new Date('2022-08-29'),
+				name: 'Release v1.0.0-beta.7',
+				path: 'section/releases/v1-0-0-beta-7',
+				link: 'v1.0.0-beta.7',
+				hash: 'v1-0-0-beta-7',
+				text: [
+					'Add support for Objects and Arrays as Record IDs',
+					'Add support for querying records using Record ID ranges',
+					'Add SQL <code>session</code> functions for retrieving session variables',
+					'Make <code>--ns</code> and <code>--db</code> arguments optional in command-line REPL',
+					'Return an error when the specified datastore is not able to be initiated',
+					'Enable root authentication for client libraries using WebSocket protocol',
+					'Ensure <code>math::sum()</code> returns a number instead of a <code>NONE</code> value, when called on a non-array value',
+					'Add ACID compliant, persistant, on-disk storage implementation, with multiple concurrent writers using RocksDB',
 				]
 			},
 			{
