@@ -107,6 +107,7 @@ Router.map(function() {
 				this.route('math');
 				this.route('parse');
 				this.route('rand');
+				this.route('session');
 				this.route('string');
 				this.route('time');
 				this.route('type');
