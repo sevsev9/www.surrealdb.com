@@ -18,7 +18,7 @@ export default class extends Component {
 
 		if (!this.email) throw "Please provide an email";
 
-		yield fetch('https://contact.abcum.com', {
+		yield fetch('https://contact.surrealdb.com', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

@@ -131,8 +131,8 @@ module.exports = function(environment) {
 					'wss://surreal.io/rpc',
 					// Version
 					'https://version.surrealdb.com',
-					// Abcum
-					'https://contact.abcum.com',
+					// Surreal
+					'https://contact.surrealdb.com',
 					// Google
 					'https://www.google-analytics.com/',
 					// Mixpanel
