@@ -9,6 +9,28 @@ export default class extends Component {
 	@cache get testimonials() {
 		return [
 			{
+				img: '/static/img/developers/chrishay.png',
+				date: new Date('2022-09-04'),
+				name: 'Chris Hay, CTO at IBM iX',
+				text: "It's fast, small, can run on browser, edge and cloud.  It can handle large data.  It can run in-memory like redis or disk like sqlite and it can run multi-cluster.   It can sync between cloud and edge.  And to top of it off, it can also run as a graphdb. It's interesting.",
+				link: 'https://twitter.com/chrishayuk/status/1566350575373008898?s=20&t=FyK0E3bPxzYl0L41DBO_1w',
+			},
+			{
+				img: '/static/img/developers/chrishay.png',
+				date: new Date('2022-09-06'),
+				name: 'Chris Hay, CTO at IBM iX',
+				text: "Awesome, you've done an awesome job.  I have high hopes for surrealdb.  I genuinely think a new type of database is needed and I think this can fill that void.",
+				link: 'https://www.youtube.com/watch?v=D41jb4DDIdA',
+			},
+			{
+				img: '/static/img/developers/thomascope.png',
+				date: new Date('2022-07-23'),
+				name: 'Thomas Cope, CSO at Qush Security',
+				user: '',
+				text: "Huge congratulations! Best database I've ever seen!",
+				link: 'https://www.linkedin.com/feed/update/urn:li:activity:6955917039718825984/?commentUrn=urn%3Ali%3Acomment%3A(ugcPost%3A6955917039001608192%2C6956602267307278338)',
+			},
+			{
 				img: '/static/img/developers/zafaransari.png',
 				date: new Date('2022-03-28'),
 				name: 'Zafar Ansari',
@@ -63,14 +85,6 @@ export default class extends Component {
 				user: '@_abdfnx',
 				text: "I'm so exited about your version 1.0.0, keep up your awesome work.",
 				link: 'https://mobile.twitter.com/_abdfnx',
-			},
-			{
-				img: '/static/img/developers/thomascope.png',
-				date: new Date('2022-07-23'),
-				name: 'Thomas Cope',
-				user: '',
-				text: "Huge congratulations! Best database I've ever seen!",
-				link: 'https://www.linkedin.com/feed/update/urn:li:activity:6955917039718825984/?commentUrn=urn%3Ali%3Acomment%3A(ugcPost%3A6955917039001608192%2C6956602267307278338)',
 			},
 			{
 				img: '/static/img/developers/gonzalogascameza.png',
