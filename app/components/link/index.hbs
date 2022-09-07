@@ -7,7 +7,7 @@
 		{{~/if~}}
 	</a>
 {{~else if (begs-with @link "#")~}}
-	<a {{on "click" (scroll-into-view @link smooth=true)}} ...attributes>
+	<a {{on "click" (scroll-to-link @link smooth=true)}} ...attributes>
 		{{~#if (has-block)~}}
 			{{yield}}
 		{{~else~}}
