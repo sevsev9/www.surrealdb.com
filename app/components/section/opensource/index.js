@@ -3,7 +3,7 @@ import { cache } from '@ascua/decorators';
 
 export default class extends Component {
 
-	@cache get projects() {
+	@cache get model() {
 		return [
 			{ name: 'EchoDB', link: 'https://github.com/surrealdb/echodb', lang: 'Rust / Apache-2.0', text: 'An embedded, in-memory, immutable, copy-on-write database engine with serialisable, isolated transactions', image: '/static/img/opensource/echodb.png' },
 			{ name: 'YokuDB', link: 'https://github.com/surrealdb/yokudb', lang: 'Rust / Apache-2.0', text: 'A versioned, embedded, persistent, memory-mapped, ACID-compliant key-value database engine', image: '/static/img/opensource/yokudb.png' },
