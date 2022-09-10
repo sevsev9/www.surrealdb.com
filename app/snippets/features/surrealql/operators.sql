@@ -12,7 +12,7 @@ SELECT * FROM restaurant WHERE location INSIDE {
 };
 
 -- Select all people whose tags contain "tag1" OR "tag2"
-SELECT * FROM person WHERE tags CONTAINS ANY ["tag1", "tag2"];
+SELECT * FROM person WHERE tags CONTAINSANY ["tag1", "tag2"];
 
 -- Select all people who have any email address ending in 'gmail.com'
 SELECT * FROM person WHERE emails.*.value ?= /gmail.com$/;
