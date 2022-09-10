@@ -99,13 +99,15 @@ module.exports = function(environment) {
 					"'none'",
 				],
 				'default-src': [
-					"'none'",
+					"'self'",
 				],
 				'worker-src': [
 					"'self'"
 				],
 				'img-src': [
 					"'self'",
+					// Brandsafe
+					'https://cdn.brandsafe.io/',
 					// Google
 					'https://www.google-analytics.com/',
 					// Linkedin
