@@ -126,8 +126,12 @@ Router.map(function() {
 				this.route('angularjs');
 				this.route('apollo');
 				this.route('c');
+				this.route('dart');
 				this.route('deno');
+				this.route('dotnet');
 				this.route('emberjs');
+				this.route('erlang');
+				this.route('flutter');
 				this.route('golang');
 				this.route('java');
 				this.route('javascript');
