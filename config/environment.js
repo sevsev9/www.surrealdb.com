@@ -117,6 +117,12 @@ module.exports = function(environment) {
 				'font-src': [
 					"'self'",
 				],
+				'frame-src': [
+					"'self'",
+					// YouTube
+					'https://youtube.com',
+					'https://www.youtube.com',
+				],
 				'style-src': [
 					"'self'",
 				],
