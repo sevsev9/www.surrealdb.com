@@ -37,7 +37,9 @@ layout-blocks {
 
 				width:100%;
 				display:block;
+				overflow:hidden;
 				position:relative;
+				border-radius:12px;
 				padding-bottom:56.25%;
 
 				iframe {
