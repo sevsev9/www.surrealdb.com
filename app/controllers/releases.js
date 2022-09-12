@@ -51,7 +51,7 @@ export default class extends Controller {
 					'Temporarily disable HTTP response compression',
 					'Improve <code>surreal import</code> and <code>surreal export</code> cli commands',
 					'Fix bug where <code>GROUP BY</code> fields with an alias <code>AS</code> name were not output correctly',
-					'Fix SQL syntax parsing bug when specifying <code>DEFINE INDEX</code> statements with <code>UNIQUE</code constraints',
+					'Fix SQL syntax parsing bug when specifying <code>DEFINE INDEX</code> statements with <code>UNIQUE</code> constraints',
 				]
 			},
 			{
