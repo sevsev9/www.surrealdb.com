@@ -30,14 +30,7 @@ export default class Version extends Service {
 
 		try {
 
-			let res = await fetch('https://version.surrealdb.com', {
-				method: 'GET',
-				mode: 'cors',
-				credentials: 'omit',
-				headers: {
-					'Content-Type': 'text/plain'
-				},
-			});
+			let res = await fetch('https://version.surrealdb.com');
 
 			let txt = await res.text();
 
