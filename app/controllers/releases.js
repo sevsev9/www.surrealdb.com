@@ -6,36 +6,6 @@ export default class extends Controller {
 	@cache get model() {
 		return [
 			{
-				name: 'In development',
-				link: 'dev',
-				hash: 'dev',
-				data: [
-					{
-						name: 'Database functionality',
-						text: [
-							'GraphQL queries, modifications, and subscriptions',
-							'Live queries for realtime, distributed notifications of data updates',
-							'SurrealDB -> WASM build for running SurrealDB within a browser with persistant storage',
-						]
-					},
-					{
-						name: 'Scripting functionality',
-						text: [
-							{ category: 'scripting', text: 'Add <code>fetch</code> module for asynchronous HTTP requests' },
-							{ category: 'scripting', text: 'Add <code>surrealdb</code> module for querying + modifying the database' },
-							{ category: 'scripting', text: 'Add ability to define or import custom ES6 modules for user-defined functionality' },
-						]
-					},
-					{
-						name: 'Performance improvements',
-						text: [
-							{ category: 'performance', text: 'Zero-copy datastore key serialization and deserialization' },
-							{ category: 'performance', text: 'Database index selection for improved performance when performing full-table scans' },
-						]
-					},
-				]
-			},
-			{
 				time: new Date('2022-08-29'),
 				name: 'Release v1.0.0-beta.7',
 				path: 'section/releases/v1-0-0-beta-7',
