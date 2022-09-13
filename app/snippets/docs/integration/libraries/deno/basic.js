@@ -35,7 +35,7 @@ async function main() {
 		let people = await db.select("person");
 
 		// Perform a custom advanced query
-		let groups = await db.query('SELECT marketing, count() FROM type::table(tb) GROUP BY marketing', {
+		let groups = await db.query('SELECT marketing, count() FROM type::table($tb) GROUP BY marketing', {
 			tb: 'person',
 		});
 
