@@ -49,7 +49,7 @@ stage:
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=31536000, immutable" ./dist/static s3://www.surrealdb.dev/static/
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=300" ./dist/favicon.ico s3://www.surrealdb.dev/
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=300" ./dist/robots.txt s3://www.surrealdb.dev/
-	gcloud functions deploy www-surrealdb-dev --project surrealdb --region europe-west2 --runtime nodejs14 --entry-point main --trigger-http --security-level secure-always --memory 2048MB --timeout 5s --set-env-vars EXPERIMENTAL_RENDER_MODE_SERIALIZE=true
+	gcloud functions deploy www-surrealdb-dev --project surrealdb --region europe-west2 --runtime nodejs16 --entry-point main --trigger-http --security-level secure-always --memory 2048MB --timeout 5s --set-env-vars EXPERIMENTAL_RENDER_MODE_SERIALIZE=true
 	aws s3 cp --region eu-west-2 --cache-control "no-store" ./dist/version.txt s3://www.surrealdb.dev/
 	aws s3 cp --region eu-west-2 --cache-control "no-store" ./dist/index.html s3://www.surrealdb.dev/
 
@@ -60,6 +60,6 @@ deploy:
 	aws s3 sync --region eu-west-2 --cache-control "public, max-age=31536000, immutable" ./dist/static s3://www.surrealdb.com/static/
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=300" ./dist/favicon.ico s3://www.surrealdb.com/
 	aws s3 cp --region eu-west-2 --cache-control "public, max-age=300" ./dist/robots.txt s3://www.surrealdb.com/
-	gcloud functions deploy www-surrealdb-com --project surrealdb --region europe-west2 --runtime nodejs14 --entry-point main --trigger-http --security-level secure-always --memory 2048MB --timeout 5s --set-env-vars EXPERIMENTAL_RENDER_MODE_SERIALIZE=true
+	gcloud functions deploy www-surrealdb-com --project surrealdb --region europe-west2 --runtime nodejs16 --entry-point main --trigger-http --security-level secure-always --memory 2048MB --timeout 5s --set-env-vars EXPERIMENTAL_RENDER_MODE_SERIALIZE=true
 	aws s3 cp --region eu-west-2 --cache-control "no-store" ./dist/version.txt s3://www.surrealdb.com/
 	aws s3 cp --region eu-west-2 --cache-control "no-store" ./dist/index.html s3://www.surrealdb.com/
