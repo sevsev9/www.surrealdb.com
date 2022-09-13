@@ -1,1 +1,1 @@
-SELECT * FROM <decimal> true;
+SELECT * FROM <number> true;

@@ -1,1 +1,1 @@
-SELECT * FROM <decimal> "some truthy value";
+SELECT * FROM <number> "some truthy value";
