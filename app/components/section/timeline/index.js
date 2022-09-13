@@ -6,6 +6,18 @@ export default class extends Component {
 	@cache get model() {
 		return [
 			{
+				time: new Date('2022-08-22'),
+				text: 'SurrealDB launched on Hacker News',
+			},
+			{
+				time: new Date('2022-08-20'),
+				text: 'SurrealDB launched on Reddit',
+			},
+			{
+				time: new Date('2022-07-20'),
+				text: 'SurrealDB LinkedIn community is live.',
+			},
+			{
 				time: new Date('2022-07-11'),
 				name: 'SurrealDB 1.0-beta',
 				text: 'The first public beta of SurrealDB is released, with the ability to run in-memory, on a single node, or in a highly-available, highly-scalable distributed environment. A highly-performant query language enables use of many different data types, and javascript functions can be used for more complex functions and triggers.',
@@ -30,6 +42,14 @@ export default class extends Component {
 					'Support for amd64, arm64 on Linux and Darwin',
 					'Support for amd64 on Windows',
 				]
+			},
+			{
+				time: new Date('2021-12-01'),
+				text: 'SurrealDB Discord community is live.',
+			},
+			{
+				time: new Date('2021-11-01'),
+				text: 'SurrealDB Ltd is formed in the United Kingdom.',
 			},
 			{
 				time: new Date('2021-10-01'),

@@ -6,18 +6,6 @@ export default class extends Controller {
 	@cache get model() {
 		return [
 			{
-				time: new Date('2022-09-01'),
-				name: 'SurrealDB 1.0',
-			},
-			{
-				time: new Date('2022-08-20'),
-				text: 'SurrealDB launched on Reddit',
-			},
-			{
-				time: new Date('2022-07-20'),
-				text: 'SurrealDB LinkedIn community is live.',
-			},
-			{
 				time: new Date('2022-07-11'),
 				name: 'SurrealDB 1.0-beta',
 				text: 'The beta version of SurrealDB will support a large amount of functionality, with the ability to run in-memory, on a single node, or in a highly-available, highly-scalable distributed environment. A highly-performant query language will enable use of many different data types, and javascript functions can be used for more complex functions and triggers.',
@@ -43,21 +31,9 @@ export default class extends Controller {
 				]
 			},
 			{
-				time: new Date('2021-12-01'),
-				text: 'SurrealDB Discord community is created.',
-			},
-			{
-				time: new Date('2021-11-01'),
-				text: 'SurrealDB Ltd is formed in the United Kingdom.',
-			},
-			{
 				time: new Date('2021-07-01'),
-				name: 'Codebase open sourced',
-				text: 'The decision is made to open source SurrealDB, making it available to other developers and organisations. Having learnt a great deal about building a future-ready database, the decision is made to re-build SurrealDB using Rust, in order to enforce data sharing guarantees.',
-			},
-			{
-				time: new Date('2019-12-01'),
-				text: 'SurrealDB private cloud is launched on Google Cloud Platform.',
+				name: 'Codebase source made available',
+				text: 'The decision is made to make the SurrealDB sourcecode public, making it available to other developers and organisations. Having learnt a great deal about building a future-ready database, the decision is made to re-build SurrealDB using Rust, in order to enforce data sharing guarantees.',
 			},
 			{
 				time: new Date('2017-07-01'),
