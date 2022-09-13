@@ -1,4 +1,4 @@
-PS C:\> surreal.exe start --log debug --user toor --pass root memory
+PS C:\> surreal.exe start --log debug --user root --pass root memory
 [2022-07-28 15:50:34] INFO  surrealdb::iam Root authentication is enabled
 [2022-07-28 15:50:34] INFO  surrealdb::dbs Database strict mode is disabled
 [2022-07-28 15:50:34] INFO  surrealdb::kvs Starting kvs store in memory
