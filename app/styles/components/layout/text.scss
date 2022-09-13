@@ -71,8 +71,14 @@ layout-text {
 		text-align:left;
 
 		h1, h2, h3, h4, h5, p {
-			// max-width:80%;
+
+			max-width:80%;
 			margin-left:0;
+
+			@include media(max-width-750) {
+				max-width:100%;
+			}
+
 		}
 
 	}
@@ -82,8 +88,14 @@ layout-text {
 		text-align:right;
 
 		h1, h2, h3, h4, h5, p {
+
 			max-width:80%;
 			margin-right:0;
+
+			@include media(max-width-750) {
+				max-width:100%;
+			}
+
 		}
 
 	}
