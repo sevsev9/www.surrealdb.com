@@ -27,7 +27,7 @@ export function url([type]) {
 	case 'license':
 		return 'https://github.com/surrealdb/license';
 	case 'docker':
-		return 'https://hub.docker.com/repository/docker/surrealdb/surrealdb';
+		return 'https://hub.docker.com/r/surrealdb/surrealdb';
 	}
 }
 
