@@ -18,7 +18,7 @@
 	<h3>Defining parameters within client libraries</h3>
 	<p>SurrealDB's client libraries allow parameters to be passed in as JSON values, which are then converted to SurrealDB data types when the query is run. The following example show a variable being used within a SurrealQL query from the JavaScript library.</p>
 	<Code @name="docs-surrealql-parameters-javascript.js" text="JavaScript library">
-		let people = await surreal.query("SELECT * FROM article WHERE status IN $status", {
+		let people = await surreal.query("SELECT * FROM article WHERE status INSIDE $status", {
 			status: ["live", "draft"],
 		});
 	</Code>
