@@ -587,7 +587,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or a record id to select.
+							The table name or a record ID to select.
 						</td>
 					</tr>
 				</tbody>
@@ -629,7 +629,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or the specific record id to create.
+							The table name or the specific record ID to create.
 						</td>
 					</tr>
 					<tr>
@@ -645,9 +645,9 @@
 			</table>
 		</Layout::Table>
 		<Code @name="docs-integration-libraries-nodejs-create.js">
-			// Create a record with a random id
+			// Create a record with a random ID
 			let person = await db.create('person');
-			// Create a record with a specific id
+			// Create a record with a specific ID
 			let record = await db.create('person:tobie', {
 				name: 'Tobie',
 				settings: {
@@ -687,7 +687,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or the specific record id to update.
+							The table name or the specific record ID to update.
 						</td>
 					</tr>
 					<tr>
@@ -705,7 +705,7 @@
 		<Code @name="docs-integration-libraries-nodejs-update.js">
 			// Update all records in a table
 			let people = await db.update('person');
-			// Update a record with a specific id
+			// Update a record with a specific ID
 			let person = await db.update('person:tobie', {
 				name: 'Tobie',
 				settings: {
@@ -745,7 +745,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or the specific record id to update.
+							The table name or the specific record ID to change.
 						</td>
 					</tr>
 					<tr>
@@ -765,7 +765,7 @@
 			let people = await db.change('person', {
 				updated_at: new Date(),
 			});
-			// Update a record with a specific id
+			// Update a record with a specific ID
 			let person = await db.change('person:tobie', {
 				updated_at: new Date(),
 				settings: {
@@ -804,7 +804,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or the specific record id to update.
+							The table name or the specific record ID to modify.
 						</td>
 					</tr>
 					<tr>
@@ -824,7 +824,7 @@
 			let people = await db.modify('person', [
 				{ op: "replace", path: "/created_at", value: new Date() },
 			]);
-			// Update a record with a specific id
+			// Update a record with a specific ID
 			let person = await db.modify('person:tobie', [
 				{ op: "replace", path: "/settings/active", value: false },
 				{ op: "add", "path": "/tags", "value": ["developer", "engineer"] },
@@ -861,7 +861,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or a record id to select.
+							The table name or a record ID to delete.
 						</td>
 					</tr>
 				</tbody>

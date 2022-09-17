@@ -183,7 +183,7 @@
 		<h3><Ascua::Prism::Inline @language="js" @code="Surreal.Instance" /></h3>
 		<p>The <code>Instance</code> static singleton ensures that a single database instance is available across very large or complicated applications. With the singleton, only one connection to the database is instantiated, and the database connection does not have to be shared across components or controllers.</p>
 		<Code @name="docs-integration-libraries-deno-instance.js">
-			const Surreal = require('surrealdb.js');
+			import Surreal from "https://deno.land/x/surrealdb@v0.2.0/mod.ts";
 
 			async function main() {
 				try {
@@ -573,7 +573,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or a record id to select.
+							The table name or a record ID to select.
 						</td>
 					</tr>
 				</tbody>
@@ -615,7 +615,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or the specific record id to create.
+							The table name or the specific record ID to create.
 						</td>
 					</tr>
 					<tr>
@@ -631,9 +631,9 @@
 			</table>
 		</Layout::Table>
 		<Code @name="docs-integration-libraries-deno-create.js">
-			// Create a record with a random id
+			// Create a record with a random ID
 			let person = await db.create('person');
-			// Create a record with a specific id
+			// Create a record with a specific ID
 			let record = await db.create('person:tobie', {
 				name: 'Tobie',
 				settings: {
@@ -673,7 +673,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or the specific record id to update.
+							The table name or the specific record ID to update.
 						</td>
 					</tr>
 					<tr>
@@ -691,7 +691,7 @@
 		<Code @name="docs-integration-libraries-deno-update.js">
 			// Update all records in a table
 			let people = await db.update('person');
-			// Update a record with a specific id
+			// Update a record with a specific ID
 			let person = await db.update('person:tobie', {
 				name: 'Tobie',
 				settings: {
@@ -731,7 +731,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or the specific record id to update.
+							The table name or the specific record ID to change.
 						</td>
 					</tr>
 					<tr>
@@ -751,7 +751,7 @@
 			let people = await db.change('person', {
 				updated_at: new Date(),
 			});
-			// Update a record with a specific id
+			// Update a record with a specific ID
 			let person = await db.change('person:tobie', {
 				updated_at: new Date(),
 				settings: {
@@ -790,7 +790,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or the specific record id to update.
+							The table name or the specific record ID to modify.
 						</td>
 					</tr>
 					<tr>
@@ -810,7 +810,7 @@
 			let people = await db.modify('person', [
 				{ op: "replace", path: "/created_at", value: new Date() },
 			]);
-			// Update a record with a specific id
+			// Update a record with a specific ID
 			let person = await db.modify('person:tobie', [
 				{ op: "replace", path: "/settings/active", value: false },
 				{ op: "add", "path": "/tags", "value": ["developer", "engineer"] },
@@ -847,7 +847,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or a record id to select.
+							The table name or a record ID to delete.
 						</td>
 					</tr>
 				</tbody>
