@@ -48,12 +48,12 @@
 		<Code @name="install-windows.bash">
 			iwr https://windows.surrealdb.com -useb | iex
 		</Code>
-		<p>Alternatively SurrealDB is available for installation via the <a href="https://community.chocolatey.org/packages/surreal" rel="noopener noreferrer" target="_blank">Chocolatey</a> package manager, from an administrative shell.</p>
+		<p>Alternatively SurrealDB is available for installation, on Windows, via the <Link @link="https://community.chocolatey.org/packages/surreal">Chocolatey</Link> package manager, from an administrative shell - enabling easy installation and upgrading.</p>
 		<Code @name="install-choco.bash">
 			choco install surreal --pre
 		</Code>
-		<p>The installed chocolatey package can be updated to the lastest version using the following command.</p>
-		<Code @name="install-choco.bash">
+		<p>Using <Link @link="https://community.chocolatey.org/packages/surreal">Chocolatey</Link>, SurrealDB can be upgraded to the latest version with the following command.</p>
+		<Code @name="upgrade-choco.bash">
 			choco upgrade surreal --pre
 		</Code>
 	</block>
