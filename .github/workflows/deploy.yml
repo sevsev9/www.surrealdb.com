@@ -10,6 +10,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    concurrency: deployment
+
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
