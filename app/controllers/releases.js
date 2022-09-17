@@ -19,7 +19,7 @@ export default class extends Controller {
 					'Return an error when the specified datastore is not able to be initiated',
 					'Enable root authentication for client libraries using WebSocket protocol',
 					'Ensure <code>math::sum()</code> returns a number instead of a <code>NONE</code> value, when called on a non-array value',
-					'Add ACID compliant, persistant, on-disk storage implementation, with multiple concurrent writers using RocksDB',
+					'Add ACID compliant, persistent, on-disk storage implementation, with multiple concurrent writers using RocksDB',
 				]
 			},
 			{
