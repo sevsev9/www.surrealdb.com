@@ -524,6 +524,112 @@
 
 <Layout::Gap small />
 
+<Layout::Group {{waypoint "match"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>~</code></h3>
+		<p>Compare two values for equality using fuzzy matching.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-match-input-1.sql">
+				SELECT * FROM "test text" ~ "Test";
+			</Code>
+			<Code @name="docs-surrealql-operators-match-result-1.txt">
+				true
+			</Code>
+			<Code @name="docs-surrealql-operators-match-input-2.sql">
+				SELECT * FROM "true" ~ true;
+			</Code>
+			<Code @name="docs-surrealql-operators-match-result-2.txt">
+				true
+			</Code>
+			<Code @name="docs-surrealql-operators-match-input-3.sql">
+				SELECT * FROM ["test", "thing"] ~ "test";
+			</Code>
+			<Code @name="docs-surrealql-operators-match-result-3.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "notmatch"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>!~</code></h3>
+		<p>Compare two values for inequality using fuzzy matching.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-notmatch-input-1.sql">
+				SELECT * FROM "other text" !~ "test";
+			</Code>
+			<Code @name="docs-surrealql-operators-notmatch-result-1.txt">
+				true
+			</Code>
+			<Code @name="docs-surrealql-operators-notmatch-input-2.sql">
+				SELECT * FROM "test text" !~ "Test";
+			</Code>
+			<Code @name="docs-surrealql-operators-notmatch-result-2.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "anymatch"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>?~</code></h3>
+		<p>Check whether any value in a set is equal to a value using fuzzy matching.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-anymatch-input-1.sql">
+				SELECT * FROM ["true", "test", "text"] ?~ true;
+			</Code>
+			<Code @name="docs-surrealql-operators-anymatch-result-1.txt">
+				true
+			</Code>
+			<Code @name="docs-surrealql-operators-anymatch-input-2.sql">
+				SELECT * FROM [1, 2, 3] ?~ "2";
+			</Code>
+			<Code @name="docs-surrealql-operators-anymatch-result-2.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "allmatch"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>*~</code></h3>
+		<p>Check whether all values in a set are equal to a value using fuzzy matching.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-allmatch-input-1.sql">
+				SELECT * FROM ["TRUE", true, "true", "TrUe"] *~ true;
+			</Code>
+			<Code @name="docs-surrealql-operators-allmatch-result-1.txt">
+				true
+			</Code>
+			<Code @name="docs-surrealql-operators-allmatch-input-2.sql">
+				SELECT * FROM ["TEST", "test", "text"] *~ "test";
+			</Code>
+			<Code @name="docs-surrealql-operators-allmatch-result-2.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
 <Layout::Group {{waypoint "lessthan"}}>
 
 	<Layout::Text text-l text-f>
