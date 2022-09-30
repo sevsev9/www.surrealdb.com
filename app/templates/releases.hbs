@@ -114,8 +114,11 @@
 								{{#each sect.text as |item|}}
 									{{#if item.text}}
 										<li>
-											{{#if (eq item.category "scripting")}}
-												<Nudge::Scripting />
+											{{#if (eq item.category "bug")}}
+												<Nudge::Bug />
+											{{/if}}
+											{{#if (eq item.category "script")}}
+												<Nudge::Script />
 											{{/if}}
 											{{#if (eq item.category "performance")}}
 												<Nudge::Performance />
