@@ -8,4 +8,4 @@ SELECT settings.published FROM article GROUP BY settings.published;
 SELECT gender, country, city FROM person GROUP BY gender, country, city;
 
 -- Group results with aggregate functions
-SELECT count(*) AS total, math::sum(age), gender, country FROM person GROUP BY gender, country;
+SELECT count() AS total, math::sum(age), gender, country FROM person GROUP BY gender, country;
