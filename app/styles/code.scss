@@ -59,7 +59,7 @@ pre[class*="language-"] {
 	line-height:1.75;
 	text-shadow:none;
 	word-break:normal;
-	border-radius:12px;
+	border-radius:16px;
 	word-spacing:normal;
 	background-color:var(--coder-color);
 	font-family:var(--system-font-mono);
@@ -76,7 +76,7 @@ code[class*="language-"] {
 	line-height:1.75;
 	text-shadow:none;
 	word-break:normal;
-	border-radius:12px;
+	border-radius:16px;
 	word-spacing:normal;
 	background-color:var(--coder-color);
 	font-family:var(--system-font-mono);
@@ -110,7 +110,7 @@ codes {
 
 	display:grid;
 	overflow:hidden;
-	border-radius:12px;
+	border-radius:16px;
 	box-shadow:0 5px 20px rgba(0, 0, 0, 0.3);
 
 	&:not(:last-child) {
