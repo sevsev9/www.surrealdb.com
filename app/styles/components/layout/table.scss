@@ -31,16 +31,16 @@ layout-table {
 		padding:15px;
 		border-bottom:2px solid var(--border-color);
 		&:not([align]) { text-align:left; }
-		&:first-child { padding-left:30px; }
-		&:last-child { padding-right:30px; }
+		&:first-child { padding-left:0px; }
+		&:last-child { padding-right:0px; }
 	}
 
 	table > tbody > tr > td {
 		padding:15px;
 		border-bottom:2px solid var(--border-color);
 		&:not([align]) { text-align:left; }
-		&:first-child { padding-left:30px; }
-		&:last-child { padding-right:30px; }
+		&:first-child { padding-left:0px; }
+		&:last-child { padding-right:0px; }
 	}
 
 	table > tbody > tr:last-child > td {
