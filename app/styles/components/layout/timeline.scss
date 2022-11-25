@@ -27,6 +27,21 @@ layout-timeline {
 			margin-bottom:-50px;
 		}
 
+		&[careers] {
+
+			float:none;
+			width:auto;
+			height:400px;
+			margin:0 auto;
+	  		display:block;
+
+			@include media(max-width-750) {
+				float:left;
+				height:200px;
+				margin-bottom:-50px;
+			}
+		}
+
 	}
 
 	layout-timeline-item {

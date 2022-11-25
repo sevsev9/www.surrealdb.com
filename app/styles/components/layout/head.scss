@@ -9,6 +9,13 @@ layout-head {
 	background-repeat:no-repeat;
 	background-position:50% 40%;
 
+	&[careers] {
+		padding:120px 0 0 0;
+		@include media(max-width-768) {
+			padding:0 0 50px 0;
+		}
+	}
+
 	@include media(max-width-768) {
 		top:0px;
 		margin-bottom:0px;
