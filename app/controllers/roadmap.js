@@ -8,12 +8,12 @@ export default class extends Controller {
 			{
 				goal: 'Q4 2023',
 				name: 'SurrealDB Private Cloud',
-				text: 'The second SurrealDB Cloud launch will be a highly-available, highly-scalable, single-tenant, private cloud deployment option. SurrealDB Public CLoud will be available in a number of Amazon Web Services regions globally. Pricing will be based on cluster size, and cluster run time.',
+				text: 'The second SurrealDB Cloud launch will be a highly-available, highly-scalable, single-tenant, private cloud deployment option. SurrealDB Public Cloud will be available in a number of Amazon Web Services regions globally. Pricing will be based on cluster size, and cluster run time.',
 			},
 			{
 				goal: 'Q2 2023',
 				name: 'SurrealDB Public Cloud',
-				text: 'The first SurrealDB Cloud launch will be a highly-available, highly-scalable, multi-tenant, serverless cloud, with a pay-as-you-go fee structure. SurrealDB Public CLoud will be available in a number of regions globally. Pricing will be based on storage, concurrent connections, and query run time.',
+				text: 'The first SurrealDB Cloud launch will be a highly-available, highly-scalable, multi-tenant, serverless cloud, with a pay-as-you-go fee structure. SurrealDB Public Cloud will be available in a number of regions globally. Pricing will be based on storage, concurrent connections, and query run time.',
 			},
 			{
 				goal: 'Q2 2023',
