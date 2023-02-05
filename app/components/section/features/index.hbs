@@ -270,10 +270,10 @@
 						<l purple>Planned 1.0</l>
 					</h4>
 					<p>
-						Aggregate views let you pre-compute analytics queries as data is written to SurrealDB. Similarly
-						to an index, a table view lets you select, aggregate, group, and order data, with support for
-						moving averages, time-based windowing, and attribute-based counting. Pre-defined aggregate views
-						are efficient and performant, with only a single record modification being made for every write.
+						Live SQL queries allow for advanced filtering of the changes to specific documents, documents
+						which match a particular filter, or all documents in a specific table. Live SQL queries can
+						send the fully-updated document, or only the document changesets, by using the efficient
+						DIFF-MATCH-PATCH algorithm for highly-performant web-based data syncing.
 					</p>
 				</block>
 				<block>
@@ -290,10 +290,9 @@
 						<l purple>Planned 1.0</l>
 					</h4>
 					<p>
-						The ability to define full-text indexes, with functionality to search through the full-text index
-						on a table. Using a Apache Lucene query syntax, searches support field queries, wildcard
-						searches, fuzzy searches, proximity searches, relevance matching, boolean operators, subquery
-						grouping, and field grouping.</p>
+						Custom functions allow for complicated or repeated user-defined code, to be run seamlessly within
+						any query across the database. Custom functions support typed arguments, and multiple nested
+						queries with custom logic.</p>
 				</block>
 				<block>
 					<Code min-h-100 @name="features/platform/functions.sql" />
