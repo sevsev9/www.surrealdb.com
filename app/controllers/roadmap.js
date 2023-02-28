@@ -26,7 +26,7 @@ export default class extends Controller {
 				]
 			},
 			{
-				time: new Date('2023-02-15'),
+				time: new Date('2023-03-15'),
 				name: 'SurrealDB 1.0.0-beta.9',
 				tags: [
 					'Custom global parameters',
