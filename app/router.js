@@ -82,8 +82,10 @@ Router.map(function() {
 			});
 
 			this.route('statements', function() {
+				
 				this.route('use');
 				this.route('let');
+				this.route('info');
 				this.route('begin');
 				this.route('cancel');
 				this.route('commit');
@@ -94,9 +96,21 @@ Router.map(function() {
 				this.route('update');
 				this.route('relate');
 				this.route('delete');
-				this.route('define');
+
+				this.route('define', function() {
+					this.route('namespace');
+					this.route('database');
+					this.route('login');
+					this.route('token');
+					this.route('scope');
+					this.route('table');
+					this.route('event');
+					this.route('field');
+					this.route('indexes');
+				});
+
 				this.route('remove');
-				this.route('info');
+				
 			});
 
 			this.route('functions', function() {
