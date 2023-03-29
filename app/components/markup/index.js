@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { cache } from '@ascua/decorators';
 
-const slug = function(text) {
+const slug = function (text) {
 	return String(text).replace(/[\s.]/gi, '-').replace(/[^a-zA-Z0-9_-]+/g, '').replace(/--/, '-').toLowerCase();
 }
 

@@ -1,6 +1,10 @@
 {{~#each @tokens as |item|~}}
 	{{~#if (eq item.type 'text')~}}
-		{{{item.text}}}
+		{{#if item.tokens}}
+			<Markup::Tokens @tokens={{item.tokens}} />
+		{{else}}
+			{{{item.text}}}
+		{{/if}}
 	{{~else if (eq item.type 'link')~}}
 		<Link @link={{item.href}} title={{item.title}}>
 			<Markup::Tokens @tokens={{item.tokens}} />
@@ -42,6 +46,7 @@
 	{{~else if (eq item.type 'codespan')~}}
 		<code>{{item.text}}</code>
 	{{~else if (eq item.type 'list')~}}
+		{{log item}}
 		{{~#if item.ordered~}}
 			<ol start={{item.start}}><Markup::Tokens @tokens={{item.items}} /></ol>
 		{{~else~}}
@@ -68,5 +73,7 @@
 				{{~/each~}}
 			</tbody>
 		</table>
+	{{~else if (eq item.type 'html')~}}
+		{{{item.raw}}}
 	{{~/if~}}
 {{~/each~}}
