@@ -10,7 +10,7 @@ layout-head {
 	background-position:50% 40%;
 
 	&[careers] {
-		padding:120px 0 0 0;
+		padding:120px 0 100px 0;
 		@include media(max-width-768) {
 			padding:0 0 50px 0;
 		}
