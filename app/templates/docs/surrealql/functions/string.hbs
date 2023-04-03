@@ -47,8 +47,8 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#length">
-						<code>string::length()</code>
+					<a href="#len">
+						<code>string::len()</code>
 					</a>
 				</td>
 				<td>Returns the length of a string</td>
@@ -243,29 +243,29 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "length"}}>
+<Layout::Group {{waypoint "len"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><code>string::length</code></h3>
-		<p>The <code>string::length</code> function returns the length of a given string.</p>
-		<Code @name="docs-surrealql-functions-string-length.sql" text="API Definition">
-			string::length(string) -> number
+		<h3><code>string::len</code></h3>
+		<p>The <code>string::len</code> function returns the length of a given string.</p>
+		<Code @name="docs-surrealql-functions-string-len.sql" text="API Definition">
+			string::len(string) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-length-input.sql">
-				SELECT * FROM string::length('this is a test');
+			<Code @name="docs-surrealql-functions-string-len-input.sql">
+				SELECT * FROM string::len('this is a test');
 			</Code>
-			<Code @name="docs-surrealql-functions-string-length-result.txt">
+			<Code @name="docs-surrealql-functions-string-len-result.txt">
 				14
 			</Code>
 		</codes>
 		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-length-error-input.sql">
-				SELECT * FROM string::length(12345);
+			<Code @name="docs-surrealql-functions-string-len-error-input.sql">
+				SELECT * FROM string::len(12345);
 			</Code>
-			<Code @name="docs-surrealql-functions-string-length-error-result.txt">
+			<Code @name="docs-surrealql-functions-string-len-error-result.txt">
 				5
 			</Code>
 		</codes>

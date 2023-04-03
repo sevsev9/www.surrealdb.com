@@ -6,7 +6,7 @@ export default class Router extends EmberRouter {
 	rootURL = config.rootURL;
 }
 
-Router.map(function() {
+Router.map(function () {
 
 	this.route('about');
 	this.route('app');
@@ -25,28 +25,28 @@ Router.map(function() {
 	this.route('store');
 	this.route('why');
 
-	this.route('who', function() {
+	this.route('who', function () {
 		this.route('tobie');
 		this.route('jaime');
 	});
 
-	this.route('blog', function() {
+	this.route('blog', function () {
 		this.route('post', { path: '/:post_slug' });
 	});
 
-	this.route('legal', function() {
+	this.route('legal', function () {
 		this.route('terms');
 		this.route('privacy');
 		this.route('cookies');
 		this.route('security');
 	});
 
-	this.route('usecase', function() {
+	this.route('usecase', function () {
 		this.route('jamstack');
 		this.route('serverless');
 	});
 
-	this.route('showcase', function() {
+	this.route('showcase', function () {
 		this.route('modelling');
 		this.route('surrealql');
 		this.route('analytics');
@@ -54,35 +54,111 @@ Router.map(function() {
 		this.route('permissions');
 	});
 
-	this.route('docs', function() {
+	this.route('docs', function () {
 
-		this.route('start', function() {
-			this.route('quickstart');
-			this.route('installation');
-			this.route('terminology');
-			this.route('starting-surrealdb');
-			this.route('querying-surrealdb');
-			this.route('securing-surrealdb');
+		this.route('introduction', function () {
+			this.route('start');
+			this.route('concepts');
+			this.route('features');
+			this.route('releases');
+			this.route('questions');
+			this.route('architecture');
 		});
 
-		this.route('surrealql', function() {
+		this.route('installation', function () {
+			this.route('macos');
+			this.route('linux');
+			this.route('windows');
+			this.route('nightly');
+			this.route('running', function () {
+				this.route('docker');
+				this.route('memory');
+				this.route('file');
+				this.route('tikv');
+			});
+		});
 
+		this.route('authentication', function () {
+			this.route('root');
+			this.route('namespace');
+			this.route('database');
+			this.route('scope');
+		});
+
+		this.route('deployment', function () {
+			this.route('google');
+			this.route('amazon');
+			this.route('kubernetes');
+			this.route('heroku');
+			this.route('digitalocean');
+			this.route('fly');
+		});
+
+		this.route('embedding', function () {
+			this.route('rust');
+			this.route('node');
+			this.route('javascript');
+			this.route('python');
+		});
+
+		this.route('integration', function () {
+			this.route('overview');
+			this.route('http');
+			this.route('websockets');
+			this.route('libraries', function () {
+				this.route('angularjs');
+				this.route('apollo');
+				this.route('c');
+				this.route('dart');
+				this.route('deno');
+				this.route('dotnet');
+				this.route('emberjs');
+				this.route('erlang');
+				this.route('flutter');
+				this.route('golang');
+				this.route('java');
+				this.route('javascript');
+				this.route('nestjs');
+				this.route('nextjs');
+				this.route('nodejs');
+				this.route('nuxtjs');
+				this.route('php');
+				this.route('python');
+				this.route('r');
+				this.route('reactjs');
+				this.route('ruby');
+				this.route('rust');
+				this.route('svelte');
+				this.route('swift');
+				this.route('vuejs');
+			});
+		});
+
+		this.route('surrealql', function () {
+
+			this.route('comments');
 			this.route('operators');
 			this.route('parameters');
 			this.route('expressions');
 			this.route('transactions');
 
-			this.route('datamodel', function() {
+			this.route('datamodel', function () {
+				this.route('ids');
 				this.route('simple');
+				this.route('numbers');
+				this.route('strings');
 				this.route('datetimes');
+				this.route('uuids');
+				this.route('objects');
+				this.route('arrays');
 				this.route('geometries');
 				this.route('records');
 				this.route('futures');
 				this.route('casting');
 			});
 
-			this.route('statements', function() {
-				
+			this.route('statements', function () {
+
 				this.route('use');
 				this.route('let');
 				this.route('info');
@@ -97,7 +173,7 @@ Router.map(function() {
 				this.route('relate');
 				this.route('delete');
 
-				this.route('define', function() {
+				this.route('define', function () {
 					this.route('namespace');
 					this.route('database');
 					this.route('login');
@@ -111,10 +187,10 @@ Router.map(function() {
 
 				this.route('remove');
 				this.route('sleep');
-				
+
 			});
 
-			this.route('functions', function() {
+			this.route('functions', function () {
 				this.route('array');
 				this.route('count');
 				this.route('crypto');
@@ -122,6 +198,7 @@ Router.map(function() {
 				this.route('http');
 				this.route('validation');
 				this.route('math');
+				this.route('meta');
 				this.route('parse');
 				this.route('rand');
 				this.route('session');
@@ -134,49 +211,17 @@ Router.map(function() {
 
 		});
 
-		this.route('integration', function() {
-
-			this.route('overview');
-			this.route('http');
-			this.route('websockets');
-
-			this.route('libraries', function() {
-				this.route('angularjs');
-				this.route('apollo');
-				this.route('c');
-				this.route('dart');
-				this.route('deno');
-				this.route('dotnet');
-				this.route('emberjs');
-				this.route('erlang');
-				this.route('flutter');
-				this.route('golang');
-				this.route('java');
-				this.route('javascript');
-				this.route('nodejs');
-				this.route('php');
-				this.route('python');
-				this.route('r');
-				this.route('reactjs');
-				this.route('ruby');
-				this.route('rust');
-				this.route('swift');
-				this.route('vuejs');
-				this.route('webassembly');
-			});
-
-		});
-
-		this.route('cli', function() {
+		this.route('cli', function () {
 			this.route('start');
 			this.route('import');
 			this.route('export');
 			this.route('version');
+			this.route('isready');
 			this.route('sql');
 			this.route('help');
 		});
 
-		this.route('guides', function() {
+		this.route('guides', function () {
 			this.route('schemafull-or-schemaless');
 			this.route('relations-and-graph');
 			this.route('realtime-subscriptions');

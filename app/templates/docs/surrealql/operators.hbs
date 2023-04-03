@@ -22,8 +22,52 @@
 		<tbody>
 			<tr>
 				<td>
+					<a href="#and">
+						<code>&amp;&amp;</code>
+					</a>
+					or
+					<a href="#and">
+						<code>AND</code>
+					</a>
+				</td>
+				<td>Checks whether both of two values are truthy</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#or">
+						<code>||</code>
+					</a>
+					or
+					<a href="#or">
+						<code>OR</code>
+					</a>
+				</td>
+				<td>Checks whether either of two values is truthy</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#nco">
+						<code>??</code>
+					</a>
+				</td>
+				<td>Check whether either of two values are truthy</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#tco">
+						<code>?:</code>
+					</a>
+				</td>
+				<td>Check whether either of two values are truthy and not <code>NULL</code></td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#equal">
 						<code>=</code>
+					</a>
+					or
+					<a href="#equal">
+						<code>IS</code>
 					</a>
 				</td>
 				<td>Check whether two values are equal</td>
@@ -32,6 +76,10 @@
 				<td>
 					<a href="#notequal">
 						<code>!=</code>
+					</a>
+					or
+					<a href="#notequal">
+						<code>IS NOT</code>
 					</a>
 				</td>
 				<td>Check whether two values are not equal</td>
@@ -145,6 +193,10 @@
 					<a href="#mul">
 						<code>*</code>
 					</a>
+					or
+					<a href="#mul">
+						<code>×</code>
+					</a>
 				</td>
 				<td>Multiply two values together</td>
 			</tr>
@@ -153,56 +205,36 @@
 					<a href="#div">
 						<code>/</code>
 					</a>
+					or
+					<a href="#div">
+						<code>÷</code>
+					</a>
 				</td>
 				<td>Divide a value by another value</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#amp">
-						<code>&amp;&amp;</code>
+					<a href="#pow">
+						<code>**</code>
 					</a>
 				</td>
-				<td>Checks whether two values are truthy</td>
+				<td>Raises a base value by another value</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#line">
-						<code>||</code>
+					<a href="#inside">
+						<code>IN</code>
 					</a>
 				</td>
-				<td>Checks whether either of two values is truthy</td>
+				<td>Checks whether a value is contained within another value</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#and">
-						<code>AND</code>
+					<a href="#not-inside">
+						<code>NOT IN</code>
 					</a>
 				</td>
-				<td>Checks whether two values are truthy</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#or">
-						<code>OR</code>
-					</a>
-				</td>
-				<td>Checks whether either of two values is truthy</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#is">
-						<code>IS</code>
-					</a>
-				</td>
-				<td>Check whether two values are equal</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#is-not">
-						<code>IS NOT</code>
-					</a>
-				</td>
-				<td>Check whether two values are not equal</td>
+				<td>Checks whether a value is not contained within another value</td>
 			</tr>
 			<tr>
 				<td>
@@ -283,6 +315,10 @@
 					</a>
 					or
 					<a href="#not-inside">
+						<code>NOT IN</code>
+					</a>
+					or
+					<a href="#not-inside">
 						<code>∉</code>
 					</a>
 				</td>
@@ -346,10 +382,86 @@
 
 <Layout::Gap small />
 
+<Layout::Group {{waypoint "and"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>&&</code> or <code>AND</code></h3>
+		<p>Checks whether both of two values are truthy.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-and-input.sql">
+				SELECT * FROM 10 AND 20 AND 30;
+			</Code>
+			<Code @name="docs-surrealql-operators-and-result.txt">
+				30
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "or"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>||</code> or <code>OR</code></h3>
+		<p>Checks whether either of two values are truthy.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-or-input.sql">
+				SELECT * FROM 0 OR false OR 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-or-result.txt">
+				10
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "nco"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>??</code></h3>
+		<p>Check whether either of two values are truthy.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-nco-input.sql">
+				SELECT * FROM NULL ?? 0 ?? false ?? 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-nco-result.txt">
+				0
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "tco"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>?:</code></h3>
+		<p>Check whether either of two values are truthy and not <code>NULL</code>.</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-operators-tco-input.sql">
+				SELECT * FROM NULL ?: 0 ?: false ?: 10;
+			</Code>
+			<Code @name="docs-surrealql-operators-tco-result.txt">
+				10
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
 <Layout::Group {{waypoint "equal"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><code>=</code></h3>
+		<h3><code>=</code> or <code>IS</code></h3>
 		<p>Check whether two values are equal.</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-operators-equal-input-1.sql">
@@ -424,7 +536,7 @@
 <Layout::Group {{waypoint "notequal"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><code>!=</code></h3>
+		<h3><code>!=</code> or <code>IS NOT</code></h3>
 		<p>Check whether two values are not equal.</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-operators-notequal-input-1.sql">
@@ -788,7 +900,7 @@
 <Layout::Group {{waypoint "mul"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><code>*</code></h3>
+		<h3><code>*</code> or <code>×</code></h3>
 		<p>Multiplies a value by another value.</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-operators-mul-input.sql">
@@ -807,7 +919,7 @@
 <Layout::Group {{waypoint "div"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><code>/</code></h3>
+		<h3><code>/</code> or <code>÷</code></h3>
 		<p>Divides a value with another value.</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-operators-div-input-1.sql">
@@ -823,112 +935,17 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "amp"}}>
+<Layout::Group {{waypoint "pow"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><code>&&</code></h3>
-		<p>Checks whether two values are truthy.</p>
+		<h3><code>**</code></h3>
+		<p>Raises a base value by another value.</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-operators-amp-input.sql">
-				SELECT * FROM 10 && 20 && 30;
+			<Code @name="docs-surrealql-operators-pow-input-1.sql">
+				SELECT * FROM 20 ** 3;
 			</Code>
-			<Code @name="docs-surrealql-operators-amp-result.txt">
-				30
-			</Code>
-		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "line"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><code>||</code></h3>
-		<p>Checks whether either of two values are truthy.</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-operators-line-input.sql">
-				SELECT * FROM 0 || false || 10;
-			</Code>
-			<Code @name="docs-surrealql-operators-line-result.txt">
-				10
-			</Code>
-		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "and"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><code>AND</code></h3>
-		<p>Checks whether two values are truthy.</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-operators-and-input.sql">
-				SELECT * FROM 10 AND 20 AND 30;
-			</Code>
-			<Code @name="docs-surrealql-operators-and-result.txt">
-				30
-			</Code>
-		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "or"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><code>OR</code></h3>
-		<p>Checks whether either of two values are truthy.</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-operators-or-input.sql">
-				SELECT * FROM 0 OR false OR 10;
-			</Code>
-			<Code @name="docs-surrealql-operators-or-result.txt">
-				10
-			</Code>
-		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "is"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><code>IS</code></h3>
-		<p>Check whether two values are equal.</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-operators-is-input.sql">
-				SELECT * FROM 10 IS "10";
-			</Code>
-			<Code @name="docs-surrealql-operators-is-result.txt">
-				true
-			</Code>
-		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "isnot"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><code>IS NOT</code></h3>
-		<p>Check whether two values are not equal.</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-operators-isnot-input.sql">
-				SELECT * FROM 10 IS NOT "15";
-			</Code>
-			<Code @name="docs-surrealql-operators-isnot-result.txt">
-				true
+			<Code @name="docs-surrealql-operators-pow-result-1.txt">
+				8000
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -1081,7 +1098,7 @@
 <Layout::Group {{waypoint "inside"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><code>INSIDE</code> or <code>∈</code></h3>
+		<h3><code>INSIDE</code> or <code>∈</code> or <code>IN</code></h3>
 		<p>Check whether a value is contained within another value.</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-operators-inside-input-1.sql">
@@ -1123,7 +1140,7 @@
 <Layout::Group {{waypoint "not-inside"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><code>NOTINSIDE</code> or <code>∉</code></h3>
+		<h3><code>NOTINSIDE</code> or <code>∉</code> or <code>NOT IN</code></h3>
 		<p>Check whether a value is not contained within another value.</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-operators-notinside-input-1.sql">

@@ -10,7 +10,7 @@
 
 <Layout::Gap mini />
 
-<Layout::Boxes cols-3-to-2-to-1>
+<Layout::Boxes cols-2-to-1>
 	<LinkTo @route="docs.integration.libraries">
 		<Layout::Boxes::Item mini hover>
 			<h4>Client libraries</h4>
@@ -25,7 +25,13 @@
 	</LinkTo>
 	<LinkTo @route="docs.integration.websockets">
 		<Layout::Boxes::Item mini hover>
-			<h4>WebSockets</h4>
+			<h4>WebSocket (text protocol)</h4>
+			<p>The WebSocket API supports JSON-RPC querying, with full support for persistent connections, session authentication, realtime queries, and update notifications.</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.integration.websockets">
+		<Layout::Boxes::Item mini hover>
+			<h4>WebSocket (binary protocol)</h4>
 			<p>The WebSocket API supports JSON-RPC querying, with full support for persistent connections, session authentication, realtime queries, and update notifications.</p>
 		</Layout::Boxes::Item>
 	</LinkTo>

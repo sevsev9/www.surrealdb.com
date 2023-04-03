@@ -1,0 +1,79 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.installation">Installation</Crumb::Item>
+	<Crumb::Item @link="docs.installation.running.tikv">Run a multi-node, scalable cluster with TiKV</Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+
+	<h2>Run a multi-node, scalable cluster with TiKV</h2>
+
+	<p>For highly-available and highly-scalable setups, SurrealDB can be run on top of a <a href="https://tikv.org" rel="noopener noreferrer" target="_blank">TiKV</a> cluster, with the ability to horizontally scale to <code>100+</code> terabytes of data. In this example, we will start a local TiKV cluster with a single node, for development and testing purposes only. To install TiKV on your development machine, run the following command. This will install the <Link @link="https://github.com/pingcap/tiup"><Ascua::Prism::Inline @language="bash" @code="tiup" /></Link> command-line tool, which enables deploying and managing TiKV clusters of any size.</p>
+
+	<Code @name="docs-installation-running-tikv-1.shell">
+		user@localhost % curl -sSf https://tiup-mirrors.pingcap.com/install.sh | sh
+	</Code>
+
+	<p>Once installed we shall start up a simple single-node development cluster.</p>
+
+	<Code @name="docs-installation-running-tikv-2.shell">
+		user@localhost % tiup playground --tag surrealdb --mode tikv-slim --pd 1 --kv 1
+		tiup is checking updates for component playground ...
+		Starting component `playground`: /Users/tobie/.tiup/components/playground/v1.10.2/tiup-playground --tag surrealdb --mode tikv-slim --pd 1 --kv 1
+		Using the version v6.1.0 for version constraint "".
+
+		If you'd like to use a TiDB version other than v6.1.0, cancel and retry with the following arguments:
+			Specify version manually:   tiup playground version
+			Specify version range:      tiup playground ^5
+			The nightly version:        tiup playground nightly
+
+		Playground Bootstrapping...
+		Start pd instance:v6.1.0
+		Start tikv instance:v6.1.0
+		PD client endpoints: [127.0.0.1:2379]
+		To view the Prometheus: http://127.0.0.1:9090
+		To view the Grafana: http://127.0.0.1:3000
+	</Code>
+
+	<p>Once TiKV is up and running, we can start a SurrealDB server instance, specifying the TiKV cluster endpoint as the backing data store.</p>
+
+	<Code @name="docs-installation-running-tikv-3.shell">
+		user@localhost % surreal start tikv://127.0.0.1:2379
+	</Code>
+
+	<p>The default logging level for the database server is <code>info</code>, resulting in any informational logs to be output to the standard output. To control the logging verbosity, specify the <Ascua::Prism::Inline @language="bash" @code="--log" /> argument. The following command starts the database with <code>trace</code> level logging, resulting in most logs being output to the terminal.</p>
+
+	<Code @name="docs-installation-running-tikv-4.shell">
+		user@localhost % surreal start --log trace tikv://127.0.0.1:2379
+	</Code>
+
+	<p>In order to keep SurrealDB secure, the database disables root-level authentication if a password is not set. To set a root-level authentication login, use the <Ascua::Prism::Inline @language="bash" @code="--user" /> and <Ascua::Prism::Inline @language="bash" @code="--pass" /> command-line arguments. The following command starts the database with a top-level user named <code>root</code> with a password also set to <code>root</code>.</p>
+
+	<Code @name="docs-installation-running-tikv-5.shell">
+		user@localhost % surreal start --log trace --user root --pass root tikv://127.0.0.1:2379
+	</Code>
+
+	<p>In order to change the default port that SurrealDB uses for web connections and from database clients you can use the <Ascua::Prism::Inline @language="bash" @code="--bind" /> argument. The following command starts the database on port <code>8080</code>.</p>
+
+	<Code @name="docs-installation-running-tikv-6.shell">
+		user@localhost % surreal start --log trace --user root --pass root --bind 0.0.0.0:8080 memory
+	</Code>
+
+	<p>After running the above command, you should see the SurrealDB server startup successfully.</p>
+
+	<Code @name="docs-installation-running-tikv-7.shell">
+		user@localhost % surreal start --log trace --user root --pass root --bind 0.0.0.0:8080 tikv://127.0.0.1:2379
+		[2023-04-03 08:45:42] INFO  surrealdb::iam Root authentication is enabled
+		[2023-04-03 08:45:42] INFO  surrealdb::iam Root username is 'root'
+		[2023-04-03 08:45:42] INFO  surrealdb::dbs Database strict mode is disabled
+		[2023-04-03 08:45:42] INFO  surrealdb::kvs Connecting to kvs store at tikv://127.0.0.1:2379
+		[2023-04-03 08:45:42] INFO  surrealdb::kvs Connected to kvs store at tikv://127.0.0.1:2379
+		[2023-04-03 08:45:42] INFO  surrealdb::net Starting web server on 0.0.0.0:8080
+		[2023-04-03 08:45:42] INFO  surrealdb::net Started web server on 0.0.0.0:8080
+	</Code>
+
+	<p>For details on the <Link @link="docs.cli.start"><Ascua::Prism::Inline @language="bash" @code="start" /></Link> command, and all of the available configuration options and arguments, view the <Link @link="docs.cli.start">start command documentation</Link>.</p>
+
+</Layout::Text>
+
+<Layout::Gap large />

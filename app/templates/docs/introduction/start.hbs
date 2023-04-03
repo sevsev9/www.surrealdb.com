@@ -1,0 +1,95 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.introduction">Introduction</Crumb::Item>
+	<Crumb::Item @link="docs.introduction.index">Quick start</Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+    <h2>Quick start</h2>
+	<p>Getting up-and-running on SurrealDB is intended to be quick and easy. All of SurrealDB's functionality for starting a server, and importing and exporting data, is enabled through the command-line tool, which can be run as a binary, or from within Docker. When starting a SurrealDB server, configuration is made by passing in command-line options.</p>
+	<blockquote yellow text="Before you start">Make sure you’ve <Link @link="docs.installation">installed SurrealDB</Link> — it should only take a second!</blockquote>
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l text-f>
+	<h3>Start the server</h3>
+	<p>First, start the SurrealDB server. Under macOS or Linux, run the following command from a terminal window:</p>
+	<Code @name="docs/start/index/linux.shell" />
+	<p>From Windows, run the following command from a command prompt window:</p>
+	<Code @name="docs/start/index/windows.shell" />
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l text-f>
+	<h3>Connect to SurrealDB</h3>
+	<p>Now that you have started a server, you can connect in a number of ways. In this quick start guide we will insert and query data using the SurrealQL REST endpoint. This endpoint runs SurrealQL queries which are submitted as a <code>HTTP POST</code> request.</p>
+	<blockquote green text="Note">You can use <Link @link="https://www.postman.com">Postman</Link> to run queries on SurrealDB. The examples below use <code>cURL</code> on the command-line.</blockquote>
+	<codes vertical>
+		<Code @name="docs/start/index/step1.bash" text="Command line" />
+		<Code @name="docs/start/index/step1.json" text="Output" />
+	</codes>
+	<p>Most queries in the database need to have a <code>NAMESPACE</code> and a <code>DATABASE</code> specified, before they can be run. In this quick start guide, as we are authenticating as the root user, we can specify any <code>NAMESPACE</code> and <code>DATABASE</code> that we desire.</p>
+	<codes vertical>
+		<Code @name="docs/start/index/step2.bash" text="Command line" />
+		<Code @name="docs/start/index/step2.json" text="Output" />
+	</codes>
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l text-f>
+	<h3>Inserting data</h3>
+	<p>By default, SurrealDB doesn't need to have tables or fields defined before inserting data. Instead the database can be queried in schemaless mode, and tables are created ad hoc. In this guide, we will be running all queries in schemaless mode.</p>
+	<codes vertical>
+		<Code @name="docs/start/index/step3.sql" text="SQL" />
+		<Code @name="docs/start/index/step3.bash" text="Command line" />
+		<Code @name="docs/start/index/step3.json" text="Output" />
+	</codes>
+	<p>In the response above, we can see that the 'account' record has been created, and a random ID has been generated for this record. In SurrealDB every record can be created and accessed directly by its ID. In the following query, we will create a record, but will use a specific ID.</p>
+	<codes vertical>
+		<Code @name="docs/start/index/step4.sql" text="SQL" />
+		<Code @name="docs/start/index/step4.bash" text="Command line" />
+		<Code @name="docs/start/index/step4.json" text="Output" />
+	</codes>
+	<p>Let's now create a blog article record, which links to the author and account tables. In the following example we link to the author record directly by its ID, and we link to the account record with a subquery which searches using the 'name' field.</p>
+	<codes vertical>
+		<Code @name="docs/start/index/step5.sql" text="SQL" />
+		<Code @name="docs/start/index/step5.bash" text="Command line" />
+		<Code @name="docs/start/index/step5.json" text="Output" />
+	</codes>
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l text-f>
+	<h3>Querying data</h3>
+	<p>The querying functionality in SurrealDB works similarly to a traditional relational SQL database, but with many of the added benefits of a NoSQL database. To retrieve data, we will use a <code>SELECT</code> query.</p>
+	<codes vertical>
+		<Code @name="docs/start/index/step6.sql" text="SQL" />
+		<Code @name="docs/start/index/step6.bash" text="Command line" />
+		<Code @name="docs/start/index/step6.json" text="Output" />
+	</codes>
+	<p>In SurrealDB we can retrieve data from multiple different tables or records at once. In the example below we'll retrieve data from both the 'article' and the 'account' table in one query.</p>
+	<codes vertical>
+		<Code @name="docs/start/index/step7.sql" text="SQL" />
+		<Code @name="docs/start/index/step7.bash" text="Command line" />
+		<Code @name="docs/start/index/step7.json" text="Output" />
+	</codes>
+	<p>One of the most powerful functions in SurrealDB is the related records and graph connections. Instead of pulling data from multiple tables and merging that data together, SurrealDB allows you to traverse related records efficiently without needing to use JOINs. In this following example, we will fetch the blog article, but are going to filter records based on the field in a remote record, and then pull the remote record data into the final response output.</p>
+	<codes vertical>
+		<Code @name="docs/start/index/step8.sql" text="SQL" />
+		<Code @name="docs/start/index/step8.bash" text="Command line" />
+		<Code @name="docs/start/index/step8.json" text="Output" />
+	</codes>
+</Layout::Text>
+
+<Layout::Gap small />
+
+<Layout::Text text-l text-f>
+	<h3>Next steps</h3>
+	<p>Congratulations, you’re now on your way to database and API simplicity! For the next steps, take a look at some of our in-depth guides to see some of the other advanced functionality that you can use in SurrealDB.</p>
+</Layout::Text>
+
+<Layout::Gap large />

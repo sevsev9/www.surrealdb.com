@@ -23,11 +23,11 @@
 		<tbody>
 			<tr>
 				<td>
-					<a href="#parse-email-domain">
-						<code>parse::email::domain()</code>
+					<a href="#parse-email-host">
+						<code>parse::email::host()</code>
 					</a>
 				</td>
-				<td>Parses and returns an email domain from an email address</td>
+				<td>Parses and returns an email host from an email address</td>
 			</tr>
 			<tr>
 				<td>
@@ -91,29 +91,29 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "parse-email-domain"}}>
+<Layout::Group {{waypoint "parse-email-host"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>parse::email::domain</h3>
-		<p>The <code>parse::email::domain</code> function parses and returns and email domain from a valid email address.</p>
-		<Code @name="docs-surrealql-functions-parse-email-domain.sql" text="API Definition">
-			parse::email::domain(string) -> value
+		<h3>parse::email::host</h3>
+		<p>The <code>parse::email::host</code> function parses and returns and email host from a valid email address.</p>
+		<Code @name="docs-surrealql-functions-parse-email-host.sql" text="API Definition">
+			parse::email::host(string) -> value
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-parse-email-domain-input.sql">
-				SELECT * FROM parse::email::domain("info@surrealdb.com");
+			<Code @name="docs-surrealql-functions-parse-email-host-input.sql">
+				SELECT * FROM parse::email::host("info@surrealdb.com");
 			</Code>
-			<Code @name="docs-surrealql-functions-parse-email-domain-result.txt">
+			<Code @name="docs-surrealql-functions-parse-email-host-result.txt">
 				"surrealdb.com"
 			</Code>
 		</codes>
 		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-parse-email-domain-error-input.sql">
-				SELECT * FROM parse::email::domain(12345);
+			<Code @name="docs-surrealql-functions-parse-email-host-error-input.sql">
+				SELECT * FROM parse::email::host(12345);
 			</Code>
-			<Code @name="docs-surrealql-functions-parse-email-domain-error-result.txt">
+			<Code @name="docs-surrealql-functions-parse-email-host-error-result.txt">
 				null
 			</Code>
 		</codes>

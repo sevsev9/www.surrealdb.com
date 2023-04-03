@@ -1,8 +1,15 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.integration">Integrations</Crumb::Item>
+	<Crumb::Item @link="docs.integration.libraries">Libraries</Crumb::Item>
+	<Crumb::Item @link="docs.integration.libraries.vuejs">Vue.js</Crumb::Item>
+</Crumb>
+
 <Layout::Text text-l text-f>
-	<h5><i class="fas fa-arrow-left"></i> &nbsp; <Link @link="docs.integration.libraries">Back</Link></h5>
-	<h2><i class="fab fa-vuejs font-35 m-r-10"></i> Vue.js driver for <img inline src="/static/img/text.svg" alt="SurrealDB" /></h2>
+	<h2><Devicon @size="50" @type="vuejs" /> Vue.js driver for <img inline src="/static/img/text.svg" alt="SurrealDB" /></h2>
 	<p>This library has not been released yet. We hope to release this soon.</p>
-	<p>To get started with connecting to SurrealDB from Apollo GraphQL, use the <Link @link="docs.integration.libraries.javascript">JavaScript</Link> library.</p>
+	<p>To contribute to this documentation, <Link @link={{github}}>edit this file on GitHub</Link>.</p>
+	<p>To get started in the meantime, use the <Link @link="docs.integration.libraries.javascript">JavaScript</Link> library.</p>
 </Layout::Text>
 
 <Layout::Gap small />

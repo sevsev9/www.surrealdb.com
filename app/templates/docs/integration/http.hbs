@@ -22,11 +22,27 @@
 		<tbody>
 			<tr>
 				<td>
-					<a href="#sql">
-						<code>/sql</code> <code>POST</code>
+					<a href="#export">
+						<code>/export</code> <code>GET</code>
 					</a>
 				</td>
-				<td>Allows custom SurrealQL queries</td>
+				<td>Exports all data for a specific Namespace and Database</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#health">
+						<code>/health</code> <code>GET</code>
+					</a>
+				</td>
+				<td>Checks the status of the database server and storage engine</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#import">
+						<code>/import</code> <code>POST</code>
+					</a>
+				</td>
+				<td>Imports data into a specific Namespace and Database</td>
 			</tr>
 			<tr>
 				<td>
@@ -92,9 +108,677 @@
 				</td>
 				<td>Deletes the specified record from the database</td>
 			</tr>
+			<tr>
+				<td>
+					<a href="#signin">
+						<code>/signin</code> <code>POST</code>
+					</a>
+				</td>
+				<td>Signs-in as a root, namespace, database, or scope user</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#signup">
+						<code>/signup</code> <code>POST</code>
+					</a>
+				</td>
+				<td>Signs-up as a scope user to a specific scope</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#sql">
+						<code>/sql</code> <code>POST</code>
+					</a>
+				</td>
+				<td>Allows custom SurrealQL queries</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#status">
+						<code>/status</code> <code>GET</code>
+					</a>
+				</td>
+				<td>Checks whether the database web server is running</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#version">
+						<code>/version</code> <code>GET</code>
+					</a>
+				</td>
+				<td>Returns the version of the SurrealDB database server</td>
+			</tr>
 		</tbody>
 	</table>
 </Layout::Table>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "export"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>GET</code> <code>/export</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint exports all data for a specific Namespace and Database.</p>
+		<p>The following headers can be used to customise the query and the response.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Header</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>Authorization</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the root, namespace, or database authentication data</td>
+					</tr>
+					<tr>
+						<td>
+							<code>Accept</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Sets the desired content-type of the response
+							<br>
+							<p small>
+								Can be one of <code>application/octet-stream</code>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>NS</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Namespace for queries</td>
+					</tr>
+					<tr>
+						<td>
+							<code>DB</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Database for queries</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "health"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>GET</code> <code>/health</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint checks whether the database server and storage engine are running.</p>
+		<p>The endpoint returns a <code>200</code> status code on success and a <code>500</code> status code on failure.</p>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "import"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>POST</code> <code>/import</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint imports a set of SurrealQL queries into a specific Namespace and Database.</p>
+		<p>The following headers can be used to customise the query and the response.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Header</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>Authorization</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the root, namespace, or database authentication data</td>
+					</tr>
+					<tr>
+						<td>
+							<code>Accept</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Sets the desired content-type of the response
+							<br>
+							<p small>
+								Can be one of <code>application/octet-stream</code>, <code>application/json</code>, <code>application/cbor</code>, <code>application/pack</code>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>NS</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Namespace for queries</td>
+					</tr>
+					<tr>
+						<td>
+							<code>DB</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Database for queries</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "select-all"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>GET</code> <code>/key/:table</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint selects all records in a specific table in the database.</p>
+		<p>The following headers can be used to customise the query and the response.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Header</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>Authorization</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the root, namespace, database, or scope authentication data</td>
+					</tr>
+					<tr>
+						<td>
+							<code>Accept</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Sets the desired content-type of the response
+							<br>
+							<p small>
+								Can be one of <code>application/json</code>, <code>application/cbor</code>, <code>application/pack</code>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>NS</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Namespace for queries</td>
+					</tr>
+					<tr>
+						<td>
+							<code>DB</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Database for queries</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<p>Once this endpoint is called the following query will be run on the database:</p>
+		<Code @name="docs-integrations-http-select-all.sql">
+			SELECT * FROM type::table($table);
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "create-all"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>POST</code> <code>/key/:table</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint creates a record in a specific table in the database.</p>
+		<blockquote yellow>This HTTP endpoint expects the HTTP body to be a JSON or SurrealQL <Link @link="docs.surrealql.datamodel.objects"><code>object</code></Link>.</blockquote>
+		<p>The following headers can be used to customise the query and the response.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Header</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>Authorization</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the root, namespace, database, or scope authentication data</td>
+					</tr>
+					<tr>
+						<td>
+							<code>Accept</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Sets the desired content-type of the response
+							<br>
+							<p small>
+								Can be one of <code>application/json</code>, <code>application/cbor</code>, <code>application/pack</code>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>NS</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Namespace for queries</td>
+					</tr>
+					<tr>
+						<td>
+							<code>DB</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Database for queries</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<p>Once this endpoint is called the following query will be run on the database:</p>
+		<Code @name="docs-integrations-http-create-all.sql">
+			CREATE type::table($table) CONTENT $body;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "delete-all"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>DELETE</code> <code>/key/:table</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint deletes all records from the specified table in the database.</p>
+		<p>The following headers can be used to customise the query and the response.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Header</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>Authorization</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the root, namespace, database, or scope authentication data</td>
+					</tr>
+					<tr>
+						<td>
+							<code>Accept</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Sets the desired content-type of the response
+							<br>
+							<p small>
+								Can be one of <code>application/json</code>, <code>application/cbor</code>, <code>application/pack</code>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>NS</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Namespace for queries</td>
+					</tr>
+					<tr>
+						<td>
+							<code>DB</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Database for queries</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<p>Once this endpoint is called the following query will be run on the database:</p>
+		<Code @name="docs-integrations-http-delete-all.sql">
+			DELETE FROM type::table($table);
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "select-one"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>GET</code> <code>/key/:table/:id</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint selects a specific record from the database.</p>
+		<p>The following headers can be used to customise the query and the response.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Header</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>Authorization</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the root, namespace, database, or scope authentication data</td>
+					</tr>
+					<tr>
+						<td>
+							<code>Accept</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Sets the desired content-type of the response
+							<br>
+							<p small>
+								Can be one of <code>application/json</code>, <code>application/cbor</code>, <code>application/pack</code>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>NS</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Namespace for queries</td>
+					</tr>
+					<tr>
+						<td>
+							<code>DB</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Database for queries</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<p>Once this endpoint is called the following query will be run on the database:</p>
+		<Code @name="docs-integrations-http-select-one.sql">
+			SELECT * FROM type::thing($table, $id);
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "create-one"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>POST</code> <code>/key/:table/:id</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint creates a single specific record into the database.</p>
+		<blockquote yellow>This HTTP endpoint expects the HTTP body to be a JSON or SurrealQL <Link @link="docs.surrealql.datamodel.objects"><code>object</code></Link>.</blockquote>
+		<p>The following headers can be used to customise the query and the response.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Header</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>Authorization</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the root, namespace, database, or scope authentication data</td>
+					</tr>
+					<tr>
+						<td>
+							<code>Accept</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Sets the desired content-type of the response
+							<br>
+							<p small>
+								Can be one of <code>application/json</code>, <code>application/cbor</code>, <code>application/pack</code>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>NS</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Namespace for queries</td>
+					</tr>
+					<tr>
+						<td>
+							<code>DB</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Database for queries</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<p>Once this endpoint is called the following query will be run on the database:</p>
+		<Code @name="docs-integrations-http-create-one.sql">
+			CREATE type::thing($table, $id) CONTENT $body;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "update-one"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>PUT</code> <code>/key/:table/:id</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint creates or updates a single specific record in the database.</p>
+		<blockquote yellow>This HTTP endpoint expects the HTTP body to be a JSON or SurrealQL <Link @link="docs.surrealql.datamodel.objects"><code>object</code></Link>.</blockquote>
+		<p>The following headers can be used to customise the query and the response.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Header</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>Authorization</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the root, namespace, database, or scope authentication data</td>
+					</tr>
+					<tr>
+						<td>
+							<code>Accept</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Sets the desired content-type of the response
+							<br>
+							<p small>
+								Can be one of <code>application/json</code>, <code>application/cbor</code>, <code>application/pack</code>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>NS</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Namespace for queries</td>
+					</tr>
+					<tr>
+						<td>
+							<code>DB</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Database for queries</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<p>Once this endpoint is called the following query will be run on the database:</p>
+		<Code @name="docs-integrations-http-update-one.sql">
+			UPDATE type::thing($table, $id) CONTENT $body;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "modify-one"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>PATCH</code> <code>/key/:table/:id</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint creates or updates a single specific record in the database. If the record already exists, then only the specified fields will be updated.</p>
+		<blockquote yellow>This HTTP endpoint expects the HTTP body to be a JSON or SurrealQL <Link @link="docs.surrealql.datamodel.objects"><code>object</code></Link>.</blockquote>
+		<p>The following headers can be used to customise the query and the response.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Header</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>Authorization</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the root, namespace, database, or scope authentication data</td>
+					</tr>
+					<tr>
+						<td>
+							<code>Accept</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Sets the desired content-type of the response
+							<br>
+							<p small>
+								Can be one of <code>application/json</code>, <code>application/cbor</code>, <code>application/pack</code>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>NS</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Namespace for queries</td>
+					</tr>
+					<tr>
+						<td>
+							<code>DB</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Database for queries</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<p>Once this endpoint is called the following query will be run on the database:</p>
+		<Code @name="docs-integrations-http-modify-one.sql">
+			UPDATE type::thing($table, $id) MERGE $body;
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "delete-one"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>DELETE</code> <code>/key/:table/:id</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint deletes a single specific record from the database.</p>
+		<p>The following headers can be used to customise the query and the response.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Header</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>Authorization</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the root, namespace, database, or scope authentication data</td>
+					</tr>
+					<tr>
+						<td>
+							<code>Accept</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Sets the desired content-type of the response
+							<br>
+							<p small>
+								Can be one of <code>application/json</code>, <code>application/cbor</code>, <code>application/pack</code>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>NS</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Namespace for queries</td>
+					</tr>
+					<tr>
+						<td>
+							<code>DB</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>Sets the selected Database for queries</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<p>Once this endpoint is called the following query will be run on the database:</p>
+		<Code @name="docs-integrations-http-delete-one.sql">
+			DELETE FROM type::thing($table, $id);
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
 
 <Layout::Gap small />
 
@@ -115,19 +799,37 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><code>Authorization</code></td>
+						<td>
+							<code>Authorization</code>
+							<l faint r>Optional</l>
+						</td>
 						<td>Sets the root, namespace, database, or scope authentication data</td>
 					</tr>
 					<tr>
-						<td><code>Accept</code></td>
-						<td>Sets the desired content-type of the response</td>
+						<td>
+							<code>Accept</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Sets the desired content-type of the response
+							<br>
+							<p small>
+								Can be one of <code>application/json</code>, <code>application/cbor</code>, <code>application/pack</code>
+							</p>
+						</td>
 					</tr>
 					<tr>
-						<td><code>NS</code></td>
+						<td>
+							<code>NS</code>
+							<l faint r>Optional</l>
+						</td>
 						<td>Sets the selected Namespace for queries</td>
 					</tr>
 					<tr>
-						<td><code>DB</code></td>
+						<td>
+							<code>DB</code>
+							<l faint r>Optional</l>
+						</td>
 						<td>Sets the selected Database for queries</td>
 					</tr>
 				</tbody>
@@ -171,356 +873,22 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "select-all"}}>
+<Layout::Group {{waypoint "status"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><code>GET</code> <code>/key/:table</code> endpoint</h3>
-		<p>This HTTP RESTful endpoint selects all records in a specific table in the database.</p>
-		<p>The following headers can be used to customise the query and the response.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-					<tr>
-						<th w-40>Header</th>
-						<th w-60>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>Authorization</code></td>
-						<td>Sets the root, namespace, database, or scope authentication data</td>
-					</tr>
-					<tr>
-						<td><code>Accept</code></td>
-						<td>Sets the desired content-type of the response</td>
-					</tr>
-					<tr>
-						<td><code>NS</code></td>
-						<td>Sets the selected Namespace for queries</td>
-					</tr>
-					<tr>
-						<td><code>DB</code></td>
-						<td>Sets the selected Database for queries</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-select-all.sql">
-			SELECT * FROM type::table($table);
-		</Code>
+		<h3><code>GET</code> <code>/status</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint checks whether the database web server is running, returning a <code>200</code> status code.</p>
 	</Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "create-all"}}>
+<Layout::Group {{waypoint "version"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><code>POST</code> <code>/key/:table</code> endpoint</h3>
-		<p>This HTTP RESTful endpoint creates a record in a specific table in the database.</p>
-		<blockquote yellow>This HTTP endpoint expects the HTTP body to be a SurrealQL <Link @link="docs.surrealql.datamodel.simple"><code>object</code></Link>.</blockquote>
-		<p>The following headers can be used to customise the query and the response.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-					<tr>
-						<th w-40>Header</th>
-						<th w-60>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>Authorization</code></td>
-						<td>Sets the root, namespace, database, or scope authentication data</td>
-					</tr>
-					<tr>
-						<td><code>Accept</code></td>
-						<td>Sets the desired content-type of the response</td>
-					</tr>
-					<tr>
-						<td><code>NS</code></td>
-						<td>Sets the selected Namespace for queries</td>
-					</tr>
-					<tr>
-						<td><code>DB</code></td>
-						<td>Sets the selected Database for queries</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-create-all.sql">
-			CREATE type::table($table) CONTENT $body;
-		</Code>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "delete-all"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><code>DELETE</code> <code>/key/:table</code> endpoint</h3>
-		<p>This HTTP RESTful endpoint deletes all records from the specified table in the database.</p>
-		<p>The following headers can be used to customise the query and the response.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-					<tr>
-						<th w-40>Header</th>
-						<th w-60>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>Authorization</code></td>
-						<td>Sets the root, namespace, database, or scope authentication data</td>
-					</tr>
-					<tr>
-						<td><code>Accept</code></td>
-						<td>Sets the desired content-type of the response</td>
-					</tr>
-					<tr>
-						<td><code>NS</code></td>
-						<td>Sets the selected Namespace for queries</td>
-					</tr>
-					<tr>
-						<td><code>DB</code></td>
-						<td>Sets the selected Database for queries</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-delete-all.sql">
-			DELETE FROM type::table($table);
-		</Code>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "select-one"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><code>GET</code> <code>/key/:table/:id</code> endpoint</h3>
-		<p>This HTTP RESTful endpoint selects a specific record from the database.</p>
-		<p>The following headers can be used to customise the query and the response.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-					<tr>
-						<th w-40>Header</th>
-						<th w-60>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>Authorization</code></td>
-						<td>Sets the root, namespace, database, or scope authentication data</td>
-					</tr>
-					<tr>
-						<td><code>Accept</code></td>
-						<td>Sets the desired content-type of the response</td>
-					</tr>
-					<tr>
-						<td><code>NS</code></td>
-						<td>Sets the selected Namespace for queries</td>
-					</tr>
-					<tr>
-						<td><code>DB</code></td>
-						<td>Sets the selected Database for queries</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-select-one.sql">
-			SELECT * FROM type::thing($table, $id);
-		</Code>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "create-one"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><code>POST</code> <code>/key/:table/:id</code> endpoint</h3>
-		<p>This HTTP RESTful endpoint creates a single specific record into the database.</p>
-		<blockquote yellow>This HTTP endpoint expects the HTTP body to be a SurrealQL <Link @link="docs.surrealql.datamodel.simple"><code>object</code></Link>.</blockquote>
-		<p>The following headers can be used to customise the query and the response.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-					<tr>
-						<th w-40>Header</th>
-						<th w-60>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>Authorization</code></td>
-						<td>Sets the root, namespace, database, or scope authentication data</td>
-					</tr>
-					<tr>
-						<td><code>Accept</code></td>
-						<td>Sets the desired content-type of the response</td>
-					</tr>
-					<tr>
-						<td><code>NS</code></td>
-						<td>Sets the selected Namespace for queries</td>
-					</tr>
-					<tr>
-						<td><code>DB</code></td>
-						<td>Sets the selected Database for queries</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-create-one.sql">
-			CREATE type::thing($table, $id) CONTENT $body;
-		</Code>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "update-one"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><code>PUT</code> <code>/key/:table/:id</code> endpoint</h3>
-		<p>This HTTP RESTful endpoint creates or updates a single specific record in the database.</p>
-		<blockquote yellow>This HTTP endpoint expects the HTTP body to be a SurrealQL <Link @link="docs.surrealql.datamodel.simple"><code>object</code></Link>.</blockquote>
-		<p>The following headers can be used to customise the query and the response.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-					<tr>
-						<th w-40>Header</th>
-						<th w-60>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>Authorization</code></td>
-						<td>Sets the root, namespace, database, or scope authentication data</td>
-					</tr>
-					<tr>
-						<td><code>Accept</code></td>
-						<td>Sets the desired content-type of the response</td>
-					</tr>
-					<tr>
-						<td><code>NS</code></td>
-						<td>Sets the selected Namespace for queries</td>
-					</tr>
-					<tr>
-						<td><code>DB</code></td>
-						<td>Sets the selected Database for queries</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-update-one.sql">
-			UPDATE type::thing($table, $id) CONTENT $body;
-		</Code>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "modify-one"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><code>PATCH</code> <code>/key/:table/:id</code> endpoint</h3>
-		<p>This HTTP RESTful endpoint creates or updates a single specific record in the database. If the record already exists, then only the specified fields will be updated.</p>
-		<blockquote yellow>This HTTP endpoint expects the HTTP body to be a SurrealQL <Link @link="docs.surrealql.datamodel.simple"><code>object</code></Link>.</blockquote>
-		<p>The following headers can be used to customise the query and the response.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-					<tr>
-						<th w-40>Header</th>
-						<th w-60>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>Authorization</code></td>
-						<td>Sets the root, namespace, database, or scope authentication data</td>
-					</tr>
-					<tr>
-						<td><code>Accept</code></td>
-						<td>Sets the desired content-type of the response</td>
-					</tr>
-					<tr>
-						<td><code>NS</code></td>
-						<td>Sets the selected Namespace for queries</td>
-					</tr>
-					<tr>
-						<td><code>DB</code></td>
-						<td>Sets the selected Database for queries</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-modify-one.sql">
-			UPDATE type::thing($table, $id) MERGE $body;
-		</Code>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "delete-one"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><code>DELETE</code> <code>/key/:table/:id</code> endpoint</h3>
-		<p>This HTTP RESTful endpoint deletes a single specific record from the database.</p>
-		<p>The following headers can be used to customise the query and the response.</p>
-		<Layout::Table>
-			<table>
-				<thead>
-					<tr>
-						<th w-40>Header</th>
-						<th w-60>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>Authorization</code></td>
-						<td>Sets the root, namespace, database, or scope authentication data</td>
-					</tr>
-					<tr>
-						<td><code>Accept</code></td>
-						<td>Sets the desired content-type of the response</td>
-					</tr>
-					<tr>
-						<td><code>NS</code></td>
-						<td>Sets the selected Namespace for queries</td>
-					</tr>
-					<tr>
-						<td><code>DB</code></td>
-						<td>Sets the selected Database for queries</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-delete-one.sql">
-			DELETE FROM type::thing($table, $id);
-		</Code>
+		<h3><code>GET</code> <code>/version</code> endpoint</h3>
+		<p>This HTTP RESTful endpoint returns the version of the SurrealDB database server.</p>
 	</Layout::Text>
 
 </Layout::Group>

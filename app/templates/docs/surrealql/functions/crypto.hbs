@@ -71,6 +71,22 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#bcrypt-compare">
+						<code>crypto::bcrypt::compare()</code>
+					</a>
+				</td>
+				<td>Compares an bcrypt hash to a password</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#bcrypt-generate">
+						<code>crypto::bcrypt::generate()</code>
+					</a>
+				</td>
+				<td>Generates a new bcrypt hashed password</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#pbkdf2-compare">
 						<code>crypto::pbkdf2::compare()</code>
 					</a>
@@ -275,6 +291,54 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-crypto-argon2-generate-result.txt">
 				"$argon2id$v=19$m=4096,t=3,p=1$pbZ6yJ2rPJKk4pyEMVwslQ$jHzpsiB+3S/H+kwFXEcr10vmOiDkBkydVCSMfRxV7CA"
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "bcrypt-compare"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>crypto::bcrypt::compare</h3>
+		<p>The <code>crypto::bcrypt::compare</code> function compares a hashed-and-salted bcrypt password value with an unhashed password value.</p>
+		<Code @name="docs-surrealql-functions-crypto-bcrypt-compare.sql" text="API Definition">
+			crypto::bcrypt::compare(value, value) -> boolean
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-crypto-bcrypt-compare-input.sql">
+				LET $hash = "$2b$12$OD7hrr1Hycyk8NUwOekYY.cogCICpUnwNvDZ9NiC1qCPHzpVAQ9BO";
+				LET $pass = "this is a strong password";
+				SELECT * FROM crypto::bcrypt::compare($hash, $pass);
+			</Code>
+			<Code @name="docs-surrealql-functions-crypto-bcrypt-compare-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "bcrypt-generate"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>crypto::bcrypt::generate</h3>
+		<p>The <code>crypto::bcrypt::generate</code> function hashes and salts a password using the bcrypt hashing algorithm.</p>
+		<Code @name="docs-surrealql-functions-crypto-bcrypt-generate.sql" text="API Definition">
+			crypto::bcrypt::generate(value) -> string
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-crypto-bcrypt-generate-input.sql">
+				SELECT * FROM crypto::bcrypt::generate("this is a strong password");
+			</Code>
+			<Code @name="docs-surrealql-functions-crypto-bcrypt-generate-result.txt">
+				"$2b$12$OD7hrr1Hycyk8NUwOekYY.cogCICpUnwNvDZ9NiC1qCPHzpVAQ9BO"
 			</Code>
 		</codes>
 	</Layout::Text>

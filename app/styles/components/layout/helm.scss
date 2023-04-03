@@ -2,11 +2,19 @@ layout-helm {
 
 	display:grid;
 
+	layout-helm {
+
+		menu { display:none !important; }
+
+		grid-template-columns:[content] auto !important;
+
+	}
+
 	&[docs] {
 
 		grid-template-columns:
-			[sidebar-l] 250px
-			[content] calc(100% - 250px)
+			[sidebar-l] 300px
+			[content] calc(100% - 300px)
 		;
 
 		@include media(max-width-1024) {
@@ -15,21 +23,35 @@ layout-helm {
 		}
 
 		menu {
-			width:225px;
+			top:0px;
+			width:255px;
+			height:100vh;
+			max-height:100vh;
+			padding:50px 0 100px 0;
+			border-right:1px solid var(--border-color);
+
+			@include media(max-width-1301) {
+				top:90px;
+				max-height:calc(100vh - 90px);
+			}
 		}
 
 		main {
 			width:100%;
 			margin:0 auto;
+			padding:50px 0 100px 0;
 		}
 
-		main section:before {
-			left:calc(-250px - 10vw);
-			@include media(min-width-1587) {
-				left:calc( -250px - ( (100vw - 1270px) / 2) );
+		main layout-helm main section:before {
+			left:calc(-185px - 10vw);
+			@include media(min-width-2000) {
+				left:calc( -300px - ( (100vw - 1600px) / 2) );
+			}
+			@include media(max-width-2000) {
+				left:calc( -300px - ( (100vw - 80vw) / 2) );
 			}
 			@include media(max-width-1200) {
-				left:calc( -250px - ( (100vw - 930px) / 2) );
+				left:calc( -300px - ( (100vw - 930px) / 2) );
 			}
 			@include media(max-width-1024) {
 				left:calc( 0vw - (100vw - 85vw) / 2 );
@@ -61,7 +83,7 @@ layout-helm {
 			max-width:800px;
 		}
 
-		main section:before {
+		main section:before, main layout-helm main section:before {
 			left:calc(-230px - 10vw);
 			@include media(min-width-1587) {
 				left:calc( -230px - ( (100vw - 1270px) / 2) );
@@ -88,11 +110,16 @@ layout-helm {
 			grid-template-columns:[content] 100%;
 		}
 
+		&[simple] {
+			menu { display:none; }
+			grid-template-columns:[content] auto;
+		}
+
 		menu {
 			width:200px;
 		}
 
-		main section:before {
+		main section:before, main layout-helm main section:before {
 			left:calc(-230px - 10vw);
 			@include media(min-width-1587) {
 				left:calc( -230px - ( (100vw - 1270px) / 2) );
@@ -120,11 +147,16 @@ layout-helm {
 			grid-template-columns:[content] minmax(auto, 800px);
 		}
 
+		&[simple] {
+			menu { display:none; }
+			grid-template-columns:[content] auto;
+		}
+
 		menu {
 			width:200px;
 		}
 
-		main section:before {
+		main section:before, main layout-helm main section:before {
 			left:calc(-230px - 10vw);
 			@include media(min-width-1587) {
 				left:calc( -230px - ( (100vw - 1270px) / 2) );
@@ -187,7 +219,7 @@ layout-helm {
 		position:-webkit-sticky;
 		position:sticky;
 		height:min-content;
-		margin:15px 0 100px 0;
+		padding:25px 0 100px 0;
 		grid-column:sidebar-l;
 		flex-direction:column;
 		align-items:flex-start;

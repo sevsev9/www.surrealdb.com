@@ -24,7 +24,7 @@
 			<tr>
 				<td>
 					<a href="#sleep">
-						<code>sleep(@duration)</code>
+						<code>sleep()</code>
 					</a>
 				</td>
 				<td>Delays or pauses in the execution of a query or a batch of queries.</td>
@@ -38,7 +38,11 @@
 <Layout::Group {{waypoint "sleep"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>sleep</h3>
+		<h3><code>sleep</code></h3>
+		<p>The <code>sleep</code> function delays or pauses the execution of a query or a set of statements.</p>
+		<Code @name="docs-surrealql-functions-sleep.sql" text="API Definition">
+			sleep(duration) -> none
+		</Code>
 		<p>The following examples show this function when used in a select statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-sleep-1s.sql">

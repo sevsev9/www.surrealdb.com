@@ -1,50 +1,80 @@
 <Layout::Text text-l text-f>
-	<h1><img inline src="/static/img/text.svg" alt="SurrealDB" /> documentation</h1>
+	<h1><img inline src="/static/img/text.svg" alt="SurrealDB" /> Documentation</h1>
 	<p>SurrealDB makes building and scaling realtime apps dramatically quicker and easier. Get started by installing the server, and jump into our getting started guide to learn how to insert and query data in SurrealDB in minutes.</p>
 </Layout::Text>
 
-<Layout::Gap mini />
-
-<Layout::Boxes cols-3-to-2-to-1>
-	<LinkTo @route="docs.start.index">
-		<Layout::Boxes::Item mini hover>
-			<h4>Quick start</h4>
-		</Layout::Boxes::Item>
-	</LinkTo>
-	<LinkTo @route="docs.start.installation">
-		<Layout::Boxes::Item mini hover>
-			<h4>Installation</h4>
-		</Layout::Boxes::Item>
-	</LinkTo>
-	<LinkTo @route="docs.integration.index">
-		<Layout::Boxes::Item mini hover>
-			<h4>Integration</h4>
-		</Layout::Boxes::Item>
-	</LinkTo>
-	<LinkTo @route="docs.surrealql">
-		<Layout::Boxes::Item mini hover>
-			<h4>SurrealQL</h4>
-		</Layout::Boxes::Item>
-	</LinkTo>
-</Layout::Boxes>
-
-<Layout::Gap mini />
+<Layout::Gap tiny />
 
 <Layout::Text text-l text-f>
 	<p>
 		The current version of <img inline src="/static/img/text.svg" alt="SurrealDB" /> is
-		{{#if (latest-version)}}
-			<Link @link="releases"><code>{{latest-version}}</code></Link>
-		{{else}}
-			<Link @link="releases"><code>...</code></Link>
-		{{/if}}
+		<Version />
 	</p>
 </Layout::Text>
 
 <Layout::Gap mini />
 
+<Layout::Boxes cols-3-to-2-to-1>
+	<LinkTo @route="docs.introduction.index">
+		<Layout::Boxes::Item mini hover>
+			<h4>Introduction</h4>
+			<p>Get started with SurrealDB - understand the core concepts, features, releases, and frequently asked questions.</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.installation.index">
+		<Layout::Boxes::Item mini hover>
+			<h4>Installation</h4>
+			<p>Learn how to install SurrealDB, and get started with running a single-node database or distributed cluster.</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	{{!-- <LinkTo @route="docs.authentication.index">
+		<Layout::Boxes::Item mini hover>
+			<h4>Authentication</h4>
+			<p>Understand how to secure your application, using the different authentication levels available in SurrealDB.</p>
+		</Layout::Boxes::Item>
+	</LinkTo> --}}
+	<LinkTo @route="docs.deployment.index">
+		<Layout::Boxes::Item mini hover>
+			<h4>Deployment</h4>
+			<p>Understand how to secure your application, using the different authentication levels available in SurrealDB.</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.embedding.index">
+		<Layout::Boxes::Item mini hover>
+			<h4>Embedding</h4>
+			<p>Learn how to embed and query SurrealDB from within a Rust, Node.js, JavaScript, or Python application.</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.integration.index">
+		<Layout::Boxes::Item mini hover>
+			<h4>Integration</h4>
+			<p>View the documentation for connecting to and querying SurrealDB from different languages and frameworks.</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.index">
+		<Layout::Boxes::Item mini hover>
+			<h4>SurrealQL</h4>
+			<p>Learn about the SurrealQL data model, and how to define schemas, query the database, manipulate data, and run functions.</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.cli.index">
+		<Layout::Boxes::Item mini hover>
+			<h4>CLI tool</h4>
+			<p>View the commands that can be run with the command-line tool, including starting a server, and importing and exporting data.</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	{{!-- <LinkTo @route="docs.guides.index">
+		<Layout::Boxes::Item mini hover>
+			<h4>Guides</h4>
+			<p>Learn about the SurrealQL data model, and how to define schemas, query the database, manipulate data, and run functions.</p>
+		</Layout::Boxes::Item>
+	</LinkTo> --}}
+</Layout::Boxes>
+
+<Layout::Line />
+
 <Layout::Text text-l text-f>
-    <h3>Client libraries</h3>
+	<h3>Client libraries</h3>
 	<p>Connect your application to your database with one of our official libraries. The following libraries are officially supported by SurrealDB. They are actively maintained, support new SurrealDB features, and receive bug fixes, performance enhancements, and security patches.</p>
 </Layout::Text>
 
@@ -57,74 +87,74 @@
 <Layout::Gap mini />
 
 <Layout::Boxes cols-3-to-2-to-1>
+	<LinkTo @route="docs.integration.libraries.rust">
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="rust" /> Rust</h4>
+		</Layout::Boxes::Item>
+	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.nodejs">
 		<Layout::Boxes::Item mini hover>
-			<h4><i class="fab fa-node-js font-30 m-r-10"></i> Node.js</h4>
+			<h4><Devicon @size="30" @type="nodejs" /> Node.js</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.golang">
 		<Layout::Boxes::Item mini hover>
-			<h4><i class="fab fa-golang font-30 m-r-10"></i> Golang</h4>
-		</Layout::Boxes::Item>
-	</LinkTo>
-	<LinkTo @route="docs.integration.libraries.rust">
-		<Layout::Boxes::Item mini hover>
-			<h4><i class="fab fa-rust font-30 m-r-10"></i> Rust</h4>
+			<h4><Devicon @size="30" @type="golang" /> Golang</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.deno">
 		<Layout::Boxes::Item mini hover>
-			<h4><i class="fab fa-js-square font-30 m-r-10"></i> Deno</h4>
+			<h4><Devicon @size="30" @type="denojs" /> Deno</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.python">
-		<Layout::Boxes::Item mini hover faded>
-			<h4><i class="fab fa-python font-30 m-r-10"></i> Python</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="python" /> Python</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.c">
-		<Layout::Boxes::Item mini hover faded>
-			<h4><i class="fal fa-square-c font-30 m-r-10"></i> C</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="c" /> C</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.java">
-		<Layout::Boxes::Item mini hover faded>
-			<h4><i class="fab fa-java font-30 m-r-10"></i> Java</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="java" /> Java</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.ruby">
-		<Layout::Boxes::Item mini hover faded>
-			<h4><i class="fal fa-gem font-30 m-r-10"></i> Ruby</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="ruby" /> Ruby</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.php">
-		<Layout::Boxes::Item mini hover faded>
-			<h4><i class="fab fa-php font-30 m-r-10"></i> PHP</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="php" /> PHP</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.swift">
-		<Layout::Boxes::Item mini hover faded>
-			<h4><i class="fab fa-swift font-30 m-r-10"></i> Swift</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="swift" /> Swift</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.r">
-		<Layout::Boxes::Item mini hover faded>
-			<h4><i class="fab fa-r-project font-30 m-r-10"></i> R</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="r" /> R</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.dotnet">
-		<Layout::Boxes::Item mini hover faded>
-			<h4>.NET</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="dotnet" /> .NET</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.erlang">
-		<Layout::Boxes::Item mini hover faded>
-			<h4><i class="fab fa-erlang font-30 m-r-10"></i> Erlang</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="erlang" /> Erlang</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 </Layout::Boxes>
 
-<Layout::Line />
+<Layout::Gap mini />
 
 <Layout::Text text-l text-f>
 	<h4>Client side libraries</h4>
@@ -133,49 +163,59 @@
 <Layout::Gap mini />
 
 <Layout::Boxes cols-3-to-2-to-1>
-	<LinkTo @route="docs.integration.libraries.webassembly">
-		<Layout::Boxes::Item mini hover>
-			<h4><i class="fab fa-js-square font-30 m-r-10"></i> WebAssembly</h4>
-		</Layout::Boxes::Item>
-	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.javascript">
 		<Layout::Boxes::Item mini hover>
-			<h4><i class="fab fa-js-square font-30 m-r-10"></i> JavaScript</h4>
+			<h4><Devicon @size="30" @type="javascript" /> JavaScript</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.emberjs">
 		<Layout::Boxes::Item mini hover>
-			<h4><i class="fab fa-ember font-30 m-r-10"></i> Ember.js</h4>
+			<h4><Devicon @size="30" @type="emberjs" /> Ember.js</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.reactjs">
-		<Layout::Boxes::Item mini hover faded>
-			<h4><i class="fab fa-react font-30 m-r-10"></i> React.js</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="reactjs" /> React.js</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.angularjs">
-		<Layout::Boxes::Item mini hover faded>
-			<h4><i class="fab fa-angular font-30 m-r-10"></i> Angular</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="angularjs" /> Angular</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.vuejs">
-		<Layout::Boxes::Item mini hover faded>
-			<h4><i class="fab fa-vuejs font-30 m-r-10"></i> Vue.js</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="vuejs" /> Vue.js</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
-	<LinkTo @route="docs.integration.libraries.apollo">
-		<Layout::Boxes::Item mini hover faded>
-			<h4>Apollo GraphQL</h4>
+	<LinkTo @route="docs.integration.libraries.nextjs">
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="nextjs" /> Next.js</h4>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.integration.libraries.nuxtjs">
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="nuxtjs" /> Nuxt.js</h4>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.integration.libraries.nestjs">
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="nestjs" /> Nest.js</h4>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.integration.libraries.svelte">
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="svelte" /> Svelte</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.dart">
-		<Layout::Boxes::Item mini hover faded>
-			<h4>Dart</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="dart" /> Dart</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.integration.libraries.flutter">
-		<Layout::Boxes::Item mini hover faded>
-			<h4>Flutter</h4>
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="flutter" /> Flutter</h4>
 		</Layout::Boxes::Item>
 	</LinkTo>
 </Layout::Boxes>

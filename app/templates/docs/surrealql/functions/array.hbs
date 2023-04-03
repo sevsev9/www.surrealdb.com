@@ -21,13 +21,53 @@
 			</tr>
 		</thead>
 		<tbody>
-            <tr>
+			<tr>
+				<td>
+					<a href="#add">
+						<code>array::add()</code>
+					</a>
+				</td>
+				<td>Adds an item to an array if it doesn't exist</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#all">
+						<code>array::all()</code>
+					</a>
+				</td>
+				<td>Checks whether all array values are truthy</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#any">
+						<code>array::any()</code>
+					</a>
+				</td>
+				<td>Checks whether any array value is truthy</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#append">
+						<code>array::append()</code>
+					</a>
+				</td>
+				<td>Appends an item to the end of an array</td>
+			</tr>
+			<tr>
 				<td>
 					<a href="#combine">
 						<code>array::combine()</code>
 					</a>
 				</td>
 				<td>Combines all values from two arrays together</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#complement">
+						<code>array::complement()</code>
+					</a>
+				</td>
+				<td>Returns the complement of two arrays</td>
 			</tr>
             <tr>
 				<td>
@@ -55,6 +95,30 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#flatten">
+						<code>array::flatten()</code>
+					</a>
+				</td>
+				<td>Flattens multiple arrays into a single array</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#group">
+						<code>array::group()</code>
+					</a>
+				</td>
+				<td>Flattens and returns the unique items in an array</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#insert">
+						<code>array::insert()</code>
+					</a>
+				</td>
+				<td>Inserts an item at the end of an array, or in a specific position</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#intersect">
 						<code>array::intersect()</code>
 					</a>
@@ -68,6 +132,62 @@
 					</a>
 				</td>
 				<td>Returns the length of an array</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#max">
+						<code>array::max()</code>
+					</a>
+				</td>
+				<td>Returns the maximum item in an array</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#min">
+						<code>array::min()</code>
+					</a>
+				</td>
+				<td>Returns the minimum item in an array</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#pop">
+						<code>array::pop()</code>
+					</a>
+				</td>
+				<td>Returns the last item from an array</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#prepend">
+						<code>array::prepend()</code>
+					</a>
+				</td>
+				<td>Prepends an item to the beginning of an array</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#push">
+						<code>array::push()</code>
+					</a>
+				</td>
+				<td>Appends an item to the end of an array</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#remove">
+						<code>array::remove()</code>
+					</a>
+				</td>
+				<td>Removes an item at a specific position from an array</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#reverse">
+						<code>array::reverse()</code>
+					</a>
+				</td>
+				<td>Reverses the sorting order of an array</td>
 			</tr>
 			<tr>
 				<td>
@@ -121,7 +241,7 @@
 				SELECT * FROM array::combine([1,2], [2,3]);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-combine-result.txt">
-				[ [1,2], [1,3], [2,3] ]
+				[ [1,2], [1,3], [2,2], [2,3] ]
 			</Code>
 		</codes>
 		<p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
@@ -130,6 +250,38 @@
 				SELECT * FROM array::combine(3, true);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-combine-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "complement"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::complement</h3>
+		<p>The <code>array::complement</code> function returns the complement of two arrays, returning a single array containing items which are not in the second array.</p>
+		<Code @name="docs-surrealql-functions-array-complement.sql" text="API Definition">
+			array::complement(array, array) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-complement-input.sql">
+				SELECT * FROM array::complement([1,2,3,4], [3,4,5,6]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-complement-result.txt">
+				[1,2]
+			</Code>
+		</codes>
+		<p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-complement-error-input.sql">
+				SELECT * FROM array::complement(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-complement-error-result.txt">
 				null
 			</Code>
 		</codes>
@@ -226,6 +378,38 @@
 				SELECT * FROM array::distinct("some text");
 			</Code>
 			<Code @name="docs-surrealql-functions-array-distinct-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "flatten"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::flatten</h3>
+		<p>The <code>array::flatten</code> flattens an array of arrays, returning a new array with all sub-array elements concatenated into it.</p>
+		<Code @name="docs-surrealql-functions-array-flatten.sql" text="API Definition">
+			array::flatten(array) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-flatten-input.sql">
+				SELECT * FROM array::flatten([ [1,2], [3, 4], 'SurrealDB', [5, 6, [7, 8]] ]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-flatten-result.txt">
+				[1, 2, 3, 4, 'SurrealDB', 5, 6, [7, 8]]
+			</Code>
+		</codes>
+        <p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-flatten-error-input.sql">
+				SELECT * FROM array::flatten(3);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-flatten-error-result.txt">
 				null
 			</Code>
 		</codes>

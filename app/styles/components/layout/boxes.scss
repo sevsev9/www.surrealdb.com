@@ -1,28 +1,28 @@
 layout-boxes {
 
-	display:block;
+	display: block;
 
 	content {
 
-		display:grid;
-		grid-gap:20px 20px;
-		grid-template-columns:repeat(12, 1fr);
+		display: grid;
+		grid-gap: 20px 20px;
+		grid-template-columns: repeat(12, 1fr);
 
-		> a {
+		>a {
 
-			display:flex;
-			grid-column:auto / span 2;
+			display: flex;
+			grid-column: auto / span 2;
 
-			> layout-boxes-item {
+			>layout-boxes-item {
 
-				transition:box-shadow 0.3s;
+				transition: box-shadow 0.3s;
 
 				&:hover {
 
-					transform:translateZ(0);
+					transform: translateZ(0);
 
 					img {
-						transform:scale(1.05);
+						transform: scale(1.05);
 					}
 
 				}
@@ -31,122 +31,128 @@ layout-boxes {
 
 		}
 
-		> a > layout-boxes-item, > layout-boxes-item {
+		>a>layout-boxes-item,
+		>layout-boxes-item {
 
-			z-index:1;
-			width:100%;
-			display:block;
-			overflow:hidden;
-			text-align:left;
-			position:relative;
-			border-radius:16px;
-			grid-column:auto / span 2;
-			background-color:var(--boxes-color);
+			z-index: 1;
+			width: 100%;
+			display: block;
+			overflow: hidden;
+			text-align: left;
+			position: relative;
+			border-radius: 16px;
+			grid-column: auto / span 2;
+			background-color: var(--boxes-color);
 
 			pic {
 
-				display:block;
-				max-width:100%;
-				overflow:hidden;
-				position:relative;
+				display: block;
+				max-width: 100%;
+				overflow: hidden;
+				position: relative;
 
 				img {
-					width:100%;
-					height:100%;
-					display:block;
-					max-width:100%;
-					object-fit:cover;
-					transition:transform 0.3s;
+					width: 100%;
+					height: 100%;
+					display: block;
+					max-width: 100%;
+					object-fit: cover;
+					transition: transform 0.3s;
 				}
 
 			}
 
 			div {
 
-				padding:40px;
+				padding: 40px;
 
 				@include media(max-width-1024) {
-					padding:30px;
+					padding: 30px;
 				}
 
-				> h3 {
-					font-size:26px;
-					font-weight:600;
-					line-height:1.5;
+				>h3 {
+					font-size: 26px;
+					font-weight: 600;
+					line-height: 1.5;
 				}
 
-				> h4 {
-					font-size:20px;
-					font-weight:600;
-					line-height:1.5;
+				>h4 {
+					font-size: 20px;
+					font-weight: 600;
+					line-height: 1.5;
 				}
 
-				> p:last-child {
-					font-size:16px;
+				>p:last-child {
+					font-size: 16px;
 				}
 
-				> p:first-child {
-					font-size:12px;
-					padding-bottom:0;
-					margin-bottom:5px;
-					display:inline-block;
-					color:var(--faint-color);
+				>p:first-child {
+					font-size: 12px;
+					padding-bottom: 0;
+					margin-bottom: 5px;
+					display: inline-block;
+					color: var(--faint-color);
 				}
 
 			}
 
 			&[centered] {
-				display:flex;
-				align-items:center;
-				justify-content:center;
-				* { color:var(--faint-color); }
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				* {
+					color: var(--faint-color);
+				}
 			}
 
 			&[careers] {
-				display:flex;
-				font-size:16px;
-				align-items:center;
+				display: flex;
+				font-size: 16px;
+				align-items: center;
 				text-align: center;
-				justify-content:center;
+				justify-content: center;
 			}
 
 			&[hover]:hover {
-				h3, h4 {
-					color:var(--hover-color);
+
+				h3,
+				h4 {
+					color: var(--hover-color);
 				}
 			}
 
 			&[faded] {
-				opacity:0.3;
+				opacity: 0.3;
 			}
 
 			&[mini] div {
-				padding:20px 40px;
+				padding: 30px 40px;
 			}
 
 			&[tick] div h3 img {
-				margin:0 10px 0 0;
+				margin: 0 10px 0 0;
 			}
 
 			&[tick] div h4 img {
-				margin:0 10px 0 0;
+				margin: 0 10px 0 0;
 			}
 
 		}
 
 	}
 
-	&[cols-4-to-2-to-1] content > a,
-	&[cols-4-to-2-to-1] content > layout-boxes-item {
+	&[cols-4-to-2-to-1] content>a,
+	&[cols-4-to-2-to-1] content>layout-boxes-item {
 
-		grid-column:auto / span 3;
+		grid-column: auto / span 3;
 
 		&[full] {
-			grid-column:auto / span 12;
+			grid-column: auto / span 12;
 		}
 
 		&[half] {
-			grid-column:auto / span 6;
+			grid-column: auto / span 6;
 		}
 
 		@include media(min-width-1050 max-width-1200) {
@@ -156,11 +162,11 @@ layout-boxes {
 				pic {
 
 					img {
-						top:0;
-						left:0;
-						right:0;
-						bottom:0;
-						position:absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						position: absolute;
 					}
 
 				}
@@ -175,20 +181,20 @@ layout-boxes {
 
 				pic {
 
-					float:left;
-					width:67.7%;
-					min-height:100%;
+					float: left;
+					width: 67.7%;
+					min-height: 100%;
 
 					&:only-child {
-						width:100%;
+						width: 100%;
 					}
 
 				}
 
 				div {
-					margin:0;
-					width:32.3%;
-					float:right;
+					margin: 0;
+					width: 32.3%;
+					float: right;
 				}
 
 			}
@@ -197,45 +203,45 @@ layout-boxes {
 
 		@include media(max-width-1250) {
 
-			grid-column:auto / span 6;
+			grid-column: auto / span 6;
 
 			&[full] {
-				grid-column:auto / span 12;
+				grid-column: auto / span 12;
 			}
 
 			&[half] {
-				grid-column:auto / span 6;
+				grid-column: auto / span 6;
 			}
 
 		}
 
 		@include media(max-width-750) {
 
-			grid-column:auto / span 12;
+			grid-column: auto / span 12;
 
 			&[full] {
-				grid-column:auto / span 12;
+				grid-column: auto / span 12;
 			}
 
 			&[half] {
-				grid-column:auto / span 12;
+				grid-column: auto / span 12;
 			}
 
 		}
 
 	}
 
-	&[cols-3-to-2-to-1] content > a,
-	&[cols-3-to-2-to-1] content > layout-boxes-item {
+	&[cols-3-to-2-to-1] content>a,
+	&[cols-3-to-2-to-1] content>layout-boxes-item {
 
-		grid-column:auto / span 4;
+		grid-column: auto / span 4;
 
 		&[full] {
-			grid-column:auto / span 12;
+			grid-column: auto / span 12;
 		}
 
 		&[half] {
-			grid-column:auto / span 6;
+			grid-column: auto / span 6;
 		}
 
 		@include media(min-width-1050 max-width-1200) {
@@ -245,11 +251,11 @@ layout-boxes {
 				pic {
 
 					img {
-						top:0;
-						left:0;
-						right:0;
-						bottom:0;
-						position:absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						position: absolute;
 					}
 
 				}
@@ -264,111 +270,118 @@ layout-boxes {
 
 				pic {
 
-					float:left;
-					width:67.7%;
-					min-height:100%;
+					float: left;
+					width: 67.7%;
+					min-height: 100%;
 
 					&:only-child {
-						width:100%;
+						width: 100%;
 					}
 
 				}
 
 				div {
-					margin:0;
-					width:32.3%;
-					float:right;
+					margin: 0;
+					width: 32.3%;
+					float: right;
 				}
 
 			}
 
 		}
 
-		@include media(max-width-1250) {
+		@include media(max-width-1650) {
 
-			grid-column:auto / span 6;
+			grid-column: auto / span 6;
 
 			&[full] {
-				grid-column:auto / span 12;
+				grid-column: auto / span 12;
 			}
 
 			&[half] {
-				grid-column:auto / span 6;
+				grid-column: auto / span 6;
 			}
 
 		}
 
 		@include media(max-width-750) {
 
-			grid-column:auto / span 12;
+			grid-column: auto / span 12;
 
 			&[full] {
-				grid-column:auto / span 12;
+				grid-column: auto / span 12;
 			}
 
 			&[half] {
-				grid-column:auto / span 12;
+				grid-column: auto / span 12;
 			}
 
 		}
 
 	}
 
-	&[cols-3-to-1] content > a,
-	&[cols-3-to-1] content > layout-boxes-item {
+	&[cols-3-to-1] content>a,
+	&[cols-3-to-1] content>layout-boxes-item {
 
-		grid-column:auto / span 4;
+		grid-column: auto / span 4;
 
 		&[full] {
-			grid-column:auto / span 12;
+			grid-column: auto / span 12;
 		}
 
 		&[half] {
-			grid-column:auto / span 6;
+			grid-column: auto / span 6;
 		}
 
-		@include media(max-width-1150) {
+		@include media(max-width-1300) {
 
-			grid-column:auto / span 12;
+			grid-column: auto / span 12;
 
 			&[full] {
-				grid-column:auto / span 12;
+				grid-column: auto / span 12;
 			}
 
 			&[half] {
-				grid-column:auto / span 12;
+				grid-column: auto / span 12;
 			}
 
 		}
 
 	}
 
-	&[cols-2-to-1] content > a,
-	&[cols-2-to-1] content > layout-boxes-item {
+	&[cols-2-to-1] content>a,
+	&[cols-2-to-1] content>layout-boxes-item {
 
-		grid-column:auto / span 6;
+		grid-column: auto / span 6;
 
 		&[full] {
-			grid-column:auto / span 12;
+			grid-column: auto / span 12;
 		}
 
 		&[half] {
-			grid-column:auto / span 6;
+			grid-column: auto / span 6;
 		}
 
 		@include media(max-width-1000) {
 
-			grid-column:auto / span 12;
+			grid-column: auto / span 12;
 
 			&[full] {
-				grid-column:auto / span 12;
+				grid-column: auto / span 12;
 			}
 
 			&[half] {
-				grid-column:auto / span 12;
+				grid-column: auto / span 12;
 			}
 
 		}
+
+	}
+
+	&[cols-1] content>a,
+	&[cols-1] content>layout-boxes-item {
+
+		grid-column: auto / span 12;
 
 	}
 

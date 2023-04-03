@@ -93,6 +93,22 @@
 				</td>
 				<td>Generates and returns a random UUID</td>
 			</tr>
+			<tr>
+				<td>
+					<a href="#rand-uuid-v4">
+						<code>rand::uuid::v4()</code>
+					</a>
+				</td>
+				<td>Generates and returns a random Version 4 UUID</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#rand-uuid-v7">
+						<code>rand::uuid::v7()</code>
+					</a>
+				</td>
+				<td>Generates and returns a random Version 7 UUID</td>
+			</tr>
 		</tbody>
 	</table>
 </Layout::Table>
@@ -389,6 +405,52 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-rand-uuid-result.txt">
 				"e20b2836-e689-4643-998d-b17a16800323"
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "rand-uuid-v4"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>rand::uuid::v4</h3>
+		<p>The <code>rand::uuid::v4</code> function generates a random Version 4 UUID.</p>
+		<Code @name="docs-surrealql-functions-rand-uuid-v4.sql" text="API Definition">
+			rand::uuid::v4() -> uuid
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-rand-uuid-v4-input.sql">
+				SELECT * FROM rand::uuid::v4();
+			</Code>
+			<Code @name="docs-surrealql-functions-rand-uuid-v4-result.txt">
+				"4def23a5-a847-4934-8dad-c64ccc48921b"
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "rand-uuid-v7"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>rand::uuid::v7</h3>
+		<p>The <code>rand::uuid::v7</code> function generates a random Version 7 UUID.</p>
+		<Code @name="docs-surrealql-functions-rand-uuid-v7.sql" text="API Definition">
+			rand::uuid::v7() -> uuid
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-rand-uuid-v7-input.sql">
+				SELECT * FROM rand::uuid::v7();
+			</Code>
+			<Code @name="docs-surrealql-functions-rand-uuid-v7-result.txt">
+				"01843a54-32e1-71eb-af07-5901fc190877"
 			</Code>
 		</codes>
 	</Layout::Text>

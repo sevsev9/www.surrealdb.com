@@ -1,27 +1,49 @@
 i {
 
-	transition:color 0.3s;
+	transition: color 0.3s;
 
 	a & {
 		@include graded;
 	}
 
 	a:hover & {
-		color:transparent;
+		color: transparent;
 	}
 
 	&[large] {
-		font-size:26px;
+		font-size: 26px;
 	}
 
 	&[pointer] {
-		cursor:pointer;
+		cursor: pointer;
 	}
 
 	&[download] {
-		margin-left:15px;
-		vertical-align:5px;
-		color:var(--faint-color);
+		margin-left: 15px;
+		vertical-align: 5px;
+		color: var(--faint-color);
 	}
 
+	&[route^="docs"] {
+		max-width: 1600px;
+	}
+
+	&[class^="devicon"] {
+		vertical-align: text-top;
+
+		&.white {
+			color: white;
+		}
+	}
+
+}
+
+svg.devicon {
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+img.devicon {
+	margin-right: 10px;
+	vertical-align: middle;
 }

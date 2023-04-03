@@ -1,0 +1,40 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.embedding">Embedding</Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+    <h2>Embedding SurrealDB</h2>
+	<p>SurrealDB is designed to be run in many different ways, and environments. Due to the <Link @link="docs.introduction.architecture">separation of the storage and compute</Link> layers, SurrealDB can be run in embedded mode, from within a number of different language environments. View the documentation below to see how SurrealDB can be embedded and queried directiony from within different programming languages.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Boxes cols-2-to-1>
+	<LinkTo @route="docs.embedding.rust">
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="rust" /> Embedding in Rust</h4>
+			<p>Embed SurrealDB within a Rust application</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.embedding.node">
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="nodejs" /> Embedding in Node.js</h4>
+			<p>Embed SurrealDB within a Node.js application</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.embedding.javascript">
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="javascript" /> Embedding in JavaScript</h4>
+			<p>Embed SurrealDB within a JavaScript application</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.embedding.python">
+		<Layout::Boxes::Item mini hover>
+			<h4><Devicon @size="30" @type="python" /> Embedding in Python</h4>
+			<p>Embed SurrealDB within a Python application</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+</Layout::Boxes>
+
+<Layout::Gap large />

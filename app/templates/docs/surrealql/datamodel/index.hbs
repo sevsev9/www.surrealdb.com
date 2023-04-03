@@ -12,15 +12,51 @@
 <Layout::Gap mini />
 
 <Layout::Boxes cols-3-to-2-to-1>
+	<LinkTo @route="docs.surrealql.datamodel.ids">
+		<Layout::Boxes::Item mini hover>
+			<h4>Record IDs</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
 	<LinkTo @route="docs.surrealql.datamodel.simple">
 		<Layout::Boxes::Item mini hover>
 			<h4>Simple types</h4>
-			<p>Boolean values, strings, numbers, UUIDs, arrays, objects, and durations</p>
+			<p>Boolean values, empty values, and null values</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.datamodel.strings">
+		<Layout::Boxes::Item mini hover>
+			<h4>Strings</h4>
+			<p>Strings can be used to store text and unicode values</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.datamodel.numbers">
+		<Layout::Boxes::Item mini hover>
+			<h4>Numbers</h4>
+			<p>Integers, floating point numbers and decimal numbers</p>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.surrealql.datamodel.datetimes">
 		<Layout::Boxes::Item mini hover>
 			<h4>Datetimes</h4>
+			<p>Datetimes and durations can be used to store and manipulate dates and times</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.datamodel.uuids">
+		<Layout::Boxes::Item mini hover>
+			<h4>UUIDs</h4>
+			<p>Datetimes and durations can be used to store and manipulate dates and times</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.datamodel.objects">
+		<Layout::Boxes::Item mini hover>
+			<h4>Objects</h4>
+			<p>Datetimes and durations can be used to store and manipulate dates and times</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.datamodel.arrays">
+		<Layout::Boxes::Item mini hover>
+			<h4>Arrays</h4>
 			<p>Datetimes and durations can be used to store and manipulate dates and times</p>
 		</Layout::Boxes::Item>
 	</LinkTo>

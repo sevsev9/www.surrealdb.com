@@ -1,0 +1,49 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql">SurrealQL</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql.datamodel">Data model</Crumb::Item>
+	<Crumb::Item @link="docs.surrealql.datamodel.ids">Record IDs</Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+	<h2>Record IDs</h2>
+	<p>In SurrealDB, document record IDs store both the table name, and the record ID.</p>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Text Record IDs</h3>
+	<p>If a numeric value is specified without any decimal point suffix and is within the range <code>-9223372036854775808</code> to <code>9223372036854775807</code> then the value will be parsed, stored, and treated as a 64-bit integer.</p>
+	<Code @name="docs-surrealql-overview-record-numeric.sql">
+		CREATE company:surrealdb SET name = 'SurrealDB';
+	</Code>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>Numeric Record IDs</h3>
+	<p>If a numeric value is specified without any decimal point suffix and is within the range <code>-9223372036854775808</code> to <code>9223372036854775807</code> then the value will be parsed, stored, and treated as a 64-bit integer.</p>
+	<Code @name="docs-surrealql-overview-record-numeric.sql">
+		CREATE temperature:17493 SET time = time::now(), celcius = 37.5;
+	</Code>
+</Layout::Text>
+
+
+
+	{{!--
+	<Code @name="docs/surrealql/overview/record-id.sql" />
+	<p>This allows for records to be retrieved without any table scans or index scans, solely by the id.</p>
+	<Code @name="docs/surrealql/overview/record-select.sql" />
+	<p>In addition, SurrealDB record IDs allow for direct record retrieval from within interconnected record queries.</p>
+	<Code @name="docs/surrealql/overview/record-remote.sql" />
+	<p>Record IDs can be both text-based or numeric.</p>
+	<Code @name="docs/surrealql/overview/record-numeric.sql" />
+	<p>Record IDs can contain complex characters, surrounded by the <code>`</code> character.</p>
+	<Code @name="docs/surrealql/overview/record-backtick.sql" />
+	<p>Alternatively complex characters within record IDs can be surrounded by the <code>⟨</code> and <code>⟩</code> characters.</p>
+	<Code @name="docs/surrealql/overview/record-complex.sql" />
+--}}
+
+<Layout::Gap large />
