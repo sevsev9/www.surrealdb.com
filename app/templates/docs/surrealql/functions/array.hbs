@@ -227,6 +227,134 @@
 
 <Layout::Gap small />
 
+<Layout::Group {{waypoint "add"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::add</h3>
+		<p>The <code>array::add</code> function adds an item to an array only if it doesn't exist.</p>
+		<Code @name="docs-surrealql-functions-array-add.sql" text="API Definition">
+			array::add(array, value) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-add-input.sql">
+				SELECT * FROM array::add(["one", "two"], "three");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-add-result.txt">
+				["one", "two", "three"]
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-add-error-input.sql">
+				SELECT * FROM array::add(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-add-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "all"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::all</h3>
+		<p>The <code>array::all</code> function checks whether all array values are truthy.</p>
+		<Code @name="docs-surrealql-functions-array-all.sql" text="API Definition">
+			array::all(array) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-all-input.sql">
+				SELECT * FROM array::all([1, 2, 3, NONE, 'SurrealDB', 5]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-all-result.txt">
+				false
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then a <Link @link="docs.surrealql.datamodel.simple"><code>FALSE</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-all-error-input.sql">
+				SELECT * FROM array::all(3);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-all-error-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "any"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::any</h3>
+		<p>The <code>array::any</code> function checks whether any array values are truthy.</p>
+		<Code @name="docs-surrealql-functions-array-any.sql" text="API Definition">
+			array::any(array) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-any-input.sql">
+				SELECT * FROM array::any([1, 2, 3, NONE, 'SurrealDB', 5]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-any-result.txt">
+				true
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>FALSE</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-any-error-input.sql">
+				SELECT * FROM array::any(3);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-any-error-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "append"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::append</h3>
+		<p>The <code>array::append</code> function appends a value to the end of an array.</p>
+		<Code @name="docs-surrealql-functions-array-append.sql" text="API Definition">
+			array::append(array, value) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-append-input.sql">
+				SELECT * FROM array::append([1,2,3,4], 5);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-append-result.txt">
+				[1,2,3,4,5]
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-append-error-input.sql">
+				SELECT * FROM array::append(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-append-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
 <Layout::Group {{waypoint "combine"}}>
 
 	<Layout::Text text-l text-f>
@@ -419,6 +547,70 @@
 
 <Layout::Gap small />
 
+<Layout::Group {{waypoint "group"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::group</h3>
+		<p>The <code>array::group</code> function appends a value to the end of an array.</p>
+		<Code @name="docs-surrealql-functions-array-group.sql" text="API Definition">
+			array::group(array) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-group-input.sql">
+				SELECT * FROM array::group([1, 2, 3, 4, [3,5,6], [2,4,5,6], 7, 8, 8, 9]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-group-result.txt">
+				[1,2,3,4,5,6,7,8,9]
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-group-error-input.sql">
+				SELECT * FROM array::group(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-group-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "insert"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::insert</h3>
+		<p>The <code>array::insert</code> function insert a value into an array at a specific position.</p>
+		<Code @name="docs-surrealql-functions-array-insert.sql" text="API Definition">
+			array::insert(array, value, number) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-insert-input.sql">
+				SELECT * FROM array::insert([1,2,3,4], 5, 2);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-insert-result.txt">
+				[1,2,5,3,4]
+			</Code>
+		</codes>
+		<p>If either of the first two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-insert-error-input.sql">
+				SELECT * FROM array::insert(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-insert-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
 <Layout::Group {{waypoint "intersect"}}>
 
 	<Layout::Text text-l text-f>
@@ -474,6 +666,166 @@
 				SELECT * FROM array::len("some text");
 			</Code>
 			<Code @name="docs-surrealql-functions-array-len-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "pop"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::pop</h3>
+		<p>The <code>array::pop</code> function removes a value from the end of an array and returns it.</p>
+		<Code @name="docs-surrealql-functions-array-pop.sql" text="API Definition">
+			array::pop(array) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-pop-input.sql">
+				SELECT * FROM array::pop([1,2,3,4]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-pop-result.txt">
+				4
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-pop-error-input.sql">
+				SELECT * FROM array::pop(3);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-pop-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "prepend"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::prepend</h3>
+		<p>The <code>array::prepend</code> function prepends a value to the end of an array.</p>
+		<Code @name="docs-surrealql-functions-array-prepend.sql" text="API Definition">
+			array::prepend(array, value) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-prepend-input.sql">
+				SELECT * FROM array::prepend([1,2,3,4], 5);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-prepend-result.txt">
+				[5,1,2,3,4]
+			</Code>
+		</codes>
+		<p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-prepend-error-input.sql">
+				SELECT * FROM array::combine(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-prepend-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "push"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::push</h3>
+		<p>The <code>array::push</code> function appends a value to the end of an array.</p>
+		<Code @name="docs-surrealql-functions-array-push.sql" text="API Definition">
+			array::push(array, value) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-push-input.sql">
+				SELECT * FROM array::push([1,2,3,4], 5);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-push-result.txt">
+				[1,2,3,4,5]
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-push-error-input.sql">
+				SELECT * FROM array::push(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-push-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "remove"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::remove</h3>
+		<p>The <code>array::remove</code> function removes an item from a specific position in an array.</p>
+		<Code @name="docs-surrealql-functions-array-remove.sql" text="API Definition">
+			array::remove(array, number) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-remove-input.sql">
+				SELECT * FROM array::remove([1,2,3,4,5], 2);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-remove-result.txt">
+				[1,2,4,5]
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-remove-error-input.sql">
+				SELECT * FROM array::remove(3, true);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-remove-error-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "reverse"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::reverse</h3>
+		<p>The <code>array::reverse</code> function appends a value to the end of an array.</p>
+		<Code @name="docs-surrealql-functions-array-reverse.sql" text="API Definition">
+			array::reverse(array) -> array
+		</Code>
+		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-reverse-input.sql">
+				SELECT * FROM array::reverse([1,2,3,4,5]);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-reverse-result.txt">
+				[5,4,3,2,1]
+			</Code>
+		</codes>
+		<p>If the first argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+        <codes vertical>
+			<Code @name="docs-surrealql-functions-array-reverse-error-input.sql">
+				SELECT * FROM array::reverse(3);
+			</Code>
+			<Code @name="docs-surrealql-functions-array-reverse-error-result.txt">
 				null
 			</Code>
 		</codes>
