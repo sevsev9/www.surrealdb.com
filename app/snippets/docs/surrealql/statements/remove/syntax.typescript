@@ -6,6 +6,7 @@ REMOVE [
 	| SCOPE @name
 	| TABLE @name
 	| EVENT @name ON [ TABLE ] @table
+	| FUNCTION fn::@name
 	| FIELD @name ON [ TABLE ] @table
 	| INDEX @name ON [ TABLE ] @table
 ]

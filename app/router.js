@@ -181,6 +181,7 @@ Router.map(function () {
 					this.route('scope');
 					this.route('table');
 					this.route('event');
+					this.route('function');
 					this.route('field');
 					this.route('indexes');
 				});
