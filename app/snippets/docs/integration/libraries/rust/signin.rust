@@ -1,0 +1,18 @@
+use serde::Serialize;
+use surrealdb::opt::auth::Scope;
+
+#[derive(Serialize)]
+struct Credentials<'a> {
+    email: &'a str,
+    pass: &'a str,
+}
+
+let token = db.signin(Scope {
+    namespace: "test",
+    database: "test",
+    scope: "user",
+    params: Credentials {
+        email: "info@surrealdb.com",
+        pass: "123456",
+    },
+}).await?;

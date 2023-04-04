@@ -48,6 +48,7 @@ Temporary Items
 /yarn-error.log
 /.idea/
 /.vscode/
+*.sw?
 
 # ember-try
 /.node_modules.ember-try/
