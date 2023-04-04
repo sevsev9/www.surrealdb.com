@@ -7,6 +7,79 @@ export default class extends Component {
 	@cache get model() {
 		return [
 			{
+				time: new Date('2023-04-01T00:00:00'),
+				name: 'Release v1.0.0-beta.9',
+				path: 'section/releases/v1-0-0-beta-9',
+				link: 'v1.0.0-beta.9',
+				hash: 'v1-0-0-beta-9',
+				data: [
+					{
+						name: 'Features',
+						text: [
+							'Add WebSocket binary protocol',
+							'Don’t treat `NONE` and `NULL` as the same',
+							'Allow `SELECT` statements to `START AT 0`',
+							'Add `not()` function for negating a value',
+							'Add support for mathematical constants',
+							'Add functionality for open telemetry tracing',
+							'Add support for SQL parameters in HTTP REST endpoints',
+							'Log release version identifier when starting the server',
+							'Add `is::url()` function for checking if a string is a URL',
+							'Implement inclusive and unbounded record rangese',
+							'Support negative offsets in SQL string::slice() function',
+							'Add `time::timezone()` function for getting the local timezone offset',
+							'Add `is::datetime()` function for checking if a value is a datetime',
+							'Add ability to set global parameters using `DEFINE PARAM` statements',
+							'Prevent invalid aggregate functions being used in `GROUP BY` clauses',
+							'Check expressions for `SPLIT ON`, `GROUP BY`, and `ORDER BY` clauses',
+							'Enable fetching fields and values from within complex Record IDs',
+							'Allow parameters in `LIMIT` and `START` clauses in `SELECT` statements',
+							'Add `parse::url::scheme()` function for parsing a url protocol',
+							'Add `time::format()` function for formatting of datetimes',
+							'Add support for `FETCH` cluases in SQL `RETURN` statements',
+							'Add `rand::uuid::v4()` and `rand::uuid::v7()` functions for creating different UUID types',
+							'Add Null Coalescing Operator and Ternary Conditional Operator',
+							'Enable current input to be retrieved in `ON DUPLICATE KEY UPDATE` clauses with `$input` parameter',
+							'Add `math::pow()` function and `**` operator',
+							'Ensure command-line exits with non-zero code on errors',
+							'Add `IN` and `NOT IN` operators as aliases to `INSIDE` and `NOT INSIDE`',
+							'Add command-line argument flag to disable SurrealDB banner at server startup',
+							'Enable calling SurrealQL functions from within JavaScript scripting runtime',
+							'Add support for `FLEXIBLE` fields on `SCHEMAFULL` tables',
+							'Add additional array functions for array checking, and manipulation: \n - `array::all()`, `array::any()`, `array::pop()` \n - `array::add()`, `array::append()`, `array::insert()`, `array::prepend()`, `array::push()` \n - `array::remove()`, `array::reverse()`,  `array::group()`, `array::complement()`',
+						]
+					},
+					{
+						name: 'Bug fixes',
+						text: [
+							{ category: 'bug', text: 'Enable searching within Record IDs using the CONTAINS operator' },
+							{ category: 'bug', text: 'Ensure date strings are not treated as datetimes' },
+							{ category: 'bug', text: 'Limit computation depth in functions, futures, and subqueries' },
+							{ category: 'bug', text: 'Ensure SQL queries are parsed completely or fail' },
+							{ category: 'bug', text: 'Ensure all valid unicode characters are parsed without failing' },
+							{ category: 'bug', text: 'Ensure nested non-defined objects are not stored in `SCHEMAFULL` tables' },
+							{ category: 'bug', text: 'Ensure equals comparator function never reeaches unreachable code' },
+							{ category: 'bug', text: 'Ensure cancelled context does not prevent FETCH of records' },
+							{ category: 'bug', text: 'Ensure GROUP BY fields with functions are output correctly' },
+							{ category: 'bug', text: 'Ensure system parameters are not able to be overridden' },
+							{ category: 'bug', text: 'Ensure record is only deleted after permissions have been checked' },
+							{ category: 'bug', text: 'Ensure double quote characters are always escaped properly' },
+							{ category: 'bug', text: 'Ensure RocksDB range scans are inclusive at the start' },
+							{ category: 'bug', text: 'Ensure uncaught JavaScript exceptions are caught in JavaScript runtime' },
+							{ category: 'bug', text: 'Do not run permissions on `DEFINE EVENT` and `DEFINE TABLE` queries' },
+							{ category: 'bug', text: 'Ensure invalid datetimes to not panic' },
+						]
+					},
+					{
+						name: 'Performance improvements',
+						text: [
+							{ category: 'performance', text: 'Limit computation depth in functions, futures, and subqueries' },
+							{ category: 'performance', text: 'Ensure PERMISSIONS clauses are not run for ROOT / NS / DB users' },
+						]
+					},
+				]
+			},
+			{
 				time: new Date('2022-09-30T23:00:00'),
 				name: 'Release v1.0.0-beta.8',
 				path: 'section/releases/v1-0-0-beta-8',
