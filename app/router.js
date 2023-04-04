@@ -7,7 +7,6 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-
 	this.route('about');
 	this.route('app');
 	this.route('careers');
@@ -55,7 +54,6 @@ Router.map(function () {
 	});
 
 	this.route('docs', function () {
-
 		this.route('introduction', function () {
 			this.route('start');
 			this.route('concepts');
@@ -135,7 +133,6 @@ Router.map(function () {
 		});
 
 		this.route('surrealql', function () {
-
 			this.route('comments');
 			this.route('operators');
 			this.route('parameters');
@@ -158,7 +155,6 @@ Router.map(function () {
 			});
 
 			this.route('statements', function () {
-
 				this.route('use');
 				this.route('let');
 				this.route('info');
@@ -184,11 +180,11 @@ Router.map(function () {
 					this.route('function');
 					this.route('field');
 					this.route('indexes');
+					this.route('param');
 				});
 
 				this.route('remove');
 				this.route('sleep');
-
 			});
 
 			this.route('functions', function () {
@@ -209,7 +205,6 @@ Router.map(function () {
 				this.route('script');
 				this.route('sleep');
 			});
-
 		});
 
 		this.route('cli', function () {
@@ -233,11 +228,9 @@ Router.map(function () {
 			this.route('deploying-surrealdb');
 			this.route('strict-mode');
 		});
-
 	});
 
 	this.route('404', {
-		path: '*:'
+		path: '*:',
 	});
-
 });

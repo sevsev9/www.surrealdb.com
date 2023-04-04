@@ -9,4 +9,5 @@ REMOVE [
 	| FUNCTION fn::@name
 	| FIELD @name ON [ TABLE ] @table
 	| INDEX @name ON [ TABLE ] @table
+	| PARAM $@name
 ]
