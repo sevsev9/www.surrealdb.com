@@ -90,7 +90,7 @@
 	<block>
 		<Code @name="docs-releases-1-0-0-beta-9-blocks.surql">
 			DEFINE FIELD average_sales ON metrics VALUE {
-				LET $sales = (SELECT quantity FROM sales);
+				LET $sales = (SELECT VALUE quantity FROM sales);
 				LET $total = math::sum($sales);
 				LET $count = count($sales);
 				RETURN ($total / $count);
