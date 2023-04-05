@@ -6,7 +6,7 @@
 		<p>SurrealDB now supports the ability to define record IDs using arrays and objects. These values sort correctly, and can be used to store values or recordings in a timeseries context.</p>
 	</block>
 	<block>
-		<Code @name="docs-releases-1-0-0-beta-7-ids.sql">
+		<Code @name="docs-releases-1-0-0-beta-7-ids.surql">
 			// Create a record with a complex ID using an array
 			CREATE temperature:['London', '2022-08-29T08:03:39'] SET
 				location = 'London',
@@ -30,7 +30,7 @@
 		<p>SurrealDB now supports the ability to query a range of records, using the record ID. The record ID ranges, retrieve records using the natural sorting order of the record IDs. With the addition of complex record IDs above, this can be used to query a range of records in a timeseries context.</p>
 	</block>
 	<block>
-		<Code @name="docs-releases-1-0-0-beta-7-ranges.sql">
+		<Code @name="docs-releases-1-0-0-beta-7-ranges.surql">
 			// Select all person records with IDs between the given range
 			SELECT * FROM person:1..1000;
 			// Select all temperature records with IDs between the given range

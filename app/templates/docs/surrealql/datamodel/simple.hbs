@@ -15,11 +15,11 @@
 <Layout::Text text-l text-f>
 	<h3>None values</h3>
 	<p>Values can be specifically set to <code>NONE</code> in SurrealDB to remove a field from a record.</p>
-	<Code @name="docs-datamodel-simple-none.sql">
+	<Code @name="docs-datamodel-simple-none.surql">
 		CREATE person SET children = NONE;
 	</Code>
 	<p>The <code>NONE</code> keyword can be written in anycase.</p>
-	<Code @name="docs-datamodel-simple-none-anycase.sql">
+	<Code @name="docs-datamodel-simple-none-anycase.surql">
 		CREATE person SET children = NONE, siblings = none;
 	</Code>
 </Layout::Text>
@@ -29,11 +29,11 @@
 <Layout::Text text-l text-f>
 	<h3>Null values</h3>
 	<p>Values can be specifically set to <code>NULL</code> in SurrealDB to denote a field which is set, but which does not have a value.</p>
-	<Code @name="docs-datamodel-simple-null.sql">
+	<Code @name="docs-datamodel-simple-null.surql">
 		CREATE person SET children = NULL;
 	</Code>
 	<p>The <code>NULL</code> keyword can be written in anycase.</p>
-	<Code @name="docs-datamodel-simple-null-anycase.sql">
+	<Code @name="docs-datamodel-simple-null-anycase.surql">
 		CREATE person SET children = NULL, siblings = null;
 	</Code>
 </Layout::Text>
@@ -43,11 +43,11 @@
 <Layout::Text text-l text-f>
 	<h3>Booleans</h3>
 	<p>Boolean values can be used to mark whether a field is <code>true</code> or <code>false</code>.</p>
-	<Code @name="docs-datamodel-simple-booleans.sql">
+	<Code @name="docs-datamodel-simple-booleans.surql">
 		CREATE person SET newsletter = false, interested = true;
 	</Code>
 	<p>Boolean values can be written in anycase.</p>
-	<Code @name="docs-datamodel-simple-booleans-anycase.sql">
+	<Code @name="docs-datamodel-simple-booleans-anycase.surql">
 		CREATE person SET newsletter = FALSE, interested = True;
 	</Code>
 </Layout::Text>

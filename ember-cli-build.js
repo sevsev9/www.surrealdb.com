@@ -19,6 +19,7 @@ module.exports = function (defaults) {
 				'typescript',
 				'docker',
 				'toml',
+				'sql',
 			],
 			copyToClipboard: true,
 		},

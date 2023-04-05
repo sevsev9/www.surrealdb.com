@@ -43,19 +43,19 @@
 	<h3>Inserting data</h3>
 	<p>By default, SurrealDB doesn't need to have tables or fields defined before inserting data. Instead the database can be queried in schemaless mode, and tables are created ad hoc. In this guide, we will be running all queries in schemaless mode.</p>
 	<codes vertical>
-		<Code @name="docs/start/index/step3.sql" text="SQL" />
+		<Code @name="docs/start/index/step3.surql" text="SQL" />
 		<Code @name="docs/start/index/step3.bash" text="Command line" />
 		<Code @name="docs/start/index/step3.json" text="Output" />
 	</codes>
 	<p>In the response above, we can see that the 'account' record has been created, and a random ID has been generated for this record. In SurrealDB every record can be created and accessed directly by its ID. In the following query, we will create a record, but will use a specific ID.</p>
 	<codes vertical>
-		<Code @name="docs/start/index/step4.sql" text="SQL" />
+		<Code @name="docs/start/index/step4.surql" text="SQL" />
 		<Code @name="docs/start/index/step4.bash" text="Command line" />
 		<Code @name="docs/start/index/step4.json" text="Output" />
 	</codes>
 	<p>Let's now create a blog article record, which links to the author and account tables. In the following example we link to the author record directly by its ID, and we link to the account record with a subquery which searches using the 'name' field.</p>
 	<codes vertical>
-		<Code @name="docs/start/index/step5.sql" text="SQL" />
+		<Code @name="docs/start/index/step5.surql" text="SQL" />
 		<Code @name="docs/start/index/step5.bash" text="Command line" />
 		<Code @name="docs/start/index/step5.json" text="Output" />
 	</codes>
@@ -67,19 +67,19 @@
 	<h3>Querying data</h3>
 	<p>The querying functionality in SurrealDB works similarly to a traditional relational SQL database, but with many of the added benefits of a NoSQL database. To retrieve data, we will use a <code>SELECT</code> query.</p>
 	<codes vertical>
-		<Code @name="docs/start/index/step6.sql" text="SQL" />
+		<Code @name="docs/start/index/step6.surql" text="SQL" />
 		<Code @name="docs/start/index/step6.bash" text="Command line" />
 		<Code @name="docs/start/index/step6.json" text="Output" />
 	</codes>
 	<p>In SurrealDB we can retrieve data from multiple different tables or records at once. In the example below we'll retrieve data from both the 'article' and the 'account' table in one query.</p>
 	<codes vertical>
-		<Code @name="docs/start/index/step7.sql" text="SQL" />
+		<Code @name="docs/start/index/step7.surql" text="SQL" />
 		<Code @name="docs/start/index/step7.bash" text="Command line" />
 		<Code @name="docs/start/index/step7.json" text="Output" />
 	</codes>
 	<p>One of the most powerful functions in SurrealDB is the related records and graph connections. Instead of pulling data from multiple tables and merging that data together, SurrealDB allows you to traverse related records efficiently without needing to use JOINs. In this following example, we will fetch the blog article, but are going to filter records based on the field in a remote record, and then pull the remote record data into the final response output.</p>
 	<codes vertical>
-		<Code @name="docs/start/index/step8.sql" text="SQL" />
+		<Code @name="docs/start/index/step8.surql" text="SQL" />
 		<Code @name="docs/start/index/step8.bash" text="Command line" />
 		<Code @name="docs/start/index/step8.json" text="Output" />
 	</codes>

@@ -128,12 +128,12 @@
 	<Layout::Text text-l text-f>
 		<h3>type::bool</h3>
 		<p>The <code>type::bool</code> function converts a value into a bool, if the value is truthy.</p>
-		<Code @name="docs-surrealql-functions-type-bool.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-type-bool.surql" text="API Definition">
 			type::bool(value) -> boolean
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-bool-input.sql">
+			<Code @name="docs-surrealql-functions-type-bool-input.surql">
 				SELECT * FROM type::bool(12345);
 			</Code>
 			<Code @name="docs-surrealql-functions-type-bool-result.txt">
@@ -152,12 +152,12 @@
 	<Layout::Text text-l text-f>
 		<h3>type::datetime</h3>
 		<p>The <code>type::datetime</code> function converts a value into a datetime.</p>
-		<Code @name="docs-surrealql-functions-type-datetime.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-type-datetime.surql" text="API Definition">
 			type::datetime(value) -> datetime
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-datetime-input.sql">
+			<Code @name="docs-surrealql-functions-type-datetime-input.surql">
 				SELECT * FROM type::datetime("2022-04-27T18:12:27+00:00");
 			</Code>
 			<Code @name="docs-surrealql-functions-type-datetime-result.txt">
@@ -176,12 +176,12 @@
 	<Layout::Text text-l text-f>
 		<h3>type::decimal</h3>
 		<p>The <code>type::decimal</code> function converts a value into a decimal.</p>
-		<Code @name="docs-surrealql-functions-type-decimal.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-type-decimal.surql" text="API Definition">
 			type::decimal(value) -> decimal
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-decimal-input.sql">
+			<Code @name="docs-surrealql-functions-type-decimal-input.surql">
 				SELECT * FROM type::decimal("12345");
 			</Code>
 			<Code @name="docs-surrealql-functions-type-decimal-result.txt">
@@ -200,12 +200,12 @@
 	<Layout::Text text-l text-f>
 		<h3>type::duration</h3>
 		<p>The <code>type::duration</code> function converts a value into a duration.</p>
-		<Code @name="docs-surrealql-functions-type-duration.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-type-duration.surql" text="API Definition">
 			type::duration(value) -> duration
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-duration-input.sql">
+			<Code @name="docs-surrealql-functions-type-duration-input.surql">
 				SELECT * FROM type::duration("4h");
 			</Code>
 			<Code @name="docs-surrealql-functions-type-duration-result.txt">
@@ -224,12 +224,12 @@
 	<Layout::Text text-l text-f>
 		<h3>type::float</h3>
 		<p>The <code>type::float</code> function converts a value into a float.</p>
-		<Code @name="docs-surrealql-functions-type-float.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-type-float.surql" text="API Definition">
 			type::float(value) -> float
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-float-input.sql">
+			<Code @name="docs-surrealql-functions-type-float-input.surql">
 				SELECT * FROM type::float("12345");
 			</Code>
 			<Code @name="docs-surrealql-functions-type-float-result.txt">
@@ -248,12 +248,12 @@
 	<Layout::Text text-l text-f>
 		<h3>type::int</h3>
 		<p>The <code>type::int</code> function converts a value into an integer.</p>
-		<Code @name="docs-surrealql-functions-type-int.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-type-int.surql" text="API Definition">
 			type::int(value) -> int
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-int-input.sql">
+			<Code @name="docs-surrealql-functions-type-int-input.surql">
 				SELECT * FROM type::int("12345");
 			</Code>
 			<Code @name="docs-surrealql-functions-type-int-result.txt">
@@ -272,12 +272,12 @@
 	<Layout::Text text-l text-f>
 		<h3>type::number</h3>
 		<p>The <code>type::number</code> function converts a value into a number.</p>
-		<Code @name="docs-surrealql-functions-type-number.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-type-number.surql" text="API Definition">
 			type::number(value) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-number-input.sql">
+			<Code @name="docs-surrealql-functions-type-number-input.surql">
 				SELECT * FROM type::number("12345");
 			</Code>
 			<Code @name="docs-surrealql-functions-type-number-result.txt">
@@ -296,16 +296,16 @@
 	<Layout::Text text-l text-f>
 		<h3>type::point</h3>
 		<p>The <code>type::point</code> function converts a value into a geometry point.</p>
-		<Code @name="docs-surrealql-functions-type-point-1.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-type-point-1.surql" text="API Definition">
 			type::point(value) -> point
 		</Code>
 		<p>This function also accepts two arguments (longitude and latitude values).</p>
-		<Code @name="docs-surrealql-functions-type-point-2.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-type-point-2.surql" text="API Definition">
 			type::point(number, number) -> point
 		</Code>
 		<p>The following examples show this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-point-input-2.sql">
+			<Code @name="docs-surrealql-functions-type-point-input-2.surql">
 				SELECT * FROM type::point(51.509865, -0.118092);
 			</Code>
 			<Code @name="docs-surrealql-functions-type-point-result-2.txt">
@@ -319,7 +319,7 @@
 			</Code>
 		</codes>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-point-input-1.sql">
+			<Code @name="docs-surrealql-functions-type-point-input-1.surql">
 				SELECT * FROM type::point([51.509865, -0.118092]);
 			</Code>
 			<Code @name="docs-surrealql-functions-type-point-result-1.txt">
@@ -343,12 +343,12 @@
 	<Layout::Text text-l text-f>
 		<h3>type::regex</h3>
 		<p>The <code>type::regex</code> function converts a value into a regex.</p>
-		<Code @name="docs-surrealql-functions-array-regex.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-array-regex.surql" text="API Definition">
 			type::regex(value) -> regex
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-regex-input.sql">
+			<Code @name="docs-surrealql-functions-type-regex-input.surql">
 				SELECT * FROM type::regex("/[A-Z]{3}/");
 			</Code>
 			<Code @name="docs-surrealql-functions-type-regex-result.txt">
@@ -366,12 +366,12 @@
 	<Layout::Text text-l text-f>
 		<h3>type::string</h3>
 		<p>The <code>type::string</code> function converts a value into a string.</p>
-		<Code @name="docs-surrealql-functions-array-string.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-array-string.surql" text="API Definition">
 			type::string(value) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-string-input.sql">
+			<Code @name="docs-surrealql-functions-type-string-input.surql">
 				SELECT * FROM type::string(12345);
 			</Code>
 			<Code @name="docs-surrealql-functions-type-string-result.txt">
@@ -390,12 +390,12 @@
 	<Layout::Text text-l text-f>
 		<h3>type::table</h3>
 		<p>The <code>type::table</code> function converts a value into a table definition.</p>
-		<Code @name="docs-surrealql-functions-array-table.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-array-table.surql" text="API Definition">
 			type::table(value) -> table
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-table-input.sql">
+			<Code @name="docs-surrealql-functions-type-table-input.surql">
 				LET $table = "person";
 				SELECT * FROM type::table($table);
 			</Code>
@@ -411,12 +411,12 @@
 	<Layout::Text text-l text-f>
 		<h3>type::thing</h3>
 		<p>The <code>type::thing</code> function converts a value into a record pointer definition.</p>
-		<Code @name="docs-surrealql-functions-array-thing.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-array-thing.surql" text="API Definition">
 			type::thing(value, value) -> thing
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-type-thing-input.sql">
+			<Code @name="docs-surrealql-functions-type-thing-input.surql">
 				LET $tb = "person";
 				LET $id = "tobie";
 				SELECT * FROM type::thing($tb, $id);

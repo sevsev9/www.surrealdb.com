@@ -89,7 +89,7 @@
 	<p>It is also possible to pipe a set of statements to a remote database. This functionality is only designed for submitting a small number of queries to the database server. For a large number of queries, use the <Link @link="docs.cli.import">import command</Link>.</p>
 	<codes vertical>
 		<Code @name="docs-cli-sql-pipe.shell" text="Command line">
-			user@localhost % cat myfile.sql | surreal sql --conn http://localhost:8000 --user root --pass root --ns test --db test
+			user@localhost % cat myfile.surql | surreal sql --conn http://localhost:8000 --user root --pass root --ns test --db test
 		</Code>
 	</codes>
 </Layout::Text>

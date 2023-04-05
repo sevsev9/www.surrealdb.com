@@ -595,7 +595,7 @@
 			person = await db.select('person:h5wxrf2ewk8xjxosxtyc')
 		</Code>
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-python-select-func.sql">
+		<Code @name="docs-integration-libraries-python-select-func.surql">
 			SELECT * FROM $thing;
 		</Code>
 	</Layout::Text>
@@ -652,7 +652,7 @@
 			})
 		</Code>
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-python-create-func.sql">
+		<Code @name="docs-integration-libraries-python-create-func.surql">
 			CREATE $thing CONTENT $data;
 		</Code>
 	</Layout::Text>
@@ -710,7 +710,7 @@
 			})
 		</Code>
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-python-update-func.sql">
+		<Code @name="docs-integration-libraries-python-update-func.surql">
 			UPDATE $thing CONTENT $data;
 		</Code>
 	</Layout::Text>
@@ -769,7 +769,7 @@
                 })
 		</Code>
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-python-change-func.sql">
+		<Code @name="docs-integration-libraries-python-change-func.surql">
 			UPDATE $thing MERGE $data;
 		</Code>
 	</Layout::Text>
@@ -827,7 +827,7 @@
 			])
 		</Code>
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-python-modify-func.sql">
+		<Code @name="docs-integration-libraries-python-modify-func.surql">
 			UPDATE $thing PATCH $data;
 		</Code>
 	</Layout::Text>
@@ -869,7 +869,7 @@
 			await db.delete('person:h5wxrf2ewk8xjxosxtyc')
 		</Code>
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-python-delete-func.sql">
+		<Code @name="docs-integration-libraries-python-delete-func.surql">
 			DELETE * FROM $thing;
 		</Code>
 	</Layout::Text>

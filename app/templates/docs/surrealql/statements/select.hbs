@@ -24,40 +24,40 @@
 	<h3>Example usage</h3>
 
 	<p>The following query shows example usage of this statement.</p>
-	<Code @name="docs/surrealql/statements/select/simple.sql" />
+	<Code @name="docs/surrealql/statements/select/simple.surql" />
 
 	<p>SELECT queries support advanced expression in the field projections.</p>
-	<Code @name="docs/surrealql/statements/select/expr.sql" />
+	<Code @name="docs/surrealql/statements/select/expr.surql" />
 
 	<p>SurrealDB supports selecting from multiple targets including tables, records, edges, parameters, subqueries, arrays, objects, values.</p>
-	<Code @name="docs/surrealql/statements/select/from.sql" />
+	<Code @name="docs/surrealql/statements/select/from.surql" />
 
 	<p>As with traditional SQL queries, the SurrealDB SELECT queries support conditional filtering using a <code>WHERE</code> clause. If the expression in the <code>WHERE</code> clause evaluates to true, then the respective record will be returned.</p>
-	<Code @name="docs/surrealql/statements/select/where.sql" />
+	<Code @name="docs/surrealql/statements/select/where.surql" />
 
 	<p>As SurrealDB supports arrays and nested fields within arrays, it is possible to split the result on a specific field name, returning each value in an array as a separate value, along with the record content itself. This is useful in data analysis contexts.</p>
-	<Code @name="docs/surrealql/statements/select/split.sql" />
+	<Code @name="docs/surrealql/statements/select/split.surql" />
 
 	<p>SurrealDB supports data aggregation and grouping, with support for multiple fields, nested fields, and aggregate functions. In SurrealDB, every field which appears in the field projections of the select statement (and which is not an aggregate function), must also be present in the <code>GROUP BY</code> clause.</p>
-	<Code @name="docs/surrealql/statements/select/group.sql" />
+	<Code @name="docs/surrealql/statements/select/group.surql" />
 
 	<p>To sort records, SurrealDB allows ordering on multiple fields and nested fields. Use the <code>ORDER BY</code> clause to specify a comma-separated list of field names which should be used to order the resulting records. The <code>ASC</code> and <code>DESC</code> keywords can be used to specify whether results should be sorted in an ascending or descending manner. The <code>COLLATE</code> keyword can be used to use unicode collation when ordering text in string values, ensuring that different cases, and different languages are sorted in a consistent manner. Finally the <code>NUMERIC</code> can be used to correctly sort text which contains numeric values.</p>
-	<Code @name="docs/surrealql/statements/select/order.sql" />
+	<Code @name="docs/surrealql/statements/select/order.surql" />
 
 	<p>To limit the number of records returned, use the <code>LIMIT</code> clause.</p>
-	<Code @name="docs/surrealql/statements/select/limit.sql" />
+	<Code @name="docs/surrealql/statements/select/limit.surql" />
 
 	<p>When using the <code>LIMIT</code> clause, it is possible to paginate results by using the <code>START</code> clause to start from a specific record from the result set.</p>
-	<Code @name="docs/surrealql/statements/select/start.sql" />
+	<Code @name="docs/surrealql/statements/select/start.surql" />
 
 	<p>One of the most powerful functions in SurrealDB is the related records and graph connections. Instead of pulling data from multiple tables and merging that data together, SurrealDB allows you to traverse related records efficiently without needing to use JOINs. To fetch and replace records with the remote record data, use the <code>FETCH</code> clause to specify the fields and nested fields which should be fetched in-place, and returned in the final statement response output.</p>
-	<Code @name="docs/surrealql/statements/select/fetch.sql" />
+	<Code @name="docs/surrealql/statements/select/fetch.surql" />
 
 	<p>When processing a large result set with many interconnected records, it is possible to use the <code>TIMEOUT</code> keyword to specify a timeout duration for the statement. If the statement continues beyond this duration, then the transaction will fail, and the statement will return an error.</p>
-	<Code @name="docs/surrealql/statements/select/timeout.sql" />
+	<Code @name="docs/surrealql/statements/select/timeout.surql" />
 
 	<p>When processing a large result set with many interconnected records, it is possible to specify the <code>PARALLEL</code> keyword to signify that edges and remote records should be fetched and processed in parallel.</p>
-	<Code @name="docs/surrealql/statements/select/parallel.sql" />
+	<Code @name="docs/surrealql/statements/select/parallel.surql" />
 
 </Layout::Text>
 

@@ -24,25 +24,25 @@
 	<h3>Example usage</h3>
 
 	<p>The following query shows example usage of this statement.</p>
-	<Code @name="docs/surrealql/statements/update/simple.sql" />
+	<Code @name="docs/surrealql/statements/update/simple.surql" />
 
 	<p>When specifying fields to update using the <code>SET</code> clause, it is possible to increment and decrement numeric values, and add or remove values from arrays. To increment a numeric value, or to add an item to an array, use the <code>+=</code> operator. To decrement a numeric value, or to remove an value from an array, use the <code>-=</code> operator.</p>
-	<Code @name="docs/surrealql/statements/update/inc-and-dec.sql" />
+	<Code @name="docs/surrealql/statements/update/inc-and-dec.surql" />
 
 	<p>The update statement supports conditional matching of records using a <code>WHERE</code> clause. If the expression in the <code>WHERE</code> clause evaluates to true, then the respective record will be updated.</p>
-	<Code @name="docs/surrealql/statements/update/where.sql" />
+	<Code @name="docs/surrealql/statements/update/where.surql" />
 
 	<p>Instead of specifying record data using the <code>SET</code> clause, it is also possible to use the <code>CONTENT</code> keyword to specify the record data using a SurrealQL object.</p>
-	<Code @name="docs/surrealql/statements/update/content.sql" />
+	<Code @name="docs/surrealql/statements/update/content.surql" />
 
 	<p>Instead of specifying the full record data using the <code>SET</code> clause or the <code>CONTENT</code> keyword, it is also possible to merge-update only specific fields by using the <code>MERGE</code> keyword and specifying only the fields which are to be updated.</p>
-	<Code @name="docs/surrealql/statements/update/merge.sql" />
+	<Code @name="docs/surrealql/statements/update/merge.surql" />
 
 	<p>By default, the update statement returns the record value once the changes have been made. To change the return value of each record, specify a <code>RETURN</code> clause, specifying either <code>NONE</code>, <code>BEFORE</code>, <code>AFTER</code>, <code>DIFF</code>, or a comma-separated list of specific fields to return.</p>
-	<Code @name="docs/surrealql/statements/update/return.sql" />
+	<Code @name="docs/surrealql/statements/update/return.surql" />
 
 	<p>When processing a large result set with many interconnected records, it is possible to use the <code>TIMEOUT</code> keywords to specify a timeout duration for the statement. If the statement continues beyond this duration, then the transaction will fail, no records will be updated in the database, and the statement will return an error.</p>
-	<Code @name="docs/surrealql/statements/update/timeout.sql" />
+	<Code @name="docs/surrealql/statements/update/timeout.surql" />
 
 </Layout::Text>
 

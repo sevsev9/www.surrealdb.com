@@ -538,7 +538,7 @@
 		</Layout::Table>
 		<Code @name="docs/integration/libraries/rust/select.rust" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-rust-select-func.sql">
+		<Code @name="docs-integration-libraries-rust-select-func.surql">
 			SELECT * FROM $resource;
 		</Code>
 	</Layout::Text>
@@ -584,7 +584,7 @@
 		</Layout::Table>
 		<Code @name="docs/integration/libraries/rust/create.rust" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-rust-create-func.sql">
+		<Code @name="docs-integration-libraries-rust-create-func.surql">
 			CREATE $resource CONTENT $data;
 		</Code>
 	</Layout::Text>
@@ -631,7 +631,7 @@
 		</Layout::Table>
 		<Code @name="docs/integration/libraries/rust/update.rust" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-rust-update-func.sql">
+		<Code @name="docs-integration-libraries-rust-update-func.surql">
 			UPDATE $resource CONTENT $data;
 		</Code>
 	</Layout::Text>
@@ -678,7 +678,7 @@
 		</Layout::Table>
 		<Code @name="docs/integration/libraries/rust/merge.rust" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-rust-change-func.sql">
+		<Code @name="docs-integration-libraries-rust-change-func.surql">
 			UPDATE $resource MERGE $data;
 		</Code>
 	</Layout::Text>
@@ -725,7 +725,7 @@
 		</Layout::Table>
 		<Code @name="docs/integration/libraries/rust/patch.rust" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-rust-modify-func.sql">
+		<Code @name="docs-integration-libraries-rust-modify-func.surql">
 			UPDATE $resource PATCH $data;
 		</Code>
 	</Layout::Text>
@@ -762,7 +762,7 @@
 		</Layout::Table>
 		<Code @name="docs/integration/libraries/rust/delete.rust" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-rust-delete-func.sql">
+		<Code @name="docs-integration-libraries-rust-delete-func.surql">
 			DELETE FROM $resource RETURN BEFORE;
 		</Code>
 	</Layout::Text>

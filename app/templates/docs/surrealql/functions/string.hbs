@@ -152,12 +152,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::concat</code></h3>
 		<p>The <code>string::concat</code> function concatenates strings together.</p>
-		<Code @name="docs-surrealql-functions-string-concat.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-concat.surql" text="API Definition">
 			string::concat(string...) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-concat-input.sql">
+			<Code @name="docs-surrealql-functions-string-concat-input.surql">
 				SELECT * FROM string::concat('this', ' ', 'is', ' ', 'a', ' ', 'test');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-concat-result.txt">
@@ -166,7 +166,7 @@
 		</codes>
 		<p>If any argument is not a string, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-concat-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-concat-error-input.surql">
 				SELECT * FROM string::concat(1, 2, 3, 4, 5);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-concat-error-result.txt">
@@ -184,12 +184,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::endsWith</code></h3>
 		<p>The <code>string::endsWith</code> function checks whether a string ends with another string.</p>
-		<Code @name="docs-surrealql-functions-string-endsWith.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-endsWith.surql" text="API Definition">
 			string::endsWith(string, string) -> boolean
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-endsWith-input.sql">
+			<Code @name="docs-surrealql-functions-string-endsWith-input.surql">
 				SELECT * FROM string::endsWith('some test', 'test');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-endsWith-result.txt">
@@ -198,7 +198,7 @@
 		</codes>
 		<p>If any argument is not a string, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-endsWith-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-endsWith-error-input.surql">
 				SELECT * FROM string::endsWith(12345, '345');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-endsWith-error-result.txt">
@@ -216,12 +216,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::join</code></h3>
 		<p>The <code>string::join</code> function joins strings together with a delimiter.</p>
-		<Code @name="docs-surrealql-functions-string-join.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-join.surql" text="API Definition">
 			string::join(string, string...) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-join-input.sql">
+			<Code @name="docs-surrealql-functions-string-join-input.surql">
 				SELECT * FROM string::join(', ', 'a', 'list', 'of', 'items');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-join-result.txt">
@@ -230,7 +230,7 @@
 		</codes>
 		<p>If any argument is not a string, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-join-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-join-error-input.surql">
 				SELECT * FROM string::join(', ', 1, 2, 3, 4, 5);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-join-error-result.txt">
@@ -248,12 +248,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::len</code></h3>
 		<p>The <code>string::len</code> function returns the length of a given string.</p>
-		<Code @name="docs-surrealql-functions-string-len.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-len.surql" text="API Definition">
 			string::len(string) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-len-input.sql">
+			<Code @name="docs-surrealql-functions-string-len-input.surql">
 				SELECT * FROM string::len('this is a test');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-len-result.txt">
@@ -262,7 +262,7 @@
 		</codes>
 		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-len-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-len-error-input.surql">
 				SELECT * FROM string::len(12345);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-len-error-result.txt">
@@ -280,12 +280,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::lowercase</code></h3>
 		<p>The <code>string::lowercase</code> function converts a string to lowercase.</p>
-		<Code @name="docs-surrealql-functions-string-lowercase.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-lowercase.surql" text="API Definition">
 			string::lowercase(string) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-lowercase-input.sql">
+			<Code @name="docs-surrealql-functions-string-lowercase-input.surql">
 				SELECT * FROM string::lowercase('THIS IS A TEST');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-lowercase-result.txt">
@@ -294,7 +294,7 @@
 		</codes>
 		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-lowercase-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-lowercase-error-input.surql">
 				SELECT * FROM string::lowercase(12345);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-lowercase-error-result.txt">
@@ -312,12 +312,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::repeat</code></h3>
 		<p>The <code>string::repeat</code> function repeats a string a number of times.</p>
-		<Code @name="docs-surrealql-functions-string-repeat.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-repeat.surql" text="API Definition">
 			string::repeat(string, number) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-repeat-input.sql">
+			<Code @name="docs-surrealql-functions-string-repeat-input.surql">
 				SELECT * FROM string::repeat('test', 3);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-repeat-result.txt">
@@ -326,7 +326,7 @@
 		</codes>
 		<p>If the first argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-repeat-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-repeat-error-input.surql">
 				SELECT * FROM string::repeat(123, 3);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-repeat-error-result.txt">
@@ -344,12 +344,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::replace</code></h3>
 		<p>The <code>string::replace</code> function replaces an occurence of a string with another string.</p>
-		<Code @name="docs-surrealql-functions-string-replace.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-replace.surql" text="API Definition">
 			string::replace(string, string, string) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-replace-input.sql">
+			<Code @name="docs-surrealql-functions-string-replace-input.surql">
 				SELECT * FROM string::replace('this is a test', 'a test', 'awesome');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-replace-result.txt">
@@ -358,7 +358,7 @@
 		</codes>
 		<p>If any argument is not a string, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-replace-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-replace-error-input.surql">
 				SELECT * FROM string::replace(12345, '12', '54');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-replace-error-result.txt">
@@ -376,12 +376,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::reverse</code></h3>
 		<p>The <code>string::reverse</code> function reverses a string.</p>
-		<Code @name="docs-surrealql-functions-string-reverse.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-reverse.surql" text="API Definition">
 			string::reverse(string) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-reverse-input.sql">
+			<Code @name="docs-surrealql-functions-string-reverse-input.surql">
 				SELECT * FROM string::reverse('this is a test');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-reverse-result.txt">
@@ -390,7 +390,7 @@
 		</codes>
 		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-reverse-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-reverse-error-input.surql">
 				SELECT * FROM string::reverse(12345);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-reverse-error-result.txt">
@@ -408,12 +408,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::slice</code></h3>
 		<p>The <code>string::slice</code> function extracts and returns a section of a string.</p>
-		<Code @name="docs-surrealql-functions-string-slice.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-slice.surql" text="API Definition">
 			string::slice(string, number, number) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-slice-input.sql">
+			<Code @name="docs-surrealql-functions-string-slice-input.surql">
 				SELECT * FROM string::slice('this is a test', 10, 4);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-slice-result.txt">
@@ -422,7 +422,7 @@
 		</codes>
 		<p>If the first argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-slice-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-slice-error-input.surql">
 				SELECT * FROM string::slice(12345.00, 0, 5);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-slice-error-result.txt">
@@ -440,12 +440,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::slug</code></h3>
 		<p>The <code>string::slug</code> function converts a string into a human and URL-friendly string.</p>
-		<Code @name="docs-surrealql-functions-string-slug.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-slug.surql" text="API Definition">
 			string::slug(string) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-slug-input.sql">
+			<Code @name="docs-surrealql-functions-string-slug-input.surql">
 				SELECT * FROM string::slug('SurrealDB has launched #database #awesome');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-slug-result.txt">
@@ -454,7 +454,7 @@
 		</codes>
 		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-slug-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-slug-error-input.surql">
 				SELECT * FROM string::slug(12345.00);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-slug-error-result.txt">
@@ -472,12 +472,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::split</code></h3>
 		<p>The <code>string::split</code> function splits a string by a given delimiter.</p>
-		<Code @name="docs-surrealql-functions-string-split.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-split.surql" text="API Definition">
 			string::split(string, string) -> array
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-split-input.sql">
+			<Code @name="docs-surrealql-functions-string-split-input.surql">
 				SELECT * FROM string::split('this, is, a, list', ', ');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-split-result.txt">
@@ -486,7 +486,7 @@
 		</codes>
 		<p>If any argument is not a string, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-split-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-split-error-input.surql">
 				SELECT * FROM string::split(12345.00, '.');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-split-error-result.txt">
@@ -504,12 +504,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::startsWith</code></h3>
 		<p>The <code>string::startsWith</code> function checks whether a string starts with another string.</p>
-		<Code @name="docs-surrealql-functions-string-startsWith.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-startsWith.surql" text="API Definition">
 			string::startsWith(string, string) -> boolean
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-startsWith-input.sql">
+			<Code @name="docs-surrealql-functions-string-startsWith-input.surql">
 				SELECT * FROM string::startsWith('some test', 'some');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-startsWith-result.txt">
@@ -518,7 +518,7 @@
 		</codes>
 		<p>If any argument is not a string, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-startsWith-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-startsWith-error-input.surql">
 				SELECT * FROM string::startsWith(12345, '123');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-startsWith-error-result.txt">
@@ -536,12 +536,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::trim</code></h3>
 		<p>The <code>string::trim</code> function removes whitespace from the start and end of a string.</p>
-		<Code @name="docs-surrealql-functions-string-trim.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-trim.surql" text="API Definition">
 			string::trim(string) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-trim-input.sql">
+			<Code @name="docs-surrealql-functions-string-trim-input.surql">
 				SELECT * FROM string::trim('    this is a test    ');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-trim-result.txt">
@@ -550,7 +550,7 @@
 		</codes>
 		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-trim-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-trim-error-input.surql">
 				SELECT * FROM string::trim(12345);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-trim-error-result.txt">
@@ -568,12 +568,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::uppercase</code></h3>
 		<p>The <code>string::uppercase</code> function converts a string to uppercase.</p>
-		<Code @name="docs-surrealql-functions-string-uppercase.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-uppercase.surql" text="API Definition">
 			string::uppercase(string) -> string
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-uppercase-input.sql">
+			<Code @name="docs-surrealql-functions-string-uppercase-input.surql">
 				SELECT * FROM string::uppercase('this is a test');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-uppercase-result.txt">
@@ -582,7 +582,7 @@
 		</codes>
 		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-uppercase-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-uppercase-error-input.surql">
 				SELECT * FROM string::uppercase(12345);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-uppercase-error-result.txt">
@@ -600,12 +600,12 @@
 	<Layout::Text text-l text-f>
 		<h3><code>string::words</code></h3>
 		<p>The <code>string::words</code> function splits a string into an array of separate words.</p>
-		<Code @name="docs-surrealql-functions-string-words.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-string-words.surql" text="API Definition">
 			string::words(string) -> array
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-words-input.sql">
+			<Code @name="docs-surrealql-functions-string-words-input.surql">
 				SELECT * FROM string::words('this is a test');
 			</Code>
 			<Code @name="docs-surrealql-functions-string-words-result.txt">
@@ -614,7 +614,7 @@
 		</codes>
 		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-string-words-error-input.sql">
+			<Code @name="docs-surrealql-functions-string-words-error-input.surql">
 				SELECT * FROM string::words(12345);
 			</Code>
 			<Code @name="docs-surrealql-functions-string-words-error-result.txt">

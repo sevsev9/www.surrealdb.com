@@ -15,7 +15,7 @@
 <Layout::Text text-l text-f>
 	<h3>Integer numbers</h3>
 	<p>If a numeric value is specified without any decimal point suffix and is within the range <code>-9223372036854775808</code> to <code>9223372036854775807</code> then the value will be parsed, stored, and treated as a 64-bit integer.</p>
-	<Code @name="docs-datamodel-number-integer.sql">
+	<Code @name="docs-datamodel-number-integer.surql">
 		CREATE event SET year = 2022;
 	</Code>
 </Layout::Text>
@@ -25,7 +25,7 @@
 <Layout::Text text-l text-f>
 	<h3>Decimal numbers</h3>
 	<p> If a number value is specified with a decimal point suffix, or is outside of the maximum range specified above, then the number will automatically be parsed, stored, and treated as an infinite length decimal value. This ensures that there is no loss of precision when performing mathematical calculations within SurrealDB.</p>
-	<Code @name="docs-datamodel-number-decimal.sql">
+	<Code @name="docs-datamodel-number-decimal.surql">
 		CREATE event SET temperature = 41.5;
 	</Code>
 </Layout::Text>
@@ -35,7 +35,7 @@
 <Layout::Text text-l text-f>
 	<h3>Floating point numbers</h3>
 	<p>To use floating point numbers when specifying numeric values, you can <Link @link="docs.surrealql.datamodel.casting">cast</Link> the value to a 64-bit floating point number.</p>
-	<Code @name="docs/datamodel/number/float.sql" />
+	<Code @name="docs/datamodel/number/float.surql" />
 </Layout::Text>
 
 <Layout::Gap mini />
@@ -43,7 +43,7 @@
 <Layout::Text text-l text-f>
 	<h3>Using a specific numeric type</h3>
 	<p>To use a specific type when specifying numeric values, you can <Link @link="docs.surrealql.datamodel.casting">cast</Link> the value to a specific numeric type.</p>
-	<Code @name="docs/datamodel/number/cast.sql" />
+	<Code @name="docs/datamodel/number/cast.surql" />
 </Layout::Text>
 
 <Layout::Gap mini />
@@ -52,21 +52,21 @@
 	<h3>Numeric precision</h3>
 	<p>The benefits of floating point numeric values are speed and storage size, but there is a limit to the numeric precision.</p>
 	<codes vertical>
-		<Code @name="docs/datamodel/number/float.sql" />
+		<Code @name="docs/datamodel/number/float.surql" />
 		<Code @name="docs-datamodel-simple-number-float-result.txt">
 			13.571938471938473
 		</Code>
 	</codes>
 	<p>In addition, when using floating point numbers specifically, mathematical operations can result in a loss of precision (as is normal with other databases).</p>
 	<codes vertical>
-		<Code @name="docs/datamodel/number/maths-float.sql" />
+		<Code @name="docs/datamodel/number/maths-float.surql" />
 		<Code @name="docs-datamodel-simple-number-maths-float-result.txt">
 			1.0000000000000002
 		</Code>
 	</codes>
 	<p>However, as numbers are treated as decimal values by default, then no precision is lost when performing mathematical calculations inside the database.</p>
 	<codes vertical>
-		<Code @name="docs/datamodel/number/maths-decimal.sql" />
+		<Code @name="docs/datamodel/number/maths-decimal.surql" />
 		<Code @name="docs-datamodel-simple-number-maths-decimal-result.txt">
 			1.0
 		</Code>
@@ -79,21 +79,21 @@
 	<h3>Numeric calculations</h3>
 	<p>Different numeric types can be compared and used together in calculations.</p>
 	<codes vertical>
-		<Code @name="docs/datamodel/number/float.sql" />
+		<Code @name="docs/datamodel/number/float.surql" />
 		<Code @name="docs-datamodel-simple-number-float-result.txt">
 			13.571938471938473
 		</Code>
 	</codes>
 	<p>In addition, when using floating point numbers specifically, mathematical operations can result in a loss of precision (as is normal with other databases).</p>
 	<codes vertical>
-		<Code @name="docs/datamodel/number/maths-float.sql" />
+		<Code @name="docs/datamodel/number/maths-float.surql" />
 		<Code @name="docs-datamodel-simple-number-maths-float-result.txt">
 			1.0000000000000002
 		</Code>
 	</codes>
 	<p>However, as numbers are treated as decimal values by default, then no precision is lost when performing mathematical calculations inside the database.</p>
 	<codes vertical>
-		<Code @name="docs/datamodel/number/maths-decimal.sql" />
+		<Code @name="docs/datamodel/number/maths-decimal.surql" />
 		<Code @name="docs-datamodel-simple-number-maths-decimal-result.txt">
 			1.0
 		</Code>
@@ -105,7 +105,7 @@
 <Layout::Text text-l text-f>
 	<h3>Mathematical constants</h3>
 	<p>A set of floating point numeric constants are available in SurrealDB. Constant names are case insensitive, and can be specified with either lowercase or capital letters, or a mixture of both.</p>
-	<Code @name="docs-datamodel-number-constant.sql">
+	<Code @name="docs-datamodel-number-constant.surql">
 		CREATE circle SET radius = circumference / ( 2 * MATH::PI );
 	</Code>
 </Layout::Text>

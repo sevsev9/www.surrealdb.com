@@ -335,7 +335,7 @@
 			</table>
 		</Layout::Table>
 		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-select-all.sql">
+		<Code @name="docs-integrations-http-select-all.surql">
 			SELECT * FROM type::table($table);
 		</Code>
 	</Layout::Text>
@@ -398,7 +398,7 @@
 			</table>
 		</Layout::Table>
 		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-create-all.sql">
+		<Code @name="docs-integrations-http-create-all.surql">
 			CREATE type::table($table) CONTENT $body;
 		</Code>
 	</Layout::Text>
@@ -460,7 +460,7 @@
 			</table>
 		</Layout::Table>
 		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-delete-all.sql">
+		<Code @name="docs-integrations-http-delete-all.surql">
 			DELETE FROM type::table($table);
 		</Code>
 	</Layout::Text>
@@ -522,7 +522,7 @@
 			</table>
 		</Layout::Table>
 		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-select-one.sql">
+		<Code @name="docs-integrations-http-select-one.surql">
 			SELECT * FROM type::thing($table, $id);
 		</Code>
 	</Layout::Text>
@@ -585,7 +585,7 @@
 			</table>
 		</Layout::Table>
 		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-create-one.sql">
+		<Code @name="docs-integrations-http-create-one.surql">
 			CREATE type::thing($table, $id) CONTENT $body;
 		</Code>
 	</Layout::Text>
@@ -648,7 +648,7 @@
 			</table>
 		</Layout::Table>
 		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-update-one.sql">
+		<Code @name="docs-integrations-http-update-one.surql">
 			UPDATE type::thing($table, $id) CONTENT $body;
 		</Code>
 	</Layout::Text>
@@ -711,7 +711,7 @@
 			</table>
 		</Layout::Table>
 		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-modify-one.sql">
+		<Code @name="docs-integrations-http-modify-one.surql">
 			UPDATE type::thing($table, $id) MERGE $body;
 		</Code>
 	</Layout::Text>
@@ -773,7 +773,7 @@
 			</table>
 		</Layout::Table>
 		<p>Once this endpoint is called the following query will be run on the database:</p>
-		<Code @name="docs-integrations-http-delete-one.sql">
+		<Code @name="docs-integrations-http-delete-one.surql">
 			DELETE FROM type::thing($table, $id);
 		</Code>
 	</Layout::Text>

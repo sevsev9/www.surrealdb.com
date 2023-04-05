@@ -16,7 +16,7 @@
 	<p>The <code>BEGIN TRANSACTION</code> statement can be used to run a group of statements together, either succeeding as a whole, or failing. If all of the statements within a transaction succeed, and the transaction is successful, then all of the data modifications made during the transaction are committed and become a permanent part of the database. If a transaction encounters errors and must be cancelled or rolled back, then any data modification made within the transaction is rolledback, and will not be visible within the database.</p>
 	<Code @name="docs/surrealql/statements/begin/syntax.typescript" text="SQL Syntax" />
 	<p>The following query shows example usage of this statement.</p>
-	<Code @name="docs/surrealql/statements/begin/main.sql" />
+	<Code @name="docs/surrealql/statements/begin/main.surql" />
 </Layout::Text>
 
 <Layout::Gap mini />
@@ -26,7 +26,7 @@
 	<p>The <code>CANCEL TRANSACTION</code> statement can be used to cancel a set of statements within a transaction, reverting or rolling back any data modification made within the transaction as a whole.</p>
 	<Code @name="docs/surrealql/statements/cancel/syntax.typescript" text="SQL Syntax" />
 	<p>The following query shows example usage of this statement.</p>
-	<Code @name="docs/surrealql/statements/cancel/main.sql" />
+	<Code @name="docs/surrealql/statements/cancel/main.surql" />
 </Layout::Text>
 
 <Layout::Gap mini />
@@ -36,7 +36,7 @@
 	<p>The <code>COMMIT TRANSACTION</code> statement can be used to commit a set of statements within a transaction, ensuring that all data modifications become a permanent part of the database.</p>
 	<Code @name="docs/surrealql/statements/commit/syntax.typescript" text="SQL Syntax" />
 	<p>The following query shows example usage of this statement.</p>
-	<Code @name="docs/surrealql/statements/commit/main.sql" />
+	<Code @name="docs/surrealql/statements/commit/main.surql" />
 </Layout::Text>
 
 <Layout::Gap large />

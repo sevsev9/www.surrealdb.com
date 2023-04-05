@@ -216,12 +216,12 @@
 	<Layout::Text text-l text-f>
 		<h3>math::abs</h3>
 		<p>The <code>math::abs</code> function returns the absolute value of a number.</p>
-		<Code @name="docs-surrealql-functions-math-abs.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-math-abs.surql" text="API Definition">
 			math::abs(number) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-abs-input.sql">
+			<Code @name="docs-surrealql-functions-math-abs-input.surql">
 				SELECT * FROM math::abs(13.746189);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-abs-result.txt">
@@ -230,7 +230,7 @@
 		</codes>
 		<p>If the argument is not a number, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a number before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-math-abs-cast-input.sql">
+			<Code @name="docs-surrealql-functions-math-abs-cast-input.surql">
 				SELECT * FROM math::abs("13.746189");
 			</Code>
 			<Code @name="docs-surrealql-functions-math-abs-cast-result.txt">
@@ -248,12 +248,12 @@
 	<Layout::Text text-l text-f>
 		<h3>math::ceil</h3>
 		<p>The <code>math::ceil</code> function rounds a number up to the next largest integer.</p>
-		<Code @name="docs-surrealql-functions-math-ceil.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-math-ceil.surql" text="API Definition">
 			math::ceil(number) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-ceil-input.sql">
+			<Code @name="docs-surrealql-functions-math-ceil-input.surql">
 				SELECT * FROM math::ceil(13.146572);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-ceil-result.txt">
@@ -262,7 +262,7 @@
 		</codes>
 		<p>If the argument is not a number, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a number before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-math-ceil-cast-input.sql">
+			<Code @name="docs-surrealql-functions-math-ceil-cast-input.surql">
 				SELECT * FROM math::ceil("13.146572");
 			</Code>
 			<Code @name="docs-surrealql-functions-math-ceil-cast-result.txt">
@@ -280,12 +280,12 @@
 	<Layout::Text text-l text-f>
 		<h3>math::fixed</h3>
 		<p>The <code>math::fixed</code> function returns a number with the specified number of decimal places.</p>
-		<Code @name="docs-surrealql-functions-math-fixed.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-math-fixed.surql" text="API Definition">
 			math::fixed(number, number) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-fixed-input.sql">
+			<Code @name="docs-surrealql-functions-math-fixed-input.surql">
 				SELECT * FROM math::fixed(13.146572, 2);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-fixed-result.txt">
@@ -294,7 +294,7 @@
 		</codes>
 		<p>If the argument is not a number, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a number before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-math-fixed-cast-input.sql">
+			<Code @name="docs-surrealql-functions-math-fixed-cast-input.surql">
 				SELECT * FROM math::fixed("13.146572", 2);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-fixed-cast-result.txt">
@@ -312,12 +312,12 @@
 	<Layout::Text text-l text-f>
 		<h3>math::floor</h3>
 		<p>The <code>math::floor</code> function rounds a number down to the next largest integer.</p>
-		<Code @name="docs-surrealql-functions-math-floor.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-math-floor.surql" text="API Definition">
 			math::floor(number) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-floor-input.sql">
+			<Code @name="docs-surrealql-functions-math-floor-input.surql">
 				SELECT * FROM math::floor(13.746189);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-floor-result.txt">
@@ -326,7 +326,7 @@
 		</codes>
 		<p>If the argument is not a number, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a number before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-math-floor-cast-input.sql">
+			<Code @name="docs-surrealql-functions-math-floor-cast-input.surql">
 				SELECT * FROM math::floor("13.746189");
 			</Code>
 			<Code @name="docs-surrealql-functions-math-floor-cast-result.txt">
@@ -344,12 +344,12 @@
 	<Layout::Text text-l text-f>
 		<h3>math::max</h3>
 		<p>The <code>math::max</code> function returns the maximum number in a set of numbers.</p>
-		<Code @name="docs-surrealql-functions-math-max.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-math-max.surql" text="API Definition">
 			math::max(number) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-max-input.sql">
+			<Code @name="docs-surrealql-functions-math-max-input.surql">
 				SELECT * FROM math::max([26.164, 13.746189, 23, 16.4, 41.42]);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-max-result.txt">
@@ -358,7 +358,7 @@
 		</codes>
 		<p>If any value in the array is not a number, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a number before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-math-max-cast-input.sql">
+			<Code @name="docs-surrealql-functions-math-max-cast-input.surql">
 				SELECT * FROM math::max(["26.164", 13.746189, '23', 16.4, "41.42"]);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-max-cast-result.txt">
@@ -367,7 +367,7 @@
 		</codes>
 		<p>If the argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-max-error-input.sql">
+			<Code @name="docs-surrealql-functions-math-max-error-input.surql">
 				SELECT * FROM math::max("some invalid argument");
 			</Code>
 			<Code @name="docs-surrealql-functions-math-max-error-result.txt">
@@ -385,12 +385,12 @@
 	<Layout::Text text-l text-f>
 		<h3>math::mean</h3>
 		<p>The <code>math::mean</code> function returns the mean of a set of numbers.</p>
-		<Code @name="docs-surrealql-functions-math-mean.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-math-mean.surql" text="API Definition">
 			math::mean(array) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-mean-input.sql">
+			<Code @name="docs-surrealql-functions-math-mean-input.surql">
 				SELECT * FROM math::mean([26.164, 13.746189, 23, 16.4, 41.42]);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-mean-result.txt">
@@ -399,7 +399,7 @@
 		</codes>
 		<p>If any value in the array is not a number, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a number before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-math-mean-cast-input.sql">
+			<Code @name="docs-surrealql-functions-math-mean-cast-input.surql">
 				SELECT * FROM math::mean(["26.164", 13.746189, '23', 16.4, "41.42"]);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-mean-cast-result.txt">
@@ -408,7 +408,7 @@
 		</codes>
 		<p>If the argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-mean-error-input.sql">
+			<Code @name="docs-surrealql-functions-math-mean-error-input.surql">
 				SELECT * FROM math::mean("some invalid argument");
 			</Code>
 			<Code @name="docs-surrealql-functions-math-mean-error-result.txt">
@@ -426,12 +426,12 @@
 	<Layout::Text text-l text-f>
 		<h3>math::median</h3>
 		<p>The <code>math::median</code> function returns the median of a set of numbers.</p>
-		<Code @name="docs-surrealql-functions-math-median.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-math-median.surql" text="API Definition">
 			math::median(array) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-median-input.sql">
+			<Code @name="docs-surrealql-functions-math-median-input.surql">
 				SELECT * FROM math::median([26.164, 13.746189, 23, 16.4, 41.42]);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-median-result.txt">
@@ -440,7 +440,7 @@
 		</codes>
 		<p>If any value in the array is not a number, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a number before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-math-median-cast-input.sql">
+			<Code @name="docs-surrealql-functions-math-median-cast-input.surql">
 				SELECT * FROM math::median(["26.164", 13.746189, '23', 16.4, "41.42"]);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-median-cast-result.txt">
@@ -449,7 +449,7 @@
 		</codes>
 		<p>If the argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-median-error-input.sql">
+			<Code @name="docs-surrealql-functions-math-median-error-input.surql">
 				SELECT * FROM math::median("some invalid argument");
 			</Code>
 			<Code @name="docs-surrealql-functions-math-median-error-result.txt">
@@ -467,12 +467,12 @@
 	<Layout::Text text-l text-f>
 		<h3>math::min</h3>
 		<p>The <code>math::min</code> function returns the minimum number in a set of numbers.</p>
-		<Code @name="docs-surrealql-functions-math-min.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-math-min.surql" text="API Definition">
 			math::min(array) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-min-input.sql">
+			<Code @name="docs-surrealql-functions-math-min-input.surql">
 				SELECT * FROM math::min([26.164, 13.746189, 23, 16.4, 41.42]);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-min-result.txt">
@@ -481,7 +481,7 @@
 		</codes>
 		<p>If any value in the array is not a number, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a number before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-math-min-cast-input.sql">
+			<Code @name="docs-surrealql-functions-math-min-cast-input.surql">
 				SELECT * FROM math::min(["26.164", 13.746189, '23', 16.4, "41.42"]);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-min-cast-result.txt">
@@ -490,7 +490,7 @@
 		</codes>
 		<p>If the argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-min-error-input.sql">
+			<Code @name="docs-surrealql-functions-math-min-error-input.surql">
 				SELECT * FROM math::min("some invalid argument");
 			</Code>
 			<Code @name="docs-surrealql-functions-math-min-error-result.txt">
@@ -508,12 +508,12 @@
 	<Layout::Text text-l text-f>
 		<h3>math::product</h3>
 		<p>The <code>math::product</code> function returns the product of a set of numbers.</p>
-		<Code @name="docs-surrealql-functions-math-product.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-math-product.surql" text="API Definition">
 			math::product(array) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-product-input.sql">
+			<Code @name="docs-surrealql-functions-math-product-input.surql">
 				SELECT * FROM math::product([26.164, 13.746189, 23, 16.4, 41.42]);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-product-result.txt">
@@ -522,7 +522,7 @@
 		</codes>
 		<p>If any value in the array is not a number, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a number before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-math-product-cast-input.sql">
+			<Code @name="docs-surrealql-functions-math-product-cast-input.surql">
 				SELECT * FROM math::product(["26.164", 13.746189, '23', 16.4, "41.42"]);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-product-cast-result.txt">
@@ -531,7 +531,7 @@
 		</codes>
 		<p>If the argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-product-error-input.sql">
+			<Code @name="docs-surrealql-functions-math-product-error-input.surql">
 				SELECT * FROM math::product("some invalid argument");
 			</Code>
 			<Code @name="docs-surrealql-functions-math-product-error-result.txt">
@@ -549,12 +549,12 @@
 	<Layout::Text text-l text-f>
 		<h3>math::round</h3>
 		<p>The <code>math::round</code> function rounds a number up or down to the nearest integer.</p>
-		<Code @name="docs-surrealql-functions-math-round.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-math-round.surql" text="API Definition">
 			math::round(number) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-round-input.sql">
+			<Code @name="docs-surrealql-functions-math-round-input.surql">
 				SELECT * FROM math::round(13.53124);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-round-result.txt">
@@ -563,7 +563,7 @@
 		</codes>
 		<p>If the argument is not a number, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a number before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-math-round-cast-input.sql">
+			<Code @name="docs-surrealql-functions-math-round-cast-input.surql">
 				SELECT * FROM math::round("13.53124");
 			</Code>
 			<Code @name="docs-surrealql-functions-math-round-cast-result.txt">
@@ -581,12 +581,12 @@
 	<Layout::Text text-l text-f>
 		<h3>math::sqrt</h3>
 		<p>The <code>math::sqrt</code> function returns the square root of a number.</p>
-		<Code @name="docs-surrealql-functions-math-sqrt.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-math-sqrt.surql" text="API Definition">
 			math::sqrt(number) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-sqrt-input.sql">
+			<Code @name="docs-surrealql-functions-math-sqrt-input.surql">
 				SELECT * FROM math::sqrt(15);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-sqrt-result.txt">
@@ -595,7 +595,7 @@
 		</codes>
 		<p>If the argument is not a number, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a number before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-math-sqrt-cast-input.sql">
+			<Code @name="docs-surrealql-functions-math-sqrt-cast-input.surql">
 				SELECT * FROM math::sqrt("15");
 			</Code>
 			<Code @name="docs-surrealql-functions-math-sqrt-cast-result.txt">
@@ -613,12 +613,12 @@
 	<Layout::Text text-l text-f>
 		<h3>math::sum</h3>
 		<p>The <code>math::sum</code> function returns the total sum of a set of numbers.</p>
-		<Code @name="docs-surrealql-functions-math-sum.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-math-sum.surql" text="API Definition">
 			math::sum(array) -> number
 		</Code>
 		<p>The following example shows this function, and its output, when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-sum-input.sql">
+			<Code @name="docs-surrealql-functions-math-sum-input.surql">
 				SELECT * FROM math::sum([26.164, 13.746189, 23, 16.4, 41.42]);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-sum-result.txt">
@@ -627,7 +627,7 @@
 		</codes>
 		<p>If any value in the array is not a number, then it will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a number before the function is run:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-math-sum-cast-input.sql">
+			<Code @name="docs-surrealql-functions-math-sum-cast-input.surql">
 				SELECT * FROM math::sum(["26.164", 13.746189, '23', 16.4, "41.42"]);
 			</Code>
 			<Code @name="docs-surrealql-functions-math-sum-cast-result.txt">
@@ -636,7 +636,7 @@
 		</codes>
 		<p>If the argument is not an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-math-sum-error-input.sql">
+			<Code @name="docs-surrealql-functions-math-sum-error-input.surql">
 				SELECT * FROM math::sum("some invalid argument");
 			</Code>
 			<Code @name="docs-surrealql-functions-math-sum-error-result.txt">

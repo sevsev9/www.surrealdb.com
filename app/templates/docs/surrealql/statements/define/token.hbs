@@ -50,7 +50,7 @@
 <Layout::Text text-l text-f>
 	<h3>Example usage</h3>
 	<p>The following example shows how you could use the <code>DEFINE TOKEN</code> statement.</p>
-	<Code @name="docs/surrealql/statements/define/token/token.sql" />
+	<Code @name="docs/surrealql/statements/define/token/token.surql" />
 </Layout::Text>
 
 <Layout::Gap mini />
@@ -67,7 +67,7 @@
 
 	<h4>Namespace</h4>
 	<p>The following example shows how this would work for a token to grant authorization on a namespace.</p>
-	<Code @name="docs/surrealql/statements/define/token/authorize-namespace-token.sql" />
+	<Code @name="docs/surrealql/statements/define/token/authorize-namespace-token.surql" />
 	<p>
 		When a token is issued by your OAuth provider, the payload should contain the following field when used to
 		authenticate with SurrealDB.
@@ -76,12 +76,12 @@
 
 	<h4>Database</h4>
 	<p>The following example shows how this would work for a token to grant authorization on a database.</p>
-	<Code @name="docs/surrealql/statements/define/token/token.sql" />
+	<Code @name="docs/surrealql/statements/define/token/token.surql" />
 	<Code @name="docs/surrealql/statements/define/token/authorize-database-token.json" text="JWT Payload" />
 
 	<h4>Scope</h4>
 	<p>The following example shows how this would work for a token to grant authorization on a scope.</p>
-	<Code @name="docs/surrealql/statements/define/token/authorize-scope-token.sql" />
+	<Code @name="docs/surrealql/statements/define/token/authorize-scope-token.surql" />
 	<Code @name="docs/surrealql/statements/define/token/authorize-scope-token.json" text="JWT Payload" />
 
 </Layout::Text>

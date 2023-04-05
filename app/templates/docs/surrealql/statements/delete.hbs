@@ -24,16 +24,16 @@
 	<h3>Example usage</h3>
 
 	<p>The following query shows example usage of this statement.</p>
-	<Code @name="docs/surrealql/statements/delete/simple.sql" />
+	<Code @name="docs/surrealql/statements/delete/simple.surql" />
 
 	<p>The delete statement supports conditional matching of records using a <code>WHERE</code> clause. If the expression in the <code>WHERE</code> clause evaluates to true, then the respective record will be deleted.</p>
-	<Code @name="docs/surrealql/statements/delete/where.sql" />
+	<Code @name="docs/surrealql/statements/delete/where.surql" />
 
 	<p>By default, the delete statement does not return any data, returning only an empty array if the statement succeeds completely. Specify a <code>RETURN</code> clause to change the value which is returned for each document that is deleted.</p>
-	<Code @name="docs/surrealql/statements/delete/return.sql" />
+	<Code @name="docs/surrealql/statements/delete/return.surql" />
 
 	<p>When processing a large result set with many interconnected records, it is possible to use the <code>TIMEOUT</code> keywords to specify a timeout duration for the statement. If the statement continues beyond this duration, then the transaction will fail, no records will be deleted from the database, and the statement will return an error.</p>
-	<Code @name="docs/surrealql/statements/delete/timeout.sql" />
+	<Code @name="docs/surrealql/statements/delete/timeout.surql" />
 
 </Layout::Text>
 

@@ -88,12 +88,12 @@
 	<Layout::Text text-l text-f>
 		<h3>Point</h3>
 		<p>The simplest form of GeoJSON that SurrealDB supports is a geolocation point. These can be written using two different formats. The first format is a simple 2-element tuple <code>(longitude, latitude)</code>.</p>
-		<Code @name="docs-datamodel-geometries-point-1.sql">
+		<Code @name="docs-datamodel-geometries-point-1.surql">
 			UPDATE city:london SET centre = (-0.118092, 51.509865);
 		</Code>
 		<p>In addition, SurrealDB supports entering GeoJSON points using the traditional format.</p>
 		<blockquote yellow text="Info">No other properties must be present in the Point object.</blockquote>
-		<Code @name="docs-datamodel-geometries-point-2.sql">
+		<Code @name="docs-datamodel-geometries-point-2.surql">
 			UPDATE city:london SET centre = {
 			    type: "Point",
 			    coordinates: [-0.118092, 51.509865],
@@ -111,7 +111,7 @@
 		<h3>Line</h3>
 		<p>A GeoJSON LineString value for storing a geometric path.</p>
 		<blockquote yellow text="Info">No other properties must be present in the LineString object.</blockquote>
-		<Code @name="docs-datamodel-geometries-line.sql">
+		<Code @name="docs-datamodel-geometries-line.surql">
 			CREATE journey SET route = {
 				type: "LineString",
 				coordinates: [
@@ -131,7 +131,7 @@
 		<h3>Polygon</h3>
 		<p>A GeoJSON Polygon value for storing a geometric area.</p>
 		<blockquote yellow text="Info">No other properties must be present in the Polygon object.</blockquote>
-		<Code @name="docs-datamodel-geometries-polygon.sql">
+		<Code @name="docs-datamodel-geometries-polygon.surql">
 			UPDATE city:london SET boundary = {
 				type: "Polygon",
 				coordinates: [[
@@ -153,7 +153,7 @@
 		<h3>MultiPoint</h3>
 		<p>MultiPoints can be used to store multiple geometry points in a single value.</p>
 		<blockquote yellow text="Info">No other properties must be present in the MultiPoint object.</blockquote>
-		<Code @name="docs-datamodel-geometries-multipoint.sql">
+		<Code @name="docs-datamodel-geometries-multipoint.surql">
 			UPDATE person:tobie SET locations = {
 				type: "MultiPoint",
 				coordinates: [
@@ -174,7 +174,7 @@
 		<h3>MultiLine</h3>
 		<p>MultiLines can be used to store multiple geometry lines in a single value.</p>
 		<blockquote yellow text="Info">No other properties must be present in the MultiLine object.</blockquote>
-		<Code @name="docs-datamodel-geometries-multiline.sql">
+		<Code @name="docs-datamodel-geometries-multiline.surql">
 			UPDATE travel:yellowstone SET routes = {
 				type: "MultiLinestring",
 				coordinates: [
@@ -195,7 +195,7 @@
 		<h3>MultiPolygon</h3>
 		<p>MultiPolygons can be used to store multiple geometry polygons in a single value.</p>
 		<blockquote yellow text="Info">No other properties must be present in the MultiPolygon object.</blockquote>
-		<Code @name="docs-datamodel-geometries-multipolygon.sql">
+		<Code @name="docs-datamodel-geometries-multipolygon.surql">
 			UPDATE university:oxford SET locations = {
 				type: "MultiPolygon",
 				coordinates: [
@@ -220,7 +220,7 @@
 		<h3>Collection</h3>
 		<p>Collections can be used to store multiple different geometry types in a single value.</p>
 		<blockquote yellow text="Info">No other properties must be present in the Collection object.</blockquote>
-		<Code @name="docs-datamodel-geometries-collection.sql">
+		<Code @name="docs-datamodel-geometries-collection.surql">
 			UPDATE university:oxford SET buildings = {
 				type: "GeometryCollection",
 				geometries: [

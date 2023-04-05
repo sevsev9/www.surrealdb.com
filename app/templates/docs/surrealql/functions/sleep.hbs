@@ -40,15 +40,15 @@
 	<Layout::Text text-l text-f>
 		<h3><code>sleep</code></h3>
 		<p>The <code>sleep</code> function delays or pauses the execution of a query or a set of statements.</p>
-		<Code @name="docs-surrealql-functions-sleep.sql" text="API Definition">
+		<Code @name="docs-surrealql-functions-sleep.surql" text="API Definition">
 			sleep(duration) -> none
 		</Code>
 		<p>The following examples show this function when used in a select statement:</p>
 		<codes vertical>
-			<Code @name="docs-surrealql-functions-sleep-1s.sql">
+			<Code @name="docs-surrealql-functions-sleep-1s.surql">
 				SELECT * FROM sleep(1s);
 			</Code>
-			<Code @name="docs-surrealql-functions-sleep-500ms.sql">
+			<Code @name="docs-surrealql-functions-sleep-500ms.surql">
 				SELECT * FROM sleep(500ms);
 			</Code>
 		</codes>

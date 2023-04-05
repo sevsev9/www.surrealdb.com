@@ -37,7 +37,7 @@
 	<h4>System information</h4>
 	<p>The top-level <code>KV</code> command returns information regarding the namespaces which exists within the SurrealDB system.</p>
 	<blockquote yellow text="Info">You must be authenticated as a top-level root user to execute this command.</blockquote>
-	<Code @name="docs-surrealql-statements-info-kv.sql">
+	<Code @name="docs-surrealql-statements-info-kv.surql">
 		INFO FOR KV;
 	</Code>
 
@@ -47,7 +47,7 @@
 	<p>The <code>NS</code> or <code>NAMESPACE</code> command returns information regarding the logins, tokens, and databases under a specific Namespace.</p>
 	<blockquote yellow text="Info">You must be authenticated as a top-level root user, or a namespace user to execute this command.</blockquote>
 	<blockquote yellow text="Info">You must have a <code>NAMESPACE</code> selected before running this command.</blockquote>
-	<Code @name="docs-surrealql-statements-info-ns.sql">
+	<Code @name="docs-surrealql-statements-info-ns.surql">
 		INFO FOR NS;
 	</Code>
 
@@ -57,7 +57,7 @@
 	<p>The <code>DB</code> or <code>DATABASE</code> command returns information regarding the logins, tokens, and scopes, and tables under a specific Database.</p>
 	<blockquote yellow text="Info">You must be authenticated as a top-level root user, a namespace user, or a database user to execute this command.</blockquote>
 	<blockquote yellow text="Info">You must have a <code>NAMESPACE</code> and a <code>DATABASE</code> selected before running this command.</blockquote>
-	<Code @name="docs-surrealql-statements-info-db.sql">
+	<Code @name="docs-surrealql-statements-info-db.surql">
 		INFO FOR DB;
 	</Code>
 
@@ -67,7 +67,7 @@
 	<p>The <code>SCOPE</code> command returns information regarding the tokens configured under a specific Scope.</p>
 	<blockquote yellow text="Info">You must be authenticated as a top-level root user, a namespace user, or a database user to execute this command.</blockquote>
 	<blockquote yellow text="Info">You must have a <code>NAMESPACE</code> and a <code>DATABASE</code> selected before running this command.</blockquote>
-	<Code @name="docs-surrealql-statements-info-sc.sql">
+	<Code @name="docs-surrealql-statements-info-sc.surql">
 		INFO FOR SCOPE user;
 	</Code>
 
@@ -77,7 +77,7 @@
 	<p>The <code>TABLE</code> command returns information regarding the events, fields, indexes, and foreign table configurations on a specific Table.</p>
 	<blockquote yellow text="Info">You must be authenticated as a top-level root user, a namespace user, or a database user to execute this command.</blockquote>
 	<blockquote yellow text="Info">You must have a <code>NAMESPACE</code> and a <code>DATABASE</code> selected before running this command.</blockquote>
-	<Code @name="docs-surrealql-statements-info-tb.sql">
+	<Code @name="docs-surrealql-statements-info-tb.surql">
 		INFO FOR TABLE user;
 	</Code>
 
