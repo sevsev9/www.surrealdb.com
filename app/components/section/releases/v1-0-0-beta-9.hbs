@@ -7,7 +7,7 @@
 		<p>SurrealDB now allows you to fetch a single field from a <code>SELECT</code> statement or from a subquery, returning an array of values, rather than an array of objects.</p>
 	</block>
 	<block>
-		<Code @name="docs-releases-1-0-0-beta-9-select-value.sql">
+		<Code @name="docs-releases-1-0-0-beta-9-select-value.surql">
 			// We can now select an array of just a single field
 			SELECT VALUE name FROM person;
 		</Code>
@@ -20,7 +20,7 @@
 		<p>SurrealDB now allows fetching remote fields in <code>RETURN</code> statements, in addition to <code>SELECT</code> statements.</p>
 	</block>
 	<block>
-		<Code @name="docs-releases-1-0-0-beta-9-return-fetch.sql">
+		<Code @name="docs-releases-1-0-0-beta-9-return-fetch.surql">
 			// We can now fetch fields from RETURN statements
 			RETURN person:tobie FETCH account, connections;
 		</Code>
@@ -33,7 +33,7 @@
 		<p>SurrealDB now supports the Null Coalescing operator (<code>??</code>), and the Ternary Conditional operator (<code>?:</code>) for simpler logic calculations.</p>
 	</block>
 	<block>
-		<Code @name="docs-releases-1-0-0-beta-9-operators.sql">
+		<Code @name="docs-releases-1-0-0-beta-9-operators.surql">
 			// Check whether either of two values are truthy
 			SELECT * FROM NULL ?: 0 ?: false ?: 10; -- Will return 0
 			// Check whether either of two values are truthy and not NULL.
@@ -48,7 +48,7 @@
 		<p>Fields within complex Record IDs can now be retrieved and used within <code>SELECT</code> queries.</p>
 	</block>
 	<block>
-		<Code @name="docs-releases-1-0-0-beta-9-embedded-id.sql">
+		<Code @name="docs-releases-1-0-0-beta-9-embedded-id.surql">
 			// Create a record with a complex Record ID
 			CREATE recording:{ location: 'London', date: time::now() } SET temperature = 23.7;
 			// Select a field from within the Record ID
@@ -63,7 +63,7 @@
 		<p><code>SCHEMAFULL</code> and <code>SCHEMALESS</code> functionality can now be used together, suitable for capturing schema-free log data.</p>
 	</block>
 	<block>
-		<Code @name="docs-releases-1-0-0-beta-9-flexible.sql">
+		<Code @name="docs-releases-1-0-0-beta-9-flexible.surql">
 			// We want to define a SCHEMAFULL table
 			DEFINE TABLE person SCHEMAFULL;
 			// But we want one field to allow any content
@@ -88,7 +88,7 @@
 		<p>It is now possible to run blocks of code, with support for an arbitrary number of statements, including <code>LET</code> and <code>RETURN</code> statements. This allows for writing advanced custom logic, and allowing for more complicated handling of data operations.</p>
 	</block>
 	<block>
-		<Code @name="docs-releases-1-0-0-beta-9-blocks.sql">
+		<Code @name="docs-releases-1-0-0-beta-9-blocks.surql">
 			DEFINE FIELD average_sales ON metrics VALUE {
 				LET $sales = (SELECT quantity FROM sales);
 				LET $total = math::sum($sales);
@@ -105,7 +105,7 @@
 		<p><code>DEFINE FIELD</code> statements now have access to an <code>$input</code> variable in the <code>VALUE</code> and <code>ASSERT</code> clauses.</p>
 	</block>
 	<block>
-		<Code @name="docs-releases-1-0-0-beta-9-input.sql">
+		<Code @name="docs-releases-1-0-0-beta-9-input.surql">
 			DEFINE FIELD name ON TABLE person
 				-- Prevent any changes, if the input value is not title-case
 				ASSERT IF $input THEN $input = /^[A-Z]{1}[a-z]+$/ ELSE true END
@@ -126,7 +126,7 @@
 		<p>SurrealDB now supports the ability to define global database-wide parameters, which can be useful to store certain commonly-used variables.</p>
 	</block>
 	<block>
-		<Code @name="docs-releases-1-0-0-beta-9-params.sql">
+		<Code @name="docs-releases-1-0-0-beta-9-params.surql">
 			-- Define a global parameter which will be accessible to all queries.
 			DEFINE PARAM $STRIPE VALUE "https://api.stripe.com/payments/new";
 			-- Use the defined global parameter in all queries on the database.
@@ -145,7 +145,7 @@
 		<p>SurrealDB now supports the ability to define global database-wide custom functions, which allow for complicated or repeated user-defined code, to be run seamlessly within any query across the database. Custom functions support typed arguments, and multiple nested queries with custom logic.</p>
 	</block>
 	<block>
-		<Code @name="docs-releases-1-0-0-beta-9-functions.sql">
+		<Code @name="docs-releases-1-0-0-beta-9-functions.surql">
 			-- Define a global function which can be used in any query
 			DEFINE FUNCTION fn::get_person($first: string, $last: string, $birthday: string) {
 
@@ -171,7 +171,7 @@
 		<p>SurrealDB supports the ability to query a range of records, using the record ID. The record ID ranges, retrieve records using the natural sorting order of the record IDs. These range queries can be used to query a range of records in a timeseries context.</p>
 	</block>
 	<block>
-		<Code @name="docs-releases-1-0-0-beta-9-record-ranges.sql">
+		<Code @name="docs-releases-1-0-0-beta-9-record-ranges.surql">
 			-- Select all person records with IDs between the given range
 			SELECT * FROM person:1..1000;
 			-- Select all records for a particular location, inclusive
