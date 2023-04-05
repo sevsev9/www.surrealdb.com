@@ -50,7 +50,7 @@
 						<code>??</code>
 					</a>
 				</td>
-				<td>Check whether either of two values are truthy</td>
+				<td>Check whether either of two values are truthy and not <code>NULL</code></td>
 			</tr>
 			<tr>
 				<td>
@@ -58,7 +58,7 @@
 						<code>?:</code>
 					</a>
 				</td>
-				<td>Check whether either of two values are truthy and not <code>NULL</code></td>
+				<td>Check whether either of two values are truthy</td>
 			</tr>
 			<tr>
 				<td>
@@ -424,7 +424,7 @@
 
 	<Layout::Text text-l text-f>
 		<h3><code>??</code></h3>
-		<p>Check whether either of two values are truthy.</p>
+		<p>Check whether either of two values are truthy and not <code>NULL</code>.</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-operators-nco-input.sql">
 				SELECT * FROM NULL ?? 0 ?? false ?? 10;
@@ -443,7 +443,7 @@
 
 	<Layout::Text text-l text-f>
 		<h3><code>?:</code></h3>
-		<p>Check whether either of two values are truthy and not <code>NULL</code>.</p>
+		<p>Check whether either of two values are truthy.</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-operators-tco-input.sql">
 				SELECT * FROM NULL ?: 0 ?: false ?: 10;
