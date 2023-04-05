@@ -85,7 +85,7 @@
 		<h4 flex row middle>
 			Support code blocks and advanced expressions
 		</h4>
-		<p>SurrealDB supports the ability to query a range of records, using the record ID. The record ID ranges, retrieve records using the natural sorting order of the record IDs. These range queries can be used to query a range of records in a timeseries context.</p>
+		<p>It is now possible to run blocks of code, with support for an arbritrary number of statements, including <code>LET</code> and <code>RETURN</code> statements. This allows for writing advanced custom logic, and allowing for more complicated handling of data operations.</p>
 	</block>
 	<block>
 		<Code @name="docs-releases-1-0-0-beta-9-blocks.sql">
@@ -182,23 +182,6 @@
 			SELECT * FROM temperature:['London', '2022-08-29T08:03:39']..;
 			-- Select all temperature records with IDs between the specified range
 			SELECT * FROM temperature:['London', '2022-08-29T08:03:39']..['London', '2022-08-29T08:09:31'];
-		</Code>
-	</block>
-
-	<block>
-		<h4 flex row middle>
-			Support code blocks and advanced expressions
-		</h4>
-		<p>SurrealDB supports the ability to query a range of records, using the record ID. The record ID ranges, retrieve records using the natural sorting order of the record IDs. These range queries can be used to query a range of records in a timeseries context.</p>
-	</block>
-	<block>
-		<Code @name="docs-releases-1-0-0-beta-9-blocks.sql">
-			DEFINE FIELD average_sales ON metrics VALUE {
-				LET $sales = (SELECT quantity FROM sales);
-				LET $total = math::sum($sales);
-				LET $count = count($sales);
-				RETURN ($total / $count);
-			};
 		</Code>
 	</block>
 
