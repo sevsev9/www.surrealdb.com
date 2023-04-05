@@ -20,6 +20,7 @@ module.exports = function (defaults) {
 				'docker',
 				'toml',
 			],
+			copyToClipboard: true,
 		},
 		snippetPaths: ['app/snippets'],
 		snippetRegexes: {
