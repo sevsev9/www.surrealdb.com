@@ -41,6 +41,12 @@ export default {
 					return Prism.highlight(code, Prism.languages.shell, 'shell');
 				case 'sql':
 					return Prism.highlight(code, Prism.languages.sql, 'sql');
+				case 'surql':
+					return Prism.highlight(code, Prism.languages.surql, 'surql');
+				case 'docker':
+					return Prism.highlight(code, Prism.languages.docker, 'docker');
+				case 'toml':
+					return Prism.highlight(code, Prism.languages.toml, 'toml');
 				default:
 					return code;
 				}

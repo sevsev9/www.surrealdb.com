@@ -3,7 +3,6 @@
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
-
 	let app = new EmberApp(defaults, {
 		prism: {
 			copyToClipboard: true,
@@ -18,11 +17,13 @@ module.exports = function (defaults) {
 				'rust',
 				'swift',
 				'typescript',
+				'docker',
+				'toml',
 			],
 		},
 		snippetPaths: ['app/snippets'],
 		snippetRegexes: {
-			begin: /<Code[\w\d\s\-]+@name="(\S+)"[^>]*>/,
+			begin: /<Code[\w\d\s-]+@name="(\S+)"[^>]*>/,
 			end: /<\/Code>/,
 		},
 		includeFileExtensionInSnippetNames: false,
@@ -42,5 +43,4 @@ module.exports = function (defaults) {
 	// along with the exports of each module as its value.
 
 	return app.toTree();
-
 };

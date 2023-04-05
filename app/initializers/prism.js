@@ -6,7 +6,7 @@ export default {
 
 		if (Prism) {
 
-			Prism.languages.sql = {
+			Prism.languages.sql = Prism.languages.surql = {
 				'comment': {
 					pattern: /(^|[^\\])(?:\/\*[\s\S]*?\*\/|(?:--|\/\/|#).*)/,
 					lookbehind: true
