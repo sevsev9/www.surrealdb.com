@@ -3,7 +3,7 @@ DATA="CREATE article SET
 	author = author:john,
 	title = 'Lorem ipsum dolor',
 	text = 'Donec eleifend, nunc vitae commodo accumsan, mauris est fringilla.',
-	account = (SELECT id FROM account WHERE name = 'ACME Inc' LIMIT 1);"
+	account = (SELECT VALUE id FROM account WHERE name = 'ACME Inc' LIMIT 1)[0];"
 curl -k -L -s --compressed POST \
 	--header "Accept: application/json" \
 	--header "NS: test" \
