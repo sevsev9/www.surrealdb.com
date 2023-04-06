@@ -35,9 +35,9 @@
 	<block>
 		<Code @name="docs-releases-1-0-0-beta-9-operators.surql">
 			// Check whether either of two values are truthy
-			SELECT * FROM NULL ?: 0 ?: false ?: 10; -- Will return 0
+			SELECT * FROM NULL ?: 0 ?: false ?: 10; -- Will return 10
 			// Check whether either of two values are truthy and not NULL.
-			SELECT * FROM NULL ?? 0 ?? false ?? 10; -- Will return 10
+			SELECT * FROM NULL ?? 0 ?? false ?? 10; -- Will return 0
 		</Code>
 	</block>
 
