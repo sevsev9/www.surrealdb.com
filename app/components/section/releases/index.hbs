@@ -55,10 +55,10 @@
 										{{#if (eq item.category "performance")}}
 											<Nudge::Performance />
 										{{/if}}
-										{{markdown item.text inline=true}}
+										{{{item.text}}}
 									</li>
 								{{else}}
-									<li>{{markdown item inline=true}}</li>
+									<li>{{{item}}}</li>
 								{{/if}}
 							{{/each}}
 						</ul>
@@ -90,10 +90,10 @@
 											{{#if (eq item.category "performance")}}
 												<Nudge::Performance />
 											{{/if}}
-											{{markdown item.text inline=true}}
+											{{{item.text}}}
 										</li>
 									{{else}}
-										<li>{{markdown item inline=true}}</li>
+										<li>{{{item}}}</li>
 									{{/if}}
 								{{/each}}
 							</ul>
