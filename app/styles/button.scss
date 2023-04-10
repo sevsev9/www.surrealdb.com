@@ -1,29 +1,32 @@
 button, a[button] {
 
 	height:auto;
-	border:none;
-	outline:none;
-	line-height:1;
 	cursor:pointer;
-	box-shadow:none;
+	font-weight:600;
+	line-height:26px;
 	padding:10px 20px;
-	border-radius:50px;
 	align-items:center;
+	border-radius:50px;
 	display:inline-flex;
 	justify-content:center;
-	color:var(--text-color);
-	background:rgb(135,0,255);
-	transition:box-shadow 0.3s;
-	background:-moz-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
-	background:-webkit-linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
-	background:linear-gradient(-60deg, rgba(135,0,255,1) 0%, rgba(255,0,158,1) 100%);
+	letter-spacing:0.005em;
+	color: var(--text-color);
+	-webkit-tap-highlight-color:transparent;
+	transform:scale(var(--generate-button-scale, 1)) translateZ(0);
+	transition:transform 0.3s, background-color 0.3s, box-shadow 0.3s, color 0.3s;
+	background:linear-gradient(-60deg, rgba(135,0,255,1), rgba(255,0,158,1));
+	box-shadow:0 0 120px transparent, 0 4px 12px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.4), 0 0 0 0 rgba(109,68,244,0.2);
 
 	@include media(max-width-550) {
 		width:100%;
 	}
 
 	&:hover {
-		box-shadow:0 0 30px rgba(255,0,158,0.5);
+		transform:scale(1.1);
+		color: var(--text-color);
+		--generate-button-shadow-inset:rgba(255,255,255,0.7);
+		background:linear-gradient(-60deg, rgba(135,0,255,1), rgba(255,0,158,1));
+		box-shadow:0 0 30px rgba(255,0,158,0.5), 0 4px 12px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.2), inset 0 1px 1px var(--generate-button-shadow-inset, rgba(255,255,255,0.6)), 0 0 0 4px rgba(150,0,255,0.3);
 	}
 
 	span + i {
@@ -32,6 +35,15 @@ button, a[button] {
 
 	i + span {
 		padding-left:10px;
+	}
+
+	& i {
+		color:transparent;
+		@include graded;
+	}
+
+	&:hover i {
+		color: var(--text-color);
 	}
 
 	p > & {
@@ -44,26 +56,11 @@ button, a[button] {
 
 	}
 
-	&[bordered][thinner] {
-
-		padding:2px;
-
-		div {
-			width:100%;
-			height:100%;
-			display:flex;
-			padding:12px 20px;
-			border-radius:50px;
-			align-items:center;
-			justify-content:center;
-			background-color:var(--boxes-color);
-		}
-
-	}
-
 	&[bordered][thicker] {
-
 		padding:3px;
+		color: var(--faint-color);
+		background:var(--boxes-color);
+		box-shadow:0 0 120px transparent, 0 4px 12px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.2), 0 0 0 0 rgba(109,68,244,0.2);
 
 		div {
 			width:100%;
@@ -73,26 +70,41 @@ button, a[button] {
 			border-radius:50px;
 			align-items:center;
 			justify-content:center;
-			background-color:var(--back-color);
-			box-shadow:0 0 30px rgba(255,0,158,0.5);
+		}
+
+		&:hover {
+			transform:scale(1.06);
+			color:var(--text-color);
+			--generate-button-shadow-inset:rgba(255,255,255,0.7);
+			background:linear-gradient(-60deg, rgba(135,0,255,1), rgba(255,0,158,1));
+			box-shadow:0 0 30px rgba(255,0,158,0.5), 0 4px 12px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.2), inset 0 1px 1px var(--generate-button-shadow-inset, rgba(255,255,255,0.6)), 0 0 0 4px rgba(150,0,255,0.3);
 		}
 
 	}
 
-	&[bordered][square] {
-
-		padding:2px;
-		border-radius:8px;
+	&[bordered][center] {
+		padding:3px;
+		color: var(--faint-color);
+		background:var(--boxes-color);
+		box-shadow:0 0 120px transparent, 0 4px 12px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.2), 0 0 0 0 rgba(109,68,244,0.2);
 
 		div {
 			width:100%;
 			height:100%;
 			display:flex;
-			padding:10px 10px;
-			border-radius:6px;
+			padding-left:20px;
+			padding-right:20px;
+			border-radius:50px;
 			align-items:center;
 			justify-content:center;
-			background-color:var(--boxes-color);
+		}
+
+		&:hover {
+			transform:scale(1.06);
+			color:var(--text-color);
+			--generate-button-shadow-inset:rgba(255,255,255,0.7);
+			background:linear-gradient(-60deg, rgba(135,0,255,1), rgba(255,0,158,1));
+			box-shadow:0 0 30px rgba(255,0,158,0.5), 0 4px 12px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.2), inset 0 1px 1px var(--generate-button-shadow-inset, rgba(255,255,255,0.6)), 0 0 0 4px rgba(150,0,255,0.3);
 		}
 
 	}
