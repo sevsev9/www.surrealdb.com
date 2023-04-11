@@ -8,7 +8,6 @@ layout-hero {
 	background-repeat:no-repeat;
 	background-size:1254px 662px;
 	background-position:600px 0px;
-	background-image:url("/static/img/home/honeycomb.png");
 
 	@include media(max-width-768) {
 		top:0px;
