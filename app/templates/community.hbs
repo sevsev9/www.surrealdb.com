@@ -15,7 +15,7 @@
 
 <Layout::Text>
 	<Button::Thicker @link={{url "github"}}>
-		<i class="fal fa-star"></i> <span>Star us on GitHub</span>
+		<i class="fa fa-star"></i> <span>Star us on GitHub</span>
 	</Button::Thicker>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<Button::Thicker @link={{url "issues"}}>
@@ -27,16 +27,33 @@
 
 <Layout::Boxes cols-4-to-2-to-1>
 	<Link @link={{url "github"}} mini>
-		<Layout::Boxes::Item @image="/static/img/community/github.jpg" @title="Github" @text="Star the SurrealDB repository on Github and keep track of development. Got a feature request, or found a bug? Then submit an issue on Github." hover />
+		<Layout::Boxes::Item @image="/static/img/community/github.png" @title="Github" @text="Star the SurrealDB repository on Github and keep track of development. Got a feature request, or found a bug? Then submit an issue on Github." hover />
 	</Link>
 	<Link @link={{url "discord"}} mini>
-		<Layout::Boxes::Item @image="/static/img/community/discord.jpg" @title="Discord" @text="Join the community on Discord. Suggest ideas, get answers to questions, stay up-to-date with releases, and showcase your product built on SurrealDB." hover />
+		<Layout::Boxes::Item @image="/static/img/community/discord.png" @title="Discord" @text="Join the community on Discord. Suggest ideas, get answers to questions, stay up-to-date with releases, and showcase your product built on SurrealDB." hover />
 	</Link>
 	<Link @link={{url "twitter"}} mini>
-		<Layout::Boxes::Item @image="/static/img/community/twitter.jpg" @title="Twitter" @text="Follow us on Twitter for product updates and releases. We'll also showcase bits of the code and other products built on top of SurrealDB." hover />
+		<Layout::Boxes::Item @image="/static/img/community/twitter.png" @title="Twitter" @text="Follow us on Twitter for product updates and releases. We'll also showcase bits of the code and other products built on top of SurrealDB." hover />
 	</Link>
 	<Link @link={{url "linkedin"}} mini>
-		<Layout::Boxes::Item @image="/static/img/community/linkedin.jpg" @title="LinkedIn" @text="Follow us on LinkedIn for product updates and releases, webinars, and for tips and tricks on using SurrealDB in your organisation." hover />
+		<Layout::Boxes::Item @image="/static/img/community/linkedin.png" @title="LinkedIn" @text="Follow us on LinkedIn for product updates and releases, webinars, and for tips and tricks on using SurrealDB in your organisation." hover />
+	</Link>
+</Layout::Boxes>
+
+<Layout::Gap mini />
+
+<Layout::Boxes cols-4-to-2-to-1>
+	<Link @link={{url "youtube"}} mini>
+		<Layout::Boxes::Item @image="/static/img/community/youtube.png" @title="YouTube" @text="Subscribe to our channel and stay up-to-date with the latest releases, learn new skills, and discover what other developers are creating with SurrealDB." hover />
+	</Link>
+	<Link @link={{url "reddit"}} mini>
+		<Layout::Boxes::Item @image="/static/img/community/reddit.png" @title="Reddit" @text="Join the SurrealDB community on Reddit! Connect with other SurrealDB users, ask questions, and share your knowledge." hover />
+	</Link>
+	<Link @link={{url "stackoverflow"}} mini>
+		<Layout::Boxes::Item @image="/static/img/community/stackoverflow.png" @title="Stack Overflow" @text="Join the SurrealDB community on Stack Overflow for answers, updates, and to showcase your product. Connect with other developers, ask questions, and share your expertise." hover />
+	</Link>
+	<Link @link={{url "dev"}} mini>
+		<Layout::Boxes::Item @image="/static/img/community/dev.png" @title="DEV" @text="Follow us on DEV.to! Explore in-depth articles, tutorials, and case studies from industry experts and thought leaders. Be a part of the conversation and share your own insights with the community on DEV." hover />
 	</Link>
 </Layout::Boxes>
 
