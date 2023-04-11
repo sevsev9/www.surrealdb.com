@@ -4,7 +4,7 @@ footer {
 	background-size:1254px 662px;
 	background-position:600px 0px;
 	border-top:1px solid var(--border-color);
-	background-image:url("/static/img/home/honeycomb.png");
+	// background-image:url("/static/img/home/honeycomb.png");
 
 	content {
 
@@ -155,7 +155,7 @@ footer {
 		> lower {
 
 			display:flex;
-			max-width:650px;
+			max-width:750px;
 			align-items:center;
 			flex-direction:row;
 			padding:0 0 100px 0;
