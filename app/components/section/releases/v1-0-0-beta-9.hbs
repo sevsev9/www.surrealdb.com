@@ -1,7 +1,7 @@
 <Layout::Blocks cols-1 as |block|>
 
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Enable returning a single field from <code>SELECT</code> statements
 		</h4>
 		<p>SurrealDB now allows you to fetch a single field from a <code>SELECT</code> statement or from a subquery, returning an array of values, rather than an array of objects.</p>
@@ -14,7 +14,7 @@
 	</block>
 
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Add support for <code>FETCH</code> clauses at the end of <code>RETURN</code> statements
 		</h4>
 		<p>SurrealDB now allows fetching remote fields in <code>RETURN</code> statements, in addition to <code>SELECT</code> statements.</p>
@@ -27,7 +27,7 @@
 	</block>
 
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Add Null Coalescing operator and Ternary Conditional operator
 		</h4>
 		<p>SurrealDB now supports the Null Coalescing operator (<code>??</code>), and the Ternary Conditional operator (<code>?:</code>) for simpler logic calculations.</p>
@@ -42,7 +42,7 @@
 	</block>
 
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Allow fetching fields from within complex Record IDs
 		</h4>
 		<p>Fields within complex Record IDs can now be retrieved and used within <code>SELECT</code> queries.</p>
@@ -57,7 +57,7 @@
 	</block>
 
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Support for <code>FLEXIBLE</code> fields on <code>SCHEMAFULL</code> tables
 		</h4>
 		<p><code>SCHEMAFULL</code> and <code>SCHEMALESS</code> functionality can now be used together, suitable for capturing schema-free log data.</p>
@@ -82,7 +82,7 @@
 	</block>
 
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Support code blocks and advanced expressions
 		</h4>
 		<p>It is now possible to run blocks of code, with support for an arbitrary number of statements, including <code>LET</code> and <code>RETURN</code> statements. This allows for writing advanced custom logic, and allowing for more complicated handling of data operations.</p>
@@ -99,7 +99,7 @@
 	</block>
 
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Enable access to the user input in <code>DEFINE FIELD</code> statements
 		</h4>
 		<p><code>DEFINE FIELD</code> statements now have access to an <code>$input</code> variable in the <code>VALUE</code> and <code>ASSERT</code> clauses.</p>
@@ -120,7 +120,7 @@
 	</block>
 
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Define global parameters with <code>DEFINE PARAM</code> statements
 		</h4>
 		<p>SurrealDB now supports the ability to define global database-wide parameters, which can be useful to store certain commonly-used variables.</p>
@@ -139,7 +139,7 @@
 	</block>
 
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Define custom functions with <code>DEFINE FUNCTION</code> statements
 		</h4>
 		<p>SurrealDB now supports the ability to define global database-wide custom functions, which allow for complicated or repeated user-defined code, to be run seamlessly within any query across the database. Custom functions support typed arguments, and multiple nested queries with custom logic.</p>
@@ -165,7 +165,7 @@
 	</block>
 
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Add support for selecting ranges of records
 		</h4>
 		<p>SurrealDB supports the ability to query a range of records, using the record ID. The record ID ranges, retrieve records using the natural sorting order of the record IDs. These range queries can be used to query a range of records in a timeseries context.</p>
@@ -186,7 +186,7 @@
 	</block>
 
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Rust API with embedded and remote connections over HTTP and WebSockets
 		</h4>
 		<p>SurrealDB now has a native Rust API for connecting to local database instances, and remote database servers over both HTTP and WebSockets with a binary protocol and a custom serialization format.</p>

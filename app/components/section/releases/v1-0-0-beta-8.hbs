@@ -1,6 +1,6 @@
 <Layout::Blocks cols-1 as |block|>
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Embedding the results of a subquery
 		</h4>
 		<p>SurrealDB now allows you to use the resulting Record IDs of a subquery, and embed them within another record, without having to specify the <code>id</code> field specifically.</p>
@@ -14,7 +14,7 @@
 		</Code>
 	</block>
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Embedded Record IDs in <code>CREATE</code> and <code>RELATE</code> statements
 		</h4>
 		<p>SurrealDB now supports the ability to set a specific reocrd ID in the record content itself when creating records using <code>CREATE</code> and <code>RELATE</code> statements.</p>
@@ -40,7 +40,7 @@
 		</Code>
 	</block>
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Support for deep-merge record updates
 		</h4>
 		<p>SurrealDB now supports deep-merging record changes, ensuring that only specified object fields are modified and overwritten.</p>
@@ -60,7 +60,7 @@
 		</Code>
 	</block>
 	<block>
-		<h4 flex row middle>
+		<h4 row middle>
 			Dynamic expressions in complex Record IDs
 		</h4>
 		<p>Complex Record IDs now support dynamic expressions, allowing parameters, and function expressions to be used as values within the IDs. This is useful in a timeseries context, or for ensuring locality between specific records in a table.</p>
