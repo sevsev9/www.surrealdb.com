@@ -72,6 +72,9 @@ Router.map(function () {
 				this.route('file');
 				this.route('tikv');
 			});
+			this.route('upgrading', function () {
+				this.route('beta8-to-beta9');
+			});
 		});
 
 		this.route('authentication', function () {

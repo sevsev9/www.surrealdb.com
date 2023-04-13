@@ -1,0 +1,113 @@
+<Crumb>
+	<Crumb::Item @link="docs">Documentation</Crumb::Item>
+	<Crumb::Item @link="docs.installation">Installation</Crumb::Item>
+	<Crumb::Item @link="docs.installation.upgrading.beta8-to-beta9">Upgrade from beta-8 to beta-9</Crumb::Item>
+</Crumb>
+
+<Layout::Text text-l text-f>
+
+	<h2>Upgrading from beta-8 to beta-9</h2>
+
+	<p>Because of a change in the underlying way that SurrealDB stores data in this update, and issues with exporting specific data from beta-8, there are extra steps required to migrate to beta-9.</p>
+
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+
+	<h3>Issues</h3>
+
+	<ul>
+		<li>A change in the underlying way data is stored in SurrealDB was caused by <Link @link="https://github.com/surrealdb/surrealdb/commit/f5b21eb3633fdbbaa64b6247fdfeb606afbd35d1">this commit</Link>. Everyone who upgrades will therefor need to export and reimport data into beta-9.</li>
+		<li>In beta-8, the <code>"</code> charachter was not yet properly escaped. This was fixed somewhere during the development for beta-9.</li>
+		<li>The <code>\</code> character is often used as an escape character, but in an export this is not always properly escaped. <Link @link="https://github.com/surrealdb/surrealdb/issues/1800">This was only recently discovered and is not yet fixed.</Link></li>
+	</ul>
+
+	<h4>Do I have this issue?</h4>
+	<p>
+		An error close to the following will be thrown when connecting to the database or when selecting specific data, if you are experiencing this issue.
+	</p>
+
+	<Code @name="thrown-error.shell">
+		Error:
+		thread 'tokio-runtime-worker' panicked at 'called Result::unwrap() on an Err value: Syntax("invalid type: string "Float", expected a boolean")', lib/src/sql/statements/define.rs:1009:72
+		note: run with RUST_BACKTRACE=1 environment variable to display a backtrace
+		Aborted (core dumped)
+	</Code>
+
+	<p>Because of the above, upgrading the beta-9 requires some extra steps. We've listed them down below and we advice to follow this migration guide both if you do or do not encounter this issue!</p>
+</Layout::Text>
+
+<Layout::Line/>
+
+<Layout::Text text-l text-f>
+	<h4>1. Download the extra beta-8 release</h4>
+
+	<p>
+		We did an additional beta-8 release that fixes the <code>"</code> charachter being unescaped.
+	</p>
+
+	<ol>
+		<li>
+			<Link @link="https://github.com/surrealdb/surrealdb/releases/tag/v1.0.0-beta.8%2B20230104">
+				Download the appropiate binary for your system from the github release.
+			</Link>
+		</li>
+		<li>In the case of linux and macos, extract the binary from the <code>.tgz</code> archive.</li>
+		<li>
+			To use this binary instead of the installed version of surrealdb, enter the direct path to it.
+			<ul>
+				<li>
+					<code>./surreal ...</code>
+				</li>
+				<li>
+					<code>/path/to/binary/surreal ...</code>
+				</li>
+				<li>
+					<code>.\surreal.exe ...</code>
+				</li>
+				<li>
+					<code>C:\path\to\binary\surreal.exe ...</code>
+				</li>
+			</ul>
+		</li>
+	</ol>
+
+	<h4>2. Start the SurrealDB instance with the temporarily downloaded binary</h4>
+	<p>
+		You can start the instance with the same arguments as you normally would, only replace the path to the binary.
+	</p>
+	<Code @name="start-temporary-instance.shell">
+		/path/to/binary/surreal start ...
+	</Code>
+
+	<h4>3. Export the data</h4>
+	<p>
+		<Link @link="docs.cli.export">Please follow the export docs to run the export.</Link> Make sure to use the temporarily downloaded binary here.
+	</p>
+	<Code @name="export-with-temporary-binary.shell">
+		/path/to/binary/surreal export ... file.surql
+	</Code>
+
+	<h4>4. Check for unescaped <code>\</code> characters</h4>
+	<p>
+		As mentioned above, there is <Link @link="https://github.com/surrealdb/surrealdb/issues/1800">an open issue (recently discovered)</Link> which causes potential unescaped <code>\</code> charachters in the export.
+		This should not be an issue for most datasets, thought if an issue needs to be manually solved as of now. Basically, grab your favorite code editor, search for <code>\</code> and see if there are any of them that are unescaped when not used as an escape character.
+		In most cases you can just import the exported file from the previous step into beta-9, just check for this if you have any issues.
+	</p>
+
+	<h4>5. Check for <img inline src="/static/img/surrealql-text.svg" alt="SurrealQL" /> changes in the release notes</h4>
+	<p>
+		There have been major improvements to the SurrealQL language, and also some potential breaking changes for how you have previously defined your schemas.
+		<Link @link="releases">Check out the changes on the release page for beta-9</Link>.
+	</p>
+
+	<h4>6. Import back into beta-9</h4>
+	<p>
+		<Link @link="docs.cli.import">Please follow the import docs to run the import.</Link> Make sure to install beta-9 on your systems first.
+	</p>
+	<Code @name="import.shell">
+		surreal import ... file.surql
+	</Code>
+</Layout::Text>
