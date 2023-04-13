@@ -1,6 +1,5 @@
 import Component from '@glimmer/component';
 import { cache } from '@ascua/decorators';
-import { arg } from '@ascua/decorators';
 
 export default class extends Component {
 
@@ -9,6 +8,7 @@ export default class extends Component {
 			{
 				time: new Date('2023-04-01T00:00:00'),
 				name: 'Release v1.0.0-beta.9',
+				info: 'section/releases/v1-0-0-beta-9-upgrade',
 				path: 'section/releases/v1-0-0-beta-9',
 				link: 'v1.0.0-beta.9',
 				hash: 'v1-0-0-beta-9',

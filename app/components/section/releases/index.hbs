@@ -40,7 +40,23 @@
 
 				</Layout::Text>
 
-				<Layout::Gap mini />
+				{{#if item.path}}
+
+					{{#if (is-component item.info)}}
+
+						<Layout::Gap mini />
+
+						{{#let (component item.info) as |component|}}
+							<component />
+						{{/let}}
+
+					{{/if}}
+
+				{{else}}
+
+					<Layout::Gap mini />
+
+				{{/if}}
 
 				{{#if item.text}}
 

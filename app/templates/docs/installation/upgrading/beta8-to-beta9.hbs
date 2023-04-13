@@ -1,14 +1,14 @@
 <Crumb>
 	<Crumb::Item @link="docs">Documentation</Crumb::Item>
 	<Crumb::Item @link="docs.installation">Installation</Crumb::Item>
-	<Crumb::Item @link="docs.installation.upgrading.beta8-to-beta9">Upgrade from beta-8 to beta-9</Crumb::Item>
+	<Crumb::Item @link="docs.installation.upgrading.beta8-to-beta9">Upgrade from <code>1.0.0-beta.8</code> to <code>1.0.0-beta.9</code></Crumb::Item>
 </Crumb>
 
 <Layout::Text text-l text-f>
 
-	<h2>Upgrading from beta-8 to beta-9</h2>
+	<h2>Upgrading from <code>1.0.0-beta.8</code> to <code>1.0.0-beta.9</code></h2>
 
-	<p>Because of a change in the underlying way that SurrealDB stores data in this update, and issues with exporting specific data from beta-8, there are extra steps required to migrate to beta-9.</p>
+	<p>Because of a change in the underlying way that SurrealDB stores data in this update, and issues with exporting specific data from <code>1.0.0-beta.8</code>, there are extra steps required to migrate to <code>1.0.0-beta.9</code>.</p>
 
 </Layout::Text>
 
@@ -19,14 +19,14 @@
 	<h3>Issues</h3>
 
 	<ul>
-		<li>A change in the underlying way data is stored in SurrealDB was caused by <Link @link="https://github.com/surrealdb/surrealdb/commit/f5b21eb3633fdbbaa64b6247fdfeb606afbd35d1">this commit</Link>. Everyone who upgrades will therefor need to export and reimport data into beta-9.</li>
-		<li>In beta-8, the <code>"</code> charachter was not yet properly escaped. This was fixed somewhere during the development for beta-9.</li>
+		<li>A change in the underlying way data is stored in SurrealDB was caused by <Link @link="https://github.com/surrealdb/surrealdb/commit/f5b21eb3633fdbbaa64b6247fdfeb606afbd35d1">this commit</Link>. Data will need to be exported as SQL and imported into <code>1.0.0-beta.9</code>.</li>
+		<li>In <code>1.0.0-beta.8</code>, the <code>"</code> character was not yet properly escaped. This was fixed somewhere during the development for <code>1.0.0-beta.9</code>.</li>
 		<li>The <code>\</code> character is often used as an escape character, but in an export this is not always properly escaped. <Link @link="https://github.com/surrealdb/surrealdb/issues/1800">This was only recently discovered and is not yet fixed.</Link></li>
 	</ul>
 
 	<h4>Do I have this issue?</h4>
 	<p>
-		An error close to the following will be thrown when connecting to the database or when selecting specific data, if you are experiencing this issue.
+		An error, similar to the following, will be thrown when connecting to the database or when selecting specific data, if you are experiencing this issue.
 	</p>
 
 	<Code @name="thrown-error.shell">
@@ -36,22 +36,24 @@
 		Aborted (core dumped)
 	</Code>
 
-	<p>Because of the above, upgrading the beta-9 requires some extra steps. We've listed them down below and we advice to follow this migration guide both if you do or do not encounter this issue!</p>
+	<p>Because of the above, upgrading the <code>1.0.0-beta.9</code> requires some extra steps. We've listed them down below and we advice to follow this migration guide both if you do or do not encounter this issue!</p>
 
 	<p>
 		<i>
 			<b>PS.</b> if you use docker, there is a guide by the community that describes a rough example on how to approach this upgrade. <Link @link="https://gist.github.com/kearfy/adb0baa6476bdda744cb71605d0fc997">You can find it here!</Link>
 		</i>
 	</p>
+
 </Layout::Text>
 
 <Layout::Line/>
 
 <Layout::Text text-l text-f>
-	<h4>1. Download the extra beta-8 release</h4>
+
+	<h4>1. Download the special <code>1.0.0-beta.8</code> release</h4>
 
 	<p>
-		We did an additional beta-8 release that fixes the <code>"</code> charachter being unescaped.
+		We did a special <code>1.0.0-beta.8</code> release that ensures that all <code>"</code> characters are escaped when exporting.
 	</p>
 
 	<ol>
@@ -80,40 +82,56 @@
 		</li>
 	</ol>
 
-	<h4>2. Start the SurrealDB instance with the temporarily downloaded binary</h4>
+	<h4>2. Start the <img inline src="/static/img/text.svg" alt="SurrealDB" /> instance with the temporary <code>1.0.0-beta.8</code> binary</h4>
 	<p>
 		You can start the instance with the same arguments as you normally would, only replace the path to the binary.
 	</p>
-	<Code @name="start-temporary-instance.shell">
-		/path/to/binary/surreal start ...
+	<Code @name="upgrading-beta8-to-beta9-step-2.shell">
+		user@localhost % /path/to/binary/surreal start -u root -p root myolddataset.db
 	</Code>
 
-	<h4>3. Export the data</h4>
+	<h4>3. Export your data</h4>
 	<p>
 		<Link @link="docs.cli.export">Please follow the export docs to run the export.</Link> Make sure to use the temporarily downloaded binary here.
 	</p>
-	<Code @name="export-with-temporary-binary.shell">
-		/path/to/binary/surreal export ... file.surql
+	<Code @name="upgrading-beta8-to-beta9-step-3.shell">
+		user@localhost % /path/to/binary/surreal export -c http://localhost:8000 -u root -p root mydata.surql
 	</Code>
 
-	<h4>4. Check for unescaped <code>\</code> characters</h4>
+	{{!-- <h4>4. Check for unescaped <code>\</code> characters</h4>
 	<p>
-		As mentioned above, there is <Link @link="https://github.com/surrealdb/surrealdb/issues/1800">an open issue (recently discovered)</Link> which causes potential unescaped <code>\</code> charachters in the export.
+		As mentioned above, there is <Link @link="https://github.com/surrealdb/surrealdb/issues/1800">an open issue (recently discovered)</Link> which causes potential unescaped <code>\</code> characters in the export.
 		This should not be an issue for most datasets, thought if an issue needs to be manually solved as of now. Basically, grab your favorite code editor, search for <code>\</code> and see if there are any of them that are unescaped when not used as an escape character.
-		In most cases you can just import the exported file from the previous step into beta-9, just check for this if you have any issues.
-	</p>
+		In most cases you can just import the exported file from the previous step into <code>1.0.0-beta.9</code>, just check for this if you have any issues.
+	</p> --}}
 
-	<h4>5. Check for <img inline src="/static/img/surrealql-text.svg" alt="SurrealQL" /> changes in the release notes</h4>
+	<h4>5. Stop the <img inline src="/static/img/text.svg" alt="SurrealDB" /> instance</h4>
 	<p>
-		There have been major improvements to the SurrealQL language, and also some potential breaking changes for how you have previously defined your schemas.
-		<Link @link="releases">Check out the changes on the release page for beta-9</Link>.
+		<Link @link="docs.cli.export">Please follow the export docs to run the export.</Link> Make sure to use the temporarily downloaded binary here.
 	</p>
-
-	<h4>6. Import back into beta-9</h4>
-	<p>
-		<Link @link="docs.cli.import">Please follow the import docs to run the import.</Link> Make sure to install beta-9 on your systems first.
-	</p>
-	<Code @name="import.shell">
-		surreal import ... file.surql
+	<Code @name="upgrading-beta8-to-beta9-step-4.shell">
+		user@localhost % /path/to/binary/surreal export -c http://localhost:8000 -u root -p root mydata.surql
 	</Code>
+
+	<h4>6. Start the <code>1.0.0-beta.9</code> <img inline src="/static/img/text.svg" alt="SurrealDB" /> instance</h4>
+	<p>
+		<Link @link="docs.cli.export">Please follow the export docs to run the export.</Link> Make sure to use the temporarily downloaded binary here.
+	</p>
+	<Code @name="upgrading-beta8-to-beta9-step-5.shell">
+		user@localhost % surreal start -u root -p root mynewdataset.db
+	</Code>
+
+	<h4>7. Import your data</h4>
+	<p>
+		<Link @link="docs.cli.import">Please follow the import docs to run the import.</Link> Make sure to install <code>1.0.0-beta.9</code> on your systems first.
+	</p>
+	<Code @name="upgrading-beta8-to-beta9-step-6.shell">
+		user@localhost % surreal import -c http://localhost:8000 -u root -p root mydata.surql
+	</Code>
+
+	<h4>8. Check for <img inline src="/static/img/surrealql-text.svg" alt="SurrealQL" /> changes in the release notes</h4>
+	<p>
+		There have been major improvements to the SurrealQL language, and also some potential breaking changes for how you have previously defined your schemas. Check out the changes on the <Link @link="releases">release page for <code>1.0.0-beta.9</code></Link>.
+	</p>
+
 </Layout::Text>
