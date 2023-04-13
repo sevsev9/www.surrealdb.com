@@ -98,25 +98,14 @@
 		user@localhost % /path/to/binary/surreal export -c http://localhost:8000 -u root -p root mydata.surql
 	</Code>
 
-	{{!-- <h4>4. Check for unescaped <code>\</code> characters</h4>
-	<p>
-		As mentioned above, there is <Link @link="https://github.com/surrealdb/surrealdb/issues/1800">an open issue (recently discovered)</Link> which causes potential unescaped <code>\</code> characters in the export.
-		This should not be an issue for most datasets, thought if an issue needs to be manually solved as of now. Basically, grab your favorite code editor, search for <code>\</code> and see if there are any of them that are unescaped when not used as an escape character.
-		In most cases you can just import the exported file from the previous step into <code>1.0.0-beta.9</code>, just check for this if you have any issues.
-	</p> --}}
-
 	<h4>5. Stop the <img inline src="/static/img/text.svg" alt="SurrealDB" /> instance</h4>
-	<p>
-		<Link @link="docs.cli.export">Please follow the export docs to run the export.</Link> Make sure to use the temporarily downloaded binary here.
-	</p>
+	<p>Stop the <code>1.0.0-beta.8</code> database server, before continuing on to the next step.</p>
 	<Code @name="upgrading-beta8-to-beta9-step-4.shell">
 		user@localhost % /path/to/binary/surreal export -c http://localhost:8000 -u root -p root mydata.surql
 	</Code>
 
 	<h4>6. Start the <code>1.0.0-beta.9</code> <img inline src="/static/img/text.svg" alt="SurrealDB" /> instance</h4>
-	<p>
-		<Link @link="docs.cli.export">Please follow the export docs to run the export.</Link> Make sure to use the temporarily downloaded binary here.
-	</p>
+	<p>Start the new <code>1.0.0-beta.9</code> database server, before importing your data.</p>
 	<Code @name="upgrading-beta8-to-beta9-step-5.shell">
 		user@localhost % surreal start -u root -p root mynewdataset.db
 	</Code>
