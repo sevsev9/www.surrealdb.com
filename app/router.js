@@ -229,9 +229,13 @@ Router.map(function () {
 			this.route('deploying-surrealdb');
 			this.route('strict-mode');
 		});
+
+		this.route('faqs');
+
 	});
 
 	this.route('404', {
 		path: '*:',
 	});
+
 });
