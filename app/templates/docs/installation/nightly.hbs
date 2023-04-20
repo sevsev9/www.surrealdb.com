@@ -6,7 +6,7 @@
 
 <Layout::Text text-l text-f>
 	<h2><Devicon @size="50" @type="surreal" /> Install SurrealDB Nightly</h2>
-	<p>If you prefer developing on the bleeding edge, you can follow this tutorial to install SurrealDB Nightly. The nightly version is built and released every night at midnight, and includes includes the latest features, and bug fixes. The nightly version is available for macOS, Linux, and Windows operating systems, and can be installed using the <Link @link={{url "install"}}>Linux or Unix install script</Link>, or using the <Link @link={{url "windows"}}>Windows install script</Link>. Alternatively you can run the nightly version with Docker by using the <code>nightly</code> tag.</p>
+	<p>If you prefer developing on the bleeding edge, you can follow this tutorial to install SurrealDB Nightly. The nightly version is built and released every night at midnight, and includes the latest features, and bug fixes. The nightly version is available for macOS, Linux, and Windows operating systems, and can be installed using the <Link @link={{url "install"}}>Linux or Unix install script</Link>, or using the <Link @link={{url "windows"}}>Windows install script</Link>. Alternatively you can run the nightly version with Docker by using the <code>nightly</code> tag.</p>
 </Layout::Text>
 
 <Layout::Gap mini />
@@ -43,9 +43,9 @@
 
 <Layout::Text text-l text-f>
 	<h3><Devicon @size="35" @type="docker" /> Using SurrealDB Nightly with Docker</h3>
-	<p>To use SurrealDB Nightly with Docker, you can use the <code>nightly</code> tag. This script securely downloads the latest version for the platform and CPU type. It installs SurrealDB into the <code>C:\Program Files\SurrealDB</code> folder, falling back to a user-specified folder if necessary. The following command will attempt to install the nightly version. You can re-run this command daily to ensure you are running the latest build of SurrealDB.</p>
+	<p>To use SurrealDB Nightly with Docker, you can use the <code>nightly</code> tag. When running the following command, the latest SurrealDB Nightly version will be pulled from Docker Hub.</p>
 	<Code @name="docs-installation-docker-script-install-nightly.shell">
-		user@localhost % docker run --rm -p 8000:8000 surrealdb/surrealdb:nightly start
+		user@localhost % docker run --rm --pull always -p 8000:8000 surrealdb/surrealdb:nightly start
 	</Code>
 </Layout::Text>
 

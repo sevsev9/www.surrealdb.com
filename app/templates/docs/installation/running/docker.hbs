@@ -18,37 +18,37 @@
 	<p>To get started using Docker, you can use the <code>latest</code> tag. To start a server use the <Link @link="docs.cli.start"><Ascua::Prism::Inline @language="bash" @code="start" /></Link> command. By default SurrealDB runs on port <code>8000</code>. To view all the available versions and tags, or to use a specific tag visit the <Link @link={{url "docker"}}>Docker Hub</Link> page.</p>
 
 	<Code @name="docs-installation-running-docker-1.shell">
-		user@localhost % docker run --rm -p 8000:8000 surrealdb/surrealdb:latest start
+		user@localhost % docker run --rm --pull always -p 8000:8000 surrealdb/surrealdb:latest start
 	</Code>
 
 	<p>In order to persist data when the Docker instance is restarted or shutdown, specify a Docker folder using the Docker <Ascua::Prism::Inline @language="bash" @code="-v" /> command line argument, and use the on-disk storage engine in SurrealDB using the path prefix chosen as a Docker folder.</p>
 
 	<Code @name="docs-installation-running-docker-2.shell">
-		user@localhost % docker run --rm -p 8000:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start file:/mydata/mydatabase.db
+		user@localhost % docker run --rm --pull always -p 8000:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start file:/mydata/mydatabase.db
 	</Code>
 
 	<p>The default logging level for the database server is <code>info</code>, resulting in any informational logs to be output to the standard output. To control the logging verbosity, specify the <Ascua::Prism::Inline @language="bash" @code="--log" /> argument. The following command starts the database with <code>trace</code> level logging, resulting in most logs being output to the terminal.</p>
 
 	<Code @name="docs-installation-running-docker-3.shell">
-		user@localhost % docker run --rm -p 8000:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace file:/mydata/mydatabase.db
+		user@localhost % docker run --rm --pull always -p 8000:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace file:/mydata/mydatabase.db
 	</Code>
 
 	<p>In order to keep SurrealDB secure, the database disables root-level authentication if a password is not set. To set a root-level authentication login, use the <Ascua::Prism::Inline @language="bash" @code="--user" /> and <Ascua::Prism::Inline @language="bash" @code="--pass" /> command-line arguments. The following command starts the database with a top-level user named <code>root</code> with a password also set to <code>root</code>.</p>
 
 	<Code @name="docs-installation-running-docker-4.shell">
-		user@localhost % docker run --rm -p 80:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace --user root --pass root file:mydatabase.db
+		user@localhost % docker run --rm --pull always -p 80:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace --user root --pass root file:mydatabase.db
 	</Code>
 
 	<p>In order to change the default port that SurrealDB uses for web connections and from database clients you can use the Docker <Ascua::Prism::Inline @language="bash" @code="-p" /> command line argument to tunnel the port to the internal SurrealDB port which SurrealDB is served on. The following command starts the database on port <code>80</code>.</p>
 
 	<Code @name="docs-installation-running-docker-5.shell">
-		user@localhost % docker run --rm -p 80:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace --user root --pass root file:/mydata/mydatabase.db
+		user@localhost % docker run --rm --pull always -p 80:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace --user root --pass root file:/mydata/mydatabase.db
 	</Code>
 
 	<p>After running the above command, you should see the SurrealDB server startup successfully.</p>
 
 	<Code @name="docs-installation-running-docker-6.shell">
-		user@localhost % docker run --rm -p 80:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace --user root --pass root file:/mydata/mydatabase.db
+		user@localhost % docker run --rm --pull always -p 80:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace --user root --pass root file:/mydata/mydatabase.db
 		[2023-04-03 08:45:42] INFO  surrealdb::iam Root authentication is enabled
 		[2023-04-03 08:45:42] INFO  surrealdb::iam Root username is 'root'
 		[2023-04-03 08:45:42] INFO  surrealdb::dbs Database strict mode is disabled
@@ -71,7 +71,7 @@
 	<p>The Docker container contains both the server, and the command line tools for importing, exporting, and querying a remote SurrealDB server.</p>
 
 	<Code @name="docs-installation-running-docker-7.shell">
-		user@localhost % docker run --rm surrealdb/surrealdb:latest help
+		user@localhost % docker run --rm --pull always surrealdb/surrealdb:latest help
 	</Code>
 
 	<p>The result should look similar to the output below, confirming that the SurrealDB command-line tool was installed successfully.</p>
