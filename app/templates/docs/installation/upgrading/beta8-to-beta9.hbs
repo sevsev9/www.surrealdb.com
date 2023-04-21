@@ -95,14 +95,18 @@
 		<Link @link="docs.cli.export">Please follow the export docs to run the export.</Link> Make sure to use the temporarily downloaded binary here.
 	</p>
 	<Code @name="upgrading-beta8-to-beta9-step-3.shell">
-		user@localhost % /path/to/binary/surreal export -c http://localhost:8000 -u root -p root mydata.surql
+		user@localhost % /path/to/binary/surreal export --conn http://localhost:8000 --ns ns --db db --user root --pass root mydata.surql
 	</Code>
 
-	<h4>5. Stop the <img inline src="/static/img/text.svg" alt="SurrealDB" /> instance</h4>
+	<h4>4. Stop the <img inline src="/static/img/text.svg" alt="SurrealDB" /> instance</h4>
 	<p>Stop the <code>1.0.0-beta.8</code> database server, before continuing on to the next step.</p>
-	<Code @name="upgrading-beta8-to-beta9-step-4.shell">
-		user@localhost % /path/to/binary/surreal export -c http://localhost:8000 -u root -p root mydata.surql
-	</Code>
+
+	<h4>5. Install <img inline src="/static/img/text.svg" alt="SurrealDB" /> <code>1.0.0-beta.9</code></h4>
+	<p>
+		<Link @link="/docs/installation">
+			Install <code>1.0.0-beta.9</code> database server, using the official docs before continuing on to the next step.
+		</Link>
+	</p>
 
 	<h4>6. Start the <code>1.0.0-beta.9</code> <img inline src="/static/img/text.svg" alt="SurrealDB" /> instance</h4>
 	<p>Start the new <code>1.0.0-beta.9</code> database server, before importing your data.</p>
@@ -115,7 +119,7 @@
 		<Link @link="docs.cli.import">Please follow the import docs to run the import.</Link> Make sure to install <code>1.0.0-beta.9</code> on your systems first.
 	</p>
 	<Code @name="upgrading-beta8-to-beta9-step-6.shell">
-		user@localhost % surreal import -c http://localhost:8000 -u root -p root mydata.surql
+		user@localhost % surreal import --conn http://localhost:8000 --ns ns --db db --user root --pass root mydata.surql
 	</Code>
 
 	<h4>8. Check for <img inline src="/static/img/surrealql-text.svg" alt="SurrealQL" /> changes in the release notes</h4>
