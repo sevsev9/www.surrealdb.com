@@ -14,10 +14,14 @@
 
 <Layout::Text text-l text-f>
 	<h3>Text Record IDs</h3>
-	<p>If a numeric value is specified without any decimal point suffix and is within the range <code>-9223372036854775808</code> to <code>9223372036854775807</code> then the value will be parsed, stored, and treated as a 64-bit integer.</p>
-	<Code @name="docs-surrealql-overview-record-numeric.surql">
+	<p>Without annotation, text record IDs can contain letters, numbers and <code>_</code> characters.</p>
+	<Code @name="docs-surrealql-overview-record-text.surql">
 		CREATE company:surrealdb SET name = 'SurrealDB';
 	</Code>
+	<p>Record IDs can contain complex characters, surrounded by the <code>`</code> character.</p>
+	<Code @name="docs/surrealql/overview/record-backtick.surql" />
+	<p>Alternatively complex characters within record IDs can be surrounded by the <code>⟨</code> and <code>⟩</code> characters.</p>
+	<Code @name="docs/surrealql/overview/record-complex.surql" />
 </Layout::Text>
 
 <Layout::Gap mini />
@@ -30,20 +34,15 @@
 	</Code>
 </Layout::Text>
 
+<Layout::Gap mini />
 
-
-	{{!--
-	<Code @name="docs/surrealql/overview/record-id.surql" />
+	{{!-- <Code @name="docs/surrealql/overview/record-id.surql" />
 	<p>This allows for records to be retrieved without any table scans or index scans, solely by the id.</p>
 	<Code @name="docs/surrealql/overview/record-select.surql" />
 	<p>In addition, SurrealDB record IDs allow for direct record retrieval from within interconnected record queries.</p>
 	<Code @name="docs/surrealql/overview/record-remote.surql" />
 	<p>Record IDs can be both text-based or numeric.</p>
-	<Code @name="docs/surrealql/overview/record-numeric.surql" />
-	<p>Record IDs can contain complex characters, surrounded by the <code>`</code> character.</p>
-	<Code @name="docs/surrealql/overview/record-backtick.surql" />
-	<p>Alternatively complex characters within record IDs can be surrounded by the <code>⟨</code> and <code>⟩</code> characters.</p>
-	<Code @name="docs/surrealql/overview/record-complex.surql" />
---}}
+	<Code @name="docs/surrealql/overview/record-numeric.surql" /> --}}
+
 
 <Layout::Gap large />
