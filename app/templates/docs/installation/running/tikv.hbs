@@ -56,7 +56,7 @@
 	<p>In order to change the default port that SurrealDB uses for web connections and from database clients you can use the <Ascua::Prism::Inline @language="bash" @code="--bind" /> argument. The following command starts the database on port <code>8080</code>.</p>
 
 	<Code @name="docs-installation-running-tikv-6.shell">
-		user@localhost % surreal start --log trace --user root --pass root --bind 0.0.0.0:8080 memory
+		user@localhost % surreal start --log trace --user root --pass root --bind 0.0.0.0:8080 tikv://placement.driver.hostname.or.ip:2379
 	</Code>
 
 	<p>After running the above command, you should see the SurrealDB server startup successfully.</p>

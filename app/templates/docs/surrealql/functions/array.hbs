@@ -631,7 +631,7 @@
         <p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
         <codes vertical>
 			<Code @name="docs-surrealql-functions-array-intersect-error-input.surql">
-				SELECT * FROM array::difference(3, true);
+				SELECT * FROM array::intersect(3, true);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-intersect-error-result.txt">
 				null
@@ -727,7 +727,7 @@
 		<p>If either of the two arguments do not evaluate to an array, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
         <codes vertical>
 			<Code @name="docs-surrealql-functions-array-prepend-error-input.surql">
-				SELECT * FROM array::combine(3, true);
+				SELECT * FROM array::prepend(3, true);
 			</Code>
 			<Code @name="docs-surrealql-functions-array-prepend-error-result.txt">
 				null
