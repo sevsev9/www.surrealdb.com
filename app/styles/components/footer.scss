@@ -1,10 +1,6 @@
 footer {
 
-	background-repeat:no-repeat;
-	background-size:1254px 662px;
-	background-position:600px 0px;
 	border-top:1px solid var(--border-color);
-	// background-image:url("/static/img/home/honeycomb.png");
 
 	content {
 
@@ -16,6 +12,14 @@ footer {
 			padding:50px 0 50px 0;
 			align-items:flex-start;
 			justify-content:flex-start;
+
+			@include media(max-width-1449) {
+				justify-content:space-between;
+			}
+
+			@include media(max-width-750) {
+				padding:50px 0 0px 0;
+			}
 
 			> div {
 
@@ -50,6 +54,7 @@ footer {
 
 				@include media(max-width-750) {
 					width:50%;
+					padding-bottom:50px;
 				}
 
 				> a {
@@ -69,24 +74,23 @@ footer {
 			flex-direction:row;
 			padding:100px 0 0 0;
 			align-items:flex-start;
-			width:calc(100% - 350px);
 			justify-content:space-between;
 			border-bottom:1px solid var(--border-color);
 
-			@include media(max-width-768) {
+			@include media(max-width-1449) {
 				width:100%;
 			}
 
 			> div {
 
-				width:85%;
+				width:100%;
 				display:flex;
 				flex-shrink:0;
 				flex-direction:column;
 				align-items:flex-start;
 				justify-content:space-between;
 
-				@include media(max-width-768) {
+				@include media(max-width-1449) {
 					width:100%;
 				}
 
@@ -155,18 +159,22 @@ footer {
 		> lower {
 
 			display:flex;
-			max-width:750px;
+			max-width:850px;
 			align-items:center;
 			flex-direction:row;
 			padding:0 0 100px 0;
-			justify-content:space-between;
+			justify-content:flex-start;
 			border-top:1px solid var(--border-color);
+
+			@include media(max-width-1449) {
+				max-width:100%;
+			}
 
 			img {
 
 				float:left;
 				height:60px;
-				margin-top:30px;
+				margin:30px 65px 0 0;
 
 				@include media(max-width-768) {
 					display:none;

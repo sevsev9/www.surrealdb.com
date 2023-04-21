@@ -1,12 +1,11 @@
 surreal-icon {
 
 	right:0;
-	width:289px;
+	width:350px;
 	display:block;
 	position:absolute;
-	margin:0 -16px 0 0;
 
-	@include media(max-width-768) {
+	@include media(max-width-1449) {
 		display:none;
 	}
 
