@@ -20,6 +20,7 @@ module.exports = function (defaults) {
 				'docker',
 				'toml',
 				'sql',
+				'yaml',
 			],
 			copyToClipboard: true,
 		},

@@ -47,6 +47,8 @@ export default {
 					return Prism.highlight(code, Prism.languages.docker, 'docker');
 				case 'toml':
 					return Prism.highlight(code, Prism.languages.toml, 'toml');
+				case 'yaml':
+					return Prism.highlight(code, Prism.languages.yaml, 'yaml');
 				default:
 					return code;
 				}
