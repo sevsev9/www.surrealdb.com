@@ -1,8 +1,7 @@
 # Ignore all files
-/[!.]*
-/.?*
-
-# Enable fastboot files
-!/dist/**
-!/index.js
-!/package.json
+/.git/
+/aws/
+/node_modules/
+/dist/
+/public/
+/tests/
