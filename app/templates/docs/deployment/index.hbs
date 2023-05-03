@@ -11,6 +11,14 @@
 <Layout::Gap mini />
 
 <Layout::Boxes cols-2-to-1>
+	<LinkTo @route="docs.deployment.fly">
+		<Layout::Boxes::Item mini hover>
+			<h4>
+				<Devicon @size="30" @type="fly" /> Deploy on Fly.io <l green r>Available</l>
+			</h4>
+			<p>Learn how to deploy a single-node instance of SurrealDB on Fly.</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
 	<LinkTo @route="docs.deployment.google">
 		<Layout::Boxes::Item mini hover faded>
 			<h4>
@@ -41,12 +49,7 @@
 			<p>Learn how to deploy a scalable, multi-node, highly-available SurrealDB cluster on Kubernetes.</p>
 		</Layout::Boxes::Item>
 	</LinkTo>
-	<LinkTo @route="docs.deployment.fly">
-		<Layout::Boxes::Item mini hover>
-			<h4><Devicon @size="30" @type="fly" /> Deploy on Fly.io</h4>
-			<p>Learn how to deploy a single-node instance of SurrealDB on Fly.</p>
-		</Layout::Boxes::Item>
-	</LinkTo>
+
 	<LinkTo @route="docs.deployment.heroku">
 		<Layout::Boxes::Item mini hover faded>
 			<h4>
