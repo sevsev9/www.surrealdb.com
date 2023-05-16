@@ -30,7 +30,7 @@
 	<h3>Numeric Record IDs</h3>
 	<p>If a numeric value is specified without any decimal point suffix and is within the range <code>-9223372036854775808</code> to <code>9223372036854775807</code> then the value will be parsed, stored, and treated as a 64-bit integer.</p>
 	<Code @name="docs-surrealql-overview-record-numeric.surql">
-		CREATE temperature:17493 SET time = time::now(), celcius = 37.5;
+		CREATE temperature:17493 SET time = time::now(), celsius = 37.5;
 	</Code>
 </Layout::Text>
 
@@ -75,11 +75,11 @@
 	<p>Record IDs can be generated with a number of built-in ID generation functions. These allow for Record IDs to be generated using cryptographically-secure randomly-generated identifiers (which are suitable for dispersion across a distributed datastore), sequentially incrementing <code>ULID</code> Record identifiers, and <code>UUID</code> version 7 Record idenfitifiers.</p>
 	<Code @name="docs-surrealql-overview-record-generate.surql">
 		// Generate a random Record ID
-		CREATE temperature:rand() SET time = time::now(), celcius = 37.5;
+		CREATE temperature:rand() SET time = time::now(), celsius = 37.5;
 		// Generate a ULID-based Record ID
-		CREATE temperature:ulid() SET time = time::now(), celcius = 37.5;
+		CREATE temperature:ulid() SET time = time::now(), celsius = 37.5;
 		// Generate a UUIDv7-based Record ID
-		CREATE temperature:uuid() SET time = time::now(), celcius = 37.5;
+		CREATE temperature:uuid() SET time = time::now(), celsius = 37.5;
 	</Code>
 </Layout::Text>
 
