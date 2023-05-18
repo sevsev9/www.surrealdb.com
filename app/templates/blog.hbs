@@ -14,7 +14,14 @@
 			<h1><img inline src="/static/img/text.svg" alt="SurrealDB" /> blog</h1>
 		</Layout::Text>
 
-		<Layout::Gap small />
+		<Layout::Gap tiny />
+
+		<Layout::Text>
+			<p>To stay up-to-date with new blog articles, future product releases, and documentation updates, subscribe to our email newsletter below. Or follow us on <Link @link={{url "twitter"}}>Twitter</Link>, <Link @link={{url "dev"}}>Dev</Link>, or <Link @link={{url "medium"}}>Medium</Link>.</p>
+			<Signup::Newsletter bordered thicker />
+		</Layout::Text>
+
+		<Layout::Gap mini />
 
 		<Layout::Boxes cols-3-to-2-to-1>
 			{{#each this.posts as |post i|}}
@@ -31,27 +38,6 @@
 		</Layout::Boxes>
 
 		<Layout::Gap small />
-
-		<Layout::Text>
-			<p>To stay up-to-date with new blog articles, future product releases, and documentation updates, subscribe to our email newsletter below, follow us on <Link @link={{url "twitter"}}>Twitter</Link>, or follow us on <Link @link={{url "dev"}}>Dev</Link>.</p>
-			<Signup::Newsletter bordered thicker />
-		</Layout::Text>
-
-		<Layout::Gap small />
-
-	{{else}}
-
-		<Layout::Text>
-			<h1><img inline src="/static/img/text.svg" alt="SurrealDB" /> blog</h1>
-			<p>There aren't any posts here yet. To stay up-to-date with new blog articles, future product releases, and documentation updates, subscribe to our email newsletter below, follow us on <Link @link={{url "twitter"}}>Twitter</Link>, or follow us on <Link @link={{url "dev"}}>Dev</Link>.</p>
-			<Signup::Newsletter bordered thicker />
-		</Layout::Text>
-
-		<Layout::Gap mini />
-
-		<Layout::Image as |block|>
-			<img src="/static/img/blog/main.png" alt="SurrealDB Blog coming soon" />
-		</Layout::Image>
 
 	{{/if}}
 
