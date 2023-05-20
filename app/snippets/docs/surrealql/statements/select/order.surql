@@ -5,7 +5,7 @@ SELECT * FROM user ORDER BY RAND();
 SELECT * FROM song ORDER BY rating DESC;
 
 -- Order records by multiple fields independently
-SELECT * FROM song ORDER By artist ASC, rating DESC;
+SELECT * FROM song ORDER BY artist ASC, rating DESC;
 
 -- Order text fields with unicode collation
 SELECT * FROM article ORDER BY title COLLATE ASC;
