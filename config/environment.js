@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(environment) {
+module.exports = function (environment) {
 
 	var ENV = {
 
@@ -42,9 +42,18 @@ module.exports = function(environment) {
 
 		metrics: [
 			{
+				name: 'gtag',
+				environments: ['production'],
+				config: {
+					optimised: true,
+					id: 'G-J1NWM32T1V',
+				}
+			},
+			{
 				name: 'google-analytics',
 				environments: ['production'],
 				config: {
+					optimised: true,
 					id: 'UA-159406644-1',
 				}
 			},
@@ -54,6 +63,14 @@ module.exports = function(environment) {
 				config: {
 					optimised: true,
 					id: '3271313',
+				}
+			},
+			{
+				name: 'twitter-pixel',
+				environments: ['production'],
+				config: {
+					optimised: true,
+					id: 'oexls',
 				}
 			},
 			{
@@ -180,7 +197,7 @@ module.exports = function(environment) {
 		// to be used when using ember
 		// canary builds
 
-		EmberENV: { FEATURES: { }, EXTEND_PROTOTYPES: { Date: false } },
+		EmberENV: { FEATURES: {}, EXTEND_PROTOTYPES: { Date: false } },
 
 	};
 
