@@ -23,7 +23,7 @@ layout-helm {
 		}
 
 		menu {
-			top:0px;
+			top:50px;
 			width:255px;
 			height:100vh;
 			max-height:100vh;
@@ -214,7 +214,7 @@ layout-helm {
 
 	menu {
 
-		top:50px;
+		top: 100px;
 		display:flex;
 		overflow:auto;
 		position:-webkit-sticky;
