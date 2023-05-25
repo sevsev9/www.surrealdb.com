@@ -7,11 +7,13 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
+
 	this.route('about');
 	this.route('app');
 	this.route('community');
 	this.route('discord');
 	this.route('features');
+	this.route('github');
 	this.route('install');
 	this.route('license');
 	this.route('media');
