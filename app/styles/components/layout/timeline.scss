@@ -231,7 +231,7 @@ layout-timeline {
 				line-height: 1.5;
 				letter-spacing: 0px;
 				transition: opacity 0.5s;
-				color: var(--border-color);
+				color: var(--faint-color);
 
 				&:not(:last-child) {
 					margin-bottom: 5px;

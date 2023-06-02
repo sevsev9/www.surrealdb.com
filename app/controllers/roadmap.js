@@ -16,17 +16,24 @@ export default class extends Controller {
 				text: 'The first SurrealDB Cloud launch will be a highly-available, highly-scalable, multi-tenant, serverless cloud, with a pay-as-you-go fee structure. SurrealDB Public Cloud will be available in a number of regions globally. Pricing will be based on storage, concurrent connections, and query run time.',
 			},
 			{
-				goal: 'Q2 2023',
-				name: 'SurrealDB 1.0.0-RC',
+				goal: 'Q3 2023',
+				name: 'SurrealDB 1.0.0',
 				tags: [
-					'Table indexes and unique constraints',
-					'Full text indexing and filtering',
-					'Live queries and record changes',
 					'SurrealDB user-interface dashboard',
 				]
 			},
 			{
-				time: new Date('2023-03-15'),
+				time: new Date('2023-06-30'),
+				name: 'SurrealDB 1.0.0-beta.10',
+				tags: [
+					'Table indexes and unique constraints',
+					'Full text indexing and filtering',
+					'Live queries and record changes',
+					'Deployment to WebAssembly',
+				]
+			},
+			{
+				time: new Date('2023-03-31'),
 				name: 'SurrealDB 1.0.0-beta.9',
 				tags: [
 					'Custom global parameters',
