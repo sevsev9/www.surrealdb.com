@@ -2,7 +2,8 @@
 SELECT * FROM user, admin;
 
 -- Select data from a parameter
-SELECT * FROM $parameter WHERE admin = true;
+LET $parameter = "user";
+SELECT * FROM type::table($parameter) WHERE admin = true;
 
 -- Select from multiple specific records
 SELECT * FROM user:tobie, user:jaime, company:surrealdb;
