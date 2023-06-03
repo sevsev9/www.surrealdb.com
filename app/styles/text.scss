@@ -131,11 +131,19 @@ h4 {
 	-webkit-font-smoothing: antialiased;
 
 	img[inline] {
-		height: 18px;
+		height: 16px;
 	}
 
 	i {
 		vertical-align: middle;
+	}
+
+	@include media(max-width-750) {
+		font-size: 16px;
+
+		img[inline] {
+			height: 12px;
+		}
 	}
 
 }

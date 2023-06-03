@@ -3,6 +3,23 @@ html {
 	-webkit-tap-highlight-color:transparent;
 }
 
+.announcement {
+    width:auto;
+	padding:15px;
+	margin-top:10px;
+	margin-left:10px;
+	margin-right:10px;
+	border-radius:6px;
+    text-align:center;
+	display:inline-block;
+	background-size:cover;
+    background-color:#080C16;
+	background-repeat:no-repeat;
+	background-position:center top;
+	font-family:var(--system-font-app);
+	background-image:url("/static/img/surrealdbworld.png");
+}
+
 body {
 
 	width:100vw;
