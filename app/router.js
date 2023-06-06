@@ -7,7 +7,6 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-
 	this.route('about');
 	this.route('app');
 	this.route('community');
@@ -233,11 +232,9 @@ Router.map(function () {
 		});
 
 		this.route('faqs');
-
 	});
 
 	this.route('404', {
 		path: '*:',
 	});
-
 });

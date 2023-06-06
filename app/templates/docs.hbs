@@ -21,11 +21,10 @@
 			<Layout::Helm::Menu::Item @link="docs.introduction" @text="Introduction" selected={{begs-with (route-name) "docs.introduction"}} />
 			<subs>
 				<Layout::Helm::Menu::Item @link="docs.introduction.index" @text="Overview" selected={{begs-with (route-name) "docs.introduction.index"}} />
-				<Layout::Helm::Menu::Item @link="docs.introduction.start" @text="Quick start" selected={{begs-with (route-name) "docs.introduction.start"}} />
+				<Layout::Helm::Menu::Item @link="docs.introduction.start" @text="Getting started" selected={{begs-with (route-name) "docs.introduction.start"}} />
 				<Layout::Helm::Menu::Item @link="docs.introduction.concepts" @text="Concepts" selected={{begs-with (route-name) "docs.introduction.concepts"}} />
 				<Layout::Helm::Menu::Item @link="docs.introduction.features" @text="Features" selected={{begs-with (route-name) "docs.introduction.features"}} />
 				<Layout::Helm::Menu::Item @link="docs.introduction.releases" @text="Releases" selected={{begs-with (route-name) "docs.introduction.releases"}} />
-				<Layout::Helm::Menu::Item @link="docs.introduction.questions" @text="Questions" selected={{begs-with (route-name) "docs.introduction.questions"}} />
 				<Layout::Helm::Menu::Item @link="docs.introduction.architecture" @text="Architecture" selected={{begs-with (route-name) "docs.introduction.architecture"}} />
 			</subs>
 
@@ -49,6 +48,155 @@
 				<Layout::Helm::Menu::Item @link="docs.authentication.root" @text="Server-side" selected={{begs-with (route-name) "docs.authentication.root"}} />
 				<Layout::Helm::Menu::Item @link="docs.authentication.root" @text="Client-side" selected={{begs-with (route-name) "docs.authentication.root"}} />
 			</subs> --}}
+
+<Layout::Helm::Menu::Item @link="docs.surrealql" @text="SurrealQL" selected={{begs-with (route-name) "docs.surrealql"
+	}} />
+<subs>
+
+	<Layout::Helm::Menu::Item @link="docs.surrealql.index" @text="Overview" selected={{begs-with
+		(route-name) "docs.surrealql.index" }} />
+
+	<Layout::Helm::Menu::Item @link="docs.surrealql.comments" @text="Comments" selected={{begs-with
+		(route-name) "docs.surrealql.comments" }} />
+
+	<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel" @text="Data model" selected={{begs-with
+		(route-name) "docs.surrealql.datamodel" }} />
+	<subs>
+		<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.index" @text="Overview" selected={{begs-with
+			(route-name) "docs.surrealql.datamodel.index" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.ids" @text="Record IDs" selected={{begs-with
+			(route-name) "docs.surrealql.datamodel.ids" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.simple" @text="Basic types" selected={{begs-with
+			(route-name) "docs.surrealql.datamodel.simple" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.strings" @text="Strings" selected={{begs-with
+			(route-name) "docs.surrealql.datamodel.strings" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.numbers" @text="Numbers" selected={{begs-with
+			(route-name) "docs.surrealql.datamodel.numbers" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.datetimes" @text="Datetimes" selected={{begs-with
+			(route-name) "docs.surrealql.datamodel.datetimes" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.geometries" @text="Geometries" selected={{begs-with
+			(route-name) "docs.surrealql.datamodel.geometries" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.records" @text="Record links" selected={{begs-with
+			(route-name) "docs.surrealql.datamodel.records" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.futures" @text="Futures" selected={{begs-with
+			(route-name) "docs.surrealql.datamodel.futures" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.casting" @text="Casting" selected={{begs-with
+			(route-name) "docs.surrealql.datamodel.casting" }} />
+	</subs>
+
+	<Layout::Helm::Menu::Item @link="docs.surrealql.statements" @text="Statements" selected={{begs-with
+		(route-name) "docs.surrealql.statements" }} />
+	<subs>
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.index" @text="Overview" selected={{begs-with
+			(route-name) "docs.surrealql.statements.index" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.use" @text="USE" selected={{begs-with
+			(route-name) "docs.surrealql.statements.use" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.let" @text="LET" selected={{begs-with
+			(route-name) "docs.surrealql.statements.let" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.begin" @text="BEGIN" selected={{begs-with
+			(route-name) "docs.surrealql.statements.begin" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.cancel" @text="CANCEL" selected={{begs-with
+			(route-name) "docs.surrealql.statements.cancel" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.commit" @text="COMMIT" selected={{begs-with
+			(route-name) "docs.surrealql.statements.commit" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.ifelse" @text="IF ELSE" selected={{begs-with
+			(route-name) "docs.surrealql.statements.ifelse" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.select" @text="SELECT" selected={{begs-with
+			(route-name) "docs.surrealql.statements.select" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.insert" @text="INSERT" selected={{begs-with
+			(route-name) "docs.surrealql.statements.insert" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.create" @text="CREATE" selected={{begs-with
+			(route-name) "docs.surrealql.statements.create" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.update" @text="UPDATE" selected={{begs-with
+			(route-name) "docs.surrealql.statements.update" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.relate" @text="RELATE" selected={{begs-with
+			(route-name) "docs.surrealql.statements.relate" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.delete" @text="DELETE" selected={{begs-with
+			(route-name) "docs.surrealql.statements.delete" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define" @text="DEFINE" selected={{begs-with
+			(route-name) "docs.surrealql.statements.define" }} />
+		<subs>
+			<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.namespace" @text="DEFINE NAMESPACE"
+				selected={{begs-with (route-name) "docs.surrealql.statements.define.namespace" }} />
+			<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.database" @text="DEFINE DATABASE"
+				selected={{begs-with (route-name) "docs.surrealql.statements.define.database" }} />
+			<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.login" @text="DEFINE LOGIN"
+				selected={{begs-with (route-name) "docs.surrealql.statements.define.login" }} />
+			<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.token" @text="DEFINE TOKEN"
+				selected={{begs-with (route-name) "docs.surrealql.statements.define.token" }} />
+			<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.scope" @text="DEFINE SCOPE"
+				selected={{begs-with (route-name) "docs.surrealql.statements.define.scope" }} />
+			<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.table" @text="DEFINE TABLE"
+				selected={{begs-with (route-name) "docs.surrealql.statements.define.table" }} />
+			<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.event" @text="DEFINE EVENT"
+				selected={{begs-with (route-name) "docs.surrealql.statements.define.event" }} />
+			<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.function" @text="DEFINE FUNCTION"
+				selected={{begs-with (route-name) "docs.surrealql.statements.define.function" }} />
+			<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.field" @text="DEFINE FIELD"
+				selected={{begs-with (route-name) "docs.surrealql.statements.define.field" }} />
+			<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.indexes" @text="DEFINE INDEX"
+				selected={{begs-with (route-name) "docs.surrealql.statements.define.indexes" }} />
+			<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.param" @text="DEFINE PARAM"
+				selected={{begs-with (route-name) "docs.surrealql.statements.define.param" }} />
+		</subs>
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.remove" @text="REMOVE" selected={{begs-with
+			(route-name) "docs.surrealql.statements.remove" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.info" @text="INFO" selected={{begs-with
+			(route-name) "docs.surrealql.statements.info" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.statements.sleep" @text="SLEEP" selected={{begs-with
+			(route-name) "docs.surrealql.statements.sleep" }} />
+	</subs>
+
+	<Layout::Helm::Menu::Item @link="docs.surrealql.operators" @text="Operators" selected={{begs-with
+		(route-name) "docs.surrealql.operators" }} />
+	<Layout::Helm::Menu::Item @link="docs.surrealql.parameters" @text="Parameters" selected={{begs-with
+		(route-name) "docs.surrealql.parameters" }} />
+	{{!--
+	<Layout::Helm::Menu::Item @link="docs.surrealql.expressions" @text="Expressions" selected={{begs-with
+		(route-name) "docs.surrealql.expressions" }} /> --}}
+	<Layout::Helm::Menu::Item @link="docs.surrealql.transactions" @text="Transactions" selected={{begs-with
+		(route-name) "docs.surrealql.transactions" }} />
+
+	<Layout::Helm::Menu::Item @link="docs.surrealql.functions" @text="Functions" selected={{begs-with
+		(route-name) "docs.surrealql.functions" }} />
+	<subs>
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.index" @text="Overview" selected={{begs-with
+			(route-name) "docs.surrealql.functions.index" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.array" @text="Array functions" selected={{begs-with
+			(route-name) "docs.surrealql.functions.array" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.count" @text="Count function" selected={{begs-with
+			(route-name) "docs.surrealql.functions.count" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.crypto" @text="Crypto functions" selected={{begs-with
+			(route-name) "docs.surrealql.functions.crypto" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.geo" @text="Geo functions" selected={{begs-with
+			(route-name) "docs.surrealql.functions.geo" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.http" @text="HTTP functions" selected={{begs-with
+			(route-name) "docs.surrealql.functions.http" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.validation" @text="Validation functions"
+			selected={{begs-with (route-name) "docs.surrealql.functions.validation" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.math" @text="Math functions" selected={{begs-with
+			(route-name) "docs.surrealql.functions.math" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.meta" @text="Meta functions" selected={{begs-with
+			(route-name) "docs.surrealql.functions.meta" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.parse" @text="Parse functions" selected={{begs-with
+			(route-name) "docs.surrealql.functions.parse" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.rand" @text="Rand functions" selected={{begs-with
+			(route-name) "docs.surrealql.functions.rand" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.session" @text="Session functions"
+			selected={{begs-with (route-name) "docs.surrealql.functions.session" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.sleep" @text="Sleep function" selected={{begs-with
+			(route-name) "docs.surrealql.functions.sleep" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.string" @text="String functions" selected={{begs-with
+			(route-name) "docs.surrealql.functions.string" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.time" @text="Time functions" selected={{begs-with
+			(route-name) "docs.surrealql.functions.time" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.type" @text="Type functions" selected={{begs-with
+			(route-name) "docs.surrealql.functions.type" }} />
+		<Layout::Helm::Menu::Item @link="docs.surrealql.functions.script" @text="Scripting functions"
+			selected={{begs-with (route-name) "docs.surrealql.functions.script" }} />
+	</subs>
+
+</subs>
 
 			<Layout::Helm::Menu::Item @link="docs.deployment" @text="Deployment" selected={{begs-with (route-name) "docs.deployment"}} />
 			<subs>
@@ -75,89 +223,6 @@
 				<Layout::Helm::Menu::Item @link="docs.integration.libraries" @text="Libraries" selected={{begs-with (route-name) "docs.integration.libraries"}} />
 				<Layout::Helm::Menu::Item @link="docs.integration.http" @text="HTTP & Rest" selected={{begs-with (route-name) "docs.integration.http"}} />
 				<Layout::Helm::Menu::Item @link="docs.integration.websockets" @text="Websockets" selected={{begs-with (route-name) "docs.integration.websockets"}} />
-			</subs>
-
-			<Layout::Helm::Menu::Item @link="docs.surrealql" @text="SurrealQL" selected={{begs-with (route-name) "docs.surrealql"}} />
-			<subs>
-
-				<Layout::Helm::Menu::Item @link="docs.surrealql.index" @text="Overview" selected={{begs-with (route-name) "docs.surrealql.index"}} />
-
-				<Layout::Helm::Menu::Item @link="docs.surrealql.comments" @text="Comments" selected={{begs-with (route-name) "docs.surrealql.comments"}} />
-
-				<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel" @text="Data model" selected={{begs-with (route-name) "docs.surrealql.datamodel"}} />
-				<subs>
-					<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.index" @text="Overview" selected={{begs-with (route-name) "docs.surrealql.datamodel.index"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.ids" @text="Record IDs" selected={{begs-with (route-name) "docs.surrealql.datamodel.ids"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.simple" @text="Basic types" selected={{begs-with (route-name) "docs.surrealql.datamodel.simple"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.strings" @text="Strings" selected={{begs-with (route-name) "docs.surrealql.datamodel.strings"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.numbers" @text="Numbers" selected={{begs-with (route-name) "docs.surrealql.datamodel.numbers"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.datetimes" @text="Datetimes" selected={{begs-with (route-name) "docs.surrealql.datamodel.datetimes"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.geometries" @text="Geometries" selected={{begs-with (route-name) "docs.surrealql.datamodel.geometries"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.records" @text="Record links" selected={{begs-with (route-name) "docs.surrealql.datamodel.records"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.futures" @text="Futures" selected={{begs-with (route-name) "docs.surrealql.datamodel.futures"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.datamodel.casting" @text="Casting" selected={{begs-with (route-name) "docs.surrealql.datamodel.casting"}} />
-				</subs>
-
-				<Layout::Helm::Menu::Item @link="docs.surrealql.statements" @text="Statements" selected={{begs-with (route-name) "docs.surrealql.statements"}} />
-				<subs>
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.index" @text="Overview" selected={{begs-with (route-name) "docs.surrealql.statements.index"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.use" @text="USE" selected={{begs-with (route-name) "docs.surrealql.statements.use"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.let" @text="LET" selected={{begs-with (route-name) "docs.surrealql.statements.let"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.begin" @text="BEGIN" selected={{begs-with (route-name) "docs.surrealql.statements.begin"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.cancel" @text="CANCEL" selected={{begs-with (route-name) "docs.surrealql.statements.cancel"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.commit" @text="COMMIT" selected={{begs-with (route-name) "docs.surrealql.statements.commit"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.ifelse" @text="IF ELSE" selected={{begs-with (route-name) "docs.surrealql.statements.ifelse"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.select" @text="SELECT" selected={{begs-with (route-name) "docs.surrealql.statements.select"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.insert" @text="INSERT" selected={{begs-with (route-name) "docs.surrealql.statements.insert"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.create" @text="CREATE" selected={{begs-with (route-name) "docs.surrealql.statements.create"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.update" @text="UPDATE" selected={{begs-with (route-name) "docs.surrealql.statements.update"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.relate" @text="RELATE" selected={{begs-with (route-name) "docs.surrealql.statements.relate"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.delete" @text="DELETE" selected={{begs-with (route-name) "docs.surrealql.statements.delete"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define" @text="DEFINE" selected={{begs-with (route-name) "docs.surrealql.statements.define"}} />
-					<subs>
-						<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.namespace" @text="DEFINE NAMESPACE" selected={{begs-with (route-name) "docs.surrealql.statements.define.namespace"}} />
-						<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.database" @text="DEFINE DATABASE" selected={{begs-with (route-name) "docs.surrealql.statements.define.database"}} />
-						<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.login" @text="DEFINE LOGIN" selected={{begs-with (route-name) "docs.surrealql.statements.define.login"}} />
-						<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.token" @text="DEFINE TOKEN" selected={{begs-with (route-name) "docs.surrealql.statements.define.token"}} />
-						<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.scope" @text="DEFINE SCOPE" selected={{begs-with (route-name) "docs.surrealql.statements.define.scope"}} />
-						<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.table" @text="DEFINE TABLE" selected={{begs-with (route-name) "docs.surrealql.statements.define.table"}} />
-						<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.event" @text="DEFINE EVENT" selected={{begs-with (route-name) "docs.surrealql.statements.define.event"}} />
-						<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.function" @text="DEFINE FUNCTION" selected={{begs-with (route-name) "docs.surrealql.statements.define.function"}} />
-						<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.field" @text="DEFINE FIELD" selected={{begs-with (route-name) "docs.surrealql.statements.define.field"}} />
-						<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.indexes" @text="DEFINE INDEX" selected={{begs-with (route-name) "docs.surrealql.statements.define.indexes"}} />
-						<Layout::Helm::Menu::Item @link="docs.surrealql.statements.define.param" @text="DEFINE PARAM" selected={{begs-with (route-name) "docs.surrealql.statements.define.param"}} />
-					</subs>
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.remove" @text="REMOVE" selected={{begs-with (route-name) "docs.surrealql.statements.remove"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.info" @text="INFO" selected={{begs-with (route-name) "docs.surrealql.statements.info"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.statements.sleep" @text="SLEEP" selected={{begs-with (route-name) "docs.surrealql.statements.sleep"}} />
-				</subs>
-
-				<Layout::Helm::Menu::Item @link="docs.surrealql.operators" @text="Operators" selected={{begs-with (route-name) "docs.surrealql.operators"}} />
-				<Layout::Helm::Menu::Item @link="docs.surrealql.parameters" @text="Parameters" selected={{begs-with (route-name) "docs.surrealql.parameters"}} />
-				{{!-- <Layout::Helm::Menu::Item @link="docs.surrealql.expressions" @text="Expressions" selected={{begs-with (route-name) "docs.surrealql.expressions"}} /> --}}
-				<Layout::Helm::Menu::Item @link="docs.surrealql.transactions" @text="Transactions" selected={{begs-with (route-name) "docs.surrealql.transactions"}} />
-
-				<Layout::Helm::Menu::Item @link="docs.surrealql.functions" @text="Functions" selected={{begs-with (route-name) "docs.surrealql.functions"}} />
-				<subs>
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.index" @text="Overview" selected={{begs-with (route-name) "docs.surrealql.functions.index"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.array" @text="Array functions" selected={{begs-with (route-name) "docs.surrealql.functions.array"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.count" @text="Count function" selected={{begs-with (route-name) "docs.surrealql.functions.count"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.crypto" @text="Crypto functions" selected={{begs-with (route-name) "docs.surrealql.functions.crypto"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.geo" @text="Geo functions" selected={{begs-with (route-name) "docs.surrealql.functions.geo"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.http" @text="HTTP functions" selected={{begs-with (route-name) "docs.surrealql.functions.http"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.validation" @text="Validation functions" selected={{begs-with (route-name) "docs.surrealql.functions.validation"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.math" @text="Math functions" selected={{begs-with (route-name) "docs.surrealql.functions.math"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.meta" @text="Meta functions" selected={{begs-with (route-name) "docs.surrealql.functions.meta"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.parse" @text="Parse functions" selected={{begs-with (route-name) "docs.surrealql.functions.parse"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.rand" @text="Rand functions" selected={{begs-with (route-name) "docs.surrealql.functions.rand"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.session" @text="Session functions" selected={{begs-with (route-name) "docs.surrealql.functions.session"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.sleep" @text="Sleep function" selected={{begs-with (route-name) "docs.surrealql.functions.sleep"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.string" @text="String functions" selected={{begs-with (route-name) "docs.surrealql.functions.string"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.time" @text="Time functions" selected={{begs-with (route-name) "docs.surrealql.functions.time"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.type" @text="Type functions" selected={{begs-with (route-name) "docs.surrealql.functions.type"}} />
-					<Layout::Helm::Menu::Item @link="docs.surrealql.functions.script" @text="Scripting functions" selected={{begs-with (route-name) "docs.surrealql.functions.script"}} />
-			</subs>
-
 			</subs>
 
 			<Layout::Helm::Menu::Item @link="docs.cli" @text="CLI tool" selected={{begs-with (route-name) "docs.cli"}} />
