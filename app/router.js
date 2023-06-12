@@ -37,6 +37,7 @@ Router.map(function () {
 		this.route('privacy');
 		this.route('cookies');
 		this.route('security');
+		this.route('giveaway');
 	});
 
 	this.route('usecase', function () {
