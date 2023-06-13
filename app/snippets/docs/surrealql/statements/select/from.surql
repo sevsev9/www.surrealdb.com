@@ -1,10 +1,19 @@
 -- This command selects all records from both 'user' and 'admin' tables.
 SELECT * FROM user, admin;
 
--- This command selects all records from the table named in the variable '$parameter',
+-- This command selects all records from the table named in the variable '$table',
 -- but only if the 'admin' field of those records is true.
-LET $parameter = "user";
-SELECT * FROM type::table($parameter)WHERE admin = true;
+-- This query is equivalent to 'SELECT * FROM user WHERE admin = true'.
+LET $table = "user";
+SELECT * FROM type::table($table) WHERE admin = true;
+
+-- This command selects a single record from:
+-- * the table named in the variable '$table',
+-- * and the identifier named in the variable '$id'.
+-- This query is equivalent to 'SELECT * FROM user:admin'.
+LET $table = "user";
+LET $id = "admin";
+SELECT * FROM type::thing($table, $id);
 
 -- This command selects all records for specific users 'tobie' and 'jaime', as well as all records for the company 'surrealdb'.
 SELECT * FROM user:tobie, user:jaime, company:surrealdb;
