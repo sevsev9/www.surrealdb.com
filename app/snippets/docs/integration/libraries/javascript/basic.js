@@ -1,25 +1,24 @@
-import Surreal from 'surrealdb.js';
+import { Surreal } from 'surrealdb.js';
 
-const db = new Surreal('http://127.0.0.1:8000/rpc');
+const db = new Surreal('http://127.0.0.1:8000/rpc', {
+	// Set the namespace and database for the connection
+	ns: 'test',
+	db: 'test',
+
+	// Set the authentication details for the connection
+	auth: {
+		NS: 'test',
+		DB: 'test',
+		SC: 'user',
+		user: 'info@surrealdb.com',
+		pass: 'my-secret-password',
+	},
+});
 
 async function main() {
-
 	try {
-
-		// Signin to a scope from the browser
-		await db.signin({
-			NS: 'test',
-			DB: 'test',
-			SC: 'user',
-			user: 'info@surrealdb.com',
-			pass: 'my-secret-password',
-		});
-
-		// Select a specific namespace / database
-		await db.use('test', 'test');
-
 		// Create a new person with a random id
-		let created = await db.create("person", {
+		const created = await db.create('person', {
 			title: 'Founder & CEO',
 			name: {
 				first: 'Tobie',
@@ -30,24 +29,23 @@ async function main() {
 		});
 
 		// Update a person record with a specific id
-		let updated = await db.change("person:jaime", {
+		const updated = await db.merge('person:jaime', {
 			marketing: true,
 		});
 
 		// Select all people records
-		let people = await db.select("person");
+		const people = await db.select('person');
 
 		// Perform a custom advanced query
-		let groups = await db.query('SELECT marketing, count() FROM type::table($tb) GROUP BY marketing', {
-			tb: 'person',
-		});
-
+		const groups = await db.query(
+			'SELECT marketing, count() FROM type::table($tb) GROUP BY marketing',
+			{
+				tb: 'person',
+			}
+		);
 	} catch (e) {
-
 		console.error('ERROR', e);
-
 	}
-
 }
 
 main();

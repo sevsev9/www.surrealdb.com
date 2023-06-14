@@ -20,9 +20,10 @@
 	<Code @name="docs-integration-libraries-javascript-install-npm.bash">
 		npm install --save surrealdb.js
 	</Code>
-	<p>Alternatively, you can use install the SurrealDB library using <code>yarn</code>:</p>
+	<p>Alternatively, you can use install the SurrealDB library using <code>yarn</code>, <code>pnpm</code> or similar:</p>
 	<Code @name="docs-integration-libraries-javascript-install-yarn.bash">
 		yarn add surrealdb.js
+		pnpm install surrealdb.js
 	</Code>
 </Layout::Text>
 
@@ -58,17 +59,17 @@
 		<tbody>
 			<tr>
 				<td>
-					<a href="#Instance">
-						<Ascua::Prism::Inline @language="js" @code="Surreal.Instance" />
+					<a href="#constructor">
+						<Ascua::Prism::Inline @language="ts" @code="Surreal(url, options)" />
 					</a>
-					<l faint r>static</l>
+					<l faint r>constructor</l>
 				</td>
-				<td>Connects to a specific database endpoint</td>
+				<td>Connects to a local or remote database endpoint</td>
 			</tr>
 			<tr>
 				<td>
 					<a href="#connect">
-						<Ascua::Prism::Inline @language="js" @code="db.connect(url)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.connect(url, options)" />
 					</a>
 				</td>
 				<td>Connects to a local or remote database endpoint</td>
@@ -76,7 +77,7 @@
 			<tr>
 				<td>
 					<a href="#wait">
-						<Ascua::Prism::Inline @language="js" @code="db.wait()" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.wait()" />
 					</a>
 				</td>
 				<td>Waits for the connection to the database to succeed</td>
@@ -84,7 +85,7 @@
 			<tr>
 				<td>
 					<a href="#close">
-						<Ascua::Prism::Inline @language="js" @code="db.close()" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.close()" />
 					</a>
 				</td>
 				<td>Closes the persistent connection to the database</td>
@@ -92,7 +93,7 @@
 			<tr>
 				<td>
 					<a href="#use">
-						<Ascua::Prism::Inline @language="js" @code="db.use(ns, db)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.use({ ns, db })" />
 					</a>
 				</td>
 				<td>Switch to a specific namespace and database</td>
@@ -100,7 +101,7 @@
 			<tr>
 				<td>
 					<a href="#signup">
-						<Ascua::Prism::Inline @language="js" @code="db.signup(vars)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.signup(vars)" />
 					</a>
 				</td>
 				<td>Signs this connection up to a specific authentication scope</td>
@@ -108,7 +109,7 @@
 			<tr>
 				<td>
 					<a href="#signin">
-						<Ascua::Prism::Inline @language="js" @code="db.signin(vars)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.signin(vars)" />
 					</a>
 				</td>
 				<td>Signs this connection in to a specific authentication scope</td>
@@ -116,7 +117,7 @@
 			<tr>
 				<td>
 					<a href="#invalidate">
-						<Ascua::Prism::Inline @language="js" @code="db.invalidate()" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.invalidate()" />
 					</a>
 				</td>
 				<td>Invalidates the authentication for the current connection</td>
@@ -124,7 +125,7 @@
 			<tr>
 				<td>
 					<a href="#authenticate">
-						<Ascua::Prism::Inline @language="js" @code="db.authenticate(token)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.authenticate(token)" />
 					</a>
 				</td>
 				<td>Authenticates the current connection with a JWT token</td>
@@ -132,15 +133,23 @@
 			<tr>
 				<td>
 					<a href="#let">
-						<Ascua::Prism::Inline @language="js" @code="db.let(key, val)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.let(key, val)" />
 					</a>
 				</td>
 				<td>Assigns a value as a parameter for this connection</td>
 			</tr>
 			<tr>
 				<td>
+					<a href="#unset">
+						<Ascua::Prism::Inline @language="ts" @code="async db.unset(key)" />
+					</a>
+				</td>
+				<td>Removes a parameter for this connection</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#query">
-						<Ascua::Prism::Inline @language="js" @code="db.query(sql, vars)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.query<T>(sql, vars)" />
 					</a>
 				</td>
 				<td>Runs a set of SurrealQL statements against the database</td>
@@ -148,7 +157,7 @@
 			<tr>
 				<td>
 					<a href="#select">
-						<Ascua::Prism::Inline @language="js" @code="db.select(thing)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.select<T>(thing)" />
 					</a>
 				</td>
 				<td>Selects all records in a table, or a specific record</td>
@@ -156,7 +165,7 @@
 			<tr>
 				<td>
 					<a href="#create">
-						<Ascua::Prism::Inline @language="js" @code="db.create(thing, data)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.create<T>(thing, data)" />
 					</a>
 				</td>
 				<td>Creates a record in the database</td>
@@ -164,23 +173,23 @@
 			<tr>
 				<td>
 					<a href="#update">
-						<Ascua::Prism::Inline @language="js" @code="db.update(thing, data)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.update<T>(thing, data)" />
 					</a>
 				</td>
 				<td>Updates all records in a table, or a specific record</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#change">
-						<Ascua::Prism::Inline @language="js" @code="db.change(thing, data)" />
+					<a href="#merge">
+						<Ascua::Prism::Inline @language="ts" @code="async db.merge<T>(thing, data)" />
 					</a>
 				</td>
 				<td>Modifies all records in a table, or a specific record</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#modify">
-						<Ascua::Prism::Inline @language="js" @code="db.modify(thing, data)" />
+					<a href="#patch">
+						<Ascua::Prism::Inline @language="ts" @code="async db.patch<T>(thing, data)" />
 					</a>
 				</td>
 				<td>Applies <Link @link="https://jsonpatch.com">JSON Patch</Link> changes to all records in a table, or a specific record</td>
@@ -188,7 +197,7 @@
 			<tr>
 				<td>
 					<a href="#delete">
-						<Ascua::Prism::Inline @language="js" @code="db.delete(thing)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.delete<T>(thing)" />
 					</a>
 				</td>
 				<td>Deletes all records, or a specific record</td>
@@ -199,32 +208,11 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "Instance"}}>
+<Layout::Group {{waypoint "constructor"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="Surreal.Instance" /></h3>
-		<p>The <code>Instance</code> static singleton ensures that a single database instance is available across very large or complicated applications. With the singleton, only one connection to the database is instantiated, and the database connection does not have to be shared across components or controllers.</p>
-		<Code @name="docs-integration-libraries-javascript-instance.js">
-			const Surreal = require('surrealdb.js');
-
-			async function main() {
-				try {
-					// Connect to the database
-					await Surreal.Instance.connect('https://cloud.surrealdb.com/rpc');
-					// Select a namespace + database
-					await Surreal.Instance.use("test", "test");
-					// Create or update a specific record
-					await Surreal.Instance.update("person:tobie", {
-						name: 'Tobie',
-					});
-				} catch (e) {
-					console.error('ERROR', e);
-				}
-			}
-
-			main();
-
-		</Code>
+		<h3><Ascua::Prism::Inline @language="ts" @code="Surreal(url, options)" /></h3>
+		<p>The <code>constructor</code> function passes on it's arguments to the <a href="#connect"><Ascua::Prism::Inline @language="ts" @code="async db.connect(url, options)" /></a> function.</p>
 	</Layout::Text>
 
 </Layout::Group>
@@ -234,7 +222,7 @@
 <Layout::Group {{waypoint "connect"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.connect(url)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.connect(url, options)" /></h3>
 		<p>Connects to a local or remote database endpoint.</p>
 		<Layout::Table>
 			<table>
@@ -248,10 +236,17 @@
 					<tr>
 						<td>
 							<code>url</code>
-							<l yellow r>Required</l>
 						</td>
 						<td>
 							The url of the database endpoint to connect to.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>options</code>
+						</td>
+						<td>
+							An object with options to initiate the connection to SurrealDB.
 						</td>
 					</tr>
 				</tbody>
@@ -260,8 +255,43 @@
 		<Code @name="docs-integration-libraries-javascript-connect.js">
 			// Connect to a local endpoint
 			await db.connect('http://127.0.0.1:8000/rpc');
+
 			// Connect to a remote endpoint
 			await db.connect('https://cloud.surrealdb.com/rpc');
+
+			// Specify a namespace and database pair to use
+			await db.connect('https://cloud.surrealdb.com/rpc', {
+				ns: 'surrealdb',
+				db: 'docs',
+			});
+
+			// Authenticate with an existing token
+			// The .authenticate() function is used under the hood.
+			await db.connect('https://cloud.surrealdb.com/rpc', {
+				auth: '.....',
+			});
+
+			// Authenticate using a pair of credentials
+			await db.connect('https://cloud.surrealdb.com/rpc', {
+				auth: {
+					user: 'root',
+					pass: 'surrealdb',
+				},
+			});
+
+			// Use advanced custom logic to prepare the connection to the database
+			await db.connect('https://cloud.surrealdb.com/rpc', {
+				prepare: async (db) => {
+					await db.use({ ns: 'surrealdb', db: 'docs' });
+
+					const token = await retrieveToken();
+					if (token) await db.authenticate(token);
+
+					// Any queries executed before the .prepare() function finishes will be forced to wait
+					// Please note that this is also the case for queries executed within the prepare function
+					// Doing so can cause the connection to stay in a initializing state
+				},
+			});
 		</Code>
 	</Layout::Text>
 
@@ -272,7 +302,7 @@
 <Layout::Group {{waypoint "wait"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.wait()" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.wait()" /></h3>
 		<p>Waits for the connection to the database to succeed.</p>
 		<Code @name="docs-integration-libraries-javascript-wait.js">
 			await db.wait();
@@ -286,10 +316,10 @@
 <Layout::Group {{waypoint "close"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.close()" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.close()" /></h3>
 		<p>Closes the persistent connection to the database.</p>
 		<Code @name="docs-integration-libraries-javascript-close.js">
-			db.close();
+			await db.close();
 		</Code>
 	</Layout::Text>
 
@@ -300,13 +330,13 @@
 <Layout::Group {{waypoint "use"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.use(ns, db)" /></h3>
-		<p>Switch to a specific namespace and database.</p>
+		<h3><Ascua::Prism::Inline @language="ts" @code="db.use({ ns, db })" /></h3>
+		<p>Switch to a specific namespace and database. If only the <code>ns</code> or <code>db</code> property is specified, the current connection details will be used to fill the other property.</p>
 		<Layout::Table>
 			<table>
 				<thead>
 					<tr>
-						<th w-40>Arguments</th>
+						<th w-40>Properties</th>
 						<th w-60>Description</th>
 					</tr>
 				</thead>
@@ -314,7 +344,7 @@
 					<tr>
 						<td>
 							<code>ns</code>
-							<l yellow r>Required</l>
+							<l yellow r>Initially required</l>
 						</td>
 						<td>
 							Switches to a specific namespace.
@@ -323,7 +353,7 @@
 					<tr>
 						<td>
 							<code>db</code>
-							<l yellow r>Required</l>
+							<l yellow r>Initially required</l>
 						</td>
 						<td>
 							Switches to a specific database.
@@ -333,7 +363,7 @@
 			</table>
 		</Layout::Table>
 		<Code @name="docs-integration-libraries-javascript-use.js">
-			await db.use('test', 'test');
+			await db.use({ ns: 'surrealdb', db: 'docs' });
 		</Code>
 	</Layout::Text>
 
@@ -344,34 +374,54 @@
 <Layout::Group {{waypoint "signup"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.signup(vars)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.signup({ NS, DB, SC, [...] })" /></h3>
 		<p>Signs up to a specific authentication scope.</p>
 		<Layout::Table>
 			<table>
 				<thead>
 					<tr>
-						<th w-40>Arguments</th>
+						<th w-40>Properties</th>
 						<th w-60>Description</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>
-							<code>vars</code>
+							<code>NS</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							Variables used in a signup query.
+							The namespace to sign up to
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>DB</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The database to sign up to
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>SC</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The scope to sign up to. Also pass any variables used in the scope
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</Layout::Table>
 		<Code @name="docs-integration-libraries-javascript-signup.js">
-			let token = await db.signup({
-				NS: 'test',
-				DB: 'test',
+			const token = await db.signup({
+				NS: 'surrealdb',
+				DB: 'docs',
 				SC: 'user',
+
+				// Also pass any properties required by the scope definition
 				email: 'info@surrealdb.com',
 				pass: '123456',
 			});
@@ -385,34 +435,93 @@
 <Layout::Group {{waypoint "signin"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.signin(vars)" /></h3>
-		<p>Signs in to a specific authentication scope.</p>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.signin({ ... })" /></h3>
+		<p>Signs in to a root, namespace, database or scope user.</p>
 		<Layout::Table>
 			<table>
 				<thead>
 					<tr>
-						<th w-40>Arguments</th>
+						<th w-40>Properties</th>
 						<th w-60>Description</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>
-							<code>vars</code>
-							<l yellow r>Required</l>
+							<code>user</code>
+							<l yellow r>Required for root, NS & DB</l>
 						</td>
 						<td>
-							Variables used in a signin query.
+							The username of the database user
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>pass</code>
+							<l yellow r>Required for root, NS & DB</l>
+						</td>
+						<td>
+							The password of the database user
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>NS</code>
+							<l yellow r>Required for DB & SC</l>
+						</td>
+						<td>
+							The namespace to sign in to
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>DB</code>
+							<l yellow r>Required for SC</l>
+						</td>
+						<td>
+							The database to sign in to
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>SC</code>
+						</td>
+						<td>
+							The scope to sign in to. Also pass any variables used in the scope
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</Layout::Table>
 		<Code @name="docs-integration-libraries-javascript-signin.js">
-			let token = await db.signin({
-				NS: 'test',
-				DB: 'test',
+			// Authenticate with a root user
+			const token = await db.signin({
+				user: 'root',
+				pass: 'surrealdb',
+			});
+
+			// Authenticate with a Namespace user
+			const token = await db.signin({
+				NS: 'surrealdb',
+				user: 'tobie',
+				pass: 'surrealdb',
+			});
+
+			// Authenticate with a Database user
+			const token = await db.signin({
+				NS: 'surrealdb',
+				DB: 'docs',
+				user: 'tobie',
+				pass: 'surrealdb',
+			});
+
+			// Authenticate with a Scope user
+			const token = await db.signin({
+				NS: 'surrealdb',
+				DB: 'docs',
 				SC: 'user',
+
+				// Also pass any properties required by the scope definition
 				email: 'info@surrealdb.com',
 				pass: '123456',
 			});
@@ -426,7 +535,7 @@
 <Layout::Group {{waypoint "invalidate"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.invalidate()" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.invalidate()" /></h3>
 		<p>Invalidates the authentication for the current connection.</p>
 		<Code @name="docs-integration-libraries-javascript-invalidate.js">
 			await db.invalidate();
@@ -440,7 +549,7 @@
 <Layout::Group {{waypoint "authenticate"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.authenticate(token)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.authenticate(token)" /></h3>
 		<p>Authenticates the current connection with a JWT token.</p>
 		<Layout::Table>
 			<table>
@@ -475,7 +584,7 @@
 <Layout::Group {{waypoint "let"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.let(key, val)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.let(key, val)" /></h3>
 		<p>Assigns a value as a parameter for this connection.</p>
 		<Layout::Table>
 			<table>
@@ -513,10 +622,48 @@
 				first: 'Tobie',
 				last: 'Morgan Hitchcock',
 			});
+
 			// Use the variable in a subsequent query
 			await db.query('CREATE person SET name = $name');
+
 			// Use the variable in a subsequent query
 			await db.query('SELECT * FROM person WHERE name.first = $name.first');
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "unset"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.unset(key)" /></h3>
+		<p>Removes a parameter for this connection.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>key</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Specifies the name of the variable.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs-integration-libraries-javascript-unset.js">
+			// Remove the variable from the connection
+			await db.unset('name');
 		</Code>
 	</Layout::Text>
 
@@ -527,7 +674,7 @@
 <Layout::Group {{waypoint "query"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.query(sql, vars)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.query<T>(query, vars)" /></h3>
 		<p>Runs a set of SurrealQL statements against the database.</p>
 		<Layout::Table>
 			<table>
@@ -540,7 +687,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<code>sql</code>
+							<code>query</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
@@ -559,16 +706,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-javascript-query.js">
-			// Assign the variable on the connection
-			let result = await db.query('CREATE person; SELECT * FROM type::table($tb);', {
-				tb: 'person',
-			});
-			// Get the first result from the first query
-			let created = result[0].result[0];
-			// Get all of the results from the second query
-			let people = result[1].result;
-		</Code>
+		<Code @name="docs/integration/libraries/javascript/query.ts" @language="ts" />
 	</Layout::Text>
 
 </Layout::Group>
@@ -578,7 +716,7 @@
 <Layout::Group {{waypoint "select"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.select(thing)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.select<T>(thing)" /></h3>
 		<p>Selects all records in a table, or a specific record, from the database.</p>
 		<Layout::Table>
 			<table>
@@ -601,12 +739,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-javascript-select.js">
-			// Select all records from a table
-			let people = await db.select('person');
-			// Select a specific record from a table
-			let person = await db.select('person:h5wxrf2ewk8xjxosxtyc');
-		</Code>
+		<Code @name="docs/integration/libraries/javascript/select.ts" @language="ts" />
 		<p>This function will run the following query in the database:</p>
 		<Code @name="docs-integration-libraries-javascript-select-func.surql">
 			SELECT * FROM $thing;
@@ -620,7 +753,7 @@
 <Layout::Group {{waypoint "create"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.create(thing, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.create<T>(thing, data)" /></h3>
 		<p>Creates a record in the database.</p>
 		<Layout::Table>
 			<table>
@@ -652,18 +785,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-javascript-create.js">
-			// Create a record with a random ID
-			let person = await db.create('person');
-			// Create a record with a specific ID
-			let record = await db.create('person:tobie', {
-				name: 'Tobie',
-				settings: {
-					active: true,
-					marketing: true,
-				},
-			});
-		</Code>
+		<Code @name="docs/integration/libraries/javascript/create.ts" @language="ts" />
 		<p>This function will run the following query in the database:</p>
 		<Code @name="docs-integration-libraries-javascript-create-func.surql">
 			CREATE $thing CONTENT $data;
@@ -677,7 +799,7 @@
 <Layout::Group {{waypoint "update"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.update(thing, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.update<T>(thing, data)" /></h3>
 		<p>Updates all records in a table, or a specific record, in the database.</p>
 		<blockquote yellow text="Note">This function replaces the current document / record data with the specified data.</blockquote>
 		<Layout::Table>
@@ -710,18 +832,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-javascript-update.js">
-			// Update all records in a table
-			let people = await db.update('person');
-			// Update a record with a specific ID
-			let person = await db.update('person:tobie', {
-				name: 'Tobie',
-				settings: {
-					active: true,
-					marketing: true,
-				},
-			});
-		</Code>
+		<Code @name="docs/integration/libraries/javascript/update.ts" @language="ts" />
 		<p>This function will run the following query in the database:</p>
 		<Code @name="docs-integration-libraries-javascript-update-func.surql">
 			UPDATE $thing CONTENT $data;
@@ -732,10 +843,10 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "change"}}>
+<Layout::Group {{waypoint "merge"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.change(thing, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.merge<T>(thing, data)" /></h3>
 		<p>Modifies all records in a table, or a specific record, in the database.</p>
 		<blockquote yellow text="Note">This function merges the current document / record data with the specified data.</blockquote>
 		<Layout::Table>
@@ -753,7 +864,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or the specific record ID to change
+							The table name or the specific record ID to merge
 						</td>
 					</tr>
 					<tr>
@@ -768,21 +879,9 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-javascript-change.js">
-			// Update all records in a table
-			let people = await db.change('person', {
-				updated_at: new Date(),
-			});
-			// Update a record with a specific ID
-			let person = await db.change('person:tobie', {
-				updated_at: new Date(),
-				settings: {
-					active: true,
-				},
-			});
-		</Code>
+		<Code @name="docs/integration/libraries/javascript/merge.ts" @language="ts" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-javascript-change-func.surql">
+		<Code @name="docs-integration-libraries-javascript-merge-func.surql">
 			UPDATE $thing MERGE $data;
 		</Code>
 	</Layout::Text>
@@ -791,10 +890,10 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "modify"}}>
+<Layout::Group {{waypoint "patch"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.modify(thing, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.patch<T>(thing, data)" /></h3>
 		<p>Applies <Link @link="https://jsonpatch.com">JSON Patch</Link> changes to all records, or a specific record, in the database.</p>
 		<blockquote yellow text="Note">This function patches the current document / record data with the specified <Link @link="https://jsonpatch.com">JSON Patch</Link> data.</blockquote>
 		<Layout::Table>
@@ -812,7 +911,7 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or the specific record ID to modify.
+							The table name or the specific record ID to patch.
 						</td>
 					</tr>
 					<tr>
@@ -821,26 +920,15 @@
 							<l faint r>Optional</l>
 						</td>
 						<td>
-							The <Link @link="https://jsonpatch.com">JSON Patch</Link> data with which to modify the records.
+							The <Link @link="https://jsonpatch.com">JSON Patch</Link> data with which to patch the records.
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-javascript-modify.js">
-			// Update all records in a table
-			let people = await db.modify('person', [
-				{ op: "replace", path: "/created_at", value: new Date() },
-			]);
-			// Update a record with a specific ID
-			let person = await db.modify('person:tobie', [
-				{ op: "replace", path: "/settings/active", value: false },
-				{ op: "add", "path": "/tags", "value": ["developer", "engineer"] },
-				{ op: "remove", "path": "/temp" },
-			]);
-		</Code>
+		<Code @name="docs/integration/libraries/javascript/patch.ts" @language="ts" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-javascript-modify-func.surql">
+		<Code @name="docs-integration-libraries-javascript-patch-func.surql">
 			UPDATE $thing PATCH $data;
 		</Code>
 	</Layout::Text>
@@ -852,7 +940,7 @@
 <Layout::Group {{waypoint "delete"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="js" @code="db.delete(thing)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.delete<T>(thing)" /></h3>
 		<p>Deletes all records in a table, or a specific record, from the database.</p>
 		<Layout::Table>
 			<table>
@@ -869,15 +957,16 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>
-							The table name or a record ID to select.
+							The table name or a record ID to delete.
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-javascript-delete.js">
+		<Code @name="docs-integration-libraries-javascript-delete.ts" @language="ts">
 			// Delete all records from a table
 			await db.delete('person');
+
 			// Delete a specific record from a table
 			await db.delete('person:h5wxrf2ewk8xjxosxtyc');
 		</Code>
