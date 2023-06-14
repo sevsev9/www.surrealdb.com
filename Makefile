@@ -35,7 +35,7 @@ tests:
 .PHONY: serve
 serve:
 	@echo "Serve..."
-	FASTBOOT_DISABLED=true npx ember serve
+	NODE_OPTIONS=--openssl-legacy-provider FASTBOOT_DISABLED=true npx ember serve
 
 .PHONY: build
 build:
