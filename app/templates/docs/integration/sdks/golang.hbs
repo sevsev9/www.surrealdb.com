@@ -1,24 +1,24 @@
 <Crumb>
 	<Crumb::Item @link="docs">Documentation</Crumb::Item>
 	<Crumb::Item @link="docs.integration">Integrations</Crumb::Item>
-	<Crumb::Item @link="docs.integration.libraries">Libraries</Crumb::Item>
-	<Crumb::Item @link="docs.integration.libraries.golang">Golang</Crumb::Item>
+	<Crumb::Item @link="docs.integration.sdks">SDKs</Crumb::Item>
+	<Crumb::Item @link="docs.integration.sdks.golang">Golang</Crumb::Item>
 </Crumb>
 
 <Layout::Text text-l text-f>
 	<h2>
 		<Devicon @size="50" @type="golang" />
-		Golang driver for <img inline src="/static/img/text.svg" alt="SurrealDB" />
+		Golang SDK for <img inline src="/static/img/text.svg" alt="SurrealDB" />
 	</h2>
 	<p>The SurrealDB library for Golang enables to use the SurrealDB database in your Golang applications.</p>
-	<p>For more information about the SurrealDB Go driver API, see the
+	<p>For more information about the SurrealDB Go SDK API, see the
 		<Link @link="https://pkg.go.dev/github.com/surrealdb/surrealdb.go">documentation</Link>.
 	</p>
 	<p>To contribute to this documentation,
 		<Link @link={{github}}>
 		edit this file on GitHub</Link>.
 	</p>
-	<p>To contribute to the driver code, <Link @link="https://github.com/surrealdb/surrealdb.go">submit an Issue or Pull Request here</Link>.</p>
+	<p>To contribute to the SDK code, <Link @link="https://github.com/surrealdb/surrealdb.go">submit an Issue or Pull Request here</Link>.</p>
 </Layout::Text>
 
 <Layout::Gap mini />
@@ -42,7 +42,7 @@
 <Layout::Text text-l text-f>
 	<h3>Connect to SurrealDB</h3>
 	<p>Create a new main.go file and add the following code to try out some basic operations using the SurrealDB
-		driver.</p>
+		SDK.</p>
 	<Code @name="docs/integration/libraries/golang/basic.go" />
 </Layout::Text>
 

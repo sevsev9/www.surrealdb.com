@@ -108,6 +108,9 @@ Router.map(function () {
 			this.route('http');
 			this.route('websockets');
 			this.route('libraries', function () {
+				this.route('platform', { path: '/:platform' });
+			});
+			this.route('sdks', function () {
 				this.route('angularjs');
 				this.route('apollo');
 				this.route('c');

@@ -1,28 +1,24 @@
 <Crumb>
 	<Crumb::Item @link="docs">Documentation</Crumb::Item>
 	<Crumb::Item @link="docs.integration">Integrations</Crumb::Item>
-	<Crumb::Item @link="docs.integration.libraries">Libraries</Crumb::Item>
-	<Crumb::Item @link="docs.integration.libraries.python">Python</Crumb::Item>
+	<Crumb::Item @link="docs.integration.sdks">SDKs</Crumb::Item>
+	<Crumb::Item @link="docs.integration.sdks.rust">Rust</Crumb::Item>
 </Crumb>
 
 <Layout::Text text-l text-f>
-	<h2><Devicon @size="50" @type="python" /> Python driver for <img inline src="/static/img/text.svg" alt="SurrealDB" /></h2>
-	<p>The SurrealDB library for Python enables simple and advanced querying of a remote database from a browser or from server-side code. By default connections to SurrealDB are made over WebSockets, and automatically reconnect when the connection is terminated. We however also support connecting through a http client, however that is not as fully implemented yet.</p>
+	<h2><Devicon @size="50" @type="rust" /> Rust SDK for <img inline src="/static/img/text.svg" alt="SurrealDB" /></h2>
+	<p>The SurrealDB SDK for Rust enables simple and advanced querying of a remote or embedded database from a browser or from server-side code. Remote connections automatically reconnect when the connection is terminated.</p>
 	<p>To contribute to this documentation, <Link @link={{github}}>edit this file on GitHub</Link>.</p>
-	<p>To contribute to the driver code, <Link @link="https://github.com/surrealdb/surrealdb.py">submit an Issue or Pull Request here</Link>.</p>
+	<p>To contribute to the SDK code, <Link @link="https://github.com/surrealdb/surrealdb">submit an Issue or Pull Request here</Link>.</p>
 </Layout::Text>
 
 <Layout::Gap mini />
 
 <Layout::Text text-l text-f>
-	<h3>Install the library</h3>
-	<p>First, install the SurrealDB library using <code>pip</code>:</p>
-	<Code @name="docs-integration-libraries-python-install-pip.bash">
-		pip install surrealdb
-	</Code>
-	<p>Alternatively, you can use install the SurrealDB library using <code><a href="https://python-poetry.org/">poetry</a></code>:</p>
-	<Code @name="docs-integration-libraries-python-install-poetry.bash">
-		poetry add surrealdb
+	<h3>Install the SDK</h3>
+	<p>First, create a new project using <code>cargo new</code> and add the SurrealDB SDK to your dependencies:</p>
+	<Code @name="docs-integration-libraries-rust-crate.bash">
+		cargo add surrealdb
 	</Code>
 </Layout::Text>
 
@@ -30,21 +26,26 @@
 
 <Layout::Text text-l text-f>
 	<h3>Connect to SurrealDB</h3>
-	<p>Create a new surreal.py file and add the following code to try out some basic operations using the SurrealDB driver.</p>
-	<Code @name="docs/integration/libraries/python/basic.py" />
-	<p>Then run your app from the command line with:</p>
-	<Code @name="docs-integration-libraries-python-basic-run.bash">
-		python surreal.py
+	<p>Open <code>src/main.rs</code> and replace everything in there with the following code to try out some basic operations using the SurrealDB SDK.</p>
+	<Code @name="docs/integration/libraries/rust/basic.rust" />
+
+	<p>To run the example above, you will need to add the following additional dependencies:</p>
+	<Code @name="docs-integration-libraries-rust-dependencies.bash">
+		cargo add serde --features derive
+		cargo add tokio --features macros,rt-multi-thread
 	</Code>
-	<p>Alternatively, you can run it in a notebook like Jupyter or VS code</p>
-	<Code @name="docs/integration/libraries/python/notebook.py" />
+
+	<p>Then make sure your SurrealDB server is running on <code>127.0.0.1:8000</code> and run your app from the command line with:</p>
+	<Code @name="docs-integration-libraries-rust-basic-run.bash">
+		cargo run
+	</Code>
 </Layout::Text>
 
 <Layout::Gap mini />
 
 <Layout::Text text-l text-f>
-	<h3>Library methods</h3>
-	<p>The Python library comes with a number of built-in functions.</p>
+	<h3>SDK methods</h3>
+	<p>The Rust SDK comes with a number of built-in functions.</p>
 </Layout::Text>
 
 <Layout::Gap tiny />
@@ -60,33 +61,33 @@
 		<tbody>
 			<tr>
 				<td>
-					<a href="#Instance">
-						<Ascua::Prism::Inline @language="py" @code="Surreal(url)" />
+					<a href="#init">
+						<Ascua::Prism::Inline @language="rust" @code="Surreal::init()" />
 					</a>
 					<l faint r>static</l>
 				</td>
-				<td>Surreal is a class that represents a Surreal server.</td>
+				<td>Initialises a static database engine</td>
 			</tr>
 			<tr>
 				<td>
 					<a href="#connect">
-						<Ascua::Prism::Inline @language="py" @code="db.connect()" />
+						<Ascua::Prism::Inline @language="rust" @code="db.connect(endpoint)" />
+					</a>
+				</td>
+				<td>Connects to a specific database endpoint, saving the connection on the static client</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#new">
+						<Ascua::Prism::Inline @language="rust" @code="Surreal::new::<T>(endpoint)" />
 					</a>
 				</td>
 				<td>Connects to a local or remote database endpoint</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#close">
-						<Ascua::Prism::Inline @language="py" @code="db.close()" />
-					</a>
-				</td>
-				<td>Closes the persistent connection to the database</td>
-			</tr>
-			<tr>
-				<td>
 					<a href="#use">
-						<Ascua::Prism::Inline @language="py" @code="db.use(ns, db)" />
+						<Ascua::Prism::Inline @language="rust" @code="db.use_ns(namespace).use_db(database)" />
 					</a>
 				</td>
 				<td>Switch to a specific namespace and database</td>
@@ -94,15 +95,15 @@
 			<tr>
 				<td>
 					<a href="#signup">
-						<Ascua::Prism::Inline @language="py" @code="db.signup(vars)" />
+						<Ascua::Prism::Inline @language="rust" @code="db.signup(credentials)" />
 					</a>
 				</td>
-				<td>Signs this connection up to a specific authentication scope</td>
+				<td>Signs up a user to a specific authentication scope</td>
 			</tr>
 			<tr>
 				<td>
 					<a href="#signin">
-						<Ascua::Prism::Inline @language="py" @code="db.signin(vars)" />
+						<Ascua::Prism::Inline @language="rust" @code="db.signin(credentials)" />
 					</a>
 				</td>
 				<td>Signs this connection in to a specific authentication scope</td>
@@ -110,7 +111,7 @@
 			<tr>
 				<td>
 					<a href="#invalidate">
-						<Ascua::Prism::Inline @language="py" @code="db.invalidate()" />
+						<Ascua::Prism::Inline @language="rust" @code="db.invalidate()" />
 					</a>
 				</td>
 				<td>Invalidates the authentication for the current connection</td>
@@ -118,15 +119,15 @@
 			<tr>
 				<td>
 					<a href="#authenticate">
-						<Ascua::Prism::Inline @language="py" @code="db.authenticate(token)" />
+						<Ascua::Prism::Inline @language="rust" @code="db.authenticate(token)" />
 					</a>
 				</td>
 				<td>Authenticates the current connection with a JWT token</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#let">
-						<Ascua::Prism::Inline @language="py" @code="db.let(key, val)" />
+					<a href="#set">
+						<Ascua::Prism::Inline @language="rust" @code="db.set(key, val)" />
 					</a>
 				</td>
 				<td>Assigns a value as a parameter for this connection</td>
@@ -134,7 +135,7 @@
 			<tr>
 				<td>
 					<a href="#query">
-						<Ascua::Prism::Inline @language="py" @code="db.query(sql, vars)" />
+						<Ascua::Prism::Inline @language="rust" @code="db.query(sql)" />
 					</a>
 				</td>
 				<td>Runs a set of SurrealQL statements against the database</td>
@@ -142,7 +143,7 @@
 			<tr>
 				<td>
 					<a href="#select">
-						<Ascua::Prism::Inline @language="py" @code="db.select(thing)" />
+						<Ascua::Prism::Inline @language="rust" @code="db.select(resource)" />
 					</a>
 				</td>
 				<td>Selects all records in a table, or a specific record</td>
@@ -150,7 +151,7 @@
 			<tr>
 				<td>
 					<a href="#create">
-						<Ascua::Prism::Inline @language="py" @code="db.create(thing, data)" />
+						<Ascua::Prism::Inline @language="rust" @code="db.create(resource).content(data)" />
 					</a>
 				</td>
 				<td>Creates a record in the database</td>
@@ -158,7 +159,7 @@
 			<tr>
 				<td>
 					<a href="#update">
-						<Ascua::Prism::Inline @language="py" @code="db.update(thing, data)" />
+						<Ascua::Prism::Inline @language="rust" @code="db.update(resource).content(data)" />
 					</a>
 				</td>
 				<td>Updates all records in a table, or a specific record</td>
@@ -166,15 +167,15 @@
 			<tr>
 				<td>
 					<a href="#merge">
-						<Ascua::Prism::Inline @language="py" @code="db.merge(thing, data)" />
+						<Ascua::Prism::Inline @language="rust" @code="db.update(resource).merge(data)" />
 					</a>
 				</td>
-				<td>Modifies by deep merging all records in a table, or a specific record, in the database</td>
+				<td>Modifies all records in a table, or a specific record</td>
 			</tr>
 			<tr>
 				<td>
 					<a href="#patch">
-						<Ascua::Prism::Inline @language="py" @code="db.patch(thing, data)" />
+						<Ascua::Prism::Inline @language="rust" @code="db.update(resource).patch(data)" />
 					</a>
 				</td>
 				<td>Applies <Link @link="https://jsonpatch.com">JSON Patch</Link> changes to all records in a table, or a specific record</td>
@@ -182,7 +183,7 @@
 			<tr>
 				<td>
 					<a href="#delete">
-						<Ascua::Prism::Inline @language="py" @code="db.delete(thing)" />
+						<Ascua::Prism::Inline @language="rust" @code="db.delete(resource)" />
 					</a>
 				</td>
 				<td>Deletes all records, or a specific record</td>
@@ -193,95 +194,78 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "Instance"}}>
+<Layout::Group {{waypoint "init"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="Surreal(url) / SurrealHTTP(url)" /></h3>
-		<p>Surreal is a class that represents a Surreal server.</p>
-		<p>The default way to connect is through WebSockets using <code>Surreal(url)</code></p>
-		<p>If an http client is needed you can use <code>SurrealHTTP(url)</code> but be aware that it is currently not as stable and not as fully implemented.</p>
-		<blockquote yellow text="Note">The url is required in either the Surreal class or connect method</blockquote>
-		<Layout::Table>
-			<table>
-				<thead>
-					<tr>
-						<th w-40>Arguments</th>
-						<th w-60>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							The url of the database endpoint to connect to.
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-connect.py">
-        Connect to a local endpoint
-            db = Surreal('ws://127.0.0.1:8000/rpc')
-            await db.connect()
-            await db.signin({"user": "root", "pass": "root"})
-
-        Connect to a remote endpoint
-            db = Surreal('http://cloud.surrealdb.com/rpc')
-            await db.connect()
-            await db.signin({"user": "root", "pass": "root"})
-
-        Connect with a context manager
-            async with Surreal("ws://127.0.0.1:8000/rpc") as db:
-                await db.signin({"user": "root", "pass": "root"})
-		</Code>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Group {{waypoint "connect"}}>
-
-	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.connect(url)" /></h3>
-		<p>Connects to a local or remote database endpoint.</p>
-		<blockquote yellow text="Note">The url is required in either the Surreal class or connect method</blockquote>
-		<Layout::Table>
-			<table>
-				<thead>
-					<tr>
-						<th w-40>Arguments</th>
-						<th w-60>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							The url of the database endpoint to connect to.
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-connect.py">
-			# Connect to a local endpoint
-			db = Surreal()
-			await db.connect('http://127.0.0.1:8000/rpc')
-			# Connect to a remote endpoint
-			db = Surreal()
-			await db.connect('https://cloud.surrealdb.com/rpc')
-		</Code>
+		<h3><Ascua::Prism::Inline @language="rust" @code="Surreal::init()" /></h3>
+		<p>The <code>DB</code> static singleton ensures that a single database instance is available across very large or complicated applications. With the singleton, only one connection to the database is instantiated, and the database connection does not have to be shared across components or controllers.</p>
+		<Code @name="docs/integration/libraries/rust/init.rust" />
 	</Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "close"}}>
+<Layout::Group {{waypoint "connect"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.close()" /></h3>
-		<p>Closes the persistent connection to the database.</p>
-		<Code @name="docs-integration-libraries-python-close.py">
-			db.close()
-		</Code>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.connect(endpoint)" /></h3>
+		<p>Connects to a local or remote database endpoint.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>endpoint</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The database endpoint to connect to.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/integration/libraries/rust/connect.rust" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "new"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="rust" @code="Surreal::new::<T>(endpoint)" /></h3>
+		<p>Connects to a local or remote database endpoint.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>endpoint</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The database endpoint to connect to.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/integration/libraries/rust/new.rust" />
 	</Layout::Text>
 
 </Layout::Group>
@@ -291,7 +275,7 @@
 <Layout::Group {{waypoint "use"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.use(ns, db)" /></h3>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.use_ns(ns).use_db(db)" /></h3>
 		<p>Switch to a specific namespace and database.</p>
 		<Layout::Table>
 			<table>
@@ -323,8 +307,8 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-use.py">
-			await db.use('test', 'test')
+		<Code @name="docs-integration-libraries-rust-use.rust">
+			db.use_ns("test").use_db("test").await?;
 		</Code>
 	</Layout::Text>
 
@@ -335,7 +319,7 @@
 <Layout::Group {{waypoint "signup"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.signup(vars)" /></h3>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.signup(credentials)" /></h3>
 		<p>Signs up to a specific authentication scope.</p>
 		<Layout::Table>
 			<table>
@@ -348,7 +332,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<code>vars</code>
+							<code>credentials</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
@@ -358,15 +342,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-signup.py">
-			token = await db.signup({
-				'NS': 'test',
-				'DB': 'test',
-				'SC': 'user',
-				'email': 'info@surrealdb.com',
-				'pass': '123456',
-			})
-		</Code>
+		<Code @name="docs/integration/libraries/rust/signup.rust" />
 	</Layout::Text>
 
 </Layout::Group>
@@ -376,7 +352,7 @@
 <Layout::Group {{waypoint "signin"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.signin(vars)" /></h3>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.signin(credentials)" /></h3>
 		<p>Signs in to a specific authentication scope.</p>
 		<Layout::Table>
 			<table>
@@ -389,7 +365,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<code>vars</code>
+							<code>credentials</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
@@ -399,12 +375,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-signin.py">
-			token = await db.signin({
-				'user': 'root',
-				'pass': 'root',
-			})
-		</Code>
+		<Code @name="docs/integration/libraries/rust/signin.rust" />
 	</Layout::Text>
 
 </Layout::Group>
@@ -414,11 +385,9 @@
 <Layout::Group {{waypoint "invalidate"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.invalidate()" /></h3>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.invalidate()" /></h3>
 		<p>Invalidates the authentication for the current connection.</p>
-		<Code @name="docs-integration-libraries-python-invalidate.py">
-			await db.invalidate()
-		</Code>
+		<Code @name="docs/integration/libraries/rust/invalidate.rust" />
 	</Layout::Text>
 
 </Layout::Group>
@@ -428,7 +397,7 @@
 <Layout::Group {{waypoint "authenticate"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.authenticate(token)" /></h3>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.authenticate(token)" /></h3>
 		<p>Authenticates the current connection with a JWT token.</p>
 		<Layout::Table>
 			<table>
@@ -451,19 +420,17 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-authenticate.py">
-			await db.authenticate('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTdXJyZWFsREIiLCJpYXQiOjE1MTYyMzkwMjIsIm5iZiI6MTUxNjIzOTAyMiwiZXhwIjoxODM2NDM5MDIyLCJOUyI6InRlc3QiLCJEQiI6InRlc3QiLCJTQyI6InVzZXIiLCJJRCI6InVzZXI6dG9iaWUifQ.N22Gp9ze0rdR06McGj1G-h2vu6a6n9IVqUbMFJlOxxA')
-		</Code>
+		<Code @name="docs/integration/libraries/rust/authenticate.rust" />
 	</Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "let"}}>
+<Layout::Group {{waypoint "set"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.let(key, val)" /></h3>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.set(key, val)" /></h3>
 		<p>Assigns a value as a parameter for this connection.</p>
 		<Layout::Table>
 			<table>
@@ -495,17 +462,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-let.py">
-			# Assign the variable on the connection
-            await db.let("name", {
-                "first": "Tobie",
-                "last": "Morgan Hitchcock",
-            })
-			# Use the variable in a subsequent query
-			await db.query('CREATE person SET name = $name')
-			# Use the variable in a subsequent query
-			await db.query('SELECT * FROM person WHERE name.first = $name.first')
-		</Code>
+		<Code @name="docs/integration/libraries/rust/let.rust" />
 	</Layout::Text>
 
 </Layout::Group>
@@ -515,7 +472,7 @@
 <Layout::Group {{waypoint "query"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.query(sql, vars)" /></h3>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.query(sql).bind(vars)" /></h3>
 		<p>Runs a set of SurrealQL statements against the database.</p>
 		<Layout::Table>
 			<table>
@@ -547,16 +504,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-query.py">
-			# Assign the variable on the connection
-			result = await db.query('CREATE person; SELECT * FROM type::table($tb)', {
-				'tb': 'person',
-			})
-			# Get the first result from the first query
-			result[0]['result'][0]
-			# Get all of the results from the second query
-			result[1]['result']
-		</Code>
+		<Code @name="docs/integration/libraries/rust/query.rust" />
 	</Layout::Text>
 
 </Layout::Group>
@@ -566,7 +514,7 @@
 <Layout::Group {{waypoint "select"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.select(thing)" /></h3>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.select(resource)" /></h3>
 		<p>Selects all records in a table, or a specific record, from the database.</p>
 		<Layout::Table>
 			<table>
@@ -579,7 +527,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<code>thing</code>
+							<code>resource</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
@@ -589,15 +537,10 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-select.py">
-			# Select all records from a table
-			people = await db.select('person')
-			# Select a specific record from a table
-			person = await db.select('person:h5wxrf2ewk8xjxosxtyc')
-		</Code>
+		<Code @name="docs/integration/libraries/rust/select.rust" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-python-select-func.surql">
-			SELECT * FROM $thing;
+		<Code @name="docs-integration-libraries-rust-select-func.surql">
+			SELECT * FROM $resource;
 		</Code>
 	</Layout::Text>
 
@@ -608,7 +551,7 @@
 <Layout::Group {{waypoint "create"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.create(thing, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.create(resource).content(data)" /></h3>
 		<p>Creates a record in the database.</p>
 		<Layout::Table>
 			<table>
@@ -621,7 +564,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<code>thing</code>
+							<code>resource</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
@@ -640,21 +583,10 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-create.py">
-			# Create a record with a random ID
-			person = await db.create('person')
-			# Create a record with a specific ID
-			record = await db.create('person:tobie', {
-				'name': 'Tobie',
-				'settings': {
-					'active': true,
-					'marketing': true,
-				},
-			})
-		</Code>
+		<Code @name="docs/integration/libraries/rust/create.rust" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-python-create-func.surql">
-			CREATE $thing CONTENT $data;
+		<Code @name="docs-integration-libraries-rust-create-func.surql">
+			CREATE $resource CONTENT $data;
 		</Code>
 	</Layout::Text>
 
@@ -665,7 +597,7 @@
 <Layout::Group {{waypoint "update"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.update(thing, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.update(resource).content(data)" /></h3>
 		<p>Updates all records in a table, or a specific record, in the database.</p>
 		<blockquote yellow text="Note">This function replaces the current document / record data with the specified data.</blockquote>
 		<Layout::Table>
@@ -679,7 +611,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<code>thing</code>
+							<code>resource</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
@@ -698,21 +630,10 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-update.py">
-			# Update all records in a table
-			people = await db.update('person')
-			# Update a record with a specific ID
-			person = await db.update('person:tobie', {
-				'name': 'Tobie',
-				'settings': {
-					'active': true,
-					'marketing': true,
-				},
-			})
-		</Code>
+		<Code @name="docs/integration/libraries/rust/update.rust" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-python-update-func.surql">
-			UPDATE $thing CONTENT $data;
+		<Code @name="docs-integration-libraries-rust-update-func.surql">
+			UPDATE $resource CONTENT $data;
 		</Code>
 	</Layout::Text>
 
@@ -720,11 +641,11 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "merge"}}>
+<Layout::Group {{waypoint "change"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.merge(thing, data)" /></h3>
-		<p>Modifies by deep merging all records in a table, or a specific record, in the database.</p>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.update(resource).merge(data)" /></h3>
+		<p>Modifies all records in a table, or a specific record, in the database.</p>
 		<blockquote yellow text="Note">This function merges the current document / record data with the specified data.</blockquote>
 		<Layout::Table>
 			<table>
@@ -737,7 +658,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<code>thing</code>
+							<code>resource</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
@@ -756,22 +677,10 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-change.py">
-			# Update all records in a table
-			people = await db.change('person', {
-				updated_at: new Date(),
-			})
-			# Update a record with a specific ID
-            person = await db.change('person:tobie', {
-                'updated_at': datetime.datetime.utcnow(),
-                'settings': {
-                    'active': True,
-                    },
-                })
-		</Code>
+		<Code @name="docs/integration/libraries/rust/merge.rust" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-python-change-func.surql">
-			UPDATE $thing MERGE $data;
+		<Code @name="docs-integration-libraries-rust-change-func.surql">
+			UPDATE $resource MERGE $data;
 		</Code>
 	</Layout::Text>
 
@@ -779,10 +688,10 @@
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "patch"}}>
+<Layout::Group {{waypoint "modify"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.patch(thing, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.update(resource).patch(data)" /></h3>
 		<p>Applies <Link @link="https://jsonpatch.com">JSON Patch</Link> changes to all records, or a specific record, in the database.</p>
 		<blockquote yellow text="Note">This function patches the current document / record data with the specified <Link @link="https://jsonpatch.com">JSON Patch</Link> data.</blockquote>
 		<Layout::Table>
@@ -796,7 +705,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<code>thing</code>
+							<code>resource</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
@@ -815,21 +724,10 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-modify.py">
-			# Update all records in a table
-			people = await db.patch('person', [
-				{ 'op': "replace", 'path': "/created_at", 'value': str(datetime.datetime.utcnow()) },
-			])
-			# Update a record with a specific ID
-			person = await db.patch('person:tobie', [
-                { 'op': "replace", 'path': "/settings/active", 'value': False },
-                { 'op': "add", "path": "/tags", "value": ["developer", "engineer"] },
-                { 'op': "remove", "path": "/temp" },
-			])
-		</Code>
+		<Code @name="docs/integration/libraries/rust/patch.rust" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-python-modify-func.surql">
-			UPDATE $thing PATCH $data;
+		<Code @name="docs-integration-libraries-rust-modify-func.surql">
+			UPDATE $resource PATCH $data;
 		</Code>
 	</Layout::Text>
 
@@ -840,7 +738,7 @@
 <Layout::Group {{waypoint "delete"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="py" @code="db.delete(thing)" /></h3>
+		<h3><Ascua::Prism::Inline @language="rust" @code="db.delete(resource)" /></h3>
 		<p>Deletes all records in a table, or a specific record, from the database.</p>
 		<Layout::Table>
 			<table>
@@ -853,7 +751,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<code>thing</code>
+							<code>resource</code>
 							<l yellow r>Required</l>
 						</td>
 						<td>
@@ -863,15 +761,10 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-python-delete.py">
-			# Delete all records from a table
-			await db.delete('person')
-			# Delete a specific record from a table
-			await db.delete('person:h5wxrf2ewk8xjxosxtyc')
-		</Code>
+		<Code @name="docs/integration/libraries/rust/delete.rust" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-python-delete-func.surql">
-			DELETE * FROM $thing;
+		<Code @name="docs-integration-libraries-rust-delete-func.surql">
+			DELETE FROM $resource RETURN BEFORE;
 		</Code>
 	</Layout::Text>
 

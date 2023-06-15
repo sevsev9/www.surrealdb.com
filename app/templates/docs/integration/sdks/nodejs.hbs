@@ -1,26 +1,26 @@
 <Crumb>
 	<Crumb::Item @link="docs">Documentation</Crumb::Item>
 	<Crumb::Item @link="docs.integration">Integrations</Crumb::Item>
-	<Crumb::Item @link="docs.integration.libraries">Libraries</Crumb::Item>
-	<Crumb::Item @link="docs.integration.libraries.nodejs">Node.js</Crumb::Item>
+	<Crumb::Item @link="docs.integration.sdks">SDKs</Crumb::Item>
+	<Crumb::Item @link="docs.integration.sdks.nodejs">Node.js</Crumb::Item>
 </Crumb>
 
 <Layout::Text text-l text-f>
-	<h2><Devicon @size="50" @type="nodejs" /> Node.js driver for <img inline src="/static/img/text.svg" alt="SurrealDB" /></h2>
-	<p>The SurrealDB library for Node.js enables simple and advanced querying of a remote database from server-side code. All connections to SurrealDB are made over WebSockets, and automatically reconnect when the connection is terminated.</p>
+	<h2><Devicon @size="50" @type="nodejs" /> Node.js SDK for <img inline src="/static/img/text.svg" alt="SurrealDB" /></h2>
+	<p>The SurrealDB SDK for Node.js enables simple and advanced querying of a remote database from server-side code. All connections to SurrealDB are made over WebSockets, and automatically reconnect when the connection is terminated.</p>
 	<p>To contribute to this documentation, <Link @link={{github}}>edit this file on GitHub</Link>.</p>
-	<p>To contribute to the driver code, <Link @link="https://github.com/surrealdb/surrealdb.js">submit an Issue or Pull Request here</Link>.</p>
+	<p>To contribute to the SDK code, <Link @link="https://github.com/surrealdb/surrealdb.js">submit an Issue or Pull Request here</Link>.</p>
 </Layout::Text>
 
 <Layout::Gap mini />
 
 <Layout::Text text-l text-f>
-	<h3>Install the library</h3>
-	<p>First, install the SurrealDB library using <code>npm</code>:</p>
+	<h3>Install the SDK</h3>
+	<p>First, install the SurrealDB SDK using <code>npm</code>:</p>
 	<Code @name="docs-integration-libraries-nodejs-install-npm.bash">
 		npm install --save surrealdb.js
 	</Code>
-	<p>Alternatively, you can use install the SurrealDB library using <code>yarn</code>, <code>pnpm</code> or similar:</p>
+	<p>Alternatively, you can use install the SurrealDB SDK using <code>yarn</code>, <code>pnpm</code> or similar:</p>
 	<Code @name="docs-integration-libraries-nodejs-install-yarn.bash">
 		yarn add surrealdb.js
 		pnpm install surrealdb.js
@@ -31,7 +31,7 @@
 
 <Layout::Text text-l text-f>
 	<h3>Connect to SurrealDB</h3>
-	<p>Create a new app.js file and add the following code to try out some basic operations using the SurrealDB driver.</p>
+	<p>Create a new app.js file and add the following code to try out some basic operations using the SurrealDB SDK.</p>
 	<Code @name="docs/integration/libraries/nodejs/basic.js" />
 	<p>Then run your app from the command line with:</p>
 	<Code @name="docs-integration-libraries-nodejs-basic-run.bash">
@@ -42,8 +42,8 @@
 <Layout::Gap mini />
 
 <Layout::Text text-l text-f>
-	<h3>Library methods</h3>
-	<p>The JavaScript library comes with a number of built-in functions.</p>
+	<h3>SDK methods</h3>
+	<p>The JavaScript SDK comes with a number of built-in functions.</p>
 </Layout::Text>
 
 <Layout::Gap tiny />

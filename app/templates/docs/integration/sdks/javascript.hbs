@@ -1,34 +1,49 @@
 <Crumb>
 	<Crumb::Item @link="docs">Documentation</Crumb::Item>
 	<Crumb::Item @link="docs.integration">Integrations</Crumb::Item>
-	<Crumb::Item @link="docs.integration.libraries">Libraries</Crumb::Item>
-	<Crumb::Item @link="docs.integration.libraries.deno">Deno</Crumb::Item>
+	<Crumb::Item @link="docs.integration.sdks">SDKs</Crumb::Item>
+	<Crumb::Item @link="docs.integration.sdks.javascript">JavaScript</Crumb::Item>
 </Crumb>
 
 <Layout::Text text-l text-f>
-	<h2><Devicon @size="50" @type="deno" /> Deno driver for <img inline src="/static/img/text.svg" alt="SurrealDB" /></h2>
-	<p>The SurrealDB library for Deno enables simple and advanced querying of a remote database from server-side code. All connections to SurrealDB are made over WebSockets, and automatically reconnect when the connection is terminated.</p>
+	<h2><Devicon @size="50" @type="javascript" /> JavaScript SDK for <img inline src="/static/img/text.svg" alt="SurrealDB" /></h2>
+	<p>The SurrealDB SDK for JavaScript enables simple and advanced querying of a remote database from a browser or from server-side code. All connections to SurrealDB are made over WebSockets, and automatically reconnect when the connection is terminated.</p>
 	<p>To contribute to this documentation, <Link @link={{github}}>edit this file on GitHub</Link>.</p>
-	<p>To contribute to the driver code, <Link @link="https://github.com/surrealdb/surrealdb.js">submit an Issue or Pull Request here</Link>.</p>
+	<p>To contribute to the SDK code, <Link @link="https://github.com/surrealdb/surrealdb.js">submit an Issue or Pull Request here</Link>.</p>
 </Layout::Text>
 
 <Layout::Gap mini />
 
 <Layout::Text text-l text-f>
-	<h3>Connect to SurrealDB</h3>
-	<p>Create a new mod.ts file and add the following code to try out some basic operations using the SurrealDB driver.</p>
-	<Code @name="docs/integration/libraries/deno/basic.js" />
-	<p>Then run your app from the command line with:</p>
-	<Code @name="docs-integration-libraries-deno-basic-run.bash">
-		deno run --allow-net=127.0.0.1:8000 mod.ts
+	<h3>Install the SDK</h3>
+	<p>First, install the SurrealDB SDK using <code>npm</code>:</p>
+	<Code @name="docs-integration-libraries-javascript-install-npm.bash">
+		npm install --save surrealdb.js
+	</Code>
+	<p>Alternatively, you can use install the SurrealDB SDK using <code>yarn</code>, <code>pnpm</code> or similar:</p>
+	<Code @name="docs-integration-libraries-javascript-install-yarn.bash">
+		yarn add surrealdb.js
+		pnpm install surrealdb.js
 	</Code>
 </Layout::Text>
 
 <Layout::Gap mini />
 
 <Layout::Text text-l text-f>
-	<h3>Library methods</h3>
-	<p>The JavaScript library comes with a number of built-in functions.</p>
+	<h3>Connect to SurrealDB</h3>
+	<p>Create a new app.js file and add the following code to try out some basic operations using the SurrealDB SDK.</p>
+	<Code @name="docs/integration/libraries/javascript/basic.js" />
+	<p>Then run your app from the command line with:</p>
+	<Code @name="docs-integration-libraries-javascript-basic-run.bash">
+		node app.js
+	</Code>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
+	<h3>SDK methods</h3>
+	<p>The JavaScript SDK comes with a number of built-in functions.</p>
 </Layout::Text>
 
 <Layout::Gap tiny />
@@ -237,7 +252,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-deno-connect.js">
+		<Code @name="docs-integration-libraries-javascript-connect.js">
 			// Connect to a local endpoint
 			await db.connect('http://127.0.0.1:8000/rpc');
 
@@ -289,7 +304,7 @@
 	<Layout::Text text-l text-f>
 		<h3><Ascua::Prism::Inline @language="ts" @code="async db.wait()" /></h3>
 		<p>Waits for the connection to the database to succeed.</p>
-		<Code @name="docs-integration-libraries-deno-wait.js">
+		<Code @name="docs-integration-libraries-javascript-wait.js">
 			await db.wait();
 		</Code>
 	</Layout::Text>
@@ -303,7 +318,7 @@
 	<Layout::Text text-l text-f>
 		<h3><Ascua::Prism::Inline @language="ts" @code="async db.close()" /></h3>
 		<p>Closes the persistent connection to the database.</p>
-		<Code @name="docs-integration-libraries-deno-close.js">
+		<Code @name="docs-integration-libraries-javascript-close.js">
 			await db.close();
 		</Code>
 	</Layout::Text>
@@ -347,7 +362,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-deno-use.js">
+		<Code @name="docs-integration-libraries-javascript-use.js">
 			await db.use({ ns: 'surrealdb', db: 'docs' });
 		</Code>
 	</Layout::Text>
@@ -400,7 +415,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-deno-signup.js">
+		<Code @name="docs-integration-libraries-javascript-signup.js">
 			const token = await db.signup({
 				NS: 'surrealdb',
 				DB: 'docs',
@@ -478,7 +493,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-deno-signin.js">
+		<Code @name="docs-integration-libraries-javascript-signin.js">
 			// Authenticate with a root user
 			const token = await db.signin({
 				user: 'root',
@@ -522,7 +537,7 @@
 	<Layout::Text text-l text-f>
 		<h3><Ascua::Prism::Inline @language="ts" @code="async db.invalidate()" /></h3>
 		<p>Invalidates the authentication for the current connection.</p>
-		<Code @name="docs-integration-libraries-deno-invalidate.js">
+		<Code @name="docs-integration-libraries-javascript-invalidate.js">
 			await db.invalidate();
 		</Code>
 	</Layout::Text>
@@ -557,7 +572,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-deno-authenticate.js">
+		<Code @name="docs-integration-libraries-javascript-authenticate.js">
 			await db.authenticate('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTdXJyZWFsREIiLCJpYXQiOjE1MTYyMzkwMjIsIm5iZiI6MTUxNjIzOTAyMiwiZXhwIjoxODM2NDM5MDIyLCJOUyI6InRlc3QiLCJEQiI6InRlc3QiLCJTQyI6InVzZXIiLCJJRCI6InVzZXI6dG9iaWUifQ.N22Gp9ze0rdR06McGj1G-h2vu6a6n9IVqUbMFJlOxxA');
 		</Code>
 	</Layout::Text>
@@ -601,7 +616,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-deno-let.js">
+		<Code @name="docs-integration-libraries-javascript-let.js">
 			// Assign the variable on the connection
 			await db.let('name', {
 				first: 'Tobie',
@@ -646,7 +661,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-deno-unset.js">
+		<Code @name="docs-integration-libraries-javascript-unset.js">
 			// Remove the variable from the connection
 			await db.unset('name');
 		</Code>
@@ -726,7 +741,7 @@
 		</Layout::Table>
 		<Code @name="docs/integration/libraries/javascript/select.ts" @language="ts" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-deno-select-func.surql">
+		<Code @name="docs-integration-libraries-javascript-select-func.surql">
 			SELECT * FROM $thing;
 		</Code>
 	</Layout::Text>
@@ -772,7 +787,7 @@
 		</Layout::Table>
 		<Code @name="docs/integration/libraries/javascript/create.ts" @language="ts" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-deno-create-func.surql">
+		<Code @name="docs-integration-libraries-javascript-create-func.surql">
 			CREATE $thing CONTENT $data;
 		</Code>
 	</Layout::Text>
@@ -819,7 +834,7 @@
 		</Layout::Table>
 		<Code @name="docs/integration/libraries/javascript/update.ts" @language="ts" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-deno-update-func.surql">
+		<Code @name="docs-integration-libraries-javascript-update-func.surql">
 			UPDATE $thing CONTENT $data;
 		</Code>
 	</Layout::Text>
@@ -866,7 +881,7 @@
 		</Layout::Table>
 		<Code @name="docs/integration/libraries/javascript/merge.ts" @language="ts" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-deno-merge-func.surql">
+		<Code @name="docs-integration-libraries-javascript-merge-func.surql">
 			UPDATE $thing MERGE $data;
 		</Code>
 	</Layout::Text>
@@ -913,7 +928,7 @@
 		</Layout::Table>
 		<Code @name="docs/integration/libraries/javascript/patch.ts" @language="ts" />
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-deno-patch-func.surql">
+		<Code @name="docs-integration-libraries-javascript-patch-func.surql">
 			UPDATE $thing PATCH $data;
 		</Code>
 	</Layout::Text>
@@ -948,7 +963,7 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<Code @name="docs-integration-libraries-deno-delete.ts" @language="ts">
+		<Code @name="docs-integration-libraries-javascript-delete.ts" @language="ts">
 			// Delete all records from a table
 			await db.delete('person');
 
@@ -956,7 +971,7 @@
 			await db.delete('person:h5wxrf2ewk8xjxosxtyc');
 		</Code>
 		<p>This function will run the following query in the database:</p>
-		<Code @name="docs-integration-libraries-deno-delete-func.surql">
+		<Code @name="docs-integration-libraries-javascript-delete-func.surql">
 			DELETE * FROM $thing;
 		</Code>
 	</Layout::Text>
