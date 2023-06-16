@@ -226,7 +226,11 @@
 				<Layout::Helm::Menu::Item @link="docs.integration" @text="Overview" selected={{begs-with (route-name) "docs.integration.index"}} />
 				<Layout::Helm::Menu::Item @link="docs.integration.sdks" @text="SDKs" selected={{begs-with (route-name) "docs.integration.sdks"}} />
 				<Layout::Helm::Menu::Item @link="docs.integration.http" @text="HTTP & Rest" selected={{begs-with (route-name) "docs.integration.http"}} />
-				<Layout::Helm::Menu::Item @link="docs.integration.websockets" @text="Websockets" selected={{begs-with (route-name) "docs.integration.websockets"}} />
+				<Layout::Helm::Menu::Item @link="docs.integration.websocket.text" @text="Websockets" selected={{begs-with (route-name) "docs.integration.websocket"}} />
+				<subs>
+					<Layout::Helm::Menu::Item @link="docs.integration.websocket.text" @text="Text protocol" selected={{begs-with (route-name) "docs.integration.websocket.text"}} />
+					<Layout::Helm::Menu::Item @link="docs.integration.websocket.binary" @text="Binary protocol" selected={{begs-with (route-name) "docs.integration.websocket.binary"}} />
+				</subs>
 			</subs>
 
 			<Layout::Helm::Menu::Item @link="docs.cli" @text="CLI tool" selected={{begs-with (route-name) "docs.cli"}} />

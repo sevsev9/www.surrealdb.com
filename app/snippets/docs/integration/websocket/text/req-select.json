@@ -1,0 +1,5 @@
+{
+    "id": 1,
+    "method": "select",
+    "params": [ "person" ]
+}

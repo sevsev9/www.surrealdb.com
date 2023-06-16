@@ -1,0 +1,14 @@
+{
+    "id": 1,
+    "method": "signin",
+    "params": [
+        {
+            "NS": "surrealdb",
+            "DB": "docs",
+            "SC": "commenter",
+
+            "username": "johndoe",
+            "password": "SuperStrongPassword!"
+        }
+    ]
+}
