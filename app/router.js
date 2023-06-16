@@ -106,6 +106,7 @@ Router.map(function () {
 		this.route('integration', function () {
 			this.route('overview');
 			this.route('http');
+			this.route('websockets');
 			this.route('websocket', function () {
 				this.route('text');
 				this.route('binary');
