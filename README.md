@@ -36,3 +36,7 @@ Please adjust the files accordingly:
 
 - `app/initializers/prism.js`
 - `app/instance-initializers/marked.js`
+
+## Common issues
+
+If you see an error related to `ERR_OSSL_EVP_UNSUPPORTED` (mostly Node 17 and above), please include the `--openssl-legacy-provider` flag in the `NODE_OPTIONS` environment variable.
