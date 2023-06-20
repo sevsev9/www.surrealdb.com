@@ -9,3 +9,6 @@ SELECT * FROM person WHERE ->(reaction WHERE type='celebrate')->post;
 
 -- Conditional filtering with boolean logic
 SELECT * FROM user WHERE (admin AND active) OR owner = true;
+
+-- Select filtered nested array values
+SELECT address[WHERE active = true] FROM person;

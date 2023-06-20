@@ -1,10 +1,10 @@
-SELECT @projections
+SELECT [ VALUE ] @fields [ AS @alias ]
 	FROM @targets
-	[ WHERE @condition ]
+	[ WHERE @conditions ]
 	[ SPLIT [ AT ] @field ... ]
-	[ GROUP [ BY ] @field ... ]
+	[ GROUP [ BY ] @fields ... ]
 	[ ORDER [ BY ]
-		@field [
+		@fields [
 			RAND()
 			| COLLATE
 			| NUMERIC
@@ -12,7 +12,7 @@ SELECT @projections
 	] ]
 	[ LIMIT [ BY ] @limit ]
 	[ START [ AT ] @start ]
-	[ FETCH @field ... ]
+	[ FETCH @fields ... ]
 	[ TIMEOUT @duration ]
 	[ PARALLEL ]
 ;
