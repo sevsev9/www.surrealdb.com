@@ -32,6 +32,73 @@
 <Layout::Gap mini />
 
 <Layout::Text text-l text-f>
+	<h3>Reserved variable names</h3>
+	<p>SurrealDB uses predefined variables. For that purpose, you can use those variables inside your query but you cannot declare new parameters using one of the following name:</p>
+	<Layout::Table filled>
+		<table>
+			<thead>
+				<tr>
+					<th w-10>Name</th>
+					<th w-60>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<code>$auth</code>
+					</td>
+					<td>Represents the currently authenticated scope user</td>
+				</tr>
+				<tr>
+					<td>
+						<code>$token</code>
+					</td>
+					<td>Represents values held inside the JWT token used for the current session</td>
+				</tr>
+				<tr>
+					<td>
+						<code>$session</code>
+					</td>
+					<td>Represents values from the <Link @link="docs.surrealql.functions.session">session</Link> functions as an object</td>
+				</tr>
+				<tr>
+					<td>
+						<code>$before</code>
+					</td>
+					<td>Represents the value before a mutation on a field</td>
+				</tr>
+				<tr>
+					<td>
+						<code>$after</code>
+					</td>
+					<td>Represents the value after a mutation on a field</td>
+				</tr>
+				<tr>
+					<td>
+						<code>$value</code>
+					</td>
+					<td>Represents the value after a mutation on a field (identical to <code>$after</code> in the case of an event)</td>
+				</tr>
+				<tr>
+					<td>
+						<code>$input</code>
+					</td>
+					<td>Represents the initially inputted value in a field definition, as the <code>value</code> clause could have modified the <code>$value</code> variable</td>
+				</tr>				
+				<tr>
+					<td>
+						<code>$parent</code>
+					</td>
+					<td>Represents the parent record in a subquery</td>
+				</tr>
+			</tbody>
+		</table>
+	</Layout::Table>
+</Layout::Text>
+
+<Layout::Gap mini />
+
+<Layout::Text text-l text-f>
 	<h3>Next steps</h3>
 	<p>You've now learnt how to use parameters and variables within SurrealQL statements, and from the client libraries. Take a look at the next chapter to get an understanding of the different types of statements that can be run on SurrealDB.</p>
 </Layout::Text>
