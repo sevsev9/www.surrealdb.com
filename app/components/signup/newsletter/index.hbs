@@ -5,7 +5,8 @@
 		{{else if @text}}
 			{{@text}}
 		{{else}}
-			Join the SurrealDB newsletter
+			<i class="fal fa-envelope"></i>
+			<span>Get updates</span>
 		{{/if}}
 	</div>
 </a>
@@ -23,10 +24,12 @@
 			<br>
 			Founder, SurrealDB
 		{{else}}
-			Enter your email below to join the <img inline src="/static/img/text.svg" alt="SurrealDB" /> newsletter and stay updated on new releases, new features, and changes to our documentation. We promise we won't spam you!
+			Enter your email below to join the <img inline src="/static/img/text.svg" alt="SurrealDB" /> newsletter and stay updated on new product releases, features, and updates to our documentation. We promise we won't spam you!
 			<line></line>
 			<form {{on "submit" this.submit.run}}>
-				<Input @value={{this.email}} placeholder="Enter your email here..." />
+				<Input @value={{this.firstname}} name="firstname" label="First name" placeholder="Enter your first name" />
+				<Input @value={{this.lastname}} name="lastname" label="Last name" placeholder="Enter your last name" />
+				<Input @value={{this.email}} @type="email" name="email" label="Email address" placeholder="Enter your email address" />
 				<button type="submit" {{on "click" this.submit.run}}>
 					Keep me updated
 				</button>
