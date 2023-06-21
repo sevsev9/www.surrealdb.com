@@ -115,7 +115,7 @@ Router.map(function () {
 				this.route('platform', { path: '/:platform' });
 			});
 			this.route('sdks', function () {
-				this.route('angularjs');
+				this.route('angular');
 				this.route('apollo');
 				this.route('c');
 				this.route('dart');
