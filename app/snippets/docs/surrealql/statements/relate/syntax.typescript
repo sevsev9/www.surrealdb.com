@@ -1,8 +1,8 @@
-RELATE @from -> @table -> @with
+RELATE @from_record -> @table -> @to_record
 	[ CONTENT @value
 	  | SET @field = @value ...
 	]
-	[ RETURN [ NONE | BEFORE | AFTER | DIFF | @projections ... ]
+	[ RETURN [ NONE | BEFORE | AFTER | DIFF | @fields ... ]
 	[ TIMEOUT @duration ]
 	[ PARALLEL ]
 ;

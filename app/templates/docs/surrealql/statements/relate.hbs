@@ -7,14 +7,34 @@
 
 <Layout::Text text-l text-f>
     <h2><code>RELATE</code> statement</h2>
-	<p>The RELATE statement can be used to generate graph edges between two records in the database.</p>
+	<p>
+		The RELATE statement can be used to generate graph edges between two records in the database.<br> 
+	This allows you to traverse related records efficiently without needing to pull data from multiple tables and merging that data together using SQL JOINs.</p>
+	<p>
+		Edges created using the <code>RELATE</code> statement are nearly identical to tables created using other statements.<br>
+		The key differences are that
+		<ul>
+			<li>Edge tables have two required fields <code>in</code> and <code>out</code>, which specify the directions of the relationships.</li>
+			<li>Edge tables are deleted once there are no existing relationships left.</li>
+		</ul>
+	</p>
+	<p>Edge tables behave like normal tables in terms of <Link @link="docs.surrealql.statements.update">updating</Link>, <Link @link="docs.surrealql.statements.define.table">defining a schema</Link> or <Link @link="docs.surrealql.statements.define.indexes">indexes</Link>.</p>
+	<p>
+		<Link @link="docs.surrealql.datamodel.records">Record links</Link> are the alternative option when connecting data.<br>
+		The key differences are that graph relations
+		<ul>
+			<li>Offer bi-directional querying.</li>
+			<li>Offer referential integrity.</li>
+			<li>Allow you to store data alongside the relationship.</li>
+		</ul>
+	</p>
 </Layout::Text>
 
 <Layout::Gap mini />
 
 <Layout::Text text-l text-f>
 	<h3>Statement syntax</h3>
-	<Code @name="docs/surrealql/statements/relate/syntax.typescript" text="SQL Syntax" />
+	<Code @name="docs/surrealql/statements/relate/syntax.typescript" text="Surql Syntax" />
 </Layout::Text>
 
 <Layout::Gap mini />
@@ -22,16 +42,64 @@
 <Layout::Text text-l text-f>
 
 	<h3>Example usage</h3>
+	<h4>Basic usage</h4>
+	<p>The following query shows the basic structure of the <code>RELATE</code> statement, which creates a relationship between a record in the person table and a record in the article table.</p>
+	<p>For table names we prioritise readability, such that normal tables are singular, person instead of persons, but edge tables can be plural.</p>
+		<codes vertical>
+		<Code @name="docs-statements-relate-input-1.surql">
+			RELATE person:l19zjikkw1p1h9o6ixrg->wrote->article:8nkk6uj4yprt49z7y3zm;
+		</Code>
+		<Code @name="docs-statements-relate-result-1.txt">
+			[
+				{
+					"id": "wrote:ctwsll49k37a7rmqz9rr",
+					"in": "person:l19zjikkw1p1h9o6ixrg",
+					"out": "article:8nkk6uj4yprt49z7y3zm"
+				}
+			]
+		</Code>
+	</codes>
+	<p>
+		There is no relationship information stored in either the person or article table. <br>
+		Instead, an edge table (in this case a table called wrote) stores the relationship information.
+		As you see, the structure <code>in -> id -> out</code> mirrors the record IDs from the <code>RELATE</code> statement, with the addition of the automatically generated ID for the wrote edge table.
+	</p>
 
-	<p>The following query shows example usage of this statement.</p>
-	<Code @name="docs/surrealql/statements/relate/simple.surql" />
+	<p>
+		By default, the edge table gets created as a schemaless table when you execute the <code>RELATE</code> statement.
+		You can however make the table schemafull by either <Link @link="docs.surrealql.statements.define.table">defining a schema</Link> before or after executing the <code>RELATE</code> statement. 
+	</p>
 
-	<p>Instead of specifying record data using the <code>SET</code> clause, it is also possible to use the <code>CONTENT</code> keyword to specify the record data using a SurrealQL object.</p>
+	<p>A common use case is to make sure only unique relationships get created. You can do that by <Link @link="docs.surrealql.statements.define.indexes">defining an index</Link>.</p>
+	<Code @name="docs/surrealql/statements/relate/unique.surql" />
+
+	<h4>Adding data using <code>SET</code> and <code>CONTENT</code></h4>
+	<p>
+		Let's look at the two ways you can add record data in the <code>RELATE</code> statement.<br>
+		Both of these queries will produce the same result.
+		</p>
 	<Code @name="docs/surrealql/statements/relate/content.surql" />
 
+	<h4>Basics of querying graphs</h4>
+	<p>Let's look at how the above gets queried, for more examples see the <Link @link="docs.surrealql.statements.select"><code>SELECT</code>docs</Link>.</p>
+	<p>For each question below, the 3 queries will give you the same answer.</p>
+	<Code @name="docs/surrealql/statements/relate/relate_query.surql" />
+
+	<h4>Using <code>LET</code> parameters in <code>RELATE</code> statements</h4>
+	<p>You can also use <Link @link="docs.surrealql.statements.let">parameters</Link> to specify the record IDs.</p>
+	<Code @name="docs/surrealql/statements/relate/parameters.surql" />
+
+	<h4>Using the <code>RETURN</code> clause</h4>
 	<p>By default, the relate statement returns the record value once the changes have been made. To change the return value of each record, specify a <code>RETURN</code> clause, specifying either <code>NONE</code>, <code>BEFORE</code>, <code>AFTER</code>, <code>DIFF</code>, or a comma-separated list of specific fields to return.</p>
 	<Code @name="docs/surrealql/statements/relate/return.surql" />
 
+	<h4>The <code>TIMEOUT</code> clause</h4>
+	<p>When processing a large result set with many interconnected records, it is possible to use the <code>TIMEOUT</code> keyword to specify a timeout duration for the statement. If the statement continues beyond this duration, then the transaction will fail, and the statement will return an error.</p>
+	<Code @name="docs/surrealql/statements/select/timeout.surql" />
+
+	<h4>The <code>PARALLEL</code> clause</h4>
+	<p>When processing a large result set with many interconnected records, it is possible to specify the <code>PARALLEL</code> keyword to signify that edges and remote records should be fetched and processed in parallel.</p>
+	<Code @name="docs/surrealql/statements/select/parallel.surql" />
 </Layout::Text>
 
 <Layout::Gap large />
