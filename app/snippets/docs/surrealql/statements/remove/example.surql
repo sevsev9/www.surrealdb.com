@@ -14,6 +14,7 @@ REMOVE EVENT new_post ON TABLE article;
 
 REMOVE FUNCTION fn::update_author;
 
+-- Only works for Schemaful tables (i.e. tables with a schema)
 REMOVE FIELD tags ON TABLE article;
 
 REMOVE INDEX authors ON TABLE article;
