@@ -7,7 +7,7 @@ type testUser struct {
 }
 
 // select a user
-data, err := db.Select("person:electwix")
+userData, err := db.Select("person:electwix")
 
 var user testUser
 err = surrealdb.Unmarshal(userData, &user)
