@@ -84,6 +84,20 @@
 	<p>Let's look at how the above gets queried, for more examples see the <Link @link="docs.surrealql.statements.select"><code>SELECT</code>docs</Link>.</p>
 	<p>For each question below, the 3 queries will give you the same answer.</p>
 	<Code @name="docs/surrealql/statements/relate/relate_query.surql" />
+	<p>
+		For a more complicated query like the one below you can use a simple rule of thumb:<br>
+		Place the subject in front of the graph selection, then read it backward.</p>
+	<Code @name="docs/surrealql/statements/relate/complex.surql" />
+	<p>
+		Reading this backwards then makes more sense:<br>
+		Select every product that was purchased by a person who purchased a product that was also purchased by person Tobie.
+	</p>
+	<p>Alternatively, you can break it down in steps:</p>
+	<Code @name="docs/surrealql/statements/relate/complex_steps.surql" />
+	<p>
+		Putting it all together it would be:<br>
+		based on all the products Tobie purchased, which person also purchased those products and what did they purchase?
+	</p>
 
 	<h4>Using <code>LET</code> parameters in <code>RELATE</code> statements</h4>
 	<p>You can also use <Link @link="docs.surrealql.statements.let">parameters</Link> to specify the record IDs.</p>
