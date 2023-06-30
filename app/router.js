@@ -222,6 +222,7 @@ Router.map(function () {
 			this.route('start');
 			this.route('import');
 			this.route('export');
+			this.route('backup');
 			this.route('version');
 			this.route('isready');
 			this.route('sql');
