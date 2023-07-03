@@ -5,18 +5,13 @@
 
 <Layout::Text text-l text-f>
     <h2><img inline src="/static/img/surrealql-text.svg" alt="SurrealQL" /></h2>
-    <p>SurrealQL is a powerful database query language which closely resembles traditional SQL, but with slight differences and improvements. Although it has similar syntax and similar statement types, there are a number of differences between traditional SQL and SurrealQL. For an overview of the different statement types which can be run in SurrealDB, and for the complete syntax definitions, along with example queries for all of the different statement types, take a look at the <Link @link="docs.surrealql.statements">statements</Link> page.</p>
+    <p>SurrealQL is a powerful database query language which closely resembles traditional SQL, but with slight differences and improvements. Although it has similar syntax and similar statement types, there are a number of differences between traditional SQL and SurrealQL. </p>
+	<p>For an overview of the various statement types which can be run in SurrealDB, and for the complete syntax definitions, along with example queries for all of the different statement types, take a look at the <Link @link="docs.surrealql.statements">statements</Link> page.</p>
 </Layout::Text>
 
 <Layout::Gap mini />
 
 <Layout::Boxes cols-3-to-2-to-1>
-	<LinkTo @route="docs.surrealql.comments">
-		<Layout::Boxes::Item mini hover>
-			<h4>Comments</h4>
-			<p>See how to write comments in SurrealQL</p>
-		</Layout::Boxes::Item>
-	</LinkTo>
 	<LinkTo @route="docs.surrealql.datamodel">
 		<Layout::Boxes::Item mini hover>
 			<h4>Data model</h4>
@@ -27,6 +22,12 @@
 		<Layout::Boxes::Item mini hover>
 			<h4>Statements</h4>
 			<p>Detailed instructions and examples on all of the different SurrealQL statements</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.functions">
+		<Layout::Boxes::Item mini hover>
+			<h4>Functions</h4>
+			<p>In-built functions for checking, manipulating, and working with different types of data</p>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.surrealql.operators">
@@ -53,10 +54,10 @@
 			<p>Use transactions to group statements together which either succeed or fail as a whole</p>
 		</Layout::Boxes::Item>
 	</LinkTo>
-	<LinkTo @route="docs.surrealql.functions">
+	<LinkTo @route="docs.surrealql.comments">
 		<Layout::Boxes::Item mini hover>
-			<h4>Functions</h4>
-			<p>In-built functions for checking, manipulating, and working with different types of data</p>
+			<h4>Comments</h4>
+			<p>See how to write comments in SurrealQL</p>
 		</Layout::Boxes::Item>
 	</LinkTo>
 </Layout::Boxes>
