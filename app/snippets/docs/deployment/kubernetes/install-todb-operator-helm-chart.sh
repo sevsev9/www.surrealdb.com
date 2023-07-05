@@ -5,4 +5,4 @@ $ helm install \
   --create-namespace \
 	tidb-operator \
 	pingcap/tidb-operator \
-	--version v1.4.4
+	--version v1.4.5
