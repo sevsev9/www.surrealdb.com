@@ -21,6 +21,10 @@ export function url([type]) {
 			return 'https://www.youtube.com/channel/UCjf2teVEuYVvvVC-gFZNq6w';
 		case 'discord':
 			return 'https://discord.gg/surrealdb';
+		case 'instagram':
+			return 'https://www.instagram.com/surrealdb';
+		case 'threads':
+			return 'https://www.threads.net/@surrealdb';
 		case 'dev':
 			return 'https://dev.to/surrealdb';
 		case 'medium':
