@@ -34,7 +34,30 @@
 
 <Layout::Text text-l text-f>
 	<h3>System structure</h3>
-	<p>SurrealDB works similarly to other traditional relational databases, and document databases, with a few slight differences. SurrealDB is designed and developed to be a multi-tenant database platform with a high-level <code>namespace</code> layer designed as a separation for each organisations, department, or development team. There is no limit to the number of namespaces on SurrealDB. Below this, the <code>database</code> layer is similar to databases in other database management systems. There is no limit to the number of databases on each namespace. Within each database, data can be stored within <code>table</code> definitions, otherwise known as collections in other database management systems. In SurrealDB each row or document is called a <code>record</code>. Multiple authentication <code>scope</code> definitions can be defined on each <code>database</code>, allowing for custom authentication across tables, records, and fields.</p>
+	<p>
+		SurrealDB works similarly to other traditional relational databases, and document databases, with a few slight differences.
+		SurrealDB is designed and developed to be a multi-tenant database platform with a high-level <Link @link="docs.surrealql.statements.define.namespace"> <code>namespace</code></Link>
+		layer designed as a separation for each organisations, department, or development team.
+		There is no limit to the number of namespaces on SurrealDB.
+		Below this, the <Link @link="docs.surrealql.statements.define.database"> <code>databases</code> </Link> layer is similar to databases in other database management systems.
+		There is no limit to the number of databases on each namespace. Within each database, data can be stored within
+		<Link @link="docs.surrealql.statements.define.table"> <code>table</code></Link> definitions, otherwise known as collections in other database management systems.
+		In SurrealDB each row or document is called a <Link @link="docs.surrealql.datamodel.ids"> <code>records</code></Link> and columns are called <Link @link="docs.surrealql.statements.define.field"> <code>fields</code></Link>.
+		While you can <Link @link="docs.surrealql.statements.define"> <code>define</code> </Link>:
+		<Layout::Gap tiny />
+		<ul>
+			<li> <Link @link="docs.surrealql.statements.define.namespace"> <code>namespaces</code> </Link> </li>
+			<li> <Link @link="docs.surrealql.statements.define.database"> <code>databases</code> </Link></li>
+			<li> <Link @link="docs.surrealql.statements.define.table"> <code>tables</code></Link></li>
+			<li> <Link @link="docs.surrealql.statements.define.field"> <code>fields</code></Link></li>
+		</ul>
+		You cannot define <Link @link="docs.surrealql.datamodel.ids"> <code>records</code></Link>, you can only
+		<Link @link="docs.surrealql.statements.create">create</Link>,
+		<Link @link="docs.surrealql.statements.select">read</Link>,
+		<Link @link="docs.surrealql.statements.update">update</Link> and
+		<Link @link="docs.surrealql.statements.delete">delete</Link> them.
+	</p>
+	<p>Multiple authentication <code>scope</code> definitions can be defined on each <code>database</code>, allowing for custom authentication across tables, records, and fields.</p>
 	<Layout::Gap mini />
 	<img src="/static/img/docs/introduction/concepts.png" w-100 />
 </Layout::Text>
