@@ -1,2 +1,3 @@
--- Drop the table if it exists and create a new one with the same name.
+-- By marking a table as DROP, you disallow any records to be created or updated.
+-- Records that currently exist in the table will not automatically be deleted, you can still remove them manually.
 DEFINE TABLE reading DROP;
