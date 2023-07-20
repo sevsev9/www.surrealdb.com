@@ -1,5 +1,5 @@
 DEFINE FIELD @name ON [ TABLE ] @table
-	[ TYPE @type ]
+	[ [ FLEXIBLE ] TYPE @type ]
 	[ VALUE @expression ]
 	[ ASSERT @expression ]
 	[ PERMISSIONS [ NONE | FULL

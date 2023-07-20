@@ -24,7 +24,7 @@
 
 <Layout::Text text-l text-f>
 	<h3>Statement syntax</h3>
-	<Code @name="docs/surrealql/statements/define/field/syntax.typescript" text="SQL Syntax" />
+	<Code @name="docs/surrealql/statements/define/field/syntax.typescript" text="SurQL Syntax" />
 </Layout::Text>
 
 <Layout::Gap mini />
@@ -33,20 +33,34 @@
 	<h3>Example usage</h3>
 	<p>The following expression shows the simplest way to use the <code>DEFINE FIELD</code> statement.</p>
 	<Code @name="docs/surrealql/statements/define/field/name-field.surql" />
+
 	<h4>Defining data types</h4>
 	<h5>Simple data types</h5>
 	<Code @name="docs/surrealql/statements/define/field/type-field.surql" />
+
+	<h5>Flexible data types</h5>
+	<p>
+		Flexible types allow you to have <code>SCHEMALESS</code> functionality on a <code>SCHEMAFULL</code> table.
+		This is especially useful for working with nested objects.
+	</p>
+	<Code @name="docs/surrealql/statements/define/field/type-flexible.surql" />
+
 	<h5>Array data type</h5>
 	<Code @name="docs/surrealql/statements/define/field/array-type-field.surql" />
+	
 	<h4>Setting a default value</h4>
 	<Code @name="docs/surrealql/statements/define/field/value-field.surql" />
+
 	<h4>Asserting rules on fields</h4>
 	<p>You can take your field definitions even further by using asserts. Assert is a powerful feature that can be used to ensure that your data remains consistent.</p>
+	
 	<h5>Email is required</h5>
 	<Code @name="docs/surrealql/statements/define/field/email-assert-field.surql" />
+	
 	<h5>Array with allowed values</h5>
 	<p>By using an Access Control List as an example we can show how we can restrict what values can be stored in an array.</p>
 	<Code @name="docs/surrealql/statements/define/field/array-assert-field.surql" />
+	
 	<h5>Use regex to validate a string</h5>
 	<Code @name="docs/surrealql/statements/define/field/constraints-field.surql" />
 </Layout::Text>
