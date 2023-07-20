@@ -43,8 +43,16 @@
 	<h3>Using SurrealQL</h3>
 	<p>Using <Link @link="docs.surrealql">SurrealQL</Link>, you can query data from your SurrealDB database. While this is not a
 	requirement for getting started, it is helpful to familiarise yourself with some commands.</p>
-	<p>Once you have your database running, head over to <Link @link="https://surrealist.app/">Surrealist.app</Link>,
-	which defaults to your local <code>http://localhost:8000/</code>. Using Surrealist, you can try out the following commands:</p>
+	<p>Once you have your database running, head over to <Link @link="https://surrealist.app/">Surrealist.app</Link>. Before you can start using Surrealist you will have to input the credentials for your session, which include the <code>Endpoint URL</code>, <code>Namespace</code>, <code>Database</code>, <code>Username</code>, and <code>Password</code>. By default these fields are empty and you can set them to the values below. However, these values can be set to your preference.</p>
+
+
+	<Code @name="docs-introduction-start-example.js">
+		EndpointURL: 'http://127.0.0.1:8000/'
+		Namespace: 'test',
+		Database: 'test',
+		Username: 'root',
+		Password: 'root',
+	</Code>
 	<blockquote Green text="Note"> Surrealist is a third-party web-based SurrealQL client that allows you to run queries against your SurrealDB, built and maintained
 		<Link @link="https://github.com/StarlaneStudios">by StarlaneStudios</Link>!
 	</blockquote>
