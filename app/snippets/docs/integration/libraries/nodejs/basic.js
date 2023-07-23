@@ -13,7 +13,7 @@ async function main() {
 		});
 
 		// Select a specific namespace / database
-		await db.use('test', 'test');
+		await db.use({ns: 'test', db: 'test'});
 
 		// Create a new person with a random id
 		let created = await db.create("person", {
