@@ -216,6 +216,7 @@ Router.map(function () {
 				this.route('script');
 				this.route('sleep');
 			});
+			this.route('demo');
 		});
 
 		this.route('cli', function () {
