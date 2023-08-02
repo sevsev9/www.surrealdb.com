@@ -213,7 +213,12 @@ Router.map(function () {
 				this.route('string');
 				this.route('time');
 				this.route('type');
-				this.route('script');
+				this.route('script', function () {
+					this.route('context');
+					this.route('arguments');
+					this.route('type-conversion');
+					this.route('surrealql-functions');
+				});
 				this.route('sleep');
 			});
 			this.route('demo');
