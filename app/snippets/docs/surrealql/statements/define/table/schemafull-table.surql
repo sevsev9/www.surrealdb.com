@@ -11,6 +11,15 @@ DEFINE FIELD email ON TABLE user TYPE string
 DEFINE INDEX userEmailIndex ON TABLE user COLUMNS email UNIQUE;
 
 -- SEE IT IN ACTION
--- 1: Add a user with all required fields and an undefined one.
-CREATE user SET firstName = 'Tobie', lastName = 'Hitchcock', email = 'Tobie.Hitchcock@surrealdb.com', photoURI = 'photo/yxCFi22Jw2.webp';
--- 2: Statement will fail because photoURI is not a defined field.
+-- 1: Add a user with all required fields and an undefined one, 'photoURI'.
+CREATE user CONTENT {
+    firstName: 'Tobie',
+    lastName: 'Hitchcock',
+    email: 'Tobie.Hitchcock@surrealdb.com',
+    photoURI: 'photo/yxCFi22Jw2.webp'
+};
+-- 2: Statement will not fail but photoURI will be ignored as it is not a
+--    defined field.
+
+-- 3: Query the data
+SELECT * FROM user
