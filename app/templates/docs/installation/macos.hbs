@@ -18,7 +18,7 @@
 	<p>To get started, you can use the SurrealDB <Link @link={{url "install"}}>install script</Link>. This script securely downloads the latest version for the platform and CPU type. It attempts to install SurrealDB into the <code>/usr/local/bin</code> folder, falling back to a user-specified folder if necessary.</p>
 
 	<Code @name="docs-installation-macos-script-install.shell">
-		user@localhost % curl --proto '=https' --tlsv1.2 -sSf https://install.surrealdb.com | sh
+		user@localhost % curl -sSf https://install.surrealdb.com | sh
 	</Code>
 
 	<h4>Updating SurrealDB</h4>
@@ -26,7 +26,7 @@
 	<p>To ensure that you are using the latest version, update SurrealDB to version <Version /> using the following command.</p>
 
 	<Code @name="docs-installation-macos-script-update.shell">
-		user@localhost % curl --proto '=https' --tlsv1.2 -sSf https://install.surrealdb.com | sh
+		user@localhost % curl -sSf https://install.surrealdb.com | sh
 	</Code>
 
 	<h4>Checking SurrealDB</h4>
