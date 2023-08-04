@@ -38,7 +38,7 @@
 	<p>Instead of specifying the full record data using the <code>SET</code> clause or the <code>CONTENT</code> keyword, it is also possible to merge-update only specific fields by using the <code>MERGE</code> keyword and specifying only the fields which are to be updated.</p>
 	<Code @name="docs/surrealql/statements/update/merge.surql" />
 
-	<p> You can also specify changes to be applied to your query response, using the <code>PATCH</code> command which works similar to the <Link @href="https://jsonpatch.com/">JSON Patch specification</Link> </p>
+	<p> You can also specify changes to be applied to your query response, using the <code>PATCH</code> command which works similar to the <Link @link="https://jsonpatch.com/"> JSON Patch specification </Link> </p>
 	<Code @name="docs/surrealql/statements/update/patch.surql" />
 
 	<p>By default, the update statement returns the record value once the changes have been made. To change the return value of each record, specify a <code>RETURN</code> clause, specifying either <code>NONE</code>, <code>BEFORE</code>, <code>AFTER</code>, <code>DIFF</code>, or a comma-separated list of specific fields to return.</p>
