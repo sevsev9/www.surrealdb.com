@@ -866,12 +866,46 @@
 				</tbody>
 			</table>
 		</Layout::Table>
-		<p>The following shows an example request.</p>
+		<p>The following shows example request on the different permission layers for signin.</p>
+
+		<h4>Scope:</h4>
 		<codes vertical>
 			<Code @name="docs-integrations-http-signin.bash" text="Command line">
 				curl -X POST \
 					 -H "Accept: application/json" \
 					 -d '{"ns":"test","db":"test","sc":"user_scope","username":"john.doe","password":"123456"}' \
+					 http://localhost:8000/signin
+			</Code>
+			<Code @name="docs-integrations-http-signin.json" text="Output">
+				{
+					"code": 200,
+					"details": "Authentication succeeded",
+					"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+				}
+			</Code>
+		</codes>
+		<h4>Namespace:</h4>
+		<codes vertical>
+			<Code @name="docs-integrations-http-signin-namespace.bash" text="Command line">
+				curl -X POST \
+					 -H "Accept: application/json" \
+					 -d '{"ns":"test","username":"john.doe","password":"123456"}' \
+					 http://localhost:8000/signin
+			</Code>
+			<Code @name="docs-integrations-http-signin.json" text="Output">
+				{
+					"code": 200,
+					"details": "Authentication succeeded",
+					"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+				}
+			</Code>
+		</codes>
+		<h4>Root:</h4>
+		<codes vertical>
+			<Code @name="docs-integrations-http-signin-root.bash" text="Command line">
+				curl -X POST \
+					 -H "Accept: application/json" \
+					 -d '{"username":"john.doe","password":"123456"}' \
 					 http://localhost:8000/signin
 			</Code>
 			<Code @name="docs-integrations-http-signin.json" text="Output">
