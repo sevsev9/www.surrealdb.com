@@ -23,7 +23,7 @@ export default class extends Controller {
 				]
 			},
 			{
-				time: new Date('2023-07-30'),
+				time: new Date('2023-08-30'),
 				name: 'SurrealDB 1.0.0-beta.10',
 				tags: [
 					'Table indexes and unique constraints',
