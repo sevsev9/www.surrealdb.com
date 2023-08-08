@@ -25,7 +25,7 @@ async function main() {
 		});
 
 		// Update a person record with a specific id
-		let updated = await db.change("person:jaime", {
+		let updated = await db.merge("person:jaime", {
 			marketing: true,
 		});
 
