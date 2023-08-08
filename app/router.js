@@ -178,6 +178,7 @@ Router.map(function () {
 				this.route('create');
 				this.route('update');
 				this.route('relate');
+				this.route('return');
 				this.route('delete');
 
 				this.route('define', function () {
