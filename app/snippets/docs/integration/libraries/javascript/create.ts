@@ -18,3 +18,11 @@ const [record] = await db.create<Person>('person:tobie', {
 		marketing: true,
 	},
 });
+
+// The content you are creating the record with might differ from the return type
+const [record] = await db.create<
+	Person,
+	Pick<Person, 'name'>
+>('person:tobie', {
+	name: 'Tobie',
+});

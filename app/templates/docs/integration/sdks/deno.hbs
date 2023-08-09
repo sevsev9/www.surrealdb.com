@@ -150,7 +150,7 @@
 			<tr>
 				<td>
 					<a href="#create">
-						<Ascua::Prism::Inline @language="ts" @code="async db.create<T>(thing, data)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.create<T, U>(thing, data)" />
 					</a>
 				</td>
 				<td>Creates a record in the database</td>
@@ -158,7 +158,7 @@
 			<tr>
 				<td>
 					<a href="#update">
-						<Ascua::Prism::Inline @language="ts" @code="async db.update<T>(thing, data)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.update<T, U>(thing, data)" />
 					</a>
 				</td>
 				<td>Updates all records in a table, or a specific record</td>
@@ -166,7 +166,7 @@
 			<tr>
 				<td>
 					<a href="#merge">
-						<Ascua::Prism::Inline @language="ts" @code="async db.merge<T>(thing, data)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.merge<T, U>(thing, data)" />
 					</a>
 				</td>
 				<td>Modifies all records in a table, or a specific record</td>
@@ -174,7 +174,7 @@
 			<tr>
 				<td>
 					<a href="#patch">
-						<Ascua::Prism::Inline @language="ts" @code="async db.patch<T>(thing, data)" />
+						<Ascua::Prism::Inline @language="ts" @code="async db.patch(thing, data)" />
 					</a>
 				</td>
 				<td>Applies <Link @link="https://jsonpatch.com">JSON Patch</Link> changes to all records in a table, or a specific record</td>
@@ -738,7 +738,7 @@
 <Layout::Group {{waypoint "create"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="ts" @code="async db.create<T>(thing, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.create<T, U>(thing, data)" /></h3>
 		<p>Creates a record in the database.</p>
 		<Layout::Table>
 			<table>
@@ -784,7 +784,7 @@
 <Layout::Group {{waypoint "update"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="ts" @code="async db.update<T>(thing, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.update<T, U>(thing, data)" /></h3>
 		<p>Updates all records in a table, or a specific record, in the database.</p>
 		<blockquote yellow text="Note">This function replaces the current document / record data with the specified data.</blockquote>
 		<Layout::Table>
@@ -831,7 +831,7 @@
 <Layout::Group {{waypoint "merge"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="ts" @code="async db.merge<T>(thing, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.merge<T, U>(thing, data)" /></h3>
 		<p>Modifies all records in a table, or a specific record, in the database.</p>
 		<blockquote yellow text="Note">This function merges the current document / record data with the specified data.</blockquote>
 		<Layout::Table>
@@ -878,7 +878,7 @@
 <Layout::Group {{waypoint "patch"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="ts" @code="async db.patch<T>(thing, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.patch(thing, data)" /></h3>
 		<p>Applies <Link @link="https://jsonpatch.com">JSON Patch</Link> changes to all records, or a specific record, in the database.</p>
 		<blockquote yellow text="Note">This function patches the current document / record data with the specified <Link @link="https://jsonpatch.com">JSON Patch</Link> data.</blockquote>
 		<Layout::Table>

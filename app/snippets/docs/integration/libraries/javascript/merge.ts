@@ -20,3 +20,11 @@ const [person] = await db.merge<Person>('person:tobie', {
 		active: true,
 	},
 });
+
+// The content you are merging the record with might differ from the return type
+const [record] = await db.merge<
+	Person,
+	Pick<Person, 'name'>
+>('person:tobie', {
+	name: 'Tobie',
+});

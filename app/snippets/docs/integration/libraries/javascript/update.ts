@@ -18,3 +18,11 @@ const [person] = await db.update<Person>('person:tobie', {
 		marketing: true,
 	},
 });
+
+// The content you are updating the record with might differ from the return type
+const [record] = await db.update<
+	Person,
+	Pick<Person, 'name'>
+>('person:tobie', {
+	name: 'Tobie',
+});
