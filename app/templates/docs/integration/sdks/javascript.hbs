@@ -100,6 +100,14 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#info">
+						<Ascua::Prism::Inline @language="ts" @code="async db.info<T>()" />
+					</a>
+				</td>
+				<td>Returns the record of an authenticated scope user</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#signup">
 						<Ascua::Prism::Inline @language="ts" @code="async db.signup(vars)" />
 					</a>
@@ -364,6 +372,20 @@
 		</Layout::Table>
 		<Code @name="docs-integration-libraries-javascript-use.js">
 			await db.use({ ns: 'surrealdb', db: 'docs' });
+		</Code>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "info"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="ts" @code="async db.info<T>()" /></h3>
+		<p>This method returns the record of an authenticated scope user.</p>
+		<Code @name="docs-integration-libraries-javascript-info.js">
+			const user = await db.info();
 		</Code>
 	</Layout::Text>
 
