@@ -57,7 +57,7 @@
 
 <Layout::Text text-l text-f>
 	<h3>Array-based Record IDs</h3>
-	<p>Complex Record IDs support dynamic expressions, allowing parameters, and function expressions to be used as values within the IDs. This is useful in a timeseries context, or for ensuring locality between specific records in a table.</p>
+	<p>Similar to Object-based Record IDs, records in SurrealDB can store arrays of values, with no limit to the depth of the arrays. Arrays can store any value stored within them, and can store different value types within the same array.</p>
 	<Code @name="docs-surrealql-overview-record-array.surql">
 		// Set a new parameter
 		LET $now = time::now();
