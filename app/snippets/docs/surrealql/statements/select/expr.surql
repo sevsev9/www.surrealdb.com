@@ -37,10 +37,3 @@ SELECT ->likes->friend.name AS friends FROM person:tobie;
 
 -- Use the result of a subquery as a returned field
 SELECT *, (SELECT * FROM events WHERE type = 'activity' LIMIT 5) AS history FROM user;
-
--- Store the subquery result in a variable and query that result.
-LET $history = SELECT * FROM events WHERE type = 'activity' LIMIT 5;
-SELECT * from $history;
-
--- Use the parent instance's field in a subquery
-SELECT *, (SELECT * FROM events WHERE host == $parent.id) AS hosted_events FROM user;
