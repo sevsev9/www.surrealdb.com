@@ -1,1 +1,1 @@
-UPDATE person:john SET name = 'David'
+UPDATE author:john SET name = 'David'
