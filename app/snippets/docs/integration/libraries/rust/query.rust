@@ -1,6 +1,10 @@
-// Assign the variable on the connection
+// Run some queries
+let sql = "
+    CREATE person;
+    SELECT * FROM type::table($table);
+";
 let mut result = db
-    .query("CREATE person; SELECT * FROM type::table($table);")
+    .query(sql)
     .bind(("table", "person"))
     .await?;
 // Get the first result from the first query

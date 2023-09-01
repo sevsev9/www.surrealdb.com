@@ -4,6 +4,6 @@ db.set("name", Name {
     last: "Morgan Hitchcock",
 }).await?;
 // Use the variable in a subsequent query
-db.query("CREATE person SET name = $name").await?;
+db.query("CREATE person SET name = $name").await?.check()?;
 // Use the variable in a subsequent query
 db.query("SELECT * FROM person WHERE name.first = $name.first").await?.check()?;

@@ -1,4 +1,4 @@
-static DB: Surreal<Db> = Surreal::init();
+static DB: Lazy<Surreal<Db>> = Lazy::new(Surreal::init);
 
 #[tokio::main]
 async fn main() -> surrealdb::Result<()> {
