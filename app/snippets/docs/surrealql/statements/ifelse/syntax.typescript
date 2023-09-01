@@ -1,7 +1,7 @@
-IF @condition THEN
+IF @condition [ THEN ]
 	@expression
-[ ELSE IF @condition THEN
+[ ELSE IF @condition [ THEN ]
 	@expression ... ]
 [ ELSE
 	@expression ]
-END
+[ END ]

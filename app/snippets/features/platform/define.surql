@@ -1,5 +1,5 @@
 -- Specify a field on the user table
-DEFINE FIELD email ON TABLE user TYPE string ASSERT is::email($value);
+DEFINE FIELD email ON TABLE user TYPE string ASSERT string::is_email($value);
 
 -- Add a unique index on the email field to prevent duplicate values
 DEFINE INDEX email ON TABLE user COLUMNS email UNIQUE;

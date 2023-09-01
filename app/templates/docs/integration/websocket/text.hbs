@@ -152,7 +152,7 @@
 			<tr>
 				<td>
 					<a href="#patch">
-						<code>patch</code> <code>[ thing, patches ]</code>
+						<code>patch</code> <code>[ thing, patches, diff ]</code>
 					</a>
 				</td>
 				<td>Patch either all records in a table or a single record with specified patches</td>
@@ -823,7 +823,7 @@
 <Layout::Group {{waypoint "patch"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><code>patch</code> <code>[ thing, patches ]</code> method</h3>
+		<h3><code>patch</code> <code>[ thing, patches, diff ]</code> method</h3>
 		<p>This method patches either all records in a table or a single record with specified patches</p>
 		<blockquote yellow text="Note">This function patches the current document / record data with the specified <Link @link="https://jsonpatch.com">JSON Patch</Link> data.</blockquote>
 		<Layout::Table>
@@ -848,6 +848,13 @@
 							<l yellow r>Required</l>
 						</td>
 						<td>An array of patches following the <Link @href="https://jsonpatch.com/">JSON Patch specification</Link></td>
+					</tr>
+					<tr>
+						<td>
+							<code>diff</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>A boolean representing if just a diff should be returned.</td>
 					</tr>
 				</tbody>
 			</table>

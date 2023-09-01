@@ -1,1 +1,1 @@
-SELECT email, is::email(email) AS valid FROM user;
+SELECT email, string::is_email(email) AS valid FROM user;

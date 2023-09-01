@@ -10,7 +10,7 @@ Add array::insert() function
 Add array::flatten() function
 Add array::complement() function
 Add rand::ulid() function
-Add is::url() function
+Add string::is_url() function
 Add is::datetime() function
 Add time::format() function
 Add time::timezone() function
