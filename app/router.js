@@ -77,6 +77,7 @@ Router.map(function () {
 			});
 			this.route('upgrading', function () {
 				this.route('beta8-to-beta9');
+				this.route('beta9-to-beta10');
 			});
 		});
 
@@ -151,11 +152,13 @@ Router.map(function () {
 			this.route('transactions');
 
 			this.route('datamodel', function () {
+				this.route('overview');
 				this.route('ids');
 				this.route('simple');
 				this.route('numbers');
 				this.route('strings');
 				this.route('datetimes');
+				this.route('formatters');
 				this.route('uuids');
 				this.route('objects');
 				this.route('arrays');
@@ -174,23 +177,31 @@ Router.map(function () {
 				this.route('commit');
 				this.route('ifelse');
 				this.route('select');
+				this.route('live-select');
+				this.route('kill');
 				this.route('insert');
 				this.route('create');
 				this.route('update');
 				this.route('relate');
 				this.route('return');
 				this.route('delete');
+				this.route('for');
+				this.route('break');
+				this.route('continue');
+				this.route('throw');
 
 				this.route('define', function () {
 					this.route('namespace');
 					this.route('database');
 					this.route('login');
+					this.route('user');
 					this.route('token');
 					this.route('scope');
 					this.route('table');
 					this.route('event');
 					this.route('function');
 					this.route('field');
+					this.route('analyzer');
 					this.route('indexes');
 					this.route('param');
 				});
@@ -203,6 +214,7 @@ Router.map(function () {
 				this.route('array');
 				this.route('count');
 				this.route('crypto');
+				this.route('duration');
 				this.route('geo');
 				this.route('http');
 				this.route('validation');
@@ -210,19 +222,27 @@ Router.map(function () {
 				this.route('meta');
 				this.route('parse');
 				this.route('rand');
+				this.route('search');
 				this.route('session');
 				this.route('string');
 				this.route('time');
 				this.route('type');
 				this.route('script', function () {
-					this.route('context');
 					this.route('arguments');
+					this.route('built-in-functions');
+					this.route('context');
 					this.route('type-conversion');
 					this.route('surrealql-functions');
 				});
 				this.route('sleep');
+				this.route('vector');
 			});
 			this.route('demo');
+		});
+
+		this.route('security', function () {
+			this.route('authentication');
+			this.route('capabilities');
 		});
 
 		this.route('cli', function () {
@@ -234,6 +254,8 @@ Router.map(function () {
 			this.route('isready');
 			this.route('sql');
 			this.route('help');
+			this.route('validate');
+			this.route('upgrade');
 		});
 
 		this.route('guides', function () {

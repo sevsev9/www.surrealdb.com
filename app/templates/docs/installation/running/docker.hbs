@@ -33,10 +33,10 @@
 		user@localhost % docker run --rm --pull always -p 8000:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace file:/mydata/mydatabase.db
 	</Code>
 
-	<p>In order to keep SurrealDB secure, the database disables root-level authentication if a password is not set. To set a root-level authentication login, use the <Ascua::Prism::Inline @language="bash" @code="--user" /> and <Ascua::Prism::Inline @language="bash" @code="--pass" /> command-line arguments. The following command starts the database with a top-level user named <code>root</code> with a password also set to <code>root</code>.</p>
+	<p>In order to keep SurrealDB secure, configure your initial root-level user by setting the <Ascua::Prism::Inline @language="bash" @code="--user" /> and <Ascua::Prism::Inline @language="bash" @code="--pass" /> command-line arguments. The following command starts the database with a top-level user named <code>root</code> with a password also set to <code>root</code>. The root user will be persisted in storage, which means you don't have to include the command line arguments next time you start SurrealDB.</p>
 
 	<Code @name="docs-installation-running-docker-4.shell">
-		user@localhost % docker run --rm --pull always -p 80:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace --user root --pass root file:mydatabase.db
+		user@localhost % docker run --rm --pull always -p 80:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace --auth --user root --pass root file:mydatabase.db
 	</Code>
 
 	<p>In order to change the default port that SurrealDB uses for web connections and from database clients you can use the Docker <Ascua::Prism::Inline @language="bash" @code="-p" /> command line argument to tunnel the port to the internal SurrealDB port which SurrealDB is served on. The following command starts the database on port <code>80</code>.</p>
@@ -48,14 +48,13 @@
 	<p>After running the above command, you should see the SurrealDB server startup successfully.</p>
 
 	<Code @name="docs-installation-running-docker-6.shell">
-		user@localhost % docker run --rm --pull always -p 80:8000 -v /mydata:/mydata surrealdb/surrealdb:latest start --log trace --user root --pass root file:/mydata/mydatabase.db
-		[2023-04-03 08:45:42] INFO  surrealdb::iam Root authentication is enabled
-		[2023-04-03 08:45:42] INFO  surrealdb::iam Root username is 'root'
-		[2023-04-03 08:45:42] INFO  surrealdb::dbs Database strict mode is disabled
-		[2023-04-03 08:45:42] INFO  surrealdb::kvs Starting kvs store in file:/mydata/mydatabase.db
-		[2023-04-03 08:45:42] INFO  surrealdb::kvs Started kvs store in file:/mydata/mydatabase.db
-		[2023-04-03 08:45:42] INFO  surrealdb::net Starting web server on 0.0.0.0:8000
-		[2023-04-03 08:45:42] INFO  surrealdb::net Started web server on 0.0.0.0:8000
+		user@localhost % docker run --rm --pull always -p 80:8000 -v /local-dir:/container-dir surrealdb/surrealdb:latest start --auth --user root --pass root file:/container-dir/mydatabase.db
+		2023-08-30T15:06:34.788739Z  INFO surreal::dbs: ✅🔒 Authentication is enabled 🔒✅
+		2023-08-30T15:06:34.788821Z  INFO surrealdb::kvs::ds: Starting kvs store in file:/container-dir/mydatabase.db
+		2023-08-30T15:06:34.788859Z  INFO surrealdb::kvs::ds: Started kvs store in file:/container-dir/mydatabase.db
+		2023-08-30T15:06:34.789222Z  INFO surrealdb::kvs::ds: Initial credentials were provided and no existing root-level users were found: create the initial user 'root'.
+		2023-08-30T15:06:35.205123Z  INFO surrealdb::node: Started node agent
+		2023-08-30T15:06:35.205827Z  INFO surrealdb::net: Started web server on 0.0.0.0:8080
 	</Code>
 
 	<p>For details on the <Link @link="docs.cli.start"><Ascua::Prism::Inline @language="bash" @code="start" /></Link> command, and all of the available configuration options and arguments, view the <Link @link="docs.cli.start">start command documentation</Link>.</p>

@@ -2,7 +2,7 @@
 let people = db.update("person")
     .patch(PatchOp::replace("/created_at", Datetime::default()))
     .await?;
-]);
+
 // Update a record with a specific ID
 let person = db.update(("person", "tobie"))
     .patch(PatchOp::replace("/settings/active", false))

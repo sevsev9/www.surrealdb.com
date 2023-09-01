@@ -27,13 +27,23 @@
 
 	<p>Here's what each segment of this command does:</p>
 	<ul>
-		<li><code>surreal start</code>: This initiates the process of starting the SurrealDB database server.
+		<li>
+			<code>surreal start</code>: This initiates the process of starting the SurrealDB database server.
 		</li>
-		<li><code>--user root --pass root</code>: These flags set the username and password to access the database. Here both are set as <code>root</code>.
-		Remember, it's not secure to hardcode credentials directly into a command like this for production environments.
-		Instead, they should be securely stored in environment variables or some form of secret management system.</li>
+		<li>
+			<code>-A</code>: Enable all capabilities.
+		</li>
+		<li>
+			<code>--auth</code>: Enable authentication for the database.
+		</li>
+		<li>
+			<code>--user root --pass root</code>: These flags set the initial username and password to access the database.
+			Here both are set as <code>root</code>.
+			Once the initial credentials are created, they are persisted in the datastore, which means you don't have to include the command line arguments next time you start SurrealDB.
+			Instead, they should be securely stored in environment variables or some form of secret management system.
+		</li>
 		<li><code>memory</code>: This argument indicates that the database should be run in memory. Databases run in memory can have
-		quicker data access times because they're not reading and writing from disk.</li>
+		quicker data access times because they're not reading and writing from disk, but the data will be lost when the server is restarted.</li>
 	</ul>
 </Layout::Text>
 

@@ -1,1 +1,1 @@
-user@localhost % surreal start --user root --pass root memory
+user@localhost % surreal start memory -A --auth --user root --pass root

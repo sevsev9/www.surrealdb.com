@@ -1,5 +1,7 @@
 SELECT [ VALUE ] @fields [ AS @alias ]
+	[ OMIT @fields ...]
 	FROM @targets
+	[ WITH [ NOINDEX | INDEX @indexes ... ]]
 	[ WHERE @conditions ]
 	[ SPLIT [ AT ] @field ... ]
 	[ GROUP [ BY ] @fields ... ]
@@ -15,4 +17,5 @@ SELECT [ VALUE ] @fields [ AS @alias ]
 	[ FETCH @fields ... ]
 	[ TIMEOUT @duration ]
 	[ PARALLEL ]
+	[ EXPLAIN [ FULL ]]
 ;

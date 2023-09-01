@@ -1,1 +1,1 @@
-PS C:\> surreal.exe start --user root --pass root memory
+PS C:\> surreal.exe start memory -A --auth --user root --pass root

@@ -97,24 +97,15 @@
 		<h3>parse::email::host</h3>
 		<p>The <code>parse::email::host</code> function parses and returns and email host from a valid email address.</p>
 		<Code @name="docs-surrealql-functions-parse-email-host.surql" text="API Definition">
-			parse::email::host(string) -> value
+			parse::email::host(string) -> string
 		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-parse-email-host-input.surql">
-				SELECT * FROM parse::email::host("info@surrealdb.com");
+				RETURN parse::email::host("info@surrealdb.com");
 			</Code>
 			<Code @name="docs-surrealql-functions-parse-email-host-result.txt">
 				"surrealdb.com"
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-parse-email-host-error-input.surql">
-				SELECT * FROM parse::email::host(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-parse-email-host-error-result.txt">
-				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -129,24 +120,15 @@
 		<h3>parse::email::user</h3>
 		<p>The <code>parse::email::user</code> function parses and returns and email username from a valid email address.</p>
 		<Code @name="docs-surrealql-functions-parse-email-user.surql" text="API Definition">
-			parse::email::user(string) -> value
+			parse::email::user(string) -> bool
 		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-parse-email-user-input.surql">
-				SELECT * FROM parse::email::user("info@surrealdb.com");
+				RETURN parse::email::user("info@surrealdb.com");
 			</Code>
 			<Code @name="docs-surrealql-functions-parse-email-user-result.txt">
 				"info"
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-parse-email-user-error-input.surql">
-				SELECT * FROM parse::email::user(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-parse-email-user-error-result.txt">
-				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -161,24 +143,15 @@
 		<h3>parse::url::domain</h3>
 		<p>The <code>parse::url::domain</code> function parses and returns the domain from a valid URL.</p>
 		<Code @name="docs-surrealql-functions-parse-url-domain.surql" text="API Definition">
-			parse::url::domain(string) -> value
+			parse::url::domain(string) -> bool
 		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-parse-url-domain-input.surql">
-				SELECT * FROM parse::url::domain("https://surrealdb.com:80/features?some=option#fragment");
+				RETURN parse::url::domain("https://surrealdb.com:80/features?some=option#fragment");
 			</Code>
 			<Code @name="docs-surrealql-functions-parse-url-domain-result.txt">
 				"surrealdb.com"
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-parse-url-domain-error-input.surql">
-				SELECT * FROM parse::url::domain(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-parse-url-domain-error-result.txt">
-				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -193,24 +166,15 @@
 		<h3>parse::url::fragment</h3>
 		<p>The <code>parse::url::fragment</code> function parses and returns the fragment from a valid URL.</p>
 		<Code @name="docs-surrealql-functions-parse-url-fragment.surql" text="API Definition">
-			parse::url::fragment(string) -> value
+			parse::url::fragment(string) -> bool
 		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-parse-url-fragment-input.surql">
-				SELECT * FROM parse::url::fragment("https://surrealdb.com:80/features?some=option#fragment");
+				RETURN parse::url::fragment("https://surrealdb.com:80/features?some=option#fragment");
 			</Code>
 			<Code @name="docs-surrealql-functions-parse-url-fragment-result.txt">
 				"fragment"
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-parse-url-fragment-error-input.surql">
-				SELECT * FROM parse::url::fragment(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-parse-url-fragment-error-result.txt">
-				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -225,24 +189,15 @@
 		<h3>parse::url::host</h3>
 		<p>The <code>parse::url::host</code> function parses and returns the hostname from a valid URL.</p>
 		<Code @name="docs-surrealql-functions-parse-url-host.surql" text="API Definition">
-			parse::url::host(string) -> value
+			parse::url::host(string) -> bool
 		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-parse-url-host-input.surql">
-				SELECT * FROM parse::url::host("https://surrealdb.com:80/features?some=option#fragment");
+				RETURN parse::url::host("https://surrealdb.com:80/features?some=option#fragment");
 			</Code>
 			<Code @name="docs-surrealql-functions-parse-url-host-result.txt">
 				"surrealdb.com"
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-parse-url-host-error-input.surql">
-				SELECT * FROM parse::url::host(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-parse-url-host-error-result.txt">
-				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -257,24 +212,15 @@
 		<h3>parse::url::path</h3>
 		<p>The <code>parse::url::path</code> function parses and returns the path from a valid URL.</p>
 		<Code @name="docs-surrealql-functions-parse-url-path.surql" text="API Definition">
-			parse::url::path(string) -> value
+			parse::url::path(string) -> bool
 		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-parse-url-path-input.surql">
-				SELECT * FROM parse::url::path("https://surrealdb.com:80/features?some=option#fragment");
+				RETURN parse::url::path("https://surrealdb.com:80/features?some=option#fragment");
 			</Code>
 			<Code @name="docs-surrealql-functions-parse-url-path-result.txt">
 				"/features"
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-parse-url-path-error-input.surql">
-				SELECT * FROM parse::url::path(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-parse-url-path-error-result.txt">
-				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -289,24 +235,15 @@
 		<h3>parse::url::port</h3>
 		<p>The <code>parse::url::port</code> function parses and returns the port from a valid URL.</p>
 		<Code @name="docs-surrealql-functions-parse-url-port.surql" text="API Definition">
-			parse::url::port(string) -> value
+			parse::url::port(string) -> bool
 		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-parse-url-port-input.surql">
-				SELECT * FROM parse::url::port("https://surrealdb.com:80/features?some=option#fragment");
+				RETURN parse::url::port("https://surrealdb.com:80/features?some=option#fragment");
 			</Code>
 			<Code @name="docs-surrealql-functions-parse-url-port-result.txt">
 				80
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-parse-url-port-error-input.surql">
-				SELECT * FROM parse::url::port(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-parse-url-port-error-result.txt">
-				null
 			</Code>
 		</codes>
 	</Layout::Text>
@@ -321,24 +258,15 @@
 		<h3>parse::url::query</h3>
 		<p>The <code>parse::url::query</code> function parses and returns the query from a valid URL.</p>
 		<Code @name="docs-surrealql-functions-parse-url-query.surql" text="API Definition">
-			parse::url::query(string) -> value
+			parse::url::query(string) -> bool
 		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-parse-url-query-input.surql">
-				SELECT * FROM parse::url::query("https://surrealdb.com:80/features?some=option#fragment");
+				RETURN parse::url::query("https://surrealdb.com:80/features?some=option#fragment");
 			</Code>
 			<Code @name="docs-surrealql-functions-parse-url-query-result.txt">
 				"some=option"
-			</Code>
-		</codes>
-		<p>If the argument is not a string, then the value will be <Link @link="docs.surrealql.datamodel.casting">cast</Link> to a string before the function is run:</p>
-        <codes vertical>
-			<Code @name="docs-surrealql-functions-parse-url-query-error-input.surql">
-				SELECT * FROM parse::url::query(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-parse-url-query-error-result.txt">
-				null
 			</Code>
 		</codes>
 	</Layout::Text>

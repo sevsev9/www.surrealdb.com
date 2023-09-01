@@ -48,10 +48,40 @@
 			<p>Used to conditionally perform operations on the database</p>
 		</Layout::Boxes::Item>
 	</LinkTo>
+	<LinkTo @route="docs.surrealql.statements.for">
+		<Layout::Boxes::Item mini hover>
+			<h4><code>FOR</code> statement</h4>
+			<p>Used to loop over arrays or other forms of iterators</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.statements.break">
+		<Layout::Boxes::Item mini hover>
+			<h4><code>BREAK</code> statement</h4>
+			<p>Used to break out of a loop</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.statements.continue">
+		<Layout::Boxes::Item mini hover>
+			<h4><code>CONTINUE</code> statement</h4>
+			<p>Used to skip an iteration in a loop</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
 	<LinkTo @route="docs.surrealql.statements.select">
 		<Layout::Boxes::Item mini hover>
 			<h4><code>SELECT</code> statement</h4>
 			<p>Used for selecting and querying data in a database</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.statements.live-select">
+		<Layout::Boxes::Item mini hover>
+			<h4><code>LIVE SELECT</code> statement</h4>
+			<p>Used to initiate a custom live query against a table</p>
+		</Layout::Boxes::Item>
+	</LinkTo>
+	<LinkTo @route="docs.surrealql.statements.kill">
+		<Layout::Boxes::Item mini hover>
+			<h4><code>KILL</code> statement</h4>
+			<p>Used to terminate a running live query</p>
 		</Layout::Boxes::Item>
 	</LinkTo>
 	<LinkTo @route="docs.surrealql.statements.insert">
@@ -113,6 +143,12 @@
 			<h4><code>SLEEP</code> statement</h4>
 			<p>Delays or pauses in the execution of a query or a batch</p>
 		</Layout::Boxes::Item>
+		<LinkTo @route="docs.surrealql.statements.throw">
+			<Layout::Boxes::Item mini hover>
+				<h4><code>THROW</code> statement</h4>
+				<p>Used to throw custom errors</p>
+			</Layout::Boxes::Item>
+		</LinkTo>
 	</LinkTo>
 </Layout::Boxes>
 

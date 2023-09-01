@@ -108,17 +108,17 @@
 
 <Layout::Text text-l text-f>
 	<h3>Example usage</h3>
-	<p>To display the current command-line tool version, along with the platform and architecture, in a terminal run the <Ascua::Prism::Inline @language="shell" @code="surreal start" /> command with the required arguments.</p>
+	<p>To display the current command-line tool version, along with the platform and architecture, in a terminal run the <Ascua::Prism::Inline @language="shell" @code="surreal version" />.</p>
 	<codes vertical>
 		<Code @name="docs-cli-start-main.shell" text="Command line">
-			user@localhost % surreal start --log trace --user root --pass root memory
+			user@localhost % surreal version
 		</Code>
 		<Code @name="docs/cli/start/main.txt" />
 	</codes>
 	<h4>Strict mode</h4>
 	<p>SurrealDB supports the ability to startup in strict mode. When running in strict mode, all <code>NAMESPACE</code>, <code>DATABASE</code>, and <code>TABLE</code> definitions will not be created automatically when data is inserted. Instead, if the selected namespace, database, or table has not been specifically defined, then the query will return an error.</p>
 	<Code @name="docs-releases-1-0-0-beta-4-strict.shell">
-		user@localhost % surreal start --strict --log debug --user root --pass root memory
+		user@localhost % surreal start --strict --log debug memory
 	</Code>
 </Layout::Text>
 
