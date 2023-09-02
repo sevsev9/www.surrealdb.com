@@ -6,31 +6,31 @@ export default class extends Controller {
 	@cache get model() {
 		return [
 			{
-				goal: 'Q4 2023',
+				goal: 'Q2 2024',
 				name: 'SurrealDB Private Cloud',
 				text: 'The second SurrealDB Cloud launch will be a highly-available, highly-scalable, single-tenant, private cloud deployment option. SurrealDB Public Cloud will be available in a number of Amazon Web Services regions globally. Pricing will be based on cluster size, and cluster run time.',
 			},
 			{
-				goal: 'Q3 2023',
+				goal: 'Q1 2024',
 				name: 'SurrealDB Public Cloud',
 				text: 'The first SurrealDB Cloud launch will be a highly-available, highly-scalable, multi-tenant, serverless cloud, with a pay-as-you-go fee structure. SurrealDB Public Cloud will be available in a number of regions globally. Pricing will be based on storage, concurrent connections, and query run time.',
 			},
 			{
-				goal: 'Q3 2023',
+				goal: 'September 13th 2023',
 				name: 'SurrealDB 1.0.0',
 				tags: [
-					'SurrealDB user-interface dashboard',
-				]
+					'Our version 1.0.0 will be released during SurrealDB World.',
+				],
 			},
 			{
-				time: new Date('2023-08-30'),
+				time: new Date('2023-09-01'),
 				name: 'SurrealDB 1.0.0-beta.10',
 				tags: [
 					'Table indexes and unique constraints',
 					'Full text indexing and filtering',
 					'Live queries and record changes',
 					'Deployment to WebAssembly',
-				]
+				],
 			},
 			{
 				time: new Date('2023-03-31'),
