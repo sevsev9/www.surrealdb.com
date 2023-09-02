@@ -7,13 +7,14 @@
 		<p><code>v1.0.0-beta.10</code> introduces Live Queries. This powerful technology allows you to write applications where you can serve realtime updates to your frontend.</p>
 	</block>
 	<block>
-			<Code @name="docs-releases-1-0-0-beta-10-live-queries.surql">
+		<codes vertical>
+			<Code @name="docs-releases-1-0-0-beta-10-live-queries.surql" text="SurrealQL">
 				// You can initiate the live query in your application
 				LET $lq = LIVE SELECT * FROM person WHERE age > 18;
 				// And you can dispose the live query once it is no longer needed
 				KILL $lq;
 			</Code>
-			<Code @name="docs-releases-1-0-0-beta-10-live-queries.js">
+			<Code @name="docs-releases-1-0-0-beta-10-live-queries.js" text="JavaScript">
 				// SurrealDB SDKs allow you to easily initiate live queries, and to process the received messages.
 				const lq = await db.live('person', function({ action, result }) {
 					if (action == "CREATE") {
@@ -24,6 +25,7 @@
 				// Once you no longer need the live feed of updates, you can dispose the live query
 				await db.kill(lq);
 			</Code>
+		</codes>
 	</block>
 
 	<block>
@@ -78,6 +80,35 @@
 				# Allow all capabilities, but deny guest/anonymous access to the database
 				user@localhost % surreal start --allow-all --deny-guests
 			</Code>
+	</block>
+
+	<block>
+		<h4 row middle>
+			Revamped root users
+		</h4>
+
+		<p>It is now possible to define multiple root users in SurrealDB. This change did require some changes in the way that you start your database however.</p>
+		<p>With this change, you will now only initially have to provide the <code>--user</code> and <code>--pass</code> flags to create the initial root user, but once the first root user exists, they will no longer by utilized.</p>
+		<p>
+			For more information, check out the <Link @link="docs.security.authentication">Authentication guide</Link>, and the <Link @link="docs.cli.start"><code>surreal start</code></Link> and <Link @link="docs.surrealql.statements.define.user"><code>DEFINE USER</code></Link> documentation.
+		</p>
+	</block>
+	<block>
+		<codes vertical>
+			<Code @name="docs_installation_upgrading_beta9-to-beta10_revamped-root-users.shell" text="Command line">
+				# When you initially start the database, you can create the first root user.
+				user@localhost % surreal start --auth --user root --pass root file:database.db
+
+				# In the future, you don't need to specify the --user and --pass flags anymore
+				user@localhost % surreal start --auth file:database.db
+			</Code>
+			<Code @name="docs_installation_upgrading_beta9-to-beta10_more-root-users.surql" text="SurrealQL">
+				// Afterwards, you are able to create multiple root users.
+				DEFINE USER tobie ON ROOT PASSWORD "SecurePassword!" ROLES OWNER;
+				DEFINE USER jaime ON ROOT PASSWORD "SecurePassword!" ROLES EDITOR;
+				DEFINE USER john  ON ROOT PASSWORD "SecurePassword!" ROLES VIEWER;
+			</Code>
+		</codes>
 	</block>
 
 	<block>

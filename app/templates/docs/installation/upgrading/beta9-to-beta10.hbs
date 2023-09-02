@@ -97,6 +97,33 @@
 		This is further documented in the <Link @link="docs.security.capabilities">Capabilities</Link> documentation.
 	</p>
 
+	<Layout::Gap tiny />
+
+	<h4>Revamped root users</h4>
+
+	<p>It is now possible to define multiple root users in SurrealDB. This change did require some changes in the way that you start your database however.</p>
+	<p>With this change, you will now only initially have to provide the <code>--user</code> and <code>--pass</code> flags to create the initial root user, but once the first root user exists, they will no longer by utilized.</p>
+	<p>
+		For more information, check out the <Link @link="docs.security.authentication">Authentication guide</Link>, and the <Link @link="docs.cli.start"><code>surreal start</code></Link> and <Link @link="docs.surrealql.statements.define.user"><code>DEFINE USER</code></Link> documentation.
+	</p>
+	<codes vertical>
+		<Code @name="docs_installation_upgrading_beta9-to-beta10_revamped-root-users.shell" text="Command line">
+			# When you initially start the database, you can create the first root user.
+			user@localhost % surreal start --auth --user root --pass root file:database.db
+
+			# In the future, you don't need to specify the --user and --pass flags anymore
+			user@localhost % surreal start --auth file:database.db
+		</Code>
+		<Code @name="docs_installation_upgrading_beta9-to-beta10_more-root-users.surql" text="SurrealQL">
+			// Afterwards, you are able to create multiple root users.
+			DEFINE USER tobie ON ROOT PASSWORD "SecurePassword!" ROLES OWNER;
+			DEFINE USER jaime ON ROOT PASSWORD "SecurePassword!" ROLES EDITOR;
+			DEFINE USER john  ON ROOT PASSWORD "SecurePassword!" ROLES VIEWER;
+		</Code>
+	</codes>
+
+	<Layout::Gap tiny />
+
 	<h4>Stricter typing</h4>
 
 	<p>Previously, when you defined a field of a certain type, you manually had to <code>ASSERT</code> that the value stored in that field, was not <code>NONE</code> or <code>NULL</code>.</p>
