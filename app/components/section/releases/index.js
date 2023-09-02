@@ -64,8 +64,8 @@ export default class extends Component {
 							'Introduce new <code>time::ceil</code>, <code>time::min</code>and <code>time::max</code> time methods.',
 							'Introduce a new <code>time::EPOCH</code> constant, containing the unix epoch timestamp as a datetime.',
 							'Introduce <code>type::field()</code> and <code>type::fields()</code> methods to dynamically select properties from a resource.',
-							'Moved every <code>is::*</code> function to <code>string::is_*</code>.',
-							'Introduce new <code>is::array</code>, <code>is::set</code>, <code>is::bool</code>, <code>is::datetime</code>, <code>is::decimal</code>, <code>is::duration</code>, <code>is::float</code>, <code>is::float</code>, <code>is::int</code>, <code>is::number</code>, <code>is::object</code>, <code>is::string</code>, <code>is::record</code>, <code>is::geometry</code> type validation methods.',
+							// 'Moved every <code>is::*</code> function to <code>string::is_*</code>.',
+							// 'Introduce new <code>is::array</code>, <code>is::set</code>, <code>is::bool</code>, <code>is::datetime</code>, <code>is::decimal</code>, <code>is::duration</code>, <code>is::float</code>, <code>is::float</code>, <code>is::int</code>, <code>is::number</code>, <code>is::object</code>, <code>is::string</code>, <code>is::record</code>, <code>is::geometry</code> type validation methods.',
 						],
 					},
 					{
