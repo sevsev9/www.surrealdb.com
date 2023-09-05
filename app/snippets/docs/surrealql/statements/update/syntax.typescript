@@ -1,4 +1,4 @@
-UPDATE @targets
+UPDATE [ ONLY ] @targets
 	[ CONTENT @value
 	  | MERGE @value
 	  | PATCH @value

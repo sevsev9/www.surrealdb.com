@@ -5,6 +5,47 @@ export default class extends Component {
 	@cache get model() {
 		return [
 			{
+				time: new Date('2023-09-05T00:00:00'),
+				name: 'Release v1.0.0-beta.11',
+				path: 'section/releases/v1-0-0-beta-11',
+				link: 'v1.0.0-beta.11',
+				hash: 'v1-0-0-beta-11',
+				data: [
+					{
+						name: 'Features',
+						text: [
+							'Moved every <code>is::*</code> function to <code>string::is::*</code>.',
+							'Introduce new <code>type::is::array</code>, <code>type::is::bool</code>, <code>type::is::bytes</code>, <code>type::is::collection</code>, <code>type::is::datetime</code>, <code>type::is::decimal</code>, <code>type::is::duration</code>, <code>type::is::float</code>, <code>type::is::geometry</code>, <code>type::is::int</code>, <code>type::is::line</code>, <code>type::is::null</code>, <code>type::is::multiline</code>, <code>type::is::multipoint</code>, <code>type::is::multipolygon</code>, <code>type::is::number</code>, <code>type::is::object</code>, <code>type::is::point</code>, <code>type::is::polygon</code>, <code>type::is::record</code>, <code>type::is::string</code>, <code>type::is::uuid</code> type validation methods.',
+							'Added <code>X-Forwarded-For</code> header to the accepted headers for the <code>--client-ip</code> option.',
+							'Allow all functions to be invoked by default.',
+							'Allow any type of value to be used in <code>THROW</code> statements.',
+							'Introduce a new <code>ONLY</code> keyword.',
+						],
+					},
+					{
+						name: 'Bug fixes',
+						text: [
+							{
+								category: 'bug',
+								text: 'Ensure that errors within scope logic are properly handled and do not cause a panic.',
+							},
+							{
+								category: 'bug',
+								text: 'Ensure that capabilities are properly applied to embedded scripting functions.',
+							},
+							{
+								category: 'bug',
+								text: 'Fix various niche issues caught by fuzzer that could cause a panic.',
+							},
+							{
+								category: 'bug',
+								text: 'Fix relative file paths.',
+							},
+						],
+					},
+				],
+			},
+			{
 				time: new Date('2023-09-01T00:00:00'),
 				name: 'Release v1.0.0-beta.10',
 				info: 'section/releases/v1-0-0-beta-10-upgrade',
@@ -64,8 +105,6 @@ export default class extends Component {
 							'Introduce new <code>time::ceil</code>, <code>time::min</code>and <code>time::max</code> time methods.',
 							'Introduce a new <code>time::EPOCH</code> constant, containing the unix epoch timestamp as a datetime.',
 							'Introduce <code>type::field()</code> and <code>type::fields()</code> methods to dynamically select properties from a resource.',
-							// 'Moved every <code>is::*</code> function to <code>string::is_*</code>.',
-							// 'Introduce new <code>is::array</code>, <code>is::set</code>, <code>is::bool</code>, <code>is::datetime</code>, <code>is::decimal</code>, <code>is::duration</code>, <code>is::float</code>, <code>is::float</code>, <code>is::int</code>, <code>is::number</code>, <code>is::object</code>, <code>is::string</code>, <code>is::record</code>, <code>is::geometry</code> type validation methods.',
 						],
 					},
 					{
@@ -251,7 +290,7 @@ export default class extends Component {
 							'Add functionality for open telemetry tracing',
 							'Add support for SQL parameters in HTTP REST endpoints',
 							'Log release version identifier when starting the server',
-							'Add <code>string::is_url()</code> function for checking if a string is a URL',
+							'Add <code>string::is::url()</code> function for checking if a string is a URL',
 							'Implement inclusive and unbounded record rangese',
 							'Support negative offsets in SQL string::slice() function',
 							'Add <code>time::timezone()</code> function for getting the local timezone offset',

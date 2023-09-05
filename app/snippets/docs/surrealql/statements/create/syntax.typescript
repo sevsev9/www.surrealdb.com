@@ -1,4 +1,4 @@
-CREATE @targets
+CREATE [ ONLY ] @targets
 	[ CONTENT @value
 	  | SET @field = @value ...
 	]

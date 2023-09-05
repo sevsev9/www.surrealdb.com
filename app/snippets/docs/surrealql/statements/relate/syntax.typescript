@@ -1,4 +1,4 @@
-RELATE @from_record -> @table -> @to_record
+RELATE [ ONLY ] @from_record -> @table -> @to_record
 	[ CONTENT @value
 	  | SET @field = @value ...
 	]

@@ -149,10 +149,10 @@
 				</td>
 				<td>Splits a string into an array of separate words</td>
 			</tr>
-			{{!-- <tr>
+			<tr>
 				<td>
 					<a href="#is-alphanum">
-						<code>string::is_alphanum()</code>
+						<code>string::is::alphanum()</code>
 					</a>
 				</td>
 				<td>Checks whether a value has only alphanumeric characters</td>
@@ -160,7 +160,7 @@
 			<tr>
 				<td>
 					<a href="#is-alpha">
-						<code>string::is_alpha()</code>
+						<code>string::is::alpha()</code>
 					</a>
 				</td>
 				<td>Checks whether a value has only alpha characters</td>
@@ -168,7 +168,7 @@
 			<tr>
 				<td>
 					<a href="#is-ascii">
-						<code>string::is_ascii()</code>
+						<code>string::is::ascii()</code>
 					</a>
 				</td>
 				<td>Checks whether a value has only ascii characters</td>
@@ -176,7 +176,7 @@
 			<tr>
 				<td>
 					<a href="#is-format">
-						<code>string::is_format()</code>
+						<code>string::is::format()</code>
 					</a>
 				</td>
 				<td>Checks whether a value matches a format format</td>
@@ -184,7 +184,7 @@
 			<tr>
 				<td>
 					<a href="#is-domain">
-						<code>string::is_domain()</code>
+						<code>string::is::domain()</code>
 					</a>
 				</td>
 				<td>Checks whether a value is a domain</td>
@@ -192,7 +192,7 @@
 			<tr>
 				<td>
 					<a href="#is-email">
-						<code>string::is_email()</code>
+						<code>string::is::email()</code>
 					</a>
 				</td>
 				<td>Checks whether a value is an email</td>
@@ -200,7 +200,7 @@
 			<tr>
 				<td>
 					<a href="#is-hexadecimal">
-						<code>string::is_hexadecimal()</code>
+						<code>string::is::hexadecimal()</code>
 					</a>
 				</td>
 				<td>Checks whether a value is hexadecimal</td>
@@ -208,7 +208,7 @@
 			<tr>
 				<td>
 					<a href="#is-latitude">
-						<code>string::is_latitude()</code>
+						<code>string::is::latitude()</code>
 					</a>
 				</td>
 				<td>Checks whether a value is a latitude value</td>
@@ -216,7 +216,7 @@
 			<tr>
 				<td>
 					<a href="#is-longitude">
-						<code>string::is_longitude()</code>
+						<code>string::is::longitude()</code>
 					</a>
 				</td>
 				<td>Checks whether a value is a longitude value</td>
@@ -224,7 +224,7 @@
 			<tr>
 				<td>
 					<a href="#is-numeric">
-						<code>string::is_numeric()</code>
+						<code>string::is::numeric()</code>
 					</a>
 				</td>
 				<td>Checks whether a value has only numeric characters</td>
@@ -232,7 +232,7 @@
 			<tr>
 				<td>
 					<a href="#is-semver">
-						<code>string::is_semver()</code>
+						<code>string::is::semver()</code>
 					</a>
 				</td>
 				<td>Checks whether a value matches a semver version</td>
@@ -240,7 +240,7 @@
 			<tr>
 				<td>
 					<a href="#is-url">
-						<code>string::is_url()</code>
+						<code>string::is::url()</code>
 					</a>
 				</td>
 				<td>Checks whether a value is a valid URL</td>
@@ -248,11 +248,11 @@
 			<tr>
 				<td>
 					<a href="#is-uuid">
-						<code>string::is_uuid()</code>
+						<code>string::is::uuid()</code>
 					</a>
 				</td>
 				<td>Checks whether a value is a UUID</td>
-			</tr> --}}
+			</tr>
 		</tbody>
 	</table>
 </Layout::Table>
@@ -625,20 +625,20 @@
 
 </Layout::Group>
 
-{{!-- <Layout::Gap small />
+<Layout::Gap small />
 
 <Layout::Group {{waypoint "is-alphanum"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_alphanum</h3>
-		<p>The <code>string::is_alphanum</code> function checks whether a value has only alphanumeric characters.</p>
+		<h3>string::is::alphanum</h3>
+		<p>The <code>string::is::alphanum</code> function checks whether a value has only alphanumeric characters.</p>
 		<Code @name="docs-surrealql-functions-is-alphanum.surql" text="API Definition">
-			string::is_alphanum(string) -> bool
+			string::is::alphanum(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-alphanum-input.surql">
-				RETURN string::is_alphanum("ABC123");
+				RETURN string::is::alphanum("ABC123");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-alphanum-result.txt">
 				true
@@ -653,15 +653,15 @@
 <Layout::Group {{waypoint "is-alpha"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_alpha</h3>
-		<p>The <code>string::is_alpha</code> function checks whether a value has only alpha characters.</p>
+		<h3>string::is::alpha</h3>
+		<p>The <code>string::is::alpha</code> function checks whether a value has only alpha characters.</p>
 		<Code @name="docs-surrealql-functions-is-alpha.surql" text="API Definition">
-			string::is_alpha(string) -> bool
+			string::is::alpha(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-alpha-input.surql">
-				RETURN string::is_alpha("ABCDEF");
+				RETURN string::is::alpha("ABCDEF");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-alpha-result.txt">
 				true
@@ -676,15 +676,15 @@
 <Layout::Group {{waypoint "is-ascii"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_ascii</h3>
-		<p>The <code>string::is_ascii</code> function checks whether a value has only ascii characters.</p>
+		<h3>string::is::ascii</h3>
+		<p>The <code>string::is::ascii</code> function checks whether a value has only ascii characters.</p>
 		<Code @name="docs-surrealql-functions-is-ascii.surql" text="API Definition">
-			string::is_ascii(string) -> bool
+			string::is::ascii(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-ascii-input.surql">
-				RETURN string::is_ascii("ABC123");
+				RETURN string::is::ascii("ABC123");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-ascii-result.txt">
 				true
@@ -699,15 +699,15 @@
 <Layout::Group {{waypoint "is-format"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_format</h3>
-		<p>The <code>string::is_format</code> function checks whether a value matches a specified format.</p>
+		<h3>string::is::format</h3>
+		<p>The <code>string::is::format</code> function checks whether a value matches a specified format.</p>
 		<Code @name="docs-surrealql-functions-is-format.surql" text="API Definition">
-			string::is_format(string, string) -> bool
+			string::is::format(string, string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-format-input.surql">
-				RETURN string::is_format("2015-09-05 23:56:04", "%Y-%m-%d %H:%M:%S");
+				RETURN string::is::format("2015-09-05 23:56:04", "%Y-%m-%d %H:%M:%S");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-format-result.txt">
 				true
@@ -726,15 +726,15 @@
 <Layout::Group {{waypoint "is-domain"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_domain</h3>
-		<p>The <code>string::is_domain</code> function checks whether a value is a domain.</p>
+		<h3>string::is::domain</h3>
+		<p>The <code>string::is::domain</code> function checks whether a value is a domain.</p>
 		<Code @name="docs-surrealql-functions-is-domain.surql" text="API Definition">
-			string::is_domain(string) -> bool
+			string::is::domain(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-domain-input.surql">
-				RETURN string::is_domain("surrealdb.com");
+				RETURN string::is::domain("surrealdb.com");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-domain-result.txt">
 				true
@@ -749,15 +749,15 @@
 <Layout::Group {{waypoint "is-email"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_email</h3>
-		<p>The <code>string::is_email</code> function checks whether a value is an email.</p>
+		<h3>string::is::email</h3>
+		<p>The <code>string::is::email</code> function checks whether a value is an email.</p>
 		<Code @name="docs-surrealql-functions-is-email.surql" text="API Definition">
-			string::is_email(string) -> bool
+			string::is::email(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-email-input.surql">
-				RETURN string::is_email("info@surrealdb.com");
+				RETURN string::is::email("info@surrealdb.com");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-email-result.txt">
 				true
@@ -772,15 +772,15 @@
 <Layout::Group {{waypoint "is-hexadecimal"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_hexadecimal</h3>
-		<p>The <code>string::is_hexadecimal</code> function checks whether a value is hexadecimal.</p>
+		<h3>string::is::hexadecimal</h3>
+		<p>The <code>string::is::hexadecimal</code> function checks whether a value is hexadecimal.</p>
 		<Code @name="docs-surrealql-functions-is-hexadecimal.surql" text="API Definition">
-			string::is_hexadecimal(string) -> bool
+			string::is::hexadecimal(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-hexadecimal-input.surql">
-				RETURN string::is_hexadecimal("ff009e");
+				RETURN string::is::hexadecimal("ff009e");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-hexadecimal-result.txt">
 				true
@@ -795,15 +795,15 @@
 <Layout::Group {{waypoint "is-latitude"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_latitude</h3>
-		<p>The <code>string::is_latitude</code> function checks whether a value is a latitude value.</p>
+		<h3>string::is::latitude</h3>
+		<p>The <code>string::is::latitude</code> function checks whether a value is a latitude value.</p>
 		<Code @name="docs-surrealql-functions-is-latitude.surql" text="API Definition">
-			string::is_latitude(string) -> bool
+			string::is::latitude(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-latitude-input.surql">
-				RETURN string::is_latitude("-0.118092");
+				RETURN string::is::latitude("-0.118092");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-latitude-result.txt">
 				true
@@ -818,15 +818,15 @@
 <Layout::Group {{waypoint "is-longitude"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_longitude</h3>
-		<p>The <code>string::is_longitude</code> function checks whether a value is a longitude value.</p>
+		<h3>string::is::longitude</h3>
+		<p>The <code>string::is::longitude</code> function checks whether a value is a longitude value.</p>
 		<Code @name="docs-surrealql-functions-is-longitude.surql" text="API Definition">
-			string::is_longitude(string) -> bool
+			string::is::longitude(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-longitude-input.surql">
-				RETURN string::is_longitude("51.509865");
+				RETURN string::is::longitude("51.509865");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-longitude-result.txt">
 				true
@@ -841,15 +841,15 @@
 <Layout::Group {{waypoint "is-numeric"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_numeric</h3>
-		<p>The <code>string::is_numeric</code> function checks whether a value has only numeric characters.</p>
+		<h3>string::is::numeric</h3>
+		<p>The <code>string::is::numeric</code> function checks whether a value has only numeric characters.</p>
 		<Code @name="docs-surrealql-functions-is-numeric.surql" text="API Definition">
-			string::is_numeric(string) -> bool
+			string::is::numeric(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-numeric-input.surql">
-				RETURN string::is_numeric("1484091748");
+				RETURN string::is::numeric("1484091748");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-numeric-result.txt">
 				true
@@ -864,15 +864,15 @@
 <Layout::Group {{waypoint "is-semver"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_semver</h3>
-		<p>The <code>string::is_semver</code> function checks whether a value matches a semver version.</p>
+		<h3>string::is::semver</h3>
+		<p>The <code>string::is::semver</code> function checks whether a value matches a semver version.</p>
 		<Code @name="docs-surrealql-functions-is-semver.surql" text="API Definition">
-			string::is_semver(string) -> bool
+			string::is::semver(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-semver-input.surql">
-				RETURN string::is_semver("1.0.0");
+				RETURN string::is::semver("1.0.0");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-semver-result.txt">
 				true
@@ -887,15 +887,15 @@
 <Layout::Group {{waypoint "is-url"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_url</h3>
-		<p>The <code>string::is_url</code> function checks whether a value is a valid URL.</p>
+		<h3>string::is::url</h3>
+		<p>The <code>string::is::url</code> function checks whether a value is a valid URL.</p>
 		<Code @name="docs-surrealql-functions-is-url.surql" text="API Definition">
-			string::is_url(string) -> bool
+			string::is::url(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-url-input.surql">
-				RETURN string::is_url("https://surrealdb.com");
+				RETURN string::is::url("https://surrealdb.com");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-url-result.txt">
 				true
@@ -910,15 +910,15 @@
 <Layout::Group {{waypoint "is-uuid"}}>
 
 	<Layout::Text text-l text-f>
-		<h3>string::is_uuid</h3>
-		<p>The <code>string::is_uuid</code> function checks whether a value is a UUID.</p>
+		<h3>string::is::uuid</h3>
+		<p>The <code>string::is::uuid</code> function checks whether a value is a UUID.</p>
 		<Code @name="docs-surrealql-functions-is-uuid.surql" text="API Definition">
-			string::is_uuid(string) -> bool
+			string::is::uuid(string) -> bool
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
 		<codes vertical>
 			<Code @name="docs-surrealql-functions-is-uuid-input.surql">
-				RETURN string::is_uuid("ad55cae8-cf02-47ee-92a7-e137fb644a84");
+				RETURN string::is::uuid("ad55cae8-cf02-47ee-92a7-e137fb644a84");
 			</Code>
 			<Code @name="docs-surrealql-functions-is-uuid-result.txt">
 				true
@@ -926,6 +926,6 @@
 		</codes>
 	</Layout::Text>
 
-</Layout::Group> --}}
+</Layout::Group>
 
 <Layout::Gap large />

@@ -132,6 +132,181 @@
 					</a>
 				</td>
 				<td>Converts a value into a record pointer</td>
+			</tr>			<tr>
+				<td>
+					<a href="#is-array">
+						<code>type::is::array()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>array</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-bool">
+						<code>type::is::bool()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>bool</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-bytes">
+						<code>type::is::bytes()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>bytes</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-collection">
+						<code>type::is::collection()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>collection</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-datetime">
+						<code>type::is::datetime()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>datetime</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-decimal">
+						<code>type::is::decimal()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>decimal</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-duration">
+						<code>type::is::duration()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>duration</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-float">
+						<code>type::is::float()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>float</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-geometry">
+						<code>type::is::geometry()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>geometry</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-int">
+						<code>type::is::int()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>int</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-line">
+						<code>type::is::line()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>line</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-null">
+						<code>type::is::null()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>null</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-multiline">
+						<code>type::is::multiline()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>multiline</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-multipoint">
+						<code>type::is::multipoint()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>multipoint</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-multipolygon">
+						<code>type::is::multipolygon()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>multipolygon</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-number">
+						<code>type::is::number()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>number</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-object">
+						<code>type::is::object()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>object</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-point">
+						<code>type::is::point()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>point</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-polygon">
+						<code>type::is::polygon()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>polygon</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-record">
+						<code>type::is::record()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>record</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-string">
+						<code>type::is::string()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>string</code></td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#is-uuid">
+						<code>type::is::uuid()</code>
+					</a>
+				</td>
+				<td>Checks if given value is of type <code>uuid</code></td>
 			</tr>
 		</tbody>
 	</table>
@@ -516,6 +691,510 @@
 				LET $tb = "person";
 				LET $id = "tobie";
 				RETURN type::thing($tb, $id);
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-array"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::array</code></h3>
+		<p>The <code>type::is::array</code> function checks if the passed value is of type <code>array</code>.</p>
+		<Code @name="docs-surrealql-functions-is-array.surql" text="API Definition">
+			type::is::array(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-array-input.surql">
+				RETURN type::is::array([ 'a', 'b', 'c' ]);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-array-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-bool"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::bool</code></h3>
+		<p>The <code>type::is::bool</code> function checks if the passed value is of type <code>bool</code>.</p>
+		<Code @name="docs-surrealql-functions-is-bool.surql" text="API Definition">
+			type::is::bool(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-bool-input.surql">
+				RETURN type::is::bool(true);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-bool-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-bytes"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::bytes</code></h3>
+		<p>The <code>type::is::bytes</code> function checks if the passed value is of type <code>bytes</code>.</p>
+		<Code @name="docs-surrealql-functions-is-bytes.surql" text="API Definition">
+			type::is::bytes(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-bytes-input.surql">
+				RETURN type::is::bytes("I am not bytes");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-bytes-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-collection"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::collection</code></h3>
+		<p>The <code>type::is::collection</code> function checks if the passed value is of type <code>collection</code>.</p>
+		<Code @name="docs-surrealql-functions-is-collection.surql" text="API Definition">
+			type::is::collection(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-collection-input.surql">
+				RETURN type::is::collection("I am not a collection");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-collection-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-datetime"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::datetime</code></h3>
+		<p>The <code>type::is::datetime</code> function checks if the passed value is of type <code>datetime</code>.</p>
+		<Code @name="docs-surrealql-functions-is-datetime.surql" text="API Definition">
+			type::is::datetime(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-datetime-input.surql">
+				RETURN type::is::datetime(time::now());
+			</Code>
+			<Code @name="docs-surrealql-functions-is-datetime-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-decimal"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::decimal</code></h3>
+		<p>The <code>type::is::decimal</code> function checks if the passed value is of type <code>decimal</code>.</p>
+		<Code @name="docs-surrealql-functions-is-decimal.surql" text="API Definition">
+			type::is::decimal(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-decimal-input.surql">
+				RETURN type::is::decimal({{ "<" }}decimal> 13.5719384719384719385639856394139476937756394756);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-decimal-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-duration"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::duration</code></h3>
+		<p>The <code>type::is::duration</code> function checks if the passed value is of type <code>duration</code>.</p>
+		<Code @name="docs-surrealql-functions-is-duration.surql" text="API Definition">
+			type::is::duration(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-duration-input.surql">
+				RETURN type::is::duration({{ "<" }}datetime> '1970-01-01T00:00:00');
+			</Code>
+			<Code @name="docs-surrealql-functions-is-duration-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-float"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::float</code></h3>
+		<p>The <code>type::is::float</code> function checks if the passed value is of type <code>float</code>.</p>
+		<Code @name="docs-surrealql-functions-is-float.surql" text="API Definition">
+			type::is::float(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-float-input.surql">
+				RETURN type::is::float({{ "<" }}float> 41.5);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-float-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-geometry"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::geometry</code></h3>
+		<p>The <code>type::is::geometry</code> function checks if the passed value is of type <code>geometry</code>.</p>
+		<Code @name="docs-surrealql-functions-is-geometry.surql" text="API Definition">
+			type::is::geometry(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-geometry-input.surql">
+				RETURN type::is::geometry((-0.118092, 51.509865));
+			</Code>
+			<Code @name="docs-surrealql-functions-is-geometry-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-int"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::int</code></h3>
+		<p>The <code>type::is::int</code> function checks if the passed value is of type <code>int</code>.</p>
+		<Code @name="docs-surrealql-functions-is-int.surql" text="API Definition">
+			type::is::int(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-int-input.surql">
+				RETURN type::is::int({{ "<" }}int> 123);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-int-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-line"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::line</code></h3>
+		<p>The <code>type::is::line</code> function checks if the passed value is of type <code>line</code>.</p>
+		<Code @name="docs-surrealql-functions-is-line.surql" text="API Definition">
+			type::is::line(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-line-input.surql">
+				RETURN type::is::line("I am not a line");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-line-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-null"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::null</code></h3>
+		<p>The <code>type::is::null</code> function checks if the passed value is of type <code>null</code>.</p>
+		<Code @name="docs-surrealql-functions-is-null.surql" text="API Definition">
+			type::is::null(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-null-input.surql">
+				RETURN type::is::null(NULL);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-null-result.txt">
+				null
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-multiline"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::multiline</code></h3>
+		<p>The <code>type::is::multiline</code> function checks if the passed value is of type <code>multiline</code>.</p>
+		<Code @name="docs-surrealql-functions-is-multiline.surql" text="API Definition">
+			type::is::multiline(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-multiline-input.surql">
+				RETURN type::is::multiline("I am not a multiline");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-multiline-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-multipoint"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::multipoint</code></h3>
+		<p>The <code>type::is::multipoint</code> function checks if the passed value is of type <code>multipoint</code>.</p>
+		<Code @name="docs-surrealql-functions-is-multipoint.surql" text="API Definition">
+			type::is::multipoint(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-multipoint-input.surql">
+				RETURN type::is::multipoint("I am not a multipoint");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-multipoint-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-multipolygon"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::multipolygon</code></h3>
+		<p>The <code>type::is::multipolygon</code> function checks if the passed value is of type <code>multipolygon</code>.</p>
+		<Code @name="docs-surrealql-functions-is-multipolygon.surql" text="API Definition">
+			type::is::multipolygon(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-multipolygon-input.surql">
+				RETURN type::is::multipolygon("I am not a multipolygon");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-multipolygon-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-number"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::number</code></h3>
+		<p>The <code>type::is::number</code> function checks if the passed value is of type <code>number</code>.</p>
+		<Code @name="docs-surrealql-functions-is-number.surql" text="API Definition">
+			type::is::number(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-number-input.surql">
+				RETURN type::is::number(123);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-number-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-object"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::object</code></h3>
+		<p>The <code>type::is::object</code> function checks if the passed value is of type <code>object</code>.</p>
+		<Code @name="docs-surrealql-functions-is-object.surql" text="API Definition">
+			type::is::object(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-object-input.surql">
+				RETURN type::is::object({ hello: 'world' });
+			</Code>
+			<Code @name="docs-surrealql-functions-is-object-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Group {{waypoint "is-point"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::point</code></h3>
+		<p>The <code>type::is::point</code> function checks if the passed value is of type <code>point</code>.</p>
+		<Code @name="docs-surrealql-functions-is-point.surql" text="API Definition">
+			type::is::point(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-point-input.surql">
+				RETURN type::is::point((-0.118092, 51.509865));
+			</Code>
+			<Code @name="docs-surrealql-functions-is-point-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-polygon"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::polygon</code></h3>
+		<p>The <code>type::is::polygon</code> function checks if the passed value is of type <code>polygon</code>.</p>
+		<Code @name="docs-surrealql-functions-is-polygon.surql" text="API Definition">
+			type::is::polygon(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-polygon-input.surql">
+				RETURN type::is::polygon("I am not a polygon");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-polygon-result.txt">
+				false
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-record"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::record</code></h3>
+		<p>The <code>type::is::record</code> function checks if the passed value is of type <code>record</code>.</p>
+		<Code @name="docs-surrealql-functions-is-record.surql" text="API Definition">
+			type::is::record(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-record-input.surql">
+				RETURN type::is::record(user:tobie);
+			</Code>
+			<Code @name="docs-surrealql-functions-is-record-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-string"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::string</code></h3>
+		<p>The <code>type::is::string</code> function checks if the passed value is of type <code>string</code>.</p>
+		<Code @name="docs-surrealql-functions-is-string.surql" text="API Definition">
+			type::is::string(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-string-input.surql">
+				RETURN type::is::string("abc");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-string-result.txt">
+				true
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "is-uuid"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><code>type::is::uuid</code></h3>
+		<p>The <code>type::is::uuid</code> function checks if the passed value is of type <code>uuid</code>.</p>
+		<Code @name="docs-surrealql-functions-is-uuid.surql" text="API Definition">
+			type::is::uuid(any) -> bool
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-is-uuid-input.surql">
+				RETURN type::is::uuid("018a6680-bef9-701b-9025-e1754f296a0f");
+			</Code>
+			<Code @name="docs-surrealql-functions-is-uuid-result.txt">
+				true
 			</Code>
 		</codes>
 	</Layout::Text>

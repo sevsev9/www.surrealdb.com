@@ -217,7 +217,6 @@ Router.map(function () {
 				this.route('duration');
 				this.route('geo');
 				this.route('http');
-				this.route('validation');
 				this.route('math');
 				this.route('meta');
 				this.route('parse');

@@ -41,7 +41,7 @@ HTTP server:
       --web-key <WEB_KEY>        Path to the private key file for encrypted client connections [env: SURREAL_WEB_KEY=]
       --client-ip <CLIENT_IP>    The method of detecting the client's IP address [env: SURREAL_CLIENT_IP=] [default:
                                  socket] [possible values: none, socket, CF-Connecting-IP, Fly-Client-IP,
-                                 True-Client-IP, X-Real-IP]
+                                 True-Client-IP, X-Real-IP, X-Forwarded-For]
   -b, --bind <LISTEN_ADDRESSES>  The hostname or ip address to listen for connections on [env: SURREAL_BIND=] [default:
                                  0.0.0.0:8000]
 

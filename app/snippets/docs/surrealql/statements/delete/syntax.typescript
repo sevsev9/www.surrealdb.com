@@ -1,4 +1,4 @@
-DELETE @targets
+DELETE [ ONLY ] @targets
 	[ WHERE @condition ]
 	[ RETURN [ NONE | BEFORE | AFTER | DIFF | @projections ... ]
 	[ TIMEOUT @duration ]
