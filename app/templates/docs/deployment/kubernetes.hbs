@@ -58,10 +58,12 @@
 		<Code @name="docs/deployment/kubernetes/add-surrealdb-helm-repository.sh" text="Add SurrealDB Helm repository" />
 		<li><h5>Get the TIKV PD service url:</h5></li>
 		<Code @name="docs/deployment/kubernetes/tikv-pd-service.sh" text="Get TIKV PD service url" />
-		<li><h5>Install the SurrealDB Helm chart with the TIKV_URL defined above:</h5></li>
+		<li><h5>Install the SurrealDB Helm chart with the TIKV_URL defined above and with auth disabled so we can create the initial credentials:</h5></li>
 		<Code @name="docs/deployment/kubernetes/install-surrealdb-helm-chart.sh" text="Install SurrealDB Helm chart" />
-		<li><h5>Verify that the SurrealDB Pods are running:</h5></li>
-		<Code @name="docs/deployment/kubernetes/verify-surrealdb-pods.sh" text="Verify SurrealDB Pods" />
+		<li><h5>Connect to the cluster and define the initial credentials (see in the section below how to connect):</h5></li>
+		<Code @name="docs/deployment/kubernetes/define-initial-credentials.sh" text="Define initial credentials" />
+		<li><h5>Now that the initial credentials have been created, enable authentication:</h5></li>
+		<Code @name="docs/deployment/kubernetes/update-surrealdb-helm-chart.sh" text="Update SurrealDB Helm chart" />
 	</ol>
 
 	<h3>Run SurrealDB experiments</h3>
